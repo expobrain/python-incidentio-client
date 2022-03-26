@@ -1,40 +1,43 @@
 [tool.black]
 line-length = 99
-target-version = ["py36", "py37", "py38", "py39", "py310"]
+target-version = ["py37", "py38", "py39", "py310"]
 exclude = '''
 /(
-    \.git|venv|.venv
+    \.git|.venv
 )/
 '''
 
 [tool.isort]
 profile = "black"
 float_to_top = true
-skip_glob = ".venv,venv"
+skip_glob = ".venv"
 
 [tool.poetry]
 name = "python-incidentio-client"
-version = "0.1.0dev0"
+version = "0.1.0"
 description = "Python client for Incident.io"
 repository = "https://github.com/expobrain/python-incidentio-client"
 authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "incidentio" }]
-
+packages = [{ include = "incident_io_client" }]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+httpx = ">=0.15.4,<0.23.0"
+attrs = ">=21.3.0"
+python-dateutil = "^2.8.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.4"
 black = "^22.1"
 isort = "^5.10.1"
 mypy = "^0.942"
-pdbpp = "^0.10.3"
-pytest = "^7.0.1"
-pytest-cov = "^3.0.0"
 flake8 = "^4.0.1"
+types-python-dateutil = "^2.8.10"
+pyupgrade = "^2.31.1"
+openapi-python-client = "^0.11.1"
+types-certifi = "^2021.10.8"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
