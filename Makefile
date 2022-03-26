@@ -6,7 +6,7 @@ fmt:
 		--remove-all-unused-imports \
 		--ignore-init-module-imports \
 		-r \
-		<project-package>
+		incidentio
 	isort --profile black .
 	black .
 
@@ -17,13 +17,13 @@ check:
 		--ignore-init-module-imports \
 		-r \
 		-c \
-		<project-package>
+		incidentio
 	isort --profile black -c .
 	black --check .
 
 lint:
-	mypy <project-package>
+	mypy incidentio
 	flake8 .
 
 test:
-	pytest -x --cov=core --cov=<project-package> --cov-fail-under=90
+	pytest -x --cov=core --cov=incidentio --cov-fail-under=90
