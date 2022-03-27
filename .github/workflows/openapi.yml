@@ -1,0 +1,11 @@
+name: Checks that OpenAPI specs are up to date
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  check-openapi-spec-up-to-date:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make download
+      - run: git diff --exit-code incidentio_openapi.yaml
