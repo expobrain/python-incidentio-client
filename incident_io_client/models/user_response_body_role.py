@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class UserResponseBodyRole(str, Enum):
+    VALUE_0 = ""
     VIEWER = "viewer"
     RESPONDER = "responder"
     ADMINISTRATOR = "administrator"

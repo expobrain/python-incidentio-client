@@ -2353,12 +2353,6 @@
         "title": "IncidentRoleResponseBody",
         "type": "object",
         "properties": {
-          "created_at": {
-            "type": "string",
-            "description": "When the action was created",
-            "example": "2021-08-17T13:28:57.801578Z",
-            "format": "date-time"
-          },
           "description": {
             "type": "string",
             "description": "Describes the purpose of the role",
@@ -2397,12 +2391,6 @@
             "description": "Short human readable name for Slack",
             "example": "lead",
             "minLength": 1
-          },
-          "updated_at": {
-            "type": "string",
-            "description": "When the action was last updated",
-            "example": "2021-08-17T13:28:57.801578Z",
-            "format": "date-time"
           }
         },
         "example": {
@@ -2423,9 +2411,7 @@
           "instructions",
           "shortform",
           "required",
-          "lead_role",
-          "created_at",
-          "updated_at"
+          "lead_role"
         ]
       },
       "IncidentRolesListResponseBody": {
@@ -4897,7 +4883,7 @@
             "type": "string",
             "description": "Role of the user",
             "example": "viewer",
-            "enum": ["viewer", "responder", "administrator", "owner"]
+            "enum": ["", "viewer", "responder", "administrator", "owner"]
           }
         },
         "example": {
