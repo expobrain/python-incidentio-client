@@ -19,7 +19,7 @@ First, create a client:
 ```python
 from incident_io_client import Client
 
-client = Client(base_url="https://api.example.com")
+client = Client(base_url="https://api.incident.io")
 ```
 
 If the endpoints you're going to hit require authentication, use `AuthenticatedClient` instead:
@@ -27,7 +27,7 @@ If the endpoints you're going to hit require authentication, use `AuthenticatedC
 ```python
 from incident_io_client import AuthenticatedClient
 
-client = AuthenticatedClient(base_url="https://api.example.com", token="SuperSecretToken")
+client = AuthenticatedClient(base_url="https://api.incident.io", token="SuperSecretToken")
 ```
 
 Now call your endpoint and use your models:
@@ -57,7 +57,7 @@ By default, when you're calling an HTTPS API it will attempt to verify that SSL 
 
 ```python
 client = AuthenticatedClient(
-    base_url="https://internal_api.example.com",
+    base_url="https://internal_api.incident.io",
     token="SuperSecretToken",
     verify_ssl="/path/to/certificate_bundle.pem",
 )
@@ -67,7 +67,7 @@ You can also disable certificate validation altogether, but beware that **this i
 
 ```python
 client = AuthenticatedClient(
-    base_url="https://internal_api.example.com",
+    base_url="https://internal_api.incident.io",
     token="SuperSecretToken",
     verify_ssl=False
 )
