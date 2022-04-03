@@ -1,6 +1,6 @@
 # python-incident-io-client
 
-![main build status](https://github.com/expobrain/pytohn-incidentio-client/actions/workflows/main.yml/badge.svg?branch=main)
+![main build status](https://github.com/expobrain/python-incidentio-client/actions/workflows/main.yml/badge.svg?branch=main)
 
 A client library for accessing incident.io
 
