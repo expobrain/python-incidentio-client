@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "python-incidentio-client-example"
+version = "0.1.0"
+description = "Python client example for Incident.io"
+repository = "https://github.com/expobrain/python-incidentio-client/tree/main/example"
+authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+python-incidentio-client = { path = "..", develop = true }
+python-dotenv = "^0.20.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.942"
+black = "^22.3.0"
+autoflake = "^1.4"
+pyupgrade = "^2.31.1"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

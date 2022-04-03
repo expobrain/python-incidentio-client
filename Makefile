@@ -1,29 +1,36 @@
 .SILENT: fmt check lint
 
+generate:
+	rm -rf incident_io_client
+	openapi-python-client generate --meta none --path incident_io_openapi.json
+	touch incident_io_client/py.typed
+	make fmt
+
 fmt:
+	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \
+		-exec pyupgrade --exit-zero-even-if-changed --py37-plus {} \+ 1> /dev/null
 	autoflake \
 		--in-place \
 		--remove-all-unused-imports \
 		--ignore-init-module-imports \
 		-r \
-		<project-package>
+		.
 	isort --profile black .
 	black .
 
 check:
+	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \
+		-exec pyupgrade --py37-plus {} \+ 1> /dev/null
 	autoflake \
 		--in-place \
 		--remove-all-unused-imports \
 		--ignore-init-module-imports \
 		-r \
 		-c \
-		<project-package>
+		.
 	isort --profile black -c .
 	black --check .
 
 lint:
-	mypy <project-package>
+	mypy .
 	flake8 .
-
-test:
-	pytest -x --cov=core --cov=<project-package> --cov-fail-under=90
