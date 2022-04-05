@@ -72,10 +72,7 @@ class IncidentResponseBody:
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}], 'external_id': 123, 'fixed_at':
             '2021-08-17T13:28:57.801578Z', 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'identified_at':
-            '2021-08-17T13:28:57.801578Z', 'name': 'Our database is sad', 'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'reported_at': '2021-08-17T13:28:57.801578Z', 'reporter': {'api_key':
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}, 'roles': [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            '2021-08-17T13:28:57.801578Z', 'incident_role_assignments': [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'lead_role': True,
@@ -88,12 +85,16 @@ class IncidentResponseBody:
             Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
             person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
             the incident; Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead',
-            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'severity':
-            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            'slack_channel_name': 'inc-165-green-parrot', 'status': 'investigating', 'summary': "Our database is really
-            really sad, and we don't know why yet.", 'summary_updated_at': '2021-08-17T13:28:57.801578Z', 'type': 'real',
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'name': 'Our database is
+            sad', 'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reported_at':
+            '2021-08-17T13:28:57.801578Z', 'reporter': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
+            key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}},
+            'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone
+            chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_name': 'inc-165-green-parrot', 'status': 'triage', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'summary_updated_at':
+            '2021-08-17T13:28:57.801578Z', 'type': 'real', 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility':
+            'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -124,29 +125,29 @@ class IncidentResponseBody:
             'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}].
         external_id (int): External identifier for the incident - often displayed with an INC- prefix Example: 123.
         id (str): Unique identifier for the incident Example: 01FDAG4SAP5TYPT98WGR2N7W91.
-        name (str): Explanation of the incident Example: Our database is sad.
-        reported_at (datetime.datetime): When the incident was reported Example: 2021-08-17T13:28:57.801578Z.
-        reporter (ActorResponseBody):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
-            key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}.
-        roles (List[IncidentRoleAssignmentResponseBody]): A list of who is assigned to each role for this incident
-            Example: [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'},
-            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
-            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead', 'required': True, 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa
-            Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead',
-            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'id':
+        incident_role_assignments (List[IncidentRoleAssignmentResponseBody]): A list of who is assigned to each role for
+            this incident Example: [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
+            'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently
+            coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident;
+            Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead', 'required': True,
+            'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'lead_role': True, 'name': 'Incident Lead', 'required': True, 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}].
+            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa
+            Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
+            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
+            the incident; Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead',
+            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}].
+        name (str): Explanation of the incident Example: Our database is sad.
+        reported_at (datetime.datetime): When the incident was reported Example: 2021-08-17T13:28:57.801578Z.
+        reporter (ActorResponseBody):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
+            key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}.
         severity (SeverityResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's
             not really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1,
             'updated_at': '2021-08-17T13:28:57.801578Z'}.
-        status (IncidentResponseBodyStatus): Current status of the incident Example: investigating.
+        status (IncidentResponseBodyStatus): Current status of the incident Example: triage.
         type (IncidentResponseBodyType): Whether the incident is real, a test, or a tutorial Example: real.
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
         visibility (IncidentResponseBodyVisibility): Whether the incident is public or private Example: public.
@@ -167,10 +168,10 @@ class IncidentResponseBody:
     custom_field_entries: List[CustomFieldEntryResponseBody]
     external_id: int
     id: str
+    incident_role_assignments: List[IncidentRoleAssignmentResponseBody]
     name: str
     reported_at: datetime.datetime
     reporter: ActorResponseBody
-    roles: List[IncidentRoleAssignmentResponseBody]
     severity: SeverityResponseBody
     status: IncidentResponseBodyStatus
     type: IncidentResponseBodyType
@@ -197,16 +198,16 @@ class IncidentResponseBody:
 
         external_id = self.external_id
         id = self.id
+        incident_role_assignments = []
+        for incident_role_assignments_item_data in self.incident_role_assignments:
+            incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
+
+            incident_role_assignments.append(incident_role_assignments_item)
+
         name = self.name
         reported_at = self.reported_at.isoformat()
 
         reporter = self.reporter.to_dict()
-
-        roles = []
-        for roles_item_data in self.roles:
-            roles_item = roles_item_data.to_dict()
-
-            roles.append(roles_item)
 
         severity = self.severity.to_dict()
 
@@ -244,10 +245,10 @@ class IncidentResponseBody:
                 "custom_field_entries": custom_field_entries,
                 "external_id": external_id,
                 "id": id,
+                "incident_role_assignments": incident_role_assignments,
                 "name": name,
                 "reported_at": reported_at,
                 "reporter": reporter,
-                "roles": roles,
                 "severity": severity,
                 "status": status,
                 "type": type,
@@ -292,18 +293,20 @@ class IncidentResponseBody:
 
         id = d.pop("id")
 
+        incident_role_assignments = []
+        _incident_role_assignments = d.pop("incident_role_assignments")
+        for incident_role_assignments_item_data in _incident_role_assignments:
+            incident_role_assignments_item = IncidentRoleAssignmentResponseBody.from_dict(
+                incident_role_assignments_item_data
+            )
+
+            incident_role_assignments.append(incident_role_assignments_item)
+
         name = d.pop("name")
 
         reported_at = isoparse(d.pop("reported_at"))
 
         reporter = ActorResponseBody.from_dict(d.pop("reporter"))
-
-        roles = []
-        _roles = d.pop("roles")
-        for roles_item_data in _roles:
-            roles_item = IncidentRoleAssignmentResponseBody.from_dict(roles_item_data)
-
-            roles.append(roles_item)
 
         severity = SeverityResponseBody.from_dict(d.pop("severity"))
 
@@ -351,10 +354,10 @@ class IncidentResponseBody:
             custom_field_entries=custom_field_entries,
             external_id=external_id,
             id=id,
+            incident_role_assignments=incident_role_assignments,
             name=name,
             reported_at=reported_at,
             reporter=reporter,
-            roles=roles,
             severity=severity,
             status=status,
             type=type,

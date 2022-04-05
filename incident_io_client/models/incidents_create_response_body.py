@@ -61,10 +61,7 @@ class IncidentsCreateResponseBody:
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}], 'external_id': 123, 'fixed_at':
             '2021-08-17T13:28:57.801578Z', 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'identified_at':
-            '2021-08-17T13:28:57.801578Z', 'name': 'Our database is sad', 'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'reported_at': '2021-08-17T13:28:57.801578Z', 'reporter': {'api_key':
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}, 'roles': [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            '2021-08-17T13:28:57.801578Z', 'incident_role_assignments': [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'lead_role': True,
@@ -77,12 +74,16 @@ class IncidentsCreateResponseBody:
             Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
             person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
             the incident; Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead',
-            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'severity':
-            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            'slack_channel_name': 'inc-165-green-parrot', 'status': 'investigating', 'summary': "Our database is really
-            really sad, and we don't know why yet.", 'summary_updated_at': '2021-08-17T13:28:57.801578Z', 'type': 'real',
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}}
+            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'name': 'Our database is
+            sad', 'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reported_at':
+            '2021-08-17T13:28:57.801578Z', 'reporter': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
+            key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}},
+            'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone
+            chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_name': 'inc-165-green-parrot', 'status': 'triage', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'summary_updated_at':
+            '2021-08-17T13:28:57.801578Z', 'type': 'real', 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility':
+            'public'}}
 
     Attributes:
         incident (IncidentResponseBody):  Example: {'call_url': 'https://zoom.us/foo', 'closed_at':
@@ -136,10 +137,7 @@ class IncidentsCreateResponseBody:
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}], 'external_id': 123, 'fixed_at':
             '2021-08-17T13:28:57.801578Z', 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'identified_at':
-            '2021-08-17T13:28:57.801578Z', 'name': 'Our database is sad', 'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'reported_at': '2021-08-17T13:28:57.801578Z', 'reporter': {'api_key':
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}, 'roles': [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            '2021-08-17T13:28:57.801578Z', 'incident_role_assignments': [{'assignee': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'lead_role': True,
@@ -152,12 +150,16 @@ class IncidentsCreateResponseBody:
             Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
             person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
             the incident; Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead',
-            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'severity':
-            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            'slack_channel_name': 'inc-165-green-parrot', 'status': 'investigating', 'summary': "Our database is really
-            really sad, and we don't know why yet.", 'summary_updated_at': '2021-08-17T13:28:57.801578Z', 'type': 'real',
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}.
+            'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'name': 'Our database is
+            sad', 'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reported_at':
+            '2021-08-17T13:28:57.801578Z', 'reporter': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
+            key'}, 'user': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}},
+            'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone
+            chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_name': 'inc-165-green-parrot', 'status': 'triage', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'summary_updated_at':
+            '2021-08-17T13:28:57.801578Z', 'type': 'real', 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility':
+            'public'}.
     """
 
     incident: IncidentResponseBody
