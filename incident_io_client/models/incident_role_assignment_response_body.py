@@ -1,9 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
 from ..models.incident_role_response_body import IncidentRoleResponseBody
 from ..models.user_response_body import UserResponseBody
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="IncidentRoleAssignmentResponseBody")
 
@@ -19,44 +20,52 @@ class IncidentRoleAssignmentResponseBody:
             'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
-        assignee (UserResponseBody):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
-            'role': 'viewer'}.
         role (IncidentRoleResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
             person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
             the incident; Make sure people are clear on responsibilities', 'lead_role': True, 'name': 'Incident Lead',
             'required': True, 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        assignee (Union[Unset, UserResponseBody]):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin
+            Curtis', 'role': 'viewer'}.
     """
 
-    assignee: UserResponseBody
     role: IncidentRoleResponseBody
+    assignee: Union[Unset, UserResponseBody] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        assignee = self.assignee.to_dict()
-
         role = self.role.to_dict()
+
+        assignee: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.assignee, Unset):
+            assignee = self.assignee.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "assignee": assignee,
                 "role": role,
             }
         )
+        if assignee is not UNSET:
+            field_dict["assignee"] = assignee
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        assignee = UserResponseBody.from_dict(d.pop("assignee"))
-
         role = IncidentRoleResponseBody.from_dict(d.pop("role"))
 
+        _assignee = d.pop("assignee", UNSET)
+        assignee: Union[Unset, UserResponseBody]
+        if isinstance(_assignee, Unset):
+            assignee = UNSET
+        else:
+            assignee = UserResponseBody.from_dict(_assignee)
+
         incident_role_assignment_response_body = cls(
-            assignee=assignee,
             role=role,
+            assignee=assignee,
         )
 
         incident_role_assignment_response_body.additional_properties = d
