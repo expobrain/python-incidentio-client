@@ -18,7 +18,12 @@
             "type": "string"
           }
         },
-        "required": ["id", "name", "roles", "created_by"],
+        "required": [
+          "id",
+          "name",
+          "roles",
+          "created_by"
+        ],
         "title": "APIKeyResponseBody",
         "type": "object"
       },
@@ -76,7 +81,12 @@
           },
           "status": {
             "description": "Status of the action",
-            "enum": ["outstanding", "completed", "deleted", "not_doing"],
+            "enum": [
+              "outstanding",
+              "completed",
+              "deleted",
+              "not_doing"
+            ],
             "example": "outstanding",
             "type": "string"
           },
@@ -205,7 +215,9 @@
             "type": "array"
           }
         },
-        "required": ["actions"],
+        "required": [
+          "actions"
+        ],
         "title": "ActionsListResponseBody",
         "type": "object"
       },
@@ -232,7 +244,9 @@
             "$ref": "#/components/schemas/ActionResponseBody"
           }
         },
-        "required": ["action"],
+        "required": [
+          "action"
+        ],
         "title": "ActionsShowResponseBody",
         "type": "object"
       },
@@ -330,7 +344,10 @@
             "type": "array"
           }
         },
-        "required": ["custom_field_id", "values"],
+        "required": [
+          "custom_field_id",
+          "values"
+        ],
         "title": "CustomFieldEntryPayloadRequestBody",
         "type": "object"
       },
@@ -428,7 +445,10 @@
             "type": "array"
           }
         },
-        "required": ["custom_field", "values"],
+        "required": [
+          "custom_field",
+          "values"
+        ],
         "title": "CustomFieldEntryResponseBody",
         "type": "object"
       },
@@ -463,7 +483,12 @@
             "type": "string"
           }
         },
-        "required": ["id", "custom_field_id", "value", "sort_key"],
+        "required": [
+          "id",
+          "custom_field_id",
+          "value",
+          "sort_key"
+        ],
         "title": "CustomFieldOptionResponseBody",
         "type": "object"
       },
@@ -1055,7 +1080,9 @@
             "type": "array"
           }
         },
-        "required": ["custom_fields"],
+        "required": [
+          "custom_fields"
+        ],
         "title": "CustomFieldsListResponseBody",
         "type": "object"
       },
@@ -1105,7 +1132,9 @@
             "$ref": "#/components/schemas/CustomFieldResponseBody"
           }
         },
-        "required": ["custom_field"],
+        "required": [
+          "custom_field"
+        ],
         "title": "CustomFieldsShowResponseBody",
         "type": "object"
       },
@@ -1128,12 +1157,22 @@
           },
           "provider": {
             "description": "ID of the issue tracker provider",
-            "enum": ["linear", "jira", "jira_server", "github", "clubhouse"],
+            "enum": [
+              "linear",
+              "jira",
+              "jira_server",
+              "github",
+              "clubhouse"
+            ],
             "example": "linear",
             "type": "string"
           }
         },
-        "required": ["provider", "issue_name", "issue_permalink"],
+        "required": [
+          "provider",
+          "issue_name",
+          "issue_permalink"
+        ],
         "title": "ExternalIssueReferenceResponseBody",
         "type": "object"
       },
@@ -1741,7 +1780,11 @@
           },
           "type": {
             "description": "Whether the incident is real, a test, or a tutorial",
-            "enum": ["real", "test", "tutorial"],
+            "enum": [
+              "real",
+              "test",
+              "tutorial"
+            ],
             "example": "real",
             "type": "string"
           },
@@ -1753,7 +1796,10 @@
           },
           "visibility": {
             "description": "Whether the incident is public or private",
-            "enum": ["public", "private"],
+            "enum": [
+              "public",
+              "private"
+            ],
             "example": "public",
             "type": "string"
           }
@@ -1808,7 +1854,9 @@
             "$ref": "#/components/schemas/IncidentRoleResponseBody"
           }
         },
-        "required": ["role"],
+        "required": [
+          "role"
+        ],
         "title": "IncidentRoleAssignmentResponseBody",
         "type": "object"
       },
@@ -1983,7 +2031,9 @@
             "type": "array"
           }
         },
-        "required": ["incident_roles"],
+        "required": [
+          "incident_roles"
+        ],
         "title": "IncidentRolesListResponseBody",
         "type": "object"
       },
@@ -2006,7 +2056,9 @@
             "$ref": "#/components/schemas/IncidentRoleResponseBody"
           }
         },
-        "required": ["incident_role"],
+        "required": [
+          "incident_role"
+        ],
         "title": "IncidentRolesShowResponseBody",
         "type": "object"
       },
@@ -2159,7 +2211,10 @@
           },
           "visibility": {
             "description": "Whether the incident is public or private",
-            "enum": ["public", "private"],
+            "enum": [
+              "public",
+              "private"
+            ],
             "example": "public",
             "type": "string"
           }
@@ -2520,7 +2575,9 @@
             "$ref": "#/components/schemas/IncidentResponseBody"
           }
         },
-        "required": ["incident"],
+        "required": [
+          "incident"
+        ],
         "title": "IncidentsCreateResponseBody",
         "type": "object"
       },
@@ -3843,7 +3900,9 @@
             "$ref": "#/components/schemas/PaginationMetaResponseBody"
           }
         },
-        "required": ["incidents"],
+        "required": [
+          "incidents"
+        ],
         "title": "IncidentsListResponseBody",
         "type": "object"
       },
@@ -4179,7 +4238,9 @@
             "$ref": "#/components/schemas/IncidentResponseBody"
           }
         },
-        "required": ["incident"],
+        "required": [
+          "incident"
+        ],
         "title": "IncidentsShowResponseBody",
         "type": "object"
       },
@@ -4208,7 +4269,10 @@
             "type": "integer"
           }
         },
-        "required": ["page_size", "total_record_count"],
+        "required": [
+          "page_size",
+          "total_record_count"
+        ],
         "title": "PaginationMetaResponseBody",
         "type": "object"
       },
@@ -4259,7 +4323,9 @@
             "type": "array"
           }
         },
-        "required": ["severities"],
+        "required": [
+          "severities"
+        ],
         "title": "SeveritiesListResponseBody",
         "type": "object"
       },
@@ -4279,7 +4345,9 @@
             "$ref": "#/components/schemas/SeverityResponseBody"
           }
         },
-        "required": ["severity"],
+        "required": [
+          "severity"
+        ],
         "title": "SeveritiesShowResponseBody",
         "type": "object"
       },
@@ -4361,7 +4429,12 @@
           },
           "role": {
             "description": "Role of the user",
-            "enum": ["viewer", "responder", "administrator", "owner"],
+            "enum": [
+              "viewer",
+              "responder",
+              "administrator",
+              "owner"
+            ],
             "example": "viewer",
             "type": "string"
           }
@@ -4448,7 +4521,9 @@
           }
         ],
         "summary": "List Actions",
-        "tags": ["Actions"]
+        "tags": [
+          "Actions"
+        ]
       }
     },
     "/v1/actions/{id}": {
@@ -4494,7 +4569,9 @@
           }
         ],
         "summary": "Show Actions",
-        "tags": ["Actions"]
+        "tags": [
+          "Actions"
+        ]
       }
     },
     "/v1/custom_fields": {
@@ -4529,7 +4606,9 @@
           }
         ],
         "summary": "List Custom Fields",
-        "tags": ["Custom Fields"]
+        "tags": [
+          "Custom Fields"
+        ]
       }
     },
     "/v1/custom_fields/{id}": {
@@ -4575,7 +4654,9 @@
           }
         ],
         "summary": "Show Custom Fields",
-        "tags": ["Custom Fields"]
+        "tags": [
+          "Custom Fields"
+        ]
       }
     },
     "/v1/incident_roles": {
@@ -4610,7 +4691,9 @@
           }
         ],
         "summary": "List Incident Roles",
-        "tags": ["Incident Roles"]
+        "tags": [
+          "Incident Roles"
+        ]
       }
     },
     "/v1/incident_roles/{id}": {
@@ -4656,7 +4739,9 @@
           }
         ],
         "summary": "Show Incident Roles",
-        "tags": ["Incident Roles"]
+        "tags": [
+          "Incident Roles"
+        ]
       }
     },
     "/v1/incidents": {
@@ -4725,7 +4810,9 @@
           }
         ],
         "summary": "List Incidents",
-        "tags": ["Incidents"]
+        "tags": [
+          "Incidents"
+        ]
       },
       "post": {
         "description": "Create a new incident.",
@@ -4778,7 +4865,9 @@
           }
         ],
         "summary": "Create Incidents",
-        "tags": ["Incidents"]
+        "tags": [
+          "Incidents"
+        ]
       }
     },
     "/v1/incidents/{id}": {
@@ -4824,7 +4913,9 @@
           }
         ],
         "summary": "Show Incidents",
-        "tags": ["Incidents"]
+        "tags": [
+          "Incidents"
+        ]
       }
     },
     "/v1/severities": {
@@ -4859,7 +4950,9 @@
           }
         ],
         "summary": "List Severities",
-        "tags": ["Severities"]
+        "tags": [
+          "Severities"
+        ]
       }
     },
     "/v1/severities/{id}": {
@@ -4905,7 +4998,9 @@
           }
         ],
         "summary": "Show Severities",
-        "tags": ["Severities"]
+        "tags": [
+          "Severities"
+        ]
       }
     }
   },
