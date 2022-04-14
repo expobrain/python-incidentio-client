@@ -4,6 +4,10 @@ from typing import Any, Dict, List, Type, TypeVar
 import attr
 from dateutil.parser import isoparse
 
+from ..models.incident_role_response_body_role_type import (
+    IncidentRoleResponseBodyRoleType,
+)
+
 T = TypeVar("T", bound="IncidentRoleResponseBody")
 
 
@@ -13,7 +17,7 @@ class IncidentRoleResponseBody:
     Example:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'lead_role': True, 'name': 'Incident Lead', 'required': True, 'shortform': 'lead',
+            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
@@ -22,9 +26,9 @@ class IncidentRoleResponseBody:
         id (str): Unique identifier for the role Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         instructions (str): Provided to whoever is nominated for the role Example: Take point on the incident; Make sure
             people are clear on responsibilities.
-        lead_role (bool): Whether this role is the special lead role Example: True.
         name (str): Human readable name of the incident role Example: Incident Lead.
         required (bool): Whether incident require this role to be set Example: True.
+        role_type (IncidentRoleResponseBodyRoleType): Type of incident role Example: lead.
         shortform (str): Short human readable name for Slack Example: lead.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
     """
@@ -33,9 +37,9 @@ class IncidentRoleResponseBody:
     description: str
     id: str
     instructions: str
-    lead_role: bool
     name: str
     required: bool
+    role_type: IncidentRoleResponseBodyRoleType
     shortform: str
     updated_at: datetime.datetime
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
@@ -46,9 +50,10 @@ class IncidentRoleResponseBody:
         description = self.description
         id = self.id
         instructions = self.instructions
-        lead_role = self.lead_role
         name = self.name
         required = self.required
+        role_type = self.role_type.value
+
         shortform = self.shortform
         updated_at = self.updated_at.isoformat()
 
@@ -60,9 +65,9 @@ class IncidentRoleResponseBody:
                 "description": description,
                 "id": id,
                 "instructions": instructions,
-                "lead_role": lead_role,
                 "name": name,
                 "required": required,
+                "role_type": role_type,
                 "shortform": shortform,
                 "updated_at": updated_at,
             }
@@ -81,11 +86,11 @@ class IncidentRoleResponseBody:
 
         instructions = d.pop("instructions")
 
-        lead_role = d.pop("lead_role")
-
         name = d.pop("name")
 
         required = d.pop("required")
+
+        role_type = IncidentRoleResponseBodyRoleType(d.pop("role_type"))
 
         shortform = d.pop("shortform")
 
@@ -96,9 +101,9 @@ class IncidentRoleResponseBody:
             description=description,
             id=id,
             instructions=instructions,
-            lead_role=lead_role,
             name=name,
             required=required,
+            role_type=role_type,
             shortform=shortform,
             updated_at=updated_at,
         )
