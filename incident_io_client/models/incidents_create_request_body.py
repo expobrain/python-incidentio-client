@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
@@ -8,6 +8,7 @@ from ..models.custom_field_entry_payload_request_body import (
 from ..models.incidents_create_request_body_visibility import (
     IncidentsCreateRequestBodyVisibility,
 )
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="IncidentsCreateRequestBody")
 
@@ -20,13 +21,18 @@ class IncidentsCreateRequestBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
+            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it'}]}], 'idempotency_key': 'alert-uuid', 'name': 'Our
-            database is sad', 'severity_id': 'Et accusamus.', 'visibility': 'public'}
+            database is sad', 'severity_id': 'Optio qui ea accusamus iure.', 'summary': "Our database is really really sad,
+            and we don't know why yet.", 'visibility': 'public'}
 
     Attributes:
         custom_field_entries (List[CustomFieldEntryPayloadRequestBody]): Set the incident's custom fields to these
@@ -34,13 +40,6 @@ class IncidentsCreateRequestBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]},
@@ -48,18 +47,29 @@ class IncidentsCreateRequestBody:
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}]}].
+            'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
+            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
+            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]}].
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
-        name (str): Explanation of the incident Example: Our database is sad.
-        severity_id (str):  Example: Laborum est necessitatibus eveniet quia aut..
+        severity_id (str):  Example: Et aliquid..
         visibility (IncidentsCreateRequestBodyVisibility): Whether the incident is public or private Example: public.
+        name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
+        summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
+            and we don't know why yet..
     """
 
     custom_field_entries: List[CustomFieldEntryPayloadRequestBody]
     idempotency_key: str
-    name: str
     severity_id: str
     visibility: IncidentsCreateRequestBodyVisibility
+    name: Union[Unset, str] = UNSET
+    summary: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,9 +80,11 @@ class IncidentsCreateRequestBody:
             custom_field_entries.append(custom_field_entries_item)
 
         idempotency_key = self.idempotency_key
-        name = self.name
         severity_id = self.severity_id
         visibility = self.visibility.value
+
+        name = self.name
+        summary = self.summary
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -80,11 +92,14 @@ class IncidentsCreateRequestBody:
             {
                 "custom_field_entries": custom_field_entries,
                 "idempotency_key": idempotency_key,
-                "name": name,
                 "severity_id": severity_id,
                 "visibility": visibility,
             }
         )
+        if name is not UNSET:
+            field_dict["name"] = name
+        if summary is not UNSET:
+            field_dict["summary"] = summary
 
         return field_dict
 
@@ -102,18 +117,21 @@ class IncidentsCreateRequestBody:
 
         idempotency_key = d.pop("idempotency_key")
 
-        name = d.pop("name")
-
         severity_id = d.pop("severity_id")
 
         visibility = IncidentsCreateRequestBodyVisibility(d.pop("visibility"))
 
+        name = d.pop("name", UNSET)
+
+        summary = d.pop("summary", UNSET)
+
         incidents_create_request_body = cls(
             custom_field_entries=custom_field_entries,
             idempotency_key=idempotency_key,
-            name=name,
             severity_id=severity_id,
             visibility=visibility,
+            name=name,
+            summary=summary,
         )
 
         incidents_create_request_body.additional_properties = d
