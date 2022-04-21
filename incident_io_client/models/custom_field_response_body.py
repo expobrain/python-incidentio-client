@@ -8,6 +8,7 @@ from ..models.custom_field_option_response_body import CustomFieldOptionResponse
 from ..models.custom_field_response_body_field_type import (
     CustomFieldResponseBodyFieldType,
 )
+from ..models.custom_field_response_body_required import CustomFieldResponseBodyRequired
 
 T = TypeVar("T", bound="CustomFieldResponseBody")
 
@@ -21,8 +22,9 @@ class CustomFieldResponseBody:
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
             10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}], 'require_before_closure': True, 'require_before_creation': True,
-            'show_before_closure': True, 'show_before_creation': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure':
+            True, 'show_before_creation': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -34,16 +36,14 @@ class CustomFieldResponseBody:
             has options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}].
-        require_before_closure (bool): Whether a custom field should be required in the incident close modal Example:
-            True.
-        require_before_creation (bool): Whether a custom field should be required in the incident creation modal
-            Example: True.
-        show_before_closure (bool): Whether a custom field should be shown in the incident close modal Example: True.
-        show_before_creation (bool): Whether a custom field should be shown in the incident creation modal Example:
-            True.
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
+        required (CustomFieldResponseBodyRequired): When this custom field must be set during the incident lifecycle.
+            Example: never.
+        show_before_closure (bool): Whether a custom field should be shown in the incident close modal. If this custom
+            field is required before closure, but no value has been set for it, the field will be shown in the closure modal
+            whatever the value of this setting. Example: True.
+        show_before_creation (bool): Whether a custom field should be shown in the incident creation modal. This must be
+            true if the field is always required. Example: True.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
     """
 
@@ -53,8 +53,7 @@ class CustomFieldResponseBody:
     id: str
     name: str
     options: List[CustomFieldOptionResponseBody]
-    require_before_closure: bool
-    require_before_creation: bool
+    required: CustomFieldResponseBodyRequired
     show_before_closure: bool
     show_before_creation: bool
     updated_at: datetime.datetime
@@ -74,8 +73,8 @@ class CustomFieldResponseBody:
 
             options.append(options_item)
 
-        require_before_closure = self.require_before_closure
-        require_before_creation = self.require_before_creation
+        required = self.required.value
+
         show_before_closure = self.show_before_closure
         show_before_creation = self.show_before_creation
         updated_at = self.updated_at.isoformat()
@@ -90,8 +89,7 @@ class CustomFieldResponseBody:
                 "id": id,
                 "name": name,
                 "options": options,
-                "require_before_closure": require_before_closure,
-                "require_before_creation": require_before_creation,
+                "required": required,
                 "show_before_closure": show_before_closure,
                 "show_before_creation": show_before_creation,
                 "updated_at": updated_at,
@@ -120,9 +118,7 @@ class CustomFieldResponseBody:
 
             options.append(options_item)
 
-        require_before_closure = d.pop("require_before_closure")
-
-        require_before_creation = d.pop("require_before_creation")
+        required = CustomFieldResponseBodyRequired(d.pop("required"))
 
         show_before_closure = d.pop("show_before_closure")
 
@@ -137,8 +133,7 @@ class CustomFieldResponseBody:
             id=id,
             name=name,
             options=options,
-            require_before_closure=require_before_closure,
-            require_before_creation=require_before_creation,
+            required=required,
             show_before_closure=show_before_closure,
             show_before_creation=show_before_creation,
             updated_at=updated_at,

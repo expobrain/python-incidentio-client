@@ -15,8 +15,9 @@ class CustomFieldsShowResponseBody:
             issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}], 'require_before_closure': True, 'require_before_creation': True,
-            'show_before_closure': True, 'show_before_creation': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
+            10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation':
+            True, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
         custom_field (CustomFieldResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
@@ -25,8 +26,9 @@ class CustomFieldsShowResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}], 'require_before_closure': True, 'require_before_creation': True, 'show_before_closure': True,
-            'show_before_creation': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
+            10, 'value': 'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'updated_at': '2021-08-17T13:28:57.801578Z'}.
     """
 
     custom_field: CustomFieldResponseBody
