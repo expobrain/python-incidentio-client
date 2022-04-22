@@ -16,13 +16,12 @@ def _get_kwargs(
 ) -> Dict[str, Any]:
     url = f"{client.base_url}/v1/severities/{id}"
 
-    headers: Dict[str, str] = client.get_headers()
+    headers: Dict[str, Any] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()
 
     json_json_body = json_body.to_dict()
 
     return {
-        "method": "put",
         "url": url,
         "headers": headers,
         "cookies": cookies,
@@ -73,7 +72,7 @@ def sync_detailed(
         json_body=json_body,
     )
 
-    response = httpx.request(
+    response = httpx.put(
         verify=client.verify_ssl,
         **kwargs,
     )
@@ -133,7 +132,7 @@ async def asyncio_detailed(
     )
 
     async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+        response = await _client.put(**kwargs)
 
     return _build_response(response=response)
 

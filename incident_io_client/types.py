@@ -1,5 +1,14 @@
 """ Contains some shared types for properties """
-from typing import BinaryIO, Generic, MutableMapping, Optional, Tuple, TypeVar
+from typing import (
+    BinaryIO,
+    Generic,
+    MutableMapping,
+    Optional,
+    TextIO,
+    Tuple,
+    TypeVar,
+    Union,
+)
 
 import attr
 
@@ -11,14 +20,14 @@ class Unset:
 
 UNSET: Unset = Unset()
 
-FileJsonType = Tuple[Optional[str], BinaryIO, Optional[str]]
+FileJsonType = Tuple[Optional[str], Union[BinaryIO, TextIO], Optional[str]]
 
 
 @attr.s(auto_attribs=True)
 class File:
     """Contains information for file uploads"""
 
-    payload: BinaryIO
+    payload: Union[BinaryIO, TextIO]
     file_name: Optional[str] = None
     mime_type: Optional[str] = None
 
