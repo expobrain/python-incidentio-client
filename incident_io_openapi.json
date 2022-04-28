@@ -157,27 +157,27 @@
               "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "status": "outstanding",
               "updated_at": "2021-08-17T13:28:57.801578Z"
-            },
-            {
-              "completed_at": "2021-08-17T13:28:57.801578Z",
-              "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "Call the fire brigade",
-              "external_issue_reference": {
-                "issue_name": "INC-123",
-                "issue_permalink": "https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up",
-                "provider": "linear"
-              },
-              "follow_up": true,
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "status": "outstanding",
-              "updated_at": "2021-08-17T13:28:57.801578Z"
             }
           ]
         },
         "properties": {
           "actions": {
             "example": [
+              {
+                "completed_at": "2021-08-17T13:28:57.801578Z",
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "description": "Call the fire brigade",
+                "external_issue_reference": {
+                  "issue_name": "INC-123",
+                  "issue_permalink": "https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up",
+                  "provider": "linear"
+                },
+                "follow_up": true,
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "status": "outstanding",
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              },
               {
                 "completed_at": "2021-08-17T13:28:57.801578Z",
                 "created_at": "2021-08-17T13:28:57.801578Z",
@@ -312,6 +312,13 @@
               "value_numeric": "123.456",
               "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "value_text": "This is my text field, I hope you like it"
+            },
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "value_link": "https://google.com/",
+              "value_numeric": "123.456",
+              "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "value_text": "This is my text field, I hope you like it"
             }
           ]
         },
@@ -409,6 +416,17 @@
                 "value": "Product"
               },
               "value_text": "This is my text field, I hope you like it"
+            },
+            {
+              "value_link": "https://google.com/",
+              "value_numeric": "123.456",
+              "value_option": {
+                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "sort_key": 10,
+                "value": "Product"
+              },
+              "value_text": "This is my text field, I hope you like it"
             }
           ]
         },
@@ -419,6 +437,17 @@
           "values": {
             "description": "List of custom field values set on this entry",
             "example": [
+              {
+                "value_link": "https://google.com/",
+                "value_numeric": "123.456",
+                "value_option": {
+                  "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "sort_key": 10,
+                  "value": "Product"
+                },
+                "value_text": "This is my text field, I hope you like it"
+              },
               {
                 "value_link": "https://google.com/",
                 "value_numeric": "123.456",
@@ -571,24 +600,24 @@
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "sort_key": 10,
               "value": "Product"
-            },
-            {
-              "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "sort_key": 10,
-              "value": "Product"
-            },
-            {
-              "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "sort_key": 10,
-              "value": "Product"
             }
           ]
         },
         "properties": {
           "custom_field_options": {
             "example": [
+              {
+                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "sort_key": 10,
+                "value": "Product"
+              },
+              {
+                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "sort_key": 10,
+                "value": "Product"
+              },
               {
                 "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -705,12 +734,6 @@
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "sort_key": 10,
               "value": "Product"
-            },
-            {
-              "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "sort_key": 10,
-              "value": "Product"
             }
           ],
           "required": "never",
@@ -767,12 +790,6 @@
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "sort_key": 10,
                 "value": "Product"
-              },
-              {
-                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "sort_key": 10,
-                "value": "Product"
               }
             ],
             "items": {
@@ -809,7 +826,6 @@
         },
         "required": [
           "id",
-          "organisation_id",
           "name",
           "description",
           "field_type",
@@ -996,6 +1012,114 @@
         "title": "CustomFieldValueResponseBody",
         "type": "object"
       },
+      "CustomFieldsCreateRequestBody": {
+        "example": {
+          "description": "Which team is impacted by this issue",
+          "field_type": "single_select",
+          "name": "Affected Team",
+          "required": "never",
+          "show_before_closure": true,
+          "show_before_creation": true
+        },
+        "properties": {
+          "description": {
+            "description": "Description of the custom field",
+            "example": "Which team is impacted by this issue",
+            "type": "string"
+          },
+          "field_type": {
+            "description": "Type of custom field",
+            "enum": [
+              "single_select",
+              "multi_select",
+              "text",
+              "link",
+              "numeric"
+            ],
+            "example": "single_select",
+            "type": "string"
+          },
+          "name": {
+            "description": "Human readable name for the custom field",
+            "example": "Affected Team",
+            "maxLength": 50,
+            "type": "string"
+          },
+          "required": {
+            "description": "When this custom field must be set during the incident lifecycle.",
+            "enum": [
+              "never",
+              "before_closure",
+              "always"
+            ],
+            "example": "never",
+            "type": "string"
+          },
+          "show_before_closure": {
+            "description": "Whether a custom field should be shown in the incident close modal. If this custom field is required before closure, but no value has been set for it, the field will be shown in the closure modal whatever the value of this setting.",
+            "example": true,
+            "type": "boolean"
+          },
+          "show_before_creation": {
+            "description": "Whether a custom field should be shown in the incident creation modal. This must be true if the field is always required.",
+            "example": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "field_type",
+          "required",
+          "show_before_creation",
+          "show_before_closure",
+          "options",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CustomFieldsCreateRequestBody",
+        "type": "object"
+      },
+      "CustomFieldsCreateResponseBody": {
+        "example": {
+          "custom_field": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Which team is impacted by this issue",
+            "field_type": "single_select",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Affected Team",
+            "options": [
+              {
+                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "sort_key": 10,
+                "value": "Product"
+              },
+              {
+                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "sort_key": 10,
+                "value": "Product"
+              }
+            ],
+            "required": "never",
+            "show_before_closure": true,
+            "show_before_creation": true,
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "custom_field": {
+            "$ref": "#/components/schemas/CustomFieldResponseBody"
+          }
+        },
+        "required": [
+          "custom_field"
+        ],
+        "title": "CustomFieldsCreateResponseBody",
+        "type": "object"
+      },
       "CustomFieldsListResponseBody": {
         "example": {
           "custom_fields": [
@@ -1017,12 +1141,6 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "sort_key": 10,
                   "value": "Product"
-                },
-                {
-                  "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "sort_key": 10,
-                  "value": "Product"
                 }
               ],
               "required": "never",
@@ -1037,43 +1155,6 @@
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Affected Team",
               "options": [
-                {
-                  "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "sort_key": 10,
-                  "value": "Product"
-                },
-                {
-                  "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "sort_key": 10,
-                  "value": "Product"
-                },
-                {
-                  "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "sort_key": 10,
-                  "value": "Product"
-                }
-              ],
-              "required": "never",
-              "show_before_closure": true,
-              "show_before_creation": true,
-              "updated_at": "2021-08-17T13:28:57.801578Z"
-            },
-            {
-              "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "Which team is impacted by this issue",
-              "field_type": "single_select",
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "name": "Affected Team",
-              "options": [
-                {
-                  "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "sort_key": 10,
-                  "value": "Product"
-                },
                 {
                   "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -1115,12 +1196,6 @@
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "sort_key": 10,
                     "value": "Product"
-                  },
-                  {
-                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "sort_key": 10,
-                    "value": "Product"
                   }
                 ],
                 "required": "never",
@@ -1141,6 +1216,25 @@
                     "sort_key": 10,
                     "value": "Product"
                   },
+                  {
+                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "sort_key": 10,
+                    "value": "Product"
+                  }
+                ],
+                "required": "never",
+                "show_before_closure": true,
+                "show_before_creation": true,
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              },
+              {
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "description": "Which team is impacted by this issue",
+                "field_type": "single_select",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Affected Team",
+                "options": [
                   {
                     "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -1192,6 +1286,94 @@
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "sort_key": 10,
                 "value": "Product"
+              }
+            ],
+            "required": "never",
+            "show_before_closure": true,
+            "show_before_creation": true,
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "custom_field": {
+            "$ref": "#/components/schemas/CustomFieldResponseBody"
+          }
+        },
+        "required": [
+          "custom_field"
+        ],
+        "title": "CustomFieldsShowResponseBody",
+        "type": "object"
+      },
+      "CustomFieldsUpdateRequestBody": {
+        "example": {
+          "description": "Which team is impacted by this issue",
+          "name": "Affected Team",
+          "required": "never",
+          "show_before_closure": true,
+          "show_before_creation": true
+        },
+        "properties": {
+          "description": {
+            "description": "Description of the custom field",
+            "example": "Which team is impacted by this issue",
+            "type": "string"
+          },
+          "name": {
+            "description": "Human readable name for the custom field",
+            "example": "Affected Team",
+            "maxLength": 50,
+            "type": "string"
+          },
+          "required": {
+            "description": "When this custom field must be set during the incident lifecycle.",
+            "enum": [
+              "never",
+              "before_closure",
+              "always"
+            ],
+            "example": "never",
+            "type": "string"
+          },
+          "show_before_closure": {
+            "description": "Whether a custom field should be shown in the incident close modal. If this custom field is required before closure, but no value has been set for it, the field will be shown in the closure modal whatever the value of this setting.",
+            "example": true,
+            "type": "boolean"
+          },
+          "show_before_creation": {
+            "description": "Whether a custom field should be shown in the incident creation modal. This must be true if the field is always required.",
+            "example": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "field_type",
+          "required",
+          "show_before_creation",
+          "show_before_closure",
+          "options",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CustomFieldsUpdateRequestBody",
+        "type": "object"
+      },
+      "CustomFieldsUpdateResponseBody": {
+        "example": {
+          "custom_field": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Which team is impacted by this issue",
+            "field_type": "single_select",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Affected Team",
+            "options": [
+              {
+                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "sort_key": 10,
+                "value": "Product"
               },
               {
                 "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -1214,7 +1396,7 @@
         "required": [
           "custom_field"
         ],
-        "title": "CustomFieldsShowResponseBody",
+        "title": "CustomFieldsUpdateResponseBody",
         "type": "object"
       },
       "ExternalIssueReferenceResponseBody": {
@@ -1320,17 +1502,6 @@
                     "value": "Product"
                   },
                   "value_text": "This is my text field, I hope you like it"
-                },
-                {
-                  "value_link": "https://google.com/",
-                  "value_numeric": "123.456",
-                  "value_option": {
-                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "sort_key": 10,
-                    "value": "Product"
-                  },
-                  "value_text": "This is my text field, I hope you like it"
                 }
               ]
             },
@@ -1373,6 +1544,47 @@
                   },
                   "value_text": "This is my text field, I hope you like it"
                 },
+                {
+                  "value_link": "https://google.com/",
+                  "value_numeric": "123.456",
+                  "value_option": {
+                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "sort_key": 10,
+                    "value": "Product"
+                  },
+                  "value_text": "This is my text field, I hope you like it"
+                }
+              ]
+            },
+            {
+              "custom_field": {
+                "description": "Which team is impacted by this issue",
+                "field_type": "single_select",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Affected Team",
+                "options": [
+                  {
+                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "sort_key": 10,
+                    "value": "Product"
+                  },
+                  {
+                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "sort_key": 10,
+                    "value": "Product"
+                  },
+                  {
+                    "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "sort_key": 10,
+                    "value": "Product"
+                  }
+                ]
+              },
+              "values": [
                 {
                   "value_link": "https://google.com/",
                   "value_numeric": "123.456",
@@ -1474,6 +1686,7 @@
             }
           ],
           "name": "Our database is sad",
+          "permalink": "Alias aut rerum fugiat exercitationem maiores.",
           "postmortem_document_url": "https://docs.google.com/my_doc_id",
           "reference": "INC-123",
           "severity": {
@@ -1577,17 +1790,6 @@
                       "value": "Product"
                     },
                     "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
                   }
                 ]
               },
@@ -1630,6 +1832,47 @@
                     },
                     "value_text": "This is my text field, I hope you like it"
                   },
+                  {
+                    "value_link": "https://google.com/",
+                    "value_numeric": "123.456",
+                    "value_option": {
+                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "sort_key": 10,
+                      "value": "Product"
+                    },
+                    "value_text": "This is my text field, I hope you like it"
+                  }
+                ]
+              },
+              {
+                "custom_field": {
+                  "description": "Which team is impacted by this issue",
+                  "field_type": "single_select",
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "name": "Affected Team",
+                  "options": [
+                    {
+                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "sort_key": 10,
+                      "value": "Product"
+                    },
+                    {
+                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "sort_key": 10,
+                      "value": "Product"
+                    },
+                    {
+                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "sort_key": 10,
+                      "value": "Product"
+                    }
+                  ]
+                },
+                "values": [
                   {
                     "value_link": "https://google.com/",
                     "value_numeric": "123.456",
@@ -1751,6 +1994,10 @@
             "example": "Our database is sad",
             "type": "string"
           },
+          "permalink": {
+            "example": "Officia dolore autem ea et.",
+            "type": "string"
+          },
           "postmortem_document_url": {
             "description": "Description of the incident",
             "example": "https://docs.google.com/my_doc_id",
@@ -1802,6 +2049,14 @@
               {
                 "last_occurred_at": "2021-08-17T13:28:57.801578Z",
                 "name": "last_activity"
+              },
+              {
+                "last_occurred_at": "2021-08-17T13:28:57.801578Z",
+                "name": "last_activity"
+              },
+              {
+                "last_occurred_at": "2021-08-17T13:28:57.801578Z",
+                "name": "last_activity"
               }
             ],
             "items": {
@@ -1836,7 +2091,6 @@
           }
         },
         "required": [
-          "creator",
           "id",
           "external_id",
           "reference",
@@ -1847,7 +2101,7 @@
           "type",
           "reported_at",
           "organisation_id",
-          "reporter",
+          "creator",
           "last_activity_at",
           "severity",
           "incident_role_assignments",
@@ -1864,9 +2118,9 @@
       "IncidentRoleAssignmentPayloadRequestBody": {
         "example": {
           "assignee": {
-            "email": "Ratione libero qui est atque aut aut.",
-            "id": "Ab dolorem consequuntur odio qui.",
-            "slack_user_id": "Voluptas id."
+            "email": "Voluptas id.",
+            "id": "Aut aut.",
+            "slack_user_id": "Aliquid non velit optio qui."
           },
           "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
         },
@@ -2105,34 +2359,12 @@
               "role_type": "lead",
               "shortform": "lead",
               "updated_at": "2021-08-17T13:28:57.801578Z"
-            },
-            {
-              "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "The person currently coordinating the incident",
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
-              "name": "Incident Lead",
-              "required": true,
-              "role_type": "lead",
-              "shortform": "lead",
-              "updated_at": "2021-08-17T13:28:57.801578Z"
             }
           ]
         },
         "properties": {
           "incident_roles": {
             "example": [
-              {
-                "created_at": "2021-08-17T13:28:57.801578Z",
-                "description": "The person currently coordinating the incident",
-                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
-                "name": "Incident Lead",
-                "required": true,
-                "role_type": "lead",
-                "shortform": "lead",
-                "updated_at": "2021-08-17T13:28:57.801578Z"
-              },
               {
                 "created_at": "2021-08-17T13:28:57.801578Z",
                 "description": "The person currently coordinating the incident",
@@ -2320,25 +2552,6 @@
                   "value_numeric": "123.456",
                   "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "value_text": "This is my text field, I hope you like it"
-                }
-              ]
-            },
-            {
-              "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "values": [
-                {
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "value_link": "https://google.com/",
-                  "value_numeric": "123.456",
-                  "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "value_text": "This is my text field, I hope you like it"
-                },
-                {
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "value_link": "https://google.com/",
-                  "value_numeric": "123.456",
-                  "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "value_text": "This is my text field, I hope you like it"
                 },
                 {
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -2372,12 +2585,26 @@
                   "value_numeric": "123.456",
                   "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "value_text": "This is my text field, I hope you like it"
+                },
+                {
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "value_link": "https://google.com/",
+                  "value_numeric": "123.456",
+                  "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "value_text": "This is my text field, I hope you like it"
                 }
               ]
             },
             {
               "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "values": [
+                {
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "value_link": "https://google.com/",
+                  "value_numeric": "123.456",
+                  "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "value_text": "This is my text field, I hope you like it"
+                },
                 {
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "value_link": "https://google.com/",
@@ -2406,31 +2633,31 @@
           "incident_role_assignments": [
             {
               "assignee": {
-                "email": "Ratione libero qui est atque aut aut.",
-                "id": "Ab dolorem consequuntur odio qui.",
-                "slack_user_id": "Voluptas id."
+                "email": "Voluptas id.",
+                "id": "Aut aut.",
+                "slack_user_id": "Aliquid non velit optio qui."
               },
               "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
             },
             {
               "assignee": {
-                "email": "Ratione libero qui est atque aut aut.",
-                "id": "Ab dolorem consequuntur odio qui.",
-                "slack_user_id": "Voluptas id."
+                "email": "Voluptas id.",
+                "id": "Aut aut.",
+                "slack_user_id": "Aliquid non velit optio qui."
               },
               "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
             },
             {
               "assignee": {
-                "email": "Ratione libero qui est atque aut aut.",
-                "id": "Ab dolorem consequuntur odio qui.",
-                "slack_user_id": "Voluptas id."
+                "email": "Voluptas id.",
+                "id": "Aut aut.",
+                "slack_user_id": "Aliquid non velit optio qui."
               },
               "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
             }
           ],
           "name": "Our database is sad",
-          "severity_id": "Voluptas excepturi eius tempora sapiente id.",
+          "severity_id": "Eius ut consequuntur fuga atque dignissimos accusamus.",
           "summary": "Our database is really really sad, and we don't know why yet.",
           "visibility": "public"
         },
@@ -2461,25 +2688,6 @@
                     "value_numeric": "123.456",
                     "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "value_text": "This is my text field, I hope you like it"
-                  }
-                ]
-              },
-              {
-                "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "values": [
-                  {
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "value_text": "This is my text field, I hope you like it"
                   },
                   {
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -2513,12 +2721,26 @@
                     "value_numeric": "123.456",
                     "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "value_text": "This is my text field, I hope you like it"
+                  },
+                  {
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "value_link": "https://google.com/",
+                    "value_numeric": "123.456",
+                    "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "value_text": "This is my text field, I hope you like it"
                   }
                 ]
               },
               {
                 "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "values": [
+                  {
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "value_link": "https://google.com/",
+                    "value_numeric": "123.456",
+                    "value_option_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "value_text": "This is my text field, I hope you like it"
+                  },
                   {
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "value_link": "https://google.com/",
@@ -2558,25 +2780,17 @@
             "example": [
               {
                 "assignee": {
-                  "email": "Ratione libero qui est atque aut aut.",
-                  "id": "Ab dolorem consequuntur odio qui.",
-                  "slack_user_id": "Voluptas id."
+                  "email": "Voluptas id.",
+                  "id": "Aut aut.",
+                  "slack_user_id": "Aliquid non velit optio qui."
                 },
                 "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
               },
               {
                 "assignee": {
-                  "email": "Ratione libero qui est atque aut aut.",
-                  "id": "Ab dolorem consequuntur odio qui.",
-                  "slack_user_id": "Voluptas id."
-                },
-                "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
-              },
-              {
-                "assignee": {
-                  "email": "Ratione libero qui est atque aut aut.",
-                  "id": "Ab dolorem consequuntur odio qui.",
-                  "slack_user_id": "Voluptas id."
+                  "email": "Voluptas id.",
+                  "id": "Aut aut.",
+                  "slack_user_id": "Aliquid non velit optio qui."
                 },
                 "incident_role_id": "01FH5TZRWMNAFB0DZ23FD1TV96"
               }
@@ -2592,7 +2806,7 @@
             "type": "string"
           },
           "severity_id": {
-            "example": "Ut voluptates quo.",
+            "example": "Qui alias reiciendis.",
             "type": "string"
           },
           "summary": {
@@ -2684,17 +2898,6 @@
                       "value": "Product"
                     },
                     "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
                   }
                 ]
               },
@@ -2747,17 +2950,6 @@
                       "value": "Product"
                     },
                     "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
                   }
                 ]
               },
@@ -2789,80 +2981,6 @@
                   ]
                 },
                 "values": [
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  }
-                ]
-              },
-              {
-                "custom_field": {
-                  "description": "Which team is impacted by this issue",
-                  "field_type": "single_select",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "name": "Affected Team",
-                  "options": [
-                    {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    }
-                  ]
-                },
-                "values": [
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  },
                   {
                     "value_link": "https://google.com/",
                     "value_numeric": "123.456",
@@ -2925,9 +3043,28 @@
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
                 }
+              },
+              {
+                "assignee": {
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "name": "Lisa Karlin Curtis",
+                  "role": "viewer"
+                },
+                "role": {
+                  "created_at": "2021-08-17T13:28:57.801578Z",
+                  "description": "The person currently coordinating the incident",
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                  "name": "Incident Lead",
+                  "required": true,
+                  "role_type": "lead",
+                  "shortform": "lead",
+                  "updated_at": "2021-08-17T13:28:57.801578Z"
+                }
               }
             ],
             "name": "Our database is sad",
+            "permalink": "Consequuntur odio qui dolor.",
             "postmortem_document_url": "https://docs.google.com/my_doc_id",
             "reference": "INC-123",
             "severity": {
@@ -3043,17 +3180,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -3106,17 +3232,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -3148,80 +3263,6 @@
                     ]
                   },
                   "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    }
-                  ]
-                },
-                {
-                  "custom_field": {
-                    "description": "Which team is impacted by this issue",
-                    "field_type": "single_select",
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "name": "Affected Team",
-                    "options": [
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      }
-                    ]
-                  },
-                  "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
                     {
                       "value_link": "https://google.com/",
                       "value_numeric": "123.456",
@@ -3284,9 +3325,28 @@
                     "shortform": "lead",
                     "updated_at": "2021-08-17T13:28:57.801578Z"
                   }
+                },
+                {
+                  "assignee": {
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "name": "Lisa Karlin Curtis",
+                    "role": "viewer"
+                  },
+                  "role": {
+                    "created_at": "2021-08-17T13:28:57.801578Z",
+                    "description": "The person currently coordinating the incident",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                    "name": "Incident Lead",
+                    "required": true,
+                    "role_type": "lead",
+                    "shortform": "lead",
+                    "updated_at": "2021-08-17T13:28:57.801578Z"
+                  }
                 }
               ],
               "name": "Our database is sad",
+              "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
               "reference": "INC-123",
               "severity": {
@@ -3387,17 +3447,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -3450,17 +3499,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -3492,80 +3530,6 @@
                     ]
                   },
                   "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    }
-                  ]
-                },
-                {
-                  "custom_field": {
-                    "description": "Which team is impacted by this issue",
-                    "field_type": "single_select",
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "name": "Affected Team",
-                    "options": [
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      }
-                    ]
-                  },
-                  "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
                     {
                       "value_link": "https://google.com/",
                       "value_numeric": "123.456",
@@ -3628,9 +3592,28 @@
                     "shortform": "lead",
                     "updated_at": "2021-08-17T13:28:57.801578Z"
                   }
+                },
+                {
+                  "assignee": {
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "name": "Lisa Karlin Curtis",
+                    "role": "viewer"
+                  },
+                  "role": {
+                    "created_at": "2021-08-17T13:28:57.801578Z",
+                    "description": "The person currently coordinating the incident",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                    "name": "Incident Lead",
+                    "required": true,
+                    "role_type": "lead",
+                    "shortform": "lead",
+                    "updated_at": "2021-08-17T13:28:57.801578Z"
+                  }
                 }
               ],
               "name": "Our database is sad",
+              "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
               "reference": "INC-123",
               "severity": {
@@ -3731,17 +3714,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -3794,17 +3766,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -3836,80 +3797,6 @@
                     ]
                   },
                   "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    }
-                  ]
-                },
-                {
-                  "custom_field": {
-                    "description": "Which team is impacted by this issue",
-                    "field_type": "single_select",
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "name": "Affected Team",
-                    "options": [
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      }
-                    ]
-                  },
-                  "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
                     {
                       "value_link": "https://google.com/",
                       "value_numeric": "123.456",
@@ -3972,9 +3859,28 @@
                     "shortform": "lead",
                     "updated_at": "2021-08-17T13:28:57.801578Z"
                   }
+                },
+                {
+                  "assignee": {
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "name": "Lisa Karlin Curtis",
+                    "role": "viewer"
+                  },
+                  "role": {
+                    "created_at": "2021-08-17T13:28:57.801578Z",
+                    "description": "The person currently coordinating the incident",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                    "name": "Incident Lead",
+                    "required": true,
+                    "role_type": "lead",
+                    "shortform": "lead",
+                    "updated_at": "2021-08-17T13:28:57.801578Z"
+                  }
                 }
               ],
               "name": "Our database is sad",
+              "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
               "reference": "INC-123",
               "severity": {
@@ -4075,17 +3981,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -4138,17 +4033,6 @@
                         "value": "Product"
                       },
                       "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
                     }
                   ]
                 },
@@ -4180,80 +4064,6 @@
                     ]
                   },
                   "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    }
-                  ]
-                },
-                {
-                  "custom_field": {
-                    "description": "Which team is impacted by this issue",
-                    "field_type": "single_select",
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "name": "Affected Team",
-                    "options": [
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      }
-                    ]
-                  },
-                  "values": [
-                    {
-                      "value_link": "https://google.com/",
-                      "value_numeric": "123.456",
-                      "value_option": {
-                        "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                        "sort_key": 10,
-                        "value": "Product"
-                      },
-                      "value_text": "This is my text field, I hope you like it"
-                    },
                     {
                       "value_link": "https://google.com/",
                       "value_numeric": "123.456",
@@ -4316,9 +4126,28 @@
                     "shortform": "lead",
                     "updated_at": "2021-08-17T13:28:57.801578Z"
                   }
+                },
+                {
+                  "assignee": {
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "name": "Lisa Karlin Curtis",
+                    "role": "viewer"
+                  },
+                  "role": {
+                    "created_at": "2021-08-17T13:28:57.801578Z",
+                    "description": "The person currently coordinating the incident",
+                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                    "name": "Incident Lead",
+                    "required": true,
+                    "role_type": "lead",
+                    "shortform": "lead",
+                    "updated_at": "2021-08-17T13:28:57.801578Z"
+                  }
                 }
               ],
               "name": "Our database is sad",
+              "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
               "reference": "INC-123",
               "severity": {
@@ -4429,17 +4258,6 @@
                           "value": "Product"
                         },
                         "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
                       }
                     ]
                   },
@@ -4492,17 +4310,6 @@
                           "value": "Product"
                         },
                         "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
                       }
                     ]
                   },
@@ -4534,80 +4341,6 @@
                       ]
                     },
                     "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  },
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
                       {
                         "value_link": "https://google.com/",
                         "value_numeric": "123.456",
@@ -4670,9 +4403,28 @@
                       "shortform": "lead",
                       "updated_at": "2021-08-17T13:28:57.801578Z"
                     }
+                  },
+                  {
+                    "assignee": {
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "name": "Lisa Karlin Curtis",
+                      "role": "viewer"
+                    },
+                    "role": {
+                      "created_at": "2021-08-17T13:28:57.801578Z",
+                      "description": "The person currently coordinating the incident",
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                      "name": "Incident Lead",
+                      "required": true,
+                      "role_type": "lead",
+                      "shortform": "lead",
+                      "updated_at": "2021-08-17T13:28:57.801578Z"
+                    }
                   }
                 ],
                 "name": "Our database is sad",
+                "permalink": "Consequuntur odio qui dolor.",
                 "postmortem_document_url": "https://docs.google.com/my_doc_id",
                 "reference": "INC-123",
                 "severity": {
@@ -4773,17 +4525,6 @@
                           "value": "Product"
                         },
                         "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
                       }
                     ]
                   },
@@ -4836,17 +4577,6 @@
                           "value": "Product"
                         },
                         "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
                       }
                     ]
                   },
@@ -4878,80 +4608,6 @@
                       ]
                     },
                     "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  },
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
                       {
                         "value_link": "https://google.com/",
                         "value_numeric": "123.456",
@@ -5014,9 +4670,28 @@
                       "shortform": "lead",
                       "updated_at": "2021-08-17T13:28:57.801578Z"
                     }
+                  },
+                  {
+                    "assignee": {
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "name": "Lisa Karlin Curtis",
+                      "role": "viewer"
+                    },
+                    "role": {
+                      "created_at": "2021-08-17T13:28:57.801578Z",
+                      "description": "The person currently coordinating the incident",
+                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                      "name": "Incident Lead",
+                      "required": true,
+                      "role_type": "lead",
+                      "shortform": "lead",
+                      "updated_at": "2021-08-17T13:28:57.801578Z"
+                    }
                   }
                 ],
                 "name": "Our database is sad",
+                "permalink": "Consequuntur odio qui dolor.",
                 "postmortem_document_url": "https://docs.google.com/my_doc_id",
                 "reference": "INC-123",
                 "severity": {
@@ -5117,17 +4792,6 @@
                           "value": "Product"
                         },
                         "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
                       }
                     ]
                   },
@@ -5180,17 +4844,6 @@
                           "value": "Product"
                         },
                         "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
                       }
                     ]
                   },
@@ -5222,80 +4875,6 @@
                       ]
                     },
                     "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  },
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
                       {
                         "value_link": "https://google.com/",
                         "value_numeric": "123.456",
@@ -5358,332 +4937,6 @@
                       "shortform": "lead",
                       "updated_at": "2021-08-17T13:28:57.801578Z"
                     }
-                  }
-                ],
-                "name": "Our database is sad",
-                "postmortem_document_url": "https://docs.google.com/my_doc_id",
-                "reference": "INC-123",
-                "severity": {
-                  "created_at": "2021-08-17T13:28:57.801578Z",
-                  "description": "It's not really that bad, everyone chill",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "name": "Minor",
-                  "rank": 1,
-                  "updated_at": "2021-08-17T13:28:57.801578Z"
-                },
-                "slack_channel_id": "C02AW36C1M5",
-                "slack_channel_name": "inc-165-green-parrot",
-                "status": "triage",
-                "summary": "Our database is really really sad, and we don't know why yet.",
-                "timestamps": [
-                  {
-                    "last_occurred_at": "2021-08-17T13:28:57.801578Z",
-                    "name": "last_activity"
-                  },
-                  {
-                    "last_occurred_at": "2021-08-17T13:28:57.801578Z",
-                    "name": "last_activity"
-                  },
-                  {
-                    "last_occurred_at": "2021-08-17T13:28:57.801578Z",
-                    "name": "last_activity"
-                  },
-                  {
-                    "last_occurred_at": "2021-08-17T13:28:57.801578Z",
-                    "name": "last_activity"
-                  }
-                ],
-                "type": "real",
-                "updated_at": "2021-08-17T13:28:57.801578Z",
-                "visibility": "public"
-              },
-              {
-                "call_url": "https://zoom.us/foo",
-                "created_at": "2021-08-17T13:28:57.801578Z",
-                "creator": {
-                  "api_key": {
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "name": "My test API key"
-                  },
-                  "user": {
-                    "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                    "name": "Lisa Karlin Curtis",
-                    "role": "viewer"
-                  }
-                },
-                "custom_field_entries": [
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  },
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  },
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  },
-                  {
-                    "custom_field": {
-                      "description": "Which team is impacted by this issue",
-                      "field_type": "single_select",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Affected Team",
-                      "options": [
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        }
-                      ]
-                    },
-                    "values": [
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      },
-                      {
-                        "value_link": "https://google.com/",
-                        "value_numeric": "123.456",
-                        "value_option": {
-                          "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                          "sort_key": 10,
-                          "value": "Product"
-                        },
-                        "value_text": "This is my text field, I hope you like it"
-                      }
-                    ]
-                  }
-                ],
-                "id": "01FDAG4SAP5TYPT98WGR2N7W91",
-                "incident_role_assignments": [
-                  {
-                    "assignee": {
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "name": "Lisa Karlin Curtis",
-                      "role": "viewer"
-                    },
-                    "role": {
-                      "created_at": "2021-08-17T13:28:57.801578Z",
-                      "description": "The person currently coordinating the incident",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
-                      "name": "Incident Lead",
-                      "required": true,
-                      "role_type": "lead",
-                      "shortform": "lead",
-                      "updated_at": "2021-08-17T13:28:57.801578Z"
-                    }
                   },
                   {
                     "assignee": {
@@ -5705,6 +4958,7 @@
                   }
                 ],
                 "name": "Our database is sad",
+                "permalink": "Consequuntur odio qui dolor.",
                 "postmortem_document_url": "https://docs.google.com/my_doc_id",
                 "reference": "INC-123",
                 "severity": {
@@ -5823,17 +5077,6 @@
                       "value": "Product"
                     },
                     "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
                   }
                 ]
               },
@@ -5886,17 +5129,6 @@
                       "value": "Product"
                     },
                     "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
                   }
                 ]
               },
@@ -5928,80 +5160,6 @@
                   ]
                 },
                 "values": [
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  },
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  }
-                ]
-              },
-              {
-                "custom_field": {
-                  "description": "Which team is impacted by this issue",
-                  "field_type": "single_select",
-                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                  "name": "Affected Team",
-                  "options": [
-                    {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    }
-                  ]
-                },
-                "values": [
-                  {
-                    "value_link": "https://google.com/",
-                    "value_numeric": "123.456",
-                    "value_option": {
-                      "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                      "sort_key": 10,
-                      "value": "Product"
-                    },
-                    "value_text": "This is my text field, I hope you like it"
-                  },
                   {
                     "value_link": "https://google.com/",
                     "value_numeric": "123.456",
@@ -6064,9 +5222,28 @@
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
                 }
+              },
+              {
+                "assignee": {
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "name": "Lisa Karlin Curtis",
+                  "role": "viewer"
+                },
+                "role": {
+                  "created_at": "2021-08-17T13:28:57.801578Z",
+                  "description": "The person currently coordinating the incident",
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
+                  "name": "Incident Lead",
+                  "required": true,
+                  "role_type": "lead",
+                  "shortform": "lead",
+                  "updated_at": "2021-08-17T13:28:57.801578Z"
+                }
               }
             ],
             "name": "Our database is sad",
+            "permalink": "Consequuntur odio qui dolor.",
             "postmortem_document_url": "https://docs.google.com/my_doc_id",
             "reference": "INC-123",
             "severity": {
@@ -6220,12 +5397,28 @@
               "name": "Minor",
               "rank": 1,
               "updated_at": "2021-08-17T13:28:57.801578Z"
+            },
+            {
+              "created_at": "2021-08-17T13:28:57.801578Z",
+              "description": "It's not really that bad, everyone chill",
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Minor",
+              "rank": 1,
+              "updated_at": "2021-08-17T13:28:57.801578Z"
             }
           ]
         },
         "properties": {
           "severities": {
             "example": [
+              {
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "description": "It's not really that bad, everyone chill",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Minor",
+                "rank": 1,
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              },
               {
                 "created_at": "2021-08-17T13:28:57.801578Z",
                 "description": "It's not really that bad, everyone chill",
@@ -6399,24 +5592,24 @@
       },
       "UserReferencePayloadRequestBody": {
         "example": {
-          "email": "Qui quo deserunt id.",
-          "id": "Omnis ut.",
-          "slack_user_id": "Adipisci commodi omnis consequatur."
+          "email": "Voluptas excepturi eius tempora sapiente id.",
+          "id": "Quo eveniet molestias.",
+          "slack_user_id": "Aut quis repellat a delectus et deserunt."
         },
         "properties": {
           "email": {
             "description": "The user's email address, matching the email on their Slack account",
-            "example": "Alias aut rerum fugiat exercitationem maiores.",
+            "example": "Quo deserunt id quam adipisci.",
             "type": "string"
           },
           "id": {
             "description": "The incident.io ID of a user",
-            "example": "Dolore autem ea et voluptatem minus aut.",
+            "example": "A voluptatem et omnis ut distinctio.",
             "type": "string"
           },
           "slack_user_id": {
             "description": "The ID of the user's Slack account.",
-            "example": "Quasi beatae quisquam aut doloremque a voluptatem.",
+            "example": "Omnis consequatur consequatur et ut.",
             "type": "string"
           }
         },
@@ -6887,9 +6080,93 @@
         "tags": [
           "Custom Fields"
         ]
+      },
+      "post": {
+        "description": "Create a new custom field",
+        "operationId": "Custom Fields#Create",
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomFieldsCreateRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomFieldsCreateRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomFieldsCreateRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomFieldsCreateResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomFieldsCreateResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomFieldsCreateResponseBody"
+                }
+              }
+            },
+            "description": "Created response."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.incident.io"
+          }
+        ],
+        "summary": "Create Custom Fields",
+        "tags": [
+          "Custom Fields"
+        ]
       }
     },
     "/v1/custom_fields/{id}": {
+      "delete": {
+        "description": "Delete a custom field",
+        "operationId": "Custom Fields#Delete",
+        "parameters": [
+          {
+            "description": "Unique identifier for the custom field",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content response."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.incident.io"
+          }
+        ],
+        "summary": "Delete Custom Fields",
+        "tags": [
+          "Custom Fields"
+        ]
+      },
       "get": {
         "description": "Get a single custom field.",
         "operationId": "Custom Fields#Show",
@@ -6932,6 +6209,72 @@
           }
         ],
         "summary": "Show Custom Fields",
+        "tags": [
+          "Custom Fields"
+        ]
+      },
+      "put": {
+        "description": "Update the details of a custom field",
+        "operationId": "Custom Fields#Update",
+        "parameters": [
+          {
+            "description": "Unique identifier for the custom field",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomFieldsUpdateRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomFieldsUpdateRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomFieldsUpdateRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomFieldsUpdateResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomFieldsUpdateResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomFieldsUpdateResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "servers": [
+          {
+            "url": "https://api.incident.io"
+          }
+        ],
+        "summary": "Update Custom Fields",
         "tags": [
           "Custom Fields"
         ]

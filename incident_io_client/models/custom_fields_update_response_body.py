@@ -4,11 +4,11 @@ import attr
 
 from ..models.custom_field_response_body import CustomFieldResponseBody
 
-T = TypeVar("T", bound="CustomFieldsShowResponseBody")
+T = TypeVar("T", bound="CustomFieldsUpdateResponseBody")
 
 
 @attr.s(auto_attribs=True)
-class CustomFieldsShowResponseBody:
+class CustomFieldsUpdateResponseBody:
     """
     Example:
         {'custom_field': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this
@@ -50,12 +50,12 @@ class CustomFieldsShowResponseBody:
         d = src_dict.copy()
         custom_field = CustomFieldResponseBody.from_dict(d.pop("custom_field"))
 
-        custom_fields_show_response_body = cls(
+        custom_fields_update_response_body = cls(
             custom_field=custom_field,
         )
 
-        custom_fields_show_response_body.additional_properties = d
-        return custom_fields_show_response_body
+        custom_fields_update_response_body.additional_properties = d
+        return custom_fields_update_response_body
 
     @property
     def additional_keys(self) -> List[str]:

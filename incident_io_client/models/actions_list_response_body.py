@@ -24,11 +24,7 @@ class ActionsListResponseBody:
             'Call the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
             'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'linear'}, 'follow_up':
             True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, {'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
-            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'linear'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
+            'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
         actions (List[ActionResponseBody]):  Example: [{'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
@@ -44,7 +40,12 @@ class ActionsListResponseBody:
             '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
             {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
             write-up', 'provider': 'linear'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            {'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
+            'Call the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
+            'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'linear'}, 'follow_up':
+            True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
     actions: List[ActionResponseBody]
