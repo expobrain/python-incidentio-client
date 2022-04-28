@@ -2225,7 +2225,8 @@
             "description": "Type of incident role",
             "enum": [
               "lead",
-              "custom"
+              "custom",
+              "reporter"
             ],
             "example": "lead",
             "type": "string"
