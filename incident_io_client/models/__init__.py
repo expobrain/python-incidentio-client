@@ -32,8 +32,21 @@ from .custom_field_type_info_response_body_field_type import (
 )
 from .custom_field_value_payload_request_body import CustomFieldValuePayloadRequestBody
 from .custom_field_value_response_body import CustomFieldValueResponseBody
+from .custom_fields_create_request_body import CustomFieldsCreateRequestBody
+from .custom_fields_create_request_body_field_type import (
+    CustomFieldsCreateRequestBodyFieldType,
+)
+from .custom_fields_create_request_body_required import (
+    CustomFieldsCreateRequestBodyRequired,
+)
+from .custom_fields_create_response_body import CustomFieldsCreateResponseBody
 from .custom_fields_list_response_body import CustomFieldsListResponseBody
 from .custom_fields_show_response_body import CustomFieldsShowResponseBody
+from .custom_fields_update_request_body import CustomFieldsUpdateRequestBody
+from .custom_fields_update_request_body_required import (
+    CustomFieldsUpdateRequestBodyRequired,
+)
+from .custom_fields_update_response_body import CustomFieldsUpdateResponseBody
 from .external_issue_reference_response_body import ExternalIssueReferenceResponseBody
 from .external_issue_reference_response_body_provider import (
     ExternalIssueReferenceResponseBodyProvider,

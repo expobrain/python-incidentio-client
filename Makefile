@@ -5,7 +5,13 @@ download:
   		https://api.incident.io/v1/openapi.json \
 		| jq -S . > incident_io_openapi.json
 
-generate:
+patch:
+	jsonpatch \
+		incident_io_openapi.original.json \
+		incident_io_openapi.patch.json \
+	| jq -S . > incident_io_openapi.json
+
+generate: patch
 	rm -rf incident_io_client
 
 	# Version 0.10.8 generates the client in the wrong directory, thsi is fixed in 0.11
