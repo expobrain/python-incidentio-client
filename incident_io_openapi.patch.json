@@ -1,0 +1,7 @@
+[
+  {
+    "op": "add",
+    "path": "/components/schemas/IncidentRoleResponseBody/properties/role_type/enum/-",
+    "value": "reporter"
+  }
+]

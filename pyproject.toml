@@ -38,6 +38,7 @@ types-python-dateutil = "^2.8.11"
 pyupgrade = "^2.30.1"
 openapi-python-client = "^0.10.8"
 types-certifi = "^2021.10.8"
+jsonpatch = "^1.32"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
