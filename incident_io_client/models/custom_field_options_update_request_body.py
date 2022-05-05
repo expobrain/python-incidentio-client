@@ -12,12 +12,12 @@ class CustomFieldOptionsUpdateRequestBody:
         {'sort_key': 10, 'value': 'Product'}
 
     Attributes:
-        sort_key (int): Sort key used to order the custom field options correctly Example: 10.
+        sort_key (int): Sort key used to order the custom field options correctly Default: 1000. Example: 10.
         value (str): Human readable name for the custom field option Example: Product.
     """
 
-    sort_key: int
     value: str
+    sort_key: int = 1000
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:

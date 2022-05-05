@@ -57,7 +57,8 @@ def sync_detailed(
 ) -> Response[CustomFieldOptionsCreateResponseBody]:
     """Create Custom Field Options
 
-     Create a custom field option
+     Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
+    appears near the end of the list.
 
     Args:
         json_body (CustomFieldOptionsCreateRequestBody):  Example: {'custom_field_id':
@@ -87,7 +88,8 @@ def sync(
 ) -> Optional[CustomFieldOptionsCreateResponseBody]:
     """Create Custom Field Options
 
-     Create a custom field option
+     Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
+    appears near the end of the list.
 
     Args:
         json_body (CustomFieldOptionsCreateRequestBody):  Example: {'custom_field_id':
@@ -110,7 +112,8 @@ async def asyncio_detailed(
 ) -> Response[CustomFieldOptionsCreateResponseBody]:
     """Create Custom Field Options
 
-     Create a custom field option
+     Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
+    appears near the end of the list.
 
     Args:
         json_body (CustomFieldOptionsCreateRequestBody):  Example: {'custom_field_id':
@@ -138,7 +141,8 @@ async def asyncio(
 ) -> Optional[CustomFieldOptionsCreateResponseBody]:
     """Create Custom Field Options
 
-     Create a custom field option
+     Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
+    appears near the end of the list.
 
     Args:
         json_body (CustomFieldOptionsCreateRequestBody):  Example: {'custom_field_id':

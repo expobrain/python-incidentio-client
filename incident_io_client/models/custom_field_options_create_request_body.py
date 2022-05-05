@@ -1,6 +1,8 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="CustomFieldOptionsCreateRequestBody")
 
@@ -13,29 +15,31 @@ class CustomFieldOptionsCreateRequestBody:
 
     Attributes:
         custom_field_id (str): ID of the custom field this option belongs to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        sort_key (int): Sort key used to order the custom field options correctly Example: 10.
         value (str): Human readable name for the custom field option Example: Product.
+        sort_key (Union[Unset, int]): Sort key used to order the custom field options correctly Default: 1000. Example:
+            10.
     """
 
     custom_field_id: str
-    sort_key: int
     value: str
+    sort_key: Union[Unset, int] = 1000
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         custom_field_id = self.custom_field_id
-        sort_key = self.sort_key
         value = self.value
+        sort_key = self.sort_key
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "custom_field_id": custom_field_id,
-                "sort_key": sort_key,
                 "value": value,
             }
         )
+        if sort_key is not UNSET:
+            field_dict["sort_key"] = sort_key
 
         return field_dict
 
@@ -44,14 +48,14 @@ class CustomFieldOptionsCreateRequestBody:
         d = src_dict.copy()
         custom_field_id = d.pop("custom_field_id")
 
-        sort_key = d.pop("sort_key")
-
         value = d.pop("value")
+
+        sort_key = d.pop("sort_key", UNSET)
 
         custom_field_options_create_request_body = cls(
             custom_field_id=custom_field_id,
-            sort_key=sort_key,
             value=value,
+            sort_key=sort_key,
         )
 
         custom_field_options_create_request_body.additional_properties = d

@@ -13,14 +13,14 @@ T = TypeVar("T", bound="ActorResponseBody")
 class ActorResponseBody:
     """
     Example:
-        {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}
+        {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email':
+            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}}
 
     Attributes:
         api_key (Union[Unset, APIKeyResponseBody]):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}.
-        user (Union[Unset, UserResponseBody]):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin
-            Curtis', 'role': 'viewer'}.
+        user (Union[Unset, UserResponseBody]):  Example: {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}.
     """
 
     api_key: Union[Unset, APIKeyResponseBody] = UNSET

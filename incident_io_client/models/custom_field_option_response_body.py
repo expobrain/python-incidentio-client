@@ -15,14 +15,14 @@ class CustomFieldOptionResponseBody:
     Attributes:
         custom_field_id (str): ID of the custom field this option belongs to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         id (str): Unique identifier for the custom field option Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        sort_key (int): Sort key used to order the custom field options correctly Example: 10.
+        sort_key (int): Sort key used to order the custom field options correctly Default: 1000. Example: 10.
         value (str): Human readable name for the custom field option Example: Product.
     """
 
     custom_field_id: str
     id: str
-    sort_key: int
     value: str
+    sort_key: int = 1000
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
