@@ -272,6 +272,7 @@
             "name": "My test API key"
           },
           "user": {
+            "email": "lisa@incident.io",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Lisa Karlin Curtis",
             "role": "viewer"
@@ -514,6 +515,7 @@
             "type": "string"
           },
           "sort_key": {
+            "default": 1000,
             "description": "Sort key used to order the custom field options correctly",
             "example": 10,
             "format": "int64",
@@ -547,6 +549,7 @@
             "type": "string"
           },
           "sort_key": {
+            "default": 1000,
             "description": "Sort key used to order the custom field options correctly",
             "example": 10,
             "format": "int64",
@@ -560,8 +563,7 @@
         },
         "required": [
           "custom_field_id",
-          "value",
-          "sort_key"
+          "value"
         ],
         "title": "CustomFieldOptionsCreateRequestBody",
         "type": "object"
@@ -670,6 +672,7 @@
         },
         "properties": {
           "sort_key": {
+            "default": 1000,
             "description": "Sort key used to order the custom field options correctly",
             "example": 10,
             "format": "int64",
@@ -1447,6 +1450,7 @@
               "name": "My test API key"
             },
             "user": {
+              "email": "lisa@incident.io",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Lisa Karlin Curtis",
               "role": "viewer"
@@ -1614,6 +1618,7 @@
           "incident_role_assignments": [
             {
               "assignee": {
+                "email": "lisa@incident.io",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Lisa Karlin Curtis",
                 "role": "viewer"
@@ -1632,6 +1637,7 @@
             },
             {
               "assignee": {
+                "email": "lisa@incident.io",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Lisa Karlin Curtis",
                 "role": "viewer"
@@ -1650,6 +1656,7 @@
             },
             {
               "assignee": {
+                "email": "lisa@incident.io",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Lisa Karlin Curtis",
                 "role": "viewer"
@@ -1668,6 +1675,7 @@
             },
             {
               "assignee": {
+                "email": "lisa@incident.io",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Lisa Karlin Curtis",
                 "role": "viewer"
@@ -1685,6 +1693,7 @@
               }
             }
           ],
+          "mode": "real",
           "name": "Our database is sad",
           "permalink": "Alias aut rerum fugiat exercitationem maiores.",
           "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -1913,6 +1922,7 @@
             "example": [
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -1931,6 +1941,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -1949,6 +1960,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -1967,6 +1979,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -1988,6 +2001,16 @@
               "$ref": "#/components/schemas/IncidentRoleAssignmentResponseBody"
             },
             "type": "array"
+          },
+          "mode": {
+            "description": "Whether the incident is real, a test, or a tutorial",
+            "enum": [
+              "real",
+              "test",
+              "tutorial"
+            ],
+            "example": "real",
+            "type": "string"
           },
           "name": {
             "description": "Explanation of the incident",
@@ -2065,7 +2088,7 @@
             "type": "array"
           },
           "type": {
-            "description": "Whether the incident is real, a test, or a tutorial",
+            "description": "DEPRECATED: please use mode instead. Whether the incident is real, a test, or a tutorial",
             "enum": [
               "real",
               "test",
@@ -2099,6 +2122,7 @@
           "idempotency_key",
           "visibility",
           "type",
+          "mode",
           "reported_at",
           "organisation_id",
           "creator",
@@ -2144,6 +2168,7 @@
       "IncidentRoleAssignmentResponseBody": {
         "example": {
           "assignee": {
+            "email": "lisa@incident.io",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Lisa Karlin Curtis",
             "role": "viewer"
@@ -2225,8 +2250,8 @@
             "description": "Type of incident role",
             "enum": [
               "lead",
-              "custom",
-              "reporter"
+              "reporter",
+              "custom"
             ],
             "example": "lead",
             "type": "string"
@@ -2844,6 +2869,7 @@
                 "name": "My test API key"
               },
               "user": {
+                "email": "lisa@incident.io",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Lisa Karlin Curtis",
                 "role": "viewer"
@@ -3011,6 +3037,7 @@
             "incident_role_assignments": [
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -3029,6 +3056,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -3047,6 +3075,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -3064,6 +3093,7 @@
                 }
               }
             ],
+            "mode": "real",
             "name": "Our database is sad",
             "permalink": "Consequuntur odio qui dolor.",
             "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -3126,6 +3156,7 @@
                   "name": "My test API key"
                 },
                 "user": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -3293,6 +3324,7 @@
               "incident_role_assignments": [
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3311,6 +3343,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3329,6 +3362,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3346,6 +3380,7 @@
                   }
                 }
               ],
+              "mode": "real",
               "name": "Our database is sad",
               "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -3393,6 +3428,7 @@
                   "name": "My test API key"
                 },
                 "user": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -3560,6 +3596,7 @@
               "incident_role_assignments": [
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3578,6 +3615,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3596,6 +3634,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3613,6 +3652,7 @@
                   }
                 }
               ],
+              "mode": "real",
               "name": "Our database is sad",
               "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -3660,6 +3700,7 @@
                   "name": "My test API key"
                 },
                 "user": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -3827,6 +3868,7 @@
               "incident_role_assignments": [
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3845,6 +3887,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3863,6 +3906,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -3880,6 +3924,7 @@
                   }
                 }
               ],
+              "mode": "real",
               "name": "Our database is sad",
               "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -3927,6 +3972,7 @@
                   "name": "My test API key"
                 },
                 "user": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -4094,6 +4140,7 @@
               "incident_role_assignments": [
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -4112,6 +4159,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -4130,6 +4178,7 @@
                 },
                 {
                   "assignee": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -4147,6 +4196,7 @@
                   }
                 }
               ],
+              "mode": "real",
               "name": "Our database is sad",
               "permalink": "Consequuntur odio qui dolor.",
               "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -4204,6 +4254,7 @@
                     "name": "My test API key"
                   },
                   "user": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -4371,6 +4422,7 @@
                 "incident_role_assignments": [
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4389,6 +4441,7 @@
                   },
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4407,6 +4460,7 @@
                   },
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4424,6 +4478,7 @@
                     }
                   }
                 ],
+                "mode": "real",
                 "name": "Our database is sad",
                 "permalink": "Consequuntur odio qui dolor.",
                 "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -4471,6 +4526,7 @@
                     "name": "My test API key"
                   },
                   "user": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -4638,6 +4694,7 @@
                 "incident_role_assignments": [
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4656,6 +4713,7 @@
                   },
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4674,6 +4732,7 @@
                   },
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4691,6 +4750,7 @@
                     }
                   }
                 ],
+                "mode": "real",
                 "name": "Our database is sad",
                 "permalink": "Consequuntur odio qui dolor.",
                 "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -4738,6 +4798,7 @@
                     "name": "My test API key"
                   },
                   "user": {
+                    "email": "lisa@incident.io",
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "name": "Lisa Karlin Curtis",
                     "role": "viewer"
@@ -4905,6 +4966,7 @@
                 "incident_role_assignments": [
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4923,6 +4985,7 @@
                   },
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4941,6 +5004,7 @@
                   },
                   {
                     "assignee": {
+                      "email": "lisa@incident.io",
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "name": "Lisa Karlin Curtis",
                       "role": "viewer"
@@ -4958,6 +5022,7 @@
                     }
                   }
                 ],
+                "mode": "real",
                 "name": "Our database is sad",
                 "permalink": "Consequuntur odio qui dolor.",
                 "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -5023,6 +5088,7 @@
                 "name": "My test API key"
               },
               "user": {
+                "email": "lisa@incident.io",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Lisa Karlin Curtis",
                 "role": "viewer"
@@ -5190,6 +5256,7 @@
             "incident_role_assignments": [
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -5208,6 +5275,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -5226,6 +5294,7 @@
               },
               {
                 "assignee": {
+                  "email": "lisa@incident.io",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Lisa Karlin Curtis",
                   "role": "viewer"
@@ -5243,6 +5312,7 @@
                 }
               }
             ],
+            "mode": "real",
             "name": "Our database is sad",
             "permalink": "Consequuntur odio qui dolor.",
             "postmortem_document_url": "https://docs.google.com/my_doc_id",
@@ -5619,11 +5689,17 @@
       },
       "UserResponseBody": {
         "example": {
+          "email": "lisa@incident.io",
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "name": "Lisa Karlin Curtis",
           "role": "viewer"
         },
         "properties": {
+          "email": {
+            "description": "Email address of the user.",
+            "example": "lisa@incident.io",
+            "type": "string"
+          },
           "id": {
             "description": "Unique identifier of the user",
             "example": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -5848,7 +5924,7 @@
         ]
       },
       "post": {
-        "description": "Create a custom field option",
+        "description": "Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option appears near the end of the list.",
         "operationId": "Custom Field Options#Create",
         "requestBody": {
           "content": {

@@ -1,8 +1,9 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
 from ..models.user_response_body_role import UserResponseBodyRole
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="UserResponseBody")
 
@@ -11,23 +12,28 @@ T = TypeVar("T", bound="UserResponseBody")
 class UserResponseBody:
     """
     Example:
-        {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}
+        {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
+            'viewer'}
 
     Attributes:
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name of the user Example: Lisa Karlin Curtis.
         role (UserResponseBodyRole): Role of the user Example: viewer.
+        email (Union[Unset, str]): Email address of the user. Example: lisa@incident.io.
     """
 
     id: str
     name: str
     role: UserResponseBodyRole
+    email: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
         name = self.name
         role = self.role.value
+
+        email = self.email
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -38,6 +44,8 @@ class UserResponseBody:
                 "role": role,
             }
         )
+        if email is not UNSET:
+            field_dict["email"] = email
 
         return field_dict
 
@@ -50,10 +58,13 @@ class UserResponseBody:
 
         role = UserResponseBodyRole(d.pop("role"))
 
+        email = d.pop("email", UNSET)
+
         user_response_body = cls(
             id=id,
             name=name,
             role=role,
+            email=email,
         )
 
         user_response_body.additional_properties = d

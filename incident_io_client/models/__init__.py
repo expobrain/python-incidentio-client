@@ -52,6 +52,7 @@ from .external_issue_reference_response_body_provider import (
     ExternalIssueReferenceResponseBodyProvider,
 )
 from .incident_response_body import IncidentResponseBody
+from .incident_response_body_mode import IncidentResponseBodyMode
 from .incident_response_body_status import IncidentResponseBodyStatus
 from .incident_response_body_type import IncidentResponseBodyType
 from .incident_response_body_visibility import IncidentResponseBodyVisibility
