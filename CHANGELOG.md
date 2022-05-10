@@ -1,6 +1,7 @@
-# v0.5.0
+# v0.6.0
 
 - updated to the latest API at 2022-05-05
+- added a new `mode` field in the incidend model, the field's content is the same as the `type` field; the `type` field is now considered deprecated
 
 # v0.5.0
 
