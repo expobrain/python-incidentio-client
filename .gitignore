@@ -140,3 +140,6 @@ requirements.txt
 setup.cfg
 setup.py
 test-requirements.txt
+
+# VSCode
+.vscode
