@@ -1,11 +1,63 @@
 name: Checks that OpenAPI specs are up to date
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * 1"
 jobs:
   check-openapi-spec-up-to-date:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: make download
-      - run: git diff --exit-code incidentio_openapi.yaml
+      - uses: tj-actions/verify-changed-files@v9.1
+        id: verify-changed-openapi-specs
+        with:
+          files: incidentio_openapi.yaml
+      - uses: actions/setup-python@v2
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        with:
+          python-version: "3.10"
+      - name: Cache Pip
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-3.10-${{ hashFiles('**/poetry.lock') }}
+      - name: Install Poetry
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          pip install poetry
+      - name: Install dependencies
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          poetry install
+      - name: Generate client
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          poetry run make generate
+      - name: Update CHANGELOG
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          poetry run python scripts/auto_update_changelog.py \
+            --pyproject pyproject.toml \
+            --changelog CHANGELOG.md \
+            --message "updated to the latest API at $(date "+%Y-%m-%d")"
+      - name: Create new branch
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          branch_name=update_api_$(date "+%Y_%m_%d")
+          commit_message="Updated API at $(date "+%Y-%m-%d")"
+
+          git config user.email "github-actions@githhub.com"
+          git config user.name "Github Actions"
+
+          git checkout -b $branch_name
+          git add incident_io_openapi.json incident_io_client CHANGELOG.md
+          git commit -m "$commit_message"
+          git push -u origin $branch_name
+      - name: Create new Pull Request
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          gh pr create --body "" --title "Updated API at $(date "+%Y-%m-%d")"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
