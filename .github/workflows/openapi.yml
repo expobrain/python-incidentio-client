@@ -1,5 +1,5 @@
 name: Checks that OpenAPI specs are up to date
-on:
+on: [push]
   # schedule:
   #   - cron: "0 0 * * *"
 jobs:
