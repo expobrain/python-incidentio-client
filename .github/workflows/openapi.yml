@@ -26,6 +26,7 @@ jobs:
       - if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
           pip install poetry
+          poetry install
           poetry run make generate
           git add incident_io_openapi.yaml incident_io_client
           gh pr create --title "Updated API at ${date  '+%Y-%m-%d'}"
