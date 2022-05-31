@@ -29,4 +29,4 @@ jobs:
           poetry install
           poetry run make generate
           git add incident_io_openapi.json incident_io_client
-          gh pr create --title "Updated API at ${date  '+%Y-%m-%d'}"
+          gh pr create --title "Updated API at $(date "+%Y-%m-%d")"
