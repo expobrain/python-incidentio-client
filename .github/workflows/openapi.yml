@@ -23,10 +23,13 @@ jobs:
           path: |
             ~/.cache/pip
           key: ${{ runner.os }}-3.10-${{ hashFiles('**/poetry.lock') }}
-      - if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+      - name: Create new Pull Request
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
           pip install poetry
           poetry install
           poetry run make generate
           git add incident_io_openapi.json incident_io_client
           gh pr create --title "Updated API at $(date "+%Y-%m-%d")"
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
