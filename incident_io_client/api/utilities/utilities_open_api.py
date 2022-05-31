@@ -1,8 +1,9 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import httpx
 
 from ...client import Client
+from ...models.utilities_open_api_response_200 import UtilitiesOpenAPIResponse200
 from ...types import Response
 
 
@@ -23,25 +24,33 @@ def _get_kwargs(
     }
 
 
-def _build_response(*, response: httpx.Response) -> Response[Any]:
+def _parse_response(*, response: httpx.Response) -> Optional[UtilitiesOpenAPIResponse200]:
+    if response.status_code == 200:
+        response_200 = UtilitiesOpenAPIResponse200.from_dict(response.json())
+
+        return response_200
+    return None
+
+
+def _build_response(*, response: httpx.Response) -> Response[UtilitiesOpenAPIResponse200]:
     return Response(
         status_code=response.status_code,
         content=response.content,
         headers=response.headers,
-        parsed=None,
+        parsed=_parse_response(response=response),
     )
 
 
 def sync_detailed(
     *,
     client: Client,
-) -> Response[Any]:
+) -> Response[UtilitiesOpenAPIResponse200]:
     """OpenAPI Utilities
 
      Get the OpenAPI (v2) definition.
 
     Returns:
-        Response[Any]
+        Response[UtilitiesOpenAPIResponse200]
     """
 
     kwargs = _get_kwargs(
@@ -56,16 +65,33 @@ def sync_detailed(
     return _build_response(response=response)
 
 
-async def asyncio_detailed(
+def sync(
     *,
     client: Client,
-) -> Response[Any]:
+) -> Optional[UtilitiesOpenAPIResponse200]:
     """OpenAPI Utilities
 
      Get the OpenAPI (v2) definition.
 
     Returns:
-        Response[Any]
+        Response[UtilitiesOpenAPIResponse200]
+    """
+
+    return sync_detailed(
+        client=client,
+    ).parsed
+
+
+async def asyncio_detailed(
+    *,
+    client: Client,
+) -> Response[UtilitiesOpenAPIResponse200]:
+    """OpenAPI Utilities
+
+     Get the OpenAPI (v2) definition.
+
+    Returns:
+        Response[UtilitiesOpenAPIResponse200]
     """
 
     kwargs = _get_kwargs(
@@ -76,3 +102,22 @@ async def asyncio_detailed(
         response = await _client.get(**kwargs)
 
     return _build_response(response=response)
+
+
+async def asyncio(
+    *,
+    client: Client,
+) -> Optional[UtilitiesOpenAPIResponse200]:
+    """OpenAPI Utilities
+
+     Get the OpenAPI (v2) definition.
+
+    Returns:
+        Response[UtilitiesOpenAPIResponse200]
+    """
+
+    return (
+        await asyncio_detailed(
+            client=client,
+        )
+    ).parsed

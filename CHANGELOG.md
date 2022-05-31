@@ -1,3 +1,8 @@
+# v0.8.0
+
+- updated to the latest API at 2022-05-28
+- added command to donwload the Swagger 2.x specs from the API endpoint
+
 # v0.7.0
 
 - updated to the latest API at 2022-05-26

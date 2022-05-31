@@ -20,9 +20,7 @@
         },
         "required": [
           "id",
-          "name",
-          "roles",
-          "created_by"
+          "name"
         ],
         "title": "APIKeyResponseBody",
         "type": "object"
@@ -98,13 +96,12 @@
           }
         },
         "required": [
-          "id",
-          "organisation_id",
-          "incident_id",
-          "description",
-          "status",
-          "follow_up",
           "created_at",
+          "description",
+          "follow_up",
+          "id",
+          "incident_id",
+          "status",
           "updated_at"
         ],
         "title": "ActionResponseBody",
@@ -534,10 +531,10 @@
           }
         },
         "required": [
-          "id",
           "custom_field_id",
-          "value",
-          "sort_key"
+          "id",
+          "sort_key",
+          "value"
         ],
         "title": "CustomFieldOptionResponseBody",
         "type": "object"
@@ -703,9 +700,8 @@
           }
         },
         "required": [
-          "value",
-          "custom_field_id",
-          "sort_key"
+          "sort_key",
+          "value"
         ],
         "title": "CustomFieldOptionsUpdateRequestBody",
         "type": "object"
@@ -846,15 +842,15 @@
           }
         },
         "required": [
-          "id",
-          "name",
+          "created_at",
           "description",
           "field_type",
-          "required",
-          "show_before_creation",
-          "show_before_closure",
+          "id",
+          "name",
           "options",
-          "created_at",
+          "required",
+          "show_before_closure",
+          "show_before_creation",
           "updated_at"
         ],
         "title": "CustomFieldResponseBody",
@@ -951,18 +947,11 @@
           }
         },
         "required": [
-          "id",
-          "organisation_id",
-          "name",
           "description",
           "field_type",
-          "required",
-          "show_before_creation",
-          "show_before_closure",
-          "options",
-          "conditions",
-          "created_at",
-          "updated_at"
+          "id",
+          "name",
+          "options"
         ],
         "title": "CustomFieldTypeInfoResponseBody",
         "type": "object"
@@ -1095,16 +1084,12 @@
           }
         },
         "required": [
-          "id",
-          "name",
           "description",
           "field_type",
+          "name",
           "required",
-          "show_before_creation",
           "show_before_closure",
-          "options",
-          "created_at",
-          "updated_at"
+          "show_before_creation"
         ],
         "title": "CustomFieldsCreateRequestBody",
         "type": "object"
@@ -1375,15 +1360,11 @@
           }
         },
         "required": [
-          "name",
           "description",
-          "field_type",
+          "name",
           "required",
-          "show_before_creation",
           "show_before_closure",
-          "options",
-          "created_at",
-          "updated_at"
+          "show_before_creation"
         ],
         "title": "CustomFieldsUpdateRequestBody",
         "type": "object"
@@ -1458,9 +1439,9 @@
           }
         },
         "required": [
-          "provider",
           "issue_name",
-          "issue_permalink"
+          "issue_permalink",
+          "provider"
         ],
         "title": "ExternalIssueReferenceResponseBody",
         "type": "object"
@@ -2150,26 +2131,19 @@
           }
         },
         "required": [
-          "id",
-          "external_id",
-          "reference",
-          "name",
-          "status",
-          "idempotency_key",
-          "visibility",
-          "mode",
-          "reported_at",
-          "organisation_id",
-          "creator",
-          "last_activity_at",
-          "severity",
-          "incident_role_assignments",
-          "custom_field_entries",
-          "slack_channel_id",
-          "active_participants",
-          "passive_participants",
           "created_at",
-          "updated_at"
+          "creator",
+          "custom_field_entries",
+          "id",
+          "incident_role_assignments",
+          "mode",
+          "name",
+          "reference",
+          "severity",
+          "slack_channel_id",
+          "status",
+          "updated_at",
+          "visibility"
         ],
         "title": "IncidentResponseBody",
         "type": "object"
@@ -2194,8 +2168,8 @@
           }
         },
         "required": [
-          "incident_role_id",
-          "assignee"
+          "assignee",
+          "incident_role_id"
         ],
         "title": "IncidentRoleAssignmentPayloadRequestBody",
         "type": "object"
@@ -2305,15 +2279,14 @@
           }
         },
         "required": [
-          "conditions",
-          "id",
-          "name",
-          "description",
-          "instructions",
-          "shortform",
-          "role_type",
-          "required",
           "created_at",
+          "description",
+          "id",
+          "instructions",
+          "name",
+          "required",
+          "role_type",
+          "shortform",
           "updated_at"
         ],
         "title": "IncidentRoleResponseBody",
@@ -2359,16 +2332,11 @@
           }
         },
         "required": [
-          "name",
-          "shortform",
           "description",
           "instructions",
+          "name",
           "required",
-          "conditions",
-          "id",
-          "role_type",
-          "created_at",
-          "updated_at"
+          "shortform"
         ],
         "title": "IncidentRolesCreateRequestBody",
         "type": "object"
@@ -2550,15 +2518,11 @@
           }
         },
         "required": [
-          "conditions",
-          "name",
           "description",
           "instructions",
-          "shortform",
-          "role_type",
+          "name",
           "required",
-          "created_at",
-          "updated_at"
+          "shortform"
         ],
         "title": "IncidentRolesUpdateRequestBody",
         "type": "object"
@@ -4858,8 +4822,8 @@
           }
         },
         "required": [
-          "name",
-          "description"
+          "description",
+          "name"
         ],
         "title": "SeveritiesCreateRequestBody",
         "type": "object"
@@ -5004,8 +4968,8 @@
           }
         },
         "required": [
-          "name",
-          "description"
+          "description",
+          "name"
         ],
         "title": "SeveritiesUpdateRequestBody",
         "type": "object"
@@ -5079,11 +5043,11 @@
           }
         },
         "required": [
+          "created_at",
+          "description",
           "id",
           "name",
-          "description",
           "rank",
-          "created_at",
           "updated_at"
         ],
         "title": "SeverityResponseBody",
@@ -5152,12 +5116,8 @@
         },
         "required": [
           "id",
-          "slack_user_id",
           "name",
-          "role",
-          "avatar_url",
-          "job_title",
-          "organisation_id"
+          "role"
         ],
         "title": "UserResponseBody",
         "type": "object"
@@ -5169,7 +5129,7 @@
     "title": "incident.io",
     "version": "1.0.0"
   },
-  "openapi": "3.0.0",
+  "openapi": "3.0.1",
   "paths": {
     "/v1/actions": {
       "get": {
@@ -5180,7 +5140,6 @@
             "description": "Find actions related to this incident",
             "in": "query",
             "name": "incident_id",
-            "required": false,
             "schema": {
               "type": "string"
             }
@@ -5189,7 +5148,6 @@
             "description": "Filter to actions marked as being follow up actions",
             "in": "query",
             "name": "is_follow_up",
-            "required": false,
             "schema": {
               "type": "boolean"
             }
@@ -5198,7 +5156,6 @@
             "description": "Don't return actions attached to test incidents",
             "in": "query",
             "name": "exclude_test_incidents",
-            "required": false,
             "schema": {
               "type": "boolean"
             }
@@ -5226,11 +5183,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "List Actions",
         "tags": [
           "Actions"
@@ -5274,11 +5226,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Show Actions",
         "tags": [
           "Actions"
@@ -5294,7 +5241,6 @@
             "description": "number of records to return",
             "in": "query",
             "name": "page_size",
-            "required": false,
             "schema": {
               "default": 25,
               "type": "integer"
@@ -5304,7 +5250,6 @@
             "description": "A custom field option's ID. This endpoint will return a list of custom field options created after this option.",
             "in": "query",
             "name": "after",
-            "required": false,
             "schema": {
               "type": "string"
             }
@@ -5341,11 +5286,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "List Custom Field Options",
         "tags": [
           "Custom Field Options"
@@ -5396,15 +5336,11 @@
             "description": "Created response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Create Custom Field Options",
         "tags": [
           "Custom Field Options"
-        ]
+        ],
+        "x-codegen-request-body-name": "CreateRequestBody"
       }
     },
     "/v1/custom_field_options/{id}": {
@@ -5424,14 +5360,10 @@
         ],
         "responses": {
           "204": {
+            "content": {},
             "description": "No Content response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Delete Custom Field Options",
         "tags": [
           "Custom Field Options"
@@ -5473,11 +5405,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Show Custom Field Options",
         "tags": [
           "Custom Field Options"
@@ -5539,15 +5466,11 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Update Custom Field Options",
         "tags": [
           "Custom Field Options"
-        ]
+        ],
+        "x-codegen-request-body-name": "UpdateRequestBody"
       }
     },
     "/v1/custom_fields": {
@@ -5576,11 +5499,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "List Custom Fields",
         "tags": [
           "Custom Fields"
@@ -5631,15 +5549,11 @@
             "description": "Created response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Create Custom Fields",
         "tags": [
           "Custom Fields"
-        ]
+        ],
+        "x-codegen-request-body-name": "CreateRequestBody"
       }
     },
     "/v1/custom_fields/{id}": {
@@ -5659,14 +5573,10 @@
         ],
         "responses": {
           "204": {
+            "content": {},
             "description": "No Content response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Delete Custom Fields",
         "tags": [
           "Custom Fields"
@@ -5708,11 +5618,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Show Custom Fields",
         "tags": [
           "Custom Fields"
@@ -5774,15 +5679,11 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Update Custom Fields",
         "tags": [
           "Custom Fields"
-        ]
+        ],
+        "x-codegen-request-body-name": "UpdateRequestBody"
       }
     },
     "/v1/incident_roles": {
@@ -5811,11 +5712,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "List Incident Roles",
         "tags": [
           "Incident Roles"
@@ -5866,15 +5762,11 @@
             "description": "Created response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Create Incident Roles",
         "tags": [
           "Incident Roles"
-        ]
+        ],
+        "x-codegen-request-body-name": "CreateRequestBody"
       }
     },
     "/v1/incident_roles/{id}": {
@@ -5894,14 +5786,10 @@
         ],
         "responses": {
           "204": {
+            "content": {},
             "description": "No Content response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Delete Incident Roles",
         "tags": [
           "Incident Roles"
@@ -5943,11 +5831,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Show Incident Roles",
         "tags": [
           "Incident Roles"
@@ -6009,15 +5892,11 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Update Incident Roles",
         "tags": [
           "Incident Roles"
-        ]
+        ],
+        "x-codegen-request-body-name": "UpdateRequestBody"
       }
     },
     "/v1/incidents": {
@@ -6029,7 +5908,6 @@
             "description": "number of records to return",
             "in": "query",
             "name": "page_size",
-            "required": false,
             "schema": {
               "default": 25,
               "type": "integer"
@@ -6039,7 +5917,6 @@
             "description": "An incident's ID. This endpoint will return a list of incidents created after this incident.",
             "in": "query",
             "name": "after",
-            "required": false,
             "schema": {
               "type": "string"
             }
@@ -6049,13 +5926,13 @@
             "explode": true,
             "in": "query",
             "name": "status",
-            "required": false,
             "schema": {
               "items": {
                 "type": "string"
               },
               "type": "array"
-            }
+            },
+            "style": "form"
           }
         ],
         "responses": {
@@ -6080,11 +5957,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "List Incidents",
         "tags": [
           "Incidents"
@@ -6135,15 +6007,11 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Create Incidents",
         "tags": [
           "Incidents"
-        ]
+        ],
+        "x-codegen-request-body-name": "CreateRequestBody"
       }
     },
     "/v1/incidents/{id}": {
@@ -6183,11 +6051,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Show Incidents",
         "tags": [
           "Incidents"
@@ -6202,23 +6065,24 @@
           "200": {
             "content": {
               "application/gob": {
-                "schema": {}
+                "schema": {
+                  "type": "object"
+                }
               },
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "object"
+                }
               },
               "application/xml": {
-                "schema": {}
+                "schema": {
+                  "type": "object"
+                }
               }
             },
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "OpenAPI Utilities",
         "tags": [
           "Utilities"
@@ -6251,11 +6115,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "List Severities",
         "tags": [
           "Severities"
@@ -6306,15 +6165,11 @@
             "description": "Created response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Create Severities",
         "tags": [
           "Severities"
-        ]
+        ],
+        "x-codegen-request-body-name": "CreateRequestBody"
       }
     },
     "/v1/severities/{id}": {
@@ -6334,14 +6189,10 @@
         ],
         "responses": {
           "202": {
+            "content": {},
             "description": "Accepted response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Delete Severities",
         "tags": [
           "Severities"
@@ -6383,11 +6234,6 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Show Severities",
         "tags": [
           "Severities"
@@ -6449,21 +6295,17 @@
             "description": "OK response."
           }
         },
-        "servers": [
-          {
-            "url": "https://api.incident.io"
-          }
-        ],
         "summary": "Update Severities",
         "tags": [
           "Severities"
-        ]
+        ],
+        "x-codegen-request-body-name": "UpdateRequestBody"
       }
     }
   },
   "servers": [
     {
-      "url": "//api.incident.io"
+      "url": "//api.incident.io/"
     }
   ],
   "tags": [
