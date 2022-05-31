@@ -6,6 +6,41 @@ jobs:
   check-openapi-spec-up-to-date:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: make download
       - run: git diff --exit-code incidentio_openapi.yaml
+      - uses: tj-actions/verify-changed-files@v9.1
+        id: verify-changed-openapi-specs
+        with:
+          files: incidentio_openapi.yaml
+      - name: Cache Pip
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-3.10-${{ hashFiles('**/poetry.lock') }}
+      - run: pip install poetry
+      - if: steps.verify-changed-openapi-specs.outputs.files_changed
+        run: |
+          make
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  create_new_pr:
+    runs-on: ubuntu-latest
+    needs: check-openapi-spec-up-to-date
+    if: steps.verify-changed-openapi-specs.outputs.files_changed
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+      - name: Cache Pip
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-3.10-${{ hashFiles('**/poetry.lock') }}
+      - run: pip install poetry
+      - run: poetry run make generate
+      - run: git add incident_io_openapi.yaml incident_io_client
+      - run: gh pr create --title "Updated API at ${date  '+%Y-%m-%d'}"
