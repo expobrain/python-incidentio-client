@@ -38,7 +38,7 @@ jobs:
       - name: Create new branch
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
-          branch_name=update_api_$(date "+%Y-%m-%d")
+          branch_name=update_api_$(date "+%Y_%m_%d")
           commit_message="Updated API at $(date "+%Y-%m-%d")"
 
           git config user.email "github-actions@githhub.com"
@@ -46,7 +46,7 @@ jobs:
 
           git checkout -b $branch_name
           git add incident_io_openapi.json incident_io_client
-          git commit -m $commit_message
+          git commit -m "$commit_message"
           git push -u origin $branch_name
       - name: Create new Pull Request
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
