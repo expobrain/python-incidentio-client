@@ -36,6 +36,7 @@ jobs:
           git checkout -b update_api_$(date "+%Y-%m-%d")
           git add incident_io_openapi.json incident_io_client
           git commit -m "Updated API at $(date "+%Y-%m-%d")"
+          git push -u origin update_api_$(date "+%Y-%m-%d")
 
           gh pr create --body "" --title "Updated API at $(date "+%Y-%m-%d")"
         env:
