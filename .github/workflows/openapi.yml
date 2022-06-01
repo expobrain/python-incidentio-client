@@ -51,6 +51,6 @@ jobs:
       - name: Create new Pull Request
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
-          gh pr create -f
+          gh pr create --body "" --title "Updated API at $(date "+%Y-%m-%d")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
