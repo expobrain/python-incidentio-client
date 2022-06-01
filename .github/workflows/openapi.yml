@@ -29,8 +29,14 @@ jobs:
           pip install poetry
           poetry install
           poetry run make generate
+
+          git confing user.email "github-actions@githhub.com"
+          git confing user.nam "Github Actions"
+
+          git checkout -b update_api_$(date "+%Y-%m-%d")
           git add incident_io_openapi.json incident_io_client
           git commit -m "Updated API at $(date "+%Y-%m-%d")"
+
           gh pr create --title "Updated API at $(date "+%Y-%m-%d")"
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
