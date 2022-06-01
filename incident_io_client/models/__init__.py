@@ -76,6 +76,7 @@ from .incidents_create_response_body import IncidentsCreateResponseBody
 from .incidents_list_response_body import IncidentsListResponseBody
 from .incidents_show_response_body import IncidentsShowResponseBody
 from .pagination_meta_response_body import PaginationMetaResponseBody
+from .public_identity_response_body import PublicIdentityResponseBody
 from .severities_create_request_body import SeveritiesCreateRequestBody
 from .severities_create_response_body import SeveritiesCreateResponseBody
 from .severities_list_response_body import SeveritiesListResponseBody
@@ -86,4 +87,5 @@ from .severity_response_body import SeverityResponseBody
 from .user_reference_payload_request_body import UserReferencePayloadRequestBody
 from .user_response_body import UserResponseBody
 from .user_response_body_role import UserResponseBodyRole
+from .utilities_identity_response_body import UtilitiesIdentityResponseBody
 from .utilities_open_api_response_200 import UtilitiesOpenAPIResponse200
