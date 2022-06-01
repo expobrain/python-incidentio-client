@@ -1,7 +1,7 @@
 name: Checks that OpenAPI specs are up to date
-on:
-  schedule:
-    - cron: "0 0 * * *"
+on: [push]
+  # schedule:
+  #   - cron: "0 0 * * *"
 jobs:
   check-openapi-spec-up-to-date:
     runs-on: ubuntu-latest
