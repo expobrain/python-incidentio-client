@@ -62,36 +62,31 @@ def sync_detailed(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Fugiat ratione est aliquid hic
-            quasi.', 'name': 'Our database is sad', 'severity_id': 'Sunt quo harum ut quos.',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility':
-            'public'}.
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
+            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
+            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
+            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
+            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -126,36 +121,31 @@ def sync(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Fugiat ratione est aliquid hic
-            quasi.', 'name': 'Our database is sad', 'severity_id': 'Sunt quo harum ut quos.',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility':
-            'public'}.
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
+            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
+            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
+            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
+            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -183,36 +173,31 @@ async def asyncio_detailed(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Fugiat ratione est aliquid hic
-            quasi.', 'name': 'Our database is sad', 'severity_id': 'Sunt quo harum ut quos.',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility':
-            'public'}.
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
+            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
+            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
+            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
+            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -245,36 +230,31 @@ async def asyncio(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
-            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it'}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Iure facilis.', 'id': 'Non velit
-            optio qui ea.', 'slack_user_id': 'Sint enim aut doloremque.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Fugiat ratione est aliquid hic
-            quasi.', 'name': 'Our database is sad', 'severity_id': 'Sunt quo harum ut quos.',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility':
-            'public'}.
+            field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
+            it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
+            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
+            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
+            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
+            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
