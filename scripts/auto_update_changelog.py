@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import textwrap
 from pathlib import Path
 
