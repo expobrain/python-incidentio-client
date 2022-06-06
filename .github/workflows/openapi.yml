@@ -11,7 +11,7 @@ jobs:
       - uses: tj-actions/verify-changed-files@v9.1
         id: verify-changed-openapi-specs
         with:
-          files: incidentio_openapi.yaml
+          files: incident_io_openapi.json
       - uses: actions/setup-python@v2
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         with:
