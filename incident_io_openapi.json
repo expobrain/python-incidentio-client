@@ -2065,7 +2065,7 @@
             "type": "string"
           },
           "visibility": {
-            "description": "Whether the incident is public or private",
+            "description": "Whether the incident should be open to anyone in your Slack workspace (public), or invite-only (private). For more information on Private Incidents see our [help centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).",
             "enum": [
               "public",
               "private"
@@ -2738,7 +2738,7 @@
             "type": "string"
           },
           "visibility": {
-            "description": "Whether the incident is public or private",
+            "description": "Whether the incident should be open to anyone in your Slack workspace (public), or invite-only (private). For more information on Private Incidents see our [help centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).",
             "enum": [
               "public",
               "private"
