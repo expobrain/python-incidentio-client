@@ -154,7 +154,10 @@ class IncidentResponseBody:
         slack_channel_id (str): ID of the Slack channel in the organisation Slack workspace Example: C02AW36C1M5.
         status (IncidentResponseBodyStatus): Current status of the incident Example: triage.
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
-        visibility (IncidentResponseBodyVisibility): Whether the incident is public or private Example: public.
+        visibility (IncidentResponseBodyVisibility): Whether the incident should be open to anyone in your Slack
+            workspace (public), or invite-only (private). For more information on Private Incidents see our [help
+            centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
+            Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
         permalink (Union[Unset, str]):  Example: Et amet non sed sit quia..
         postmortem_document_url (Union[Unset, str]): Description of the incident Example:
