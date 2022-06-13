@@ -1,3 +1,9 @@
+# v0.10.0
+
+- dropped support for Python 3.7
+- increase minimum version of `httpx` to avoid [Improper Input Validation in httpx](https://github.com/advisories/GHSA-h8pj-cxx2-jfg2)
+- updated to the latest API at 2022-06-20
+
 # v0.9.1
 
 - updated to the latest API at 2022-06-13
