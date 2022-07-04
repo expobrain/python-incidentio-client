@@ -249,7 +249,7 @@ python-versions = "*"
 
 [[package]]
 name = "openapi-python-client"
-version = "0.11.3"
+version = "0.11.4"
 description = "Generate modern Python clients from OpenAPI"
 category = "dev"
 optional = false
@@ -494,7 +494,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4"
-content-hash = "a581bf465f562cad131d23b3d2d359d97ffd610229ecf12f7844ebfb584292f0"
+content-hash = "1952faaac5dfb3aab1936f5548c059aa1987e528b8918169ecf18e56dac59bdb"
 
 [metadata.files]
 anyio = [
@@ -653,8 +653,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 openapi-python-client = [
-    {file = "openapi-python-client-0.11.3.tar.gz", hash = "sha256:87b4e50418d55486a10d789700cd8b8f6e1eed3c80b3fe1070c9414dcb38a8aa"},
-    {file = "openapi_python_client-0.11.3-py3-none-any.whl", hash = "sha256:2fbde8e94b2f370d4d1d33a896f369a76bcd7a47ac0ea4e1bf1e4c861eccbd8d"},
+    {file = "openapi-python-client-0.11.4.tar.gz", hash = "sha256:8de37a3fb5bf57054462c8fae5fe2ee964de6aa5c5544395a9120b40bff97006"},
+    {file = "openapi_python_client-0.11.4-py3-none-any.whl", hash = "sha256:c2bda299aa6691c6ec58295621d1a8c4722f6ef2d78cb85c2b8d56168146aa9d"},
 ]
 pathspec = [
     {file = "pathspec-0.9.0-py2.py3-none-any.whl", hash = "sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a"},
