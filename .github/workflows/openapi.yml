@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: make download
-      - uses: tj-actions/verify-changed-files@v9.1
+      - uses: tj-actions/verify-changed-files@v10
         id: verify-changed-openapi-specs
         with:
           files: incident_io_openapi.json
