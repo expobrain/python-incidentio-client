@@ -84,9 +84,12 @@ def sync_detailed(
             'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
             aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
-            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
+            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
+            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
             'visibility': 'public'}.
 
     Returns:
@@ -143,9 +146,12 @@ def sync(
             'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
             aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
-            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
+            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
+            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
             'visibility': 'public'}.
 
     Returns:
@@ -195,9 +201,12 @@ async def asyncio_detailed(
             'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
             aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
-            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
+            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
+            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
             'visibility': 'public'}.
 
     Returns:
@@ -252,9 +261,12 @@ async def asyncio(
             'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
             aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut
-            quis.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
+            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
+            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
+            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
             'visibility': 'public'}.
 
     Returns:

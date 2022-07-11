@@ -68,6 +68,9 @@ from .incident_roles_show_response_body import IncidentRolesShowResponseBody
 from .incident_roles_update_request_body import IncidentRolesUpdateRequestBody
 from .incident_roles_update_response_body import IncidentRolesUpdateResponseBody
 from .incident_timestamp_response_body import IncidentTimestampResponseBody
+from .incident_type_response_body import IncidentTypeResponseBody
+from .incident_types_list_response_body import IncidentTypesListResponseBody
+from .incident_types_show_response_body import IncidentTypesShowResponseBody
 from .incidents_create_request_body import IncidentsCreateRequestBody
 from .incidents_create_request_body_visibility import (
     IncidentsCreateRequestBodyVisibility,

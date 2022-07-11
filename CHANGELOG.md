@@ -1,3 +1,7 @@
+# v0.11.0
+
+- updated to the latest API at 2022-07-11
+
 # v0.10.0
 
 - dropped support for Python 3.7

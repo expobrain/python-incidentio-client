@@ -16,8 +16,8 @@ class IncidentRoleAssignmentPayloadRequestBody:
             '01FH5TZRWMNAFB0DZ23FD1TV96'}
 
     Attributes:
-        assignee (UserReferencePayloadRequestBody):  Example: {'email': 'Mollitia fugit consequatur.', 'id': 'Et
-            excepturi enim culpa ut.', 'slack_user_id': 'Eos et et possimus molestiae rem quia.'}.
+        assignee (UserReferencePayloadRequestBody):  Example: {'email': 'Eos et et possimus molestiae rem quia.', 'id':
+            'Mollitia fugit consequatur.', 'slack_user_id': 'Nobis nulla officiis deleniti quia saepe.'}.
         incident_role_id (str): Unique ID of an incident role Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
     """
 
