@@ -1,5 +1,5 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
 from dateutil.parser import isoparse
@@ -9,6 +9,7 @@ from ..models.custom_field_response_body_field_type import (
     CustomFieldResponseBodyFieldType,
 )
 from ..models.custom_field_response_body_required import CustomFieldResponseBodyRequired
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="CustomFieldResponseBody")
 
@@ -23,7 +24,7 @@ class CustomFieldResponseBody:
             'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
             10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation':
-            True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -43,6 +44,8 @@ class CustomFieldResponseBody:
         show_before_creation (bool): Whether a custom field should be shown in the incident creation modal. This must be
             true if the field is always required. Example: True.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
+        show_in_announcement_post (Union[Unset, bool]): Whether a custom field should be shown in the list of fields as
+            part of the announcement post when set. Example: True.
     """
 
     created_at: datetime.datetime
@@ -55,6 +58,7 @@ class CustomFieldResponseBody:
     show_before_closure: bool
     show_before_creation: bool
     updated_at: datetime.datetime
+    show_in_announcement_post: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,6 +81,8 @@ class CustomFieldResponseBody:
         show_before_creation = self.show_before_creation
         updated_at = self.updated_at.isoformat()
 
+        show_in_announcement_post = self.show_in_announcement_post
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -93,6 +99,8 @@ class CustomFieldResponseBody:
                 "updated_at": updated_at,
             }
         )
+        if show_in_announcement_post is not UNSET:
+            field_dict["show_in_announcement_post"] = show_in_announcement_post
 
         return field_dict
 
@@ -124,6 +132,8 @@ class CustomFieldResponseBody:
 
         updated_at = isoparse(d.pop("updated_at"))
 
+        show_in_announcement_post = d.pop("show_in_announcement_post", UNSET)
+
         custom_field_response_body = cls(
             created_at=created_at,
             description=description,
@@ -135,6 +145,7 @@ class CustomFieldResponseBody:
             show_before_closure=show_before_closure,
             show_before_creation=show_before_creation,
             updated_at=updated_at,
+            show_in_announcement_post=show_in_announcement_post,
         )
 
         custom_field_response_body.additional_properties = d

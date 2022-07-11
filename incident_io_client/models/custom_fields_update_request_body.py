@@ -1,10 +1,11 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
 from ..models.custom_fields_update_request_body_required import (
     CustomFieldsUpdateRequestBodyRequired,
 )
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="CustomFieldsUpdateRequestBody")
 
@@ -14,7 +15,7 @@ class CustomFieldsUpdateRequestBody:
     """
     Example:
         {'description': 'Which team is impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True}
+            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True}
 
     Attributes:
         description (str): Description of the custom field Example: Which team is impacted by this issue.
@@ -26,6 +27,8 @@ class CustomFieldsUpdateRequestBody:
             whatever the value of this setting. Example: True.
         show_before_creation (bool): Whether a custom field should be shown in the incident creation modal. This must be
             true if the field is always required. Example: True.
+        show_in_announcement_post (Union[Unset, bool]): Whether a custom field should be shown in the list of fields as
+            part of the announcement post when set. Example: True.
     """
 
     description: str
@@ -33,6 +36,7 @@ class CustomFieldsUpdateRequestBody:
     required: CustomFieldsUpdateRequestBodyRequired
     show_before_closure: bool
     show_before_creation: bool
+    show_in_announcement_post: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -42,6 +46,7 @@ class CustomFieldsUpdateRequestBody:
 
         show_before_closure = self.show_before_closure
         show_before_creation = self.show_before_creation
+        show_in_announcement_post = self.show_in_announcement_post
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -54,6 +59,8 @@ class CustomFieldsUpdateRequestBody:
                 "show_before_creation": show_before_creation,
             }
         )
+        if show_in_announcement_post is not UNSET:
+            field_dict["show_in_announcement_post"] = show_in_announcement_post
 
         return field_dict
 
@@ -70,12 +77,15 @@ class CustomFieldsUpdateRequestBody:
 
         show_before_creation = d.pop("show_before_creation")
 
+        show_in_announcement_post = d.pop("show_in_announcement_post", UNSET)
+
         custom_fields_update_request_body = cls(
             description=description,
             name=name,
             required=required,
             show_before_closure=show_before_closure,
             show_before_creation=show_before_creation,
+            show_in_announcement_post=show_in_announcement_post,
         )
 
         custom_fields_update_request_body.additional_properties = d

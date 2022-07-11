@@ -57,22 +57,16 @@ class IncidentResponseBody:
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'mode': 'real', 'name': 'Our database is sad', 'permalink':
-            'Ratione est.', 'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123',
-            'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone
-            chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
+            'Harum ut quos repudiandae nesciunt.', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
+            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not
+            really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
             'status': 'triage', 'summary': "Our database is really really sad, and we don't know why yet.", 'timestamps':
             [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at':
             '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z',
-            'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}], 'type':
-            'Expedita aliquam eligendi cupiditate voluptatem distinctio ut.', 'updated_at': '2021-08-17T13:28:57.801578Z',
-            'visibility': 'public'}
+            'name': 'last_activity'}], 'type': 'Fugiat ratione est aliquid hic quasi.', 'updated_at':
+            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -82,27 +76,6 @@ class IncidentResponseBody:
         custom_field_entries (List[CustomFieldEntryResponseBody]): Custom field entries for this incident Example:
             [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field': {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected
-            Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}]}, {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
-            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
@@ -159,7 +132,7 @@ class IncidentResponseBody:
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
-        permalink (Union[Unset, str]):  Example: Et amet non sed sit quia..
+        permalink (Union[Unset, str]):  Example: Aliquam eligendi cupiditate voluptatem distinctio ut..
         postmortem_document_url (Union[Unset, str]): Description of the incident Example:
             https://docs.google.com/my_doc_id.
         slack_channel_name (Union[Unset, str]): Name of the slack channel Example: inc-165-green-parrot.
@@ -170,7 +143,7 @@ class IncidentResponseBody:
             {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at':
             '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z',
             'name': 'last_activity'}].
-        type (Union[Unset, str]):  Example: Atque dignissimos accusamus explicabo..
+        type (Union[Unset, str]):  Example: Voluptatum rerum magnam alias temporibus et amet..
     """
 
     created_at: datetime.datetime

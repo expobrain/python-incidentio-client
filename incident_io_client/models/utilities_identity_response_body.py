@@ -15,8 +15,9 @@ class UtilitiesIdentityResponseBody:
             impedit aut quis repellat a delectus.']}}
 
     Attributes:
-        identity (PublicIdentityResponseBody):  Example: {'name': 'Consequuntur nesciunt dolorum ut.', 'roles': ['Quia
-            aut enim quisquam.', 'Ratione assumenda.', 'Officia accusamus magni sit eligendi aperiam.']}.
+        identity (PublicIdentityResponseBody):  Example: {'name': 'Et officia accusamus magni.', 'roles': ['Aperiam
+            veniam ratione a non qui.', 'Nulla ipsum atque animi ea qui et.', 'Voluptas nemo laudantium qui.', 'Nihil et
+            consectetur et est.']}.
     """
 
     identity: PublicIdentityResponseBody

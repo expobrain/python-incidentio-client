@@ -40,13 +40,16 @@ class IncidentsCreateRequestBody:
             autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum
             fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias
-            aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Quidem amet.', 'name': 'Our database is sad', 'severity_id': 'Aut quis.', 'summary': "Our
-            database is really really sad, and we don't know why yet.", 'visibility': 'public'}
+            aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
+            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
+            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_type_id': 'Aut repellendus voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
+            aspernatur quia eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
-        severity_id (str):  Example: Dolorum officia..
+        severity_id (str):  Example: Non quos quod dolor..
         visibility (IncidentsCreateRequestBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
@@ -61,7 +64,11 @@ class IncidentsCreateRequestBody:
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}]}].
+            'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
+            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]}].
         incident_role_assignments (Union[Unset, List[IncidentRoleAssignmentPayloadRequestBody]]): Assign incident roles
             to these people Example: [{'assignee': {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus
             porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
@@ -69,10 +76,8 @@ class IncidentsCreateRequestBody:
             doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
             aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem
-            maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et
-            voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
-        incident_type_id (Union[Unset, str]):  Example: Nulla officiis deleniti quia..
+            maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
+        incident_type_id (Union[Unset, str]):  Example: Porro ullam est quidem amet repellendus aut..
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..

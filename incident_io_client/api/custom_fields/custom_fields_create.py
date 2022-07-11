@@ -59,7 +59,8 @@ def sync_detailed(
     Args:
         json_body (CustomFieldsCreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True}.
+            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsCreateResponseBody]
@@ -90,7 +91,8 @@ def sync(
     Args:
         json_body (CustomFieldsCreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True}.
+            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsCreateResponseBody]
@@ -114,7 +116,8 @@ async def asyncio_detailed(
     Args:
         json_body (CustomFieldsCreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True}.
+            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsCreateResponseBody]
@@ -143,7 +146,8 @@ async def asyncio(
     Args:
         json_body (CustomFieldsCreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True}.
+            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsCreateResponseBody]
