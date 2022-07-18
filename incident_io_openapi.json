@@ -2696,8 +2696,12 @@
             }
           ],
           "incident_type_id": "Aut repellendus voluptatem.",
+          "mode": "real",
           "name": "Our database is sad",
           "severity_id": "Placeat quod aspernatur quia eveniet.",
+          "source_message_channel_id": "C02AW36C1M5",
+          "source_message_timestamp": "1653650280.526509",
+          "status": "triage",
           "summary": "Our database is really really sad, and we don't know why yet.",
           "visibility": "public"
         },
@@ -2810,6 +2814,16 @@
             "example": "Porro ullam est quidem amet repellendus aut.",
             "type": "string"
           },
+          "mode": {
+            "description": "Whether the incident is real, a test, or a tutorial",
+            "enum": [
+              "real",
+              "test",
+              "tutorial"
+            ],
+            "example": "real",
+            "type": "string"
+          },
           "name": {
             "description": "Explanation of the incident",
             "example": "Our database is sad",
@@ -2817,6 +2831,29 @@
           },
           "severity_id": {
             "example": "Non quos quod dolor.",
+            "type": "string"
+          },
+          "source_message_channel_id": {
+            "description": "Channel ID of the source message, if this incident was created from one",
+            "example": "C02AW36C1M5",
+            "type": "string"
+          },
+          "source_message_timestamp": {
+            "description": "Timestamp of the source message, if this incident was created from one",
+            "example": "1653650280.526509",
+            "type": "string"
+          },
+          "status": {
+            "description": "Current status of the incident",
+            "enum": [
+              "triage",
+              "investigating",
+              "fixing",
+              "monitoring",
+              "closed",
+              "declined"
+            ],
+            "example": "triage",
             "type": "string"
           },
           "summary": {

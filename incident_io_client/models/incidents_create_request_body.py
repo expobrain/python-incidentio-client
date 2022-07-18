@@ -8,6 +8,10 @@ from ..models.custom_field_entry_payload_request_body import (
 from ..models.incident_role_assignment_payload_request_body import (
     IncidentRoleAssignmentPayloadRequestBody,
 )
+from ..models.incidents_create_request_body_mode import IncidentsCreateRequestBodyMode
+from ..models.incidents_create_request_body_status import (
+    IncidentsCreateRequestBodyStatus,
+)
 from ..models.incidents_create_request_body_visibility import (
     IncidentsCreateRequestBodyVisibility,
 )
@@ -43,9 +47,10 @@ class IncidentsCreateRequestBody:
             aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
             {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
             'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Aut repellendus voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
-            aspernatur quia eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'visibility': 'public'}
+            'incident_type_id': 'Aut repellendus voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id':
+            'Placeat quod aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad, and we don't know why
+            yet.", 'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
@@ -78,7 +83,14 @@ class IncidentsCreateRequestBody:
             aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem
             maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
         incident_type_id (Union[Unset, str]):  Example: Porro ullam est quidem amet repellendus aut..
+        mode (Union[Unset, IncidentsCreateRequestBodyMode]): Whether the incident is real, a test, or a tutorial
+            Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
+        source_message_channel_id (Union[Unset, str]): Channel ID of the source message, if this incident was created
+            from one Example: C02AW36C1M5.
+        source_message_timestamp (Union[Unset, str]): Timestamp of the source message, if this incident was created from
+            one Example: 1653650280.526509.
+        status (Union[Unset, IncidentsCreateRequestBodyStatus]): Current status of the incident Example: triage.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
     """
@@ -89,7 +101,11 @@ class IncidentsCreateRequestBody:
     custom_field_entries: Union[Unset, List[CustomFieldEntryPayloadRequestBody]] = UNSET
     incident_role_assignments: Union[Unset, List[IncidentRoleAssignmentPayloadRequestBody]] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
+    mode: Union[Unset, IncidentsCreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
+    source_message_channel_id: Union[Unset, str] = UNSET
+    source_message_timestamp: Union[Unset, str] = UNSET
+    status: Union[Unset, IncidentsCreateRequestBodyStatus] = UNSET
     summary: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -115,7 +131,17 @@ class IncidentsCreateRequestBody:
                 incident_role_assignments.append(incident_role_assignments_item)
 
         incident_type_id = self.incident_type_id
+        mode: Union[Unset, str] = UNSET
+        if not isinstance(self.mode, Unset):
+            mode = self.mode.value
+
         name = self.name
+        source_message_channel_id = self.source_message_channel_id
+        source_message_timestamp = self.source_message_timestamp
+        status: Union[Unset, str] = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.value
+
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}
@@ -133,8 +159,16 @@ class IncidentsCreateRequestBody:
             field_dict["incident_role_assignments"] = incident_role_assignments
         if incident_type_id is not UNSET:
             field_dict["incident_type_id"] = incident_type_id
+        if mode is not UNSET:
+            field_dict["mode"] = mode
         if name is not UNSET:
             field_dict["name"] = name
+        if source_message_channel_id is not UNSET:
+            field_dict["source_message_channel_id"] = source_message_channel_id
+        if source_message_timestamp is not UNSET:
+            field_dict["source_message_timestamp"] = source_message_timestamp
+        if status is not UNSET:
+            field_dict["status"] = status
         if summary is not UNSET:
             field_dict["summary"] = summary
 
@@ -169,7 +203,25 @@ class IncidentsCreateRequestBody:
 
         incident_type_id = d.pop("incident_type_id", UNSET)
 
+        _mode = d.pop("mode", UNSET)
+        mode: Union[Unset, IncidentsCreateRequestBodyMode]
+        if isinstance(_mode, Unset):
+            mode = UNSET
+        else:
+            mode = IncidentsCreateRequestBodyMode(_mode)
+
         name = d.pop("name", UNSET)
+
+        source_message_channel_id = d.pop("source_message_channel_id", UNSET)
+
+        source_message_timestamp = d.pop("source_message_timestamp", UNSET)
+
+        _status = d.pop("status", UNSET)
+        status: Union[Unset, IncidentsCreateRequestBodyStatus]
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = IncidentsCreateRequestBodyStatus(_status)
 
         summary = d.pop("summary", UNSET)
 
@@ -180,7 +232,11 @@ class IncidentsCreateRequestBody:
             custom_field_entries=custom_field_entries,
             incident_role_assignments=incident_role_assignments,
             incident_type_id=incident_type_id,
+            mode=mode,
             name=name,
+            source_message_channel_id=source_message_channel_id,
+            source_message_timestamp=source_message_timestamp,
+            status=status,
             summary=summary,
         )
 
