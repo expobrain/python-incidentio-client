@@ -88,9 +88,10 @@ def sync_detailed(
             {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
             nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
-            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'visibility': 'public'}.
+            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
+            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -150,9 +151,10 @@ def sync(
             {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
             nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
-            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'visibility': 'public'}.
+            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
+            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -205,9 +207,10 @@ async def asyncio_detailed(
             {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
             nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
-            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'visibility': 'public'}.
+            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
+            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -265,9 +268,10 @@ async def asyncio(
             {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
             nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'name': 'Our database is sad', 'severity_id': 'Placeat quod aspernatur quia
-            eveniet.', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'visibility': 'public'}.
+            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
+            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]

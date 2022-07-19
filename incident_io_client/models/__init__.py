@@ -72,6 +72,8 @@ from .incident_type_response_body import IncidentTypeResponseBody
 from .incident_types_list_response_body import IncidentTypesListResponseBody
 from .incident_types_show_response_body import IncidentTypesShowResponseBody
 from .incidents_create_request_body import IncidentsCreateRequestBody
+from .incidents_create_request_body_mode import IncidentsCreateRequestBodyMode
+from .incidents_create_request_body_status import IncidentsCreateRequestBodyStatus
 from .incidents_create_request_body_visibility import (
     IncidentsCreateRequestBodyVisibility,
 )
