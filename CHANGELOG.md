@@ -1,6 +1,11 @@
 # v0.13.0
 
 - updated to the latest API at 2022-07-25
+- added `incident_type` to IncidentResponseBody`
+
+## Breaking chnages
+
+- removed `type` attribute from `IncidentResponeBody`
 
 # v0.12.0
 
