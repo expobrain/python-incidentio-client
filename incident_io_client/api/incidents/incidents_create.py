@@ -77,19 +77,14 @@ def sync_detailed(
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
             it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
-            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
-            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
-            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
-            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
+            'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Voluptates quo
+            eveniet molestias ut voluptas.', 'mode': 'real', 'name': 'Our database is sad',
+            'severity_id': 'Eius tempora sapiente.', 'source_message_channel_id': 'C02AW36C1M5',
             'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
             database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
@@ -140,19 +135,14 @@ def sync(
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
             it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
-            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
-            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
-            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
-            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
+            'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Voluptates quo
+            eveniet molestias ut voluptas.', 'mode': 'real', 'name': 'Our database is sad',
+            'severity_id': 'Eius tempora sapiente.', 'source_message_channel_id': 'C02AW36C1M5',
             'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
             database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
@@ -196,19 +186,14 @@ async def asyncio_detailed(
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
             it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
-            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
-            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
-            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
-            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
+            'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Voluptates quo
+            eveniet molestias ut voluptas.', 'mode': 'real', 'name': 'Our database is sad',
+            'severity_id': 'Eius tempora sapiente.', 'source_message_channel_id': 'C02AW36C1M5',
             'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
             database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
@@ -257,19 +242,14 @@ async def asyncio(
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like
             it'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea
-            et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
-            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
-            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit
-            nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Aut repellendus
-            voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Placeat quod
-            aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5',
+            {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
+            'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Voluptates quo
+            eveniet molestias ut voluptas.', 'mode': 'real', 'name': 'Our database is sad',
+            'severity_id': 'Eius tempora sapiente.', 'source_message_channel_id': 'C02AW36C1M5',
             'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
             database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 

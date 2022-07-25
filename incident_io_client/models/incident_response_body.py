@@ -13,6 +13,7 @@ from ..models.incident_role_assignment_response_body import (
     IncidentRoleAssignmentResponseBody,
 )
 from ..models.incident_timestamp_response_body import IncidentTimestampResponseBody
+from ..models.incident_type_response_body import IncidentTypeResponseBody
 from ..models.severity_response_body import SeverityResponseBody
 from ..types import UNSET, Unset
 
@@ -30,21 +31,42 @@ class IncidentResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}]}, {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field': {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected
-            Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}]}, {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
             'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
             you like it'}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee': {'email':
@@ -57,16 +79,28 @@ class IncidentResponseBody:
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'mode': 'real', 'name': 'Our database is sad', 'permalink':
-            'Harum ut quos repudiandae nesciunt.', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
-            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not
-            really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'status': 'triage', 'summary': "Our database is really really sad, and we don't know why yet.", 'timestamps':
-            [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at':
+            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
+            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer'}, 'role': {'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
+            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True,
+            'name': 'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'mode': 'real', 'name': 'Our database is sad', 'permalink': 'https://app.incident.io/incidents/123',
+            'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123', 'severity':
+            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot', 'status': 'triage', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'timestamps': [{'last_occurred_at':
             '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z',
-            'name': 'last_activity'}], 'type': 'Fugiat ratione est aliquid hic quasi.', 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}],
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -78,21 +112,56 @@ class IncidentResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}]}, {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field': {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected
-            Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}]}, {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}]}, {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
+            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
             'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
             you like it'}]}].
@@ -132,7 +201,11 @@ class IncidentResponseBody:
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
-        permalink (Union[Unset, str]):  Example: Aliquam eligendi cupiditate voluptatem distinctio ut..
+        incident_type (Union[Unset, IncidentTypeResponseBody]):  Example: {'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False,
+            'name': 'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        permalink (Union[Unset, str]): A permanent link to the homepage for this incident Example:
+            https://app.incident.io/incidents/123.
         postmortem_document_url (Union[Unset, str]): Description of the incident Example:
             https://docs.google.com/my_doc_id.
         slack_channel_name (Union[Unset, str]): Name of the slack channel Example: inc-165-green-parrot.
@@ -140,10 +213,7 @@ class IncidentResponseBody:
             and we don't know why yet..
         timestamps (Union[Unset, List[IncidentTimestampResponseBody]]): Incident lifecycle events and when they last
             occurred Example: [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'},
-            {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at':
-            '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z',
-            'name': 'last_activity'}].
-        type (Union[Unset, str]):  Example: Voluptatum rerum magnam alias temporibus et amet..
+            {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}].
     """
 
     created_at: datetime.datetime
@@ -160,12 +230,12 @@ class IncidentResponseBody:
     updated_at: datetime.datetime
     visibility: IncidentResponseBodyVisibility
     call_url: Union[Unset, str] = UNSET
+    incident_type: Union[Unset, IncidentTypeResponseBody] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
     slack_channel_name: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
     timestamps: Union[Unset, List[IncidentTimestampResponseBody]] = UNSET
-    type: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -200,6 +270,10 @@ class IncidentResponseBody:
         visibility = self.visibility.value
 
         call_url = self.call_url
+        incident_type: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.incident_type, Unset):
+            incident_type = self.incident_type.to_dict()
+
         permalink = self.permalink
         postmortem_document_url = self.postmortem_document_url
         slack_channel_name = self.slack_channel_name
@@ -211,8 +285,6 @@ class IncidentResponseBody:
                 timestamps_item = timestamps_item_data.to_dict()
 
                 timestamps.append(timestamps_item)
-
-        type = self.type
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -235,6 +307,8 @@ class IncidentResponseBody:
         )
         if call_url is not UNSET:
             field_dict["call_url"] = call_url
+        if incident_type is not UNSET:
+            field_dict["incident_type"] = incident_type
         if permalink is not UNSET:
             field_dict["permalink"] = permalink
         if postmortem_document_url is not UNSET:
@@ -245,8 +319,6 @@ class IncidentResponseBody:
             field_dict["summary"] = summary
         if timestamps is not UNSET:
             field_dict["timestamps"] = timestamps
-        if type is not UNSET:
-            field_dict["type"] = type
 
         return field_dict
 
@@ -295,6 +367,13 @@ class IncidentResponseBody:
 
         call_url = d.pop("call_url", UNSET)
 
+        _incident_type = d.pop("incident_type", UNSET)
+        incident_type: Union[Unset, IncidentTypeResponseBody]
+        if isinstance(_incident_type, Unset):
+            incident_type = UNSET
+        else:
+            incident_type = IncidentTypeResponseBody.from_dict(_incident_type)
+
         permalink = d.pop("permalink", UNSET)
 
         postmortem_document_url = d.pop("postmortem_document_url", UNSET)
@@ -309,8 +388,6 @@ class IncidentResponseBody:
             timestamps_item = IncidentTimestampResponseBody.from_dict(timestamps_item_data)
 
             timestamps.append(timestamps_item)
-
-        type = d.pop("type", UNSET)
 
         incident_response_body = cls(
             created_at=created_at,
@@ -327,12 +404,12 @@ class IncidentResponseBody:
             updated_at=updated_at,
             visibility=visibility,
             call_url=call_url,
+            incident_type=incident_type,
             permalink=permalink,
             postmortem_document_url=postmortem_document_url,
             slack_channel_name=slack_channel_name,
             summary=summary,
             timestamps=timestamps,
-            type=type,
         )
 
         incident_response_body.additional_properties = d
