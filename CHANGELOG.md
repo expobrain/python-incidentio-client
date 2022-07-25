@@ -1,7 +1,7 @@
 # v0.13.0
 
 - updated to the latest API at 2022-07-25
-- added `incident_type` to IncidentResponseBody`
+- added `incident_type` to `IncidentResponseBody`
 
 ## Breaking chnages
 
