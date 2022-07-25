@@ -285,7 +285,7 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-incidentio-client"
-version = "0.11.0"
+version = "0.12.0"
 description = "Python client for Incident.io"
 category = "main"
 optional = false
@@ -303,7 +303,7 @@ url = ".."
 
 [[package]]
 name = "pyupgrade"
-version = "2.37.1"
+version = "2.37.2"
 description = "A tool to automatically upgrade syntax for newer versions."
 category = "dev"
 optional = false
@@ -389,7 +389,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4"
-content-hash = "f8e549d355ad5f212296719fcb9184d16b05e4bd916091a6d6a59dea348bf245"
+content-hash = "193fb7aba9741775ef858555e3c8ef21bfef994bc5f2ea8d115662ea5010ac57"
 
 [metadata.files]
 anyio = [
@@ -527,8 +527,8 @@ python-dotenv = [
 ]
 python-incidentio-client = []
 pyupgrade = [
-    {file = "pyupgrade-2.37.1-py2.py3-none-any.whl", hash = "sha256:dd2a32628d6d2a7dd6c086d98420e234b9e60c1e1d4c55431578491703e762a5"},
-    {file = "pyupgrade-2.37.1.tar.gz", hash = "sha256:3d9cbd88507a0f3d7397c46870617f0d073d61401c451c08a06763d6235d9e7d"},
+    {file = "pyupgrade-2.37.2-py2.py3-none-any.whl", hash = "sha256:5394cd5b1a8e1e4973c98ed2725449492dd2f2a285079c7b62ebaf06095bfce7"},
+    {file = "pyupgrade-2.37.2.tar.gz", hash = "sha256:137d7e624d94e998092d8aa4e0e701e9a6101b2d8b4ee469c41b617a6f98b1d1"},
 ]
 rfc3986 = [
     {file = "rfc3986-1.5.0-py2.py3-none-any.whl", hash = "sha256:a86d6e1f5b1dc238b218b012df0aa79409667bb209e58da56d0b94704e712a97"},
