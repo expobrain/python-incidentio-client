@@ -16,7 +16,7 @@ python-dotenv = "^0.20.0"
 mypy = "^0.961"
 black = "^22.6"
 autoflake = "^1.4"
-pyupgrade = "^2.37.1"
+pyupgrade = "^2.37.2"
 flake8 = "^4.0.1"
 isort = "^5.10.1"
 
