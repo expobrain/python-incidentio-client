@@ -11,14 +11,13 @@ T = TypeVar("T", bound="UserReferencePayloadRequestBody")
 class UserReferencePayloadRequestBody:
     """
     Example:
-        {'email': 'Eos et et possimus molestiae rem quia.', 'id': 'Mollitia fugit consequatur.', 'slack_user_id': 'Nobis
-            nulla officiis deleniti quia saepe.'}
+        {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}
 
     Attributes:
-        email (Union[Unset, str]): The user's email address, matching the email on their Slack account Example: Quisquam
-            id..
-        id (Union[Unset, str]): The incident.io ID of a user Example: Qui vitae officia accusantium..
-        slack_user_id (Union[Unset, str]): The ID of the user's Slack account. Example: Et excepturi enim culpa ut..
+        email (Union[Unset, str]): The user's email address, matching the email on their Slack account Example:
+            bob@example.com.
+        id (Union[Unset, str]): The incident.io ID of a user Example: 01G0J1EXE7AXZ2C93K61WBPYEH.
+        slack_user_id (Union[Unset, str]): The ID of the user's Slack account. Example: USER123.
     """
 
     email: Union[Unset, str] = UNSET

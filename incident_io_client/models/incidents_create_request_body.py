@@ -38,23 +38,19 @@ class IncidentsCreateRequestBody:
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]}],
-            'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email': 'Dolore autem ea et
-            voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat
-            exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore
-            autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum
-            fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
-            'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias
-            aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee':
-            {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id':
-            'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_type_id': 'Aut repellendus voluptatem.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id':
-            'Placeat quod aspernatur quia eveniet.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad, and we don't know why
-            yet.", 'visibility': 'public'}
+            'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
+            {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_type_id': 'Voluptates quo eveniet molestias ut voluptas.', 'mode': 'real', 'name': 'Our database is
+            sad', 'severity_id': 'Eius tempora sapiente.', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really
+            sad, and we don't know why yet.", 'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
-        severity_id (str):  Example: Non quos quod dolor..
+        severity_id (str):  Example: Adipisci commodi omnis consequatur..
         visibility (IncidentsCreateRequestBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
@@ -75,14 +71,14 @@ class IncidentsCreateRequestBody:
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]}].
         incident_role_assignments (Union[Unset, List[IncidentRoleAssignmentPayloadRequestBody]]): Assign incident roles
-            to these people Example: [{'assignee': {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus
-            porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut
-            doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'Dolore autem ea et voluptatem minus
-            aut.', 'id': 'Ut doloribus porro et sit nihil.', 'slack_user_id': 'Alias aut rerum fugiat exercitationem
-            maiores.'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
-        incident_type_id (Union[Unset, str]):  Example: Porro ullam est quidem amet repellendus aut..
+            to these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}].
+        incident_type_id (Union[Unset, str]):  Example: Qui quo deserunt id..
         mode (Union[Unset, IncidentsCreateRequestBodyMode]): Whether the incident is real, a test, or a tutorial
             Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.

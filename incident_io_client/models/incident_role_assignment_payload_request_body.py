@@ -11,13 +11,12 @@ T = TypeVar("T", bound="IncidentRoleAssignmentPayloadRequestBody")
 class IncidentRoleAssignmentPayloadRequestBody:
     """
     Example:
-        {'assignee': {'email': 'Dolore autem ea et voluptatem minus aut.', 'id': 'Ut doloribus porro et sit nihil.',
-            'slack_user_id': 'Alias aut rerum fugiat exercitationem maiores.'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}
+        {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}
 
     Attributes:
-        assignee (UserReferencePayloadRequestBody):  Example: {'email': 'Eos et et possimus molestiae rem quia.', 'id':
-            'Mollitia fugit consequatur.', 'slack_user_id': 'Nobis nulla officiis deleniti quia saepe.'}.
+        assignee (UserReferencePayloadRequestBody):  Example: {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}.
         incident_role_id (str): Unique ID of an incident role Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
     """
 
