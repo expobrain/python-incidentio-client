@@ -1,5 +1,12 @@
 name: Unit testing, formatting & linting
-on: [push]
+
+on:
+  - push
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   testing-formatting-linting:
     runs-on: ubuntu-latest
