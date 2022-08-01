@@ -1,6 +1,7 @@
 # v0.14.0
 
 - updated to the latest API at 2022-08-01
+- deprecated `exclude_test_incidents` in `GET /v1/actions` in favour of the `incident_mode` param
 
 # v0.13.0
 
