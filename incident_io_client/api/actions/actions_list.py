@@ -3,6 +3,7 @@ from typing import Any, Dict, Optional, Union
 import httpx
 
 from ...client import Client
+from ...models.actions_list_incident_mode import ActionsListIncidentMode
 from ...models.actions_list_response_body import ActionsListResponseBody
 from ...types import UNSET, Response, Unset
 
@@ -13,6 +14,7 @@ def _get_kwargs(
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     exclude_test_incidents: Union[Unset, None, bool] = UNSET,
+    incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Dict[str, Any]:
     url = f"{client.base_url}/v1/actions"
 
@@ -25,6 +27,12 @@ def _get_kwargs(
     params["is_follow_up"] = is_follow_up
 
     params["exclude_test_incidents"] = exclude_test_incidents
+
+    json_incident_mode: Union[Unset, None, str] = UNSET
+    if not isinstance(incident_mode, Unset):
+        json_incident_mode = incident_mode.value if incident_mode else None
+
+    params["incident_mode"] = json_incident_mode
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -61,6 +69,7 @@ def sync_detailed(
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     exclude_test_incidents: Union[Unset, None, bool] = UNSET,
+    incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Response[ActionsListResponseBody]:
     """List Actions
 
@@ -70,6 +79,7 @@ def sync_detailed(
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
         exclude_test_incidents (Union[Unset, None, bool]):
+        incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
         Response[ActionsListResponseBody]
@@ -80,6 +90,7 @@ def sync_detailed(
         incident_id=incident_id,
         is_follow_up=is_follow_up,
         exclude_test_incidents=exclude_test_incidents,
+        incident_mode=incident_mode,
     )
 
     response = httpx.request(
@@ -96,6 +107,7 @@ def sync(
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     exclude_test_incidents: Union[Unset, None, bool] = UNSET,
+    incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Optional[ActionsListResponseBody]:
     """List Actions
 
@@ -105,6 +117,7 @@ def sync(
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
         exclude_test_incidents (Union[Unset, None, bool]):
+        incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
         Response[ActionsListResponseBody]
@@ -115,6 +128,7 @@ def sync(
         incident_id=incident_id,
         is_follow_up=is_follow_up,
         exclude_test_incidents=exclude_test_incidents,
+        incident_mode=incident_mode,
     ).parsed
 
 
@@ -124,6 +138,7 @@ async def asyncio_detailed(
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     exclude_test_incidents: Union[Unset, None, bool] = UNSET,
+    incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Response[ActionsListResponseBody]:
     """List Actions
 
@@ -133,6 +148,7 @@ async def asyncio_detailed(
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
         exclude_test_incidents (Union[Unset, None, bool]):
+        incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
         Response[ActionsListResponseBody]
@@ -143,6 +159,7 @@ async def asyncio_detailed(
         incident_id=incident_id,
         is_follow_up=is_follow_up,
         exclude_test_incidents=exclude_test_incidents,
+        incident_mode=incident_mode,
     )
 
     async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
@@ -157,6 +174,7 @@ async def asyncio(
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     exclude_test_incidents: Union[Unset, None, bool] = UNSET,
+    incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Optional[ActionsListResponseBody]:
     """List Actions
 
@@ -166,6 +184,7 @@ async def asyncio(
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
         exclude_test_incidents (Union[Unset, None, bool]):
+        incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
         Response[ActionsListResponseBody]
@@ -177,5 +196,6 @@ async def asyncio(
             incident_id=incident_id,
             is_follow_up=is_follow_up,
             exclude_test_incidents=exclude_test_incidents,
+            incident_mode=incident_mode,
         )
     ).parsed

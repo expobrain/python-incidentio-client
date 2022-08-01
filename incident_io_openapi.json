@@ -5855,11 +5855,24 @@
             }
           },
           {
-            "description": "Don't return actions attached to test incidents",
+            "description": "Don't return actions attached to test incidents. This field is deprecated in favour of the `incident_mode` param.",
             "in": "query",
             "name": "exclude_test_incidents",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "description": "Filter to actions from incidents of the given mode. If not set, only actions from `real` incidents are returned",
+            "in": "query",
+            "name": "incident_mode",
+            "schema": {
+              "enum": [
+                "real",
+                "test",
+                "tutorial"
+              ],
+              "type": "string"
             }
           }
         ],
