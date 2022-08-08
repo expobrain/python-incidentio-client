@@ -31,7 +31,10 @@ class IncidentTypesListResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
             'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name':
-            'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
+            'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
     incident_types: List[IncidentTypeResponseBody]

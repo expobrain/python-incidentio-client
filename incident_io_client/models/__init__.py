@@ -52,6 +52,25 @@ from .external_issue_reference_response_body import ExternalIssueReferenceRespon
 from .external_issue_reference_response_body_provider import (
     ExternalIssueReferenceResponseBodyProvider,
 )
+from .external_resource_response_body import ExternalResourceResponseBody
+from .external_resource_response_body_resource_type import (
+    ExternalResourceResponseBodyResourceType,
+)
+from .incident_attachment_response_body import IncidentAttachmentResponseBody
+from .incident_attachments_create_request_body import (
+    IncidentAttachmentsCreateRequestBody,
+)
+from .incident_attachments_create_request_body_resource import (
+    IncidentAttachmentsCreateRequestBodyResource,
+)
+from .incident_attachments_create_request_body_resource_resource_type import (
+    IncidentAttachmentsCreateRequestBodyResourceResourceType,
+)
+from .incident_attachments_create_response_body import (
+    IncidentAttachmentsCreateResponseBody,
+)
+from .incident_attachments_list_resource_type import IncidentAttachmentsListResourceType
+from .incident_attachments_list_response_body import IncidentAttachmentsListResponseBody
 from .incident_response_body import IncidentResponseBody
 from .incident_response_body_mode import IncidentResponseBodyMode
 from .incident_response_body_status import IncidentResponseBodyStatus

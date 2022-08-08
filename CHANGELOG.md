@@ -1,3 +1,9 @@
+# v0.15.0
+
+- updated to the latest API at 2022-08-08
+- added `assignee` field to `ActionsShowResponseBody`, `ActionResponseBody`, `ActionsListResponseBody`
+- added new `/v1/incident_attachments` endpoint
+
 # v0.14.0
 
 - updated to the latest API at 2022-08-01
