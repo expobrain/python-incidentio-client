@@ -8,6 +8,7 @@ from ..models.action_response_body_status import ActionResponseBodyStatus
 from ..models.external_issue_reference_response_body import (
     ExternalIssueReferenceResponseBody,
 )
+from ..models.user_response_body import UserResponseBody
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="ActionResponseBody")
@@ -17,11 +18,12 @@ T = TypeVar("T", bound="ActionResponseBody")
 class ActionResponseBody:
     """
     Example:
-        {'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'Call the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
-            'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'linear'}, 'follow_up':
-            True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}
+        {'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
+            'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
+            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
+            write-up', 'provider': 'linear'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -31,6 +33,8 @@ class ActionResponseBody:
         incident_id (str): Unique identifier of the incident the action belongs to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         status (ActionResponseBodyStatus): Status of the action Example: outstanding.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
+        assignee (Union[Unset, UserResponseBody]):  Example: {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
         completed_at (Union[Unset, datetime.datetime]): When the action was completed Example:
             2021-08-17T13:28:57.801578Z.
         external_issue_reference (Union[Unset, ExternalIssueReferenceResponseBody]):  Example: {'issue_name': 'INC-123',
@@ -45,6 +49,7 @@ class ActionResponseBody:
     incident_id: str
     status: ActionResponseBodyStatus
     updated_at: datetime.datetime
+    assignee: Union[Unset, UserResponseBody] = UNSET
     completed_at: Union[Unset, datetime.datetime] = UNSET
     external_issue_reference: Union[Unset, ExternalIssueReferenceResponseBody] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
@@ -59,6 +64,10 @@ class ActionResponseBody:
         status = self.status.value
 
         updated_at = self.updated_at.isoformat()
+
+        assignee: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.assignee, Unset):
+            assignee = self.assignee.to_dict()
 
         completed_at: Union[Unset, str] = UNSET
         if not isinstance(self.completed_at, Unset):
@@ -81,6 +90,8 @@ class ActionResponseBody:
                 "updated_at": updated_at,
             }
         )
+        if assignee is not UNSET:
+            field_dict["assignee"] = assignee
         if completed_at is not UNSET:
             field_dict["completed_at"] = completed_at
         if external_issue_reference is not UNSET:
@@ -104,6 +115,13 @@ class ActionResponseBody:
         status = ActionResponseBodyStatus(d.pop("status"))
 
         updated_at = isoparse(d.pop("updated_at"))
+
+        _assignee = d.pop("assignee", UNSET)
+        assignee: Union[Unset, UserResponseBody]
+        if isinstance(_assignee, Unset):
+            assignee = UNSET
+        else:
+            assignee = UserResponseBody.from_dict(_assignee)
 
         _completed_at = d.pop("completed_at", UNSET)
         completed_at: Union[Unset, datetime.datetime]
@@ -129,6 +147,7 @@ class ActionResponseBody:
             incident_id=incident_id,
             status=status,
             updated_at=updated_at,
+            assignee=assignee,
             completed_at=completed_at,
             external_issue_reference=external_issue_reference,
         )

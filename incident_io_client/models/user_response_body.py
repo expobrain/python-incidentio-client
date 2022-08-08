@@ -13,18 +13,20 @@ class UserResponseBody:
     """
     Example:
         {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
-            'viewer'}
+            'viewer', 'slack_user_id': 'U02AYNF2XJM'}
 
     Attributes:
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name of the user Example: Lisa Karlin Curtis.
         role (UserResponseBodyRole): Role of the user Example: viewer.
+        slack_user_id (str): Slack ID of the user Example: U02AYNF2XJM.
         email (Union[Unset, str]): Email address of the user. Example: lisa@incident.io.
     """
 
     id: str
     name: str
     role: UserResponseBodyRole
+    slack_user_id: str
     email: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -33,6 +35,7 @@ class UserResponseBody:
         name = self.name
         role = self.role.value
 
+        slack_user_id = self.slack_user_id
         email = self.email
 
         field_dict: Dict[str, Any] = {}
@@ -42,6 +45,7 @@ class UserResponseBody:
                 "id": id,
                 "name": name,
                 "role": role,
+                "slack_user_id": slack_user_id,
             }
         )
         if email is not UNSET:
@@ -58,12 +62,15 @@ class UserResponseBody:
 
         role = UserResponseBodyRole(d.pop("role"))
 
+        slack_user_id = d.pop("slack_user_id")
+
         email = d.pop("email", UNSET)
 
         user_response_body = cls(
             id=id,
             name=name,
             role=role,
+            slack_user_id=slack_user_id,
             email=email,
         )
 
