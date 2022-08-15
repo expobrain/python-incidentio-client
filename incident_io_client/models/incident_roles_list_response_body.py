@@ -28,7 +28,10 @@ class IncidentRolesListResponseBody:
             {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
+            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
+            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
     incident_roles: List[IncidentRoleResponseBody]

@@ -9,14 +9,15 @@ T = TypeVar("T", bound="PublicIdentityResponseBody")
 class PublicIdentityResponseBody:
     """
     Example:
-        {'name': 'Dicta inventore qui.', 'roles': ['Accusantium iure quisquam id.', 'Et excepturi enim culpa ut.',
-            'Mollitia fugit consequatur.']}
+        {'name': 'Officia accusantium iure quisquam.', 'roles': ['Et excepturi enim culpa ut.', 'Mollitia fugit
+            consequatur.', 'Eos et et possimus molestiae rem quia.']}
 
     Attributes:
-        name (str): The name assigned to the current API Key Example: Non sed sit quia voluptatem odit..
+        name (str): The name assigned to the current API Key Example: Aliquam eligendi cupiditate voluptatem distinctio
+            ut..
         roles (List[str]): Which roles have been enabled for this key. Available roles are viewer, incident_creator,
-            global_access, manage_settings. Example: ['Fugiat ratione est aliquid hic quasi.', 'Sunt quo harum ut quos.',
-            'Nesciunt omnis magnam earum.'].
+            global_access, manage_settings. Example: ['Hic quasi.', 'Sunt quo harum ut quos.', 'Nesciunt omnis magnam
+            earum.', 'Dicta inventore qui.'].
     """
 
     name: str

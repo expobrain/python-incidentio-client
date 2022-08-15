@@ -81,13 +81,11 @@ def sync_detailed(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Consequuntur fuga atque dignissimos
-            accusamus explicabo.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id':
-            'Optio voluptatum rerum magnam alias.', 'source_message_channel_id': 'C02AW36C1M5',
-            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
-            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Optio voluptatum rerum magnam
+            alias.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Et amet non sed
+            sit quia.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
+            and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -140,13 +138,11 @@ def sync(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Consequuntur fuga atque dignissimos
-            accusamus explicabo.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id':
-            'Optio voluptatum rerum magnam alias.', 'source_message_channel_id': 'C02AW36C1M5',
-            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
-            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Optio voluptatum rerum magnam
+            alias.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Et amet non sed
+            sit quia.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
+            and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -192,13 +188,11 @@ async def asyncio_detailed(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Consequuntur fuga atque dignissimos
-            accusamus explicabo.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id':
-            'Optio voluptatum rerum magnam alias.', 'source_message_channel_id': 'C02AW36C1M5',
-            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
-            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Optio voluptatum rerum magnam
+            alias.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Et amet non sed
+            sit quia.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
+            and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]
@@ -249,13 +243,11 @@ async def asyncio(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Consequuntur fuga atque dignissimos
-            accusamus explicabo.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id':
-            'Optio voluptatum rerum magnam alias.', 'source_message_channel_id': 'C02AW36C1M5',
-            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
-            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Optio voluptatum rerum magnam
+            alias.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Et amet non sed
+            sit quia.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
+            and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsCreateResponseBody]

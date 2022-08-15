@@ -12,8 +12,8 @@ class IncidentTypesShowResponseBody:
     """
     Example:
         {'incident_type': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production
-            outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage',
-            'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
+            outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage',
+            'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
         incident_type (IncidentTypeResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
