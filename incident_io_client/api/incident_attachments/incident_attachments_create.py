@@ -65,8 +65,8 @@ def sync_detailed(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Omnis ut.',
-            'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
+        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Consequatur
+            et ut.', 'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
 
     Returns:
         Response[IncidentAttachmentsCreateResponseBody]
@@ -95,8 +95,8 @@ def sync(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Omnis ut.',
-            'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
+        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Consequatur
+            et ut.', 'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
 
     Returns:
         Response[IncidentAttachmentsCreateResponseBody]
@@ -118,8 +118,8 @@ async def asyncio_detailed(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Omnis ut.',
-            'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
+        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Consequatur
+            et ut.', 'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
 
     Returns:
         Response[IncidentAttachmentsCreateResponseBody]
@@ -146,8 +146,8 @@ async def asyncio(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Omnis ut.',
-            'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
+        json_body (IncidentAttachmentsCreateRequestBody):  Example: {'incident_id': 'Consequatur
+            et ut.', 'resource': {'external_id': '123', 'resource_type': 'pager_duty_incident'}}.
 
     Returns:
         Response[IncidentAttachmentsCreateResponseBody]

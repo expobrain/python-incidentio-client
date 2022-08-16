@@ -42,16 +42,15 @@ class IncidentsCreateRequestBody:
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
-            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Consequuntur fuga atque dignissimos accusamus explicabo.',
-            'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Optio voluptatum rerum magnam alias.',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp': '1653650280.526509', 'status': 'triage',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': 'Optio
+            voluptatum rerum magnam alias.', 'mode': 'real', 'name': 'Our database is sad', 'severity_id': 'Et amet non sed
+            sit quia.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp': '1653650280.526509',
+            'status': 'triage', 'summary': "Our database is really really sad, and we don't know why yet.", 'visibility':
+            'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
-        severity_id (str):  Example: Unde qui alias reiciendis quis ut..
+        severity_id (str):  Example: Fuga atque dignissimos..
         visibility (IncidentsCreateRequestBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
@@ -76,20 +75,14 @@ class IncidentsCreateRequestBody:
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'},
             {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it'}]}].
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}]}].
         incident_role_assignments (Union[Unset, List[IncidentRoleAssignmentPayloadRequestBody]]): Assign incident roles
             to these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}].
-        incident_type_id (Union[Unset, str]):  Example: Aut quis repellat a delectus et deserunt..
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
+        incident_type_id (Union[Unset, str]):  Example: Ut tempore eius ut..
         mode (Union[Unset, IncidentsCreateRequestBodyMode]): Whether the incident is real, a test, or a tutorial
             Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.

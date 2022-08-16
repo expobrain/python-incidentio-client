@@ -1,3 +1,8 @@
+# v0.16.0
+
+- updated to the latest API at 2022-08-15
+- added `incident_id` in `GET /v1/incident_attachments`
+
 # v0.16.1
 
 - relaxed version of `httpx` to be compatible on som version of Google Cloud Composer

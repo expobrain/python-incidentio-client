@@ -11,12 +11,12 @@ T = TypeVar("T", bound="UtilitiesIdentityResponseBody")
 class UtilitiesIdentityResponseBody:
     """
     Example:
-        {'identity': {'name': 'Ea eos.', 'roles': ['Aliquam asperiores.', 'Ut doloribus porro et sit nihil.', 'Dolore
-            autem ea et voluptatem minus aut.']}}
+        {'identity': {'name': 'Officiis alias.', 'roles': ['Fugiat exercitationem.', 'Ut quasi beatae quisquam aut
+            doloremque a.']}}
 
     Attributes:
-        identity (PublicIdentityResponseBody):  Example: {'name': 'Dicta inventore qui.', 'roles': ['Accusantium iure
-            quisquam id.', 'Et excepturi enim culpa ut.', 'Mollitia fugit consequatur.']}.
+        identity (PublicIdentityResponseBody):  Example: {'name': 'Officia accusantium iure quisquam.', 'roles': ['Et
+            excepturi enim culpa ut.', 'Mollitia fugit consequatur.', 'Eos et et possimus molestiae rem quia.']}.
     """
 
     identity: PublicIdentityResponseBody

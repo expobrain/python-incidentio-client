@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
@@ -9,12 +9,13 @@ from ...models.incident_attachments_list_resource_type import (
 from ...models.incident_attachments_list_response_body import (
     IncidentAttachmentsListResponseBody,
 )
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
     client: Client,
+    incident_id: Union[Unset, None, str] = UNSET,
     external_id: str,
     resource_type: IncidentAttachmentsListResourceType,
 ) -> Dict[str, Any]:
@@ -24,6 +25,8 @@ def _get_kwargs(
     cookies: Dict[str, Any] = client.get_cookies()
 
     params: Dict[str, Any] = {}
+    params["incident_id"] = incident_id
+
     params["external_id"] = external_id
 
     json_resource_type = resource_type.value
@@ -62,6 +65,7 @@ def _build_response(*, response: httpx.Response) -> Response[IncidentAttachments
 def sync_detailed(
     *,
     client: Client,
+    incident_id: Union[Unset, None, str] = UNSET,
     external_id: str,
     resource_type: IncidentAttachmentsListResourceType,
 ) -> Response[IncidentAttachmentsListResponseBody]:
@@ -70,6 +74,7 @@ def sync_detailed(
      List all incident attachements for an external resouce
 
     Args:
+        incident_id (Union[Unset, None, str]):
         external_id (str):
         resource_type (IncidentAttachmentsListResourceType):
 
@@ -79,6 +84,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         client=client,
+        incident_id=incident_id,
         external_id=external_id,
         resource_type=resource_type,
     )
@@ -94,6 +100,7 @@ def sync_detailed(
 def sync(
     *,
     client: Client,
+    incident_id: Union[Unset, None, str] = UNSET,
     external_id: str,
     resource_type: IncidentAttachmentsListResourceType,
 ) -> Optional[IncidentAttachmentsListResponseBody]:
@@ -102,6 +109,7 @@ def sync(
      List all incident attachements for an external resouce
 
     Args:
+        incident_id (Union[Unset, None, str]):
         external_id (str):
         resource_type (IncidentAttachmentsListResourceType):
 
@@ -111,6 +119,7 @@ def sync(
 
     return sync_detailed(
         client=client,
+        incident_id=incident_id,
         external_id=external_id,
         resource_type=resource_type,
     ).parsed
@@ -119,6 +128,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Client,
+    incident_id: Union[Unset, None, str] = UNSET,
     external_id: str,
     resource_type: IncidentAttachmentsListResourceType,
 ) -> Response[IncidentAttachmentsListResponseBody]:
@@ -127,6 +137,7 @@ async def asyncio_detailed(
      List all incident attachements for an external resouce
 
     Args:
+        incident_id (Union[Unset, None, str]):
         external_id (str):
         resource_type (IncidentAttachmentsListResourceType):
 
@@ -136,6 +147,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         client=client,
+        incident_id=incident_id,
         external_id=external_id,
         resource_type=resource_type,
     )
@@ -149,6 +161,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Client,
+    incident_id: Union[Unset, None, str] = UNSET,
     external_id: str,
     resource_type: IncidentAttachmentsListResourceType,
 ) -> Optional[IncidentAttachmentsListResponseBody]:
@@ -157,6 +170,7 @@ async def asyncio(
      List all incident attachements for an external resouce
 
     Args:
+        incident_id (Union[Unset, None, str]):
         external_id (str):
         resource_type (IncidentAttachmentsListResourceType):
 
@@ -167,6 +181,7 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
+            incident_id=incident_id,
             external_id=external_id,
             resource_type=resource_type,
         )
