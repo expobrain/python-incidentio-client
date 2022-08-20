@@ -1,0 +1,3 @@
+# incident_io_client.models.incident_attachments_list_resource_type
+
+::: incident_io_client.models.incident_attachments_list_resource_type

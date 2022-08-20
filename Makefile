@@ -6,13 +6,22 @@ download:
 		-H "Accept: application/json" \
 	| jq -S > incident_io_openapi.json
 
-generate:
+generate_docs:
+	rm -rf docs/api_reference
+	python scripts/api_docs.py \
+		-p incident_io_client \
+		-d docs/api_reference \
+		-m mkdocs.yml
+
+generate_client:
 	rm -rf incident_io_client
 
 	openapi-python-client generate --meta none --path incident_io_openapi.json
 
 	touch incident_io_client/py.typed
 	make fmt
+
+generate: generate_client generate_docs
 
 fmt:
 	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \

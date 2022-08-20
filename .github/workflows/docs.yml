@@ -1,0 +1,24 @@
+name: Publish docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - name: Cache multiple Pips
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-3.8-${{ hashFiles('**/poetry.lock') }}
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run mkdocs gh-deploy --force

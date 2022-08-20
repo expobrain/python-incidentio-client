@@ -1,0 +1,165 @@
+site_name: Incident.io Python Client
+theme:
+  name: material
+  features:
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+strict: true
+repo_name: expobrain/python-incidentio-client"
+repo_url: https://github.com/expobrain/python-incidentio-client
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+nav:
+  - Overview: index.md
+  - API reference:
+      - client: api_reference/client.md
+      - api:
+          - actions:
+              - actions_list: api_reference/api/actions/actions_list.md
+      - models:
+          - action_response_body_status: api_reference/models/action_response_body_status.md
+          - action_list_response_body: api_reference/models/actions_list_response_body.md
+  - API Reference:
+      - client: api_reference/client.md
+      - types: api_reference/types.md
+      - api:
+          - actions:
+              - actions_list: api_reference/api/actions/actions_list.md
+              - actions_show: api_reference/api/actions/actions_show.md
+          - custom_field_options:
+              - custom_field_options_create: api_reference/api/custom_field_options/custom_field_options_create.md
+              - custom_field_options_delete: api_reference/api/custom_field_options/custom_field_options_delete.md
+              - custom_field_options_list: api_reference/api/custom_field_options/custom_field_options_list.md
+              - custom_field_options_show: api_reference/api/custom_field_options/custom_field_options_show.md
+              - custom_field_options_update: api_reference/api/custom_field_options/custom_field_options_update.md
+          - custom_fields:
+              - custom_fields_create: api_reference/api/custom_fields/custom_fields_create.md
+              - custom_fields_delete: api_reference/api/custom_fields/custom_fields_delete.md
+              - custom_fields_list: api_reference/api/custom_fields/custom_fields_list.md
+              - custom_fields_show: api_reference/api/custom_fields/custom_fields_show.md
+              - custom_fields_update: api_reference/api/custom_fields/custom_fields_update.md
+          - incident_attachments:
+              - incident_attachments_create: api_reference/api/incident_attachments/incident_attachments_create.md
+              - incident_attachments_delete: api_reference/api/incident_attachments/incident_attachments_delete.md
+              - incident_attachments_list: api_reference/api/incident_attachments/incident_attachments_list.md
+          - incident_roles:
+              - incident_roles_create: api_reference/api/incident_roles/incident_roles_create.md
+              - incident_roles_delete: api_reference/api/incident_roles/incident_roles_delete.md
+              - incident_roles_list: api_reference/api/incident_roles/incident_roles_list.md
+              - incident_roles_show: api_reference/api/incident_roles/incident_roles_show.md
+              - incident_roles_update: api_reference/api/incident_roles/incident_roles_update.md
+          - incident_types:
+              - incident_types_list: api_reference/api/incident_types/incident_types_list.md
+              - incident_types_show: api_reference/api/incident_types/incident_types_show.md
+          - incidents:
+              - incidents_create: api_reference/api/incidents/incidents_create.md
+              - incidents_list: api_reference/api/incidents/incidents_list.md
+              - incidents_show: api_reference/api/incidents/incidents_show.md
+          - severities:
+              - severities_create: api_reference/api/severities/severities_create.md
+              - severities_delete: api_reference/api/severities/severities_delete.md
+              - severities_list: api_reference/api/severities/severities_list.md
+              - severities_show: api_reference/api/severities/severities_show.md
+              - severities_update: api_reference/api/severities/severities_update.md
+          - utilities:
+              - utilities_identity: api_reference/api/utilities/utilities_identity.md
+              - utilities_open_api: api_reference/api/utilities/utilities_open_api.md
+      - models:
+          - action_response_body: api_reference/models/action_response_body.md
+          - action_response_body_status: api_reference/models/action_response_body_status.md
+          - actions_list_incident_mode: api_reference/models/actions_list_incident_mode.md
+          - actions_list_response_body: api_reference/models/actions_list_response_body.md
+          - actions_show_response_body: api_reference/models/actions_show_response_body.md
+          - actor_response_body: api_reference/models/actor_response_body.md
+          - api_key_response_body: api_reference/models/api_key_response_body.md
+          - custom_field_entry_payload_request_body: api_reference/models/custom_field_entry_payload_request_body.md
+          - custom_field_entry_response_body: api_reference/models/custom_field_entry_response_body.md
+          - custom_field_option_response_body: api_reference/models/custom_field_option_response_body.md
+          - custom_field_options_create_request_body: api_reference/models/custom_field_options_create_request_body.md
+          - custom_field_options_create_response_body: api_reference/models/custom_field_options_create_response_body.md
+          - custom_field_options_list_response_body: api_reference/models/custom_field_options_list_response_body.md
+          - custom_field_options_show_response_body: api_reference/models/custom_field_options_show_response_body.md
+          - custom_field_options_update_request_body: api_reference/models/custom_field_options_update_request_body.md
+          - custom_field_options_update_response_body: api_reference/models/custom_field_options_update_response_body.md
+          - custom_field_response_body: api_reference/models/custom_field_response_body.md
+          - custom_field_response_body_field_type: api_reference/models/custom_field_response_body_field_type.md
+          - custom_field_response_body_required: api_reference/models/custom_field_response_body_required.md
+          - custom_field_type_info_response_body: api_reference/models/custom_field_type_info_response_body.md
+          - custom_field_type_info_response_body_field_type: api_reference/models/custom_field_type_info_response_body_field_type.md
+          - custom_field_value_payload_request_body: api_reference/models/custom_field_value_payload_request_body.md
+          - custom_field_value_response_body: api_reference/models/custom_field_value_response_body.md
+          - custom_fields_create_request_body: api_reference/models/custom_fields_create_request_body.md
+          - custom_fields_create_request_body_field_type: api_reference/models/custom_fields_create_request_body_field_type.md
+          - custom_fields_create_request_body_required: api_reference/models/custom_fields_create_request_body_required.md
+          - custom_fields_create_response_body: api_reference/models/custom_fields_create_response_body.md
+          - custom_fields_list_response_body: api_reference/models/custom_fields_list_response_body.md
+          - custom_fields_show_response_body: api_reference/models/custom_fields_show_response_body.md
+          - custom_fields_update_request_body: api_reference/models/custom_fields_update_request_body.md
+          - custom_fields_update_request_body_required: api_reference/models/custom_fields_update_request_body_required.md
+          - custom_fields_update_response_body: api_reference/models/custom_fields_update_response_body.md
+          - external_issue_reference_response_body: api_reference/models/external_issue_reference_response_body.md
+          - external_issue_reference_response_body_provider: api_reference/models/external_issue_reference_response_body_provider.md
+          - external_resource_response_body: api_reference/models/external_resource_response_body.md
+          - external_resource_response_body_resource_type: api_reference/models/external_resource_response_body_resource_type.md
+          - incident_attachment_response_body: api_reference/models/incident_attachment_response_body.md
+          - incident_attachments_create_request_body: api_reference/models/incident_attachments_create_request_body.md
+          - incident_attachments_create_request_body_resource: api_reference/models/incident_attachments_create_request_body_resource.md
+          - incident_attachments_create_request_body_resource_resource_type: api_reference/models/incident_attachments_create_request_body_resource_resource_type.md
+          - incident_attachments_create_response_body: api_reference/models/incident_attachments_create_response_body.md
+          - incident_attachments_list_resource_type: api_reference/models/incident_attachments_list_resource_type.md
+          - incident_attachments_list_response_body: api_reference/models/incident_attachments_list_response_body.md
+          - incident_response_body: api_reference/models/incident_response_body.md
+          - incident_response_body_mode: api_reference/models/incident_response_body_mode.md
+          - incident_response_body_status: api_reference/models/incident_response_body_status.md
+          - incident_response_body_visibility: api_reference/models/incident_response_body_visibility.md
+          - incident_role_assignment_payload_request_body: api_reference/models/incident_role_assignment_payload_request_body.md
+          - incident_role_assignment_response_body: api_reference/models/incident_role_assignment_response_body.md
+          - incident_role_response_body: api_reference/models/incident_role_response_body.md
+          - incident_role_response_body_role_type: api_reference/models/incident_role_response_body_role_type.md
+          - incident_roles_create_request_body: api_reference/models/incident_roles_create_request_body.md
+          - incident_roles_create_response_body: api_reference/models/incident_roles_create_response_body.md
+          - incident_roles_list_response_body: api_reference/models/incident_roles_list_response_body.md
+          - incident_roles_show_response_body: api_reference/models/incident_roles_show_response_body.md
+          - incident_roles_update_request_body: api_reference/models/incident_roles_update_request_body.md
+          - incident_roles_update_response_body: api_reference/models/incident_roles_update_response_body.md
+          - incident_timestamp_response_body: api_reference/models/incident_timestamp_response_body.md
+          - incident_type_response_body: api_reference/models/incident_type_response_body.md
+          - incident_types_list_response_body: api_reference/models/incident_types_list_response_body.md
+          - incident_types_show_response_body: api_reference/models/incident_types_show_response_body.md
+          - incidents_create_request_body: api_reference/models/incidents_create_request_body.md
+          - incidents_create_request_body_mode: api_reference/models/incidents_create_request_body_mode.md
+          - incidents_create_request_body_status: api_reference/models/incidents_create_request_body_status.md
+          - incidents_create_request_body_visibility: api_reference/models/incidents_create_request_body_visibility.md
+          - incidents_create_response_body: api_reference/models/incidents_create_response_body.md
+          - incidents_list_response_body: api_reference/models/incidents_list_response_body.md
+          - incidents_show_response_body: api_reference/models/incidents_show_response_body.md
+          - pagination_meta_response_body: api_reference/models/pagination_meta_response_body.md
+          - public_identity_response_body: api_reference/models/public_identity_response_body.md
+          - severities_create_request_body: api_reference/models/severities_create_request_body.md
+          - severities_create_response_body: api_reference/models/severities_create_response_body.md
+          - severities_list_response_body: api_reference/models/severities_list_response_body.md
+          - severities_show_response_body: api_reference/models/severities_show_response_body.md
+          - severities_update_request_body: api_reference/models/severities_update_request_body.md
+          - severities_update_response_body: api_reference/models/severities_update_response_body.md
+          - severity_response_body: api_reference/models/severity_response_body.md
+          - user_reference_payload_request_body: api_reference/models/user_reference_payload_request_body.md
+          - user_response_body: api_reference/models/user_response_body.md
+          - user_response_body_role: api_reference/models/user_response_body_role.md
+          - utilities_identity_response_body: api_reference/models/utilities_identity_response_body.md
+          - utilities_open_api_response_200: api_reference/models/utilities_open_api_response_200.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_signature_annotations: true
+            separate_signature: true

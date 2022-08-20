@@ -143,3 +143,6 @@ test-requirements.txt
 
 # VSCode
 .vscode
+
+# OS X files
+.DS_Store
