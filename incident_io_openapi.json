@@ -3331,11 +3331,10 @@
             "type": "string"
           },
           "mode": {
-            "description": "Whether the incident is real, a test, or a tutorial",
+            "description": "Whether the incident is real or test",
             "enum": [
               "real",
-              "test",
-              "tutorial"
+              "test"
             ],
             "example": "real",
             "type": "string"

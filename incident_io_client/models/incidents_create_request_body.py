@@ -83,8 +83,7 @@ class IncidentsCreateRequestBody:
             '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
         incident_type_id (Union[Unset, str]):  Example: Ut tempore eius ut..
-        mode (Union[Unset, IncidentsCreateRequestBodyMode]): Whether the incident is real, a test, or a tutorial
-            Example: real.
+        mode (Union[Unset, IncidentsCreateRequestBodyMode]): Whether the incident is real or test Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         source_message_channel_id (Union[Unset, str]): Channel ID of the source message, if this incident was created
             from one Example: C02AW36C1M5.
