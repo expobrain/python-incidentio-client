@@ -1,3 +1,8 @@
+# v0.17.0
+
+- updated to the latest API at 2022-08-22
+- removed tutorial type of incident
+
 # v0.16.0
 
 - updated to the latest API at 2022-08-15
