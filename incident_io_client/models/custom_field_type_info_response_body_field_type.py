@@ -7,6 +7,7 @@ class CustomFieldTypeInfoResponseBodyFieldType(str, Enum):
     TEXT = "text"
     LINK = "link"
     NUMERIC = "numeric"
+    TIMESTAMP = "timestamp"
 
     def __str__(self) -> str:
         return str(self.value)

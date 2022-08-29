@@ -1,3 +1,8 @@
+# v0.18.0
+
+- updated to the latest API at 2022-08-29
+- removed the `exclude_test_incidents` from `GET /v1/actions`
+
 # v0.17.0
 
 - updated to the latest API at 2022-08-22
