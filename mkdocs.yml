@@ -19,14 +19,6 @@ markdown_extensions:
   - pymdownx.superfences
 nav:
   - Overview: index.md
-  - API reference:
-      - client: api_reference/client.md
-      - api:
-          - actions:
-              - actions_list: api_reference/api/actions/actions_list.md
-      - models:
-          - action_response_body_status: api_reference/models/action_response_body_status.md
-          - action_list_response_body: api_reference/models/actions_list_response_body.md
   - API Reference:
       - client: api_reference/client.md
       - types: api_reference/types.md
