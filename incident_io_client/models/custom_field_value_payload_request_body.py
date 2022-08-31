@@ -12,7 +12,8 @@ class CustomFieldValuePayloadRequestBody:
     """
     Example:
         {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it'}
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         id (Union[Unset, str]): Unique identifier for the custom field value Example: 01FCNDV6P870EA6S7TK1DSYDG0.
@@ -20,6 +21,7 @@ class CustomFieldValuePayloadRequestBody:
         value_numeric (Union[Unset, str]): Numeric value Example: 123.456.
         value_option_id (Union[Unset, str]): ID of the custom field option Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         value_text (Union[Unset, str]): Text value Example: This is my text field, I hope you like it.
+        value_timestamp (Union[Unset, str]): Timestamp value in RFC3339 format Example: 2021-08-17T13:28:57.801578Z.
     """
 
     id: Union[Unset, str] = UNSET
@@ -27,6 +29,7 @@ class CustomFieldValuePayloadRequestBody:
     value_numeric: Union[Unset, str] = UNSET
     value_option_id: Union[Unset, str] = UNSET
     value_text: Union[Unset, str] = UNSET
+    value_timestamp: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -35,6 +38,7 @@ class CustomFieldValuePayloadRequestBody:
         value_numeric = self.value_numeric
         value_option_id = self.value_option_id
         value_text = self.value_text
+        value_timestamp = self.value_timestamp
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -49,6 +53,8 @@ class CustomFieldValuePayloadRequestBody:
             field_dict["value_option_id"] = value_option_id
         if value_text is not UNSET:
             field_dict["value_text"] = value_text
+        if value_timestamp is not UNSET:
+            field_dict["value_timestamp"] = value_timestamp
 
         return field_dict
 
@@ -65,12 +71,15 @@ class CustomFieldValuePayloadRequestBody:
 
         value_text = d.pop("value_text", UNSET)
 
+        value_timestamp = d.pop("value_timestamp", UNSET)
+
         custom_field_value_payload_request_body = cls(
             id=id,
             value_link=value_link,
             value_numeric=value_numeric,
             value_option_id=value_option_id,
             value_text=value_text,
+            value_timestamp=value_timestamp,
         )
 
         custom_field_value_payload_request_body.additional_properties = d

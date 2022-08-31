@@ -13,7 +13,6 @@ def _get_kwargs(
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
-    exclude_test_incidents: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Dict[str, Any]:
     url = f"{client.base_url}/v1/actions"
@@ -25,8 +24,6 @@ def _get_kwargs(
     params["incident_id"] = incident_id
 
     params["is_follow_up"] = is_follow_up
-
-    params["exclude_test_incidents"] = exclude_test_incidents
 
     json_incident_mode: Union[Unset, None, str] = UNSET
     if not isinstance(incident_mode, Unset):
@@ -68,7 +65,6 @@ def sync_detailed(
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
-    exclude_test_incidents: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Response[ActionsListResponseBody]:
     """List Actions
@@ -78,7 +74,6 @@ def sync_detailed(
     Args:
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
-        exclude_test_incidents (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
@@ -89,7 +84,6 @@ def sync_detailed(
         client=client,
         incident_id=incident_id,
         is_follow_up=is_follow_up,
-        exclude_test_incidents=exclude_test_incidents,
         incident_mode=incident_mode,
     )
 
@@ -106,7 +100,6 @@ def sync(
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
-    exclude_test_incidents: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Optional[ActionsListResponseBody]:
     """List Actions
@@ -116,7 +109,6 @@ def sync(
     Args:
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
-        exclude_test_incidents (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
@@ -127,7 +119,6 @@ def sync(
         client=client,
         incident_id=incident_id,
         is_follow_up=is_follow_up,
-        exclude_test_incidents=exclude_test_incidents,
         incident_mode=incident_mode,
     ).parsed
 
@@ -137,7 +128,6 @@ async def asyncio_detailed(
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
-    exclude_test_incidents: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Response[ActionsListResponseBody]:
     """List Actions
@@ -147,7 +137,6 @@ async def asyncio_detailed(
     Args:
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
-        exclude_test_incidents (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
@@ -158,7 +147,6 @@ async def asyncio_detailed(
         client=client,
         incident_id=incident_id,
         is_follow_up=is_follow_up,
-        exclude_test_incidents=exclude_test_incidents,
         incident_mode=incident_mode,
     )
 
@@ -173,7 +161,6 @@ async def asyncio(
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
-    exclude_test_incidents: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsListIncidentMode] = UNSET,
 ) -> Optional[ActionsListResponseBody]:
     """List Actions
@@ -183,7 +170,6 @@ async def asyncio(
     Args:
         incident_id (Union[Unset, None, str]):
         is_follow_up (Union[Unset, None, bool]):
-        exclude_test_incidents (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsListIncidentMode]):
 
     Returns:
@@ -195,7 +181,6 @@ async def asyncio(
             client=client,
             incident_id=incident_id,
             is_follow_up=is_follow_up,
-            exclude_test_incidents=exclude_test_incidents,
             incident_mode=incident_mode,
         )
     ).parsed

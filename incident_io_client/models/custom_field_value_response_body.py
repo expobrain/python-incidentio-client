@@ -14,7 +14,7 @@ class CustomFieldValueResponseBody:
     Example:
         {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         value_link (Union[Unset, str]): Link value Example: https://google.com/.
@@ -22,12 +22,14 @@ class CustomFieldValueResponseBody:
         value_option (Union[Unset, CustomFieldOptionResponseBody]):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
         value_text (Union[Unset, str]): Text value Example: This is my text field, I hope you like it.
+        value_timestamp (Union[Unset, str]): Timestamp value in RFC3339 format Example: 2021-08-17T13:28:57.801578Z.
     """
 
     value_link: Union[Unset, str] = UNSET
     value_numeric: Union[Unset, str] = UNSET
     value_option: Union[Unset, CustomFieldOptionResponseBody] = UNSET
     value_text: Union[Unset, str] = UNSET
+    value_timestamp: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -38,6 +40,7 @@ class CustomFieldValueResponseBody:
             value_option = self.value_option.to_dict()
 
         value_text = self.value_text
+        value_timestamp = self.value_timestamp
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -50,6 +53,8 @@ class CustomFieldValueResponseBody:
             field_dict["value_option"] = value_option
         if value_text is not UNSET:
             field_dict["value_text"] = value_text
+        if value_timestamp is not UNSET:
+            field_dict["value_timestamp"] = value_timestamp
 
         return field_dict
 
@@ -69,11 +74,14 @@ class CustomFieldValueResponseBody:
 
         value_text = d.pop("value_text", UNSET)
 
+        value_timestamp = d.pop("value_timestamp", UNSET)
+
         custom_field_value_response_body = cls(
             value_link=value_link,
             value_numeric=value_numeric,
             value_option=value_option,
             value_text=value_text,
+            value_timestamp=value_timestamp,
         )
 
         custom_field_value_response_body.additional_properties = d
