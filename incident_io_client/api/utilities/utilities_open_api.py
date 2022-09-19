@@ -1,10 +1,10 @@
+from io import BytesIO
 from typing import Any, Dict, Optional
 
 import httpx
 
 from ...client import Client
-from ...models.utilities_open_api_response_200 import UtilitiesOpenAPIResponse200
-from ...types import Response
+from ...types import File, Response
 
 
 def _get_kwargs(
@@ -25,15 +25,15 @@ def _get_kwargs(
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[UtilitiesOpenAPIResponse200]:
+def _parse_response(*, response: httpx.Response) -> Optional[File]:
     if response.status_code == 200:
-        response_200 = UtilitiesOpenAPIResponse200.from_dict(response.json())
+        response_200 = File(payload=BytesIO(response.json()))
 
         return response_200
     return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[UtilitiesOpenAPIResponse200]:
+def _build_response(*, response: httpx.Response) -> Response[File]:
     return Response(
         status_code=response.status_code,
         content=response.content,
@@ -45,13 +45,13 @@ def _build_response(*, response: httpx.Response) -> Response[UtilitiesOpenAPIRes
 def sync_detailed(
     *,
     client: Client,
-) -> Response[UtilitiesOpenAPIResponse200]:
+) -> Response[File]:
     """OpenAPI Utilities
 
      Get the OpenAPI (v2) definition.
 
     Returns:
-        Response[UtilitiesOpenAPIResponse200]
+        Response[File]
     """
 
     kwargs = _get_kwargs(
@@ -69,13 +69,13 @@ def sync_detailed(
 def sync(
     *,
     client: Client,
-) -> Optional[UtilitiesOpenAPIResponse200]:
+) -> Optional[File]:
     """OpenAPI Utilities
 
      Get the OpenAPI (v2) definition.
 
     Returns:
-        Response[UtilitiesOpenAPIResponse200]
+        Response[File]
     """
 
     return sync_detailed(
@@ -86,13 +86,13 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Client,
-) -> Response[UtilitiesOpenAPIResponse200]:
+) -> Response[File]:
     """OpenAPI Utilities
 
      Get the OpenAPI (v2) definition.
 
     Returns:
-        Response[UtilitiesOpenAPIResponse200]
+        Response[File]
     """
 
     kwargs = _get_kwargs(
@@ -108,13 +108,13 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Client,
-) -> Optional[UtilitiesOpenAPIResponse200]:
+) -> Optional[File]:
     """OpenAPI Utilities
 
      Get the OpenAPI (v2) definition.
 
     Returns:
-        Response[UtilitiesOpenAPIResponse200]
+        Response[File]
     """
 
     return (

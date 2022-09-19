@@ -1,3 +1,8 @@
+# v0.19.0
+
+- updated to the latest API at 2022-09-19
+- new max length of 1000 charactes for `description` fields
+
 # v0.18.0
 
 - updated to the latest API at 2022-08-29
