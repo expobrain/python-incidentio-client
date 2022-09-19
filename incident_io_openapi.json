@@ -5700,7 +5700,6 @@
           "description": {
             "description": "Description of the severity",
             "example": "It's not really that bad, everyone chill",
-            "maxLength": 1000,
             "type": "string"
           },
           "name": {
@@ -5846,7 +5845,6 @@
           "description": {
             "description": "Description of the severity",
             "example": "It's not really that bad, everyone chill",
-            "maxLength": 1000,
             "type": "string"
           },
           "name": {
@@ -5910,7 +5908,6 @@
           "description": {
             "description": "Description of the severity",
             "example": "It's not really that bad, everyone chill",
-            "maxLength": 1000,
             "type": "string"
           },
           "id": {
@@ -7092,7 +7089,7 @@
             }
           },
           {
-            "description": "An incident's ID. This endpoint will return a list of incidents created after this incident.",
+            "description": "An incident's ID. This endpoint will return a list of incidents after this ID in relation to the API response order.",
             "in": "query",
             "name": "after",
             "schema": {
@@ -7244,17 +7241,20 @@
             "content": {
               "application/gob": {
                 "schema": {
-                  "type": "object"
+                  "format": "binary",
+                  "type": "string"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "format": "binary",
+                  "type": "string"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "type": "object"
+                  "format": "binary",
+                  "type": "string"
                 }
               }
             },
