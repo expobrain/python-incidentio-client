@@ -542,7 +542,7 @@ six = ">=1.5"
 
 [[package]]
 name = "pyupgrade"
-version = "2.38.0"
+version = "2.38.1"
 description = "A tool to automatically upgrade syntax for newer versions."
 category = "dev"
 optional = false
@@ -746,7 +746,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4"
-content-hash = "114884834b51c7fc82b6a878e528100eb5af93438ecae36014c13b7c755d3447"
+content-hash = "1b26d36df20c2cb1e30aa47215d6545189b0b64bd3c08183570abd229e093fa8"
 
 [metadata.files]
 anyio = [
@@ -1031,8 +1031,8 @@ python-dateutil = [
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
 pyupgrade = [
-    {file = "pyupgrade-2.38.0-py2.py3-none-any.whl", hash = "sha256:e68e033603de3b4b675c7bd733723fb2bb7930a1898b6da61fb503643322e2f9"},
-    {file = "pyupgrade-2.38.0.tar.gz", hash = "sha256:7d03766fb5d68e9b0ec86b7d48c3cc29462b0031ff48ceece34bd224708553c0"},
+    {file = "pyupgrade-2.38.1-py2.py3-none-any.whl", hash = "sha256:6ef3e7409d6e3648f1c4d71d7654e524a4fa59c58c4c9dc12aa750344ead96c7"},
+    {file = "pyupgrade-2.38.1.tar.gz", hash = "sha256:deac11e7f7393c4cfd133e2d1cd7bac52c4471b4f37afb1577ed9feede28442e"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
