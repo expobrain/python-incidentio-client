@@ -304,7 +304,7 @@ url = ".."
 
 [[package]]
 name = "pyupgrade"
-version = "2.38.0"
+version = "2.38.1"
 description = "A tool to automatically upgrade syntax for newer versions."
 category = "dev"
 optional = false
@@ -390,7 +390,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4"
-content-hash = "471d0fdb91cadbe48c99c76e051afde92a70f2c20e315e39cdb5af9d9adaa411"
+content-hash = "e6c626aaf3e484891482b6e1d52667ec789e70cb13d475121f14e00fff4d6505"
 
 [metadata.files]
 anyio = [
@@ -529,8 +529,8 @@ python-dotenv = [
 ]
 python-incidentio-client = []
 pyupgrade = [
-    {file = "pyupgrade-2.38.0-py2.py3-none-any.whl", hash = "sha256:e68e033603de3b4b675c7bd733723fb2bb7930a1898b6da61fb503643322e2f9"},
-    {file = "pyupgrade-2.38.0.tar.gz", hash = "sha256:7d03766fb5d68e9b0ec86b7d48c3cc29462b0031ff48ceece34bd224708553c0"},
+    {file = "pyupgrade-2.38.1-py2.py3-none-any.whl", hash = "sha256:6ef3e7409d6e3648f1c4d71d7654e524a4fa59c58c4c9dc12aa750344ead96c7"},
+    {file = "pyupgrade-2.38.1.tar.gz", hash = "sha256:deac11e7f7393c4cfd133e2d1cd7bac52c4471b4f37afb1577ed9feede28442e"},
 ]
 rfc3986 = [
     {file = "rfc3986-1.5.0-py2.py3-none-any.whl", hash = "sha256:a86d6e1f5b1dc238b218b012df0aa79409667bb209e58da56d0b94704e712a97"},
