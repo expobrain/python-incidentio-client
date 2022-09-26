@@ -1,115 +1,190 @@
 """ Contains all the data models used in inputs/outputs """
 
-from .action_response_body import ActionResponseBody
-from .action_response_body_status import ActionResponseBodyStatus
-from .actions_list_incident_mode import ActionsListIncidentMode
-from .actions_list_response_body import ActionsListResponseBody
-from .actions_show_response_body import ActionsShowResponseBody
-from .actor_response_body import ActorResponseBody
-from .api_key_response_body import APIKeyResponseBody
-from .custom_field_entry_payload_request_body import CustomFieldEntryPayloadRequestBody
-from .custom_field_entry_response_body import CustomFieldEntryResponseBody
-from .custom_field_option_response_body import CustomFieldOptionResponseBody
-from .custom_field_options_create_request_body import (
-    CustomFieldOptionsCreateRequestBody,
+from .action_v1_response_body import ActionV1ResponseBody
+from .action_v1_response_body_status import ActionV1ResponseBodyStatus
+from .actions_v1_list_incident_mode import ActionsV1ListIncidentMode
+from .actions_v1_list_response_body import ActionsV1ListResponseBody
+from .actions_v1_show_response_body import ActionsV1ShowResponseBody
+from .actor_v1_response_body import ActorV1ResponseBody
+from .actor_v2_response_body import ActorV2ResponseBody
+from .api_key_v1_response_body import APIKeyV1ResponseBody
+from .api_key_v2_response_body import APIKeyV2ResponseBody
+from .custom_field_entry_payload_v1_request_body import (
+    CustomFieldEntryPayloadV1RequestBody,
 )
-from .custom_field_options_create_response_body import (
-    CustomFieldOptionsCreateResponseBody,
+from .custom_field_entry_payload_v2_request_body import (
+    CustomFieldEntryPayloadV2RequestBody,
 )
-from .custom_field_options_list_response_body import CustomFieldOptionsListResponseBody
-from .custom_field_options_show_response_body import CustomFieldOptionsShowResponseBody
-from .custom_field_options_update_request_body import (
-    CustomFieldOptionsUpdateRequestBody,
+from .custom_field_entry_v1_response_body import CustomFieldEntryV1ResponseBody
+from .custom_field_entry_v2_response_body import CustomFieldEntryV2ResponseBody
+from .custom_field_option_v1_response_body import CustomFieldOptionV1ResponseBody
+from .custom_field_option_v2_response_body import CustomFieldOptionV2ResponseBody
+from .custom_field_options_v1_create_request_body import (
+    CustomFieldOptionsV1CreateRequestBody,
 )
-from .custom_field_options_update_response_body import (
-    CustomFieldOptionsUpdateResponseBody,
+from .custom_field_options_v1_create_response_body import (
+    CustomFieldOptionsV1CreateResponseBody,
 )
-from .custom_field_response_body import CustomFieldResponseBody
-from .custom_field_response_body_field_type import CustomFieldResponseBodyFieldType
-from .custom_field_response_body_required import CustomFieldResponseBodyRequired
-from .custom_field_type_info_response_body import CustomFieldTypeInfoResponseBody
-from .custom_field_type_info_response_body_field_type import (
-    CustomFieldTypeInfoResponseBodyFieldType,
+from .custom_field_options_v1_list_response_body import (
+    CustomFieldOptionsV1ListResponseBody,
 )
-from .custom_field_value_payload_request_body import CustomFieldValuePayloadRequestBody
-from .custom_field_value_response_body import CustomFieldValueResponseBody
-from .custom_fields_create_request_body import CustomFieldsCreateRequestBody
-from .custom_fields_create_request_body_field_type import (
-    CustomFieldsCreateRequestBodyFieldType,
+from .custom_field_options_v1_show_response_body import (
+    CustomFieldOptionsV1ShowResponseBody,
 )
-from .custom_fields_create_request_body_required import (
-    CustomFieldsCreateRequestBodyRequired,
+from .custom_field_options_v1_update_request_body import (
+    CustomFieldOptionsV1UpdateRequestBody,
 )
-from .custom_fields_create_response_body import CustomFieldsCreateResponseBody
-from .custom_fields_list_response_body import CustomFieldsListResponseBody
-from .custom_fields_show_response_body import CustomFieldsShowResponseBody
-from .custom_fields_update_request_body import CustomFieldsUpdateRequestBody
-from .custom_fields_update_request_body_required import (
-    CustomFieldsUpdateRequestBodyRequired,
+from .custom_field_options_v1_update_response_body import (
+    CustomFieldOptionsV1UpdateResponseBody,
 )
-from .custom_fields_update_response_body import CustomFieldsUpdateResponseBody
-from .external_issue_reference_response_body import ExternalIssueReferenceResponseBody
-from .external_issue_reference_response_body_provider import (
-    ExternalIssueReferenceResponseBodyProvider,
+from .custom_field_type_info_v1_response_body import CustomFieldTypeInfoV1ResponseBody
+from .custom_field_type_info_v1_response_body_field_type import (
+    CustomFieldTypeInfoV1ResponseBodyFieldType,
 )
-from .external_resource_response_body import ExternalResourceResponseBody
-from .external_resource_response_body_resource_type import (
-    ExternalResourceResponseBodyResourceType,
+from .custom_field_type_info_v2_response_body import CustomFieldTypeInfoV2ResponseBody
+from .custom_field_type_info_v2_response_body_field_type import (
+    CustomFieldTypeInfoV2ResponseBodyFieldType,
 )
-from .incident_attachment_response_body import IncidentAttachmentResponseBody
-from .incident_attachments_create_request_body import (
-    IncidentAttachmentsCreateRequestBody,
+from .custom_field_v1_response_body import CustomFieldV1ResponseBody
+from .custom_field_v1_response_body_field_type import CustomFieldV1ResponseBodyFieldType
+from .custom_field_v1_response_body_required import CustomFieldV1ResponseBodyRequired
+from .custom_field_value_payload_v1_request_body import (
+    CustomFieldValuePayloadV1RequestBody,
 )
-from .incident_attachments_create_request_body_resource import (
-    IncidentAttachmentsCreateRequestBodyResource,
+from .custom_field_value_payload_v2_request_body import (
+    CustomFieldValuePayloadV2RequestBody,
 )
-from .incident_attachments_create_request_body_resource_resource_type import (
-    IncidentAttachmentsCreateRequestBodyResourceResourceType,
+from .custom_field_value_v1_response_body import CustomFieldValueV1ResponseBody
+from .custom_field_value_v2_response_body import CustomFieldValueV2ResponseBody
+from .custom_fields_v1_create_request_body import CustomFieldsV1CreateRequestBody
+from .custom_fields_v1_create_request_body_field_type import (
+    CustomFieldsV1CreateRequestBodyFieldType,
 )
-from .incident_attachments_create_response_body import (
-    IncidentAttachmentsCreateResponseBody,
+from .custom_fields_v1_create_request_body_required import (
+    CustomFieldsV1CreateRequestBodyRequired,
 )
-from .incident_attachments_list_resource_type import IncidentAttachmentsListResourceType
-from .incident_attachments_list_response_body import IncidentAttachmentsListResponseBody
-from .incident_response_body import IncidentResponseBody
-from .incident_response_body_mode import IncidentResponseBodyMode
-from .incident_response_body_status import IncidentResponseBodyStatus
-from .incident_response_body_visibility import IncidentResponseBodyVisibility
-from .incident_role_assignment_payload_request_body import (
-    IncidentRoleAssignmentPayloadRequestBody,
+from .custom_fields_v1_create_response_body import CustomFieldsV1CreateResponseBody
+from .custom_fields_v1_list_response_body import CustomFieldsV1ListResponseBody
+from .custom_fields_v1_show_response_body import CustomFieldsV1ShowResponseBody
+from .custom_fields_v1_update_request_body import CustomFieldsV1UpdateRequestBody
+from .custom_fields_v1_update_request_body_required import (
+    CustomFieldsV1UpdateRequestBodyRequired,
 )
-from .incident_role_assignment_response_body import IncidentRoleAssignmentResponseBody
-from .incident_role_response_body import IncidentRoleResponseBody
-from .incident_role_response_body_role_type import IncidentRoleResponseBodyRoleType
-from .incident_roles_create_request_body import IncidentRolesCreateRequestBody
-from .incident_roles_create_response_body import IncidentRolesCreateResponseBody
-from .incident_roles_list_response_body import IncidentRolesListResponseBody
-from .incident_roles_show_response_body import IncidentRolesShowResponseBody
-from .incident_roles_update_request_body import IncidentRolesUpdateRequestBody
-from .incident_roles_update_response_body import IncidentRolesUpdateResponseBody
-from .incident_timestamp_response_body import IncidentTimestampResponseBody
-from .incident_type_response_body import IncidentTypeResponseBody
-from .incident_types_list_response_body import IncidentTypesListResponseBody
-from .incident_types_show_response_body import IncidentTypesShowResponseBody
-from .incidents_create_request_body import IncidentsCreateRequestBody
-from .incidents_create_request_body_mode import IncidentsCreateRequestBodyMode
-from .incidents_create_request_body_status import IncidentsCreateRequestBodyStatus
-from .incidents_create_request_body_visibility import (
-    IncidentsCreateRequestBodyVisibility,
+from .custom_fields_v1_update_response_body import CustomFieldsV1UpdateResponseBody
+from .external_issue_reference_v1_response_body import (
+    ExternalIssueReferenceV1ResponseBody,
 )
-from .incidents_create_response_body import IncidentsCreateResponseBody
-from .incidents_list_response_body import IncidentsListResponseBody
-from .incidents_show_response_body import IncidentsShowResponseBody
+from .external_resource_v1_response_body import ExternalResourceV1ResponseBody
+from .external_resource_v1_response_body_resource_type import (
+    ExternalResourceV1ResponseBodyResourceType,
+)
+from .identity_v1_response_body import IdentityV1ResponseBody
+from .incident_attachment_v1_response_body import IncidentAttachmentV1ResponseBody
+from .incident_attachments_v1_create_request_body import (
+    IncidentAttachmentsV1CreateRequestBody,
+)
+from .incident_attachments_v1_create_request_body_resource import (
+    IncidentAttachmentsV1CreateRequestBodyResource,
+)
+from .incident_attachments_v1_create_request_body_resource_resource_type import (
+    IncidentAttachmentsV1CreateRequestBodyResourceResourceType,
+)
+from .incident_attachments_v1_create_response_body import (
+    IncidentAttachmentsV1CreateResponseBody,
+)
+from .incident_attachments_v1_list_resource_type import (
+    IncidentAttachmentsV1ListResourceType,
+)
+from .incident_attachments_v1_list_response_body import (
+    IncidentAttachmentsV1ListResponseBody,
+)
+from .incident_role_assignment_payload_v1_request_body import (
+    IncidentRoleAssignmentPayloadV1RequestBody,
+)
+from .incident_role_assignment_payload_v2_request_body import (
+    IncidentRoleAssignmentPayloadV2RequestBody,
+)
+from .incident_role_assignment_v1_response_body import (
+    IncidentRoleAssignmentV1ResponseBody,
+)
+from .incident_role_assignment_v2_response_body import (
+    IncidentRoleAssignmentV2ResponseBody,
+)
+from .incident_role_v1_response_body import IncidentRoleV1ResponseBody
+from .incident_role_v1_response_body_role_type import IncidentRoleV1ResponseBodyRoleType
+from .incident_role_v2_response_body import IncidentRoleV2ResponseBody
+from .incident_role_v2_response_body_role_type import IncidentRoleV2ResponseBodyRoleType
+from .incident_roles_v1_create_request_body import IncidentRolesV1CreateRequestBody
+from .incident_roles_v1_create_response_body import IncidentRolesV1CreateResponseBody
+from .incident_roles_v1_list_response_body import IncidentRolesV1ListResponseBody
+from .incident_roles_v1_show_response_body import IncidentRolesV1ShowResponseBody
+from .incident_roles_v1_update_request_body import IncidentRolesV1UpdateRequestBody
+from .incident_roles_v1_update_response_body import IncidentRolesV1UpdateResponseBody
+from .incident_status_v2_response_body import IncidentStatusV2ResponseBody
+from .incident_status_v2_response_body_category import (
+    IncidentStatusV2ResponseBodyCategory,
+)
+from .incident_timestamp_v1_response_body import IncidentTimestampV1ResponseBody
+from .incident_timestamp_v2_response_body import IncidentTimestampV2ResponseBody
+from .incident_timestamp_v2_response_body_required import (
+    IncidentTimestampV2ResponseBodyRequired,
+)
+from .incident_timestamp_v2_response_body_set_on_transition import (
+    IncidentTimestampV2ResponseBodySetOnTransition,
+)
+from .incident_timestamp_v2_response_body_set_on_visit import (
+    IncidentTimestampV2ResponseBodySetOnVisit,
+)
+from .incident_timestamp_value_payload_v2_request_body import (
+    IncidentTimestampValuePayloadV2RequestBody,
+)
+from .incident_timestamp_value_v2_response_body import (
+    IncidentTimestampValueV2ResponseBody,
+)
+from .incident_timestamp_with_value_v2_response_body import (
+    IncidentTimestampWithValueV2ResponseBody,
+)
+from .incident_type_v1_response_body import IncidentTypeV1ResponseBody
+from .incident_type_v2_response_body import IncidentTypeV2ResponseBody
+from .incident_types_v1_list_response_body import IncidentTypesV1ListResponseBody
+from .incident_types_v1_show_response_body import IncidentTypesV1ShowResponseBody
+from .incident_v1_response_body import IncidentV1ResponseBody
+from .incident_v1_response_body_mode import IncidentV1ResponseBodyMode
+from .incident_v1_response_body_status import IncidentV1ResponseBodyStatus
+from .incident_v1_response_body_visibility import IncidentV1ResponseBodyVisibility
+from .incident_v2_response_body import IncidentV2ResponseBody
+from .incident_v2_response_body_mode import IncidentV2ResponseBodyMode
+from .incident_v2_response_body_visibility import IncidentV2ResponseBodyVisibility
+from .incidents_v1_create_request_body import IncidentsV1CreateRequestBody
+from .incidents_v1_create_request_body_mode import IncidentsV1CreateRequestBodyMode
+from .incidents_v1_create_request_body_status import IncidentsV1CreateRequestBodyStatus
+from .incidents_v1_create_request_body_visibility import (
+    IncidentsV1CreateRequestBodyVisibility,
+)
+from .incidents_v1_create_response_body import IncidentsV1CreateResponseBody
+from .incidents_v1_list_response_body import IncidentsV1ListResponseBody
+from .incidents_v1_show_response_body import IncidentsV1ShowResponseBody
+from .incidents_v2_create_request_body import IncidentsV2CreateRequestBody
+from .incidents_v2_create_request_body_mode import IncidentsV2CreateRequestBodyMode
+from .incidents_v2_create_request_body_visibility import (
+    IncidentsV2CreateRequestBodyVisibility,
+)
+from .incidents_v2_create_response_body import IncidentsV2CreateResponseBody
+from .incidents_v2_list_response_body import IncidentsV2ListResponseBody
+from .incidents_v2_show_response_body import IncidentsV2ShowResponseBody
 from .pagination_meta_response_body import PaginationMetaResponseBody
-from .public_identity_response_body import PublicIdentityResponseBody
-from .severities_create_request_body import SeveritiesCreateRequestBody
-from .severities_create_response_body import SeveritiesCreateResponseBody
-from .severities_list_response_body import SeveritiesListResponseBody
-from .severities_show_response_body import SeveritiesShowResponseBody
-from .severities_update_request_body import SeveritiesUpdateRequestBody
-from .severities_update_response_body import SeveritiesUpdateResponseBody
-from .severity_response_body import SeverityResponseBody
-from .user_reference_payload_request_body import UserReferencePayloadRequestBody
-from .user_response_body import UserResponseBody
-from .user_response_body_role import UserResponseBodyRole
-from .utilities_identity_response_body import UtilitiesIdentityResponseBody
+from .severities_v1_create_request_body import SeveritiesV1CreateRequestBody
+from .severities_v1_create_response_body import SeveritiesV1CreateResponseBody
+from .severities_v1_list_response_body import SeveritiesV1ListResponseBody
+from .severities_v1_show_response_body import SeveritiesV1ShowResponseBody
+from .severities_v1_update_request_body import SeveritiesV1UpdateRequestBody
+from .severities_v1_update_response_body import SeveritiesV1UpdateResponseBody
+from .severity_v1_response_body import SeverityV1ResponseBody
+from .severity_v2_response_body import SeverityV2ResponseBody
+from .user_reference_payload_v1_request_body import UserReferencePayloadV1RequestBody
+from .user_reference_payload_v2_request_body import UserReferencePayloadV2RequestBody
+from .user_v1_response_body import UserV1ResponseBody
+from .user_v1_response_body_role import UserV1ResponseBodyRole
+from .user_v2_response_body import UserV2ResponseBody
+from .user_v2_response_body_role import UserV2ResponseBodyRole
+from .utilities_v1_identity_response_body import UtilitiesV1IdentityResponseBody
