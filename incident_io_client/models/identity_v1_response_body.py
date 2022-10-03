@@ -1,6 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar, cast
+from typing import Any, Dict, List, Type, TypeVar
 
 import attr
+
+from ..models.identity_v1_response_body_roles_item import (
+    IdentityV1ResponseBodyRolesItem,
+)
 
 T = TypeVar("T", bound="IdentityV1ResponseBody")
 
@@ -9,23 +13,25 @@ T = TypeVar("T", bound="IdentityV1ResponseBody")
 class IdentityV1ResponseBody:
     """
     Example:
-        {'name': 'Aut enim quisquam accusamus ratione.', 'roles': ['Officia accusamus magni sit eligendi aperiam.',
-            'Ratione a non.']}
+        {'name': 'Alertmanager token', 'roles': ['global_access', 'incident_creator', 'viewer']}
 
     Attributes:
-        name (str): The name assigned to the current API Key Example: Voluptatem exercitationem dicta..
-        roles (List[str]): Which roles have been enabled for this key. Available roles are viewer, incident_creator,
-            global_access, manage_settings. Example: ['Magni et tenetur quo aspernatur.', 'Est consequuntur nesciunt.', 'Ut
-            architecto labore.'].
+        name (str): The name assigned to the current API Key Example: Alertmanager token.
+        roles (List[IdentityV1ResponseBodyRolesItem]): Which roles have been enabled for this key Example:
+            ['manage_settings', 'incident_creator'].
     """
 
     name: str
-    roles: List[str]
+    roles: List[IdentityV1ResponseBodyRolesItem]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         name = self.name
-        roles = self.roles
+        roles = []
+        for roles_item_data in self.roles:
+            roles_item = roles_item_data.value
+
+            roles.append(roles_item)
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -43,7 +49,12 @@ class IdentityV1ResponseBody:
         d = src_dict.copy()
         name = d.pop("name")
 
-        roles = cast(List[str], d.pop("roles"))
+        roles = []
+        _roles = d.pop("roles")
+        for roles_item_data in _roles:
+            roles_item = IdentityV1ResponseBodyRolesItem(roles_item_data)
+
+            roles.append(roles_item)
 
         identity_v1_response_body = cls(
             name=name,

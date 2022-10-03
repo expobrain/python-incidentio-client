@@ -33,10 +33,11 @@ class IncidentV1ResponseBody:
             'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it', 'value_timestamp':
+            '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
@@ -48,25 +49,10 @@ class IncidentV1ResponseBody:
             this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team',
             'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
             10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'},
-            {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'},
-            {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
-            {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
@@ -92,8 +78,8 @@ class IncidentV1ResponseBody:
             incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
             clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True,
-            'name': 'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False,
+            'name': 'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'},
             'mode': 'real', 'name': 'Our database is sad', 'permalink': 'https://app.incident.io/incidents/123',
             'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123', 'severity':
             {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
@@ -101,9 +87,7 @@ class IncidentV1ResponseBody:
             'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot', 'status': 'triage', 'summary':
             "Our database is really really sad, and we don't know why yet.", 'timestamps': [{'last_occurred_at':
             '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z',
-            'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'},
-            {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}], 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            'name': 'last_activity'}], 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -115,9 +99,26 @@ class IncidentV1ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
+            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}, 'value_text': 'This is my text field, I hope you like it', 'value_timestamp':
+            '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}]}, {'custom_field': {'description': 'Which team is impacted by
+            this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team',
+            'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
             10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
@@ -130,25 +131,10 @@ class IncidentV1ResponseBody:
             this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team',
             'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
             10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'},
-            {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'},
-            {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
-            {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'value_link': 'https://google.com/', 'value_numeric':
@@ -165,16 +151,6 @@ class IncidentV1ResponseBody:
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
-            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
-            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
-            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
-            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
             'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
@@ -197,7 +173,7 @@ class IncidentV1ResponseBody:
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
         incident_type (Union[Unset, IncidentTypeV1ResponseBody]):  Example: {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}.
         permalink (Union[Unset, str]): A permanent link to the homepage for this incident Example:
             https://app.incident.io/incidents/123.
@@ -208,9 +184,7 @@ class IncidentV1ResponseBody:
             and we don't know why yet..
         timestamps (Union[Unset, List[IncidentTimestampV1ResponseBody]]): Incident lifecycle events and when they last
             occurred Example: [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'},
-            {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at':
-            '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}, {'last_occurred_at': '2021-08-17T13:28:57.801578Z',
-            'name': 'last_activity'}].
+            {'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}].
     """
 
     created_at: datetime.datetime

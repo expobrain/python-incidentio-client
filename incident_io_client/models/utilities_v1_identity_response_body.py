@@ -11,12 +11,12 @@ T = TypeVar("T", bound="UtilitiesV1IdentityResponseBody")
 class UtilitiesV1IdentityResponseBody:
     """
     Example:
-        {'identity': {'name': 'Voluptas excepturi eius tempora sapiente id.', 'roles': ['Quis repellat.', 'Delectus et
-            deserunt.']}}
+        {'identity': {'name': 'Alertmanager token', 'roles': ['incident_creator', 'viewer', 'incident_creator',
+            'global_access']}}
 
     Attributes:
-        identity (IdentityV1ResponseBody):  Example: {'name': 'Aut enim quisquam accusamus ratione.', 'roles': ['Officia
-            accusamus magni sit eligendi aperiam.', 'Ratione a non.']}.
+        identity (IdentityV1ResponseBody):  Example: {'name': 'Alertmanager token', 'roles': ['global_access',
+            'incident_creator', 'viewer']}.
     """
 
     identity: IdentityV1ResponseBody

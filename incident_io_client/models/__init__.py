@@ -79,6 +79,7 @@ from .external_resource_v1_response_body_resource_type import (
     ExternalResourceV1ResponseBodyResourceType,
 )
 from .identity_v1_response_body import IdentityV1ResponseBody
+from .identity_v1_response_body_roles_item import IdentityV1ResponseBodyRolesItem
 from .incident_attachment_v1_response_body import IncidentAttachmentV1ResponseBody
 from .incident_attachments_v1_create_request_body import (
     IncidentAttachmentsV1CreateRequestBody,

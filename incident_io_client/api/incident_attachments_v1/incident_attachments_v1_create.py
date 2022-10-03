@@ -65,8 +65,8 @@ def sync_detailed(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Explicabo
-            quo optio voluptatum rerum.', 'resource': {'external_id': '123', 'resource_type':
+        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Nihil
+            officia dolore autem ea et.', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
     Returns:
@@ -96,8 +96,8 @@ def sync(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Explicabo
-            quo optio voluptatum rerum.', 'resource': {'external_id': '123', 'resource_type':
+        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Nihil
+            officia dolore autem ea et.', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
     Returns:
@@ -120,8 +120,8 @@ async def asyncio_detailed(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Explicabo
-            quo optio voluptatum rerum.', 'resource': {'external_id': '123', 'resource_type':
+        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Nihil
+            officia dolore autem ea et.', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
     Returns:
@@ -149,8 +149,8 @@ async def asyncio(
      Attaches an external resource to an incident
 
     Args:
-        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Explicabo
-            quo optio voluptatum rerum.', 'resource': {'external_id': '123', 'resource_type':
+        json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id': 'Nihil
+            officia dolore autem ea et.', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
     Returns:

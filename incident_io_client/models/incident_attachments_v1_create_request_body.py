@@ -13,11 +13,11 @@ T = TypeVar("T", bound="IncidentAttachmentsV1CreateRequestBody")
 class IncidentAttachmentsV1CreateRequestBody:
     """
     Example:
-        {'incident_id': 'Explicabo quo optio voluptatum rerum.', 'resource': {'external_id': '123', 'resource_type':
+        {'incident_id': 'Nihil officia dolore autem ea et.', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}
 
     Attributes:
-        incident_id (str):  Example: Fuga atque dignissimos..
+        incident_id (str):  Example: Porro et..
         resource (IncidentAttachmentsV1CreateRequestBodyResource):  Example: {'external_id': '123', 'resource_type':
             'pager_duty_incident'}.
     """

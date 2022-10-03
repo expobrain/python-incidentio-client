@@ -1,5 +1,9 @@
 # v0.20.0
 
+- updated to the latest API at 2022-10-03
+
+# v0.20.0
+
 - updated to the latest API at 2022-09-26
 - new `/api/public/v2/incidents` endpoints supported
 
