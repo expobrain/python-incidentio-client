@@ -14,7 +14,7 @@ skip_glob = ".venv"
 
 [tool.poetry]
 name = "python-incidentio-client"
-version = "0.20.0"
+version = "0.21.0"
 description = "Python client for Incident.io"
 repository = "https://github.com/expobrain/python-incidentio-client"
 authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
