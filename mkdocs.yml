@@ -6,7 +6,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - toc.follow
-strict: true
 repo_name: expobrain/python-incidentio-client"
 repo_url: https://github.com/expobrain/python-incidentio-client
 markdown_extensions:
