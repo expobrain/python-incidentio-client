@@ -52,7 +52,11 @@ jobs:
           git config user.name "Github Actions"
 
           git checkout -b $branch_name
-          git add incident_io_openapi.json incident_io_client CHANGELOG.md
+          git add \
+            CHANGELOG.md \
+            docs \
+            incident_io_client \
+            incident_io_openapi.json
           git commit -m "$commit_message"
           git push -u origin $branch_name
       - name: Create new Pull Request
