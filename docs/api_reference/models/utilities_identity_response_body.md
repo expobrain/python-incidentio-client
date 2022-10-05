@@ -1,3 +1,0 @@
-# incident_io_client.models.utilities_identity_response_body
-
-::: incident_io_client.models.utilities_identity_response_body

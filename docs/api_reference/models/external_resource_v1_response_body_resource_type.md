@@ -1,0 +1,3 @@
+# incident_io_client.models.external_resource_v1_response_body_resource_type
+
+::: incident_io_client.models.external_resource_v1_response_body_resource_type

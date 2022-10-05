@@ -1,3 +1,0 @@
-# incident_io_client.models.incident_roles_create_request_body
-
-::: incident_io_client.models.incident_roles_create_request_body

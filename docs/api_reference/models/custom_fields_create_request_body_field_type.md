@@ -1,3 +1,0 @@
-# incident_io_client.models.custom_fields_create_request_body_field_type
-
-::: incident_io_client.models.custom_fields_create_request_body_field_type

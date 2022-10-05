@@ -1,3 +1,0 @@
-# incident_io_client.models.incident_roles_create_response_body
-
-::: incident_io_client.models.incident_roles_create_response_body
