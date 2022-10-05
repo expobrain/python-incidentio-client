@@ -64,8 +64,7 @@ def sync_detailed(
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -73,6 +72,25 @@ def sync_detailed(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -83,14 +101,17 @@ def sync_detailed(
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
             {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': 'Dolor quos qui sit aut
-            repellendus.', 'mode': 'standard', 'name': 'Our database is sad', 'severity_id': 'Aut
-            placeat quod.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
 
@@ -128,8 +149,7 @@ def sync(
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -137,6 +157,25 @@ def sync(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -147,14 +186,17 @@ def sync(
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
             {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': 'Dolor quos qui sit aut
-            repellendus.', 'mode': 'standard', 'name': 'Our database is sad', 'severity_id': 'Aut
-            placeat quod.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
 
@@ -185,8 +227,7 @@ async def asyncio_detailed(
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -194,6 +235,25 @@ async def asyncio_detailed(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -204,14 +264,17 @@ async def asyncio_detailed(
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
             {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': 'Dolor quos qui sit aut
-            repellendus.', 'mode': 'standard', 'name': 'Our database is sad', 'severity_id': 'Aut
-            placeat quod.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
 
@@ -247,8 +310,7 @@ async def asyncio(
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -256,6 +318,25 @@ async def asyncio(
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
             {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}]},
+            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': '2021-08-17T13:28:57.801578Z'}, {'id':
@@ -266,14 +347,17 @@ async def asyncio(
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
             {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': 'Dolor quos qui sit aut
-            repellendus.', 'mode': 'standard', 'name': 'Our database is sad', 'severity_id': 'Aut
-            placeat quod.', 'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
 
