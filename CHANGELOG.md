@@ -1,6 +1,7 @@
-# v0.20.0
+# v0.21.0
 
 - updated to the latest API at 2022-10-03
+- marked `/v1/incidents` and `/v1/incidents/{id}` as deprecated
 
 # v0.20.0
 
