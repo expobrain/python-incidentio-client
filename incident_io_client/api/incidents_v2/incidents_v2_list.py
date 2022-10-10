@@ -18,7 +18,7 @@ def _get_kwargs(
     incident_role: Union[Unset, None, Any] = UNSET,
     custom_field: Union[Unset, None, Any] = UNSET,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/api/public/v2/incidents"
+    url = f"{client.base_url}/v2/incidents"
 
     headers: Dict[str, str] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()

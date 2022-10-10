@@ -12,7 +12,7 @@ class IncidentTypeV2ResponseBody:
     """
     Example:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
@@ -21,7 +21,7 @@ class IncidentTypeV2ResponseBody:
         id (str): Unique identifier for this Incident Type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         is_default (bool): The default Incident Type is used when no other type is explicitly specified
         name (str): The name of this Incident Type Example: Production Outage.
-        private_incidents_only (bool): Should all incidents created with this Incident Type be private? Example: True.
+        private_incidents_only (bool): Should all incidents created with this Incident Type be private?
         updated_at (datetime.datetime): When this resource was last updated Example: 2021-08-17T13:28:57.801578Z.
     """
 
