@@ -13,7 +13,7 @@ class CustomFieldValuePayloadV1RequestBody:
     Example:
         {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': '2021-08-17T13:28:57.801578Z'}
+            'value_timestamp': 'Alias reiciendis quis.'}
 
     Attributes:
         id (Union[Unset, str]): Unique identifier for the custom field value Example: 01FCNDV6P870EA6S7TK1DSYDG0.
@@ -21,7 +21,7 @@ class CustomFieldValuePayloadV1RequestBody:
         value_numeric (Union[Unset, str]): Numeric value Example: 123.456.
         value_option_id (Union[Unset, str]): ID of the custom field option Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         value_text (Union[Unset, str]): Text value Example: This is my text field, I hope you like it.
-        value_timestamp (Union[Unset, str]): Timestamp value in RFC3339 format Example: 2021-08-17T13:28:57.801578Z.
+        value_timestamp (Union[Unset, str]):  Example: Repellat a delectus et deserunt voluptatem unde..
     """
 
     id: Union[Unset, str] = UNSET
