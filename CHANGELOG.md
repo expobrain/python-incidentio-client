@@ -1,6 +1,8 @@
 # v0.22.0
 
 - updated to the latest API at 2022-10-24
+- new `/v2/incidents` and `/v2/incidents/{id}` endpoints
+- new `/v1/incident_roles` and `/v1/incident_roles/{id}` endpoints
 
 # v0.21.0
 
