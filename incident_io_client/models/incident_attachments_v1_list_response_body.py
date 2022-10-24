@@ -26,11 +26,6 @@ class IncidentAttachmentsV1ListResponseBody:
             'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
             gone down'}}, {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource':
             {'external_id': '123', 'permalink': 'https://my.pagerduty.com/incidents/ABC', 'resource_type':
-            'pager_duty_incident', 'title': 'The database has gone down'}}, {'id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource': {'external_id': '123', 'permalink':
-            'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
-            gone down'}}, {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource':
-            {'external_id': '123', 'permalink': 'https://my.pagerduty.com/incidents/ABC', 'resource_type':
             'pager_duty_incident', 'title': 'The database has gone down'}}].
     """
 

@@ -12,7 +12,7 @@ def _get_kwargs(
     *,
     client: Client,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/api/public/v2/incidents/{id}"
+    url = f"{client.base_url}/v2/incidents/{id}"
 
     headers: Dict[str, str] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()

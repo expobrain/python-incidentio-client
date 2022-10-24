@@ -1,0 +1,3 @@
+# incident_io_client.api.incident_statuses_v1.incident_statuses_v1_update
+
+::: incident_io_client.api.incident_statuses_v1.incident_statuses_v1_update
