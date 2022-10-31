@@ -15,28 +15,23 @@ class CustomFieldEntryPayloadV2RequestBody:
     Example:
         {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima
-            alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you
-            like it', 'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}, {'id':
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}]}
+            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': ''}]}
 
     Attributes:
         custom_field_id (str): ID of the custom field this entry is linked against Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         values (List[CustomFieldValuePayloadV2RequestBody]): List of values to associate with this entry Example:
             [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it', 'value_timestamp':
-            'Quia natus exercitationem minima alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima
-            alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you
-            like it', 'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}].
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}].
     """
 
     custom_field_id: str
