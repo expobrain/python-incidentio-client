@@ -61,26 +61,31 @@ def sync_detailed(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
             'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
             [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
             {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
@@ -89,10 +94,9 @@ def sync_detailed(
             [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
-            {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
-            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
             'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
@@ -128,26 +132,31 @@ def sync(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
             'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
             [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
             {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
@@ -156,10 +165,9 @@ def sync(
             [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
-            {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
-            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
             'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
@@ -188,26 +196,31 @@ async def asyncio_detailed(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
             'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
             [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
             {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
@@ -216,10 +229,9 @@ async def asyncio_detailed(
             [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
-            {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
-            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
             'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.
@@ -253,26 +265,31 @@ async def asyncio(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': 'Quia natus exercitationem minima alias impedit.'}]},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem minima alias
-            impedit.'}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
             'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': 'Quia natus exercitationem
-            minima alias impedit.'}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
+            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
+            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
             [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
             {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
@@ -281,10 +298,9 @@ async def asyncio(
             [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'},
-            {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
-            'standard', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
             'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
             '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
             yet.", 'visibility': 'public'}.

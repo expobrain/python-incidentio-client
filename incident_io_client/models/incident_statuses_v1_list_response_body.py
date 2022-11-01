@@ -19,9 +19,7 @@ class IncidentStatusesV1ListResponseBody:
             'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'category': 'triage', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': "Impact has been **fully mitigated**, and we're ready to learn from this incident.", 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
+            '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
         incident_statuses (List[IncidentStatusV1ResponseBody]):  Example: [{'category': 'triage', 'created_at':

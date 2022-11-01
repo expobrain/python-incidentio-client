@@ -46,7 +46,12 @@ class ActionsV1ListResponseBody:
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference': {},
             'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status':
-            'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'assignee': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
+            'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Call
+            the fire brigade', 'external_issue_reference': {}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}].
     """
 
     actions: List[ActionV1ResponseBody]
