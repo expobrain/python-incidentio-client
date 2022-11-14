@@ -1976,6 +1976,7 @@
               "pager_duty_incident",
               "github_pull_request",
               "sentry_issue",
+              "statuspage_incident",
               "zendesk_ticket"
             ],
             "example": "pager_duty_incident",
@@ -2102,6 +2103,7 @@
                   "pager_duty_incident",
                   "github_pull_request",
                   "sentry_issue",
+                  "statuspage_incident",
                   "zendesk_ticket"
                 ],
                 "example": "pager_duty_incident",
@@ -14162,7 +14164,6 @@
             "description": "ID of the resource in the external system",
             "in": "query",
             "name": "external_id",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -14171,12 +14172,12 @@
             "description": "E.g. PagerDuty: the external system that holds the resource",
             "in": "query",
             "name": "resource_type",
-            "required": true,
             "schema": {
               "enum": [
                 "pager_duty_incident",
                 "github_pull_request",
                 "sentry_issue",
+                "statuspage_incident",
                 "zendesk_ticket"
               ],
               "type": "string"
