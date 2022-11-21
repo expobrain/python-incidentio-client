@@ -146,7 +146,7 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "griffe"
-version = "0.22.0"
+version = "0.24.1"
 description = "Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API."
 category = "dev"
 optional = false
@@ -154,6 +154,7 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 cached-property = {version = "*", markers = "python_version < \"3.8\""}
+colorama = ">=0.4"
 
 [package.extras]
 async = ["aiofiles (>=0.7,<1.0)"]
@@ -376,14 +377,14 @@ python-legacy = ["mkdocstrings-python-legacy (>=0.2.1)"]
 
 [[package]]
 name = "mkdocstrings-python"
-version = "0.7.1"
+version = "0.8.2"
 description = "A Python handler for mkdocstrings."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-griffe = ">=0.11.1"
+griffe = ">=0.24"
 mkdocstrings = ">=0.19"
 
 [[package]]
@@ -750,7 +751,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4"
-content-hash = "15d7f6716b37e9bb182a28ac44f25f0cbe265bdc5002f8ac67c7353a9c6dc0c8"
+content-hash = "24d4fb5bd69d5082803721e646988ecd9a38c0440fbf3338d2a9e5385e24f5ac"
 
 [metadata.files]
 anyio = [
@@ -817,8 +818,8 @@ ghp-import = [
     {file = "ghp_import-2.1.0-py3-none-any.whl", hash = "sha256:8337dd7b50877f163d4c0289bc1f1c7f127550241988d568c1db512c4324a619"},
 ]
 griffe = [
-    {file = "griffe-0.22.0-py3-none-any.whl", hash = "sha256:65c94cba634d6ad397c495b04ed5fd3f06d9b16c4f9f78bd63be9ea34d6b7113"},
-    {file = "griffe-0.22.0.tar.gz", hash = "sha256:a3c25a2b7bf729ecee7cd455b4eff548f01c620b8f58a8097a800caad221f12e"},
+    {file = "griffe-0.24.1-py3-none-any.whl", hash = "sha256:cfd17f61f3815be5a83f27303cd3db6e9fd9328d4070e4824cd5573763a28961"},
+    {file = "griffe-0.24.1.tar.gz", hash = "sha256:acc7e6aac2495ffbfd70b2cdd801fff1299ec3e5efaaad23ccd316b711f1d11d"},
 ]
 h11 = [
     {file = "h11-0.12.0-py3-none-any.whl", hash = "sha256:36a3cb8c0a032f56e2da7084577878a035d3b61d104230d4bd49c0c6b555a9c6"},
@@ -923,8 +924,8 @@ mkdocstrings = [
     {file = "mkdocstrings-0.19.0.tar.gz", hash = "sha256:efa34a67bad11229d532d89f6836a8a215937548623b64f3698a1df62e01cc3e"},
 ]
 mkdocstrings-python = [
-    {file = "mkdocstrings-python-0.7.1.tar.gz", hash = "sha256:c334b382dca202dfa37071c182418a6df5818356a95d54362a2b24822ca3af71"},
-    {file = "mkdocstrings_python-0.7.1-py3-none-any.whl", hash = "sha256:a22060bfa374697678e9af4e62b020d990dad2711c98f7a9fac5c0345bef93c7"},
+    {file = "mkdocstrings-python-0.8.2.tar.gz", hash = "sha256:b22528b7a7a0589d007eced019d97ad14de4eba4b2b9ba6a013bb66edc74ab43"},
+    {file = "mkdocstrings_python-0.8.2-py3-none-any.whl", hash = "sha256:213d9592e66e084a9bd2fa4956d6294a3487c6dc9cc45164058d6317249b7b6e"},
 ]
 mypy = [
     {file = "mypy-0.991-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:7d17e0a9707d0772f4a7b878f04b4fd11f6f5bcb9b3813975a9b13c9332153ab"},
