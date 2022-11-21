@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional
 
 import httpx
@@ -36,7 +37,7 @@ def _get_kwargs(
 
 
 def _parse_response(*, response: httpx.Response) -> Optional[CustomFieldsV1UpdateResponseBody]:
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         response_200 = CustomFieldsV1UpdateResponseBody.from_dict(response.json())
 
         return response_200
@@ -45,7 +46,7 @@ def _parse_response(*, response: httpx.Response) -> Optional[CustomFieldsV1Updat
 
 def _build_response(*, response: httpx.Response) -> Response[CustomFieldsV1UpdateResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),
@@ -66,8 +67,8 @@ def sync_detailed(
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post':
-            True}.
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsV1UpdateResponseBody]
@@ -101,8 +102,8 @@ def sync(
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post':
-            True}.
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsV1UpdateResponseBody]
@@ -129,8 +130,8 @@ async def asyncio_detailed(
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post':
-            True}.
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsV1UpdateResponseBody]
@@ -162,8 +163,8 @@ async def asyncio(
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post':
-            True}.
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Returns:
         Response[CustomFieldsV1UpdateResponseBody]

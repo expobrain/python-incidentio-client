@@ -1,10 +1,13 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
-from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
-from ..models.user_v2_response_body import UserV2ResponseBody
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
+    from ..models.user_v2_response_body import UserV2ResponseBody
+
 
 T = TypeVar("T", bound="IncidentRoleAssignmentV2ResponseBody")
 
@@ -28,8 +31,8 @@ class IncidentRoleAssignmentV2ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
     """
 
-    role: IncidentRoleV2ResponseBody
-    assignee: Union[Unset, UserV2ResponseBody] = UNSET
+    role: "IncidentRoleV2ResponseBody"
+    assignee: Union[Unset, "UserV2ResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,6 +56,9 @@ class IncidentRoleAssignmentV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
+        from ..models.user_v2_response_body import UserV2ResponseBody
+
         d = src_dict.copy()
         role = IncidentRoleV2ResponseBody.from_dict(d.pop("role"))
 

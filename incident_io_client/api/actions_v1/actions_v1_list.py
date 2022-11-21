@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional, Union
 
 import httpx
@@ -44,7 +45,7 @@ def _get_kwargs(
 
 
 def _parse_response(*, response: httpx.Response) -> Optional[ActionsV1ListResponseBody]:
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         response_200 = ActionsV1ListResponseBody.from_dict(response.json())
 
         return response_200
@@ -53,7 +54,7 @@ def _parse_response(*, response: httpx.Response) -> Optional[ActionsV1ListRespon
 
 def _build_response(*, response: httpx.Response) -> Response[ActionsV1ListResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),

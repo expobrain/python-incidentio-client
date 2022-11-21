@@ -1,15 +1,18 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 from dateutil.parser import isoparse
 
 from ..models.action_v1_response_body_status import ActionV1ResponseBodyStatus
-from ..models.external_issue_reference_v1_response_body import (
-    ExternalIssueReferenceV1ResponseBody,
-)
-from ..models.user_v1_response_body import UserV1ResponseBody
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.external_issue_reference_v1_response_body import (
+        ExternalIssueReferenceV1ResponseBody,
+    )
+    from ..models.user_v1_response_body import UserV1ResponseBody
+
 
 T = TypeVar("T", bound="ActionV1ResponseBody")
 
@@ -20,9 +23,10 @@ class ActionV1ResponseBody:
     Example:
         {'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference': {},
-            'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status':
-            'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
+            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
+            write-up', 'provider': 'linear'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -36,7 +40,9 @@ class ActionV1ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
         completed_at (Union[Unset, datetime.datetime]): When the action was completed Example:
             2021-08-17T13:28:57.801578Z.
-        external_issue_reference (Union[Unset, ExternalIssueReferenceV1ResponseBody]):
+        external_issue_reference (Union[Unset, ExternalIssueReferenceV1ResponseBody]):  Example: {'issue_name':
+            'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
+            'provider': 'linear'}.
     """
 
     created_at: datetime.datetime
@@ -46,9 +52,9 @@ class ActionV1ResponseBody:
     incident_id: str
     status: ActionV1ResponseBodyStatus
     updated_at: datetime.datetime
-    assignee: Union[Unset, UserV1ResponseBody] = UNSET
+    assignee: Union[Unset, "UserV1ResponseBody"] = UNSET
     completed_at: Union[Unset, datetime.datetime] = UNSET
-    external_issue_reference: Union[Unset, ExternalIssueReferenceV1ResponseBody] = UNSET
+    external_issue_reference: Union[Unset, "ExternalIssueReferenceV1ResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -98,6 +104,11 @@ class ActionV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.external_issue_reference_v1_response_body import (
+            ExternalIssueReferenceV1ResponseBody,
+        )
+        from ..models.user_v1_response_body import UserV1ResponseBody
+
         d = src_dict.copy()
         created_at = isoparse(d.pop("created_at"))
 

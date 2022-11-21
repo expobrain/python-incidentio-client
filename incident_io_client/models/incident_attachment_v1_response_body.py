@@ -1,8 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.external_resource_v1_response_body import ExternalResourceV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.external_resource_v1_response_body import (
+        ExternalResourceV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="IncidentAttachmentV1ResponseBody")
 
@@ -25,7 +29,7 @@ class IncidentAttachmentV1ResponseBody:
 
     id: str
     incident_id: str
-    resource: ExternalResourceV1ResponseBody
+    resource: "ExternalResourceV1ResponseBody"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -47,6 +51,10 @@ class IncidentAttachmentV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.external_resource_v1_response_body import (
+            ExternalResourceV1ResponseBody,
+        )
+
         d = src_dict.copy()
         id = d.pop("id")
 

@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.incident_attachment_v1_response_body import (
-    IncidentAttachmentV1ResponseBody,
-)
+if TYPE_CHECKING:
+    from ..models.incident_attachment_v1_response_body import (
+        IncidentAttachmentV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="IncidentAttachmentsV1CreateResponseBody")
 
@@ -24,7 +26,7 @@ class IncidentAttachmentsV1CreateResponseBody:
             gone down'}}.
     """
 
-    incident_attachment: IncidentAttachmentV1ResponseBody
+    incident_attachment: "IncidentAttachmentV1ResponseBody"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -42,6 +44,10 @@ class IncidentAttachmentsV1CreateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_attachment_v1_response_body import (
+            IncidentAttachmentV1ResponseBody,
+        )
+
         d = src_dict.copy()
         incident_attachment = IncidentAttachmentV1ResponseBody.from_dict(
             d.pop("incident_attachment")

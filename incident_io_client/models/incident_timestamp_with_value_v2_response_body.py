@@ -1,12 +1,17 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
-from ..models.incident_timestamp_v2_response_body import IncidentTimestampV2ResponseBody
-from ..models.incident_timestamp_value_v2_response_body import (
-    IncidentTimestampValueV2ResponseBody,
-)
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.incident_timestamp_v2_response_body import (
+        IncidentTimestampV2ResponseBody,
+    )
+    from ..models.incident_timestamp_value_v2_response_body import (
+        IncidentTimestampValueV2ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="IncidentTimestampWithValueV2ResponseBody")
 
@@ -15,32 +20,21 @@ T = TypeVar("T", bound="IncidentTimestampWithValueV2ResponseBody")
 class IncidentTimestampWithValueV2ResponseBody:
     """
     Example:
-        {'timestamp': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting
-            customers.', 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never',
-            'set_on_creation': True, 'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter',
-            'set_on_visit': 'first', 'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post':
-            True, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}
+        {'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value':
+            {'value': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
-        timestamp (IncidentTimestampV2ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'When this incident started impacting customers.', 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True, 'set_on_status_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first', 'show_before_closure':
-            True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}.
-        value (Union[Unset, IncidentTimestampValueV2ResponseBody]):  Example: {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}.
+        incident_timestamp (IncidentTimestampV2ResponseBody):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
+            'Impact started', 'rank': 1}.
+        value (Union[Unset, IncidentTimestampValueV2ResponseBody]):  Example: {'value': '2021-08-17T13:28:57.801578Z'}.
     """
 
-    timestamp: IncidentTimestampV2ResponseBody
-    value: Union[Unset, IncidentTimestampValueV2ResponseBody] = UNSET
+    incident_timestamp: "IncidentTimestampV2ResponseBody"
+    value: Union[Unset, "IncidentTimestampValueV2ResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        timestamp = self.timestamp.to_dict()
+        incident_timestamp = self.incident_timestamp.to_dict()
 
         value: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.value, Unset):
@@ -50,7 +44,7 @@ class IncidentTimestampWithValueV2ResponseBody:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "timestamp": timestamp,
+                "incident_timestamp": incident_timestamp,
             }
         )
         if value is not UNSET:
@@ -60,8 +54,15 @@ class IncidentTimestampWithValueV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_timestamp_v2_response_body import (
+            IncidentTimestampV2ResponseBody,
+        )
+        from ..models.incident_timestamp_value_v2_response_body import (
+            IncidentTimestampValueV2ResponseBody,
+        )
+
         d = src_dict.copy()
-        timestamp = IncidentTimestampV2ResponseBody.from_dict(d.pop("timestamp"))
+        incident_timestamp = IncidentTimestampV2ResponseBody.from_dict(d.pop("incident_timestamp"))
 
         _value = d.pop("value", UNSET)
         value: Union[Unset, IncidentTimestampValueV2ResponseBody]
@@ -71,7 +72,7 @@ class IncidentTimestampWithValueV2ResponseBody:
             value = IncidentTimestampValueV2ResponseBody.from_dict(_value)
 
         incident_timestamp_with_value_v2_response_body = cls(
-            timestamp=timestamp,
+            incident_timestamp=incident_timestamp,
             value=value,
         )
 

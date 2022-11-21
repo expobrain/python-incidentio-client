@@ -1,16 +1,7 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
-from ..models.custom_field_entry_payload_v2_request_body import (
-    CustomFieldEntryPayloadV2RequestBody,
-)
-from ..models.incident_role_assignment_payload_v2_request_body import (
-    IncidentRoleAssignmentPayloadV2RequestBody,
-)
-from ..models.incident_timestamp_value_payload_v2_request_body import (
-    IncidentTimestampValuePayloadV2RequestBody,
-)
 from ..models.incidents_v2_create_request_body_mode import (
     IncidentsV2CreateRequestBodyMode,
 )
@@ -18,6 +9,21 @@ from ..models.incidents_v2_create_request_body_visibility import (
     IncidentsV2CreateRequestBodyVisibility,
 )
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.custom_field_entry_payload_v2_request_body import (
+        CustomFieldEntryPayloadV2RequestBody,
+    )
+    from ..models.incident_role_assignment_payload_v2_request_body import (
+        IncidentRoleAssignmentPayloadV2RequestBody,
+    )
+    from ..models.incident_timestamp_value_payload_v2_request_body import (
+        IncidentTimestampValuePayloadV2RequestBody,
+    )
+    from ..models.retrospective_incident_options_v2_request_body import (
+        RetrospectiveIncidentOptionsV2RequestBody,
+    )
+
 
 T = TypeVar("T", bound="IncidentsV2CreateRequestBody")
 
@@ -29,37 +35,13 @@ class IncidentsV2CreateRequestBody:
         {'custom_field_entries': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-
-            uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
-            {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name':
-            'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'source_message_channel_id': 'C02AW36C1M5',
-            'source_message_timestamp': '1653650280.526509', 'summary': "Our database is really really sad, and we don't
-            know why yet.", 'visibility': 'public'}
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
@@ -68,59 +50,26 @@ class IncidentsV2CreateRequestBody:
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
-        custom_field_entries (Union[Unset, List[CustomFieldEntryPayloadV2RequestBody]]): Set the incident's custom
+        custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV2RequestBody']]): Set the incident's custom
             fields to these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}].
-        incident_role_assignments (Union[Unset, List[IncidentRoleAssignmentPayloadV2RequestBody]]): Assign incident
+            'value_timestamp': ''}]}].
+        incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2RequestBody']]): Assign incident
             roles to these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
-            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
         incident_status_id (Union[Unset, str]): Incident status to assign to the incident Example:
             01G0J1EXE7AXZ2C93K61WBPYEH.
-        incident_timestamp_values (Union[Unset, List[IncidentTimestampValuePayloadV2RequestBody]]): Assign the
+        incident_timestamp_values (Union[Unset, List['IncidentTimestampValuePayloadV2RequestBody']]): Assign the
             incident's timestamps to these values Example: [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}].
         incident_type_id (Union[Unset, str]): Incident type to create this incident as Example:
             01FH5TZRWMNAFB0DZ23FD1TV96.
-        mode (Union[Unset, IncidentsV2CreateRequestBodyMode]): Whether the incident is real, a test, or a tutorial
-            Example: standard.
+        mode (Union[Unset, IncidentsV2CreateRequestBodyMode]): Whether the incident is real, a test, a tutorial, or
+            importing as a retrospective incident Example: standard.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
-        source_message_channel_id (Union[Unset, str]): Channel ID of the source message, if this incident was created
-            from one Example: C02AW36C1M5.
-        source_message_timestamp (Union[Unset, str]): Timestamp of the source message, if this incident was created from
-            one Example: 1653650280.526509.
+        retrospective_incident_options (Union[Unset, RetrospectiveIncidentOptionsV2RequestBody]):  Example:
+            {'slack_channel_id': 'abc123'}.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
     """
@@ -128,19 +77,20 @@ class IncidentsV2CreateRequestBody:
     idempotency_key: str
     severity_id: str
     visibility: IncidentsV2CreateRequestBodyVisibility
-    custom_field_entries: Union[Unset, List[CustomFieldEntryPayloadV2RequestBody]] = UNSET
+    custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2RequestBody"]] = UNSET
     incident_role_assignments: Union[
-        Unset, List[IncidentRoleAssignmentPayloadV2RequestBody]
+        Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]
     ] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
     incident_timestamp_values: Union[
-        Unset, List[IncidentTimestampValuePayloadV2RequestBody]
+        Unset, List["IncidentTimestampValuePayloadV2RequestBody"]
     ] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV2CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
-    source_message_channel_id: Union[Unset, str] = UNSET
-    source_message_timestamp: Union[Unset, str] = UNSET
+    retrospective_incident_options: Union[
+        Unset, "RetrospectiveIncidentOptionsV2RequestBody"
+    ] = UNSET
     summary: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -180,8 +130,10 @@ class IncidentsV2CreateRequestBody:
             mode = self.mode.value
 
         name = self.name
-        source_message_channel_id = self.source_message_channel_id
-        source_message_timestamp = self.source_message_timestamp
+        retrospective_incident_options: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.retrospective_incident_options, Unset):
+            retrospective_incident_options = self.retrospective_incident_options.to_dict()
+
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}
@@ -207,10 +159,8 @@ class IncidentsV2CreateRequestBody:
             field_dict["mode"] = mode
         if name is not UNSET:
             field_dict["name"] = name
-        if source_message_channel_id is not UNSET:
-            field_dict["source_message_channel_id"] = source_message_channel_id
-        if source_message_timestamp is not UNSET:
-            field_dict["source_message_timestamp"] = source_message_timestamp
+        if retrospective_incident_options is not UNSET:
+            field_dict["retrospective_incident_options"] = retrospective_incident_options
         if summary is not UNSET:
             field_dict["summary"] = summary
 
@@ -218,6 +168,19 @@ class IncidentsV2CreateRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_entry_payload_v2_request_body import (
+            CustomFieldEntryPayloadV2RequestBody,
+        )
+        from ..models.incident_role_assignment_payload_v2_request_body import (
+            IncidentRoleAssignmentPayloadV2RequestBody,
+        )
+        from ..models.incident_timestamp_value_payload_v2_request_body import (
+            IncidentTimestampValuePayloadV2RequestBody,
+        )
+        from ..models.retrospective_incident_options_v2_request_body import (
+            RetrospectiveIncidentOptionsV2RequestBody,
+        )
+
         d = src_dict.copy()
         idempotency_key = d.pop("idempotency_key")
 
@@ -265,9 +228,14 @@ class IncidentsV2CreateRequestBody:
 
         name = d.pop("name", UNSET)
 
-        source_message_channel_id = d.pop("source_message_channel_id", UNSET)
-
-        source_message_timestamp = d.pop("source_message_timestamp", UNSET)
+        _retrospective_incident_options = d.pop("retrospective_incident_options", UNSET)
+        retrospective_incident_options: Union[Unset, RetrospectiveIncidentOptionsV2RequestBody]
+        if isinstance(_retrospective_incident_options, Unset):
+            retrospective_incident_options = UNSET
+        else:
+            retrospective_incident_options = RetrospectiveIncidentOptionsV2RequestBody.from_dict(
+                _retrospective_incident_options
+            )
 
         summary = d.pop("summary", UNSET)
 
@@ -282,8 +250,7 @@ class IncidentsV2CreateRequestBody:
             incident_type_id=incident_type_id,
             mode=mode,
             name=name,
-            source_message_channel_id=source_message_channel_id,
-            source_message_timestamp=source_message_timestamp,
+            retrospective_incident_options=retrospective_incident_options,
             summary=summary,
         )
 
