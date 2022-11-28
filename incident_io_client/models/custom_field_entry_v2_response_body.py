@@ -1,11 +1,15 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.custom_field_type_info_v2_response_body import (
-    CustomFieldTypeInfoV2ResponseBody,
-)
-from ..models.custom_field_value_v2_response_body import CustomFieldValueV2ResponseBody
+if TYPE_CHECKING:
+    from ..models.custom_field_type_info_v2_response_body import (
+        CustomFieldTypeInfoV2ResponseBody,
+    )
+    from ..models.custom_field_value_v2_response_body import (
+        CustomFieldValueV2ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldEntryV2ResponseBody")
 
@@ -16,13 +20,8 @@ class CustomFieldEntryV2ResponseBody:
     Example:
         {'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
+            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             'value_text': 'This is my text field, I hope you like it'}]}
 
@@ -30,23 +29,15 @@ class CustomFieldEntryV2ResponseBody:
         custom_field (CustomFieldTypeInfoV2ResponseBody):  Example: {'description': 'Which team is impacted by this
             issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]}.
-        values (List[CustomFieldValueV2ResponseBody]): List of custom field values set on this entry Example:
+            'Product'}]}.
+        values (List['CustomFieldValueV2ResponseBody']): List of custom field values set on this entry Example:
             [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}].
+            'value_text': 'This is my text field, I hope you like it'}].
     """
 
-    custom_field: CustomFieldTypeInfoV2ResponseBody
-    values: List[CustomFieldValueV2ResponseBody]
+    custom_field: "CustomFieldTypeInfoV2ResponseBody"
+    values: List["CustomFieldValueV2ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,6 +62,13 @@ class CustomFieldEntryV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_type_info_v2_response_body import (
+            CustomFieldTypeInfoV2ResponseBody,
+        )
+        from ..models.custom_field_value_v2_response_body import (
+            CustomFieldValueV2ResponseBody,
+        )
+
         d = src_dict.copy()
         custom_field = CustomFieldTypeInfoV2ResponseBody.from_dict(d.pop("custom_field"))
 

@@ -1,13 +1,7 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
-from ..models.custom_field_entry_payload_v1_request_body import (
-    CustomFieldEntryPayloadV1RequestBody,
-)
-from ..models.incident_role_assignment_payload_v1_request_body import (
-    IncidentRoleAssignmentPayloadV1RequestBody,
-)
 from ..models.incidents_v1_create_request_body_mode import (
     IncidentsV1CreateRequestBodyMode,
 )
@@ -19,6 +13,15 @@ from ..models.incidents_v1_create_request_body_visibility import (
 )
 from ..types import UNSET, Unset
 
+if TYPE_CHECKING:
+    from ..models.custom_field_entry_payload_v1_request_body import (
+        CustomFieldEntryPayloadV1RequestBody,
+    )
+    from ..models.incident_role_assignment_payload_v1_request_body import (
+        IncidentRoleAssignmentPayloadV1RequestBody,
+    )
+
+
 T = TypeVar("T", bound="IncidentsV1CreateRequestBody")
 
 
@@ -29,19 +32,7 @@ class IncidentsV1CreateRequestBody:
         {'custom_field_entries': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
-            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'real', 'name': 'Our
             database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'source_message_channel_id': 'C02AW36C1M5',
@@ -55,23 +46,13 @@ class IncidentsV1CreateRequestBody:
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
-        custom_field_entries (Union[Unset, List[CustomFieldEntryPayloadV1RequestBody]]): Set the incident's custom
+        custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV1RequestBody']]): Set the incident's custom
             fields to these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}].
-        incident_role_assignments (Union[Unset, List[IncidentRoleAssignmentPayloadV1RequestBody]]): Assign incident
+            'value_timestamp': ''}]}].
+        incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV1RequestBody']]): Assign incident
             roles to these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email':
-            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
         incident_type_id (Union[Unset, str]): Incident type to create this incident as Example:
             01FH5TZRWMNAFB0DZ23FD1TV96.
@@ -89,9 +70,9 @@ class IncidentsV1CreateRequestBody:
     idempotency_key: str
     severity_id: str
     visibility: IncidentsV1CreateRequestBodyVisibility
-    custom_field_entries: Union[Unset, List[CustomFieldEntryPayloadV1RequestBody]] = UNSET
+    custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV1RequestBody"]] = UNSET
     incident_role_assignments: Union[
-        Unset, List[IncidentRoleAssignmentPayloadV1RequestBody]
+        Unset, List["IncidentRoleAssignmentPayloadV1RequestBody"]
     ] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV1CreateRequestBodyMode] = UNSET
@@ -169,6 +150,13 @@ class IncidentsV1CreateRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_entry_payload_v1_request_body import (
+            CustomFieldEntryPayloadV1RequestBody,
+        )
+        from ..models.incident_role_assignment_payload_v1_request_body import (
+            IncidentRoleAssignmentPayloadV1RequestBody,
+        )
+
         d = src_dict.copy()
         idempotency_key = d.pop("idempotency_key")
 

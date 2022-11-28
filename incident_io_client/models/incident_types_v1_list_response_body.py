@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.incident_type_v1_response_body import IncidentTypeV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.incident_type_v1_response_body import IncidentTypeV1ResponseBody
+
 
 T = TypeVar("T", bound="IncidentTypesV1ListResponseBody")
 
@@ -12,26 +14,16 @@ class IncidentTypesV1ListResponseBody:
     """
     Example:
         {'incident_types': [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production
-            outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage',
-            'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name':
-            'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
+            outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage',
+            'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        incident_types (List[IncidentTypeV1ResponseBody]):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True,
-            'name': 'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name':
-            'Production Outage', 'private_incidents_only': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+        incident_types (List['IncidentTypeV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False,
+            'name': 'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
-    incident_types: List[IncidentTypeV1ResponseBody]
+    incident_types: List["IncidentTypeV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,6 +45,8 @@ class IncidentTypesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_type_v1_response_body import IncidentTypeV1ResponseBody
+
         d = src_dict.copy()
         incident_types = []
         _incident_types = d.pop("incident_types")

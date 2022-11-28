@@ -1,12 +1,9 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 from dateutil.parser import isoparse
 
-from ..models.custom_field_option_v1_response_body import (
-    CustomFieldOptionV1ResponseBody,
-)
 from ..models.custom_field_v1_response_body_field_type import (
     CustomFieldV1ResponseBodyFieldType,
 )
@@ -14,6 +11,12 @@ from ..models.custom_field_v1_response_body_required import (
     CustomFieldV1ResponseBodyRequired,
 )
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.custom_field_option_v1_response_body import (
+        CustomFieldOptionV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldV1ResponseBody")
 
@@ -25,9 +28,8 @@ class CustomFieldV1ResponseBody:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue',
             'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -35,9 +37,8 @@ class CustomFieldV1ResponseBody:
         field_type (CustomFieldV1ResponseBodyFieldType): Type of custom field Example: single_select.
         id (str): Unique identifier for the custom field Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Human readable name for the custom field Example: Affected Team.
-        options (List[CustomFieldOptionV1ResponseBody]): What options are available for this custom field, if this field
-            has options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+        options (List['CustomFieldOptionV1ResponseBody']): What options are available for this custom field, if this
+            field has options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
         required (CustomFieldV1ResponseBodyRequired): When this custom field must be set during the incident lifecycle.
             Example: never.
@@ -46,6 +47,7 @@ class CustomFieldV1ResponseBody:
             whatever the value of this setting. Example: True.
         show_before_creation (bool): Whether a custom field should be shown in the incident creation modal. This must be
             true if the field is always required. Example: True.
+        show_before_update (bool): Whether a custom field should be shown in the incident update modal. Example: True.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
         show_in_announcement_post (Union[Unset, bool]): Whether a custom field should be shown in the list of fields as
             part of the announcement post when set. Example: True.
@@ -56,10 +58,11 @@ class CustomFieldV1ResponseBody:
     field_type: CustomFieldV1ResponseBodyFieldType
     id: str
     name: str
-    options: List[CustomFieldOptionV1ResponseBody]
+    options: List["CustomFieldOptionV1ResponseBody"]
     required: CustomFieldV1ResponseBodyRequired
     show_before_closure: bool
     show_before_creation: bool
+    show_before_update: bool
     updated_at: datetime.datetime
     show_in_announcement_post: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
@@ -82,6 +85,7 @@ class CustomFieldV1ResponseBody:
 
         show_before_closure = self.show_before_closure
         show_before_creation = self.show_before_creation
+        show_before_update = self.show_before_update
         updated_at = self.updated_at.isoformat()
 
         show_in_announcement_post = self.show_in_announcement_post
@@ -99,6 +103,7 @@ class CustomFieldV1ResponseBody:
                 "required": required,
                 "show_before_closure": show_before_closure,
                 "show_before_creation": show_before_creation,
+                "show_before_update": show_before_update,
                 "updated_at": updated_at,
             }
         )
@@ -109,6 +114,10 @@ class CustomFieldV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_option_v1_response_body import (
+            CustomFieldOptionV1ResponseBody,
+        )
+
         d = src_dict.copy()
         created_at = isoparse(d.pop("created_at"))
 
@@ -133,6 +142,8 @@ class CustomFieldV1ResponseBody:
 
         show_before_creation = d.pop("show_before_creation")
 
+        show_before_update = d.pop("show_before_update")
+
         updated_at = isoparse(d.pop("updated_at"))
 
         show_in_announcement_post = d.pop("show_in_announcement_post", UNSET)
@@ -147,6 +158,7 @@ class CustomFieldV1ResponseBody:
             required=required,
             show_before_closure=show_before_closure,
             show_before_creation=show_before_creation,
+            show_before_update=show_before_update,
             updated_at=updated_at,
             show_in_announcement_post=show_in_announcement_post,
         )

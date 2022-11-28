@@ -1,3 +1,7 @@
+# v0.24.0
+
+- updated to the latest API at 2022-11-28
+
 # v0.23.0
 
 - updated to the latest API at 2022-10-31

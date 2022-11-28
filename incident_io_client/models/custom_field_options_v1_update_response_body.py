@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.custom_field_option_v1_response_body import (
-    CustomFieldOptionV1ResponseBody,
-)
+if TYPE_CHECKING:
+    from ..models.custom_field_option_v1_response_body import (
+        CustomFieldOptionV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldOptionsV1UpdateResponseBody")
 
@@ -21,7 +23,7 @@ class CustomFieldOptionsV1UpdateResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
     """
 
-    custom_field_option: CustomFieldOptionV1ResponseBody
+    custom_field_option: "CustomFieldOptionV1ResponseBody"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -39,6 +41,10 @@ class CustomFieldOptionsV1UpdateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_option_v1_response_body import (
+            CustomFieldOptionV1ResponseBody,
+        )
+
         d = src_dict.copy()
         custom_field_option = CustomFieldOptionV1ResponseBody.from_dict(
             d.pop("custom_field_option")

@@ -20,7 +20,8 @@ class IncidentStatusV2ResponseBody:
             'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
-        category (IncidentStatusV2ResponseBodyCategory): Whether this status is a live or closed status. Example:
+        category (IncidentStatusV2ResponseBodyCategory): Whether this status is a live or closed status. If you have
+            enabled auto-create, there will also be 'triage' and 'declined' statuses, which cannot be modified. Example:
             triage.
         created_at (datetime.datetime):  Example: 2021-08-17T13:28:57.801578Z.
         description (str): Rich text description of the incident status Example: Impact has been **fully mitigated**,

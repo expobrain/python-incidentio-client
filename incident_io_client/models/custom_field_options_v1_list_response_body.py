@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.custom_field_option_v1_response_body import (
-    CustomFieldOptionV1ResponseBody,
-)
+if TYPE_CHECKING:
+    from ..models.custom_field_option_v1_response_body import (
+        CustomFieldOptionV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldOptionsV1ListResponseBody")
 
@@ -14,18 +16,14 @@ class CustomFieldOptionsV1ListResponseBody:
     """
     Example:
         {'custom_field_options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]}
+            'sort_key': 10, 'value': 'Product'}]}
 
     Attributes:
-        custom_field_options (List[CustomFieldOptionV1ResponseBody]):  Example: [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}].
+        custom_field_options (List['CustomFieldOptionV1ResponseBody']):  Example: [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
     """
 
-    custom_field_options: List[CustomFieldOptionV1ResponseBody]
+    custom_field_options: List["CustomFieldOptionV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -47,6 +45,10 @@ class CustomFieldOptionsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_option_v1_response_body import (
+            CustomFieldOptionV1ResponseBody,
+        )
+
         d = src_dict.copy()
         custom_field_options = []
         _custom_field_options = d.pop("custom_field_options")

@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.user_reference_payload_v1_request_body import (
-    UserReferencePayloadV1RequestBody,
-)
+if TYPE_CHECKING:
+    from ..models.user_reference_payload_v1_request_body import (
+        UserReferencePayloadV1RequestBody,
+    )
+
 
 T = TypeVar("T", bound="IncidentRoleAssignmentPayloadV1RequestBody")
 
@@ -22,7 +24,7 @@ class IncidentRoleAssignmentPayloadV1RequestBody:
         incident_role_id (str): Unique ID of an incident role Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
     """
 
-    assignee: UserReferencePayloadV1RequestBody
+    assignee: "UserReferencePayloadV1RequestBody"
     incident_role_id: str
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -44,6 +46,10 @@ class IncidentRoleAssignmentPayloadV1RequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.user_reference_payload_v1_request_body import (
+            UserReferencePayloadV1RequestBody,
+        )
+
         d = src_dict.copy()
         assignee = UserReferencePayloadV1RequestBody.from_dict(d.pop("assignee"))
 

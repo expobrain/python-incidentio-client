@@ -18,7 +18,8 @@ class IncidentTimestampValuePayloadV2RequestBody:
     Attributes:
         incident_timestamp_id (str): The id of the incident timestamp that this incident timestamp value is associated
             with. Example: 01FCNDV6P870EA6S7TK1DSYD5H.
-        value (Union[Unset, datetime.datetime]):  Example: 2021-08-17T13:28:57.801578Z.
+        value (Union[Unset, datetime.datetime]): The current value of this timestamp, for this incident Example:
+            2021-08-17T13:28:57.801578Z.
     """
 
     incident_timestamp_id: str
