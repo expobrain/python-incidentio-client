@@ -47,6 +47,9 @@ mkdocs-material = "^8.2"
 mkdocstrings-python = "^0.8.2"
 "ruamel.yaml" = "^0.17.21"
 
+[tool.poetry.group.dev.dependencies]
+tomli = "^2.0.1"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
