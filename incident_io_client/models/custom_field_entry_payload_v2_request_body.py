@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.custom_field_value_payload_v2_request_body import (
-    CustomFieldValuePayloadV2RequestBody,
-)
+if TYPE_CHECKING:
+    from ..models.custom_field_value_payload_v2_request_body import (
+        CustomFieldValuePayloadV2RequestBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldEntryPayloadV2RequestBody")
 
@@ -15,27 +17,18 @@ class CustomFieldEntryPayloadV2RequestBody:
     Example:
         {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}
 
     Attributes:
         custom_field_id (str): ID of the custom field this entry is linked against Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        values (List[CustomFieldValuePayloadV2RequestBody]): List of values to associate with this entry Example:
+        values (List['CustomFieldValuePayloadV2RequestBody']): List of values to associate with this entry Example:
             [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}].
+            'value_timestamp': ''}].
     """
 
     custom_field_id: str
-    values: List[CustomFieldValuePayloadV2RequestBody]
+    values: List["CustomFieldValuePayloadV2RequestBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -59,6 +52,10 @@ class CustomFieldEntryPayloadV2RequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_value_payload_v2_request_body import (
+            CustomFieldValuePayloadV2RequestBody,
+        )
+
         d = src_dict.copy()
         custom_field_id = d.pop("custom_field_id")
 

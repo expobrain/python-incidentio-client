@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.custom_field_v1_response_body import CustomFieldV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.custom_field_v1_response_body import CustomFieldV1ResponseBody
+
 
 T = TypeVar("T", bound="CustomFieldsV1UpdateResponseBody")
 
@@ -14,22 +16,19 @@ class CustomFieldsV1UpdateResponseBody:
         {'custom_field': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this
             issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation':
-            True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
+            'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
         custom_field (CustomFieldV1ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             'Which team is impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Affected Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}],
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post':
-            True, 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure':
+            True, 'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post': True, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}.
     """
 
-    custom_field: CustomFieldV1ResponseBody
+    custom_field: "CustomFieldV1ResponseBody"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -47,6 +46,8 @@ class CustomFieldsV1UpdateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_v1_response_body import CustomFieldV1ResponseBody
+
         d = src_dict.copy()
         custom_field = CustomFieldV1ResponseBody.from_dict(d.pop("custom_field"))
 

@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.incident_status_v1_response_body import IncidentStatusV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.incident_status_v1_response_body import IncidentStatusV1ResponseBody
+
 
 T = TypeVar("T", bound="IncidentStatusesV1ListResponseBody")
 
@@ -13,30 +15,16 @@ class IncidentStatusesV1ListResponseBody:
     Example:
         {'incident_statuses': [{'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             "Impact has been **fully mitigated**, and we're ready to learn from this incident.", 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully
-            mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'category': 'triage', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
-            from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}]}
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        incident_statuses (List[IncidentStatusV1ResponseBody]):  Example: [{'category': 'triage', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
-            from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': "Impact has been **fully mitigated**, and we're ready to learn from this incident.", 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully
-            mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'category': 'triage', 'created_at':
+        incident_statuses (List['IncidentStatusV1ResponseBody']):  Example: [{'category': 'triage', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}].
     """
 
-    incident_statuses: List[IncidentStatusV1ResponseBody]
+    incident_statuses: List["IncidentStatusV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -58,6 +46,10 @@ class IncidentStatusesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_status_v1_response_body import (
+            IncidentStatusV1ResponseBody,
+        )
+
         d = src_dict.copy()
         incident_statuses = []
         _incident_statuses = d.pop("incident_statuses")

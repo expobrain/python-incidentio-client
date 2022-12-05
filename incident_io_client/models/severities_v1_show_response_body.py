@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.severity_v1_response_body import SeverityV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.severity_v1_response_body import SeverityV1ResponseBody
+
 
 T = TypeVar("T", bound="SeveritiesV1ShowResponseBody")
 
@@ -21,7 +23,7 @@ class SeveritiesV1ShowResponseBody:
             'updated_at': '2021-08-17T13:28:57.801578Z'}.
     """
 
-    severity: SeverityV1ResponseBody
+    severity: "SeverityV1ResponseBody"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -39,6 +41,8 @@ class SeveritiesV1ShowResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.severity_v1_response_body import SeverityV1ResponseBody
+
         d = src_dict.copy()
         severity = SeverityV1ResponseBody.from_dict(d.pop("severity"))
 

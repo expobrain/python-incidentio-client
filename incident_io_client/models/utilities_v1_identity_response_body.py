@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.identity_v1_response_body import IdentityV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.identity_v1_response_body import IdentityV1ResponseBody
+
 
 T = TypeVar("T", bound="UtilitiesV1IdentityResponseBody")
 
@@ -11,14 +13,13 @@ T = TypeVar("T", bound="UtilitiesV1IdentityResponseBody")
 class UtilitiesV1IdentityResponseBody:
     """
     Example:
-        {'identity': {'name': 'Alertmanager token', 'roles': ['manage_settings', 'viewer', 'viewer']}}
+        {'identity': {'name': 'Alertmanager token', 'roles': ['incident_creator']}}
 
     Attributes:
-        identity (IdentityV1ResponseBody):  Example: {'name': 'Alertmanager token', 'roles': ['viewer',
-            'global_access']}.
+        identity (IdentityV1ResponseBody):  Example: {'name': 'Alertmanager token', 'roles': ['incident_creator']}.
     """
 
-    identity: IdentityV1ResponseBody
+    identity: "IdentityV1ResponseBody"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -36,6 +37,8 @@ class UtilitiesV1IdentityResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.identity_v1_response_body import IdentityV1ResponseBody
+
         d = src_dict.copy()
         identity = IdentityV1ResponseBody.from_dict(d.pop("identity"))
 

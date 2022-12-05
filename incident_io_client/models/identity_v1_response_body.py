@@ -13,12 +13,12 @@ T = TypeVar("T", bound="IdentityV1ResponseBody")
 class IdentityV1ResponseBody:
     """
     Example:
-        {'name': 'Alertmanager token', 'roles': ['viewer', 'global_access']}
+        {'name': 'Alertmanager token', 'roles': ['incident_creator']}
 
     Attributes:
         name (str): The name assigned to the current API Key Example: Alertmanager token.
         roles (List[IdentityV1ResponseBodyRolesItem]): Which roles have been enabled for this key Example:
-            ['global_access', 'incident_creator', 'manage_settings'].
+            ['incident_creator'].
     """
 
     name: str

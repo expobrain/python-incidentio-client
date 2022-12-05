@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional
 
 import httpx
@@ -29,7 +30,7 @@ def _get_kwargs(
 
 
 def _parse_response(*, response: httpx.Response) -> Optional[IncidentStatusesV1ShowResponseBody]:
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         response_200 = IncidentStatusesV1ShowResponseBody.from_dict(response.json())
 
         return response_200
@@ -38,7 +39,7 @@ def _parse_response(*, response: httpx.Response) -> Optional[IncidentStatusesV1S
 
 def _build_response(*, response: httpx.Response) -> Response[IncidentStatusesV1ShowResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),
