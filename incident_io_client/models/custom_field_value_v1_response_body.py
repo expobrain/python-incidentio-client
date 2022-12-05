@@ -1,11 +1,14 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
-from ..models.custom_field_option_v1_response_body import (
-    CustomFieldOptionV1ResponseBody,
-)
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.custom_field_option_v1_response_body import (
+        CustomFieldOptionV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldValueV1ResponseBody")
 
@@ -28,7 +31,7 @@ class CustomFieldValueV1ResponseBody:
 
     value_link: Union[Unset, str] = UNSET
     value_numeric: Union[Unset, str] = UNSET
-    value_option: Union[Unset, CustomFieldOptionV1ResponseBody] = UNSET
+    value_option: Union[Unset, "CustomFieldOptionV1ResponseBody"] = UNSET
     value_text: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -57,6 +60,10 @@ class CustomFieldValueV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_option_v1_response_body import (
+            CustomFieldOptionV1ResponseBody,
+        )
+
         d = src_dict.copy()
         value_link = d.pop("value_link", UNSET)
 

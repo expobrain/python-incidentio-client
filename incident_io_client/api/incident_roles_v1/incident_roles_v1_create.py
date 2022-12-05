@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional
 
 import httpx
@@ -35,7 +36,7 @@ def _get_kwargs(
 
 
 def _parse_response(*, response: httpx.Response) -> Optional[IncidentRolesV1CreateResponseBody]:
-    if response.status_code == 201:
+    if response.status_code == HTTPStatus.CREATED:
         response_201 = IncidentRolesV1CreateResponseBody.from_dict(response.json())
 
         return response_201
@@ -44,7 +45,7 @@ def _parse_response(*, response: httpx.Response) -> Optional[IncidentRolesV1Crea
 
 def _build_response(*, response: httpx.Response) -> Response[IncidentRolesV1CreateResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),

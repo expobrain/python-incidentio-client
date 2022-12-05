@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional
 
 import httpx
@@ -31,7 +32,7 @@ def _get_kwargs(
 
 
 def _parse_response(*, response: httpx.Response) -> Optional[IncidentsV1CreateResponseBody]:
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         response_200 = IncidentsV1CreateResponseBody.from_dict(response.json())
 
         return response_200
@@ -40,7 +41,7 @@ def _parse_response(*, response: httpx.Response) -> Optional[IncidentsV1CreateRe
 
 def _build_response(*, response: httpx.Response) -> Response[IncidentsV1CreateResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),
@@ -61,23 +62,8 @@ def sync_detailed(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
             'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
@@ -116,23 +102,8 @@ def sync(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
             'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
@@ -164,23 +135,8 @@ async def asyncio_detailed(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
             'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
@@ -217,23 +173,8 @@ async def asyncio(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
             field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
             'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}, {'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',

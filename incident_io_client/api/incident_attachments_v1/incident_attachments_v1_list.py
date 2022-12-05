@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional, Union
 
 import httpx
@@ -16,8 +17,8 @@ def _get_kwargs(
     *,
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
-    external_id: str,
-    resource_type: IncidentAttachmentsV1ListResourceType,
+    external_id: Union[Unset, None, str] = UNSET,
+    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Dict[str, Any]:
     url = f"{client.base_url}/v1/incident_attachments"
 
@@ -29,7 +30,9 @@ def _get_kwargs(
 
     params["external_id"] = external_id
 
-    json_resource_type = resource_type.value
+    json_resource_type: Union[Unset, None, str] = UNSET
+    if not isinstance(resource_type, Unset):
+        json_resource_type = resource_type.value if resource_type else None
 
     params["resource_type"] = json_resource_type
 
@@ -48,7 +51,7 @@ def _get_kwargs(
 def _parse_response(
     *, response: httpx.Response
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         response_200 = IncidentAttachmentsV1ListResponseBody.from_dict(response.json())
 
         return response_200
@@ -59,7 +62,7 @@ def _build_response(
     *, response: httpx.Response
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),
@@ -70,8 +73,8 @@ def sync_detailed(
     *,
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
-    external_id: str,
-    resource_type: IncidentAttachmentsV1ListResourceType,
+    external_id: Union[Unset, None, str] = UNSET,
+    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -79,8 +82,8 @@ def sync_detailed(
 
     Args:
         incident_id (Union[Unset, None, str]):
-        external_id (str):
-        resource_type (IncidentAttachmentsV1ListResourceType):
+        external_id (Union[Unset, None, str]):
+        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
     Returns:
         Response[IncidentAttachmentsV1ListResponseBody]
@@ -105,8 +108,8 @@ def sync(
     *,
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
-    external_id: str,
-    resource_type: IncidentAttachmentsV1ListResourceType,
+    external_id: Union[Unset, None, str] = UNSET,
+    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -114,8 +117,8 @@ def sync(
 
     Args:
         incident_id (Union[Unset, None, str]):
-        external_id (str):
-        resource_type (IncidentAttachmentsV1ListResourceType):
+        external_id (Union[Unset, None, str]):
+        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
     Returns:
         Response[IncidentAttachmentsV1ListResponseBody]
@@ -133,8 +136,8 @@ async def asyncio_detailed(
     *,
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
-    external_id: str,
-    resource_type: IncidentAttachmentsV1ListResourceType,
+    external_id: Union[Unset, None, str] = UNSET,
+    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -142,8 +145,8 @@ async def asyncio_detailed(
 
     Args:
         incident_id (Union[Unset, None, str]):
-        external_id (str):
-        resource_type (IncidentAttachmentsV1ListResourceType):
+        external_id (Union[Unset, None, str]):
+        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
     Returns:
         Response[IncidentAttachmentsV1ListResponseBody]
@@ -166,8 +169,8 @@ async def asyncio(
     *,
     client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
-    external_id: str,
-    resource_type: IncidentAttachmentsV1ListResourceType,
+    external_id: Union[Unset, None, str] = UNSET,
+    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -175,8 +178,8 @@ async def asyncio(
 
     Args:
         incident_id (Union[Unset, None, str]):
-        external_id (str):
-        resource_type (IncidentAttachmentsV1ListResourceType):
+        external_id (Union[Unset, None, str]):
+        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
     Returns:
         Response[IncidentAttachmentsV1ListResponseBody]

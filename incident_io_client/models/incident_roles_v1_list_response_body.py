@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.incident_role_v1_response_body import IncidentRoleV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.incident_role_v1_response_body import IncidentRoleV1ResponseBody
+
 
 T = TypeVar("T", bound="IncidentRolesV1ListResponseBody")
 
@@ -14,27 +16,17 @@ class IncidentRolesV1ListResponseBody:
         {'incident_roles': [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently
             coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident;
             Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead',
-            'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z',
+            'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
+
+    Attributes:
+        incident_roles (List['IncidentRoleV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident
             Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead', 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}]}
-
-    Attributes:
-        incident_roles (List[IncidentRoleV1ResponseBody]):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident
-            Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident',
-            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            '2021-08-17T13:28:57.801578Z'}].
     """
 
-    incident_roles: List[IncidentRoleV1ResponseBody]
+    incident_roles: List["IncidentRoleV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -56,6 +48,8 @@ class IncidentRolesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_role_v1_response_body import IncidentRoleV1ResponseBody
+
         d = src_dict.copy()
         incident_roles = []
         _incident_roles = d.pop("incident_roles")

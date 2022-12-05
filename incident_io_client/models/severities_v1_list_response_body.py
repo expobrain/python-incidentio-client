@@ -1,8 +1,10 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.severity_v1_response_body import SeverityV1ResponseBody
+if TYPE_CHECKING:
+    from ..models.severity_v1_response_body import SeverityV1ResponseBody
+
 
 T = TypeVar("T", bound="SeveritiesV1ListResponseBody")
 
@@ -13,27 +15,15 @@ class SeveritiesV1ListResponseBody:
     Example:
         {'severities': [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone
             chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really
-            that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really
-            that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really
-            that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        severities (List[SeverityV1ResponseBody]):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': "It's not really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor',
-            'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': "It's not really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor',
-            'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': "It's not really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor',
-            'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}, {'created_at': '2021-08-17T13:28:57.801578Z',
+        severities (List['SeverityV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
             'description': "It's not really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor',
             'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
-    severities: List[SeverityV1ResponseBody]
+    severities: List["SeverityV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -55,6 +45,8 @@ class SeveritiesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.severity_v1_response_body import SeverityV1ResponseBody
+
         d = src_dict.copy()
         severities = []
         _severities = d.pop("severities")

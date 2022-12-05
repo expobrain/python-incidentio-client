@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from typing import Any, Dict, Optional
 
 import httpx
@@ -31,7 +32,7 @@ def _get_kwargs(
 
 
 def _parse_response(*, response: httpx.Response) -> Optional[IncidentsV2CreateResponseBody]:
-    if response.status_code == 200:
+    if response.status_code == HTTPStatus.OK:
         response_200 = IncidentsV2CreateResponseBody.from_dict(response.json())
 
         return response_200
@@ -40,7 +41,7 @@ def _parse_response(*, response: httpx.Response) -> Optional[IncidentsV2CreateRe
 
 def _build_response(*, response: httpx.Response) -> Response[IncidentsV2CreateResponseBody]:
     return Response(
-        status_code=response.status_code,
+        status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
         parsed=_parse_response(response=response),
@@ -56,50 +57,24 @@ def sync_detailed(
 
      Create a new incident.
 
+    Note that if the incident mode is set to \"retrospective\" then the new incident
+    will not be announced in Slack.
+
     Args:
         json_body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
-            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
-            {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
-            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
-            yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
+            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -127,50 +102,24 @@ def sync(
 
      Create a new incident.
 
+    Note that if the incident mode is set to \"retrospective\" then the new incident
+    will not be announced in Slack.
+
     Args:
         json_body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
-            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
-            {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
-            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
-            yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
+            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -191,50 +140,24 @@ async def asyncio_detailed(
 
      Create a new incident.
 
+    Note that if the incident mode is set to \"retrospective\" then the new incident
+    will not be announced in Slack.
+
     Args:
         json_body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
-            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
-            {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
-            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
-            yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
+            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -260,50 +183,24 @@ async def asyncio(
 
      Create a new incident.
 
+    Note that if the incident mode is set to \"retrospective\" then the new incident
+    will not be announced in Slack.
+
     Args:
         json_body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text':
-            'This is my text field, I hope you like it', 'value_timestamp': ''}, {'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
-            '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}, {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
-            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'},
-            {'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}, {'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
-            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'summary': "Our database is really really sad, and we don't know why
-            yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
+            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]

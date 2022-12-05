@@ -1,25 +1,30 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 from dateutil.parser import isoparse
 
-from ..models.actor_v2_response_body import ActorV2ResponseBody
-from ..models.custom_field_entry_v2_response_body import CustomFieldEntryV2ResponseBody
-from ..models.incident_role_assignment_v2_response_body import (
-    IncidentRoleAssignmentV2ResponseBody,
-)
-from ..models.incident_status_v2_response_body import IncidentStatusV2ResponseBody
-from ..models.incident_timestamp_with_value_v2_response_body import (
-    IncidentTimestampWithValueV2ResponseBody,
-)
-from ..models.incident_type_v2_response_body import IncidentTypeV2ResponseBody
 from ..models.incident_v2_response_body_mode import IncidentV2ResponseBodyMode
 from ..models.incident_v2_response_body_visibility import (
     IncidentV2ResponseBodyVisibility,
 )
-from ..models.severity_v2_response_body import SeverityV2ResponseBody
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.actor_v2_response_body import ActorV2ResponseBody
+    from ..models.custom_field_entry_v2_response_body import (
+        CustomFieldEntryV2ResponseBody,
+    )
+    from ..models.incident_role_assignment_v2_response_body import (
+        IncidentRoleAssignmentV2ResponseBody,
+    )
+    from ..models.incident_status_v2_response_body import IncidentStatusV2ResponseBody
+    from ..models.incident_timestamp_with_value_v2_response_body import (
+        IncidentTimestampWithValueV2ResponseBody,
+    )
+    from ..models.incident_type_v2_response_body import IncidentTypeV2ResponseBody
+    from ..models.severity_v2_response_body import SeverityV2ResponseBody
+
 
 T = TypeVar("T", bound="IncidentV2ResponseBody")
 
@@ -33,163 +38,57 @@ class IncidentV2ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
             'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
             'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
+            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field': {'description':
-            'Which team is impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Affected Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status':
-            {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully
-            mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values': [{'timestamp':
-            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting customers.',
-            'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation':
-            True, 'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}, {'timestamp': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting customers.', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True,
-            'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}, {'timestamp': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting customers.', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True,
-            'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}, {'timestamp': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting customers.', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True,
-            'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': True,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'name': 'Our database is sad', 'permalink':
-            'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
-            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not
-            really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            'value_text': 'This is my text field, I hope you like it'}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
+            'incident_role_assignments': [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
+            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status': {'category': 'triage', 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
+            from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values': [{'incident_timestamp': {'id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value': {'value':
+            '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
+            'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name':
+            'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode':
+            'standard', 'name': 'Our database is sad', 'permalink': 'https://app.incident.io/incidents/123',
+            'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123', 'severity':
+            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility':
+            'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
         creator (ActorV2ResponseBody):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}.
-        custom_field_entries (List[CustomFieldEntryV2ResponseBody]): Custom field entries for this incident Example:
+        custom_field_entries (List['CustomFieldEntryV2ResponseBody']): Custom field entries for this incident Example:
             [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
+            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key':
-            10, 'value': 'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link':
-            'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}, {'custom_field': {'description':
-            'Which team is impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Affected Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}]}, 'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}, {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}, {'value_link': 'https://google.com/',
-            'value_numeric': '123.456', 'value_option': {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, 'value_text': 'This is my text field, I hope
-            you like it'}]}].
+            'value_text': 'This is my text field, I hope you like it'}]}].
         id (str): Unique identifier for the incident Example: 01FDAG4SAP5TYPT98WGR2N7W91.
-        incident_role_assignments (List[IncidentRoleAssignmentV2ResponseBody]): A list of who is assigned to each role
+        incident_role_assignments (List['IncidentRoleAssignmentV2ResponseBody']): A list of who is assigned to each role
             for this incident Example: [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
-            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
-            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
-            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
-            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}, {'assignee': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
-            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
-            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}].
         incident_status (IncidentStatusV2ResponseBody):  Example: {'category': 'triage', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}.
-        mode (IncidentV2ResponseBodyMode): Whether the incident is real, a test, or a tutorial Example: standard.
+        mode (IncidentV2ResponseBodyMode): Whether the incident is real, a test, a tutorial, or importing as a
+            retrospective incident Example: standard.
         name (str): Explanation of the incident Example: Our database is sad.
         reference (str): Reference to this incident, as displayed across the product Example: INC-123.
         severity (SeverityV2ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's
@@ -202,32 +101,12 @@ class IncidentV2ResponseBody:
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
-        incident_timestamp_values (Union[Unset, List[IncidentTimestampWithValueV2ResponseBody]]): Incident lifecycle
-            events and when they occurred Example: [{'timestamp': {'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'When this incident started impacting customers.', 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True, 'set_on_status_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first', 'show_before_closure':
-            True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}, {'timestamp': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting customers.', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True,
-            'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}, {'timestamp': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'When this incident started impacting customers.', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1, 'required': 'never', 'set_on_creation': True,
-            'set_on_status_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'set_on_transition': 'enter', 'set_on_visit': 'first',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'value': {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}}].
+        incident_timestamp_values (Union[Unset, List['IncidentTimestampWithValueV2ResponseBody']]): Incident lifecycle
+            events and when they occurred Example: [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
+            'Impact started', 'rank': 1}, 'value': {'value': '2021-08-17T13:28:57.801578Z'}}].
         incident_type (Union[Unset, IncidentTypeV2ResponseBody]):  Example: {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': True, 'name': 'Production Outage', 'private_incidents_only': False,
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}.
         permalink (Union[Unset, str]): A permanent link to the homepage for this incident Example:
             https://app.incident.io/incidents/123.
@@ -239,21 +118,23 @@ class IncidentV2ResponseBody:
     """
 
     created_at: datetime.datetime
-    creator: ActorV2ResponseBody
-    custom_field_entries: List[CustomFieldEntryV2ResponseBody]
+    creator: "ActorV2ResponseBody"
+    custom_field_entries: List["CustomFieldEntryV2ResponseBody"]
     id: str
-    incident_role_assignments: List[IncidentRoleAssignmentV2ResponseBody]
-    incident_status: IncidentStatusV2ResponseBody
+    incident_role_assignments: List["IncidentRoleAssignmentV2ResponseBody"]
+    incident_status: "IncidentStatusV2ResponseBody"
     mode: IncidentV2ResponseBodyMode
     name: str
     reference: str
-    severity: SeverityV2ResponseBody
+    severity: "SeverityV2ResponseBody"
     slack_channel_id: str
     updated_at: datetime.datetime
     visibility: IncidentV2ResponseBodyVisibility
     call_url: Union[Unset, str] = UNSET
-    incident_timestamp_values: Union[Unset, List[IncidentTimestampWithValueV2ResponseBody]] = UNSET
-    incident_type: Union[Unset, IncidentTypeV2ResponseBody] = UNSET
+    incident_timestamp_values: Union[
+        Unset, List["IncidentTimestampWithValueV2ResponseBody"]
+    ] = UNSET
+    incident_type: Union[Unset, "IncidentTypeV2ResponseBody"] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
     slack_channel_name: Union[Unset, str] = UNSET
@@ -347,6 +228,22 @@ class IncidentV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.actor_v2_response_body import ActorV2ResponseBody
+        from ..models.custom_field_entry_v2_response_body import (
+            CustomFieldEntryV2ResponseBody,
+        )
+        from ..models.incident_role_assignment_v2_response_body import (
+            IncidentRoleAssignmentV2ResponseBody,
+        )
+        from ..models.incident_status_v2_response_body import (
+            IncidentStatusV2ResponseBody,
+        )
+        from ..models.incident_timestamp_with_value_v2_response_body import (
+            IncidentTimestampWithValueV2ResponseBody,
+        )
+        from ..models.incident_type_v2_response_body import IncidentTypeV2ResponseBody
+        from ..models.severity_v2_response_body import SeverityV2ResponseBody
+
         d = src_dict.copy()
         created_at = isoparse(d.pop("created_at"))
 

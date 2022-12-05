@@ -15,7 +15,8 @@ class CustomFieldsV1UpdateRequestBody:
     """
     Example:
         {'description': 'Which team is impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_in_announcement_post': True}
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}
 
     Attributes:
         description (str): Description of the custom field Example: Which team is impacted by this issue.
@@ -27,6 +28,7 @@ class CustomFieldsV1UpdateRequestBody:
             whatever the value of this setting. Example: True.
         show_before_creation (bool): Whether a custom field should be shown in the incident creation modal. This must be
             true if the field is always required. Example: True.
+        show_before_update (bool): Whether a custom field should be shown in the incident update modal. Example: True.
         show_in_announcement_post (Union[Unset, bool]): Whether a custom field should be shown in the list of fields as
             part of the announcement post when set. Example: True.
     """
@@ -36,6 +38,7 @@ class CustomFieldsV1UpdateRequestBody:
     required: CustomFieldsV1UpdateRequestBodyRequired
     show_before_closure: bool
     show_before_creation: bool
+    show_before_update: bool
     show_in_announcement_post: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -46,6 +49,7 @@ class CustomFieldsV1UpdateRequestBody:
 
         show_before_closure = self.show_before_closure
         show_before_creation = self.show_before_creation
+        show_before_update = self.show_before_update
         show_in_announcement_post = self.show_in_announcement_post
 
         field_dict: Dict[str, Any] = {}
@@ -57,6 +61,7 @@ class CustomFieldsV1UpdateRequestBody:
                 "required": required,
                 "show_before_closure": show_before_closure,
                 "show_before_creation": show_before_creation,
+                "show_before_update": show_before_update,
             }
         )
         if show_in_announcement_post is not UNSET:
@@ -77,6 +82,8 @@ class CustomFieldsV1UpdateRequestBody:
 
         show_before_creation = d.pop("show_before_creation")
 
+        show_before_update = d.pop("show_before_update")
+
         show_in_announcement_post = d.pop("show_in_announcement_post", UNSET)
 
         custom_fields_v1_update_request_body = cls(
@@ -85,6 +92,7 @@ class CustomFieldsV1UpdateRequestBody:
             required=required,
             show_before_closure=show_before_closure,
             show_before_creation=show_before_creation,
+            show_before_update=show_before_update,
             show_in_announcement_post=show_in_announcement_post,
         )
 

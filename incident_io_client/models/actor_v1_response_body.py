@@ -1,10 +1,13 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
-from ..models.api_key_v1_response_body import APIKeyV1ResponseBody
-from ..models.user_v1_response_body import UserV1ResponseBody
 from ..types import UNSET, Unset
+
+if TYPE_CHECKING:
+    from ..models.api_key_v1_response_body import APIKeyV1ResponseBody
+    from ..models.user_v1_response_body import UserV1ResponseBody
+
 
 T = TypeVar("T", bound="ActorV1ResponseBody")
 
@@ -24,8 +27,8 @@ class ActorV1ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
     """
 
-    api_key: Union[Unset, APIKeyV1ResponseBody] = UNSET
-    user: Union[Unset, UserV1ResponseBody] = UNSET
+    api_key: Union[Unset, "APIKeyV1ResponseBody"] = UNSET
+    user: Union[Unset, "UserV1ResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -49,6 +52,9 @@ class ActorV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.api_key_v1_response_body import APIKeyV1ResponseBody
+        from ..models.user_v1_response_body import UserV1ResponseBody
+
         d = src_dict.copy()
         _api_key = d.pop("api_key", UNSET)
         api_key: Union[Unset, APIKeyV1ResponseBody]

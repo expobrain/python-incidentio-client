@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.incident_attachments_v1_create_request_body_resource import (
-    IncidentAttachmentsV1CreateRequestBodyResource,
-)
+if TYPE_CHECKING:
+    from ..models.incident_attachments_v1_create_request_body_resource import (
+        IncidentAttachmentsV1CreateRequestBodyResource,
+    )
+
 
 T = TypeVar("T", bound="IncidentAttachmentsV1CreateRequestBody")
 
@@ -23,7 +25,7 @@ class IncidentAttachmentsV1CreateRequestBody:
     """
 
     incident_id: str
-    resource: IncidentAttachmentsV1CreateRequestBodyResource
+    resource: "IncidentAttachmentsV1CreateRequestBodyResource"
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -43,6 +45,10 @@ class IncidentAttachmentsV1CreateRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_attachments_v1_create_request_body_resource import (
+            IncidentAttachmentsV1CreateRequestBodyResource,
+        )
+
         d = src_dict.copy()
         incident_id = d.pop("incident_id")
 

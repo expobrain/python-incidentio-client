@@ -1,10 +1,12 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.incident_attachment_v1_response_body import (
-    IncidentAttachmentV1ResponseBody,
-)
+if TYPE_CHECKING:
+    from ..models.incident_attachment_v1_response_body import (
+        IncidentAttachmentV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="IncidentAttachmentsV1ListResponseBody")
 
@@ -15,21 +17,16 @@ class IncidentAttachmentsV1ListResponseBody:
     Example:
         {'incident_attachments': [{'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'resource': {'external_id': '123', 'permalink': 'https://my.pagerduty.com/incidents/ABC', 'resource_type':
-            'pager_duty_incident', 'title': 'The database has gone down'}}, {'id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource': {'external_id': '123', 'permalink':
-            'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
-            gone down'}}]}
+            'pager_duty_incident', 'title': 'The database has gone down'}}]}
 
     Attributes:
-        incident_attachments (List[IncidentAttachmentV1ResponseBody]):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
+        incident_attachments (List['IncidentAttachmentV1ResponseBody']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource': {'external_id': '123', 'permalink':
             'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
-            gone down'}}, {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource':
-            {'external_id': '123', 'permalink': 'https://my.pagerduty.com/incidents/ABC', 'resource_type':
-            'pager_duty_incident', 'title': 'The database has gone down'}}].
+            gone down'}}].
     """
 
-    incident_attachments: List[IncidentAttachmentV1ResponseBody]
+    incident_attachments: List["IncidentAttachmentV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -51,6 +48,10 @@ class IncidentAttachmentsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.incident_attachment_v1_response_body import (
+            IncidentAttachmentV1ResponseBody,
+        )
+
         d = src_dict.copy()
         incident_attachments = []
         _incident_attachments = d.pop("incident_attachments")

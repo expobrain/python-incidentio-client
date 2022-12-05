@@ -1,13 +1,16 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..models.custom_field_option_v1_response_body import (
-    CustomFieldOptionV1ResponseBody,
-)
 from ..models.custom_field_type_info_v1_response_body_field_type import (
     CustomFieldTypeInfoV1ResponseBodyFieldType,
 )
+
+if TYPE_CHECKING:
+    from ..models.custom_field_option_v1_response_body import (
+        CustomFieldOptionV1ResponseBody,
+    )
+
 
 T = TypeVar("T", bound="CustomFieldTypeInfoV1ResponseBody")
 
@@ -18,29 +21,23 @@ class CustomFieldTypeInfoV1ResponseBody:
     Example:
         {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}]}
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]}
 
     Attributes:
         description (str): Description of the custom field Example: Which team is impacted by this issue.
         field_type (CustomFieldTypeInfoV1ResponseBodyFieldType): Type of custom field Example: single_select.
         id (str): Unique identifier for the custom field Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Human readable name for the custom field Example: Affected Team.
-        options (List[CustomFieldOptionV1ResponseBody]): What options are available for this custom field, if this field
-            has options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}, {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}, {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}].
+        options (List['CustomFieldOptionV1ResponseBody']): What options are available for this custom field, if this
+            field has options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
     """
 
     description: str
     field_type: CustomFieldTypeInfoV1ResponseBodyFieldType
     id: str
     name: str
-    options: List[CustomFieldOptionV1ResponseBody]
+    options: List["CustomFieldOptionV1ResponseBody"]
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,6 +68,10 @@ class CustomFieldTypeInfoV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.custom_field_option_v1_response_body import (
+            CustomFieldOptionV1ResponseBody,
+        )
+
         d = src_dict.copy()
         description = d.pop("description")
 
