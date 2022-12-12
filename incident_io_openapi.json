@@ -4857,15 +4857,14 @@
             "type": "integer"
           },
           "total_record_count": {
-            "description": "How many matching records were there in total",
+            "description": "How many matching records were there in total, if known",
             "example": 238,
             "format": "int64",
             "type": "integer"
           }
         },
         "required": [
-          "page_size",
-          "total_record_count"
+          "page_size"
         ],
         "title": "PaginationMetaResponseBody",
         "type": "object"
