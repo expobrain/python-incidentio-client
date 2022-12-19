@@ -1,0 +1,3 @@
+# incident_io_client.models.external_issue_reference_v2_response_body_provider
+
+::: incident_io_client.models.external_issue_reference_v2_response_body_provider
