@@ -77,6 +77,12 @@ from .external_issue_reference_v1_response_body import (
 from .external_issue_reference_v1_response_body_provider import (
     ExternalIssueReferenceV1ResponseBodyProvider,
 )
+from .external_issue_reference_v2_response_body import (
+    ExternalIssueReferenceV2ResponseBody,
+)
+from .external_issue_reference_v2_response_body_provider import (
+    ExternalIssueReferenceV2ResponseBodyProvider,
+)
 from .external_resource_v1_response_body import ExternalResourceV1ResponseBody
 from .external_resource_v1_response_body_resource_type import (
     ExternalResourceV1ResponseBodyResourceType,
@@ -258,6 +264,8 @@ __all__ = (
     "CustomFieldValueV2ResponseBody",
     "ExternalIssueReferenceV1ResponseBody",
     "ExternalIssueReferenceV1ResponseBodyProvider",
+    "ExternalIssueReferenceV2ResponseBody",
+    "ExternalIssueReferenceV2ResponseBodyProvider",
     "ExternalResourceV1ResponseBody",
     "ExternalResourceV1ResponseBodyResourceType",
     "IdentityV1ResponseBody",
