@@ -15,6 +15,9 @@ if TYPE_CHECKING:
     from ..models.custom_field_entry_v2_response_body import (
         CustomFieldEntryV2ResponseBody,
     )
+    from ..models.external_issue_reference_v2_response_body import (
+        ExternalIssueReferenceV2ResponseBody,
+    )
     from ..models.incident_role_assignment_v2_response_body import (
         IncidentRoleAssignmentV2ResponseBody,
     )
@@ -41,21 +44,22 @@ class IncidentV2ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
             'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
-            'incident_role_assignments': [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status': {'category': 'triage', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
-            from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values': [{'incident_timestamp': {'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value': {'value':
-            '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name':
-            'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode':
-            'standard', 'name': 'Our database is sad', 'permalink': 'https://app.incident.io/incidents/123',
+            'value_text': 'This is my text field, I hope you like it'}]}], 'external_issue_reference': {'issue_name':
+            'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
+            'provider': 'asana'}, 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee': {'email':
+            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
+            'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
+            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
+            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status':
+            {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully
+            mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
+            'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values':
+            [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value':
+            {'value': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'Customer facing production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False,
+            'name': 'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'mode': 'standard', 'name': 'Our database is sad', 'permalink': 'https://app.incident.io/incidents/123',
             'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123', 'severity':
             {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
@@ -101,6 +105,9 @@ class IncidentV2ResponseBody:
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
+        external_issue_reference (Union[Unset, ExternalIssueReferenceV2ResponseBody]):  Example: {'issue_name':
+            'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
+            'provider': 'asana'}.
         incident_timestamp_values (Union[Unset, List['IncidentTimestampWithValueV2ResponseBody']]): Incident lifecycle
             events and when they occurred Example: [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
             'Impact started', 'rank': 1}, 'value': {'value': '2021-08-17T13:28:57.801578Z'}}].
@@ -131,6 +138,7 @@ class IncidentV2ResponseBody:
     updated_at: datetime.datetime
     visibility: IncidentV2ResponseBodyVisibility
     call_url: Union[Unset, str] = UNSET
+    external_issue_reference: Union[Unset, "ExternalIssueReferenceV2ResponseBody"] = UNSET
     incident_timestamp_values: Union[
         Unset, List["IncidentTimestampWithValueV2ResponseBody"]
     ] = UNSET
@@ -173,6 +181,10 @@ class IncidentV2ResponseBody:
         visibility = self.visibility.value
 
         call_url = self.call_url
+        external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.external_issue_reference, Unset):
+            external_issue_reference = self.external_issue_reference.to_dict()
+
         incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
@@ -211,6 +223,8 @@ class IncidentV2ResponseBody:
         )
         if call_url is not UNSET:
             field_dict["call_url"] = call_url
+        if external_issue_reference is not UNSET:
+            field_dict["external_issue_reference"] = external_issue_reference
         if incident_timestamp_values is not UNSET:
             field_dict["incident_timestamp_values"] = incident_timestamp_values
         if incident_type is not UNSET:
@@ -231,6 +245,9 @@ class IncidentV2ResponseBody:
         from ..models.actor_v2_response_body import ActorV2ResponseBody
         from ..models.custom_field_entry_v2_response_body import (
             CustomFieldEntryV2ResponseBody,
+        )
+        from ..models.external_issue_reference_v2_response_body import (
+            ExternalIssueReferenceV2ResponseBody,
         )
         from ..models.incident_role_assignment_v2_response_body import (
             IncidentRoleAssignmentV2ResponseBody,
@@ -287,6 +304,15 @@ class IncidentV2ResponseBody:
 
         call_url = d.pop("call_url", UNSET)
 
+        _external_issue_reference = d.pop("external_issue_reference", UNSET)
+        external_issue_reference: Union[Unset, ExternalIssueReferenceV2ResponseBody]
+        if isinstance(_external_issue_reference, Unset):
+            external_issue_reference = UNSET
+        else:
+            external_issue_reference = ExternalIssueReferenceV2ResponseBody.from_dict(
+                _external_issue_reference
+            )
+
         incident_timestamp_values = []
         _incident_timestamp_values = d.pop("incident_timestamp_values", UNSET)
         for incident_timestamp_values_item_data in _incident_timestamp_values or []:
@@ -326,6 +352,7 @@ class IncidentV2ResponseBody:
             updated_at=updated_at,
             visibility=visibility,
             call_url=call_url,
+            external_issue_reference=external_issue_reference,
             incident_timestamp_values=incident_timestamp_values,
             incident_type=incident_type,
             permalink=permalink,
