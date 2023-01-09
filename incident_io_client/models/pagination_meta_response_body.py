@@ -15,30 +15,31 @@ class PaginationMetaResponseBody:
 
     Attributes:
         page_size (int): What was the maximum number of results requested Example: 25.
-        total_record_count (int): How many matching records were there in total Example: 238.
         after (Union[Unset, str]): If provided, were records after a particular ID Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        total_record_count (Union[Unset, int]): How many matching records were there in total, if known Example: 238.
     """
 
     page_size: int
-    total_record_count: int
     after: Union[Unset, str] = UNSET
+    total_record_count: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         page_size = self.page_size
-        total_record_count = self.total_record_count
         after = self.after
+        total_record_count = self.total_record_count
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "page_size": page_size,
-                "total_record_count": total_record_count,
             }
         )
         if after is not UNSET:
             field_dict["after"] = after
+        if total_record_count is not UNSET:
+            field_dict["total_record_count"] = total_record_count
 
         return field_dict
 
@@ -47,14 +48,14 @@ class PaginationMetaResponseBody:
         d = src_dict.copy()
         page_size = d.pop("page_size")
 
-        total_record_count = d.pop("total_record_count")
-
         after = d.pop("after", UNSET)
+
+        total_record_count = d.pop("total_record_count", UNSET)
 
         pagination_meta_response_body = cls(
             page_size=page_size,
-            total_record_count=total_record_count,
             after=after,
+            total_record_count=total_record_count,
         )
 
         pagination_meta_response_body.additional_properties = d

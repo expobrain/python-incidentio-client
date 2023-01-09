@@ -77,6 +77,12 @@ from .external_issue_reference_v1_response_body import (
 from .external_issue_reference_v1_response_body_provider import (
     ExternalIssueReferenceV1ResponseBodyProvider,
 )
+from .external_issue_reference_v2_response_body import (
+    ExternalIssueReferenceV2ResponseBody,
+)
+from .external_issue_reference_v2_response_body_provider import (
+    ExternalIssueReferenceV2ResponseBodyProvider,
+)
 from .external_resource_v1_response_body import ExternalResourceV1ResponseBody
 from .external_resource_v1_response_body_resource_type import (
     ExternalResourceV1ResponseBodyResourceType,
@@ -167,7 +173,13 @@ from .incident_timestamps_v2_show_response_body import (
     IncidentTimestampsV2ShowResponseBody,
 )
 from .incident_type_v1_response_body import IncidentTypeV1ResponseBody
+from .incident_type_v1_response_body_create_in_triage import (
+    IncidentTypeV1ResponseBodyCreateInTriage,
+)
 from .incident_type_v2_response_body import IncidentTypeV2ResponseBody
+from .incident_type_v2_response_body_create_in_triage import (
+    IncidentTypeV2ResponseBodyCreateInTriage,
+)
 from .incident_types_v1_list_response_body import IncidentTypesV1ListResponseBody
 from .incident_types_v1_show_response_body import IncidentTypesV1ShowResponseBody
 from .incident_v1_response_body import IncidentV1ResponseBody
@@ -258,6 +270,8 @@ __all__ = (
     "CustomFieldValueV2ResponseBody",
     "ExternalIssueReferenceV1ResponseBody",
     "ExternalIssueReferenceV1ResponseBodyProvider",
+    "ExternalIssueReferenceV2ResponseBody",
+    "ExternalIssueReferenceV2ResponseBodyProvider",
     "ExternalResourceV1ResponseBody",
     "ExternalResourceV1ResponseBodyResourceType",
     "IdentityV1ResponseBody",
@@ -317,7 +331,9 @@ __all__ = (
     "IncidentTypesV1ListResponseBody",
     "IncidentTypesV1ShowResponseBody",
     "IncidentTypeV1ResponseBody",
+    "IncidentTypeV1ResponseBodyCreateInTriage",
     "IncidentTypeV2ResponseBody",
+    "IncidentTypeV2ResponseBodyCreateInTriage",
     "IncidentV1ResponseBody",
     "IncidentV1ResponseBodyMode",
     "IncidentV1ResponseBodyStatus",

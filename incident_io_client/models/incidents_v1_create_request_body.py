@@ -41,7 +41,6 @@ class IncidentsV1CreateRequestBody:
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
-        severity_id (str): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
         visibility (IncidentsV1CreateRequestBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
@@ -58,6 +57,7 @@ class IncidentsV1CreateRequestBody:
             01FH5TZRWMNAFB0DZ23FD1TV96.
         mode (Union[Unset, IncidentsV1CreateRequestBodyMode]): Whether the incident is real or test Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
+        severity_id (Union[Unset, str]): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
         source_message_channel_id (Union[Unset, str]): Channel ID of the source message, if this incident was created
             from one Example: C02AW36C1M5.
         source_message_timestamp (Union[Unset, str]): Timestamp of the source message, if this incident was created from
@@ -68,7 +68,6 @@ class IncidentsV1CreateRequestBody:
     """
 
     idempotency_key: str
-    severity_id: str
     visibility: IncidentsV1CreateRequestBodyVisibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV1RequestBody"]] = UNSET
     incident_role_assignments: Union[
@@ -77,6 +76,7 @@ class IncidentsV1CreateRequestBody:
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV1CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
+    severity_id: Union[Unset, str] = UNSET
     source_message_channel_id: Union[Unset, str] = UNSET
     source_message_timestamp: Union[Unset, str] = UNSET
     status: Union[Unset, IncidentsV1CreateRequestBodyStatus] = UNSET
@@ -85,7 +85,6 @@ class IncidentsV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         idempotency_key = self.idempotency_key
-        severity_id = self.severity_id
         visibility = self.visibility.value
 
         custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -110,6 +109,7 @@ class IncidentsV1CreateRequestBody:
             mode = self.mode.value
 
         name = self.name
+        severity_id = self.severity_id
         source_message_channel_id = self.source_message_channel_id
         source_message_timestamp = self.source_message_timestamp
         status: Union[Unset, str] = UNSET
@@ -123,7 +123,6 @@ class IncidentsV1CreateRequestBody:
         field_dict.update(
             {
                 "idempotency_key": idempotency_key,
-                "severity_id": severity_id,
                 "visibility": visibility,
             }
         )
@@ -137,6 +136,8 @@ class IncidentsV1CreateRequestBody:
             field_dict["mode"] = mode
         if name is not UNSET:
             field_dict["name"] = name
+        if severity_id is not UNSET:
+            field_dict["severity_id"] = severity_id
         if source_message_channel_id is not UNSET:
             field_dict["source_message_channel_id"] = source_message_channel_id
         if source_message_timestamp is not UNSET:
@@ -159,8 +160,6 @@ class IncidentsV1CreateRequestBody:
 
         d = src_dict.copy()
         idempotency_key = d.pop("idempotency_key")
-
-        severity_id = d.pop("severity_id")
 
         visibility = IncidentsV1CreateRequestBodyVisibility(d.pop("visibility"))
 
@@ -193,6 +192,8 @@ class IncidentsV1CreateRequestBody:
 
         name = d.pop("name", UNSET)
 
+        severity_id = d.pop("severity_id", UNSET)
+
         source_message_channel_id = d.pop("source_message_channel_id", UNSET)
 
         source_message_timestamp = d.pop("source_message_timestamp", UNSET)
@@ -208,13 +209,13 @@ class IncidentsV1CreateRequestBody:
 
         incidents_v1_create_request_body = cls(
             idempotency_key=idempotency_key,
-            severity_id=severity_id,
             visibility=visibility,
             custom_field_entries=custom_field_entries,
             incident_role_assignments=incident_role_assignments,
             incident_type_id=incident_type_id,
             mode=mode,
             name=name,
+            severity_id=severity_id,
             source_message_channel_id=source_message_channel_id,
             source_message_timestamp=source_message_timestamp,
             status=status,

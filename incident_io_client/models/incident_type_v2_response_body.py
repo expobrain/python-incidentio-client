@@ -4,6 +4,10 @@ from typing import Any, Dict, List, Type, TypeVar
 import attr
 from dateutil.parser import isoparse
 
+from ..models.incident_type_v2_response_body_create_in_triage import (
+    IncidentTypeV2ResponseBodyCreateInTriage,
+)
+
 T = TypeVar("T", bound="IncidentTypeV2ResponseBody")
 
 
@@ -11,11 +15,13 @@ T = TypeVar("T", bound="IncidentTypeV2ResponseBody")
 class IncidentTypeV2ResponseBody:
     """
     Example:
-        {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}
+        {'create_in_triage': 'always', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing
+            production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage',
+            'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
+        create_in_triage (IncidentTypeV2ResponseBodyCreateInTriage): Whether incidents of this must always, or can
+            optionally, be created in triage Example: always.
         created_at (datetime.datetime): When this resource was created Example: 2021-08-17T13:28:57.801578Z.
         description (str): What is this incident type for? Example: Customer facing production outages.
         id (str): Unique identifier for this Incident Type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
@@ -25,6 +31,7 @@ class IncidentTypeV2ResponseBody:
         updated_at (datetime.datetime): When this resource was last updated Example: 2021-08-17T13:28:57.801578Z.
     """
 
+    create_in_triage: IncidentTypeV2ResponseBodyCreateInTriage
     created_at: datetime.datetime
     description: str
     id: str
@@ -35,6 +42,8 @@ class IncidentTypeV2ResponseBody:
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        create_in_triage = self.create_in_triage.value
+
         created_at = self.created_at.isoformat()
 
         description = self.description
@@ -48,6 +57,7 @@ class IncidentTypeV2ResponseBody:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
+                "create_in_triage": create_in_triage,
                 "created_at": created_at,
                 "description": description,
                 "id": id,
@@ -63,6 +73,8 @@ class IncidentTypeV2ResponseBody:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
+        create_in_triage = IncidentTypeV2ResponseBodyCreateInTriage(d.pop("create_in_triage"))
+
         created_at = isoparse(d.pop("created_at"))
 
         description = d.pop("description")
@@ -78,6 +90,7 @@ class IncidentTypeV2ResponseBody:
         updated_at = isoparse(d.pop("updated_at"))
 
         incident_type_v2_response_body = cls(
+            create_in_triage=create_in_triage,
             created_at=created_at,
             description=description,
             id=id,
