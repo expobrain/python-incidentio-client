@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class ExternalIssueReferenceV1ResponseBodyProvider(str, Enum):
+class ExternalIssueReferenceV2ResponseBodyProvider(str, Enum):
     ASANA = "asana"
     LINEAR = "linear"
     JIRA = "jira"

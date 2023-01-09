@@ -45,7 +45,6 @@ class IncidentsV2CreateRequestBody:
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
-        severity_id (str): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
         visibility (IncidentsV2CreateRequestBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
@@ -70,12 +69,12 @@ class IncidentsV2CreateRequestBody:
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         retrospective_incident_options (Union[Unset, RetrospectiveIncidentOptionsV2RequestBody]):  Example:
             {'slack_channel_id': 'abc123'}.
+        severity_id (Union[Unset, str]): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
     """
 
     idempotency_key: str
-    severity_id: str
     visibility: IncidentsV2CreateRequestBodyVisibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2RequestBody"]] = UNSET
     incident_role_assignments: Union[
@@ -91,12 +90,12 @@ class IncidentsV2CreateRequestBody:
     retrospective_incident_options: Union[
         Unset, "RetrospectiveIncidentOptionsV2RequestBody"
     ] = UNSET
+    severity_id: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         idempotency_key = self.idempotency_key
-        severity_id = self.severity_id
         visibility = self.visibility.value
 
         custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -134,6 +133,7 @@ class IncidentsV2CreateRequestBody:
         if not isinstance(self.retrospective_incident_options, Unset):
             retrospective_incident_options = self.retrospective_incident_options.to_dict()
 
+        severity_id = self.severity_id
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}
@@ -141,7 +141,6 @@ class IncidentsV2CreateRequestBody:
         field_dict.update(
             {
                 "idempotency_key": idempotency_key,
-                "severity_id": severity_id,
                 "visibility": visibility,
             }
         )
@@ -161,6 +160,8 @@ class IncidentsV2CreateRequestBody:
             field_dict["name"] = name
         if retrospective_incident_options is not UNSET:
             field_dict["retrospective_incident_options"] = retrospective_incident_options
+        if severity_id is not UNSET:
+            field_dict["severity_id"] = severity_id
         if summary is not UNSET:
             field_dict["summary"] = summary
 
@@ -183,8 +184,6 @@ class IncidentsV2CreateRequestBody:
 
         d = src_dict.copy()
         idempotency_key = d.pop("idempotency_key")
-
-        severity_id = d.pop("severity_id")
 
         visibility = IncidentsV2CreateRequestBodyVisibility(d.pop("visibility"))
 
@@ -237,11 +236,12 @@ class IncidentsV2CreateRequestBody:
                 _retrospective_incident_options
             )
 
+        severity_id = d.pop("severity_id", UNSET)
+
         summary = d.pop("summary", UNSET)
 
         incidents_v2_create_request_body = cls(
             idempotency_key=idempotency_key,
-            severity_id=severity_id,
             visibility=visibility,
             custom_field_entries=custom_field_entries,
             incident_role_assignments=incident_role_assignments,
@@ -251,6 +251,7 @@ class IncidentsV2CreateRequestBody:
             mode=mode,
             name=name,
             retrospective_incident_options=retrospective_incident_options,
+            severity_id=severity_id,
             summary=summary,
         )
 
