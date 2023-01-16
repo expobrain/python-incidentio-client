@@ -11,12 +11,12 @@ T = TypeVar("T", bound="SeverityV2ResponseBody")
 class SeverityV2ResponseBody:
     """
     Example:
-        {'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone chill", 'id':
+        {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
-        description (str): Description of the severity Example: It's not really that bad, everyone chill.
+        description (str): Description of the severity Example: Issues with **low impact**..
         id (str): Unique identifier of the severity Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Human readable name of the severity Example: Minor.
         rank (int): Rank to help sort severities (lower numbers are less severe) Example: 1.
