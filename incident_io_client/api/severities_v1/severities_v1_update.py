@@ -61,8 +61,8 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1UpdateResponseBody]
@@ -94,8 +94,8 @@ def sync(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1UpdateResponseBody]
@@ -120,8 +120,8 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1UpdateResponseBody]
@@ -151,8 +151,8 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1UpdateResponseBody]

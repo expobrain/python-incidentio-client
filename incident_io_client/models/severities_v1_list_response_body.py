@@ -13,14 +13,13 @@ T = TypeVar("T", bound="SeveritiesV1ListResponseBody")
 class SeveritiesV1ListResponseBody:
     """
     Example:
-        {'severities': [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': "It's not really that bad, everyone
-            chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}]}
+        {'severities': [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
         severities (List['SeverityV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': "It's not really that bad, everyone chill", 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor',
-            'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            'description': 'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1,
+            'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
     severities: List["SeverityV1ResponseBody"]

@@ -58,8 +58,8 @@ def sync_detailed(
      Create a new severity
 
     Args:
-        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1CreateResponseBody]
@@ -88,8 +88,8 @@ def sync(
      Create a new severity
 
     Args:
-        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1CreateResponseBody]
@@ -111,8 +111,8 @@ async def asyncio_detailed(
      Create a new severity
 
     Args:
-        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1CreateResponseBody]
@@ -139,8 +139,8 @@ async def asyncio(
      Create a new severity
 
     Args:
-        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': "It's not really that
-            bad, everyone chill", 'name': 'Minor', 'rank': 1}.
+        json_body (SeveritiesV1CreateRequestBody):  Example: {'description': 'Issues with **low
+            impact**.', 'name': 'Minor', 'rank': 1}.
 
     Returns:
         Response[SeveritiesV1CreateResponseBody]

@@ -3050,7 +3050,7 @@
           "reference": "INC-123",
           "severity": {
             "created_at": "2021-08-17T13:28:57.801578Z",
-            "description": "It's not really that bad, everyone chill",
+            "description": "Issues with **low impact**.",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Minor",
             "rank": 1,
@@ -3380,7 +3380,7 @@
           "reference": "INC-123",
           "severity": {
             "created_at": "2021-08-17T13:28:57.801578Z",
-            "description": "It's not really that bad, everyone chill",
+            "description": "Issues with **low impact**.",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Minor",
             "rank": 1,
@@ -3830,7 +3830,7 @@
             "reference": "INC-123",
             "severity": {
               "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "It's not really that bad, everyone chill",
+              "description": "Issues with **low impact**.",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Minor",
               "rank": 1,
@@ -3951,7 +3951,7 @@
               "reference": "INC-123",
               "severity": {
                 "created_at": "2021-08-17T13:28:57.801578Z",
-                "description": "It's not really that bad, everyone chill",
+                "description": "Issues with **low impact**.",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Minor",
                 "rank": 1,
@@ -4067,7 +4067,7 @@
                 "reference": "INC-123",
                 "severity": {
                   "created_at": "2021-08-17T13:28:57.801578Z",
-                  "description": "It's not really that bad, everyone chill",
+                  "description": "Issues with **low impact**.",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Minor",
                   "rank": 1,
@@ -4191,7 +4191,7 @@
             "reference": "INC-123",
             "severity": {
               "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "It's not really that bad, everyone chill",
+              "description": "Issues with **low impact**.",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Minor",
               "rank": 1,
@@ -4496,7 +4496,7 @@
             "reference": "INC-123",
             "severity": {
               "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "It's not really that bad, everyone chill",
+              "description": "Issues with **low impact**.",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Minor",
               "rank": 1,
@@ -4636,7 +4636,7 @@
               "reference": "INC-123",
               "severity": {
                 "created_at": "2021-08-17T13:28:57.801578Z",
-                "description": "It's not really that bad, everyone chill",
+                "description": "Issues with **low impact**.",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Minor",
                 "rank": 1,
@@ -4771,7 +4771,7 @@
                 "reference": "INC-123",
                 "severity": {
                   "created_at": "2021-08-17T13:28:57.801578Z",
-                  "description": "It's not really that bad, everyone chill",
+                  "description": "Issues with **low impact**.",
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "name": "Minor",
                   "rank": 1,
@@ -4914,7 +4914,7 @@
             "reference": "INC-123",
             "severity": {
               "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "It's not really that bad, everyone chill",
+              "description": "Issues with **low impact**.",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Minor",
               "rank": 1,
@@ -4985,14 +4985,14 @@
       },
       "SeveritiesV1CreateRequestBody": {
         "example": {
-          "description": "It's not really that bad, everyone chill",
+          "description": "Issues with **low impact**.",
           "name": "Minor",
           "rank": 1
         },
         "properties": {
           "description": {
             "description": "Description of the severity",
-            "example": "It's not really that bad, everyone chill",
+            "example": "Issues with **low impact**.",
             "type": "string"
           },
           "name": {
@@ -5019,7 +5019,7 @@
         "example": {
           "severity": {
             "created_at": "2021-08-17T13:28:57.801578Z",
-            "description": "It's not really that bad, everyone chill",
+            "description": "Issues with **low impact**.",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Minor",
             "rank": 1,
@@ -5042,7 +5042,7 @@
           "severities": [
             {
               "created_at": "2021-08-17T13:28:57.801578Z",
-              "description": "It's not really that bad, everyone chill",
+              "description": "Issues with **low impact**.",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "name": "Minor",
               "rank": 1,
@@ -5055,7 +5055,7 @@
             "example": [
               {
                 "created_at": "2021-08-17T13:28:57.801578Z",
-                "description": "It's not really that bad, everyone chill",
+                "description": "Issues with **low impact**.",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "name": "Minor",
                 "rank": 1,
@@ -5078,7 +5078,7 @@
         "example": {
           "severity": {
             "created_at": "2021-08-17T13:28:57.801578Z",
-            "description": "It's not really that bad, everyone chill",
+            "description": "Issues with **low impact**.",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Minor",
             "rank": 1,
@@ -5098,14 +5098,14 @@
       },
       "SeveritiesV1UpdateRequestBody": {
         "example": {
-          "description": "It's not really that bad, everyone chill",
+          "description": "Issues with **low impact**.",
           "name": "Minor",
           "rank": 1
         },
         "properties": {
           "description": {
             "description": "Description of the severity",
-            "example": "It's not really that bad, everyone chill",
+            "example": "Issues with **low impact**.",
             "type": "string"
           },
           "name": {
@@ -5132,7 +5132,7 @@
         "example": {
           "severity": {
             "created_at": "2021-08-17T13:28:57.801578Z",
-            "description": "It's not really that bad, everyone chill",
+            "description": "Issues with **low impact**.",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "name": "Minor",
             "rank": 1,
@@ -5153,7 +5153,7 @@
       "SeverityV1ResponseBody": {
         "example": {
           "created_at": "2021-08-17T13:28:57.801578Z",
-          "description": "It's not really that bad, everyone chill",
+          "description": "Issues with **low impact**.",
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "name": "Minor",
           "rank": 1,
@@ -5168,7 +5168,7 @@
           },
           "description": {
             "description": "Description of the severity",
-            "example": "It's not really that bad, everyone chill",
+            "example": "Issues with **low impact**.",
             "type": "string"
           },
           "id": {
@@ -5209,7 +5209,7 @@
       "SeverityV2ResponseBody": {
         "example": {
           "created_at": "2021-08-17T13:28:57.801578Z",
-          "description": "It's not really that bad, everyone chill",
+          "description": "Issues with **low impact**.",
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "name": "Minor",
           "rank": 1,
@@ -5224,7 +5224,7 @@
           },
           "description": {
             "description": "Description of the severity",
-            "example": "It's not really that bad, everyone chill",
+            "example": "Issues with **low impact**.",
             "type": "string"
           },
           "id": {

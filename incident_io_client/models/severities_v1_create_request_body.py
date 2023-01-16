@@ -11,10 +11,10 @@ T = TypeVar("T", bound="SeveritiesV1CreateRequestBody")
 class SeveritiesV1CreateRequestBody:
     """
     Example:
-        {'description': "It's not really that bad, everyone chill", 'name': 'Minor', 'rank': 1}
+        {'description': 'Issues with **low impact**.', 'name': 'Minor', 'rank': 1}
 
     Attributes:
-        description (str): Description of the severity Example: It's not really that bad, everyone chill.
+        description (str): Description of the severity Example: Issues with **low impact**..
         name (str): Human readable name of the severity Example: Minor.
         rank (Union[Unset, int]): Rank to help sort severities (lower numbers are less severe) Example: 1.
     """
