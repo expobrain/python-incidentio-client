@@ -10,7 +10,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.7,<4"
 python-incidentio-client = { path = "..", develop = true }
-python-dotenv = "^0.21.0"
+python-dotenv = "^0.21.1"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.991"
