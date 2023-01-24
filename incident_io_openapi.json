@@ -1567,8 +1567,9 @@
               "pager_duty_incident",
               "github_pull_request",
               "sentry_issue",
-              "statuspage_incident",
-              "zendesk_ticket"
+              "atlassian_statuspage_incident",
+              "zendesk_ticket",
+              "statuspage_incident"
             ],
             "example": "pager_duty_incident",
             "type": "string"
@@ -1691,8 +1692,9 @@
                   "pager_duty_incident",
                   "github_pull_request",
                   "sentry_issue",
-                  "statuspage_incident",
-                  "zendesk_ticket"
+                  "atlassian_statuspage_incident",
+                  "zendesk_ticket",
+                  "statuspage_incident"
                 ],
                 "example": "pager_duty_incident",
                 "type": "string"
@@ -6065,8 +6067,9 @@
                 "pager_duty_incident",
                 "github_pull_request",
                 "sentry_issue",
-                "statuspage_incident",
-                "zendesk_ticket"
+                "atlassian_statuspage_incident",
+                "zendesk_ticket",
+                "statuspage_incident"
               ],
               "type": "string"
             }
