@@ -1,6 +1,7 @@
 # v0.26.0
 
 - updated to the latest API at 2023-01-23
+- added `opsgenie_alert` and `datadog_monitor_alert` enum values
 
 # v0.26.0
 

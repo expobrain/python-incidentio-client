@@ -1565,6 +1565,8 @@
             "description": "E.g. PagerDuty: the external system that holds the resource",
             "enum": [
               "pager_duty_incident",
+              "opsgenie_alert",
+              "datadog_monitor_alert",
               "github_pull_request",
               "sentry_issue",
               "atlassian_statuspage_incident",
@@ -1690,6 +1692,8 @@
                 "description": "E.g. PagerDuty: the external system that holds the resource",
                 "enum": [
                   "pager_duty_incident",
+                  "opsgenie_alert",
+                  "datadog_monitor_alert",
                   "github_pull_request",
                   "sentry_issue",
                   "atlassian_statuspage_incident",
@@ -6065,6 +6069,8 @@
             "schema": {
               "enum": [
                 "pager_duty_incident",
+                "opsgenie_alert",
+                "datadog_monitor_alert",
                 "github_pull_request",
                 "sentry_issue",
                 "atlassian_statuspage_incident",
