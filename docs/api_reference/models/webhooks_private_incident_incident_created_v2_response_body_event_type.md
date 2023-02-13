@@ -1,0 +1,3 @@
+# incident_io_client.models.webhooks_private_incident_incident_created_v2_response_body_event_type
+
+::: incident_io_client.models.webhooks_private_incident_incident_created_v2_response_body_event_type
