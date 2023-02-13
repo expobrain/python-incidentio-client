@@ -30,7 +30,6 @@ class ActionV1ResponseBody:
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
-        description (str): Description of the action Example: Call the fire brigade.
         follow_up (bool): Whether an action is marked as follow-up Example: True.
         id (str): Unique identifier for the action Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         incident_id (str): Unique identifier of the incident the action belongs to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
@@ -40,13 +39,13 @@ class ActionV1ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
         completed_at (Union[Unset, datetime.datetime]): When the action was completed Example:
             2021-08-17T13:28:57.801578Z.
+        description (Union[Unset, str]): Description of the action Example: Call the fire brigade.
         external_issue_reference (Union[Unset, ExternalIssueReferenceV1ResponseBody]):  Example: {'issue_name':
             'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
             'provider': 'asana'}.
     """
 
     created_at: datetime.datetime
-    description: str
     follow_up: bool
     id: str
     incident_id: str
@@ -54,13 +53,13 @@ class ActionV1ResponseBody:
     updated_at: datetime.datetime
     assignee: Union[Unset, "UserV1ResponseBody"] = UNSET
     completed_at: Union[Unset, datetime.datetime] = UNSET
+    description: Union[Unset, str] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV1ResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()
 
-        description = self.description
         follow_up = self.follow_up
         id = self.id
         incident_id = self.incident_id
@@ -76,6 +75,7 @@ class ActionV1ResponseBody:
         if not isinstance(self.completed_at, Unset):
             completed_at = self.completed_at.isoformat()
 
+        description = self.description
         external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()
@@ -85,7 +85,6 @@ class ActionV1ResponseBody:
         field_dict.update(
             {
                 "created_at": created_at,
-                "description": description,
                 "follow_up": follow_up,
                 "id": id,
                 "incident_id": incident_id,
@@ -97,6 +96,8 @@ class ActionV1ResponseBody:
             field_dict["assignee"] = assignee
         if completed_at is not UNSET:
             field_dict["completed_at"] = completed_at
+        if description is not UNSET:
+            field_dict["description"] = description
         if external_issue_reference is not UNSET:
             field_dict["external_issue_reference"] = external_issue_reference
 
@@ -111,8 +112,6 @@ class ActionV1ResponseBody:
 
         d = src_dict.copy()
         created_at = isoparse(d.pop("created_at"))
-
-        description = d.pop("description")
 
         follow_up = d.pop("follow_up")
 
@@ -138,6 +137,8 @@ class ActionV1ResponseBody:
         else:
             completed_at = isoparse(_completed_at)
 
+        description = d.pop("description", UNSET)
+
         _external_issue_reference = d.pop("external_issue_reference", UNSET)
         external_issue_reference: Union[Unset, ExternalIssueReferenceV1ResponseBody]
         if isinstance(_external_issue_reference, Unset):
@@ -149,7 +150,6 @@ class ActionV1ResponseBody:
 
         action_v1_response_body = cls(
             created_at=created_at,
-            description=description,
             follow_up=follow_up,
             id=id,
             incident_id=incident_id,
@@ -157,6 +157,7 @@ class ActionV1ResponseBody:
             updated_at=updated_at,
             assignee=assignee,
             completed_at=completed_at,
+            description=description,
             external_issue_reference=external_issue_reference,
         )
 

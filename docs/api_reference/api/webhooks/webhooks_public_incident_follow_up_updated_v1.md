@@ -1,0 +1,3 @@
+# incident_io_client.api.webhooks.webhooks_public_incident_follow_up_updated_v1
+
+::: incident_io_client.api.webhooks.webhooks_public_incident_follow_up_updated_v1

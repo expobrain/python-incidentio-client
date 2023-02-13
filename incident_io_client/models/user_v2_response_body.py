@@ -19,15 +19,15 @@ class UserV2ResponseBody:
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name of the user Example: Lisa Karlin Curtis.
         role (UserV2ResponseBodyRole): Role of the user Example: viewer.
-        slack_user_id (str): Slack ID of the user Example: U02AYNF2XJM.
         email (Union[Unset, str]): Email address of the user. Example: lisa@incident.io.
+        slack_user_id (Union[Unset, str]): Slack ID of the user Example: U02AYNF2XJM.
     """
 
     id: str
     name: str
     role: UserV2ResponseBodyRole
-    slack_user_id: str
     email: Union[Unset, str] = UNSET
+    slack_user_id: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -35,8 +35,8 @@ class UserV2ResponseBody:
         name = self.name
         role = self.role.value
 
-        slack_user_id = self.slack_user_id
         email = self.email
+        slack_user_id = self.slack_user_id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -45,11 +45,12 @@ class UserV2ResponseBody:
                 "id": id,
                 "name": name,
                 "role": role,
-                "slack_user_id": slack_user_id,
             }
         )
         if email is not UNSET:
             field_dict["email"] = email
+        if slack_user_id is not UNSET:
+            field_dict["slack_user_id"] = slack_user_id
 
         return field_dict
 
@@ -62,16 +63,16 @@ class UserV2ResponseBody:
 
         role = UserV2ResponseBodyRole(d.pop("role"))
 
-        slack_user_id = d.pop("slack_user_id")
-
         email = d.pop("email", UNSET)
+
+        slack_user_id = d.pop("slack_user_id", UNSET)
 
         user_v2_response_body = cls(
             id=id,
             name=name,
             role=role,
-            slack_user_id=slack_user_id,
             email=email,
+            slack_user_id=slack_user_id,
         )
 
         user_v2_response_body.additional_properties = d
