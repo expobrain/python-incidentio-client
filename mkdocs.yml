@@ -47,6 +47,15 @@ nav:
               - incident_roles_v1_list: api_reference/api/incident_roles_v1/incident_roles_v1_list.md
               - incident_roles_v1_show: api_reference/api/incident_roles_v1/incident_roles_v1_show.md
               - incident_roles_v1_update: api_reference/api/incident_roles_v1/incident_roles_v1_update.md
+          - incident_statuses_v1:
+              - incident_statuses_v1_create: api_reference/api/incident_statuses_v1/incident_statuses_v1_create.md
+              - incident_statuses_v1_delete: api_reference/api/incident_statuses_v1/incident_statuses_v1_delete.md
+              - incident_statuses_v1_list: api_reference/api/incident_statuses_v1/incident_statuses_v1_list.md
+              - incident_statuses_v1_show: api_reference/api/incident_statuses_v1/incident_statuses_v1_show.md
+              - incident_statuses_v1_update: api_reference/api/incident_statuses_v1/incident_statuses_v1_update.md
+          - incident_timestamps_v2:
+              - incident_timestamps_v2_list: api_reference/api/incident_timestamps_v2/incident_timestamps_v2_list.md
+              - incident_timestamps_v2_show: api_reference/api/incident_timestamps_v2/incident_timestamps_v2_show.md
           - incident_types_v1:
               - incident_types_v1_list: api_reference/api/incident_types_v1/incident_types_v1_list.md
               - incident_types_v1_show: api_reference/api/incident_types_v1/incident_types_v1_show.md
@@ -67,6 +76,16 @@ nav:
           - utilities_v1:
               - utilities_v1_identity: api_reference/api/utilities_v1/utilities_v1_identity.md
               - utilities_v1_open_api: api_reference/api/utilities_v1/utilities_v1_open_api.md
+          - webhooks:
+              - webhooks_all: api_reference/api/webhooks/webhooks_all.md
+              - webhooks_private_incident_follow_up_created_v1: api_reference/api/webhooks/webhooks_private_incident_follow_up_created_v1.md
+              - webhooks_private_incident_follow_up_updated_v1: api_reference/api/webhooks/webhooks_private_incident_follow_up_updated_v1.md
+              - webhooks_private_incident_incident_created_v2: api_reference/api/webhooks/webhooks_private_incident_incident_created_v2.md
+              - webhooks_private_incident_incident_updated_v2: api_reference/api/webhooks/webhooks_private_incident_incident_updated_v2.md
+              - webhooks_public_incident_follow_up_created_v1: api_reference/api/webhooks/webhooks_public_incident_follow_up_created_v1.md
+              - webhooks_public_incident_follow_up_updated_v1: api_reference/api/webhooks/webhooks_public_incident_follow_up_updated_v1.md
+              - webhooks_public_incident_incident_created_v2: api_reference/api/webhooks/webhooks_public_incident_incident_created_v2.md
+              - webhooks_public_incident_incident_updated_v2: api_reference/api/webhooks/webhooks_public_incident_incident_updated_v2.md
       - models:
           - action_v1_response_body: api_reference/models/action_v1_response_body.md
           - action_v1_response_body_status: api_reference/models/action_v1_response_body_status.md
@@ -110,6 +129,9 @@ nav:
           - custom_fields_v1_update_request_body_required: api_reference/models/custom_fields_v1_update_request_body_required.md
           - custom_fields_v1_update_response_body: api_reference/models/custom_fields_v1_update_response_body.md
           - external_issue_reference_v1_response_body: api_reference/models/external_issue_reference_v1_response_body.md
+          - external_issue_reference_v1_response_body_provider: api_reference/models/external_issue_reference_v1_response_body_provider.md
+          - external_issue_reference_v2_response_body: api_reference/models/external_issue_reference_v2_response_body.md
+          - external_issue_reference_v2_response_body_provider: api_reference/models/external_issue_reference_v2_response_body_provider.md
           - external_resource_v1_response_body: api_reference/models/external_resource_v1_response_body.md
           - external_resource_v1_response_body_resource_type: api_reference/models/external_resource_v1_response_body_resource_type.md
           - identity_v1_response_body: api_reference/models/identity_v1_response_body.md
@@ -135,18 +157,28 @@ nav:
           - incident_roles_v1_show_response_body: api_reference/models/incident_roles_v1_show_response_body.md
           - incident_roles_v1_update_request_body: api_reference/models/incident_roles_v1_update_request_body.md
           - incident_roles_v1_update_response_body: api_reference/models/incident_roles_v1_update_response_body.md
+          - incident_status_v1_response_body: api_reference/models/incident_status_v1_response_body.md
+          - incident_status_v1_response_body_category: api_reference/models/incident_status_v1_response_body_category.md
           - incident_status_v2_response_body: api_reference/models/incident_status_v2_response_body.md
           - incident_status_v2_response_body_category: api_reference/models/incident_status_v2_response_body_category.md
+          - incident_statuses_v1_create_request_body: api_reference/models/incident_statuses_v1_create_request_body.md
+          - incident_statuses_v1_create_request_body_category: api_reference/models/incident_statuses_v1_create_request_body_category.md
+          - incident_statuses_v1_create_response_body: api_reference/models/incident_statuses_v1_create_response_body.md
+          - incident_statuses_v1_list_response_body: api_reference/models/incident_statuses_v1_list_response_body.md
+          - incident_statuses_v1_show_response_body: api_reference/models/incident_statuses_v1_show_response_body.md
+          - incident_statuses_v1_update_request_body: api_reference/models/incident_statuses_v1_update_request_body.md
+          - incident_statuses_v1_update_response_body: api_reference/models/incident_statuses_v1_update_response_body.md
           - incident_timestamp_v1_response_body: api_reference/models/incident_timestamp_v1_response_body.md
           - incident_timestamp_v2_response_body: api_reference/models/incident_timestamp_v2_response_body.md
-          - incident_timestamp_v2_response_body_required: api_reference/models/incident_timestamp_v2_response_body_required.md
-          - incident_timestamp_v2_response_body_set_on_transition: api_reference/models/incident_timestamp_v2_response_body_set_on_transition.md
-          - incident_timestamp_v2_response_body_set_on_visit: api_reference/models/incident_timestamp_v2_response_body_set_on_visit.md
           - incident_timestamp_value_payload_v2_request_body: api_reference/models/incident_timestamp_value_payload_v2_request_body.md
           - incident_timestamp_value_v2_response_body: api_reference/models/incident_timestamp_value_v2_response_body.md
           - incident_timestamp_with_value_v2_response_body: api_reference/models/incident_timestamp_with_value_v2_response_body.md
+          - incident_timestamps_v2_list_response_body: api_reference/models/incident_timestamps_v2_list_response_body.md
+          - incident_timestamps_v2_show_response_body: api_reference/models/incident_timestamps_v2_show_response_body.md
           - incident_type_v1_response_body: api_reference/models/incident_type_v1_response_body.md
+          - incident_type_v1_response_body_create_in_triage: api_reference/models/incident_type_v1_response_body_create_in_triage.md
           - incident_type_v2_response_body: api_reference/models/incident_type_v2_response_body.md
+          - incident_type_v2_response_body_create_in_triage: api_reference/models/incident_type_v2_response_body_create_in_triage.md
           - incident_types_v1_list_response_body: api_reference/models/incident_types_v1_list_response_body.md
           - incident_types_v1_show_response_body: api_reference/models/incident_types_v1_show_response_body.md
           - incident_v1_response_body: api_reference/models/incident_v1_response_body.md
@@ -170,6 +202,7 @@ nav:
           - incidents_v2_list_response_body: api_reference/models/incidents_v2_list_response_body.md
           - incidents_v2_show_response_body: api_reference/models/incidents_v2_show_response_body.md
           - pagination_meta_response_body: api_reference/models/pagination_meta_response_body.md
+          - retrospective_incident_options_v2_request_body: api_reference/models/retrospective_incident_options_v2_request_body.md
           - severities_v1_create_request_body: api_reference/models/severities_v1_create_request_body.md
           - severities_v1_create_response_body: api_reference/models/severities_v1_create_response_body.md
           - severities_v1_list_response_body: api_reference/models/severities_v1_list_response_body.md
@@ -185,6 +218,25 @@ nav:
           - user_v2_response_body: api_reference/models/user_v2_response_body.md
           - user_v2_response_body_role: api_reference/models/user_v2_response_body_role.md
           - utilities_v1_identity_response_body: api_reference/models/utilities_v1_identity_response_body.md
+          - webhook_private_resource_v2_response_body: api_reference/models/webhook_private_resource_v2_response_body.md
+          - webhooks_all_response_body: api_reference/models/webhooks_all_response_body.md
+          - webhooks_all_response_body_event_type: api_reference/models/webhooks_all_response_body_event_type.md
+          - webhooks_private_incident_follow_up_created_v1_response_body: api_reference/models/webhooks_private_incident_follow_up_created_v1_response_body.md
+          - webhooks_private_incident_follow_up_created_v1_response_body_event_type: api_reference/models/webhooks_private_incident_follow_up_created_v1_response_body_event_type.md
+          - webhooks_private_incident_follow_up_updated_v1_response_body: api_reference/models/webhooks_private_incident_follow_up_updated_v1_response_body.md
+          - webhooks_private_incident_follow_up_updated_v1_response_body_event_type: api_reference/models/webhooks_private_incident_follow_up_updated_v1_response_body_event_type.md
+          - webhooks_private_incident_incident_created_v2_response_body: api_reference/models/webhooks_private_incident_incident_created_v2_response_body.md
+          - webhooks_private_incident_incident_created_v2_response_body_event_type: api_reference/models/webhooks_private_incident_incident_created_v2_response_body_event_type.md
+          - webhooks_private_incident_incident_updated_v2_response_body: api_reference/models/webhooks_private_incident_incident_updated_v2_response_body.md
+          - webhooks_private_incident_incident_updated_v2_response_body_event_type: api_reference/models/webhooks_private_incident_incident_updated_v2_response_body_event_type.md
+          - webhooks_public_incident_follow_up_created_v1_response_body: api_reference/models/webhooks_public_incident_follow_up_created_v1_response_body.md
+          - webhooks_public_incident_follow_up_created_v1_response_body_event_type: api_reference/models/webhooks_public_incident_follow_up_created_v1_response_body_event_type.md
+          - webhooks_public_incident_follow_up_updated_v1_response_body: api_reference/models/webhooks_public_incident_follow_up_updated_v1_response_body.md
+          - webhooks_public_incident_follow_up_updated_v1_response_body_event_type: api_reference/models/webhooks_public_incident_follow_up_updated_v1_response_body_event_type.md
+          - webhooks_public_incident_incident_created_v2_response_body: api_reference/models/webhooks_public_incident_incident_created_v2_response_body.md
+          - webhooks_public_incident_incident_created_v2_response_body_event_type: api_reference/models/webhooks_public_incident_incident_created_v2_response_body_event_type.md
+          - webhooks_public_incident_incident_updated_v2_response_body: api_reference/models/webhooks_public_incident_incident_updated_v2_response_body.md
+          - webhooks_public_incident_incident_updated_v2_response_body_event_type: api_reference/models/webhooks_public_incident_incident_updated_v2_response_body_event_type.md
 plugins:
   - search
   - mkdocstrings:
