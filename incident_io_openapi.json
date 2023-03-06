@@ -3242,6 +3242,7 @@
           },
           "slack_channel_id": "C02AW36C1M5",
           "slack_channel_name": "inc-165-green-parrot",
+          "slack_team_id": "T02A1FSLE8J",
           "status": "triage",
           "summary": "Our database is really really sad, and we don't know why yet.",
           "timestamps": [
@@ -3386,6 +3387,11 @@
             "example": "inc-165-green-parrot",
             "type": "string"
           },
+          "slack_team_id": {
+            "description": "ID of the Slack team / workspace",
+            "example": "T02A1FSLE8J",
+            "type": "string"
+          },
           "status": {
             "description": "Current status of the incident",
             "enum": [
@@ -3443,6 +3449,7 @@
           "name",
           "reference",
           "slack_channel_id",
+          "slack_team_id",
           "status",
           "updated_at",
           "visibility"
@@ -3572,6 +3579,7 @@
           },
           "slack_channel_id": "C02AW36C1M5",
           "slack_channel_name": "inc-165-green-parrot",
+          "slack_team_id": "T02A1FSLE8J",
           "summary": "Our database is really really sad, and we don't know why yet.",
           "updated_at": "2021-08-17T13:28:57.801578Z",
           "visibility": "public"
@@ -3735,6 +3743,11 @@
             "example": "inc-165-green-parrot",
             "type": "string"
           },
+          "slack_team_id": {
+            "description": "ID of the Slack team / workspace",
+            "example": "T02A1FSLE8J",
+            "type": "string"
+          },
           "summary": {
             "description": "Detailed description of the incident",
             "example": "Our database is really really sad, and we don't know why yet.",
@@ -3767,6 +3780,7 @@
           "name",
           "reference",
           "slack_channel_id",
+          "slack_team_id",
           "updated_at",
           "visibility"
         ],
@@ -3805,6 +3819,7 @@
           "mode": "real",
           "name": "Our database is sad",
           "severity_id": "01FH5TZRWMNAFB0DZ23FD1TV96",
+          "slack_team_id": "T02A1FSLE8J",
           "source_message_channel_id": "C02AW36C1M5",
           "source_message_timestamp": "1653650280.526509",
           "status": "triage",
@@ -3878,6 +3893,11 @@
           "severity_id": {
             "description": "Severity to create incident as",
             "example": "01FH5TZRWMNAFB0DZ23FD1TV96",
+            "type": "string"
+          },
+          "slack_team_id": {
+            "description": "ID of the Slack team / workspace",
+            "example": "T02A1FSLE8J",
             "type": "string"
           },
           "source_message_channel_id": {
@@ -4022,6 +4042,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "status": "triage",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "timestamps": [
@@ -4143,6 +4164,7 @@
               },
               "slack_channel_id": "C02AW36C1M5",
               "slack_channel_name": "inc-165-green-parrot",
+              "slack_team_id": "T02A1FSLE8J",
               "status": "triage",
               "summary": "Our database is really really sad, and we don't know why yet.",
               "timestamps": [
@@ -4259,6 +4281,7 @@
                 },
                 "slack_channel_id": "C02AW36C1M5",
                 "slack_channel_name": "inc-165-green-parrot",
+                "slack_team_id": "T02A1FSLE8J",
                 "status": "triage",
                 "summary": "Our database is really really sad, and we don't know why yet.",
                 "timestamps": [
@@ -4383,6 +4406,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "status": "triage",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "timestamps": [
@@ -4448,6 +4472,7 @@
             "slack_channel_id": "abc123"
           },
           "severity_id": "01FH5TZRWMNAFB0DZ23FD1TV96",
+          "slack_team_id": "T02A1FSLE8J",
           "summary": "Our database is really really sad, and we don't know why yet.",
           "visibility": "public"
         },
@@ -4541,6 +4566,11 @@
           "severity_id": {
             "description": "Severity to create incident as",
             "example": "01FH5TZRWMNAFB0DZ23FD1TV96",
+            "type": "string"
+          },
+          "slack_team_id": {
+            "description": "Slack Team to create the incident in",
+            "example": "T02A1FSLE8J",
             "type": "string"
           },
           "summary": {
@@ -4688,6 +4718,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "updated_at": "2021-08-17T13:28:57.801578Z",
             "visibility": "public"
@@ -4828,6 +4859,7 @@
               },
               "slack_channel_id": "C02AW36C1M5",
               "slack_channel_name": "inc-165-green-parrot",
+              "slack_team_id": "T02A1FSLE8J",
               "summary": "Our database is really really sad, and we don't know why yet.",
               "updated_at": "2021-08-17T13:28:57.801578Z",
               "visibility": "public"
@@ -4963,6 +4995,7 @@
                 },
                 "slack_channel_id": "C02AW36C1M5",
                 "slack_channel_name": "inc-165-green-parrot",
+                "slack_team_id": "T02A1FSLE8J",
                 "summary": "Our database is really really sad, and we don't know why yet.",
                 "updated_at": "2021-08-17T13:28:57.801578Z",
                 "visibility": "public"
@@ -5106,6 +5139,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "updated_at": "2021-08-17T13:28:57.801578Z",
             "visibility": "public"
@@ -5820,6 +5854,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "updated_at": "2021-08-17T13:28:57.801578Z",
             "visibility": "public"
@@ -5945,6 +5980,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "updated_at": "2021-08-17T13:28:57.801578Z",
             "visibility": "public"
@@ -6363,6 +6399,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "updated_at": "2021-08-17T13:28:57.801578Z",
             "visibility": "public"
@@ -6519,6 +6556,7 @@
             },
             "slack_channel_id": "C02AW36C1M5",
             "slack_channel_name": "inc-165-green-parrot",
+            "slack_team_id": "T02A1FSLE8J",
             "summary": "Our database is really really sad, and we don't know why yet.",
             "updated_at": "2021-08-17T13:28:57.801578Z",
             "visibility": "public"

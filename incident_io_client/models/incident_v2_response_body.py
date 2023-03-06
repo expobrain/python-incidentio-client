@@ -64,8 +64,8 @@ class IncidentV2ResponseBody:
             'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -96,6 +96,7 @@ class IncidentV2ResponseBody:
         name (str): Explanation of the incident Example: Our database is sad.
         reference (str): Reference to this incident, as displayed across the product Example: INC-123.
         slack_channel_id (str): ID of the Slack channel in the organisation Slack workspace Example: C02AW36C1M5.
+        slack_team_id (str): ID of the Slack team / workspace Example: T02A1FSLE8J.
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
         visibility (IncidentV2ResponseBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
@@ -134,6 +135,7 @@ class IncidentV2ResponseBody:
     name: str
     reference: str
     slack_channel_id: str
+    slack_team_id: str
     updated_at: datetime.datetime
     visibility: IncidentV2ResponseBodyVisibility
     call_url: Union[Unset, str] = UNSET
@@ -174,6 +176,7 @@ class IncidentV2ResponseBody:
         name = self.name
         reference = self.reference
         slack_channel_id = self.slack_channel_id
+        slack_team_id = self.slack_team_id
         updated_at = self.updated_at.isoformat()
 
         visibility = self.visibility.value
@@ -218,6 +221,7 @@ class IncidentV2ResponseBody:
                 "name": name,
                 "reference": reference,
                 "slack_channel_id": slack_channel_id,
+                "slack_team_id": slack_team_id,
                 "updated_at": updated_at,
                 "visibility": visibility,
             }
@@ -299,6 +303,8 @@ class IncidentV2ResponseBody:
 
         slack_channel_id = d.pop("slack_channel_id")
 
+        slack_team_id = d.pop("slack_team_id")
+
         updated_at = isoparse(d.pop("updated_at"))
 
         visibility = IncidentV2ResponseBodyVisibility(d.pop("visibility"))
@@ -356,6 +362,7 @@ class IncidentV2ResponseBody:
             name=name,
             reference=reference,
             slack_channel_id=slack_channel_id,
+            slack_team_id=slack_team_id,
             updated_at=updated_at,
             visibility=visibility,
             call_url=call_url,

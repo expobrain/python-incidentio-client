@@ -41,7 +41,8 @@ class IncidentsV2CreateRequestBody:
             [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
             'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
             'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}
+            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
@@ -70,6 +71,7 @@ class IncidentsV2CreateRequestBody:
         retrospective_incident_options (Union[Unset, RetrospectiveIncidentOptionsV2RequestBody]):  Example:
             {'slack_channel_id': 'abc123'}.
         severity_id (Union[Unset, str]): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
+        slack_team_id (Union[Unset, str]): Slack Team to create the incident in Example: T02A1FSLE8J.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
     """
@@ -91,6 +93,7 @@ class IncidentsV2CreateRequestBody:
         Unset, "RetrospectiveIncidentOptionsV2RequestBody"
     ] = UNSET
     severity_id: Union[Unset, str] = UNSET
+    slack_team_id: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -134,6 +137,7 @@ class IncidentsV2CreateRequestBody:
             retrospective_incident_options = self.retrospective_incident_options.to_dict()
 
         severity_id = self.severity_id
+        slack_team_id = self.slack_team_id
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}
@@ -162,6 +166,8 @@ class IncidentsV2CreateRequestBody:
             field_dict["retrospective_incident_options"] = retrospective_incident_options
         if severity_id is not UNSET:
             field_dict["severity_id"] = severity_id
+        if slack_team_id is not UNSET:
+            field_dict["slack_team_id"] = slack_team_id
         if summary is not UNSET:
             field_dict["summary"] = summary
 
@@ -238,6 +244,8 @@ class IncidentsV2CreateRequestBody:
 
         severity_id = d.pop("severity_id", UNSET)
 
+        slack_team_id = d.pop("slack_team_id", UNSET)
+
         summary = d.pop("summary", UNSET)
 
         incidents_v2_create_request_body = cls(
@@ -252,6 +260,7 @@ class IncidentsV2CreateRequestBody:
             name=name,
             retrospective_incident_options=retrospective_incident_options,
             severity_id=severity_id,
+            slack_team_id=slack_team_id,
             summary=summary,
         )
 

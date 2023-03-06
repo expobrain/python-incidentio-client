@@ -73,8 +73,8 @@ def sync_detailed(
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
             'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -118,8 +118,8 @@ def sync(
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
             'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -156,8 +156,8 @@ async def asyncio_detailed(
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
             'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -199,8 +199,8 @@ async def asyncio(
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
             'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet.", 'visibility': 'public'}.
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]

@@ -35,9 +35,9 @@ class IncidentsV1CreateRequestBody:
             'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'real', 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'source_message_channel_id': 'C02AW36C1M5',
-            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really
-            sad, and we don't know why yet.", 'visibility': 'public'}
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J',
+            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp': '1653650280.526509', 'status': 'triage',
+            'summary': "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
@@ -58,6 +58,7 @@ class IncidentsV1CreateRequestBody:
         mode (Union[Unset, IncidentsV1CreateRequestBodyMode]): Whether the incident is real or test Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         severity_id (Union[Unset, str]): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
+        slack_team_id (Union[Unset, str]): ID of the Slack team / workspace Example: T02A1FSLE8J.
         source_message_channel_id (Union[Unset, str]): Channel ID of the source message, if this incident was created
             from one Example: C02AW36C1M5.
         source_message_timestamp (Union[Unset, str]): Timestamp of the source message, if this incident was created from
@@ -77,6 +78,7 @@ class IncidentsV1CreateRequestBody:
     mode: Union[Unset, IncidentsV1CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
     severity_id: Union[Unset, str] = UNSET
+    slack_team_id: Union[Unset, str] = UNSET
     source_message_channel_id: Union[Unset, str] = UNSET
     source_message_timestamp: Union[Unset, str] = UNSET
     status: Union[Unset, IncidentsV1CreateRequestBodyStatus] = UNSET
@@ -110,6 +112,7 @@ class IncidentsV1CreateRequestBody:
 
         name = self.name
         severity_id = self.severity_id
+        slack_team_id = self.slack_team_id
         source_message_channel_id = self.source_message_channel_id
         source_message_timestamp = self.source_message_timestamp
         status: Union[Unset, str] = UNSET
@@ -138,6 +141,8 @@ class IncidentsV1CreateRequestBody:
             field_dict["name"] = name
         if severity_id is not UNSET:
             field_dict["severity_id"] = severity_id
+        if slack_team_id is not UNSET:
+            field_dict["slack_team_id"] = slack_team_id
         if source_message_channel_id is not UNSET:
             field_dict["source_message_channel_id"] = source_message_channel_id
         if source_message_timestamp is not UNSET:
@@ -194,6 +199,8 @@ class IncidentsV1CreateRequestBody:
 
         severity_id = d.pop("severity_id", UNSET)
 
+        slack_team_id = d.pop("slack_team_id", UNSET)
+
         source_message_channel_id = d.pop("source_message_channel_id", UNSET)
 
         source_message_timestamp = d.pop("source_message_timestamp", UNSET)
@@ -216,6 +223,7 @@ class IncidentsV1CreateRequestBody:
             mode=mode,
             name=name,
             severity_id=severity_id,
+            slack_team_id=slack_team_id,
             source_message_channel_id=source_message_channel_id,
             source_message_timestamp=source_message_timestamp,
             status=status,
