@@ -66,9 +66,9 @@ class WebhooksAllResponseBody:
             'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}, 'public_incident.incident_updated_v2': {'call_url':
-            'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
+            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}, 'public_incident.incident_updated_v2':
+            {'call_url': 'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
             'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
@@ -96,8 +96,8 @@ class WebhooksAllResponseBody:
             'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}}
+            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}}
 
     Attributes:
         event_type (WebhooksAllResponseBodyEventType): What type of event is this webhook for? Example:
@@ -153,8 +153,8 @@ class WebhooksAllResponseBody:
             'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}.
+            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}.
         public_incident_incident_updated_v2 (Union[Unset, IncidentV2ResponseBody]):  Example: {'call_url':
             'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
@@ -184,8 +184,8 @@ class WebhooksAllResponseBody:
             'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'summary': "Our database is really really sad, and we don't know why yet.", 'updated_at':
-            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}.
+            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}.
     """
 
     event_type: WebhooksAllResponseBodyEventType

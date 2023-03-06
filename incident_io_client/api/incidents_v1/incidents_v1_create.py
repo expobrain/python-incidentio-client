@@ -67,9 +67,9 @@ def sync_detailed(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
-            and we don't know why yet.", 'visibility': 'public'}.
+            'slack_team_id': 'T02A1FSLE8J', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV1CreateResponseBody]
@@ -107,9 +107,9 @@ def sync(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
-            and we don't know why yet.", 'visibility': 'public'}.
+            'slack_team_id': 'T02A1FSLE8J', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV1CreateResponseBody]
@@ -140,9 +140,9 @@ async def asyncio_detailed(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
-            and we don't know why yet.", 'visibility': 'public'}.
+            'slack_team_id': 'T02A1FSLE8J', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV1CreateResponseBody]
@@ -178,9 +178,9 @@ async def asyncio(
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
             'real', 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'source_message_channel_id': 'C02AW36C1M5', 'source_message_timestamp':
-            '1653650280.526509', 'status': 'triage', 'summary': "Our database is really really sad,
-            and we don't know why yet.", 'visibility': 'public'}.
+            'slack_team_id': 'T02A1FSLE8J', 'source_message_channel_id': 'C02AW36C1M5',
+            'source_message_timestamp': '1653650280.526509', 'status': 'triage', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV1CreateResponseBody]
