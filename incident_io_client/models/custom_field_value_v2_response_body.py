@@ -22,11 +22,14 @@ class CustomFieldValueV2ResponseBody:
             'value_text': 'This is my text field, I hope you like it'}
 
     Attributes:
-        value_link (Union[Unset, str]): Link value Example: https://google.com/.
-        value_numeric (Union[Unset, str]): Numeric value Example: 123.456.
+        value_link (Union[Unset, str]): If the custom field type is 'link', this will contain the value assigned.
+            Example: https://google.com/.
+        value_numeric (Union[Unset, str]): If the custom field type is 'numeric', this will contain the value assigned.
+            Example: 123.456.
         value_option (Union[Unset, CustomFieldOptionV2ResponseBody]):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
-        value_text (Union[Unset, str]): Text value Example: This is my text field, I hope you like it.
+        value_text (Union[Unset, str]): If the custom field type is 'text', this will contain the value assigned.
+            Example: This is my text field, I hope you like it.
     """
 
     value_link: Union[Unset, str] = UNSET

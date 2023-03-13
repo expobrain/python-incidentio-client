@@ -1017,12 +1017,12 @@
             "type": "string"
           },
           "value_link": {
-            "description": "Link value",
+            "description": "If the custom field type is 'link', this will contain the value assigned.",
             "example": "https://google.com/",
             "type": "string"
           },
           "value_numeric": {
-            "description": "Numeric value",
+            "description": "If the custom field type is 'numeric', this will contain the value assigned.",
             "example": "123.456",
             "type": "string"
           },
@@ -1032,7 +1032,7 @@
             "type": "string"
           },
           "value_text": {
-            "description": "Text value",
+            "description": "If the custom field type is 'text', this will contain the value assigned.",
             "example": "This is my text field, I hope you like it",
             "type": "string"
           },
@@ -1061,12 +1061,12 @@
             "type": "string"
           },
           "value_link": {
-            "description": "Link value",
+            "description": "If the custom field type is 'link', this will contain the value assigned.",
             "example": "https://google.com/",
             "type": "string"
           },
           "value_numeric": {
-            "description": "Numeric value",
+            "description": "If the custom field type is 'numeric', this will contain the value assigned.",
             "example": "123.456",
             "type": "string"
           },
@@ -1076,7 +1076,7 @@
             "type": "string"
           },
           "value_text": {
-            "description": "Text value",
+            "description": "If the custom field type is 'text', this will contain the value assigned.",
             "example": "This is my text field, I hope you like it",
             "type": "string"
           },
@@ -1103,12 +1103,12 @@
         },
         "properties": {
           "value_link": {
-            "description": "Link value",
+            "description": "If the custom field type is 'link', this will contain the value assigned.",
             "example": "https://google.com/",
             "type": "string"
           },
           "value_numeric": {
-            "description": "Numeric value",
+            "description": "If the custom field type is 'numeric', this will contain the value assigned.",
             "example": "123.456",
             "type": "string"
           },
@@ -1116,7 +1116,7 @@
             "$ref": "#/components/schemas/CustomFieldOptionV1ResponseBody"
           },
           "value_text": {
-            "description": "Text value",
+            "description": "If the custom field type is 'text', this will contain the value assigned.",
             "example": "This is my text field, I hope you like it",
             "type": "string"
           }
@@ -1138,12 +1138,12 @@
         },
         "properties": {
           "value_link": {
-            "description": "Link value",
+            "description": "If the custom field type is 'link', this will contain the value assigned.",
             "example": "https://google.com/",
             "type": "string"
           },
           "value_numeric": {
-            "description": "Numeric value",
+            "description": "If the custom field type is 'numeric', this will contain the value assigned.",
             "example": "123.456",
             "type": "string"
           },
@@ -1151,7 +1151,7 @@
             "$ref": "#/components/schemas/CustomFieldOptionV2ResponseBody"
           },
           "value_text": {
-            "description": "Text value",
+            "description": "If the custom field type is 'text', this will contain the value assigned.",
             "example": "This is my text field, I hope you like it",
             "type": "string"
           }
@@ -5581,7 +5581,7 @@
             "type": "string"
           },
           "role": {
-            "description": "Role of the user",
+            "description": "DEPRECATED: Role of the user as of March 9th 2023, this value is no longer updated.",
             "enum": [
               "viewer",
               "responder",
@@ -5630,7 +5630,7 @@
             "type": "string"
           },
           "role": {
-            "description": "Role of the user",
+            "description": "DEPRECATED: Role of the user as of March 9th 2023, this value is no longer updated.",
             "enum": [
               "viewer",
               "responder",

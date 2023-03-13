@@ -17,10 +17,13 @@ class CustomFieldValuePayloadV2RequestBody:
 
     Attributes:
         id (Union[Unset, str]): Unique identifier for the custom field value Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        value_link (Union[Unset, str]): Link value Example: https://google.com/.
-        value_numeric (Union[Unset, str]): Numeric value Example: 123.456.
+        value_link (Union[Unset, str]): If the custom field type is 'link', this will contain the value assigned.
+            Example: https://google.com/.
+        value_numeric (Union[Unset, str]): If the custom field type is 'numeric', this will contain the value assigned.
+            Example: 123.456.
         value_option_id (Union[Unset, str]): ID of the custom field option Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        value_text (Union[Unset, str]): Text value Example: This is my text field, I hope you like it.
+        value_text (Union[Unset, str]): If the custom field type is 'text', this will contain the value assigned.
+            Example: This is my text field, I hope you like it.
         value_timestamp (Union[Unset, str]): Deprecated: please use incident timestamp values instead
     """
 
