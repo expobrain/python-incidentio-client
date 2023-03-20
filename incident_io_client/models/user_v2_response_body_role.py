@@ -6,6 +6,7 @@ class UserV2ResponseBodyRole(str, Enum):
     RESPONDER = "responder"
     ADMINISTRATOR = "administrator"
     OWNER = "owner"
+    UNSET = "unset"
 
     def __str__(self) -> str:
         return str(self.value)
