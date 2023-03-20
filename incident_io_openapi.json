@@ -5586,7 +5586,8 @@
               "viewer",
               "responder",
               "administrator",
-              "owner"
+              "owner",
+              "unset"
             ],
             "example": "viewer",
             "type": "string"
@@ -5635,7 +5636,8 @@
               "viewer",
               "responder",
               "administrator",
-              "owner"
+              "owner",
+              "unset"
             ],
             "example": "viewer",
             "type": "string"
