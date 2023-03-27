@@ -1,0 +1,3 @@
+# incident_io_client.models.catalog_type_attribute_v2_response_body
+
+::: incident_io_client.models.catalog_type_attribute_v2_response_body

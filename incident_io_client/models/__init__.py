@@ -9,6 +9,55 @@ from .actor_v1_response_body import ActorV1ResponseBody
 from .actor_v2_response_body import ActorV2ResponseBody
 from .api_key_v1_response_body import APIKeyV1ResponseBody
 from .api_key_v2_response_body import APIKeyV2ResponseBody
+from .catalog_attribute_binding_payload_v2_request_body import (
+    CatalogAttributeBindingPayloadV2RequestBody,
+)
+from .catalog_attribute_binding_v2_response_body import (
+    CatalogAttributeBindingV2ResponseBody,
+)
+from .catalog_attribute_value_payload_v2_request_body import (
+    CatalogAttributeValuePayloadV2RequestBody,
+)
+from .catalog_attribute_value_v2_response_body import (
+    CatalogAttributeValueV2ResponseBody,
+)
+from .catalog_entry_reference_v2_response_body import (
+    CatalogEntryReferenceV2ResponseBody,
+)
+from .catalog_entry_v2_response_body import CatalogEntryV2ResponseBody
+from .catalog_entry_v2_response_body_attribute_values import (
+    CatalogEntryV2ResponseBodyAttributeValues,
+)
+from .catalog_type_attribute_payload_v2_request_body import (
+    CatalogTypeAttributePayloadV2RequestBody,
+)
+from .catalog_type_attribute_v2_response_body import CatalogTypeAttributeV2ResponseBody
+from .catalog_type_schema_v2_response_body import CatalogTypeSchemaV2ResponseBody
+from .catalog_type_v2_response_body import CatalogTypeV2ResponseBody
+from .catalog_v2_create_entry_request_body import CatalogV2CreateEntryRequestBody
+from .catalog_v2_create_entry_request_body_attribute_values import (
+    CatalogV2CreateEntryRequestBodyAttributeValues,
+)
+from .catalog_v2_create_entry_response_body import CatalogV2CreateEntryResponseBody
+from .catalog_v2_create_type_request_body import CatalogV2CreateTypeRequestBody
+from .catalog_v2_create_type_response_body import CatalogV2CreateTypeResponseBody
+from .catalog_v2_list_entries_response_body import CatalogV2ListEntriesResponseBody
+from .catalog_v2_list_types_response_body import CatalogV2ListTypesResponseBody
+from .catalog_v2_show_entry_response_body import CatalogV2ShowEntryResponseBody
+from .catalog_v2_show_type_response_body import CatalogV2ShowTypeResponseBody
+from .catalog_v2_update_entry_request_body import CatalogV2UpdateEntryRequestBody
+from .catalog_v2_update_entry_request_body_attribute_values import (
+    CatalogV2UpdateEntryRequestBodyAttributeValues,
+)
+from .catalog_v2_update_entry_response_body import CatalogV2UpdateEntryResponseBody
+from .catalog_v2_update_type_request_body import CatalogV2UpdateTypeRequestBody
+from .catalog_v2_update_type_response_body import CatalogV2UpdateTypeResponseBody
+from .catalog_v2_update_type_schema_request_body import (
+    CatalogV2UpdateTypeSchemaRequestBody,
+)
+from .catalog_v2_update_type_schema_response_body import (
+    CatalogV2UpdateTypeSchemaResponseBody,
+)
 from .custom_field_entry_payload_v1_request_body import (
     CustomFieldEntryPayloadV1RequestBody,
 )
@@ -294,6 +343,33 @@ __all__ = (
     "ActorV2ResponseBody",
     "APIKeyV1ResponseBody",
     "APIKeyV2ResponseBody",
+    "CatalogAttributeBindingPayloadV2RequestBody",
+    "CatalogAttributeBindingV2ResponseBody",
+    "CatalogAttributeValuePayloadV2RequestBody",
+    "CatalogAttributeValueV2ResponseBody",
+    "CatalogEntryReferenceV2ResponseBody",
+    "CatalogEntryV2ResponseBody",
+    "CatalogEntryV2ResponseBodyAttributeValues",
+    "CatalogTypeAttributePayloadV2RequestBody",
+    "CatalogTypeAttributeV2ResponseBody",
+    "CatalogTypeSchemaV2ResponseBody",
+    "CatalogTypeV2ResponseBody",
+    "CatalogV2CreateEntryRequestBody",
+    "CatalogV2CreateEntryRequestBodyAttributeValues",
+    "CatalogV2CreateEntryResponseBody",
+    "CatalogV2CreateTypeRequestBody",
+    "CatalogV2CreateTypeResponseBody",
+    "CatalogV2ListEntriesResponseBody",
+    "CatalogV2ListTypesResponseBody",
+    "CatalogV2ShowEntryResponseBody",
+    "CatalogV2ShowTypeResponseBody",
+    "CatalogV2UpdateEntryRequestBody",
+    "CatalogV2UpdateEntryRequestBodyAttributeValues",
+    "CatalogV2UpdateEntryResponseBody",
+    "CatalogV2UpdateTypeRequestBody",
+    "CatalogV2UpdateTypeResponseBody",
+    "CatalogV2UpdateTypeSchemaRequestBody",
+    "CatalogV2UpdateTypeSchemaResponseBody",
     "CustomFieldEntryPayloadV1RequestBody",
     "CustomFieldEntryPayloadV2RequestBody",
     "CustomFieldEntryV1ResponseBody",
