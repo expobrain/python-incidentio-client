@@ -4,54 +4,44 @@ import attr
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="PaginationMetaResponseBody")
+T = TypeVar("T", bound="CatalogAttributeValuePayloadV2RequestBody")
 
 
 @attr.s(auto_attribs=True)
-class PaginationMetaResponseBody:
+class CatalogAttributeValuePayloadV2RequestBody:
     """
     Example:
-        {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}
+        {'literal': 'SEV123'}
 
     Attributes:
-        page_size (int): What was the maximum number of results requested Default: 25. Example: 25.
-        after (Union[Unset, str]): If provided, were records after a particular ID Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        literal (Union[Unset, str]): The literal value of this attribute Example: SEV123.
     """
 
-    page_size: int = 25
-    after: Union[Unset, str] = UNSET
+    literal: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        page_size = self.page_size
-        after = self.after
+        literal = self.literal
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update(
-            {
-                "page_size": page_size,
-            }
-        )
-        if after is not UNSET:
-            field_dict["after"] = after
+        field_dict.update({})
+        if literal is not UNSET:
+            field_dict["literal"] = literal
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        page_size = d.pop("page_size")
+        literal = d.pop("literal", UNSET)
 
-        after = d.pop("after", UNSET)
-
-        pagination_meta_response_body = cls(
-            page_size=page_size,
-            after=after,
+        catalog_attribute_value_payload_v2_request_body = cls(
+            literal=literal,
         )
 
-        pagination_meta_response_body.additional_properties = d
-        return pagination_meta_response_body
+        catalog_attribute_value_payload_v2_request_body.additional_properties = d
+        return catalog_attribute_value_payload_v2_request_body
 
     @property
     def additional_keys(self) -> List[str]:
