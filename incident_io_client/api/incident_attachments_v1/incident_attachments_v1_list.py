@@ -78,7 +78,8 @@ def sync_detailed(
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for an external resouce
+     List all incident attachements for a given external resource or incident. You must provide either a
+    specific incident ID or a specific external resource type and external ID.
 
     Args:
         incident_id (Union[Unset, None, str]):
@@ -113,7 +114,8 @@ def sync(
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for an external resouce
+     List all incident attachements for a given external resource or incident. You must provide either a
+    specific incident ID or a specific external resource type and external ID.
 
     Args:
         incident_id (Union[Unset, None, str]):
@@ -141,7 +143,8 @@ async def asyncio_detailed(
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for an external resouce
+     List all incident attachements for a given external resource or incident. You must provide either a
+    specific incident ID or a specific external resource type and external ID.
 
     Args:
         incident_id (Union[Unset, None, str]):
@@ -174,7 +177,8 @@ async def asyncio(
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for an external resouce
+     List all incident attachements for a given external resource or incident. You must provide either a
+    specific incident ID or a specific external resource type and external ID.
 
     Args:
         incident_id (Union[Unset, None, str]):

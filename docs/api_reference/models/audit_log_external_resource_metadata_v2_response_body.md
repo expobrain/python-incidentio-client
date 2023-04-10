@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_external_resource_metadata_v2_response_body
+
+::: incident_io_client.models.audit_log_external_resource_metadata_v2_response_body

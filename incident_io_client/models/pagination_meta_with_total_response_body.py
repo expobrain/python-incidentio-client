@@ -14,12 +14,12 @@ class PaginationMetaWithTotalResponseBody:
         {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}
 
     Attributes:
-        page_size (int): What was the maximum number of results requested Example: 25.
+        page_size (int): What was the maximum number of results requested Default: 25. Example: 25.
         after (Union[Unset, str]): If provided, were records after a particular ID Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         total_record_count (Union[Unset, int]): How many matching records were there in total, if known Example: 238.
     """
 
-    page_size: int
+    page_size: int = 25
     after: Union[Unset, str] = UNSET
     total_record_count: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)

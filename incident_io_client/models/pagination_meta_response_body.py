@@ -14,11 +14,11 @@ class PaginationMetaResponseBody:
         {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}
 
     Attributes:
-        page_size (int): What was the maximum number of results requested Example: 25.
+        page_size (int): What was the maximum number of results requested Default: 25. Example: 25.
         after (Union[Unset, str]): If provided, were records after a particular ID Example: 01FCNDV6P870EA6S7TK1DSYDG0.
     """
 
-    page_size: int
+    page_size: int = 25
     after: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
