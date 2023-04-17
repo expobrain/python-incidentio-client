@@ -1,0 +1,3 @@
+# incident_io_client.models.catalog_v2_update_type_request_body
+
+::: incident_io_client.models.catalog_v2_update_type_request_body

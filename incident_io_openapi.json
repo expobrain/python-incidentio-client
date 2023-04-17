@@ -291,6 +291,1181 @@
         "title": "ActorV2ResponseBody",
         "type": "object"
       },
+      "CatalogAttributeBindingPayloadV2RequestBody": {
+        "example": {
+          "array_value": [
+            {
+              "literal": "SEV123"
+            }
+          ],
+          "value": {
+            "literal": "SEV123"
+          }
+        },
+        "properties": {
+          "array_value": {
+            "description": "If set, this is the array value of the attribute",
+            "example": [
+              {
+                "literal": "SEV123"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CatalogAttributeValuePayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "value": {
+            "$ref": "#/components/schemas/CatalogAttributeValuePayloadV2RequestBody"
+          }
+        },
+        "title": "CatalogAttributeBindingPayloadV2RequestBody",
+        "type": "object"
+      },
+      "CatalogAttributeBindingV2ResponseBody": {
+        "example": {
+          "array_value": [
+            {
+              "catalog_entry": {
+                "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              },
+              "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+              "is_image_slack_icon": false,
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "sort_key": "000020"
+            }
+          ],
+          "value": {
+            "catalog_entry": {
+              "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+            },
+            "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+            "is_image_slack_icon": false,
+            "label": "Lawrence Jones",
+            "literal": "SEV123",
+            "sort_key": "000020"
+          }
+        },
+        "properties": {
+          "array_value": {
+            "description": "If array_value is set, this helps render the values",
+            "example": [
+              {
+                "catalog_entry": {
+                  "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                },
+                "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                "is_image_slack_icon": false,
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "sort_key": "000020"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CatalogAttributeValueV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "value": {
+            "$ref": "#/components/schemas/CatalogAttributeValueV2ResponseBody"
+          }
+        },
+        "title": "CatalogAttributeBindingV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogAttributeValuePayloadV2RequestBody": {
+        "example": {
+          "literal": "SEV123"
+        },
+        "properties": {
+          "literal": {
+            "description": "The literal value of this attribute",
+            "example": "SEV123",
+            "type": "string"
+          }
+        },
+        "title": "CatalogAttributeValuePayloadV2RequestBody",
+        "type": "object"
+      },
+      "CatalogAttributeValueV2ResponseBody": {
+        "example": {
+          "catalog_entry": {
+            "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+          },
+          "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+          "is_image_slack_icon": false,
+          "label": "Lawrence Jones",
+          "literal": "SEV123",
+          "sort_key": "000020"
+        },
+        "properties": {
+          "catalog_entry": {
+            "$ref": "#/components/schemas/CatalogEntryReferenceV2ResponseBody"
+          },
+          "image_url": {
+            "description": "If appropriate, URL to an image that can be displayed alongside the option",
+            "example": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+            "type": "string"
+          },
+          "is_image_slack_icon": {
+            "description": "If true, the image_url is a Slack icon and should be displayed as such",
+            "example": false,
+            "type": "boolean"
+          },
+          "label": {
+            "description": "Human readable label to be displayed for user to select",
+            "example": "Lawrence Jones",
+            "type": "string"
+          },
+          "literal": {
+            "description": "If set, this is the literal value of the step parameter",
+            "example": "SEV123",
+            "type": "string"
+          },
+          "sort_key": {
+            "description": "Gives an indication of how to sort the options when displayed to the user",
+            "example": "000020",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "sort_key"
+        ],
+        "title": "CatalogAttributeValueV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogEntryReferenceV2ResponseBody": {
+        "example": {
+          "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+        },
+        "properties": {
+          "catalog_entry_id": {
+            "description": "ID of this catalog entry",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "catalog_type_id": {
+            "description": "ID of this catalog type",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          }
+        },
+        "required": [
+          "catalog_entry_id",
+          "catalog_type_id"
+        ],
+        "title": "CatalogEntryReferenceV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogEntryV2ResponseBody": {
+        "example": {
+          "attribute_values": {
+            "abc123": {
+              "array_value": [
+                {
+                  "catalog_entry": {
+                    "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                  },
+                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "is_image_slack_icon": false,
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "sort_key": "000020"
+                }
+              ],
+              "value": {
+                "catalog_entry": {
+                  "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                },
+                "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                "is_image_slack_icon": false,
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "sort_key": "000020"
+              }
+            }
+          },
+          "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "created_at": "2021-08-17T13:28:57.801578Z",
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "name": "Primary On-call",
+          "updated_at": "2021-08-17T13:28:57.801578Z"
+        },
+        "properties": {
+          "attribute_values": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CatalogAttributeBindingV2ResponseBody"
+            },
+            "description": "Values of this entry",
+            "example": {
+              "abc123": {
+                "array_value": [
+                  {
+                    "catalog_entry": {
+                      "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                    },
+                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "is_image_slack_icon": false,
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "sort_key": "000020"
+                  }
+                ],
+                "value": {
+                  "catalog_entry": {
+                    "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                  },
+                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "is_image_slack_icon": false,
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "sort_key": "000020"
+                }
+              }
+            },
+            "type": "object"
+          },
+          "catalog_type_id": {
+            "description": "ID of this catalog type",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "When this entry was created",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "ID of this resource",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name is the human readable name of this entry",
+            "example": "Primary On-call",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "When this entry was last updated",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attribute_values",
+          "catalog_type_id",
+          "created_at",
+          "id",
+          "name",
+          "updated_at"
+        ],
+        "title": "CatalogEntryV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogTypeAttributePayloadV2RequestBody": {
+        "example": {
+          "array": false,
+          "id": "01GW2G3V0S59R238FAHPDS1R66",
+          "name": "tier",
+          "type": "tier"
+        },
+        "properties": {
+          "array": {
+            "description": "Whether this column is an array",
+            "example": false,
+            "type": "boolean"
+          },
+          "id": {
+            "description": "The ID of this column",
+            "example": "01GW2G3V0S59R238FAHPDS1R66",
+            "type": "string"
+          },
+          "name": {
+            "description": "Unique name of this column",
+            "example": "tier",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of this column",
+            "example": "tier",
+            "type": "string"
+          }
+        },
+        "required": [
+          "array",
+          "name",
+          "type"
+        ],
+        "title": "CatalogTypeAttributePayloadV2RequestBody",
+        "type": "object"
+      },
+      "CatalogTypeAttributeV2ResponseBody": {
+        "example": {
+          "array": false,
+          "id": "01GW2G3V0S59R238FAHPDS1R66",
+          "name": "tier",
+          "type": "tier"
+        },
+        "properties": {
+          "array": {
+            "description": "Whether this column is an array",
+            "example": false,
+            "type": "boolean"
+          },
+          "id": {
+            "description": "The ID of this column",
+            "example": "01GW2G3V0S59R238FAHPDS1R66",
+            "type": "string"
+          },
+          "name": {
+            "description": "Unique name of this column",
+            "example": "tier",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of this column",
+            "example": "tier",
+            "type": "string"
+          }
+        },
+        "required": [
+          "array",
+          "id",
+          "name",
+          "type"
+        ],
+        "title": "CatalogTypeAttributeV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogTypeSchemaV2ResponseBody": {
+        "example": {
+          "attributes": [
+            {
+              "array": false,
+              "id": "01GW2G3V0S59R238FAHPDS1R66",
+              "name": "tier",
+              "type": "tier"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "attributes": {
+            "description": "Attributes of this catalog type",
+            "example": [
+              {
+                "array": false,
+                "id": "01GW2G3V0S59R238FAHPDS1R66",
+                "name": "tier",
+                "type": "tier"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CatalogTypeAttributeV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "The version number of this schema",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "attributes",
+          "version"
+        ],
+        "title": "CatalogTypeSchemaV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogTypeV2ResponseBody": {
+        "example": {
+          "created_at": "2021-08-17T13:28:57.801578Z",
+          "description": "Represents Kubernetes clusters that we run inside of GKE.",
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "name": "Kubernetes Cluster",
+          "schema": {
+            "attributes": [
+              {
+                "array": false,
+                "id": "01GW2G3V0S59R238FAHPDS1R66",
+                "name": "tier",
+                "type": "tier"
+              }
+            ],
+            "version": 1
+          },
+          "semantic_type": "service",
+          "updated_at": "2021-08-17T13:28:57.801578Z"
+        },
+        "properties": {
+          "created_at": {
+            "description": "When this type was created",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "description": {
+            "description": "Human readble description of this type",
+            "example": "Represents Kubernetes clusters that we run inside of GKE.",
+            "type": "string"
+          },
+          "id": {
+            "description": "ID of this resource",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name is the human readable name of this type",
+            "example": "Kubernetes Cluster",
+            "type": "string"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/CatalogTypeSchemaV2ResponseBody"
+          },
+          "semantic_type": {
+            "description": "Semantic type of this resource",
+            "example": "service",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "When this type was last updated",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at",
+          "description",
+          "id",
+          "name",
+          "schema",
+          "semantic_type",
+          "updated_at"
+        ],
+        "title": "CatalogTypeV2ResponseBody",
+        "type": "object"
+      },
+      "CatalogV2CreateEntryRequestBody": {
+        "example": {
+          "attribute_values": {
+            "abc123": {
+              "array_value": [
+                {
+                  "literal": "SEV123"
+                }
+              ],
+              "value": {
+                "literal": "SEV123"
+              }
+            }
+          },
+          "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "name": "Primary On-call"
+        },
+        "properties": {
+          "attribute_values": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CatalogAttributeBindingPayloadV2RequestBody"
+            },
+            "description": "Values of this entry",
+            "example": {
+              "abc123": {
+                "array_value": [
+                  {
+                    "literal": "SEV123"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123"
+                }
+              }
+            },
+            "type": "object"
+          },
+          "catalog_type_id": {
+            "description": "ID of this catalog type",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name is the human readable name of this entry",
+            "example": "Primary On-call",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attribute_values",
+          "catalog_type_id",
+          "name"
+        ],
+        "title": "CatalogV2CreateEntryRequestBody",
+        "type": "object"
+      },
+      "CatalogV2CreateEntryResponseBody": {
+        "example": {
+          "catalog_entry": {
+            "attribute_values": {
+              "abc123": {
+                "array_value": [
+                  {
+                    "catalog_entry": {
+                      "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                    },
+                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "is_image_slack_icon": false,
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "sort_key": "000020"
+                  }
+                ],
+                "value": {
+                  "catalog_entry": {
+                    "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                  },
+                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "is_image_slack_icon": false,
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "sort_key": "000020"
+                }
+              }
+            },
+            "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Primary On-call",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_entry": {
+            "$ref": "#/components/schemas/CatalogEntryV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_entry"
+        ],
+        "title": "CatalogV2CreateEntryResponseBody",
+        "type": "object"
+      },
+      "CatalogV2CreateTypeRequestBody": {
+        "example": {
+          "description": "Represents Kubernetes clusters that we run inside of GKE.",
+          "name": "Kubernetes Cluster",
+          "semantic_type": "service"
+        },
+        "properties": {
+          "description": {
+            "description": "Human readble description of this type",
+            "example": "Represents Kubernetes clusters that we run inside of GKE.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name is the human readable name of this type",
+            "example": "Kubernetes Cluster",
+            "type": "string"
+          },
+          "semantic_type": {
+            "description": "Semantic type of this resource",
+            "example": "service",
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "name",
+          "semantic_type"
+        ],
+        "title": "CatalogV2CreateTypeRequestBody",
+        "type": "object"
+      },
+      "CatalogV2CreateTypeResponseBody": {
+        "example": {
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "title": "CatalogV2CreateTypeResponseBody",
+        "type": "object"
+      },
+      "CatalogV2ListEntriesResponseBody": {
+        "example": {
+          "catalog_entries": [
+            {
+              "attribute_values": {
+                "abc123": {
+                  "array_value": [
+                    {
+                      "catalog_entry": {
+                        "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                        "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                      },
+                      "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                      "is_image_slack_icon": false,
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "sort_key": "000020"
+                    }
+                  ],
+                  "value": {
+                    "catalog_entry": {
+                      "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                    },
+                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "is_image_slack_icon": false,
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "sort_key": "000020"
+                  }
+                }
+              },
+              "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "created_at": "2021-08-17T13:28:57.801578Z",
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Primary On-call",
+              "updated_at": "2021-08-17T13:28:57.801578Z"
+            }
+          ],
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_entries": {
+            "example": [
+              {
+                "attribute_values": {
+                  "abc123": {
+                    "array_value": [
+                      {
+                        "catalog_entry": {
+                          "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                          "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                        },
+                        "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                        "is_image_slack_icon": false,
+                        "label": "Lawrence Jones",
+                        "literal": "SEV123",
+                        "sort_key": "000020"
+                      }
+                    ],
+                    "value": {
+                      "catalog_entry": {
+                        "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                        "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                      },
+                      "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                      "is_image_slack_icon": false,
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "sort_key": "000020"
+                    }
+                  }
+                },
+                "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Primary On-call",
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CatalogEntryV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_entries",
+          "catalog_type"
+        ],
+        "title": "CatalogV2ListEntriesResponseBody",
+        "type": "object"
+      },
+      "CatalogV2ListTypesResponseBody": {
+        "example": {
+          "catalog_types": [
+            {
+              "created_at": "2021-08-17T13:28:57.801578Z",
+              "description": "Represents Kubernetes clusters that we run inside of GKE.",
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Kubernetes Cluster",
+              "schema": {
+                "attributes": [
+                  {
+                    "array": false,
+                    "id": "01GW2G3V0S59R238FAHPDS1R66",
+                    "name": "tier",
+                    "type": "tier"
+                  }
+                ],
+                "version": 1
+              },
+              "semantic_type": "service",
+              "updated_at": "2021-08-17T13:28:57.801578Z"
+            }
+          ]
+        },
+        "properties": {
+          "catalog_types": {
+            "example": [
+              {
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "description": "Represents Kubernetes clusters that we run inside of GKE.",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Kubernetes Cluster",
+                "schema": {
+                  "attributes": [
+                    {
+                      "array": false,
+                      "id": "01GW2G3V0S59R238FAHPDS1R66",
+                      "name": "tier",
+                      "type": "tier"
+                    }
+                  ],
+                  "version": 1
+                },
+                "semantic_type": "service",
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "catalog_types"
+        ],
+        "title": "CatalogV2ListTypesResponseBody",
+        "type": "object"
+      },
+      "CatalogV2ShowEntryResponseBody": {
+        "example": {
+          "catalog_entry": {
+            "attribute_values": {
+              "abc123": {
+                "array_value": [
+                  {
+                    "catalog_entry": {
+                      "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                    },
+                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "is_image_slack_icon": false,
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "sort_key": "000020"
+                  }
+                ],
+                "value": {
+                  "catalog_entry": {
+                    "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                  },
+                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "is_image_slack_icon": false,
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "sort_key": "000020"
+                }
+              }
+            },
+            "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Primary On-call",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          },
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_entry": {
+            "$ref": "#/components/schemas/CatalogEntryV2ResponseBody"
+          },
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_entry",
+          "catalog_type"
+        ],
+        "title": "CatalogV2ShowEntryResponseBody",
+        "type": "object"
+      },
+      "CatalogV2ShowTypeResponseBody": {
+        "example": {
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "title": "CatalogV2ShowTypeResponseBody",
+        "type": "object"
+      },
+      "CatalogV2UpdateEntryRequestBody": {
+        "example": {
+          "attribute_values": {
+            "abc123": {
+              "array_value": [
+                {
+                  "literal": "SEV123"
+                }
+              ],
+              "value": {
+                "literal": "SEV123"
+              }
+            }
+          },
+          "name": "Primary On-call"
+        },
+        "properties": {
+          "attribute_values": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CatalogAttributeBindingPayloadV2RequestBody"
+            },
+            "description": "Values of this entry",
+            "example": {
+              "abc123": {
+                "array_value": [
+                  {
+                    "literal": "SEV123"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123"
+                }
+              }
+            },
+            "type": "object"
+          },
+          "name": {
+            "description": "Name is the human readable name of this entry",
+            "example": "Primary On-call",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attribute_values",
+          "name"
+        ],
+        "title": "CatalogV2UpdateEntryRequestBody",
+        "type": "object"
+      },
+      "CatalogV2UpdateEntryResponseBody": {
+        "example": {
+          "catalog_entry": {
+            "attribute_values": {
+              "abc123": {
+                "array_value": [
+                  {
+                    "catalog_entry": {
+                      "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                      "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                    },
+                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "is_image_slack_icon": false,
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "sort_key": "000020"
+                  }
+                ],
+                "value": {
+                  "catalog_entry": {
+                    "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                    "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
+                  },
+                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "is_image_slack_icon": false,
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "sort_key": "000020"
+                }
+              }
+            },
+            "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Primary On-call",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          },
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_entry": {
+            "$ref": "#/components/schemas/CatalogEntryV2ResponseBody"
+          },
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_entry",
+          "catalog_type"
+        ],
+        "title": "CatalogV2UpdateEntryResponseBody",
+        "type": "object"
+      },
+      "CatalogV2UpdateTypeRequestBody": {
+        "example": {
+          "description": "Represents Kubernetes clusters that we run inside of GKE.",
+          "name": "Kubernetes Cluster",
+          "semantic_type": "service"
+        },
+        "properties": {
+          "description": {
+            "description": "Human readble description of this type",
+            "example": "Represents Kubernetes clusters that we run inside of GKE.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name is the human readable name of this type",
+            "example": "Kubernetes Cluster",
+            "type": "string"
+          },
+          "semantic_type": {
+            "description": "Semantic type of this resource",
+            "example": "service",
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "name",
+          "semantic_type"
+        ],
+        "title": "CatalogV2UpdateTypeRequestBody",
+        "type": "object"
+      },
+      "CatalogV2UpdateTypeResponseBody": {
+        "example": {
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "title": "CatalogV2UpdateTypeResponseBody",
+        "type": "object"
+      },
+      "CatalogV2UpdateTypeSchemaRequestBody": {
+        "example": {
+          "attributes": [
+            {
+              "array": false,
+              "id": "01GW2G3V0S59R238FAHPDS1R66",
+              "name": "tier",
+              "type": "tier"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "attributes": {
+            "example": [
+              {
+                "array": false,
+                "id": "01GW2G3V0S59R238FAHPDS1R66",
+                "name": "tier",
+                "type": "tier"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/CatalogTypeAttributePayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "attributes",
+          "version"
+        ],
+        "title": "CatalogV2UpdateTypeSchemaRequestBody",
+        "type": "object"
+      },
+      "CatalogV2UpdateTypeSchemaResponseBody": {
+        "example": {
+          "catalog_type": {
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Represents Kubernetes clusters that we run inside of GKE.",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Kubernetes Cluster",
+            "schema": {
+              "attributes": [
+                {
+                  "array": false,
+                  "id": "01GW2G3V0S59R238FAHPDS1R66",
+                  "name": "tier",
+                  "type": "tier"
+                }
+              ],
+              "version": 1
+            },
+            "semantic_type": "service",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "catalog_type": {
+            "$ref": "#/components/schemas/CatalogTypeV2ResponseBody"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "title": "CatalogV2UpdateTypeSchemaResponseBody",
+        "type": "object"
+      },
       "CustomFieldEntryPayloadV1RequestBody": {
         "example": {
           "custom_field_id": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -8265,6 +9440,507 @@
         "x-codegen-request-body-name": "UpdateRequestBody"
       }
     },
+    "/v2/catalog_entries": {
+      "get": {
+        "description": "List entries for a catalog type.",
+        "operationId": "Catalog V2#ListEntries",
+        "parameters": [
+          {
+            "description": "ID of this catalog type",
+            "in": "query",
+            "name": "catalog_type_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ListEntriesResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ListEntriesResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ListEntriesResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "ListEntries Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ]
+      },
+      "post": {
+        "description": "Create an entry for a type in the catalog.",
+        "operationId": "Catalog V2#CreateEntry",
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2CreateEntryRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2CreateEntryRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2CreateEntryRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2CreateEntryResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2CreateEntryResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2CreateEntryResponseBody"
+                }
+              }
+            },
+            "description": "Created response."
+          }
+        },
+        "summary": "CreateEntry Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ],
+        "x-codegen-request-body-name": "CreateEntryRequestBody"
+      }
+    },
+    "/v2/catalog_entries/{id}": {
+      "delete": {
+        "description": "Archives a catalog entry.",
+        "operationId": "Catalog V2#DestroyEntry",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "No Content response."
+          }
+        },
+        "summary": "DestroyEntry Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ]
+      },
+      "get": {
+        "description": "Show a single catalog entry.",
+        "operationId": "Catalog V2#ShowEntry",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ShowEntryResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ShowEntryResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ShowEntryResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "ShowEntry Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing catalog entry.",
+        "operationId": "Catalog V2#UpdateEntry",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateEntryRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateEntryRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateEntryRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateEntryResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateEntryResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateEntryResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "UpdateEntry Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ],
+        "x-codegen-request-body-name": "UpdateEntryRequestBody"
+      }
+    },
+    "/v2/catalog_types": {
+      "get": {
+        "description": "List all catalog types for an organisation, including those synced from external resources.",
+        "operationId": "Catalog V2#ListTypes",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ListTypesResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ListTypesResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ListTypesResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "ListTypes Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ]
+      },
+      "post": {
+        "description": "Create a catalog type.",
+        "operationId": "Catalog V2#CreateType",
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2CreateTypeRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2CreateTypeRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2CreateTypeRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2CreateTypeResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2CreateTypeResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2CreateTypeResponseBody"
+                }
+              }
+            },
+            "description": "Created response."
+          }
+        },
+        "summary": "CreateType Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ],
+        "x-codegen-request-body-name": "CreateTypeRequestBody"
+      }
+    },
+    "/v2/catalog_types/{id}": {
+      "delete": {
+        "description": "Archives a catalog type and associated entries.",
+        "operationId": "Catalog V2#DestroyType",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "No Content response."
+          }
+        },
+        "summary": "DestroyType Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ]
+      },
+      "get": {
+        "description": "Show a single catalog type.",
+        "operationId": "Catalog V2#ShowType",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ShowTypeResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ShowTypeResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2ShowTypeResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "ShowType Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing catalog type.",
+        "operationId": "Catalog V2#UpdateType",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateTypeRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateTypeRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateTypeRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateTypeResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateTypeResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateTypeResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "UpdateType Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ],
+        "x-codegen-request-body-name": "UpdateTypeRequestBody"
+      }
+    },
+    "/v2/catalog_types/{id}/actions/update_schema": {
+      "post": {
+        "description": "Update an existing catalog types schema, adding or removing attributes.",
+        "operationId": "Catalog V2#UpdateTypeSchema",
+        "parameters": [
+          {
+            "description": "ID of this resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateTypeSchemaRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateTypeSchemaRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogV2UpdateTypeSchemaRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateTypeSchemaResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateTypeSchemaResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogV2UpdateTypeSchemaResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "UpdateTypeSchema Catalog V2",
+        "tags": [
+          "Catalog V2"
+        ],
+        "x-codegen-request-body-name": "UpdateTypeSchemaRequestBody"
+      }
+    },
     "/v2/incident_timestamps": {
       "get": {
         "description": "List all incident timestamps for an organisation.",
@@ -8872,6 +10548,10 @@
     {
       "description": "Manage incident actions.\n\nIncidents have two types of actions associated to them:\n\n- Actions, used during an incident response as ephemeral todo lists\n- Follow-ups, actions which are for after the incident and can be exported to external\n\tissue trackers\n\nYou can manage actions in the incident Slack channel with <code>/incident actions</code>, or on\nthe incident homepage.\n\nExporting follow-ups to external issue trackers can be done in the incident homepage.\n",
       "name": "Actions V1"
+    },
+    {
+      "description": "Manage and browse catalog resources.\n\n> This endpoint is in beta, released for early testing but excluded from our backwards\n> compatibility guarantee at this time. Contact support@incident.io if you have\n> questions about availability or want to try this out.\n\nUse the incident.io catalog to track services, teams, product features and anything\nelse that helps build a map of your organisation.\n\nThe catalog has a number of types which are synced from your connected integrations, such\nas GitHub Repositories or PagerDuty Services, but you can also create custom types\nspecifically tailored to your company.\n\nExamples might be a Service type with an Alert channel which you can point at a Slack\nchannel, or Team which specifies its Manager and Technical Lead.\n",
+      "name": "Catalog V2"
     },
     {
       "description": "Manage custom field options.\n\nSingle- and multi-select custom fields have a list of all available options,\nwhich have a value, and a sort key. The value must be unique to the custom\nfield. For example, you might have an Incident Type custom field, with options\n\"Data breach\", \"Performance degradation\", \"API downtime\", etc.",
