@@ -2,16 +2,16 @@
 
 - updated to the latest API at 2023-03-27
 - added new endpoints:
-  - /v1/incident_roles/{id}
-  - /v1/incident_types
-  - /v1/incident_types/{id}
-  - /v1/openapi.json
-  - /v1/severities
-  - /v1/severities/{id}"
-  - /v2/catalog_entries"
-  - /v2/catalog_entries/{id}
-  - /v2/catalog_types
-  - /v2/catalog_types/{id}/actions/update_schema
+  - `/v1/incident_roles/{id}`
+  - `/v1/incident_types`
+  - `/v1/incident_types/{id}`
+  - `/v1/openapi.json`
+  - `/v1/severities`
+  - `/v1/severities/{id}"`
+  - `/v2/catalog_entries"`
+  - `/v2/catalog_entries/{id}`
+  - `/v2/catalog_types`
+  - `/v2/catalog_types/{id}/actions/update_schema`
 
 # v0.28.0
 
