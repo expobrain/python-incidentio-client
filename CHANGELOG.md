@@ -1,6 +1,6 @@
 # v0.29.0
 
-- updated to the latest API at 2023-03-27
+- updated to the latest API at 2023-04-24
 - added new endpoints:
   - `/v1/incident_roles/{id}`
   - `/v1/incident_types`

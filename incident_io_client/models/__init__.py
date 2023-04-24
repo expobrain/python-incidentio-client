@@ -9,6 +9,181 @@ from .actor_v1_response_body import ActorV1ResponseBody
 from .actor_v2_response_body import ActorV2ResponseBody
 from .api_key_v1_response_body import APIKeyV1ResponseBody
 from .api_key_v2_response_body import APIKeyV2ResponseBody
+from .audit_log_actor_metadata_v2_response_body import (
+    AuditLogActorMetadataV2ResponseBody,
+)
+from .audit_log_actor_v2_response_body import AuditLogActorV2ResponseBody
+from .audit_log_actor_v2_response_body_type import AuditLogActorV2ResponseBodyType
+from .audit_log_entry_context_v2_response_body import AuditLogEntryContextV2ResponseBody
+from .audit_log_private_incident_access_attempted_metadata_v2_response_body import (
+    AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody,
+)
+from .audit_log_private_incident_access_attempted_metadata_v2_response_body_outcome import (
+    AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBodyOutcome,
+)
+from .audit_log_target_v2_response_body import AuditLogTargetV2ResponseBody
+from .audit_log_target_v2_response_body_type import AuditLogTargetV2ResponseBodyType
+from .audit_log_user_role_membership_changed_metadata_v2_response_body import (
+    AuditLogUserRoleMembershipChangedMetadataV2ResponseBody,
+)
+from .audit_log_user_scim_group_mapping_changed_metadata_v2_response_body import (
+    AuditLogUserSCIMGroupMappingChangedMetadataV2ResponseBody,
+)
+from .audit_logs_announcement_rule_created_v1_response_body import (
+    AuditLogsAnnouncementRuleCreatedV1ResponseBody,
+)
+from .audit_logs_announcement_rule_deleted_v1_response_body import (
+    AuditLogsAnnouncementRuleDeletedV1ResponseBody,
+)
+from .audit_logs_announcement_rule_updated_v1_response_body import (
+    AuditLogsAnnouncementRuleUpdatedV1ResponseBody,
+)
+from .audit_logs_api_key_created_v1_response_body import (
+    AuditLogsAPIKeyCreatedV1ResponseBody,
+)
+from .audit_logs_api_key_deleted_v1_response_body import (
+    AuditLogsAPIKeyDeletedV1ResponseBody,
+)
+from .audit_logs_custom_field_created_v1_response_body import (
+    AuditLogsCustomFieldCreatedV1ResponseBody,
+)
+from .audit_logs_custom_field_deleted_v1_response_body import (
+    AuditLogsCustomFieldDeletedV1ResponseBody,
+)
+from .audit_logs_custom_field_updated_v1_response_body import (
+    AuditLogsCustomFieldUpdatedV1ResponseBody,
+)
+from .audit_logs_follow_up_priority_created_v1_response_body import (
+    AuditLogsFollowUpPriorityCreatedV1ResponseBody,
+)
+from .audit_logs_follow_up_priority_deleted_v1_response_body import (
+    AuditLogsFollowUpPriorityDeletedV1ResponseBody,
+)
+from .audit_logs_follow_up_priority_updated_v1_response_body import (
+    AuditLogsFollowUpPriorityUpdatedV1ResponseBody,
+)
+from .audit_logs_incident_duration_metric_created_v1_response_body import (
+    AuditLogsIncidentDurationMetricCreatedV1ResponseBody,
+)
+from .audit_logs_incident_duration_metric_deleted_v1_response_body import (
+    AuditLogsIncidentDurationMetricDeletedV1ResponseBody,
+)
+from .audit_logs_incident_duration_metric_updated_v1_response_body import (
+    AuditLogsIncidentDurationMetricUpdatedV1ResponseBody,
+)
+from .audit_logs_incident_role_created_v1_response_body import (
+    AuditLogsIncidentRoleCreatedV1ResponseBody,
+)
+from .audit_logs_incident_role_deleted_v1_response_body import (
+    AuditLogsIncidentRoleDeletedV1ResponseBody,
+)
+from .audit_logs_incident_role_updated_v1_response_body import (
+    AuditLogsIncidentRoleUpdatedV1ResponseBody,
+)
+from .audit_logs_incident_status_created_v1_response_body import (
+    AuditLogsIncidentStatusCreatedV1ResponseBody,
+)
+from .audit_logs_incident_status_deleted_v1_response_body import (
+    AuditLogsIncidentStatusDeletedV1ResponseBody,
+)
+from .audit_logs_incident_status_updated_v1_response_body import (
+    AuditLogsIncidentStatusUpdatedV1ResponseBody,
+)
+from .audit_logs_incident_timestamp_created_v1_response_body import (
+    AuditLogsIncidentTimestampCreatedV1ResponseBody,
+)
+from .audit_logs_incident_timestamp_deleted_v1_response_body import (
+    AuditLogsIncidentTimestampDeletedV1ResponseBody,
+)
+from .audit_logs_incident_timestamp_updated_v1_response_body import (
+    AuditLogsIncidentTimestampUpdatedV1ResponseBody,
+)
+from .audit_logs_incident_type_created_v1_response_body import (
+    AuditLogsIncidentTypeCreatedV1ResponseBody,
+)
+from .audit_logs_incident_type_deleted_v1_response_body import (
+    AuditLogsIncidentTypeDeletedV1ResponseBody,
+)
+from .audit_logs_incident_type_updated_v1_response_body import (
+    AuditLogsIncidentTypeUpdatedV1ResponseBody,
+)
+from .audit_logs_integration_installed_v1_response_body import (
+    AuditLogsIntegrationInstalledV1ResponseBody,
+)
+from .audit_logs_integration_uninstalled_v1_response_body import (
+    AuditLogsIntegrationUninstalledV1ResponseBody,
+)
+from .audit_logs_policy_created_v1_response_body import (
+    AuditLogsPolicyCreatedV1ResponseBody,
+)
+from .audit_logs_policy_deleted_v1_response_body import (
+    AuditLogsPolicyDeletedV1ResponseBody,
+)
+from .audit_logs_policy_updated_v1_response_body import (
+    AuditLogsPolicyUpdatedV1ResponseBody,
+)
+from .audit_logs_private_incident_access_attempted_v1_response_body import (
+    AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody,
+)
+from .audit_logs_private_incident_access_requested_v1_response_body import (
+    AuditLogsPrivateIncidentAccessRequestedV1ResponseBody,
+)
+from .audit_logs_private_incident_membership_granted_v1_response_body import (
+    AuditLogsPrivateIncidentMembershipGrantedV1ResponseBody,
+)
+from .audit_logs_private_incident_membership_revoked_v1_response_body import (
+    AuditLogsPrivateIncidentMembershipRevokedV1ResponseBody,
+)
+from .audit_logs_rbac_role_created_v1_response_body import (
+    AuditLogsRbacRoleCreatedV1ResponseBody,
+)
+from .audit_logs_rbac_role_deleted_v1_response_body import (
+    AuditLogsRbacRoleDeletedV1ResponseBody,
+)
+from .audit_logs_rbac_role_updated_v1_response_body import (
+    AuditLogsRbacRoleUpdatedV1ResponseBody,
+)
+from .audit_logs_scim_group_role_mappings_updated_v1_response_body import (
+    AuditLogsScimGroupRoleMappingsUpdatedV1ResponseBody,
+)
+from .audit_logs_severity_created_v1_response_body import (
+    AuditLogsSeverityCreatedV1ResponseBody,
+)
+from .audit_logs_severity_deleted_v1_response_body import (
+    AuditLogsSeverityDeletedV1ResponseBody,
+)
+from .audit_logs_severity_updated_v1_response_body import (
+    AuditLogsSeverityUpdatedV1ResponseBody,
+)
+from .audit_logs_status_page_created_v1_response_body import (
+    AuditLogsStatusPageCreatedV1ResponseBody,
+)
+from .audit_logs_status_page_deleted_v1_response_body import (
+    AuditLogsStatusPageDeletedV1ResponseBody,
+)
+from .audit_logs_status_page_updated_v1_response_body import (
+    AuditLogsStatusPageUpdatedV1ResponseBody,
+)
+from .audit_logs_user_created_v1_response_body import AuditLogsUserCreatedV1ResponseBody
+from .audit_logs_user_deactivated_v1_response_body import (
+    AuditLogsUserDeactivatedV1ResponseBody,
+)
+from .audit_logs_user_reinstated_v1_response_body import (
+    AuditLogsUserReinstatedV1ResponseBody,
+)
+from .audit_logs_user_role_memberships_updated_v1_response_body import (
+    AuditLogsUserRoleMembershipsUpdatedV1ResponseBody,
+)
+from .audit_logs_user_updated_v1_response_body import AuditLogsUserUpdatedV1ResponseBody
+from .audit_logs_workflow_created_v1_response_body import (
+    AuditLogsWorkflowCreatedV1ResponseBody,
+)
+from .audit_logs_workflow_deleted_v1_response_body import (
+    AuditLogsWorkflowDeletedV1ResponseBody,
+)
+from .audit_logs_workflow_updated_v1_response_body import (
+    AuditLogsWorkflowUpdatedV1ResponseBody,
+)
 from .catalog_attribute_binding_payload_v2_request_body import (
     CatalogAttributeBindingPayloadV2RequestBody,
 )
@@ -34,12 +209,18 @@ from .catalog_type_attribute_payload_v2_request_body import (
 from .catalog_type_attribute_v2_response_body import CatalogTypeAttributeV2ResponseBody
 from .catalog_type_schema_v2_response_body import CatalogTypeSchemaV2ResponseBody
 from .catalog_type_v2_response_body import CatalogTypeV2ResponseBody
+from .catalog_type_v2_response_body_color import CatalogTypeV2ResponseBodyColor
+from .catalog_type_v2_response_body_icon import CatalogTypeV2ResponseBodyIcon
 from .catalog_v2_create_entry_request_body import CatalogV2CreateEntryRequestBody
 from .catalog_v2_create_entry_request_body_attribute_values import (
     CatalogV2CreateEntryRequestBodyAttributeValues,
 )
 from .catalog_v2_create_entry_response_body import CatalogV2CreateEntryResponseBody
 from .catalog_v2_create_type_request_body import CatalogV2CreateTypeRequestBody
+from .catalog_v2_create_type_request_body_color import (
+    CatalogV2CreateTypeRequestBodyColor,
+)
+from .catalog_v2_create_type_request_body_icon import CatalogV2CreateTypeRequestBodyIcon
 from .catalog_v2_create_type_response_body import CatalogV2CreateTypeResponseBody
 from .catalog_v2_list_entries_response_body import CatalogV2ListEntriesResponseBody
 from .catalog_v2_list_types_response_body import CatalogV2ListTypesResponseBody
@@ -51,6 +232,10 @@ from .catalog_v2_update_entry_request_body_attribute_values import (
 )
 from .catalog_v2_update_entry_response_body import CatalogV2UpdateEntryResponseBody
 from .catalog_v2_update_type_request_body import CatalogV2UpdateTypeRequestBody
+from .catalog_v2_update_type_request_body_color import (
+    CatalogV2UpdateTypeRequestBodyColor,
+)
+from .catalog_v2_update_type_request_body_icon import CatalogV2UpdateTypeRequestBodyIcon
 from .catalog_v2_update_type_response_body import CatalogV2UpdateTypeResponseBody
 from .catalog_v2_update_type_schema_request_body import (
     CatalogV2UpdateTypeSchemaRequestBody,
@@ -157,6 +342,7 @@ from .incident_attachments_v1_list_resource_type import (
 from .incident_attachments_v1_list_response_body import (
     IncidentAttachmentsV1ListResponseBody,
 )
+from .incident_edit_payload_v2_request_body import IncidentEditPayloadV2RequestBody
 from .incident_role_assignment_payload_v1_request_body import (
     IncidentRoleAssignmentPayloadV1RequestBody,
 )
@@ -255,11 +441,13 @@ from .incidents_v2_create_request_body_visibility import (
     IncidentsV2CreateRequestBodyVisibility,
 )
 from .incidents_v2_create_response_body import IncidentsV2CreateResponseBody
+from .incidents_v2_edit_request_body import IncidentsV2EditRequestBody
+from .incidents_v2_edit_response_body import IncidentsV2EditResponseBody
 from .incidents_v2_list_response_body import IncidentsV2ListResponseBody
 from .incidents_v2_show_response_body import IncidentsV2ShowResponseBody
-from .pagination_meta_response_body import PaginationMetaResponseBody
-from .pagination_meta_with_total_response_body import (
-    PaginationMetaWithTotalResponseBody,
+from .pagination_meta_result_response_body import PaginationMetaResultResponseBody
+from .pagination_meta_result_with_total_response_body import (
+    PaginationMetaResultWithTotalResponseBody,
 )
 from .retrospective_incident_options_v2_request_body import (
     RetrospectiveIncidentOptionsV2RequestBody,
@@ -343,6 +531,69 @@ __all__ = (
     "ActorV2ResponseBody",
     "APIKeyV1ResponseBody",
     "APIKeyV2ResponseBody",
+    "AuditLogActorMetadataV2ResponseBody",
+    "AuditLogActorV2ResponseBody",
+    "AuditLogActorV2ResponseBodyType",
+    "AuditLogEntryContextV2ResponseBody",
+    "AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody",
+    "AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBodyOutcome",
+    "AuditLogsAnnouncementRuleCreatedV1ResponseBody",
+    "AuditLogsAnnouncementRuleDeletedV1ResponseBody",
+    "AuditLogsAnnouncementRuleUpdatedV1ResponseBody",
+    "AuditLogsAPIKeyCreatedV1ResponseBody",
+    "AuditLogsAPIKeyDeletedV1ResponseBody",
+    "AuditLogsCustomFieldCreatedV1ResponseBody",
+    "AuditLogsCustomFieldDeletedV1ResponseBody",
+    "AuditLogsCustomFieldUpdatedV1ResponseBody",
+    "AuditLogsFollowUpPriorityCreatedV1ResponseBody",
+    "AuditLogsFollowUpPriorityDeletedV1ResponseBody",
+    "AuditLogsFollowUpPriorityUpdatedV1ResponseBody",
+    "AuditLogsIncidentDurationMetricCreatedV1ResponseBody",
+    "AuditLogsIncidentDurationMetricDeletedV1ResponseBody",
+    "AuditLogsIncidentDurationMetricUpdatedV1ResponseBody",
+    "AuditLogsIncidentRoleCreatedV1ResponseBody",
+    "AuditLogsIncidentRoleDeletedV1ResponseBody",
+    "AuditLogsIncidentRoleUpdatedV1ResponseBody",
+    "AuditLogsIncidentStatusCreatedV1ResponseBody",
+    "AuditLogsIncidentStatusDeletedV1ResponseBody",
+    "AuditLogsIncidentStatusUpdatedV1ResponseBody",
+    "AuditLogsIncidentTimestampCreatedV1ResponseBody",
+    "AuditLogsIncidentTimestampDeletedV1ResponseBody",
+    "AuditLogsIncidentTimestampUpdatedV1ResponseBody",
+    "AuditLogsIncidentTypeCreatedV1ResponseBody",
+    "AuditLogsIncidentTypeDeletedV1ResponseBody",
+    "AuditLogsIncidentTypeUpdatedV1ResponseBody",
+    "AuditLogsIntegrationInstalledV1ResponseBody",
+    "AuditLogsIntegrationUninstalledV1ResponseBody",
+    "AuditLogsPolicyCreatedV1ResponseBody",
+    "AuditLogsPolicyDeletedV1ResponseBody",
+    "AuditLogsPolicyUpdatedV1ResponseBody",
+    "AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody",
+    "AuditLogsPrivateIncidentAccessRequestedV1ResponseBody",
+    "AuditLogsPrivateIncidentMembershipGrantedV1ResponseBody",
+    "AuditLogsPrivateIncidentMembershipRevokedV1ResponseBody",
+    "AuditLogsRbacRoleCreatedV1ResponseBody",
+    "AuditLogsRbacRoleDeletedV1ResponseBody",
+    "AuditLogsRbacRoleUpdatedV1ResponseBody",
+    "AuditLogsScimGroupRoleMappingsUpdatedV1ResponseBody",
+    "AuditLogsSeverityCreatedV1ResponseBody",
+    "AuditLogsSeverityDeletedV1ResponseBody",
+    "AuditLogsSeverityUpdatedV1ResponseBody",
+    "AuditLogsStatusPageCreatedV1ResponseBody",
+    "AuditLogsStatusPageDeletedV1ResponseBody",
+    "AuditLogsStatusPageUpdatedV1ResponseBody",
+    "AuditLogsUserCreatedV1ResponseBody",
+    "AuditLogsUserDeactivatedV1ResponseBody",
+    "AuditLogsUserReinstatedV1ResponseBody",
+    "AuditLogsUserRoleMembershipsUpdatedV1ResponseBody",
+    "AuditLogsUserUpdatedV1ResponseBody",
+    "AuditLogsWorkflowCreatedV1ResponseBody",
+    "AuditLogsWorkflowDeletedV1ResponseBody",
+    "AuditLogsWorkflowUpdatedV1ResponseBody",
+    "AuditLogTargetV2ResponseBody",
+    "AuditLogTargetV2ResponseBodyType",
+    "AuditLogUserRoleMembershipChangedMetadataV2ResponseBody",
+    "AuditLogUserSCIMGroupMappingChangedMetadataV2ResponseBody",
     "CatalogAttributeBindingPayloadV2RequestBody",
     "CatalogAttributeBindingV2ResponseBody",
     "CatalogAttributeValuePayloadV2RequestBody",
@@ -354,10 +605,14 @@ __all__ = (
     "CatalogTypeAttributeV2ResponseBody",
     "CatalogTypeSchemaV2ResponseBody",
     "CatalogTypeV2ResponseBody",
+    "CatalogTypeV2ResponseBodyColor",
+    "CatalogTypeV2ResponseBodyIcon",
     "CatalogV2CreateEntryRequestBody",
     "CatalogV2CreateEntryRequestBodyAttributeValues",
     "CatalogV2CreateEntryResponseBody",
     "CatalogV2CreateTypeRequestBody",
+    "CatalogV2CreateTypeRequestBodyColor",
+    "CatalogV2CreateTypeRequestBodyIcon",
     "CatalogV2CreateTypeResponseBody",
     "CatalogV2ListEntriesResponseBody",
     "CatalogV2ListTypesResponseBody",
@@ -367,6 +622,8 @@ __all__ = (
     "CatalogV2UpdateEntryRequestBodyAttributeValues",
     "CatalogV2UpdateEntryResponseBody",
     "CatalogV2UpdateTypeRequestBody",
+    "CatalogV2UpdateTypeRequestBodyColor",
+    "CatalogV2UpdateTypeRequestBodyIcon",
     "CatalogV2UpdateTypeResponseBody",
     "CatalogV2UpdateTypeSchemaRequestBody",
     "CatalogV2UpdateTypeSchemaResponseBody",
@@ -417,6 +674,7 @@ __all__ = (
     "IncidentAttachmentsV1ListResourceType",
     "IncidentAttachmentsV1ListResponseBody",
     "IncidentAttachmentV1ResponseBody",
+    "IncidentEditPayloadV2RequestBody",
     "IncidentRoleAssignmentPayloadV1RequestBody",
     "IncidentRoleAssignmentPayloadV2RequestBody",
     "IncidentRoleAssignmentV1ResponseBody",
@@ -453,6 +711,8 @@ __all__ = (
     "IncidentsV2CreateRequestBodyMode",
     "IncidentsV2CreateRequestBodyVisibility",
     "IncidentsV2CreateResponseBody",
+    "IncidentsV2EditRequestBody",
+    "IncidentsV2EditResponseBody",
     "IncidentsV2ListResponseBody",
     "IncidentsV2ShowResponseBody",
     "IncidentTimestampsV2ListResponseBody",
@@ -477,8 +737,8 @@ __all__ = (
     "IncidentV2ResponseBody",
     "IncidentV2ResponseBodyMode",
     "IncidentV2ResponseBodyVisibility",
-    "PaginationMetaResponseBody",
-    "PaginationMetaWithTotalResponseBody",
+    "PaginationMetaResultResponseBody",
+    "PaginationMetaResultWithTotalResponseBody",
     "RetrospectiveIncidentOptionsV2RequestBody",
     "SeveritiesV1CreateRequestBody",
     "SeveritiesV1CreateResponseBody",
