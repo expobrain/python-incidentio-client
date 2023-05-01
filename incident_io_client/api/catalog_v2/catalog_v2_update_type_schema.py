@@ -70,8 +70,8 @@ def sync_detailed(
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}], 'version':
-            1}.
+            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]'}], 'version': 1}.
 
     Returns:
         Response[CatalogV2UpdateTypeSchemaResponseBody]
@@ -104,8 +104,8 @@ def sync(
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}], 'version':
-            1}.
+            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]'}], 'version': 1}.
 
     Returns:
         Response[CatalogV2UpdateTypeSchemaResponseBody]
@@ -131,8 +131,8 @@ async def asyncio_detailed(
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}], 'version':
-            1}.
+            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]'}], 'version': 1}.
 
     Returns:
         Response[CatalogV2UpdateTypeSchemaResponseBody]
@@ -163,8 +163,8 @@ async def asyncio(
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}], 'version':
-            1}.
+            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]'}], 'version': 1}.
 
     Returns:
         Response[CatalogV2UpdateTypeSchemaResponseBody]

@@ -9,13 +9,14 @@ T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 class CatalogTypeAttributeV2ResponseBody:
     """
     Example:
-        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}
+        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]'}
 
     Attributes:
-        array (bool): Whether this column is an array
-        id (str): The ID of this column Example: 01GW2G3V0S59R238FAHPDS1R66.
-        name (str): Unique name of this column Example: tier.
-        type (str): The type of this column Example: tier.
+        array (bool): Whether this attribute is an array
+        id (str): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
+        name (str): Unique name of this attribute Example: tier.
+        type (str): Catalog type name for this attribute Example: CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"].
     """
 
     array: bool
