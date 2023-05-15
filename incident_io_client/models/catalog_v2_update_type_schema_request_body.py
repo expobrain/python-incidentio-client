@@ -15,12 +15,12 @@ T = TypeVar("T", bound="CatalogV2UpdateTypeSchemaRequestBody")
 class CatalogV2UpdateTypeSchemaRequestBody:
     """
     Example:
-        {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}],
-            'version': 1}
+        {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'Custom["Service"]'}], 'version': 1}
 
     Attributes:
         attributes (List['CatalogTypeAttributePayloadV2RequestBody']):  Example: [{'array': False, 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}].
+            '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'Custom["Service"]'}].
         version (int):  Example: 1.
     """
 
