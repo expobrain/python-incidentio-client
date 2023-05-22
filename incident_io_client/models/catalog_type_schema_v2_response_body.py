@@ -15,12 +15,12 @@ T = TypeVar("T", bound="CatalogTypeSchemaV2ResponseBody")
 class CatalogTypeSchemaV2ResponseBody:
     """
     Example:
-        {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}],
-            'version': 1}
+        {'attributes': [{'array': False, 'external': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'Custom["Service"]'}], 'version': 1}
 
     Attributes:
         attributes (List['CatalogTypeAttributeV2ResponseBody']): Attributes of this catalog type Example: [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}].
+            False, 'external': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'Custom["Service"]'}].
         version (int): The version number of this schema Example: 1.
     """
 

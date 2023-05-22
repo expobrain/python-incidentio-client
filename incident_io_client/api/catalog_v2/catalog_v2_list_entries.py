@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
@@ -7,13 +7,15 @@ from ...client import Client
 from ...models.catalog_v2_list_entries_response_body import (
     CatalogV2ListEntriesResponseBody,
 )
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
     client: Client,
     catalog_type_id: str,
+    page_size: Union[Unset, None, int] = 25,
+    after: Union[Unset, None, str] = UNSET,
 ) -> Dict[str, Any]:
     url = f"{client.base_url}/v2/catalog_entries"
 
@@ -22,6 +24,10 @@ def _get_kwargs(
 
     params: Dict[str, Any] = {}
     params["catalog_type_id"] = catalog_type_id
+
+    params["page_size"] = page_size
+
+    params["after"] = after
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -56,6 +62,8 @@ def sync_detailed(
     *,
     client: Client,
     catalog_type_id: str,
+    page_size: Union[Unset, None, int] = 25,
+    after: Union[Unset, None, str] = UNSET,
 ) -> Response[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -63,6 +71,8 @@ def sync_detailed(
 
     Args:
         catalog_type_id (str):
+        page_size (Union[Unset, None, int]):  Default: 25.
+        after (Union[Unset, None, str]):
 
     Returns:
         Response[CatalogV2ListEntriesResponseBody]
@@ -71,6 +81,8 @@ def sync_detailed(
     kwargs = _get_kwargs(
         client=client,
         catalog_type_id=catalog_type_id,
+        page_size=page_size,
+        after=after,
     )
 
     response = httpx.request(
@@ -85,6 +97,8 @@ def sync(
     *,
     client: Client,
     catalog_type_id: str,
+    page_size: Union[Unset, None, int] = 25,
+    after: Union[Unset, None, str] = UNSET,
 ) -> Optional[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -92,6 +106,8 @@ def sync(
 
     Args:
         catalog_type_id (str):
+        page_size (Union[Unset, None, int]):  Default: 25.
+        after (Union[Unset, None, str]):
 
     Returns:
         Response[CatalogV2ListEntriesResponseBody]
@@ -100,6 +116,8 @@ def sync(
     return sync_detailed(
         client=client,
         catalog_type_id=catalog_type_id,
+        page_size=page_size,
+        after=after,
     ).parsed
 
 
@@ -107,6 +125,8 @@ async def asyncio_detailed(
     *,
     client: Client,
     catalog_type_id: str,
+    page_size: Union[Unset, None, int] = 25,
+    after: Union[Unset, None, str] = UNSET,
 ) -> Response[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -114,6 +134,8 @@ async def asyncio_detailed(
 
     Args:
         catalog_type_id (str):
+        page_size (Union[Unset, None, int]):  Default: 25.
+        after (Union[Unset, None, str]):
 
     Returns:
         Response[CatalogV2ListEntriesResponseBody]
@@ -122,6 +144,8 @@ async def asyncio_detailed(
     kwargs = _get_kwargs(
         client=client,
         catalog_type_id=catalog_type_id,
+        page_size=page_size,
+        after=after,
     )
 
     async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
@@ -134,6 +158,8 @@ async def asyncio(
     *,
     client: Client,
     catalog_type_id: str,
+    page_size: Union[Unset, None, int] = 25,
+    after: Union[Unset, None, str] = UNSET,
 ) -> Optional[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -141,6 +167,8 @@ async def asyncio(
 
     Args:
         catalog_type_id (str):
+        page_size (Union[Unset, None, int]):  Default: 25.
+        after (Union[Unset, None, str]):
 
     Returns:
         Response[CatalogV2ListEntriesResponseBody]
@@ -150,5 +178,7 @@ async def asyncio(
         await asyncio_detailed(
             client=client,
             catalog_type_id=catalog_type_id,
+            page_size=page_size,
+            after=after,
         )
     ).parsed
