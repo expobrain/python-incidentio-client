@@ -9,19 +9,23 @@ T = TypeVar("T", bound="CatalogEntryReferenceV2ResponseBody")
 class CatalogEntryReferenceV2ResponseBody:
     """
     Example:
-        {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
+        {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
         catalog_entry_id (str): ID of this catalog entry Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        catalog_entry_name (str): The name of this entry Example: Primary escalation.
         catalog_type_id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
     """
 
     catalog_entry_id: str
+    catalog_entry_name: str
     catalog_type_id: str
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         catalog_entry_id = self.catalog_entry_id
+        catalog_entry_name = self.catalog_entry_name
         catalog_type_id = self.catalog_type_id
 
         field_dict: Dict[str, Any] = {}
@@ -29,6 +33,7 @@ class CatalogEntryReferenceV2ResponseBody:
         field_dict.update(
             {
                 "catalog_entry_id": catalog_entry_id,
+                "catalog_entry_name": catalog_entry_name,
                 "catalog_type_id": catalog_type_id,
             }
         )
@@ -40,10 +45,13 @@ class CatalogEntryReferenceV2ResponseBody:
         d = src_dict.copy()
         catalog_entry_id = d.pop("catalog_entry_id")
 
+        catalog_entry_name = d.pop("catalog_entry_name")
+
         catalog_type_id = d.pop("catalog_type_id")
 
         catalog_entry_reference_v2_response_body = cls(
             catalog_entry_id=catalog_entry_id,
+            catalog_entry_name=catalog_entry_name,
             catalog_type_id=catalog_type_id,
         )
 

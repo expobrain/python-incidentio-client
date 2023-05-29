@@ -65,7 +65,8 @@ class IncidentV2ResponseBody:
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
+            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -123,6 +124,11 @@ class IncidentV2ResponseBody:
         slack_channel_name (Union[Unset, str]): Name of the slack channel Example: inc-165-green-parrot.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
+        workload_minutes_late (Union[Unset, float]): Amount of time spent on the incident in late hours Example: 40.7.
+        workload_minutes_sleeping (Union[Unset, float]): Amount of time spent on the incident in sleeping hours
+        workload_minutes_total (Union[Unset, float]): Amount of time spent on the incident in total Example: 60.7.
+        workload_minutes_working (Union[Unset, float]): Amount of time spent on the incident in working hours Example:
+            20.
     """
 
     created_at: datetime.datetime
@@ -149,6 +155,10 @@ class IncidentV2ResponseBody:
     severity: Union[Unset, "SeverityV2ResponseBody"] = UNSET
     slack_channel_name: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
+    workload_minutes_late: Union[Unset, float] = UNSET
+    workload_minutes_sleeping: Union[Unset, float] = UNSET
+    workload_minutes_total: Union[Unset, float] = UNSET
+    workload_minutes_working: Union[Unset, float] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -206,6 +216,10 @@ class IncidentV2ResponseBody:
 
         slack_channel_name = self.slack_channel_name
         summary = self.summary
+        workload_minutes_late = self.workload_minutes_late
+        workload_minutes_sleeping = self.workload_minutes_sleeping
+        workload_minutes_total = self.workload_minutes_total
+        workload_minutes_working = self.workload_minutes_working
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -244,6 +258,14 @@ class IncidentV2ResponseBody:
             field_dict["slack_channel_name"] = slack_channel_name
         if summary is not UNSET:
             field_dict["summary"] = summary
+        if workload_minutes_late is not UNSET:
+            field_dict["workload_minutes_late"] = workload_minutes_late
+        if workload_minutes_sleeping is not UNSET:
+            field_dict["workload_minutes_sleeping"] = workload_minutes_sleeping
+        if workload_minutes_total is not UNSET:
+            field_dict["workload_minutes_total"] = workload_minutes_total
+        if workload_minutes_working is not UNSET:
+            field_dict["workload_minutes_working"] = workload_minutes_working
 
         return field_dict
 
@@ -351,6 +373,14 @@ class IncidentV2ResponseBody:
 
         summary = d.pop("summary", UNSET)
 
+        workload_minutes_late = d.pop("workload_minutes_late", UNSET)
+
+        workload_minutes_sleeping = d.pop("workload_minutes_sleeping", UNSET)
+
+        workload_minutes_total = d.pop("workload_minutes_total", UNSET)
+
+        workload_minutes_working = d.pop("workload_minutes_working", UNSET)
+
         incident_v2_response_body = cls(
             created_at=created_at,
             creator=creator,
@@ -374,6 +404,10 @@ class IncidentV2ResponseBody:
             severity=severity,
             slack_channel_name=slack_channel_name,
             summary=summary,
+            workload_minutes_late=workload_minutes_late,
+            workload_minutes_sleeping=workload_minutes_sleeping,
+            workload_minutes_total=workload_minutes_total,
+            workload_minutes_working=workload_minutes_working,
         )
 
         incident_v2_response_body.additional_properties = d

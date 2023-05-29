@@ -1,0 +1,3 @@
+# incident_io_client.models.catalog_v2_create_type_request_body_icon
+
+::: incident_io_client.models.catalog_v2_create_type_request_body_icon

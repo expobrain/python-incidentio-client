@@ -47,7 +47,8 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}}
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
+            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}}
 
     Attributes:
         event_type (WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType): What type of event is this webhook
@@ -82,7 +83,8 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}.
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
+            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}.
     """
 
     event_type: WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType

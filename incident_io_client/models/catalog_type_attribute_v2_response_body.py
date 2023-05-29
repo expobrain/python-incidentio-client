@@ -9,16 +9,19 @@ T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 class CatalogTypeAttributeV2ResponseBody:
     """
     Example:
-        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}
+        {'array': False, 'external': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type':
+            'Custom["Service"]'}
 
     Attributes:
-        array (bool): Whether this column is an array
-        id (str): The ID of this column Example: 01GW2G3V0S59R238FAHPDS1R66.
-        name (str): Unique name of this column Example: tier.
-        type (str): The type of this column Example: tier.
+        array (bool): Whether this attribute is an array
+        external (bool): Set if this attribute is externally synced and therefore readonly
+        id (str): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
+        name (str): Unique name of this attribute Example: tier.
+        type (str): Catalog type name for this attribute Example: Custom["Service"].
     """
 
     array: bool
+    external: bool
     id: str
     name: str
     type: str
@@ -26,6 +29,7 @@ class CatalogTypeAttributeV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         array = self.array
+        external = self.external
         id = self.id
         name = self.name
         type = self.type
@@ -35,6 +39,7 @@ class CatalogTypeAttributeV2ResponseBody:
         field_dict.update(
             {
                 "array": array,
+                "external": external,
                 "id": id,
                 "name": name,
                 "type": type,
@@ -48,6 +53,8 @@ class CatalogTypeAttributeV2ResponseBody:
         d = src_dict.copy()
         array = d.pop("array")
 
+        external = d.pop("external")
+
         id = d.pop("id")
 
         name = d.pop("name")
@@ -56,6 +63,7 @@ class CatalogTypeAttributeV2ResponseBody:
 
         catalog_type_attribute_v2_response_body = cls(
             array=array,
+            external=external,
             id=id,
             name=name,
             type=type,
