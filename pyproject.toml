@@ -44,7 +44,7 @@ types-toml = "^0.10.8"
 types-click = "^7.1.8"
 flake8-bugbear = ">=22.10.27,<24.0.0"
 mkdocs-material = "^8.2"
-mkdocstrings-python = ">=0.8.2,<1.1.0"
+mkdocstrings-python = ">=0.8.2,<1.2.0"
 "ruamel.yaml" = "^0.17.21"
 tomli = { version = "^2.0.1", python = "<3.11" }
 
