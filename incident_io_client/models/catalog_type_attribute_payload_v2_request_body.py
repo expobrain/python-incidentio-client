@@ -2,6 +2,9 @@ from typing import Any, Dict, List, Type, TypeVar, Union
 
 import attr
 
+from ..models.catalog_type_attribute_payload_v2_request_body_mode import (
+    CatalogTypeAttributePayloadV2RequestBodyMode,
+)
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="CatalogTypeAttributePayloadV2RequestBody")
@@ -11,19 +14,23 @@ T = TypeVar("T", bound="CatalogTypeAttributePayloadV2RequestBody")
 class CatalogTypeAttributePayloadV2RequestBody:
     """
     Example:
-        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}
+        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+            'Custom["Service"]'}
 
     Attributes:
-        array (bool): Whether this column is an array
-        name (str): Unique name of this column Example: tier.
-        type (str): The type of this column Example: tier.
-        id (Union[Unset, str]): The ID of this column Example: 01GW2G3V0S59R238FAHPDS1R66.
+        array (bool): Whether this attribute is an array
+        name (str): Unique name of this attribute Example: tier.
+        type (str): Catalog type name for this attribute Example: Custom["Service"].
+        id (Union[Unset, str]): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
+        mode (Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode]): Controls how this attribute is modified
+            Example: manual.
     """
 
     array: bool
     name: str
     type: str
     id: Union[Unset, str] = UNSET
+    mode: Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -31,6 +38,9 @@ class CatalogTypeAttributePayloadV2RequestBody:
         name = self.name
         type = self.type
         id = self.id
+        mode: Union[Unset, str] = UNSET
+        if not isinstance(self.mode, Unset):
+            mode = self.mode.value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -43,6 +53,8 @@ class CatalogTypeAttributePayloadV2RequestBody:
         )
         if id is not UNSET:
             field_dict["id"] = id
+        if mode is not UNSET:
+            field_dict["mode"] = mode
 
         return field_dict
 
@@ -57,11 +69,19 @@ class CatalogTypeAttributePayloadV2RequestBody:
 
         id = d.pop("id", UNSET)
 
+        _mode = d.pop("mode", UNSET)
+        mode: Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode]
+        if isinstance(_mode, Unset):
+            mode = UNSET
+        else:
+            mode = CatalogTypeAttributePayloadV2RequestBodyMode(_mode)
+
         catalog_type_attribute_payload_v2_request_body = cls(
             array=array,
             name=name,
             type=type,
             id=id,
+            mode=mode,
         )
 
         catalog_type_attribute_payload_v2_request_body.additional_properties = d

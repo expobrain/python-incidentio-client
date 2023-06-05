@@ -14,35 +14,47 @@ T = TypeVar("T", bound="CatalogV2UpdateEntryResponseBody")
 class CatalogV2UpdateEntryResponseBody:
     """
     Example:
-        {'catalog_entry': {'attribute_values': {'abc123': {'array_value': [{'catalog_entry': {'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url':
-            'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
-            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}], 'value': {'catalog_entry':
-            {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}},
-            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'updated_at': '2021-08-17T13:28:57.801578Z'},
-            'catalog_type': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters
-            that we run inside of GKE.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Kubernetes Cluster', 'schema':
-            {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}],
-            'version': 1}, 'semantic_type': 'service', 'updated_at': '2021-08-17T13:28:57.801578Z'}}
+        {'catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123':
+            {'array_value': [{'catalog_entry': {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name':
+            'Primary escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}], 'value': {'catalog_entry': {'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'created_at': '2021-08-17T13:28:57.801578Z', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank': 3, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'catalog_type': {'annotations': {'incident.io/catalog-importer/id': 'id-of-
+            config'}, 'color': 'slate', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
+            clusters that we run inside of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
+            'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
+            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1},
+            'semantic_type': 'custom', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
-        catalog_entry (CatalogEntryV2ResponseBody):  Example: {'attribute_values': {'abc123': {'array_value':
-            [{'catalog_entry': {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id':
+        catalog_entry (CatalogEntryV2ResponseBody):  Example: {'aliases': ['lawrence@incident.io', 'lawrence'],
+            'attribute_values': {'abc123': {'array_value': [{'catalog_entry': {'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
             '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
             edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
             'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}], 'value': {'catalog_entry': {'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url':
-            'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
-            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}, 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Primary On-call', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
-        catalog_type (CatalogTypeV2ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
-            'Kubernetes Cluster', 'schema': {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name':
-            'tier', 'type': 'tier'}], 'version': 1}, 'semantic_type': 'service', 'updated_at':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'created_at': '2021-08-17T13:28:57.801578Z', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank': 3, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}.
+        catalog_type (CatalogTypeV2ResponseBody):  Example: {'annotations': {'incident.io/catalog-importer/id': 'id-of-
+            config'}, 'color': 'slate', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
+            clusters that we run inside of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
+            'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
+            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1},
+            'semantic_type': 'custom', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
             '2021-08-17T13:28:57.801578Z'}.
     """
 
