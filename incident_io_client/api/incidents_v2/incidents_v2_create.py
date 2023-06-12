@@ -65,16 +65,16 @@ def sync_detailed(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
-            really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
+            'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'retrospective_incident_options': {'slack_channel_id': 'abc123'},
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -110,16 +110,16 @@ def sync(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
-            really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
+            'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'retrospective_incident_options': {'slack_channel_id': 'abc123'},
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -148,16 +148,16 @@ async def asyncio_detailed(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
-            really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
+            'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'retrospective_incident_options': {'slack_channel_id': 'abc123'},
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]
@@ -191,16 +191,16 @@ async def asyncio(
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric':
             '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text
-            field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid',
-            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
-            really really sad, and we don't know why yet.", 'visibility': 'public'}.
+            field, I hope you like it', 'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
+            'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
+            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our
+            database is sad', 'retrospective_incident_options': {'slack_channel_id': 'abc123'},
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_team_id': 'T02A1FSLE8J', 'summary':
+            "Our database is really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Returns:
         Response[IncidentsV2CreateResponseBody]

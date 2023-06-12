@@ -2,6 +2,10 @@ from typing import Any, Dict, List, Type, TypeVar
 
 import attr
 
+from ..models.catalog_type_attribute_v2_response_body_mode import (
+    CatalogTypeAttributeV2ResponseBodyMode,
+)
+
 T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 
 
@@ -9,17 +13,20 @@ T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 class CatalogTypeAttributeV2ResponseBody:
     """
     Example:
-        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'tier', 'type': 'tier'}
+        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+            'Custom["Service"]'}
 
     Attributes:
-        array (bool): Whether this column is an array
-        id (str): The ID of this column Example: 01GW2G3V0S59R238FAHPDS1R66.
-        name (str): Unique name of this column Example: tier.
-        type (str): The type of this column Example: tier.
+        array (bool): Whether this attribute is an array
+        id (str): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
+        mode (CatalogTypeAttributeV2ResponseBodyMode): Controls how this attribute is modified Example: manual.
+        name (str): Unique name of this attribute Example: tier.
+        type (str): Catalog type name for this attribute Example: Custom["Service"].
     """
 
     array: bool
     id: str
+    mode: CatalogTypeAttributeV2ResponseBodyMode
     name: str
     type: str
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
@@ -27,6 +34,8 @@ class CatalogTypeAttributeV2ResponseBody:
     def to_dict(self) -> Dict[str, Any]:
         array = self.array
         id = self.id
+        mode = self.mode.value
+
         name = self.name
         type = self.type
 
@@ -36,6 +45,7 @@ class CatalogTypeAttributeV2ResponseBody:
             {
                 "array": array,
                 "id": id,
+                "mode": mode,
                 "name": name,
                 "type": type,
             }
@@ -50,6 +60,8 @@ class CatalogTypeAttributeV2ResponseBody:
 
         id = d.pop("id")
 
+        mode = CatalogTypeAttributeV2ResponseBodyMode(d.pop("mode"))
+
         name = d.pop("name")
 
         type = d.pop("type")
@@ -57,6 +69,7 @@ class CatalogTypeAttributeV2ResponseBody:
         catalog_type_attribute_v2_response_body = cls(
             array=array,
             id=id,
+            mode=mode,
             name=name,
             type=type,
         )

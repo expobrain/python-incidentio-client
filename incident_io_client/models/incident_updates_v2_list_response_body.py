@@ -6,7 +6,9 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.incident_update_v2_response_body import IncidentUpdateV2ResponseBody
-    from ..models.pagination_meta_response_body import PaginationMetaResponseBody
+    from ..models.pagination_meta_result_response_body import (
+        PaginationMetaResultResponseBody,
+    )
 
 
 T = TypeVar("T", bound="IncidentUpdatesV2ListResponseBody")
@@ -38,12 +40,12 @@ class IncidentUpdatesV2ListResponseBody:
             'updated_at': '2021-08-17T13:28:57.801578Z'}, 'updater': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}}].
-        pagination_meta (Union[Unset, PaginationMetaResponseBody]):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'page_size': 25}.
+        pagination_meta (Union[Unset, PaginationMetaResultResponseBody]):  Example: {'after':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
     """
 
     incident_updates: List["IncidentUpdateV2ResponseBody"]
-    pagination_meta: Union[Unset, "PaginationMetaResponseBody"] = UNSET
+    pagination_meta: Union[Unset, "PaginationMetaResultResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,7 +76,9 @@ class IncidentUpdatesV2ListResponseBody:
         from ..models.incident_update_v2_response_body import (
             IncidentUpdateV2ResponseBody,
         )
-        from ..models.pagination_meta_response_body import PaginationMetaResponseBody
+        from ..models.pagination_meta_result_response_body import (
+            PaginationMetaResultResponseBody,
+        )
 
         d = src_dict.copy()
         incident_updates = []
@@ -87,11 +91,11 @@ class IncidentUpdatesV2ListResponseBody:
             incident_updates.append(incident_updates_item)
 
         _pagination_meta = d.pop("pagination_meta", UNSET)
-        pagination_meta: Union[Unset, PaginationMetaResponseBody]
+        pagination_meta: Union[Unset, PaginationMetaResultResponseBody]
         if isinstance(_pagination_meta, Unset):
             pagination_meta = UNSET
         else:
-            pagination_meta = PaginationMetaResponseBody.from_dict(_pagination_meta)
+            pagination_meta = PaginationMetaResultResponseBody.from_dict(_pagination_meta)
 
         incident_updates_v2_list_response_body = cls(
             incident_updates=incident_updates,

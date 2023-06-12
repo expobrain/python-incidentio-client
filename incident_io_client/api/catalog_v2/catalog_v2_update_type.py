@@ -63,9 +63,10 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'description': 'Represents
-            Kubernetes clusters that we run inside of GKE.', 'name': 'Kubernetes Cluster',
-            'semantic_type': 'service'}.
+        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
+            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -97,9 +98,10 @@ def sync(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'description': 'Represents
-            Kubernetes clusters that we run inside of GKE.', 'name': 'Kubernetes Cluster',
-            'semantic_type': 'service'}.
+        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
+            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -124,9 +126,10 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'description': 'Represents
-            Kubernetes clusters that we run inside of GKE.', 'name': 'Kubernetes Cluster',
-            'semantic_type': 'service'}.
+        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
+            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -156,9 +159,10 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'description': 'Represents
-            Kubernetes clusters that we run inside of GKE.', 'name': 'Kubernetes Cluster',
-            'semantic_type': 'service'}.
+        json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
+            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]

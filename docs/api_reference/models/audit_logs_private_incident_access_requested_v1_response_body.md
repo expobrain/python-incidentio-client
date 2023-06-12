@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_private_incident_access_requested_v1_response_body
+
+::: incident_io_client.models.audit_logs_private_incident_access_requested_v1_response_body
