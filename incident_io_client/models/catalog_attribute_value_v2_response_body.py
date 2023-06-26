@@ -17,8 +17,8 @@ T = TypeVar("T", bound="CatalogAttributeValueV2ResponseBody")
 class CatalogAttributeValueV2ResponseBody:
     """
     Example:
-        {'catalog_entry': {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+        {'catalog_entry': {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
             edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
             'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}
 
@@ -26,7 +26,8 @@ class CatalogAttributeValueV2ResponseBody:
         label (str): Human readable label to be displayed for user to select Example: Lawrence Jones.
         sort_key (str): Gives an indication of how to sort the options when displayed to the user Example: 000020.
         catalog_entry (Union[Unset, CatalogEntryReferenceV2ResponseBody]):  Example: {'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}.
         image_url (Union[Unset, str]): If appropriate, URL to an image that can be displayed alongside the option
             Example: https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg.
         is_image_slack_icon (Union[Unset, bool]): If true, the image_url is a Slack icon and should be displayed as such

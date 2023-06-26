@@ -65,9 +65,10 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'attribute_values': {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'name':
-            'Primary On-call'}.
+        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
+            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
+            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
         Response[CatalogV2UpdateEntryResponseBody]
@@ -99,9 +100,10 @@ def sync(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'attribute_values': {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'name':
-            'Primary On-call'}.
+        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
+            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
+            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
         Response[CatalogV2UpdateEntryResponseBody]
@@ -126,9 +128,10 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'attribute_values': {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'name':
-            'Primary On-call'}.
+        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
+            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
+            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
         Response[CatalogV2UpdateEntryResponseBody]
@@ -158,9 +161,10 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'attribute_values': {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'name':
-            'Primary On-call'}.
+        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
+            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
+            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
         Response[CatalogV2UpdateEntryResponseBody]

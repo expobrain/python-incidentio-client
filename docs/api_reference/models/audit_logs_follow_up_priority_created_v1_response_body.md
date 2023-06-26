@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_follow_up_priority_created_v1_response_body
+
+::: incident_io_client.models.audit_logs_follow_up_priority_created_v1_response_body

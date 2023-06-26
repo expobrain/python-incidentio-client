@@ -35,11 +35,12 @@ class IncidentsV2CreateRequestBody:
         {'custom_field_entries': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee': {'email':
-            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}],
-            'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-uuid',
+            'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
             'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
             'visibility': 'public'}
@@ -55,6 +56,7 @@ class IncidentsV2CreateRequestBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}].
+        id (Union[Unset, str]): Unique identifier for the incident Example: 01FDAG4SAP5TYPT98WGR2N7W91.
         incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2RequestBody']]): Assign incident
             roles to these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
@@ -79,6 +81,7 @@ class IncidentsV2CreateRequestBody:
     idempotency_key: str
     visibility: IncidentsV2CreateRequestBodyVisibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2RequestBody"]] = UNSET
+    id: Union[Unset, str] = UNSET
     incident_role_assignments: Union[
         Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]
     ] = UNSET
@@ -109,6 +112,7 @@ class IncidentsV2CreateRequestBody:
 
                 custom_field_entries.append(custom_field_entries_item)
 
+        id = self.id
         incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
@@ -150,6 +154,8 @@ class IncidentsV2CreateRequestBody:
         )
         if custom_field_entries is not UNSET:
             field_dict["custom_field_entries"] = custom_field_entries
+        if id is not UNSET:
+            field_dict["id"] = id
         if incident_role_assignments is not UNSET:
             field_dict["incident_role_assignments"] = incident_role_assignments
         if incident_status_id is not UNSET:
@@ -202,6 +208,8 @@ class IncidentsV2CreateRequestBody:
 
             custom_field_entries.append(custom_field_entries_item)
 
+        id = d.pop("id", UNSET)
+
         incident_role_assignments = []
         _incident_role_assignments = d.pop("incident_role_assignments", UNSET)
         for incident_role_assignments_item_data in _incident_role_assignments or []:
@@ -252,6 +260,7 @@ class IncidentsV2CreateRequestBody:
             idempotency_key=idempotency_key,
             visibility=visibility,
             custom_field_entries=custom_field_entries,
+            id=id,
             incident_role_assignments=incident_role_assignments,
             incident_status_id=incident_status_id,
             incident_timestamp_values=incident_timestamp_values,
