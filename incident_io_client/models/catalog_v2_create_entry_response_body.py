@@ -13,27 +13,34 @@ T = TypeVar("T", bound="CatalogV2CreateEntryResponseBody")
 class CatalogV2CreateEntryResponseBody:
     """
     Example:
-        {'catalog_entry': {'attribute_values': {'abc123': {'array_value': [{'catalog_entry': {'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url':
-            'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
-            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}], 'value': {'catalog_entry':
-            {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}},
-            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'updated_at': '2021-08-17T13:28:57.801578Z'}}
-
-    Attributes:
-        catalog_entry (CatalogEntryV2ResponseBody):  Example: {'attribute_values': {'abc123': {'array_value':
-            [{'catalog_entry': {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+        {'catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'attribute_values': {'abc123': {'array_value': [{'catalog_entry':
+            {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
             edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
             'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}], 'value': {'catalog_entry': {'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url':
-            'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
-            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}, 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Primary On-call', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'created_at': '2021-08-17T13:28:57.801578Z', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank': 3, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}}
+
+    Attributes:
+        catalog_entry (CatalogEntryV2ResponseBody):  Example: {'aliases': ['lawrence@incident.io', 'lawrence'],
+            'archived_at': '2021-08-17T14:28:57.801578Z', 'attribute_values': {'abc123': {'array_value': [{'catalog_entry':
+            {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}], 'value': {'catalog_entry': {'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'created_at': '2021-08-17T13:28:57.801578Z', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank': 3, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}.
     """
 
     catalog_entry: "CatalogEntryV2ResponseBody"
