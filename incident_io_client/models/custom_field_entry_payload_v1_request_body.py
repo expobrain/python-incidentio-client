@@ -21,10 +21,10 @@ class CustomFieldEntryPayloadV1RequestBody:
 
     Attributes:
         custom_field_id (str): ID of the custom field this entry is linked against Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        values (List['CustomFieldValuePayloadV1RequestBody']): List of values to associate with this entry Example:
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}].
+        values (List['CustomFieldValuePayloadV1RequestBody']): List of values to associate with this entry. Use an empty
+            array to unset the value of the custom field. Example: [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}].
     """
 
     custom_field_id: str

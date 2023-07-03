@@ -6,8 +6,8 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.incident_v2_response_body import IncidentV2ResponseBody
-    from ..models.pagination_meta_with_total_response_body import (
-        PaginationMetaWithTotalResponseBody,
+    from ..models.pagination_meta_result_with_total_response_body import (
+        PaginationMetaResultWithTotalResponseBody,
     )
 
 
@@ -48,8 +48,9 @@ class IncidentsV2ListResponseBody:
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}], 'pagination_meta': {'after':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}}
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
+            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}],
+            'pagination_meta': {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}}
 
     Attributes:
         incidents (List['IncidentV2ResponseBody']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
@@ -82,13 +83,14 @@ class IncidentsV2ListResponseBody:
             **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}].
-        pagination_meta (Union[Unset, PaginationMetaWithTotalResponseBody]):  Example: {'after':
+            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
+            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}].
+        pagination_meta (Union[Unset, PaginationMetaResultWithTotalResponseBody]):  Example: {'after':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}.
     """
 
     incidents: List["IncidentV2ResponseBody"]
-    pagination_meta: Union[Unset, "PaginationMetaWithTotalResponseBody"] = UNSET
+    pagination_meta: Union[Unset, "PaginationMetaResultWithTotalResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -117,8 +119,8 @@ class IncidentsV2ListResponseBody:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.incident_v2_response_body import IncidentV2ResponseBody
-        from ..models.pagination_meta_with_total_response_body import (
-            PaginationMetaWithTotalResponseBody,
+        from ..models.pagination_meta_result_with_total_response_body import (
+            PaginationMetaResultWithTotalResponseBody,
         )
 
         d = src_dict.copy()
@@ -130,11 +132,11 @@ class IncidentsV2ListResponseBody:
             incidents.append(incidents_item)
 
         _pagination_meta = d.pop("pagination_meta", UNSET)
-        pagination_meta: Union[Unset, PaginationMetaWithTotalResponseBody]
+        pagination_meta: Union[Unset, PaginationMetaResultWithTotalResponseBody]
         if isinstance(_pagination_meta, Unset):
             pagination_meta = UNSET
         else:
-            pagination_meta = PaginationMetaWithTotalResponseBody.from_dict(_pagination_meta)
+            pagination_meta = PaginationMetaResultWithTotalResponseBody.from_dict(_pagination_meta)
 
         incidents_v2_list_response_body = cls(
             incidents=incidents,
