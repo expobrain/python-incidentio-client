@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class WebhooksPublicIncidentFollowUpCreatedV1ResponseBodyEventType(str, Enum):
+class WebhooksPublicIncidentActionUpdatedV1ResponseBodyEventType(str, Enum):
     PUBLIC_INCIDENT_INCIDENT_CREATED_V2 = "public_incident.incident_created_v2"
     PRIVATE_INCIDENT_INCIDENT_CREATED_V2 = "private_incident.incident_created_v2"
     PUBLIC_INCIDENT_INCIDENT_UPDATED_V2 = "public_incident.incident_updated_v2"
