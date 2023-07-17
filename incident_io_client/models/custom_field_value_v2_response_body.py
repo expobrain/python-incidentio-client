@@ -8,6 +8,9 @@ if TYPE_CHECKING:
     from ..models.custom_field_option_v2_response_body import (
         CustomFieldOptionV2ResponseBody,
     )
+    from ..models.embedded_catalog_entry_v2_response_body import (
+        EmbeddedCatalogEntryV2ResponseBody,
+    )
 
 
 T = TypeVar("T", bound="CustomFieldValueV2ResponseBody")
@@ -17,11 +20,16 @@ T = TypeVar("T", bound="CustomFieldValueV2ResponseBody")
 class CustomFieldValueV2ResponseBody:
     """
     Example:
-        {'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+        {'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             'value_text': 'This is my text field, I hope you like it'}
 
     Attributes:
+        value_catalog_entry (Union[Unset, EmbeddedCatalogEntryV2ResponseBody]):  Example: {'aliases':
+            ['lawrence@incident.io', 'lawrence'], 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'}.
         value_link (Union[Unset, str]): If the custom field type is 'link', this will contain the value assigned.
             Example: https://google.com/.
         value_numeric (Union[Unset, str]): If the custom field type is 'numeric', this will contain the value assigned.
@@ -32,6 +40,7 @@ class CustomFieldValueV2ResponseBody:
             Example: This is my text field, I hope you like it.
     """
 
+    value_catalog_entry: Union[Unset, "EmbeddedCatalogEntryV2ResponseBody"] = UNSET
     value_link: Union[Unset, str] = UNSET
     value_numeric: Union[Unset, str] = UNSET
     value_option: Union[Unset, "CustomFieldOptionV2ResponseBody"] = UNSET
@@ -39,6 +48,10 @@ class CustomFieldValueV2ResponseBody:
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        value_catalog_entry: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.value_catalog_entry, Unset):
+            value_catalog_entry = self.value_catalog_entry.to_dict()
+
         value_link = self.value_link
         value_numeric = self.value_numeric
         value_option: Union[Unset, Dict[str, Any]] = UNSET
@@ -50,6 +63,8 @@ class CustomFieldValueV2ResponseBody:
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if value_catalog_entry is not UNSET:
+            field_dict["value_catalog_entry"] = value_catalog_entry
         if value_link is not UNSET:
             field_dict["value_link"] = value_link
         if value_numeric is not UNSET:
@@ -66,8 +81,20 @@ class CustomFieldValueV2ResponseBody:
         from ..models.custom_field_option_v2_response_body import (
             CustomFieldOptionV2ResponseBody,
         )
+        from ..models.embedded_catalog_entry_v2_response_body import (
+            EmbeddedCatalogEntryV2ResponseBody,
+        )
 
         d = src_dict.copy()
+        _value_catalog_entry = d.pop("value_catalog_entry", UNSET)
+        value_catalog_entry: Union[Unset, EmbeddedCatalogEntryV2ResponseBody]
+        if isinstance(_value_catalog_entry, Unset):
+            value_catalog_entry = UNSET
+        else:
+            value_catalog_entry = EmbeddedCatalogEntryV2ResponseBody.from_dict(
+                _value_catalog_entry
+            )
+
         value_link = d.pop("value_link", UNSET)
 
         value_numeric = d.pop("value_numeric", UNSET)
@@ -82,6 +109,7 @@ class CustomFieldValueV2ResponseBody:
         value_text = d.pop("value_text", UNSET)
 
         custom_field_value_v2_response_body = cls(
+            value_catalog_entry=value_catalog_entry,
             value_link=value_link,
             value_numeric=value_numeric,
             value_option=value_option,

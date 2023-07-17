@@ -24,7 +24,9 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
             'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
             'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            'values': [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             'value_text': 'This is my text field, I hope you like it'}]}], 'external_issue_reference': {'issue_name':
             'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
@@ -60,7 +62,9 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
             {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
-            'values': [{'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            'values': [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             'value_text': 'This is my text field, I hope you like it'}]}], 'external_issue_reference': {'issue_name':
             'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',

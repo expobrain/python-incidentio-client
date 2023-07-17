@@ -16,21 +16,21 @@ class IncidentsV2EditRequestBody:
     """
     Example:
         {'incident': {'custom_field_entries': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know why yet."},
-            'notify_incident_channel': True}
-
-    Attributes:
-        incident (IncidentEditPayloadV2RequestBody):  Example: {'custom_field_entries': [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}],
             'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'summary': "Our database is really really sad, and we don't know why yet."}.
+            'summary': "Our database is really really sad, and we don't know why yet."}, 'notify_incident_channel': True}
+
+    Attributes:
+        incident (IncidentEditPayloadV2RequestBody):  Example: {'custom_field_entries': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
+            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
+            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know why yet."}.
         notify_incident_channel (bool): Should we send Slack channel notifications to inform responders of this update?
             Note that this won't work if the Slack channel has already been archived. Example: True.
     """

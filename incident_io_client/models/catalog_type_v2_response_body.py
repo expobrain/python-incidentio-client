@@ -40,7 +40,7 @@ class CatalogTypeV2ResponseBody:
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
             inside of GKE..
         icon (CatalogTypeV2ResponseBodyIcon): Sets the display icon of this type in the dashboard Example: bolt.
-        id (str): ID of this resource Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         is_editable (bool): Catalog types that are synced with external resources can't be edited
         name (str): Name is the human readable name of this type Example: Kubernetes Cluster.
         ranked (bool): If this type should be ranked Example: True.

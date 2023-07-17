@@ -21,18 +21,19 @@ class IncidentEditPayloadV2RequestBody:
     """
     Example:
         {'custom_field_entries': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know why yet."}
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}],
+            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'summary': "Our database is really really sad, and we don't know why yet."}
 
     Attributes:
         custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV2RequestBody']]): Set the incident's custom
             fields to these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}].
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}].
         incident_timestamp_values (Union[Unset, List['IncidentTimestampValuePayloadV2RequestBody']]): Assign the
             incident's timestamps to these values Example: [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}].

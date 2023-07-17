@@ -14,6 +14,7 @@ class AuditLogTargetV2ResponseBodyType(str, Enum):
     INCIDENT_TIMESTAMP = "incident_timestamp"
     INCIDENT_TYPE = "incident_type"
     INTEGRATION = "integration"
+    INTERNAL_STATUS_PAGE = "internal_status_page"
     POLICY = "policy"
     PRIVATE_INCIDENT_MEMBERSHIP = "private_incident_membership"
     RBAC_ROLE = "rbac_role"

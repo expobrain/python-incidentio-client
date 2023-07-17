@@ -10,6 +10,10 @@ class WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBodyEventType(str, Enum):
     PRIVATE_INCIDENT_FOLLOW_UP_CREATED_V1 = "private_incident.follow_up_created_v1"
     PUBLIC_INCIDENT_FOLLOW_UP_UPDATED_V1 = "public_incident.follow_up_updated_v1"
     PRIVATE_INCIDENT_FOLLOW_UP_UPDATED_V1 = "private_incident.follow_up_updated_v1"
+    PUBLIC_INCIDENT_ACTION_CREATED_V1 = "public_incident.action_created_v1"
+    PRIVATE_INCIDENT_ACTION_CREATED_V1 = "private_incident.action_created_v1"
+    PUBLIC_INCIDENT_ACTION_UPDATED_V1 = "public_incident.action_updated_v1"
+    PRIVATE_INCIDENT_ACTION_UPDATED_V1 = "private_incident.action_updated_v1"
 
     def __str__(self) -> str:
         return str(self.value)

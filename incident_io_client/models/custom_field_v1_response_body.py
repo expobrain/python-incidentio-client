@@ -25,11 +25,12 @@ T = TypeVar("T", bound="CustomFieldV1ResponseBody")
 class CustomFieldV1ResponseBody:
     """
     Example:
-        {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue',
-            'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
-            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
+        {'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
+            'Which team is impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'Affected Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure':
+            True, 'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post': True, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -49,6 +50,8 @@ class CustomFieldV1ResponseBody:
             true if the field is always required. Example: True.
         show_before_update (bool): Whether a custom field should be shown in the incident update modal. Example: True.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
+        catalog_type_id (Union[Unset, str]): For catalog fields, the ID of the associated catalog type Example:
+            01FCNDV6P870EA6S7TK1DSYDG0.
         show_in_announcement_post (Union[Unset, bool]): Whether a custom field should be shown in the list of fields as
             part of the announcement post when set. Example: True.
     """
@@ -64,6 +67,7 @@ class CustomFieldV1ResponseBody:
     show_before_creation: bool
     show_before_update: bool
     updated_at: datetime.datetime
+    catalog_type_id: Union[Unset, str] = UNSET
     show_in_announcement_post: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -88,6 +92,7 @@ class CustomFieldV1ResponseBody:
         show_before_update = self.show_before_update
         updated_at = self.updated_at.isoformat()
 
+        catalog_type_id = self.catalog_type_id
         show_in_announcement_post = self.show_in_announcement_post
 
         field_dict: Dict[str, Any] = {}
@@ -107,6 +112,8 @@ class CustomFieldV1ResponseBody:
                 "updated_at": updated_at,
             }
         )
+        if catalog_type_id is not UNSET:
+            field_dict["catalog_type_id"] = catalog_type_id
         if show_in_announcement_post is not UNSET:
             field_dict["show_in_announcement_post"] = show_in_announcement_post
 
@@ -146,6 +153,8 @@ class CustomFieldV1ResponseBody:
 
         updated_at = isoparse(d.pop("updated_at"))
 
+        catalog_type_id = d.pop("catalog_type_id", UNSET)
+
         show_in_announcement_post = d.pop("show_in_announcement_post", UNSET)
 
         custom_field_v1_response_body = cls(
@@ -160,6 +169,7 @@ class CustomFieldV1ResponseBody:
             show_before_creation=show_before_creation,
             show_before_update=show_before_update,
             updated_at=updated_at,
+            catalog_type_id=catalog_type_id,
             show_in_announcement_post=show_in_announcement_post,
         )
 
