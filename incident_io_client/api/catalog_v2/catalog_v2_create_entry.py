@@ -59,7 +59,7 @@ def sync_detailed(
 ) -> Response[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
-     Create an entry for a type in the catalog.
+     Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
@@ -92,7 +92,7 @@ def sync(
 ) -> Optional[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
-     Create an entry for a type in the catalog.
+     Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
@@ -118,7 +118,7 @@ async def asyncio_detailed(
 ) -> Response[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
-     Create an entry for a type in the catalog.
+     Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
@@ -149,7 +149,7 @@ async def asyncio(
 ) -> Optional[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
-     Create an entry for a type in the catalog.
+     Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':

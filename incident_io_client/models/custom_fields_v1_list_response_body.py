@@ -13,19 +13,20 @@ T = TypeVar("T", bound="CustomFieldsV1ListResponseBody")
 class CustomFieldsV1ListResponseBody:
     """
     Example:
-        {'custom_fields': [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this
-            issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
-            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
-
-    Attributes:
-        custom_fields (List['CustomFieldV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+        {'custom_fields': [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}],
             'required': 'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
-            'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
+            'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
+
+    Attributes:
+        custom_fields (List['CustomFieldV1ResponseBody']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue',
+            'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
+            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
+            'Product'}], 'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
+            'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
     custom_fields: List["CustomFieldV1ResponseBody"]

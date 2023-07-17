@@ -46,7 +46,7 @@ class CatalogEntryV2ResponseBody:
             'Lawrence Jones', 'literal': 'SEV123', 'sort_key': '000020'}}}.
         catalog_type_id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         created_at (datetime.datetime): When this entry was created Example: 2021-08-17T13:28:57.801578Z.
-        id (str): ID of this resource Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        id (str): ID of this catalog entry Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name is the human readable name of this entry Example: Primary On-call.
         rank (int): When catalog type is ranked, this is used to help order things Example: 3.
         updated_at (datetime.datetime): When this entry was last updated Example: 2021-08-17T13:28:57.801578Z.

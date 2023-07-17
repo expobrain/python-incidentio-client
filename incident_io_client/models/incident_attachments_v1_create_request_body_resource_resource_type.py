@@ -9,6 +9,7 @@ class IncidentAttachmentsV1CreateRequestBodyResourceResourceType(str, Enum):
     SENTRY_ISSUE = "sentry_issue"
     ATLASSIAN_STATUSPAGE_INCIDENT = "atlassian_statuspage_incident"
     ZENDESK_TICKET = "zendesk_ticket"
+    GOOGLE_CALENDAR_EVENT = "google_calendar_event"
     STATUSPAGE_INCIDENT = "statuspage_incident"
 
     def __str__(self) -> str:

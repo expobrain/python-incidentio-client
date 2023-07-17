@@ -11,12 +11,13 @@ T = TypeVar("T", bound="CustomFieldValuePayloadV1RequestBody")
 class CustomFieldValuePayloadV1RequestBody:
     """
     Example:
-        {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
-            'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}
+        {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}
 
     Attributes:
         id (Union[Unset, str]): Unique identifier for the custom field value Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        value_catalog_entry_id (Union[Unset, str]): ID of the catalog entry Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         value_link (Union[Unset, str]): If the custom field type is 'link', this will contain the value assigned.
             Example: https://google.com/.
         value_numeric (Union[Unset, str]): If the custom field type is 'numeric', this will contain the value assigned.
@@ -28,6 +29,7 @@ class CustomFieldValuePayloadV1RequestBody:
     """
 
     id: Union[Unset, str] = UNSET
+    value_catalog_entry_id: Union[Unset, str] = UNSET
     value_link: Union[Unset, str] = UNSET
     value_numeric: Union[Unset, str] = UNSET
     value_option_id: Union[Unset, str] = UNSET
@@ -37,6 +39,7 @@ class CustomFieldValuePayloadV1RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+        value_catalog_entry_id = self.value_catalog_entry_id
         value_link = self.value_link
         value_numeric = self.value_numeric
         value_option_id = self.value_option_id
@@ -48,6 +51,8 @@ class CustomFieldValuePayloadV1RequestBody:
         field_dict.update({})
         if id is not UNSET:
             field_dict["id"] = id
+        if value_catalog_entry_id is not UNSET:
+            field_dict["value_catalog_entry_id"] = value_catalog_entry_id
         if value_link is not UNSET:
             field_dict["value_link"] = value_link
         if value_numeric is not UNSET:
@@ -66,6 +71,8 @@ class CustomFieldValuePayloadV1RequestBody:
         d = src_dict.copy()
         id = d.pop("id", UNSET)
 
+        value_catalog_entry_id = d.pop("value_catalog_entry_id", UNSET)
+
         value_link = d.pop("value_link", UNSET)
 
         value_numeric = d.pop("value_numeric", UNSET)
@@ -78,6 +85,7 @@ class CustomFieldValuePayloadV1RequestBody:
 
         custom_field_value_payload_v1_request_body = cls(
             id=id,
+            value_catalog_entry_id=value_catalog_entry_id,
             value_link=value_link,
             value_numeric=value_numeric,
             value_option_id=value_option_id,
