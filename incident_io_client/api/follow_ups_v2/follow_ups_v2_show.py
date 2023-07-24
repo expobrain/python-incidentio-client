@@ -4,17 +4,16 @@ from typing import Any, Dict, Optional
 import httpx
 
 from ...client import Client
-from ...models.incident_statuses_v1_list_response_body import (
-    IncidentStatusesV1ListResponseBody,
-)
+from ...models.follow_ups_v2_show_response_body import FollowUpsV2ShowResponseBody
 from ...types import Response
 
 
 def _get_kwargs(
+    id: str,
     *,
     client: Client,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/incident_statuses"
+    url = f"{client.base_url}/v2/follow_ups/{id}"
 
     headers: Dict[str, str] = client.get_headers()
     cookies: Dict[str, Any] = client.get_cookies()
@@ -28,15 +27,15 @@ def _get_kwargs(
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[IncidentStatusesV1ListResponseBody]:
+def _parse_response(*, response: httpx.Response) -> Optional[FollowUpsV2ShowResponseBody]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = IncidentStatusesV1ListResponseBody.from_dict(response.json())
+        response_200 = FollowUpsV2ShowResponseBody.from_dict(response.json())
 
         return response_200
     return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[IncidentStatusesV1ListResponseBody]:
+def _build_response(*, response: httpx.Response) -> Response[FollowUpsV2ShowResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -46,18 +45,23 @@ def _build_response(*, response: httpx.Response) -> Response[IncidentStatusesV1L
 
 
 def sync_detailed(
+    id: str,
     *,
     client: Client,
-) -> Response[IncidentStatusesV1ListResponseBody]:
-    """List Incident Statuses V1
+) -> Response[FollowUpsV2ShowResponseBody]:
+    """Show Follow-ups V2
 
-     List all incident statuses for an organisation.
+     Get a single incident follow-up.
+
+    Args:
+        id (str):
 
     Returns:
-        Response[IncidentStatusesV1ListResponseBody]
+        Response[FollowUpsV2ShowResponseBody]
     """
 
     kwargs = _get_kwargs(
+        id=id,
         client=client,
     )
 
@@ -70,35 +74,45 @@ def sync_detailed(
 
 
 def sync(
+    id: str,
     *,
     client: Client,
-) -> Optional[IncidentStatusesV1ListResponseBody]:
-    """List Incident Statuses V1
+) -> Optional[FollowUpsV2ShowResponseBody]:
+    """Show Follow-ups V2
 
-     List all incident statuses for an organisation.
+     Get a single incident follow-up.
+
+    Args:
+        id (str):
 
     Returns:
-        Response[IncidentStatusesV1ListResponseBody]
+        Response[FollowUpsV2ShowResponseBody]
     """
 
     return sync_detailed(
+        id=id,
         client=client,
     ).parsed
 
 
 async def asyncio_detailed(
+    id: str,
     *,
     client: Client,
-) -> Response[IncidentStatusesV1ListResponseBody]:
-    """List Incident Statuses V1
+) -> Response[FollowUpsV2ShowResponseBody]:
+    """Show Follow-ups V2
 
-     List all incident statuses for an organisation.
+     Get a single incident follow-up.
+
+    Args:
+        id (str):
 
     Returns:
-        Response[IncidentStatusesV1ListResponseBody]
+        Response[FollowUpsV2ShowResponseBody]
     """
 
     kwargs = _get_kwargs(
+        id=id,
         client=client,
     )
 
@@ -109,19 +123,24 @@ async def asyncio_detailed(
 
 
 async def asyncio(
+    id: str,
     *,
     client: Client,
-) -> Optional[IncidentStatusesV1ListResponseBody]:
-    """List Incident Statuses V1
+) -> Optional[FollowUpsV2ShowResponseBody]:
+    """Show Follow-ups V2
 
-     List all incident statuses for an organisation.
+     Get a single incident follow-up.
+
+    Args:
+        id (str):
 
     Returns:
-        Response[IncidentStatusesV1ListResponseBody]
+        Response[FollowUpsV2ShowResponseBody]
     """
 
     return (
         await asyncio_detailed(
+            id=id,
             client=client,
         )
     ).parsed
