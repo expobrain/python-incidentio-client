@@ -2,9 +2,14 @@
 
 from .action_v1_response_body import ActionV1ResponseBody
 from .action_v1_response_body_status import ActionV1ResponseBodyStatus
+from .action_v2_response_body import ActionV2ResponseBody
+from .action_v2_response_body_status import ActionV2ResponseBodyStatus
 from .actions_v1_list_incident_mode import ActionsV1ListIncidentMode
 from .actions_v1_list_response_body import ActionsV1ListResponseBody
 from .actions_v1_show_response_body import ActionsV1ShowResponseBody
+from .actions_v2_list_incident_mode import ActionsV2ListIncidentMode
+from .actions_v2_list_response_body import ActionsV2ListResponseBody
+from .actions_v2_show_response_body import ActionsV2ShowResponseBody
 from .actor_v1_response_body import ActorV1ResponseBody
 from .actor_v2_response_body import ActorV2ResponseBody
 from .api_key_v1_response_body import APIKeyV1ResponseBody
@@ -379,6 +384,12 @@ from .external_resource_v1_response_body import ExternalResourceV1ResponseBody
 from .external_resource_v1_response_body_resource_type import (
     ExternalResourceV1ResponseBodyResourceType,
 )
+from .follow_up_priority_v2_response_body import FollowUpPriorityV2ResponseBody
+from .follow_up_v2_response_body import FollowUpV2ResponseBody
+from .follow_up_v2_response_body_status import FollowUpV2ResponseBodyStatus
+from .follow_ups_v2_list_incident_mode import FollowUpsV2ListIncidentMode
+from .follow_ups_v2_list_response_body import FollowUpsV2ListResponseBody
+from .follow_ups_v2_show_response_body import FollowUpsV2ShowResponseBody
 from .identity_v1_response_body import IdentityV1ResponseBody
 from .identity_v1_response_body_roles_item import IdentityV1ResponseBodyRolesItem
 from .incident_attachment_v1_response_body import IncidentAttachmentV1ResponseBody
@@ -609,8 +620,13 @@ __all__ = (
     "ActionsV1ListIncidentMode",
     "ActionsV1ListResponseBody",
     "ActionsV1ShowResponseBody",
+    "ActionsV2ListIncidentMode",
+    "ActionsV2ListResponseBody",
+    "ActionsV2ShowResponseBody",
     "ActionV1ResponseBody",
     "ActionV1ResponseBodyStatus",
+    "ActionV2ResponseBody",
+    "ActionV2ResponseBodyStatus",
     "ActorV1ResponseBody",
     "ActorV2ResponseBody",
     "APIKeyV1ResponseBody",
@@ -771,6 +787,12 @@ __all__ = (
     "ExternalIssueReferenceV2ResponseBodyProvider",
     "ExternalResourceV1ResponseBody",
     "ExternalResourceV1ResponseBodyResourceType",
+    "FollowUpPriorityV2ResponseBody",
+    "FollowUpsV2ListIncidentMode",
+    "FollowUpsV2ListResponseBody",
+    "FollowUpsV2ShowResponseBody",
+    "FollowUpV2ResponseBody",
+    "FollowUpV2ResponseBodyStatus",
     "IdentityV1ResponseBody",
     "IdentityV1ResponseBodyRolesItem",
     "IncidentAttachmentsV1CreateRequestBody",

@@ -51,7 +51,7 @@ def sync_detailed(
     *,
     client: Client,
 ) -> Response[IncidentStatusesV1ShowResponseBody]:
-    """Show IncidentStatuses V1
+    """Show Incident Statuses V1
 
      Get a single incident status.
 
@@ -80,7 +80,7 @@ def sync(
     *,
     client: Client,
 ) -> Optional[IncidentStatusesV1ShowResponseBody]:
-    """Show IncidentStatuses V1
+    """Show Incident Statuses V1
 
      Get a single incident status.
 
@@ -102,7 +102,7 @@ async def asyncio_detailed(
     *,
     client: Client,
 ) -> Response[IncidentStatusesV1ShowResponseBody]:
-    """Show IncidentStatuses V1
+    """Show Incident Statuses V1
 
      Get a single incident status.
 
@@ -129,7 +129,7 @@ async def asyncio(
     *,
     client: Client,
 ) -> Optional[IncidentStatusesV1ShowResponseBody]:
-    """Show IncidentStatuses V1
+    """Show Incident Statuses V1
 
      Get a single incident status.
 
