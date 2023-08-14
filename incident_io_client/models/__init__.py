@@ -2,9 +2,14 @@
 
 from .action_v1_response_body import ActionV1ResponseBody
 from .action_v1_response_body_status import ActionV1ResponseBodyStatus
+from .action_v2_response_body import ActionV2ResponseBody
+from .action_v2_response_body_status import ActionV2ResponseBodyStatus
 from .actions_v1_list_incident_mode import ActionsV1ListIncidentMode
 from .actions_v1_list_response_body import ActionsV1ListResponseBody
 from .actions_v1_show_response_body import ActionsV1ShowResponseBody
+from .actions_v2_list_incident_mode import ActionsV2ListIncidentMode
+from .actions_v2_list_response_body import ActionsV2ListResponseBody
+from .actions_v2_show_response_body import ActionsV2ShowResponseBody
 from .actor_v1_response_body import ActorV1ResponseBody
 from .actor_v2_response_body import ActorV2ResponseBody
 from .api_key_v1_response_body import APIKeyV1ResponseBody
@@ -338,6 +343,9 @@ from .custom_field_type_info_v2_response_body_field_type import (
 from .custom_field_v1_response_body import CustomFieldV1ResponseBody
 from .custom_field_v1_response_body_field_type import CustomFieldV1ResponseBodyFieldType
 from .custom_field_v1_response_body_required import CustomFieldV1ResponseBodyRequired
+from .custom_field_v1_response_body_required_v2 import (
+    CustomFieldV1ResponseBodyRequiredV2,
+)
 from .custom_field_value_payload_v1_request_body import (
     CustomFieldValuePayloadV1RequestBody,
 )
@@ -353,12 +361,18 @@ from .custom_fields_v1_create_request_body_field_type import (
 from .custom_fields_v1_create_request_body_required import (
     CustomFieldsV1CreateRequestBodyRequired,
 )
+from .custom_fields_v1_create_request_body_required_v2 import (
+    CustomFieldsV1CreateRequestBodyRequiredV2,
+)
 from .custom_fields_v1_create_response_body import CustomFieldsV1CreateResponseBody
 from .custom_fields_v1_list_response_body import CustomFieldsV1ListResponseBody
 from .custom_fields_v1_show_response_body import CustomFieldsV1ShowResponseBody
 from .custom_fields_v1_update_request_body import CustomFieldsV1UpdateRequestBody
 from .custom_fields_v1_update_request_body_required import (
     CustomFieldsV1UpdateRequestBodyRequired,
+)
+from .custom_fields_v1_update_request_body_required_v2 import (
+    CustomFieldsV1UpdateRequestBodyRequiredV2,
 )
 from .custom_fields_v1_update_response_body import CustomFieldsV1UpdateResponseBody
 from .embedded_catalog_entry_v1_response_body import EmbeddedCatalogEntryV1ResponseBody
@@ -379,6 +393,12 @@ from .external_resource_v1_response_body import ExternalResourceV1ResponseBody
 from .external_resource_v1_response_body_resource_type import (
     ExternalResourceV1ResponseBodyResourceType,
 )
+from .follow_up_priority_v2_response_body import FollowUpPriorityV2ResponseBody
+from .follow_up_v2_response_body import FollowUpV2ResponseBody
+from .follow_up_v2_response_body_status import FollowUpV2ResponseBodyStatus
+from .follow_ups_v2_list_incident_mode import FollowUpsV2ListIncidentMode
+from .follow_ups_v2_list_response_body import FollowUpsV2ListResponseBody
+from .follow_ups_v2_show_response_body import FollowUpsV2ShowResponseBody
 from .identity_v1_response_body import IdentityV1ResponseBody
 from .identity_v1_response_body_roles_item import IdentityV1ResponseBodyRolesItem
 from .incident_attachment_v1_response_body import IncidentAttachmentV1ResponseBody
@@ -609,8 +629,13 @@ __all__ = (
     "ActionsV1ListIncidentMode",
     "ActionsV1ListResponseBody",
     "ActionsV1ShowResponseBody",
+    "ActionsV2ListIncidentMode",
+    "ActionsV2ListResponseBody",
+    "ActionsV2ShowResponseBody",
     "ActionV1ResponseBody",
     "ActionV1ResponseBodyStatus",
+    "ActionV2ResponseBody",
+    "ActionV2ResponseBodyStatus",
     "ActorV1ResponseBody",
     "ActorV2ResponseBody",
     "APIKeyV1ResponseBody",
@@ -746,11 +771,13 @@ __all__ = (
     "CustomFieldsV1CreateRequestBody",
     "CustomFieldsV1CreateRequestBodyFieldType",
     "CustomFieldsV1CreateRequestBodyRequired",
+    "CustomFieldsV1CreateRequestBodyRequiredV2",
     "CustomFieldsV1CreateResponseBody",
     "CustomFieldsV1ListResponseBody",
     "CustomFieldsV1ShowResponseBody",
     "CustomFieldsV1UpdateRequestBody",
     "CustomFieldsV1UpdateRequestBodyRequired",
+    "CustomFieldsV1UpdateRequestBodyRequiredV2",
     "CustomFieldsV1UpdateResponseBody",
     "CustomFieldTypeInfoV1ResponseBody",
     "CustomFieldTypeInfoV1ResponseBodyFieldType",
@@ -759,6 +786,7 @@ __all__ = (
     "CustomFieldV1ResponseBody",
     "CustomFieldV1ResponseBodyFieldType",
     "CustomFieldV1ResponseBodyRequired",
+    "CustomFieldV1ResponseBodyRequiredV2",
     "CustomFieldValuePayloadV1RequestBody",
     "CustomFieldValuePayloadV2RequestBody",
     "CustomFieldValueV1ResponseBody",
@@ -771,6 +799,12 @@ __all__ = (
     "ExternalIssueReferenceV2ResponseBodyProvider",
     "ExternalResourceV1ResponseBody",
     "ExternalResourceV1ResponseBodyResourceType",
+    "FollowUpPriorityV2ResponseBody",
+    "FollowUpsV2ListIncidentMode",
+    "FollowUpsV2ListResponseBody",
+    "FollowUpsV2ShowResponseBody",
+    "FollowUpV2ResponseBody",
+    "FollowUpV2ResponseBodyStatus",
     "IdentityV1ResponseBody",
     "IdentityV1ResponseBodyRolesItem",
     "IncidentAttachmentsV1CreateRequestBody",

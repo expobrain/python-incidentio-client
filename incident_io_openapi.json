@@ -140,6 +140,83 @@
         "title": "ActionV1ResponseBody",
         "type": "object"
       },
+      "ActionV2ResponseBody": {
+        "example": {
+          "assignee": {
+            "email": "lisa@incident.io",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Lisa Karlin Curtis",
+            "role": "viewer",
+            "slack_user_id": "U02AYNF2XJM"
+          },
+          "completed_at": "2021-08-17T13:28:57.801578Z",
+          "created_at": "2021-08-17T13:28:57.801578Z",
+          "description": "Call the fire brigade",
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "status": "outstanding",
+          "updated_at": "2021-08-17T13:28:57.801578Z"
+        },
+        "properties": {
+          "assignee": {
+            "$ref": "#/components/schemas/UserV2ResponseBody"
+          },
+          "completed_at": {
+            "description": "When the action was completed",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "When the action was created",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the action",
+            "example": "Call the fire brigade",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the action",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "incident_id": {
+            "description": "Unique identifier of the incident the action belongs to",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status of the action",
+            "enum": [
+              "outstanding",
+              "completed",
+              "deleted",
+              "not_doing"
+            ],
+            "example": "outstanding",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "When the action was last updated",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at",
+          "description",
+          "id",
+          "incident_id",
+          "status",
+          "updated_at"
+        ],
+        "title": "ActionV2ResponseBody",
+        "type": "object"
+      },
       "ActionsV1ListResponseBody": {
         "example": {
           "actions": [
@@ -239,6 +316,89 @@
           "action"
         ],
         "title": "ActionsV1ShowResponseBody",
+        "type": "object"
+      },
+      "ActionsV2ListResponseBody": {
+        "example": {
+          "actions": [
+            {
+              "assignee": {
+                "email": "lisa@incident.io",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Lisa Karlin Curtis",
+                "role": "viewer",
+                "slack_user_id": "U02AYNF2XJM"
+              },
+              "completed_at": "2021-08-17T13:28:57.801578Z",
+              "created_at": "2021-08-17T13:28:57.801578Z",
+              "description": "Call the fire brigade",
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "status": "outstanding",
+              "updated_at": "2021-08-17T13:28:57.801578Z"
+            }
+          ]
+        },
+        "properties": {
+          "actions": {
+            "example": [
+              {
+                "assignee": {
+                  "email": "lisa@incident.io",
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "name": "Lisa Karlin Curtis",
+                  "role": "viewer",
+                  "slack_user_id": "U02AYNF2XJM"
+                },
+                "completed_at": "2021-08-17T13:28:57.801578Z",
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "description": "Call the fire brigade",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "status": "outstanding",
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ActionV2ResponseBody"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "actions"
+        ],
+        "title": "ActionsV2ListResponseBody",
+        "type": "object"
+      },
+      "ActionsV2ShowResponseBody": {
+        "example": {
+          "action": {
+            "assignee": {
+              "email": "lisa@incident.io",
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Lisa Karlin Curtis",
+              "role": "viewer",
+              "slack_user_id": "U02AYNF2XJM"
+            },
+            "completed_at": "2021-08-17T13:28:57.801578Z",
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Call the fire brigade",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "status": "outstanding",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/ActionV2ResponseBody"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "title": "ActionsV2ShowResponseBody",
         "type": "object"
       },
       "ActorV1ResponseBody": {
@@ -6380,7 +6540,6 @@
           "icon": "bolt",
           "name": "Kubernetes Cluster",
           "ranked": true,
-          "semantic_type": "custom",
           "type_name": "Custom[\"BackstageGroup\"]"
         },
         "properties": {
@@ -6445,11 +6604,6 @@
             "description": "If this type should be ranked",
             "example": true,
             "type": "boolean"
-          },
-          "semantic_type": {
-            "description": "Semantic type of this resource",
-            "example": "custom",
-            "type": "string"
           },
           "type_name": {
             "description": "The type name of this catalog type, to be used when defining attributes. This is immutable once a CatalogType has been created. For non-externally sync types, it must follow the pattern Custom[\"SomeName \"]",
@@ -7111,8 +7265,7 @@
           "description": "Represents Kubernetes clusters that we run inside of GKE.",
           "icon": "bolt",
           "name": "Kubernetes Cluster",
-          "ranked": true,
-          "semantic_type": "custom"
+          "ranked": true
         },
         "properties": {
           "annotations": {
@@ -7176,11 +7329,6 @@
             "description": "If this type should be ranked",
             "example": true,
             "type": "boolean"
-          },
-          "semantic_type": {
-            "description": "Semantic type of this resource",
-            "example": "custom",
-            "type": "string"
           }
         },
         "required": [
@@ -7976,6 +8124,7 @@
             }
           ],
           "required": "never",
+          "required_v2": "never",
           "show_before_closure": true,
           "show_before_creation": true,
           "show_before_update": true,
@@ -8038,7 +8187,7 @@
             "type": "array"
           },
           "required": {
-            "description": "When this custom field must be set during the incident lifecycle.",
+            "description": "When this custom field must be set during the incident lifecycle. [DEPRECATED: please use required_v2 instead].",
             "enum": [
               "never",
               "before_closure",
@@ -8047,8 +8196,18 @@
             "example": "never",
             "type": "string"
           },
+          "required_v2": {
+            "description": "When this custom field must be set during the incident lifecycle.",
+            "enum": [
+              "never",
+              "before_resolution",
+              "always"
+            ],
+            "example": "never",
+            "type": "string"
+          },
           "show_before_closure": {
-            "description": "Whether a custom field should be shown in the incident close modal. If this custom field is required before closure, but no value has been set for it, the field will be shown in the closure modal whatever the value of this setting.",
+            "description": "Whether a custom field should be shown in the incident resolve modal. If this custom field is required before resolution, but no value has been set for it, the field will be shown in the resolve modal whatever the value of this setting.",
             "example": true,
             "type": "boolean"
           },
@@ -8081,7 +8240,6 @@
           "id",
           "name",
           "options",
-          "required",
           "show_before_closure",
           "show_before_creation",
           "show_before_update",
@@ -8290,6 +8448,7 @@
           "field_type": "single_select",
           "name": "Affected Team",
           "required": "never",
+          "required_v2": "never",
           "show_before_closure": true,
           "show_before_creation": true,
           "show_before_update": true,
@@ -8320,7 +8479,7 @@
             "type": "string"
           },
           "required": {
-            "description": "When this custom field must be set during the incident lifecycle.",
+            "description": "When this custom field must be set during the incident lifecycle. [DEPRECATED: please use required_v2 instead].",
             "enum": [
               "never",
               "before_closure",
@@ -8329,8 +8488,18 @@
             "example": "never",
             "type": "string"
           },
+          "required_v2": {
+            "description": "When this custom field must be set during the incident lifecycle.",
+            "enum": [
+              "never",
+              "before_resolution",
+              "always"
+            ],
+            "example": "never",
+            "type": "string"
+          },
           "show_before_closure": {
-            "description": "Whether a custom field should be shown in the incident close modal. If this custom field is required before closure, but no value has been set for it, the field will be shown in the closure modal whatever the value of this setting.",
+            "description": "Whether a custom field should be shown in the incident resolve modal. If this custom field is required before resolution, but no value has been set for it, the field will be shown in the resolve modal whatever the value of this setting.",
             "example": true,
             "type": "boolean"
           },
@@ -8354,7 +8523,6 @@
           "description",
           "field_type",
           "name",
-          "required",
           "show_before_closure",
           "show_before_creation",
           "show_before_update"
@@ -8380,6 +8548,7 @@
               }
             ],
             "required": "never",
+            "required_v2": "never",
             "show_before_closure": true,
             "show_before_creation": true,
             "show_before_update": true,
@@ -8417,6 +8586,7 @@
                 }
               ],
               "required": "never",
+              "required_v2": "never",
               "show_before_closure": true,
               "show_before_creation": true,
               "show_before_update": true,
@@ -8444,6 +8614,7 @@
                   }
                 ],
                 "required": "never",
+                "required_v2": "never",
                 "show_before_closure": true,
                 "show_before_creation": true,
                 "show_before_update": true,
@@ -8481,6 +8652,7 @@
               }
             ],
             "required": "never",
+            "required_v2": "never",
             "show_before_closure": true,
             "show_before_creation": true,
             "show_before_update": true,
@@ -8504,6 +8676,7 @@
           "description": "Which team is impacted by this issue",
           "name": "Affected Team",
           "required": "never",
+          "required_v2": "never",
           "show_before_closure": true,
           "show_before_creation": true,
           "show_before_update": true,
@@ -8522,7 +8695,7 @@
             "type": "string"
           },
           "required": {
-            "description": "When this custom field must be set during the incident lifecycle.",
+            "description": "When this custom field must be set during the incident lifecycle. [DEPRECATED: please use required_v2 instead].",
             "enum": [
               "never",
               "before_closure",
@@ -8531,8 +8704,18 @@
             "example": "never",
             "type": "string"
           },
+          "required_v2": {
+            "description": "When this custom field must be set during the incident lifecycle.",
+            "enum": [
+              "never",
+              "before_resolution",
+              "always"
+            ],
+            "example": "never",
+            "type": "string"
+          },
           "show_before_closure": {
-            "description": "Whether a custom field should be shown in the incident close modal. If this custom field is required before closure, but no value has been set for it, the field will be shown in the closure modal whatever the value of this setting.",
+            "description": "Whether a custom field should be shown in the incident resolve modal. If this custom field is required before resolution, but no value has been set for it, the field will be shown in the resolve modal whatever the value of this setting.",
             "example": true,
             "type": "boolean"
           },
@@ -8555,7 +8738,6 @@
         "required": [
           "description",
           "name",
-          "required",
           "show_before_closure",
           "show_before_creation",
           "show_before_update"
@@ -8581,6 +8763,7 @@
               }
             ],
             "required": "never",
+            "required_v2": "never",
             "show_before_closure": true,
             "show_before_creation": true,
             "show_before_update": true,
@@ -8793,6 +8976,7 @@
               "atlassian_statuspage_incident",
               "zendesk_ticket",
               "google_calendar_event",
+              "scrubbed",
               "statuspage_incident"
             ],
             "example": "pager_duty_incident",
@@ -8811,6 +8995,263 @@
           "title"
         ],
         "title": "ExternalResourceV1ResponseBody",
+        "type": "object"
+      },
+      "FollowUpPriorityV2ResponseBody": {
+        "example": {
+          "description": "A follow-up that requires immediate attention.",
+          "id": "01GNW4BAQ7XRMFF6FHKNXDFPRW",
+          "name": "Urgent",
+          "rank": 10
+        },
+        "properties": {
+          "description": {
+            "description": "Description of the follow-up priority option",
+            "example": "A follow-up that requires immediate attention.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the follow-up priority option",
+            "example": "01GNW4BAQ7XRMFF6FHKNXDFPRW",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the follow-up priority option",
+            "example": "Urgent",
+            "type": "string"
+          },
+          "rank": {
+            "description": "Rank is used to order the follow-up priority options correctly",
+            "example": 10,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "rank"
+        ],
+        "title": "FollowUpPriorityV2ResponseBody",
+        "type": "object"
+      },
+      "FollowUpV2ResponseBody": {
+        "example": {
+          "assignee": {
+            "email": "lisa@incident.io",
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Lisa Karlin Curtis",
+            "role": "viewer",
+            "slack_user_id": "U02AYNF2XJM"
+          },
+          "completed_at": "2021-08-17T13:28:57.801578Z",
+          "created_at": "2021-08-17T13:28:57.801578Z",
+          "description": "Call the fire brigade",
+          "external_issue_reference": {
+            "issue_name": "INC-123",
+            "issue_permalink": "https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up",
+            "provider": "asana"
+          },
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "priority": {
+            "description": "A follow-up that requires immediate attention.",
+            "id": "01GNW4BAQ7XRMFF6FHKNXDFPRW",
+            "name": "Urgent",
+            "rank": 10
+          },
+          "status": "outstanding",
+          "title": "Cat is stuck in the tree",
+          "updated_at": "2021-08-17T13:28:57.801578Z"
+        },
+        "properties": {
+          "assignee": {
+            "$ref": "#/components/schemas/UserV2ResponseBody"
+          },
+          "completed_at": {
+            "description": "When the follow-up was completed",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "When the follow-up was created",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the follow-up",
+            "example": "Call the fire brigade",
+            "type": "string"
+          },
+          "external_issue_reference": {
+            "$ref": "#/components/schemas/ExternalIssueReferenceV2ResponseBody"
+          },
+          "id": {
+            "description": "Unique identifier for the follow-up",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "incident_id": {
+            "description": "Unique identifier of the incident the follow-up belongs to",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/FollowUpPriorityV2ResponseBody"
+          },
+          "status": {
+            "description": "Status of the follow-up",
+            "enum": [
+              "outstanding",
+              "completed",
+              "deleted",
+              "not_doing"
+            ],
+            "example": "outstanding",
+            "type": "string"
+          },
+          "title": {
+            "description": "Title of the follow-up",
+            "example": "Cat is stuck in the tree",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "When the follow-up was last updated",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at",
+          "id",
+          "incident_id",
+          "status",
+          "title",
+          "updated_at"
+        ],
+        "title": "FollowUpV2ResponseBody",
+        "type": "object"
+      },
+      "FollowUpsV2ListResponseBody": {
+        "example": {
+          "follow_ups": [
+            {
+              "assignee": {
+                "email": "lisa@incident.io",
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Lisa Karlin Curtis",
+                "role": "viewer",
+                "slack_user_id": "U02AYNF2XJM"
+              },
+              "completed_at": "2021-08-17T13:28:57.801578Z",
+              "created_at": "2021-08-17T13:28:57.801578Z",
+              "description": "Call the fire brigade",
+              "external_issue_reference": {
+                "issue_name": "INC-123",
+                "issue_permalink": "https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up",
+                "provider": "asana"
+              },
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "priority": {
+                "description": "A follow-up that requires immediate attention.",
+                "id": "01GNW4BAQ7XRMFF6FHKNXDFPRW",
+                "name": "Urgent",
+                "rank": 10
+              },
+              "status": "outstanding",
+              "title": "Cat is stuck in the tree",
+              "updated_at": "2021-08-17T13:28:57.801578Z"
+            }
+          ]
+        },
+        "properties": {
+          "follow_ups": {
+            "example": [
+              {
+                "assignee": {
+                  "email": "lisa@incident.io",
+                  "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                  "name": "Lisa Karlin Curtis",
+                  "role": "viewer",
+                  "slack_user_id": "U02AYNF2XJM"
+                },
+                "completed_at": "2021-08-17T13:28:57.801578Z",
+                "created_at": "2021-08-17T13:28:57.801578Z",
+                "description": "Call the fire brigade",
+                "external_issue_reference": {
+                  "issue_name": "INC-123",
+                  "issue_permalink": "https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up",
+                  "provider": "asana"
+                },
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "priority": {
+                  "description": "A follow-up that requires immediate attention.",
+                  "id": "01GNW4BAQ7XRMFF6FHKNXDFPRW",
+                  "name": "Urgent",
+                  "rank": 10
+                },
+                "status": "outstanding",
+                "title": "Cat is stuck in the tree",
+                "updated_at": "2021-08-17T13:28:57.801578Z"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FollowUpV2ResponseBody"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "follow_ups"
+        ],
+        "title": "FollowUpsV2ListResponseBody",
+        "type": "object"
+      },
+      "FollowUpsV2ShowResponseBody": {
+        "example": {
+          "follow_up": {
+            "assignee": {
+              "email": "lisa@incident.io",
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Lisa Karlin Curtis",
+              "role": "viewer",
+              "slack_user_id": "U02AYNF2XJM"
+            },
+            "completed_at": "2021-08-17T13:28:57.801578Z",
+            "created_at": "2021-08-17T13:28:57.801578Z",
+            "description": "Call the fire brigade",
+            "external_issue_reference": {
+              "issue_name": "INC-123",
+              "issue_permalink": "https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up",
+              "provider": "asana"
+            },
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "priority": {
+              "description": "A follow-up that requires immediate attention.",
+              "id": "01GNW4BAQ7XRMFF6FHKNXDFPRW",
+              "name": "Urgent",
+              "rank": 10
+            },
+            "status": "outstanding",
+            "title": "Cat is stuck in the tree",
+            "updated_at": "2021-08-17T13:28:57.801578Z"
+          }
+        },
+        "properties": {
+          "follow_up": {
+            "$ref": "#/components/schemas/FollowUpV2ResponseBody"
+          }
+        },
+        "required": [
+          "follow_up"
+        ],
+        "title": "FollowUpsV2ShowResponseBody",
         "type": "object"
       },
       "IdentityV1ResponseBody": {
@@ -8924,6 +9365,7 @@
                   "atlassian_statuspage_incident",
                   "zendesk_ticket",
                   "google_calendar_event",
+                  "scrubbed",
                   "statuspage_incident"
                 ],
                 "example": "pager_duty_incident",
@@ -10718,7 +11160,7 @@
             "type": "string"
           },
           "slack_team_id": {
-            "description": "ID of the Slack team / workspace",
+            "description": "ID of the Slack team / workspace. This is only required if you are using a Slack Enterprise Grid with multiple teams.",
             "example": "T02A1FSLE8J",
             "type": "string"
           },
@@ -11096,7 +11538,7 @@
             "type": "string"
           },
           "slack_team_id": {
-            "description": "ID of the Slack team / workspace",
+            "description": "ID of the Slack team / workspace. This is only required if you are using a Slack Enterprise Grid with multiple teams.",
             "example": "T02A1FSLE8J",
             "type": "string"
           },
@@ -11274,7 +11716,7 @@
             "type": "string"
           },
           "slack_team_id": {
-            "description": "ID of the Slack team / workspace",
+            "description": "ID of the Slack team / workspace. This is only required if you are using a Slack Enterprise Grid with multiple teams.",
             "example": "T02A1FSLE8J",
             "type": "string"
           },
@@ -14700,6 +15142,7 @@
   "paths": {
     "/v1/actions": {
       "get": {
+        "deprecated": true,
         "description": "List all actions for an organisation.",
         "operationId": "Actions V1#List",
         "parameters": [
@@ -14763,6 +15206,7 @@
     },
     "/v1/actions/{id}": {
       "get": {
+        "deprecated": true,
         "description": "Get a single incident action.",
         "operationId": "Actions V1#Show",
         "parameters": [
@@ -15325,6 +15769,7 @@
                 "atlassian_statuspage_incident",
                 "zendesk_ticket",
                 "google_calendar_event",
+                "scrubbed",
                 "statuspage_incident"
               ],
               "type": "string"
@@ -15653,7 +16098,7 @@
     "/v1/incident_statuses": {
       "get": {
         "description": "List all incident statuses for an organisation.",
-        "operationId": "IncidentStatuses V1#List",
+        "operationId": "Incident Statuses V1#List",
         "responses": {
           "200": {
             "content": {
@@ -15676,14 +16121,14 @@
             "description": "OK response."
           }
         },
-        "summary": "List IncidentStatuses V1",
+        "summary": "List Incident Statuses V1",
         "tags": [
-          "IncidentStatuses V1"
+          "Incident Statuses V1"
         ]
       },
       "post": {
         "description": "Create a new incident status",
-        "operationId": "IncidentStatuses V1#Create",
+        "operationId": "Incident Statuses V1#Create",
         "requestBody": {
           "content": {
             "application/gob": {
@@ -15726,9 +16171,9 @@
             "description": "Created response."
           }
         },
-        "summary": "Create IncidentStatuses V1",
+        "summary": "Create Incident Statuses V1",
         "tags": [
-          "IncidentStatuses V1"
+          "Incident Statuses V1"
         ],
         "x-codegen-request-body-name": "CreateRequestBody"
       }
@@ -15736,7 +16181,7 @@
     "/v1/incident_statuses/{id}": {
       "delete": {
         "description": "Delete an incident status",
-        "operationId": "IncidentStatuses V1#Delete",
+        "operationId": "Incident Statuses V1#Delete",
         "parameters": [
           {
             "description": "Unique ID of this incident status",
@@ -15754,14 +16199,14 @@
             "description": "Accepted response."
           }
         },
-        "summary": "Delete IncidentStatuses V1",
+        "summary": "Delete Incident Statuses V1",
         "tags": [
-          "IncidentStatuses V1"
+          "Incident Statuses V1"
         ]
       },
       "get": {
         "description": "Get a single incident status.",
-        "operationId": "IncidentStatuses V1#Show",
+        "operationId": "Incident Statuses V1#Show",
         "parameters": [
           {
             "description": "Unique ID of this incident status",
@@ -15795,14 +16240,14 @@
             "description": "OK response."
           }
         },
-        "summary": "Show IncidentStatuses V1",
+        "summary": "Show Incident Statuses V1",
         "tags": [
-          "IncidentStatuses V1"
+          "Incident Statuses V1"
         ]
       },
       "put": {
         "description": "Update an existing incident status",
-        "operationId": "IncidentStatuses V1#Update",
+        "operationId": "Incident Statuses V1#Update",
         "parameters": [
           {
             "description": "Unique ID of this incident status",
@@ -15856,9 +16301,9 @@
             "description": "OK response."
           }
         },
-        "summary": "Update IncidentStatuses V1",
+        "summary": "Update Incident Statuses V1",
         "tags": [
-          "IncidentStatuses V1"
+          "Incident Statuses V1"
         ],
         "x-codegen-request-body-name": "UpdateRequestBody"
       }
@@ -16346,6 +16791,105 @@
           "Severities V1"
         ],
         "x-codegen-request-body-name": "UpdateRequestBody"
+      }
+    },
+    "/v2/actions": {
+      "get": {
+        "description": "List all actions for an organisation.",
+        "operationId": "Actions V2#List",
+        "parameters": [
+          {
+            "description": "Find actions related to this incident",
+            "in": "query",
+            "name": "incident_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter to actions from incidents of the given mode. If not set, only actions from `standard` and `retrospective` incidents are returned",
+            "in": "query",
+            "name": "incident_mode",
+            "schema": {
+              "enum": [
+                "standard",
+                "retrospective",
+                "test",
+                "tutorial"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionsV2ListResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionsV2ListResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionsV2ListResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "List Actions V2",
+        "tags": [
+          "Actions V2"
+        ]
+      }
+    },
+    "/v2/actions/{id}": {
+      "get": {
+        "description": "Get a single incident action.",
+        "operationId": "Actions V2#Show",
+        "parameters": [
+          {
+            "description": "Unique identifier for the action",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionsV2ShowResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionsV2ShowResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionsV2ShowResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "Show Actions V2",
+        "tags": [
+          "Actions V2"
+        ]
       }
     },
     "/v2/catalog_entries": {
@@ -16897,6 +17441,105 @@
           "Catalog V2"
         ],
         "x-codegen-request-body-name": "UpdateTypeSchemaRequestBody"
+      }
+    },
+    "/v2/follow_ups": {
+      "get": {
+        "description": "List all follow-ups for an organisation.",
+        "operationId": "Follow-ups V2#List",
+        "parameters": [
+          {
+            "description": "Find follow-ups related to this incident",
+            "in": "query",
+            "name": "incident_id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter to follow-ups from incidents of the given mode. If not set, only follow-ups from `standard` and `retrospective` incidents are returned",
+            "in": "query",
+            "name": "incident_mode",
+            "schema": {
+              "enum": [
+                "standard",
+                "retrospective",
+                "test",
+                "tutorial"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpsV2ListResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpsV2ListResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpsV2ListResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "List Follow-ups V2",
+        "tags": [
+          "Follow-ups V2"
+        ]
+      }
+    },
+    "/v2/follow_ups/{id}": {
+      "get": {
+        "description": "Get a single incident follow-up.",
+        "operationId": "Follow-ups V2#Show",
+        "parameters": [
+          {
+            "description": "Unique identifier for the follow-up",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpsV2ShowResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpsV2ShowResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/FollowUpsV2ShowResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "Show Follow-ups V2",
+        "tags": [
+          "Follow-ups V2"
+        ]
       }
     },
     "/v2/incident_timestamps": {
@@ -19872,8 +20515,12 @@
   ],
   "tags": [
     {
-      "description": "Manage incident actions.\n\nIncidents have two types of actions associated to them:\n\n- Actions, used during an incident response as ephemeral todo lists\n- Follow-ups, actions which are for after the incident and can be exported to external\n\tissue trackers\n\nYou can manage actions in the incident Slack channel with <code>/incident actions</code>, or on\nthe incident homepage.\n\nExporting follow-ups to external issue trackers can be done in the incident homepage.\n",
+      "description": "Manage incident actions.\n\nThese endpoints have been deprecated in favour of Actions V2 and Follow-ups V2, as these\nconcepts have become increasingly separate.\n\nIncidents have two types of actions associated to them:\n\n- Actions, used during an incident response as ephemeral todo lists\n- Follow-ups, actions which are for after the incident and can be exported to external\n\tissue trackers\n\nYou can manage actions in the incident Slack channel with <code>/incident actions</code>, or on\nthe incident homepage.\n\nExporting follow-ups to external issue trackers can be done in the incident homepage.\n",
       "name": "Actions V1"
+    },
+    {
+      "description": "Manage incident actions.\n\nIncident actions are used during an incident, to track work such as 'restart the database' or 'contact the customer'.\n\nYou can manage actions in the incident Slack channel with <code>/incident actions</code>, or on\nthe incident homepage.\n",
+      "name": "Actions V2"
     },
     {
       "description": "To give you visibility over the changes that are made within your incident.io account, we use an audit log. Our audit log is powered by <a href=\"https://workos.com\" target=\"_blank\">WorkOS</a>. The log is available for customers on our [Enterprise plan](https://incident.io/pricing).\n\nThe audit log contains information about any configuration changes, as well as changes to a user's permissions (e.g. being given a new role, or access to a private incident).\n\nEach entry will have an actor (the person or system that made the change) and one or more targets (a thing that was modified by this change). It will also include the Location and User Agent of the actor, where applicable.\n\nEach entry will conform to a schema, which is documented here. Each entry also has a version, so that if our schema changes over time you’ll still be able to parse old events.\n\nWe’ll retain these entries for one year.\n\nAudit log entries start from 18 April, 2023 (there are no entries available from before that date).\n\n## Viewing your audit log\n\nYou can view your audit log via our [security settings](https://app.incident.io/settings/security) page.\n\nFrom there, you'll be able to:\n\n- View the entries via a web interface (filterable by target, event type, actor and date)\n- Export the entries for a given time period to a CSV\n- Set up a log stream to a provider of your choice (e.g. Splunk or an Amazon S3 bucket)\n\n## Understanding actors\n\nEach entry will have an actor associated with it, which is one of 5 types:\n\n### Users\n\nThis is for changes triggered by the actions of a particular user in your account.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"user\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Kelsey Mills\",\n    \"metadata\": {\n      \"user_base_role_slug\": \"admin\",\n      \"user_custom_role_slugs\": \"engineering,security\"\n    }\n  }\n```\n\n### API Keys\n\nThis is for changes triggered by an API key.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"api_key\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Lisa's development key\",\n    \"metadata\": {\n      \"api_key_roles\": \"incident_creator,global_access\"\n    }\n  }\n```\n\n### Integrations\n\nThis is for changes triggered by a system. Sometimes that will be a third party system (e.g. a user might be created\nvia Slack) or sometimes it might be something triggered from inside incident.io (e.g. a severity created as part of setup).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"system\",\n    \"id\": \"incident_setup\",\n    \"name\": \"incident.io (setup)\",\n    \"metadata\": {}\n  }\n```\n\n### Workflows\n\nThis is for changes triggered by a workflow: for example, a workflow that invites users to a private incident.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"workflow\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Auto-invite security team to private incidents\",\n    \"metadata\": {}\n  }\n```\n\n### External resources\n\nThis is for changes triggered by a specific [external resource](https://api-docs.incident.io/tag/Incident-Attachments-V1) (also known as an attachment).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"external_resource\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"#1234 Increased API latency\",\n    \"metadata\": {\n      \"external_resource_type\": \"pager_duty_incident\",\n      \"external_resource_external_id\": \"q1234\"\n    }\n  }\n```\n",
@@ -19892,6 +20539,10 @@
       "name": "Custom Fields V1"
     },
     {
+      "description": "Manage incident follow-ups.\n\nIncidents can have follow-ups associated with them, which track work that should be done\nafter an incident (e.g. improving some documentation, or upgrading a dependency). They can\nalso be exported to external issue trackers.\n\nYou can manage follow-ups in the incident Slack channel with <code>/incident follow-ups</code>, or on\nthe incident homepage.\n",
+      "name": "Follow-ups V2"
+    },
+    {
       "description": "Create, list and delete incident attachments.\n\nIncident Attachments allows you to connect resources from external systems into incidents.\nExamples include: PagerDuty incidents and GitHub pull requests.\n",
       "name": "Incident Attachments V1"
     },
@@ -19901,7 +20552,7 @@
     },
     {
       "description": "Manage incident statuses.\n\nEach incident has a status, picked from one of the statuses configured in your\norganisations settings.\n\nStatuses help communicate where an incident is in its lifecycle. You can use\nstatuses when filtering incidents in the dashboard, and in workflows and announcement\nrules.\n",
-      "name": "IncidentStatuses V1"
+      "name": "Incident Statuses V1"
     },
     {
       "description": "View incident timestamps.\n\nEach incident has a number of timestamps; some being defaults that we set on\neach incident for you, and other being configured for your organisation within\nsettings.\n\nTimestamps help to communicate when a given action was taken for a specific\nincident, for example when it was reported, closed or fixed.\n",
