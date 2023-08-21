@@ -49,7 +49,7 @@ def sync_detailed(
     *,
     client: Client,
 ) -> Response[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
 
@@ -73,7 +73,7 @@ def sync(
     *,
     client: Client,
 ) -> Optional[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
 
@@ -90,7 +90,7 @@ async def asyncio_detailed(
     *,
     client: Client,
 ) -> Response[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
 
@@ -112,7 +112,7 @@ async def asyncio(
     *,
     client: Client,
 ) -> Optional[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
 

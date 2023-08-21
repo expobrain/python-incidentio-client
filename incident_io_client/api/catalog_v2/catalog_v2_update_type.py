@@ -66,7 +66,7 @@ def sync_detailed(
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
             {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -101,7 +101,7 @@ def sync(
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
             {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -129,7 +129,7 @@ async def asyncio_detailed(
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
             {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -162,7 +162,7 @@ async def asyncio(
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
             {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
