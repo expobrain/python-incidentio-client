@@ -10,6 +10,7 @@ class IncidentAttachmentsV1ListResourceType(str, Enum):
     ATLASSIAN_STATUSPAGE_INCIDENT = "atlassian_statuspage_incident"
     ZENDESK_TICKET = "zendesk_ticket"
     GOOGLE_CALENDAR_EVENT = "google_calendar_event"
+    SCRUBBED = "scrubbed"
     STATUSPAGE_INCIDENT = "statuspage_incident"
 
     def __str__(self) -> str:

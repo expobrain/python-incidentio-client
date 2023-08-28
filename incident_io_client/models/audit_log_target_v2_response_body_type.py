@@ -6,6 +6,7 @@ class AuditLogTargetV2ResponseBodyType(str, Enum):
     API_KEY = "api_key"
     CATALOG_TYPE = "catalog_type"
     CUSTOM_FIELD = "custom_field"
+    DEBRIEF_INVITE_RULE = "debrief_invite_rule"
     FOLLOW_UP_PRIORITY = "follow_up_priority"
     INCIDENT = "incident"
     INCIDENT_DURATION_METRIC = "incident_duration_metric"
@@ -24,6 +25,7 @@ class AuditLogTargetV2ResponseBodyType(str, Enum):
     STATUS_PAGE_TEMPLATE = "status_page_template"
     USER = "user"
     WORKFLOW = "workflow"
+    NUDGE = "nudge"
 
     def __str__(self) -> str:
         return str(self.value)
