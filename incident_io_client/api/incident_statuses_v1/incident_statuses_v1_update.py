@@ -59,7 +59,7 @@ def sync_detailed(
     client: Client,
     json_body: IncidentStatusesV1UpdateRequestBody,
 ) -> Response[IncidentStatusesV1UpdateResponseBody]:
-    """Update IncidentStatuses V1
+    """Update Incident Statuses V1
 
      Update an existing incident status
 
@@ -93,7 +93,7 @@ def sync(
     client: Client,
     json_body: IncidentStatusesV1UpdateRequestBody,
 ) -> Optional[IncidentStatusesV1UpdateResponseBody]:
-    """Update IncidentStatuses V1
+    """Update Incident Statuses V1
 
      Update an existing incident status
 
@@ -120,7 +120,7 @@ async def asyncio_detailed(
     client: Client,
     json_body: IncidentStatusesV1UpdateRequestBody,
 ) -> Response[IncidentStatusesV1UpdateResponseBody]:
-    """Update IncidentStatuses V1
+    """Update Incident Statuses V1
 
      Update an existing incident status
 
@@ -152,7 +152,7 @@ async def asyncio(
     client: Client,
     json_body: IncidentStatusesV1UpdateRequestBody,
 ) -> Optional[IncidentStatusesV1UpdateResponseBody]:
-    """Update IncidentStatuses V1
+    """Update Incident Statuses V1
 
      Update an existing incident status
 
