@@ -72,10 +72,13 @@ def sync_detailed(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet."}, 'notify_incident_channel': True}.
 
     Returns:
         Response[IncidentsV2EditResponseBody]
@@ -118,10 +121,13 @@ def sync(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet."}, 'notify_incident_channel': True}.
 
     Returns:
         Response[IncidentsV2EditResponseBody]
@@ -157,10 +163,13 @@ async def asyncio_detailed(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet."}, 'notify_incident_channel': True}.
 
     Returns:
         Response[IncidentsV2EditResponseBody]
@@ -201,10 +210,13 @@ async def asyncio(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'incident_timestamp_values': [{'incident_timestamp_id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
+            'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
+            know why yet."}, 'notify_incident_channel': True}.
 
     Returns:
         Response[IncidentsV2EditResponseBody]

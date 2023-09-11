@@ -59,14 +59,14 @@ def sync_detailed(
 ) -> Response[CatalogV2UpdateTypeResponseBody]:
     """UpdateType Catalog V2
 
-     Updates an existing catalog type.
+     Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -94,14 +94,14 @@ def sync(
 ) -> Optional[CatalogV2UpdateTypeResponseBody]:
     """UpdateType Catalog V2
 
-     Updates an existing catalog type.
+     Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -122,14 +122,14 @@ async def asyncio_detailed(
 ) -> Response[CatalogV2UpdateTypeResponseBody]:
     """UpdateType Catalog V2
 
-     Updates an existing catalog type.
+     Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]
@@ -155,14 +155,14 @@ async def asyncio(
 ) -> Optional[CatalogV2UpdateTypeResponseBody]:
     """UpdateType Catalog V2
 
-     Updates an existing catalog type.
+     Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom'}.
+            'Kubernetes Cluster', 'ranked': True}.
 
     Returns:
         Response[CatalogV2UpdateTypeResponseBody]

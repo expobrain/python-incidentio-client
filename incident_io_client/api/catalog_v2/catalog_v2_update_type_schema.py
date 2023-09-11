@@ -67,6 +67,13 @@ def sync_detailed(
 
      Update an existing catalog types schema, adding or removing attributes.
 
+    Updating the schema is handled separately from creating and updating types, so that you don't
+    have to worry about dependencies between types. For example, if type A has an attribute that
+    replies on type B, you would have to create type B first.
+
+    By allowing the creation of types without a schema, they can be created in any order, but it
+    means that you need to make a separate call to this endpoint to update the schema.
+
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
@@ -101,6 +108,13 @@ def sync(
 
      Update an existing catalog types schema, adding or removing attributes.
 
+    Updating the schema is handled separately from creating and updating types, so that you don't
+    have to worry about dependencies between types. For example, if type A has an attribute that
+    replies on type B, you would have to create type B first.
+
+    By allowing the creation of types without a schema, they can be created in any order, but it
+    means that you need to make a separate call to this endpoint to update the schema.
+
     Args:
         id (str):
         json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
@@ -127,6 +141,13 @@ async def asyncio_detailed(
     """UpdateTypeSchema Catalog V2
 
      Update an existing catalog types schema, adding or removing attributes.
+
+    Updating the schema is handled separately from creating and updating types, so that you don't
+    have to worry about dependencies between types. For example, if type A has an attribute that
+    replies on type B, you would have to create type B first.
+
+    By allowing the creation of types without a schema, they can be created in any order, but it
+    means that you need to make a separate call to this endpoint to update the schema.
 
     Args:
         id (str):
@@ -159,6 +180,13 @@ async def asyncio(
     """UpdateTypeSchema Catalog V2
 
      Update an existing catalog types schema, adding or removing attributes.
+
+    Updating the schema is handled separately from creating and updating types, so that you don't
+    have to worry about dependencies between types. For example, if type A has an attribute that
+    replies on type B, you would have to create type B first.
+
+    By allowing the creation of types without a schema, they can be created in any order, but it
+    means that you need to make a separate call to this endpoint to update the schema.
 
     Args:
         id (str):

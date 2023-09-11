@@ -18,12 +18,14 @@ class CatalogV2UpdateEntryRequestBody:
     """
     Example:
         {'aliases': ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal':
-            'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name':
-            'Primary On-call', 'rank': 3}
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call',
+            'rank': 3}
 
     Attributes:
         attribute_values (CatalogV2UpdateEntryRequestBodyAttributeValues): Values of this entry Example: {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}.
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}.
         name (str): Name is the human readable name of this entry Example: Primary On-call.
         aliases (Union[Unset, List[str]]): Optional aliases that can be used to reference this entry Example:
             ['lawrence@incident.io', 'lawrence'].

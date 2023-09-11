@@ -1,47 +1,54 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar
 
 import attr
 
-from ..types import UNSET, Unset
-
-T = TypeVar("T", bound="CatalogAttributeValuePayloadV2RequestBody")
+T = TypeVar("T", bound="WebhookIncidentUserV2ResponseBody")
 
 
 @attr.s(auto_attribs=True)
-class CatalogAttributeValuePayloadV2RequestBody:
+class WebhookIncidentUserV2ResponseBody:
     """
     Example:
-        {'literal': 'SEV123'}
+        {'incident_id': 'abc123', 'user_id': 'abc123'}
 
     Attributes:
-        literal (Union[Unset, str]): The literal value of this attribute Example: SEV123.
+        incident_id (str): The ID of the incident Example: abc123.
+        user_id (str): The ID of the user Example: abc123.
     """
 
-    literal: Union[Unset, str] = UNSET
+    incident_id: str
+    user_id: str
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        literal = self.literal
+        incident_id = self.incident_id
+        user_id = self.user_id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if literal is not UNSET:
-            field_dict["literal"] = literal
+        field_dict.update(
+            {
+                "incident_id": incident_id,
+                "user_id": user_id,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        literal = d.pop("literal", UNSET)
+        incident_id = d.pop("incident_id")
 
-        catalog_attribute_value_payload_v2_request_body = cls(
-            literal=literal,
+        user_id = d.pop("user_id")
+
+        webhook_incident_user_v2_response_body = cls(
+            incident_id=incident_id,
+            user_id=user_id,
         )
 
-        catalog_attribute_value_payload_v2_request_body.additional_properties = d
-        return catalog_attribute_value_payload_v2_request_body
+        webhook_incident_user_v2_response_body.additional_properties = d
+        return webhook_incident_user_v2_response_body
 
     @property
     def additional_keys(self) -> List[str]:

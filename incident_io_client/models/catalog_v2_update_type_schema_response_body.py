@@ -13,7 +13,7 @@ T = TypeVar("T", bound="CatalogV2UpdateTypeSchemaResponseBody")
 class CatalogV2UpdateTypeSchemaResponseBody:
     """
     Example:
-        {'catalog_type': {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate',
+        {'catalog_type': {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow',
             'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we run inside
             of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
@@ -24,7 +24,7 @@ class CatalogV2UpdateTypeSchemaResponseBody:
 
     Attributes:
         catalog_type (CatalogTypeV2ResponseBody):  Example: {'annotations': {'incident.io/catalog-importer/id': 'id-of-
-            config'}, 'color': 'slate', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
+            config'}, 'color': 'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
             clusters that we run inside of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
             'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
