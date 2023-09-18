@@ -64,8 +64,9 @@ def sync_detailed(
     Args:
         json_body (CustomFieldsV1CreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_before_update': True, 'show_in_announcement_post': True}.
+            'required': 'never', 'required_v2': 'never', 'show_before_closure': True,
+            'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post':
+            True}.
 
     Returns:
         Response[CustomFieldsV1CreateResponseBody]
@@ -96,8 +97,9 @@ def sync(
     Args:
         json_body (CustomFieldsV1CreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_before_update': True, 'show_in_announcement_post': True}.
+            'required': 'never', 'required_v2': 'never', 'show_before_closure': True,
+            'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post':
+            True}.
 
     Returns:
         Response[CustomFieldsV1CreateResponseBody]
@@ -121,8 +123,9 @@ async def asyncio_detailed(
     Args:
         json_body (CustomFieldsV1CreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_before_update': True, 'show_in_announcement_post': True}.
+            'required': 'never', 'required_v2': 'never', 'show_before_closure': True,
+            'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post':
+            True}.
 
     Returns:
         Response[CustomFieldsV1CreateResponseBody]
@@ -151,8 +154,9 @@ async def asyncio(
     Args:
         json_body (CustomFieldsV1CreateRequestBody):  Example: {'description': 'Which team is
             impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team',
-            'required': 'never', 'show_before_closure': True, 'show_before_creation': True,
-            'show_before_update': True, 'show_in_announcement_post': True}.
+            'required': 'never', 'required_v2': 'never', 'show_before_closure': True,
+            'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post':
+            True}.
 
     Returns:
         Response[CustomFieldsV1CreateResponseBody]

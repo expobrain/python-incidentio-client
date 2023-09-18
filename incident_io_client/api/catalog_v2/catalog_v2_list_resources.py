@@ -51,7 +51,11 @@ def sync_detailed(
 ) -> Response[CatalogV2ListResourcesResponseBody]:
     """ListResources Catalog V2
 
-     List available engine resources for the catalog
+     List available engine resources for the catalog.
+
+    A resource represents a type of data that can be held within the catalog, so this
+    endpoint can be used to see what attribute types can be used when updating the
+    schema of a catalog type.
 
     Returns:
         Response[CatalogV2ListResourcesResponseBody]
@@ -75,7 +79,11 @@ def sync(
 ) -> Optional[CatalogV2ListResourcesResponseBody]:
     """ListResources Catalog V2
 
-     List available engine resources for the catalog
+     List available engine resources for the catalog.
+
+    A resource represents a type of data that can be held within the catalog, so this
+    endpoint can be used to see what attribute types can be used when updating the
+    schema of a catalog type.
 
     Returns:
         Response[CatalogV2ListResourcesResponseBody]
@@ -92,7 +100,11 @@ async def asyncio_detailed(
 ) -> Response[CatalogV2ListResourcesResponseBody]:
     """ListResources Catalog V2
 
-     List available engine resources for the catalog
+     List available engine resources for the catalog.
+
+    A resource represents a type of data that can be held within the catalog, so this
+    endpoint can be used to see what attribute types can be used when updating the
+    schema of a catalog type.
 
     Returns:
         Response[CatalogV2ListResourcesResponseBody]
@@ -114,7 +126,11 @@ async def asyncio(
 ) -> Optional[CatalogV2ListResourcesResponseBody]:
     """ListResources Catalog V2
 
-     List available engine resources for the catalog
+     List available engine resources for the catalog.
+
+    A resource represents a type of data that can be held within the catalog, so this
+    endpoint can be used to see what attribute types can be used when updating the
+    schema of a catalog type.
 
     Returns:
         Response[CatalogV2ListResourcesResponseBody]

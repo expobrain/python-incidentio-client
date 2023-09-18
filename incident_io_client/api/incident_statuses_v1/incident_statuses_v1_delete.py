@@ -40,7 +40,7 @@ def sync_detailed(
     *,
     client: Client,
 ) -> Response[Any]:
-    """Delete IncidentStatuses V1
+    """Delete Incident Statuses V1
 
      Delete an incident status
 
@@ -69,7 +69,7 @@ async def asyncio_detailed(
     *,
     client: Client,
 ) -> Response[Any]:
-    """Delete IncidentStatuses V1
+    """Delete Incident Statuses V1
 
      Delete an incident status
 

@@ -64,9 +64,10 @@ def sync_detailed(
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33',
-            'name': 'Primary On-call', 'rank': 3}.
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
+            3}.
 
     Returns:
         Response[CatalogV2CreateEntryResponseBody]
@@ -97,9 +98,10 @@ def sync(
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33',
-            'name': 'Primary On-call', 'rank': 3}.
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
+            3}.
 
     Returns:
         Response[CatalogV2CreateEntryResponseBody]
@@ -123,9 +125,10 @@ async def asyncio_detailed(
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33',
-            'name': 'Primary On-call', 'rank': 3}.
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
+            3}.
 
     Returns:
         Response[CatalogV2CreateEntryResponseBody]
@@ -154,9 +157,10 @@ async def asyncio(
     Args:
         json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33',
-            'name': 'Primary On-call', 'rank': 3}.
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
+            3}.
 
     Returns:
         Response[CatalogV2CreateEntryResponseBody]

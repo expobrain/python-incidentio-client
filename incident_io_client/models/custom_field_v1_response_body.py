@@ -10,6 +10,9 @@ from ..models.custom_field_v1_response_body_field_type import (
 from ..models.custom_field_v1_response_body_required import (
     CustomFieldV1ResponseBodyRequired,
 )
+from ..models.custom_field_v1_response_body_required_v2 import (
+    CustomFieldV1ResponseBodyRequiredV2,
+)
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -28,9 +31,9 @@ class CustomFieldV1ResponseBody:
         {'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             'Which team is impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Affected Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'show_before_closure':
-            True, 'show_before_creation': True, 'show_before_update': True, 'show_in_announcement_post': True, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}], 'required': 'never', 'required_v2': 'never',
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -41,17 +44,19 @@ class CustomFieldV1ResponseBody:
         options (List['CustomFieldOptionV1ResponseBody']): What options are available for this custom field, if this
             field has options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
-        required (CustomFieldV1ResponseBodyRequired): When this custom field must be set during the incident lifecycle.
-            Example: never.
-        show_before_closure (bool): Whether a custom field should be shown in the incident close modal. If this custom
-            field is required before closure, but no value has been set for it, the field will be shown in the closure modal
-            whatever the value of this setting. Example: True.
+        show_before_closure (bool): Whether a custom field should be shown in the incident resolve modal. If this custom
+            field is required before resolution, but no value has been set for it, the field will be shown in the resolve
+            modal whatever the value of this setting. Example: True.
         show_before_creation (bool): Whether a custom field should be shown in the incident creation modal. This must be
             true if the field is always required. Example: True.
         show_before_update (bool): Whether a custom field should be shown in the incident update modal. Example: True.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
         catalog_type_id (Union[Unset, str]): For catalog fields, the ID of the associated catalog type Example:
             01FCNDV6P870EA6S7TK1DSYDG0.
+        required (Union[Unset, CustomFieldV1ResponseBodyRequired]): When this custom field must be set during the
+            incident lifecycle. [DEPRECATED: please use required_v2 instead]. Example: never.
+        required_v2 (Union[Unset, CustomFieldV1ResponseBodyRequiredV2]): When this custom field must be set during the
+            incident lifecycle. Example: never.
         show_in_announcement_post (Union[Unset, bool]): Whether a custom field should be shown in the list of fields as
             part of the announcement post when set. Example: True.
     """
@@ -62,12 +67,13 @@ class CustomFieldV1ResponseBody:
     id: str
     name: str
     options: List["CustomFieldOptionV1ResponseBody"]
-    required: CustomFieldV1ResponseBodyRequired
     show_before_closure: bool
     show_before_creation: bool
     show_before_update: bool
     updated_at: datetime.datetime
     catalog_type_id: Union[Unset, str] = UNSET
+    required: Union[Unset, CustomFieldV1ResponseBodyRequired] = UNSET
+    required_v2: Union[Unset, CustomFieldV1ResponseBodyRequiredV2] = UNSET
     show_in_announcement_post: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
 
@@ -85,14 +91,20 @@ class CustomFieldV1ResponseBody:
 
             options.append(options_item)
 
-        required = self.required.value
-
         show_before_closure = self.show_before_closure
         show_before_creation = self.show_before_creation
         show_before_update = self.show_before_update
         updated_at = self.updated_at.isoformat()
 
         catalog_type_id = self.catalog_type_id
+        required: Union[Unset, str] = UNSET
+        if not isinstance(self.required, Unset):
+            required = self.required.value
+
+        required_v2: Union[Unset, str] = UNSET
+        if not isinstance(self.required_v2, Unset):
+            required_v2 = self.required_v2.value
+
         show_in_announcement_post = self.show_in_announcement_post
 
         field_dict: Dict[str, Any] = {}
@@ -105,7 +117,6 @@ class CustomFieldV1ResponseBody:
                 "id": id,
                 "name": name,
                 "options": options,
-                "required": required,
                 "show_before_closure": show_before_closure,
                 "show_before_creation": show_before_creation,
                 "show_before_update": show_before_update,
@@ -114,6 +125,10 @@ class CustomFieldV1ResponseBody:
         )
         if catalog_type_id is not UNSET:
             field_dict["catalog_type_id"] = catalog_type_id
+        if required is not UNSET:
+            field_dict["required"] = required
+        if required_v2 is not UNSET:
+            field_dict["required_v2"] = required_v2
         if show_in_announcement_post is not UNSET:
             field_dict["show_in_announcement_post"] = show_in_announcement_post
 
@@ -143,8 +158,6 @@ class CustomFieldV1ResponseBody:
 
             options.append(options_item)
 
-        required = CustomFieldV1ResponseBodyRequired(d.pop("required"))
-
         show_before_closure = d.pop("show_before_closure")
 
         show_before_creation = d.pop("show_before_creation")
@@ -155,6 +168,20 @@ class CustomFieldV1ResponseBody:
 
         catalog_type_id = d.pop("catalog_type_id", UNSET)
 
+        _required = d.pop("required", UNSET)
+        required: Union[Unset, CustomFieldV1ResponseBodyRequired]
+        if isinstance(_required, Unset):
+            required = UNSET
+        else:
+            required = CustomFieldV1ResponseBodyRequired(_required)
+
+        _required_v2 = d.pop("required_v2", UNSET)
+        required_v2: Union[Unset, CustomFieldV1ResponseBodyRequiredV2]
+        if isinstance(_required_v2, Unset):
+            required_v2 = UNSET
+        else:
+            required_v2 = CustomFieldV1ResponseBodyRequiredV2(_required_v2)
+
         show_in_announcement_post = d.pop("show_in_announcement_post", UNSET)
 
         custom_field_v1_response_body = cls(
@@ -164,12 +191,13 @@ class CustomFieldV1ResponseBody:
             id=id,
             name=name,
             options=options,
-            required=required,
             show_before_closure=show_before_closure,
             show_before_creation=show_before_creation,
             show_before_update=show_before_update,
             updated_at=updated_at,
             catalog_type_id=catalog_type_id,
+            required=required,
+            required_v2=required_v2,
             show_in_announcement_post=show_in_announcement_post,
         )
 

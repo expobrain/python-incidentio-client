@@ -3,8 +3,8 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 import attr
 
 if TYPE_CHECKING:
-    from ..models.catalog_attribute_binding_payload_v2_request_body import (
-        CatalogAttributeBindingPayloadV2RequestBody,
+    from ..models.engine_param_binding_payload_v2_request_body import (
+        EngineParamBindingPayloadV2RequestBody,
     )
 
 
@@ -16,11 +16,12 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
     """Values of this entry
 
     Example:
-        {'abc123': {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}
+        {'abc123': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal':
+            'SEV123', 'reference': 'incident.severity'}}}
 
     """
 
-    additional_properties: Dict[str, "CatalogAttributeBindingPayloadV2RequestBody"] = attr.ib(
+    additional_properties: Dict[str, "EngineParamBindingPayloadV2RequestBody"] = attr.ib(
         init=False, factory=dict
     )
 
@@ -37,8 +38,8 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.catalog_attribute_binding_payload_v2_request_body import (
-            CatalogAttributeBindingPayloadV2RequestBody,
+        from ..models.engine_param_binding_payload_v2_request_body import (
+            EngineParamBindingPayloadV2RequestBody,
         )
 
         d = src_dict.copy()
@@ -46,7 +47,7 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = CatalogAttributeBindingPayloadV2RequestBody.from_dict(prop_dict)
+            additional_property = EngineParamBindingPayloadV2RequestBody.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
@@ -59,10 +60,10 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
     def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> "CatalogAttributeBindingPayloadV2RequestBody":
+    def __getitem__(self, key: str) -> "EngineParamBindingPayloadV2RequestBody":
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: "CatalogAttributeBindingPayloadV2RequestBody") -> None:
+    def __setitem__(self, key: str, value: "EngineParamBindingPayloadV2RequestBody") -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:
