@@ -35,13 +35,13 @@ jobs:
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
           poetry run make generate
-      - name: Update CHANGELOG
-        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
-        run: |
-          poetry run python scripts/auto_update_changelog.py \
-            --pyproject pyproject.toml \
-            --changelog CHANGELOG.md \
-            --message "updated to the latest API at $(date "+%Y-%m-%d")"
+      # - name: Update CHANGELOG
+      #   if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+      #   run: |
+      #     poetry run python scripts/auto_update_changelog.py \
+      #       --pyproject pyproject.toml \
+      #       --changelog CHANGELOG.md \
+      #       --message "updated to the latest API at $(date "+%Y-%m-%d")"
       - name: Create new branch
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
@@ -53,7 +53,7 @@ jobs:
 
           git checkout -b $branch_name
           git add \
-            CHANGELOG.md \
+            # CHANGELOG.md \
             docs \
             incident_io_client \
             incident_io_openapi.json
