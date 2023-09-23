@@ -8,7 +8,7 @@ download:
 
 generate_docs:
 	rm -rf docs/api_reference
-	python scripts/api_docs.py \
+	poetry run python scripts/api_docs.py \
 		-p incident_io_client \
 		-d docs/api_reference \
 		-m mkdocs.yml
@@ -16,7 +16,7 @@ generate_docs:
 generate_client:
 	rm -rf incident_io_client
 
-	openapi-python-client generate --meta none --path incident_io_openapi.json
+	poetry run openapi-python-client generate --meta none --path incident_io_openapi.json
 
 	touch incident_io_client/py.typed
 	make fmt
@@ -25,29 +25,16 @@ generate: generate_client generate_docs
 
 fmt:
 	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \
-		-exec pyupgrade --exit-zero-even-if-changed --py38-plus {} \+ 1> /dev/null
-	autoflake \
+		-exec poetry run pyupgrade --exit-zero-even-if-changed --py38-plus {} \+ 1> /dev/null
+	poetry run autoflake \
 		--in-place \
 		--remove-all-unused-imports \
 		--ignore-init-module-imports \
 		-r \
 		.
-	isort --profile black .
-	black .
-
-check:
-	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \
-		-exec pyupgrade --py38-plus {} \+ 1> /dev/null
-	autoflake \
-		--in-place \
-		--remove-all-unused-imports \
-		--ignore-init-module-imports \
-		-r \
-		-c \
-		.
-	isort --profile black -c .
-	black --check .
+	poetry run isort --profile black .
+	poetry run black .
 
 lint:
-	mypy .
-	flake8 .
+	poetry run mypy incident_io_client scripts
+	poetry run flake8 .

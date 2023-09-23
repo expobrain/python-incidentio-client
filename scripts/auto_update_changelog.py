@@ -3,8 +3,8 @@ from pathlib import Path
 
 import click
 import toml
-from pkg_resources import parse_version  # type:ignore
-from pkg_resources.extern.packaging.version import Version  # type:ignore
+from pkg_resources import parse_version
+from pkg_resources.extern.packaging.version import Version  # type: ignore[import]
 
 CHANGELOG_TEMPLATE = textwrap.dedent(
     """

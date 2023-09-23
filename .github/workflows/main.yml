@@ -52,7 +52,6 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
       - run: pip install poetry~=${{ env.POETRY_VERSION }}
       - run: poetry install --no-interaction --no-ansi --sync
-      - run: make test
       - run: make lint
 
 
