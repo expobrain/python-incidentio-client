@@ -49,6 +49,7 @@ mkdocstrings-python = ">=0.8.2,<1.8.0"
 tomli = { version = "^2.0.1", python = "<3.11" }
 types-setuptools = "^68.2.0.0"
 types-pygments = "^2.16.0.0"
+commitizen = "^3.9.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
