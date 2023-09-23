@@ -34,26 +34,26 @@ jobs:
       - name: Generate client
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
-          poetry run make generate
-      - name: Update CHANGELOG
-        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
-        run: |
-          poetry run python scripts/auto_update_changelog.py \
-            --pyproject pyproject.toml \
-            --changelog CHANGELOG.md \
-            --message "updated to the latest API at $(date "+%Y-%m-%d")"
+          make generate
+      # - name: Update CHANGELOG
+      #   if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+      #   run: |
+      #     poetry run python scripts/auto_update_changelog.py \
+      #       --pyproject pyproject.toml \
+      #       --changelog CHANGELOG.md \
+      #       --message "updated to the latest API at $(date "+%Y-%m-%d")"
       - name: Create new branch
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
           branch_name=update_api_$(date "+%Y_%m_%d")
-          commit_message="Updated API at $(date "+%Y-%m-%d")"
+          commit_message="feat: Updated API at $(date "+%Y-%m-%d")"
 
           git config user.email "github-actions@githhub.com"
           git config user.name "Github Actions"
 
           git checkout -b $branch_name
           git add \
-            CHANGELOG.md \
+            # CHANGELOG.md \
             docs \
             incident_io_client \
             incident_io_openapi.json

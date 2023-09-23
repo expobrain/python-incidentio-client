@@ -95,5 +95,5 @@ To generare an updated copy of the client:
 ```shell
 poetry install
 make download
-poetry run make generate
+make generate
 ```
