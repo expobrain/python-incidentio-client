@@ -1,0 +1,33 @@
+name: Pre-commit auto-update
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION_FOR_BUMPING: "3.10"
+
+jobs:
+  pre-commit-autoupdate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "${{ env.PYTHON_VERSION_FOR_BUMPING }}"
+      - name: Cache multiple paths
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/pre-commit
+          key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_BUMPING }}-${{ hashFiles('**/.pre-commit-config.yaml') }}
+      - uses: browniebroke/pre-commit-autoupdate-action@main
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update/pre-commit-hooks
+          title: Update pre-commit hooks
+          commit-message: "chore: update pre-commit hooks"
+          body: Update versions of pre-commit hooks to latest version.
