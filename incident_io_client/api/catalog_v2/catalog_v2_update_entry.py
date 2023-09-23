@@ -67,7 +67,8 @@ def sync_detailed(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
@@ -102,7 +103,8 @@ def sync(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
@@ -130,7 +132,8 @@ async def asyncio_detailed(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:
@@ -163,7 +166,8 @@ async def asyncio(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Returns:

@@ -57,14 +57,13 @@ def sync_detailed(
 ) -> Response[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
-     Create a catalog type.
+     Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom', 'type_name':
-            'Custom["BackstageGroup"]'}.
+            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Returns:
         Response[CatalogV2CreateTypeResponseBody]
@@ -90,14 +89,13 @@ def sync(
 ) -> Optional[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
-     Create a catalog type.
+     Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom', 'type_name':
-            'Custom["BackstageGroup"]'}.
+            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Returns:
         Response[CatalogV2CreateTypeResponseBody]
@@ -116,14 +114,13 @@ async def asyncio_detailed(
 ) -> Response[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
-     Create a catalog type.
+     Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom', 'type_name':
-            'Custom["BackstageGroup"]'}.
+            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Returns:
         Response[CatalogV2CreateTypeResponseBody]
@@ -147,14 +144,13 @@ async def asyncio(
 ) -> Optional[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
-     Create a catalog type.
+     Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
         json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'semantic_type': 'custom', 'type_name':
-            'Custom["BackstageGroup"]'}.
+            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Returns:
         Response[CatalogV2CreateTypeResponseBody]
