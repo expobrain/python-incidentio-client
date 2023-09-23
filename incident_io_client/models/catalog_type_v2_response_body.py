@@ -24,7 +24,7 @@ T = TypeVar("T", bound="CatalogTypeV2ResponseBody")
 class CatalogTypeV2ResponseBody:
     """
     Example:
-        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'created_at':
+        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we run inside of GKE.',
             'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True, 'required_integrations': ['pager_duty'],
@@ -35,7 +35,7 @@ class CatalogTypeV2ResponseBody:
     Attributes:
         annotations (CatalogTypeV2ResponseBodyAnnotations): Annotations that can track metadata about this type Example:
             {'incident.io/catalog-importer/id': 'id-of-config'}.
-        color (CatalogTypeV2ResponseBodyColor): Sets the display color of this type in the dashboard Example: slate.
+        color (CatalogTypeV2ResponseBodyColor): Sets the display color of this type in the dashboard Example: yellow.
         created_at (datetime.datetime): When this type was created Example: 2021-08-17T13:28:57.801578Z.
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
             inside of GKE..
