@@ -86,10 +86,10 @@ jobs:
 
       - name: Create new version and changelog
         run: |
-          poetry run cz --no-raise 21 bump --yes --changelog --check-consistency
-
           git config --local user.email "github-actions@githhub.com"
           git config --local user.name "Github Actions"
+
+          poetry run cz --no-raise 21 bump --yes --changelog --check-consistency
 
           git config --local pull.rebase true
           git pull origin $(git branch --show-current)
