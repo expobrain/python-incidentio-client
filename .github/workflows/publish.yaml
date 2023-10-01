@@ -1,0 +1,33 @@
+name: Upload Python Package
+
+env:
+  PYTHON_VERSION_FOR_PACKAGING: "3.11"
+  POETRY_VERSION: "1.3"
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  publish_package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "${{ env.PYTHON_VERSION_FOR_PACKAGING }}"
+      - name: Cache Pip
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            .venv
+          key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_BUMPING }}-${{ hashFiles('**/poetry.lock') }}
+      - run: pip install poetry~=${{ env.POETRY_VERSION }}
+      - run: poetry build
+      # From https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/#publishing-the-distribution-to-pypi-and-testpypi
+      - name: Publish distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
