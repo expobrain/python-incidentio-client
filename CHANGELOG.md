@@ -1,3 +1,9 @@
+## 0.30.1 (2023-10-01)
+
+### Fix
+
+- Added missing package
+
 # v0.30.0
 
 - updated to the latest API at 2023-07-17
