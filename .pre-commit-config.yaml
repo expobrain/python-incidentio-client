@@ -81,7 +81,7 @@ repos:
       - id: python-no-log-warn
       - id: python-no-eval
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: 3.9.1
+    rev: 3.10.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
