@@ -2,8 +2,8 @@ from enum import Enum
 
 
 class IncidentV2ResponseBodyMode(str, Enum):
-    STANDARD = "standard"
     RETROSPECTIVE = "retrospective"
+    STANDARD = "standard"
     TEST = "test"
     TUTORIAL = "tutorial"
 

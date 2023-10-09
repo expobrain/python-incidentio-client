@@ -2,12 +2,13 @@ from enum import Enum
 
 
 class CatalogTypeV2ResponseBodyColor(str, Enum):
-    SLATE = "slate"
-    RED = "red"
-    YELLOW = "yellow"
-    GREEN = "green"
     BLUE = "blue"
+    CYAN = "cyan"
+    GREEN = "green"
+    ORANGE = "orange"
+    PINK = "pink"
     VIOLET = "violet"
+    YELLOW = "yellow"
 
     def __str__(self) -> str:
         return str(self.value)

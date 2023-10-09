@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.incident_attachments_v1_create_request_body_resource import (
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentAttachmentsV1CreateRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentAttachmentsV1CreateRequestBody:
     """
     Example:
@@ -26,7 +27,7 @@ class IncidentAttachmentsV1CreateRequestBody:
 
     incident_id: str
     resource: "IncidentAttachmentsV1CreateRequestBodyResource"
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         incident_id = self.incident_id

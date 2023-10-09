@@ -1,7 +1,8 @@
 import datetime
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.incident_role_v2_response_body_role_type import (
@@ -11,7 +12,7 @@ from ..models.incident_role_v2_response_body_role_type import (
 T = TypeVar("T", bound="IncidentRoleV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentRoleV2ResponseBody:
     """
     Example:
@@ -42,7 +43,7 @@ class IncidentRoleV2ResponseBody:
     role_type: IncidentRoleV2ResponseBodyRoleType
     shortform: str
     updated_at: datetime.datetime
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()

@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.catalog_resource_v2_response_body_category import (
     CatalogResourceV2ResponseBodyCategory,
@@ -9,7 +10,7 @@ from ..models.catalog_resource_v2_response_body_category import (
 T = TypeVar("T", bound="CatalogResourceV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogResourceV2ResponseBody:
     """
     Example:
@@ -31,7 +32,7 @@ class CatalogResourceV2ResponseBody:
     label: str
     type: str
     value_docstring: str
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         category = self.category.value

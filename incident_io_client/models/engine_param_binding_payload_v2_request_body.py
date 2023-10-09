@@ -1,33 +1,36 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.catalog_attribute_value_payload_v2_request_body import (
-        CatalogAttributeValuePayloadV2RequestBody,
+    from ..models.engine_param_binding_value_payload_v2_request_body import (
+        EngineParamBindingValuePayloadV2RequestBody,
     )
 
 
-T = TypeVar("T", bound="CatalogAttributeBindingPayloadV2RequestBody")
+T = TypeVar("T", bound="EngineParamBindingPayloadV2RequestBody")
 
 
-@attr.s(auto_attribs=True)
-class CatalogAttributeBindingPayloadV2RequestBody:
+@_attrs_define
+class EngineParamBindingPayloadV2RequestBody:
     """
     Example:
-        {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}
+        {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}
 
     Attributes:
-        array_value (Union[Unset, List['CatalogAttributeValuePayloadV2RequestBody']]): If set, this is the array value
-            of the attribute Example: [{'literal': 'SEV123'}].
-        value (Union[Unset, CatalogAttributeValuePayloadV2RequestBody]):  Example: {'literal': 'SEV123'}.
+        array_value (Union[Unset, List['EngineParamBindingValuePayloadV2RequestBody']]): If set, this is the array value
+            of the step parameter Example: [{'literal': 'SEV123', 'reference': 'incident.severity'}].
+        value (Union[Unset, EngineParamBindingValuePayloadV2RequestBody]):  Example: {'literal': 'SEV123', 'reference':
+            'incident.severity'}.
     """
 
-    array_value: Union[Unset, List["CatalogAttributeValuePayloadV2RequestBody"]] = UNSET
-    value: Union[Unset, "CatalogAttributeValuePayloadV2RequestBody"] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    array_value: Union[Unset, List["EngineParamBindingValuePayloadV2RequestBody"]] = UNSET
+    value: Union[Unset, "EngineParamBindingValuePayloadV2RequestBody"] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         array_value: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -54,34 +57,34 @@ class CatalogAttributeBindingPayloadV2RequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.catalog_attribute_value_payload_v2_request_body import (
-            CatalogAttributeValuePayloadV2RequestBody,
+        from ..models.engine_param_binding_value_payload_v2_request_body import (
+            EngineParamBindingValuePayloadV2RequestBody,
         )
 
         d = src_dict.copy()
         array_value = []
         _array_value = d.pop("array_value", UNSET)
         for array_value_item_data in _array_value or []:
-            array_value_item = CatalogAttributeValuePayloadV2RequestBody.from_dict(
+            array_value_item = EngineParamBindingValuePayloadV2RequestBody.from_dict(
                 array_value_item_data
             )
 
             array_value.append(array_value_item)
 
         _value = d.pop("value", UNSET)
-        value: Union[Unset, CatalogAttributeValuePayloadV2RequestBody]
+        value: Union[Unset, EngineParamBindingValuePayloadV2RequestBody]
         if isinstance(_value, Unset):
             value = UNSET
         else:
-            value = CatalogAttributeValuePayloadV2RequestBody.from_dict(_value)
+            value = EngineParamBindingValuePayloadV2RequestBody.from_dict(_value)
 
-        catalog_attribute_binding_payload_v2_request_body = cls(
+        engine_param_binding_payload_v2_request_body = cls(
             array_value=array_value,
             value=value,
         )
 
-        catalog_attribute_binding_payload_v2_request_body.additional_properties = d
-        return catalog_attribute_binding_payload_v2_request_body
+        engine_param_binding_payload_v2_request_body.additional_properties = d
+        return engine_param_binding_payload_v2_request_body
 
     @property
     def additional_keys(self) -> List[str]:

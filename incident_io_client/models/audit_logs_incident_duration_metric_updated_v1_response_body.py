@@ -1,7 +1,8 @@
 import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 if TYPE_CHECKING:
@@ -15,7 +16,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="AuditLogsIncidentDurationMetricUpdatedV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class AuditLogsIncidentDurationMetricUpdatedV1ResponseBody:
     """
     Example:
@@ -44,7 +45,7 @@ class AuditLogsIncidentDurationMetricUpdatedV1ResponseBody:
     occurred_at: datetime.datetime
     targets: List["AuditLogTargetV2ResponseBody"]
     version: int
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         action = self.action

@@ -2,13 +2,13 @@ from enum import Enum
 
 
 class IncidentStatusV1ResponseBodyCategory(str, Enum):
-    TRIAGE = "triage"
-    DECLINED = "declined"
-    MERGED = "merged"
     CANCELED = "canceled"
-    LIVE = "live"
-    LEARNING = "learning"
     CLOSED = "closed"
+    DECLINED = "declined"
+    LEARNING = "learning"
+    LIVE = "live"
+    MERGED = "merged"
+    TRIAGE = "triage"
 
     def __str__(self) -> str:
         return str(self.value)

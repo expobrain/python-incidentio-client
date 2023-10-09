@@ -1,7 +1,8 @@
 import datetime
 from typing import Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
@@ -9,7 +10,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="IncidentTimestampValueV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentTimestampValueV2ResponseBody:
     """
     Example:
@@ -21,7 +22,7 @@ class IncidentTimestampValueV2ResponseBody:
     """
 
     value: Union[Unset, datetime.datetime] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         value: Union[Unset, str] = UNSET

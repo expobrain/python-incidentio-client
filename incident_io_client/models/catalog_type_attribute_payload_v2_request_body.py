@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.catalog_type_attribute_payload_v2_request_body_mode import (
     CatalogTypeAttributePayloadV2RequestBodyMode,
@@ -10,7 +11,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="CatalogTypeAttributePayloadV2RequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogTypeAttributePayloadV2RequestBody:
     """
     Example:
@@ -31,7 +32,7 @@ class CatalogTypeAttributePayloadV2RequestBody:
     type: str
     id: Union[Unset, str] = UNSET
     mode: Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         array = self.array

@@ -1,13 +1,14 @@
 from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="EmbeddedCatalogEntryV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class EmbeddedCatalogEntryV1ResponseBody:
     """
     Example:
@@ -27,7 +28,7 @@ class EmbeddedCatalogEntryV1ResponseBody:
     name: str
     aliases: Union[Unset, List[str]] = UNSET
     external_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id

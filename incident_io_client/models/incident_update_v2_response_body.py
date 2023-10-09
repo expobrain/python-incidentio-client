@@ -1,7 +1,8 @@
 import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
@@ -15,7 +16,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentUpdateV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentUpdateV2ResponseBody:
     """
     Example:
@@ -55,7 +56,7 @@ class IncidentUpdateV2ResponseBody:
     updater: "ActorV2ResponseBody"
     message: Union[Unset, str] = UNSET
     new_severity: Union[Unset, "SeverityV2ResponseBody"] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()

@@ -1,13 +1,14 @@
 import datetime
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 T = TypeVar("T", bound="SeverityV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class SeverityV1ResponseBody:
     """
     Example:
@@ -29,7 +30,7 @@ class SeverityV1ResponseBody:
     name: str
     rank: int
     updated_at: datetime.datetime
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()

@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.severity_v1_response_body import SeverityV1ResponseBody
@@ -9,7 +10,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="SeveritiesV1ShowResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class SeveritiesV1ShowResponseBody:
     """
     Example:
@@ -23,7 +24,7 @@ class SeveritiesV1ShowResponseBody:
     """
 
     severity: "SeverityV1ResponseBody"
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         severity = self.severity.to_dict()

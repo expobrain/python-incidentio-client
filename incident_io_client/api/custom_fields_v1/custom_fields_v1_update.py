@@ -1,9 +1,10 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.custom_fields_v1_update_request_body import (
     CustomFieldsV1UpdateRequestBody,
 )
@@ -16,47 +17,49 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    client: Client,
     json_body: CustomFieldsV1UpdateRequestBody,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/custom_fields/{id}"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     json_json_body = json_body.to_dict()
 
     return {
         "method": "put",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v1/custom_fields/{id}".format(
+            id=id,
+        ),
         "json": json_json_body,
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[CustomFieldsV1UpdateResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[CustomFieldsV1UpdateResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = CustomFieldsV1UpdateResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[CustomFieldsV1UpdateResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[CustomFieldsV1UpdateResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CustomFieldsV1UpdateRequestBody,
 ) -> Response[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
@@ -66,9 +69,13 @@ def sync_detailed(
     Args:
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
-            'show_in_announcement_post': True}.
+            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
+            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
+            True, 'show_in_announcement_post': True}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[CustomFieldsV1UpdateResponseBody]
@@ -76,22 +83,20 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        client=client,
         json_body=json_body,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CustomFieldsV1UpdateRequestBody,
 ) -> Optional[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
@@ -101,12 +106,16 @@ def sync(
     Args:
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
-            'show_in_announcement_post': True}.
+            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
+            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
+            True, 'show_in_announcement_post': True}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CustomFieldsV1UpdateResponseBody]
+        CustomFieldsV1UpdateResponseBody
     """
 
     return sync_detailed(
@@ -119,7 +128,7 @@ def sync(
 async def asyncio_detailed(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CustomFieldsV1UpdateRequestBody,
 ) -> Response[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
@@ -129,9 +138,13 @@ async def asyncio_detailed(
     Args:
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
-            'show_in_announcement_post': True}.
+            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
+            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
+            True, 'show_in_announcement_post': True}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[CustomFieldsV1UpdateResponseBody]
@@ -139,20 +152,18 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        client=client,
         json_body=json_body,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CustomFieldsV1UpdateRequestBody,
 ) -> Optional[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
@@ -162,12 +173,16 @@ async def asyncio(
     Args:
         id (str):
         json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never',
-            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
-            'show_in_announcement_post': True}.
+            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
+            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
+            True, 'show_in_announcement_post': True}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CustomFieldsV1UpdateResponseBody]
+        CustomFieldsV1UpdateResponseBody
     """
 
     return (

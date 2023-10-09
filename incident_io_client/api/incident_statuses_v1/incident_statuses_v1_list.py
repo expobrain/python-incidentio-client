@@ -1,84 +1,88 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.incident_statuses_v1_list_response_body import (
     IncidentStatusesV1ListResponseBody,
 )
 from ...types import Response
 
 
-def _get_kwargs(
-    *,
-    client: Client,
-) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/incident_statuses"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+def _get_kwargs() -> Dict[str, Any]:
+    pass
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v1/incident_statuses",
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[IncidentStatusesV1ListResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[IncidentStatusesV1ListResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = IncidentStatusesV1ListResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[IncidentStatusesV1ListResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[IncidentStatusesV1ListResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[IncidentStatusesV1ListResponseBody]
     """
 
-    kwargs = _get_kwargs(
-        client=client,
-    )
+    kwargs = _get_kwargs()
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentStatusesV1ListResponseBody]
+        IncidentStatusesV1ListResponseBody
     """
 
     return sync_detailed(
@@ -88,36 +92,41 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
 ) -> Response[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[IncidentStatusesV1ListResponseBody]
     """
 
-    kwargs = _get_kwargs(
-        client=client,
-    )
+    kwargs = _get_kwargs()
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
 ) -> Optional[IncidentStatusesV1ListResponseBody]:
-    """List IncidentStatuses V1
+    """List Incident Statuses V1
 
      List all incident statuses for an organisation.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentStatusesV1ListResponseBody]
+        IncidentStatusesV1ListResponseBody
     """
 
     return (
