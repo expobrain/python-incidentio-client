@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.webhooks_private_incident_incident_updated_v2_response_body_event_type import (
     WebhooksPrivateIncidentIncidentUpdatedV2ResponseBodyEventType,
@@ -15,7 +16,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="WebhooksPrivateIncidentIncidentUpdatedV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class WebhooksPrivateIncidentIncidentUpdatedV2ResponseBody:
     """
     Example:
@@ -29,7 +30,7 @@ class WebhooksPrivateIncidentIncidentUpdatedV2ResponseBody:
 
     event_type: WebhooksPrivateIncidentIncidentUpdatedV2ResponseBodyEventType
     private_incident_incident_updated_v2: "WebhookPrivateResourceV2ResponseBody"
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         event_type = self.event_type.value

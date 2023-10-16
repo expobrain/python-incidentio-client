@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.custom_field_value_payload_v1_request_body import (
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CustomFieldEntryPayloadV1RequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CustomFieldEntryPayloadV1RequestBody:
     """
     Example:
@@ -31,7 +32,7 @@ class CustomFieldEntryPayloadV1RequestBody:
 
     custom_field_id: str
     values: List["CustomFieldValuePayloadV1RequestBody"]
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         custom_field_id = self.custom_field_id

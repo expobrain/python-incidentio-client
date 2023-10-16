@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.external_issue_reference_v1_response_body_provider import (
     ExternalIssueReferenceV1ResponseBodyProvider,
@@ -10,7 +11,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="ExternalIssueReferenceV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class ExternalIssueReferenceV1ResponseBody:
     """
     Example:
@@ -28,7 +29,7 @@ class ExternalIssueReferenceV1ResponseBody:
     issue_name: Union[Unset, str] = UNSET
     issue_permalink: Union[Unset, str] = UNSET
     provider: Union[Unset, ExternalIssueReferenceV1ResponseBodyProvider] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         issue_name = self.issue_name

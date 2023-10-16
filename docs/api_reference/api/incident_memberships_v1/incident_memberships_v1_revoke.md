@@ -1,0 +1,3 @@
+# incident_io_client.api.incident_memberships_v1.incident_memberships_v1_revoke
+
+::: incident_io_client.api.incident_memberships_v1.incident_memberships_v1_revoke

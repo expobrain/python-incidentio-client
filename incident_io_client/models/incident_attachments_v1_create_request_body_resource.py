@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.incident_attachments_v1_create_request_body_resource_resource_type import (
     IncidentAttachmentsV1CreateRequestBodyResourceResourceType,
@@ -9,7 +10,7 @@ from ..models.incident_attachments_v1_create_request_body_resource_resource_type
 T = TypeVar("T", bound="IncidentAttachmentsV1CreateRequestBodyResource")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentAttachmentsV1CreateRequestBodyResource:
     """
     Example:
@@ -23,7 +24,7 @@ class IncidentAttachmentsV1CreateRequestBodyResource:
 
     external_id: str
     resource_type: IncidentAttachmentsV1CreateRequestBodyResourceResourceType
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         external_id = self.external_id

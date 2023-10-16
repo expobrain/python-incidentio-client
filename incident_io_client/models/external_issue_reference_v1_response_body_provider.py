@@ -3,10 +3,10 @@ from enum import Enum
 
 class ExternalIssueReferenceV1ResponseBodyProvider(str, Enum):
     ASANA = "asana"
-    LINEAR = "linear"
+    GITHUB = "github"
     JIRA = "jira"
     JIRA_SERVER = "jira_server"
-    GITHUB = "github"
+    LINEAR = "linear"
     SHORTCUT = "shortcut"
 
     def __str__(self) -> str:

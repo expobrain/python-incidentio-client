@@ -1,7 +1,8 @@
 import datetime
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.incident_status_v1_response_body_category import (
@@ -11,7 +12,7 @@ from ..models.incident_status_v1_response_body_category import (
 T = TypeVar("T", bound="IncidentStatusV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentStatusV1ResponseBody:
     """
     Example:
@@ -39,7 +40,7 @@ class IncidentStatusV1ResponseBody:
     name: str
     rank: int
     updated_at: datetime.datetime
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         category = self.category.value

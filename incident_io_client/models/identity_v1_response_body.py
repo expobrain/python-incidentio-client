@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.identity_v1_response_body_roles_item import (
     IdentityV1ResponseBodyRolesItem,
@@ -9,7 +10,7 @@ from ..models.identity_v1_response_body_roles_item import (
 T = TypeVar("T", bound="IdentityV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IdentityV1ResponseBody:
     """
     Example:
@@ -23,7 +24,7 @@ class IdentityV1ResponseBody:
 
     name: str
     roles: List[IdentityV1ResponseBodyRolesItem]
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         name = self.name

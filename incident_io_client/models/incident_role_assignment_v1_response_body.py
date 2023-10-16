@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentRoleAssignmentV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentRoleAssignmentV1ResponseBody:
     """
     Example:
@@ -33,7 +34,7 @@ class IncidentRoleAssignmentV1ResponseBody:
 
     role: "IncidentRoleV1ResponseBody"
     assignee: Union[Unset, "UserV1ResponseBody"] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         role = self.role.to_dict()

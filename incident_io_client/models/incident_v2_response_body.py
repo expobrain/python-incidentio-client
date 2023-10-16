@@ -1,7 +1,8 @@
 import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.incident_v2_response_body_mode import IncidentV2ResponseBodyMode
@@ -32,7 +33,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentV2ResponseBody:
     """
     Example:
@@ -101,7 +102,8 @@ class IncidentV2ResponseBody:
         name (str): Explanation of the incident Example: Our database is sad.
         reference (str): Reference to this incident, as displayed across the product Example: INC-123.
         slack_channel_id (str): ID of the Slack channel in the organisation Slack workspace Example: C02AW36C1M5.
-        slack_team_id (str): ID of the Slack team / workspace Example: T02A1FSLE8J.
+        slack_team_id (str): ID of the Slack team / workspace. This is only required if you are using a Slack Enterprise
+            Grid with multiple teams. Example: T02A1FSLE8J.
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
         visibility (IncidentV2ResponseBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
@@ -163,7 +165,7 @@ class IncidentV2ResponseBody:
     workload_minutes_sleeping: Union[Unset, float] = UNSET
     workload_minutes_total: Union[Unset, float] = UNSET
     workload_minutes_working: Union[Unset, float] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()

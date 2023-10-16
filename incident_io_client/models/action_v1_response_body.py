@@ -1,7 +1,8 @@
 import datetime
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.action_v1_response_body_status import ActionV1ResponseBodyStatus
@@ -17,7 +18,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="ActionV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class ActionV1ResponseBody:
     """
     Example:
@@ -55,7 +56,7 @@ class ActionV1ResponseBody:
     completed_at: Union[Unset, datetime.datetime] = UNSET
     description: Union[Unset, str] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV1ResponseBody"] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()

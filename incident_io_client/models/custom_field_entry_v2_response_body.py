@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.custom_field_type_info_v2_response_body import (
@@ -14,7 +15,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CustomFieldEntryV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CustomFieldEntryV2ResponseBody:
     """
     Example:
@@ -42,7 +43,7 @@ class CustomFieldEntryV2ResponseBody:
 
     custom_field: "CustomFieldTypeInfoV2ResponseBody"
     values: List["CustomFieldValueV2ResponseBody"]
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         custom_field = self.custom_field.to_dict()

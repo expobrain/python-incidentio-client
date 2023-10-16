@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.catalog_type_attribute_payload_v2_request_body import (
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CatalogV2UpdateTypeSchemaRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogV2UpdateTypeSchemaRequestBody:
     """
     Example:
@@ -26,7 +27,7 @@ class CatalogV2UpdateTypeSchemaRequestBody:
 
     attributes: List["CatalogTypeAttributePayloadV2RequestBody"]
     version: int
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         attributes = []

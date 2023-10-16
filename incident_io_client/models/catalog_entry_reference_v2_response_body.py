@@ -1,11 +1,12 @@
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 T = TypeVar("T", bound="CatalogEntryReferenceV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogEntryReferenceV2ResponseBody:
     """
     Example:
@@ -21,7 +22,7 @@ class CatalogEntryReferenceV2ResponseBody:
     catalog_entry_id: str
     catalog_entry_name: str
     catalog_type_id: str
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         catalog_entry_id = self.catalog_entry_id

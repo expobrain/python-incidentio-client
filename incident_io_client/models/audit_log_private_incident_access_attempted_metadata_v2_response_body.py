@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.audit_log_private_incident_access_attempted_metadata_v2_response_body_outcome import (
     AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBodyOutcome,
@@ -10,7 +11,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody:
     """
     Example:
@@ -24,7 +25,7 @@ class AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody:
     outcome: Union[
         Unset, AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBodyOutcome
     ] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         outcome: Union[Unset, str] = UNSET

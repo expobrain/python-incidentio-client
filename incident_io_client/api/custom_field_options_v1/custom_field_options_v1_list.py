@@ -3,7 +3,8 @@ from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.custom_field_options_v1_list_response_body import (
     CustomFieldOptionsV1ListResponseBody,
 )
@@ -12,15 +13,11 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    client: Client,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     custom_field_id: str,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/custom_field_options"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     params: Dict[str, Any] = {}
     params["page_size"] = page_size
@@ -33,34 +30,38 @@ def _get_kwargs(
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v1/custom_field_options",
         "params": params,
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[CustomFieldOptionsV1ListResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[CustomFieldOptionsV1ListResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = CustomFieldOptionsV1ListResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[CustomFieldOptionsV1ListResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[CustomFieldOptionsV1ListResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     custom_field_id: str,
@@ -74,28 +75,30 @@ def sync_detailed(
         after (Union[Unset, None, str]):
         custom_field_id (str):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[CustomFieldOptionsV1ListResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         page_size=page_size,
         after=after,
         custom_field_id=custom_field_id,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     custom_field_id: str,
@@ -109,8 +112,12 @@ def sync(
         after (Union[Unset, None, str]):
         custom_field_id (str):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[CustomFieldOptionsV1ListResponseBody]
+        CustomFieldOptionsV1ListResponseBody
     """
 
     return sync_detailed(
@@ -123,7 +130,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     custom_field_id: str,
@@ -137,26 +144,28 @@ async def asyncio_detailed(
         after (Union[Unset, None, str]):
         custom_field_id (str):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[CustomFieldOptionsV1ListResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         page_size=page_size,
         after=after,
         custom_field_id=custom_field_id,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     custom_field_id: str,
@@ -170,8 +179,12 @@ async def asyncio(
         after (Union[Unset, None, str]):
         custom_field_id (str):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[CustomFieldOptionsV1ListResponseBody]
+        CustomFieldOptionsV1ListResponseBody
     """
 
     return (

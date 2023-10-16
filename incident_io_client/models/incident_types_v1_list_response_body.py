@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.incident_type_v1_response_body import IncidentTypeV1ResponseBody
@@ -9,7 +10,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentTypesV1ListResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentTypesV1ListResponseBody:
     """
     Example:
@@ -25,7 +26,7 @@ class IncidentTypesV1ListResponseBody:
     """
 
     incident_types: List["IncidentTypeV1ResponseBody"]
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         incident_types = []

@@ -1,0 +1,3 @@
+# incident_io_client.models.embedded_incident_role_v2_response_body
+
+::: incident_io_client.models.embedded_incident_role_v2_response_body

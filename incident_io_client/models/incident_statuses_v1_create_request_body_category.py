@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class IncidentStatusesV1CreateRequestBodyCategory(str, Enum):
-    LIVE = "live"
-    LEARNING = "learning"
     CLOSED = "closed"
+    LEARNING = "learning"
+    LIVE = "live"
 
     def __str__(self) -> str:
         return str(self.value)
