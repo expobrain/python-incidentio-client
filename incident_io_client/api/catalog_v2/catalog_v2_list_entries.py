@@ -3,7 +3,8 @@ from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.catalog_v2_list_entries_response_body import (
     CatalogV2ListEntriesResponseBody,
 )
@@ -12,15 +13,11 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    client: Client,
     catalog_type_id: str,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v2/catalog_entries"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     params: Dict[str, Any] = {}
     params["catalog_type_id"] = catalog_type_id
@@ -33,34 +30,38 @@ def _get_kwargs(
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v2/catalog_entries",
         "params": params,
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[CatalogV2ListEntriesResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[CatalogV2ListEntriesResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = CatalogV2ListEntriesResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[CatalogV2ListEntriesResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[CatalogV2ListEntriesResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
@@ -74,28 +75,30 @@ def sync_detailed(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[CatalogV2ListEntriesResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         catalog_type_id=catalog_type_id,
         page_size=page_size,
         after=after,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
@@ -109,8 +112,12 @@ def sync(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[CatalogV2ListEntriesResponseBody]
+        CatalogV2ListEntriesResponseBody
     """
 
     return sync_detailed(
@@ -123,7 +130,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
@@ -137,26 +144,28 @@ async def asyncio_detailed(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[CatalogV2ListEntriesResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         catalog_type_id=catalog_type_id,
         page_size=page_size,
         after=after,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
@@ -170,8 +179,12 @@ async def asyncio(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[CatalogV2ListEntriesResponseBody]
+        CatalogV2ListEntriesResponseBody
     """
 
     return (

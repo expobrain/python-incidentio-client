@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.catalog_type_v2_response_body import CatalogTypeV2ResponseBody
@@ -9,11 +10,11 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CatalogV2CreateTypeResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogV2CreateTypeResponseBody:
     """
     Example:
-        {'catalog_type': {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate',
+        {'catalog_type': {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow',
             'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we run inside
             of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
@@ -24,7 +25,7 @@ class CatalogV2CreateTypeResponseBody:
 
     Attributes:
         catalog_type (CatalogTypeV2ResponseBody):  Example: {'annotations': {'incident.io/catalog-importer/id': 'id-of-
-            config'}, 'color': 'slate', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
+            config'}, 'color': 'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
             clusters that we run inside of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
             'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
@@ -34,7 +35,7 @@ class CatalogV2CreateTypeResponseBody:
     """
 
     catalog_type: "CatalogTypeV2ResponseBody"
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         catalog_type = self.catalog_type.to_dict()

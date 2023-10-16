@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.user_reference_payload_v1_request_body import (
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentRoleAssignmentPayloadV1RequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentRoleAssignmentPayloadV1RequestBody:
     """
     Example:
@@ -26,7 +27,7 @@ class IncidentRoleAssignmentPayloadV1RequestBody:
 
     assignee: "UserReferencePayloadV1RequestBody"
     incident_role_id: str
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         assignee = self.assignee.to_dict()

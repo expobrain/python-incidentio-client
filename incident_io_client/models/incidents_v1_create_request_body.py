@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.incidents_v1_create_request_body_mode import (
     IncidentsV1CreateRequestBodyMode,
@@ -25,7 +26,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentsV1CreateRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentsV1CreateRequestBody:
     """
     Example:
@@ -59,7 +60,8 @@ class IncidentsV1CreateRequestBody:
         mode (Union[Unset, IncidentsV1CreateRequestBodyMode]): Whether the incident is real or test Example: real.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         severity_id (Union[Unset, str]): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
-        slack_team_id (Union[Unset, str]): ID of the Slack team / workspace Example: T02A1FSLE8J.
+        slack_team_id (Union[Unset, str]): ID of the Slack team / workspace. This is only required if you are using a
+            Slack Enterprise Grid with multiple teams. Example: T02A1FSLE8J.
         source_message_channel_id (Union[Unset, str]): Channel ID of the source message, if this incident was created
             from one Example: C02AW36C1M5.
         source_message_timestamp (Union[Unset, str]): Timestamp of the source message, if this incident was created from
@@ -84,7 +86,7 @@ class IncidentsV1CreateRequestBody:
     source_message_timestamp: Union[Unset, str] = UNSET
     status: Union[Unset, IncidentsV1CreateRequestBodyStatus] = UNSET
     summary: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         idempotency_key = self.idempotency_key

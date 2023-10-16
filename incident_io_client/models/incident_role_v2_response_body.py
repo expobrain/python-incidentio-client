@@ -1,7 +1,8 @@
 import datetime
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.incident_role_v2_response_body_role_type import (
@@ -11,14 +12,14 @@ from ..models.incident_role_v2_response_body_role_type import (
 T = TypeVar("T", bound="IncidentRoleV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentRoleV2ResponseBody:
     """
     Example:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}
+            responsibilities', 'name': 'Incident Lead', 'role_type': 'lead', 'shortform': 'lead', 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
@@ -27,7 +28,6 @@ class IncidentRoleV2ResponseBody:
         instructions (str): Provided to whoever is nominated for the role Example: Take point on the incident; Make sure
             people are clear on responsibilities.
         name (str): Human readable name of the incident role Example: Incident Lead.
-        required (bool): Whether incident require this role to be set Example: True.
         role_type (IncidentRoleV2ResponseBodyRoleType): Type of incident role Example: lead.
         shortform (str): Short human readable name for Slack Example: lead.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
@@ -38,11 +38,10 @@ class IncidentRoleV2ResponseBody:
     id: str
     instructions: str
     name: str
-    required: bool
     role_type: IncidentRoleV2ResponseBodyRoleType
     shortform: str
     updated_at: datetime.datetime
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()
@@ -51,7 +50,6 @@ class IncidentRoleV2ResponseBody:
         id = self.id
         instructions = self.instructions
         name = self.name
-        required = self.required
         role_type = self.role_type.value
 
         shortform = self.shortform
@@ -66,7 +64,6 @@ class IncidentRoleV2ResponseBody:
                 "id": id,
                 "instructions": instructions,
                 "name": name,
-                "required": required,
                 "role_type": role_type,
                 "shortform": shortform,
                 "updated_at": updated_at,
@@ -88,8 +85,6 @@ class IncidentRoleV2ResponseBody:
 
         name = d.pop("name")
 
-        required = d.pop("required")
-
         role_type = IncidentRoleV2ResponseBodyRoleType(d.pop("role_type"))
 
         shortform = d.pop("shortform")
@@ -102,7 +97,6 @@ class IncidentRoleV2ResponseBody:
             id=id,
             instructions=instructions,
             name=name,
-            required=required,
             role_type=role_type,
             shortform=shortform,
             updated_at=updated_at,

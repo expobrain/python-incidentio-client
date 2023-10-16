@@ -1,9 +1,10 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.incident_attachments_v1_create_request_body import (
     IncidentAttachmentsV1CreateRequestBody,
 )
@@ -15,50 +16,46 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    client: Client,
     json_body: IncidentAttachmentsV1CreateRequestBody,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/incident_attachments"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     json_json_body = json_body.to_dict()
 
     return {
         "method": "post",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v1/incident_attachments",
         "json": json_json_body,
     }
 
 
 def _parse_response(
-    *, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[IncidentAttachmentsV1CreateResponseBody]:
     if response.status_code == HTTPStatus.CREATED:
         response_201 = IncidentAttachmentsV1CreateResponseBody.from_dict(response.json())
 
         return response_201
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
 def _build_response(
-    *, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Response[IncidentAttachmentsV1CreateResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: IncidentAttachmentsV1CreateRequestBody,
 ) -> Response[IncidentAttachmentsV1CreateResponseBody]:
     """Create Incident Attachments V1
@@ -69,27 +66,29 @@ def sync_detailed(
         json_body (IncidentAttachmentsV1CreateRequestBody):  Example: {'incident_id':
             '01FDAG4SAP5TYPT98WGR2N7W91', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[IncidentAttachmentsV1CreateResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         json_body=json_body,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: IncidentAttachmentsV1CreateRequestBody,
 ) -> Optional[IncidentAttachmentsV1CreateResponseBody]:
     """Create Incident Attachments V1
@@ -101,8 +100,12 @@ def sync(
             '01FDAG4SAP5TYPT98WGR2N7W91', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentAttachmentsV1CreateResponseBody]
+        IncidentAttachmentsV1CreateResponseBody
     """
 
     return sync_detailed(
@@ -113,7 +116,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: IncidentAttachmentsV1CreateRequestBody,
 ) -> Response[IncidentAttachmentsV1CreateResponseBody]:
     """Create Incident Attachments V1
@@ -125,24 +128,26 @@ async def asyncio_detailed(
             '01FDAG4SAP5TYPT98WGR2N7W91', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[IncidentAttachmentsV1CreateResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         json_body=json_body,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: IncidentAttachmentsV1CreateRequestBody,
 ) -> Optional[IncidentAttachmentsV1CreateResponseBody]:
     """Create Incident Attachments V1
@@ -154,8 +159,12 @@ async def asyncio(
             '01FDAG4SAP5TYPT98WGR2N7W91', 'resource': {'external_id': '123', 'resource_type':
             'pager_duty_incident'}}.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentAttachmentsV1CreateResponseBody]
+        IncidentAttachmentsV1CreateResponseBody
     """
 
     return (

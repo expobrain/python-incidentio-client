@@ -3,7 +3,8 @@ from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.incident_attachments_v1_list_resource_type import (
     IncidentAttachmentsV1ListResourceType,
 )
@@ -15,15 +16,11 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     external_id: Union[Unset, None, str] = UNSET,
     resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/incident_attachments"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     params: Dict[str, Any] = {}
     params["incident_id"] = incident_id
@@ -40,38 +37,38 @@ def _get_kwargs(
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v1/incident_attachments",
         "params": params,
     }
 
 
 def _parse_response(
-    *, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = IncidentAttachmentsV1ListResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
 def _build_response(
-    *, response: httpx.Response
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     external_id: Union[Unset, None, str] = UNSET,
     resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
@@ -85,29 +82,31 @@ def sync_detailed(
         incident_id (Union[Unset, None, str]):
         external_id (Union[Unset, None, str]):
         resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[IncidentAttachmentsV1ListResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         incident_id=incident_id,
         external_id=external_id,
         resource_type=resource_type,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     external_id: Union[Unset, None, str] = UNSET,
     resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
@@ -122,8 +121,12 @@ def sync(
         external_id (Union[Unset, None, str]):
         resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentAttachmentsV1ListResponseBody]
+        IncidentAttachmentsV1ListResponseBody
     """
 
     return sync_detailed(
@@ -136,7 +139,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     external_id: Union[Unset, None, str] = UNSET,
     resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
@@ -151,26 +154,28 @@ async def asyncio_detailed(
         external_id (Union[Unset, None, str]):
         resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[IncidentAttachmentsV1ListResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         incident_id=incident_id,
         external_id=external_id,
         resource_type=resource_type,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     external_id: Union[Unset, None, str] = UNSET,
     resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
@@ -185,8 +190,12 @@ async def asyncio(
         external_id (Union[Unset, None, str]):
         resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentAttachmentsV1ListResponseBody]
+        IncidentAttachmentsV1ListResponseBody
     """
 
     return (

@@ -1,18 +1,21 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
+    from ..models.embedded_incident_role_v2_response_body import (
+        EmbeddedIncidentRoleV2ResponseBody,
+    )
     from ..models.user_v2_response_body import UserV2ResponseBody
 
 
 T = TypeVar("T", bound="IncidentRoleAssignmentV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentRoleAssignmentV2ResponseBody:
     """
     Example:
@@ -23,17 +26,17 @@ class IncidentRoleAssignmentV2ResponseBody:
             Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
-        role (IncidentRoleV2ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        role (EmbeddedIncidentRoleV2ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident
+            Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
         assignee (Union[Unset, UserV2ResponseBody]):  Example: {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
     """
 
-    role: "IncidentRoleV2ResponseBody"
+    role: "EmbeddedIncidentRoleV2ResponseBody"
     assignee: Union[Unset, "UserV2ResponseBody"] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         role = self.role.to_dict()
@@ -56,11 +59,13 @@ class IncidentRoleAssignmentV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
+        from ..models.embedded_incident_role_v2_response_body import (
+            EmbeddedIncidentRoleV2ResponseBody,
+        )
         from ..models.user_v2_response_body import UserV2ResponseBody
 
         d = src_dict.copy()
-        role = IncidentRoleV2ResponseBody.from_dict(d.pop("role"))
+        role = EmbeddedIncidentRoleV2ResponseBody.from_dict(d.pop("role"))
 
         _assignee = d.pop("assignee", UNSET)
         assignee: Union[Unset, UserV2ResponseBody]

@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.catalog_v2_update_type_request_body_color import (
     CatalogV2UpdateTypeRequestBodyColor,
@@ -19,13 +20,13 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CatalogV2UpdateTypeRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogV2UpdateTypeRequestBody:
     """
     Example:
-        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'slate', 'description':
+        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True, 'semantic_type': 'custom'}
+            'ranked': True}
 
     Attributes:
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
@@ -34,11 +35,10 @@ class CatalogV2UpdateTypeRequestBody:
         annotations (Union[Unset, CatalogV2UpdateTypeRequestBodyAnnotations]): Annotations that can track metadata about
             this type Example: {'incident.io/catalog-importer/id': 'id-of-config'}.
         color (Union[Unset, CatalogV2UpdateTypeRequestBodyColor]): Sets the display color of this type in the dashboard
-            Example: slate.
+            Example: yellow.
         icon (Union[Unset, CatalogV2UpdateTypeRequestBodyIcon]): Sets the display icon of this type in the dashboard
             Example: bolt.
         ranked (Union[Unset, bool]): If this type should be ranked Example: True.
-        semantic_type (Union[Unset, str]): Semantic type of this resource Example: custom.
     """
 
     description: str
@@ -47,8 +47,7 @@ class CatalogV2UpdateTypeRequestBody:
     color: Union[Unset, CatalogV2UpdateTypeRequestBodyColor] = UNSET
     icon: Union[Unset, CatalogV2UpdateTypeRequestBodyIcon] = UNSET
     ranked: Union[Unset, bool] = UNSET
-    semantic_type: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
@@ -66,7 +65,6 @@ class CatalogV2UpdateTypeRequestBody:
             icon = self.icon.value
 
         ranked = self.ranked
-        semantic_type = self.semantic_type
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -84,8 +82,6 @@ class CatalogV2UpdateTypeRequestBody:
             field_dict["icon"] = icon
         if ranked is not UNSET:
             field_dict["ranked"] = ranked
-        if semantic_type is not UNSET:
-            field_dict["semantic_type"] = semantic_type
 
         return field_dict
 
@@ -123,8 +119,6 @@ class CatalogV2UpdateTypeRequestBody:
 
         ranked = d.pop("ranked", UNSET)
 
-        semantic_type = d.pop("semantic_type", UNSET)
-
         catalog_v2_update_type_request_body = cls(
             description=description,
             name=name,
@@ -132,7 +126,6 @@ class CatalogV2UpdateTypeRequestBody:
             color=color,
             icon=icon,
             ranked=ranked,
-            semantic_type=semantic_type,
         )
 
         catalog_v2_update_type_request_body.additional_properties = d

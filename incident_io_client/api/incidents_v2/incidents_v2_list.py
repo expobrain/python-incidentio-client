@@ -3,26 +3,24 @@ from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.incidents_v2_list_response_body import IncidentsV2ListResponseBody
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
-    client: Client,
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     status: Union[Unset, None, Any] = UNSET,
+    status_category: Union[Unset, None, Any] = UNSET,
     severity: Union[Unset, None, Any] = UNSET,
     incident_type: Union[Unset, None, Any] = UNSET,
     incident_role: Union[Unset, None, Any] = UNSET,
     custom_field: Union[Unset, None, Any] = UNSET,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v2/incidents"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     params: Dict[str, Any] = {}
     params["page_size"] = page_size
@@ -30,6 +28,8 @@ def _get_kwargs(
     params["after"] = after
 
     params["status"] = status
+
+    params["status_category"] = status_category
 
     params["severity"] = severity
 
@@ -43,43 +43,48 @@ def _get_kwargs(
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v2/incidents",
         "params": params,
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[IncidentsV2ListResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[IncidentsV2ListResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = IncidentsV2ListResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[IncidentsV2ListResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[IncidentsV2ListResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     status: Union[Unset, None, Any] = UNSET,
+    status_category: Union[Unset, None, Any] = UNSET,
     severity: Union[Unset, None, Any] = UNSET,
     incident_type: Union[Unset, None, Any] = UNSET,
     incident_role: Union[Unset, None, Any] = UNSET,
     custom_field: Union[Unset, None, Any] = UNSET,
 ) -> Response[IncidentsV2ListResponseBody]:
-    """List Incidents V2
+    r""" List Incidents V2
 
      List all incidents for an organisation.
 
@@ -110,6 +115,20 @@ def sync_detailed(
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
+
+    ### By status category
+
+    Find all incidents that are in a status category. Possible values are \"triage\",
+    \"declined\", \"merged\", \"canceled\", \"live\", \"learning\" and \"closed\":
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[one_of]=live'
+
+    Or all incidents that are not in a status category:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[not_in]=live'
+
 
     ### By severity
 
@@ -175,46 +194,51 @@ def sync_detailed(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
         status (Union[Unset, None, Any]):
+        status_category (Union[Unset, None, Any]):
         severity (Union[Unset, None, Any]):
         incident_type (Union[Unset, None, Any]):
         incident_role (Union[Unset, None, Any]):
         custom_field (Union[Unset, None, Any]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[IncidentsV2ListResponseBody]
-    """
+     """
 
     kwargs = _get_kwargs(
-        client=client,
         page_size=page_size,
         after=after,
         status=status,
+        status_category=status_category,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
         custom_field=custom_field,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     status: Union[Unset, None, Any] = UNSET,
+    status_category: Union[Unset, None, Any] = UNSET,
     severity: Union[Unset, None, Any] = UNSET,
     incident_type: Union[Unset, None, Any] = UNSET,
     incident_role: Union[Unset, None, Any] = UNSET,
     custom_field: Union[Unset, None, Any] = UNSET,
 ) -> Optional[IncidentsV2ListResponseBody]:
-    """List Incidents V2
+    r""" List Incidents V2
 
      List all incidents for an organisation.
 
@@ -245,6 +269,20 @@ def sync(
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
+
+    ### By status category
+
+    Find all incidents that are in a status category. Possible values are \"triage\",
+    \"declined\", \"merged\", \"canceled\", \"live\", \"learning\" and \"closed\":
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[one_of]=live'
+
+    Or all incidents that are not in a status category:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[not_in]=live'
+
 
     ### By severity
 
@@ -310,20 +348,26 @@ def sync(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
         status (Union[Unset, None, Any]):
+        status_category (Union[Unset, None, Any]):
         severity (Union[Unset, None, Any]):
         incident_type (Union[Unset, None, Any]):
         incident_role (Union[Unset, None, Any]):
         custom_field (Union[Unset, None, Any]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentsV2ListResponseBody]
-    """
+        IncidentsV2ListResponseBody
+     """
 
     return sync_detailed(
         client=client,
         page_size=page_size,
         after=after,
         status=status,
+        status_category=status_category,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -333,16 +377,17 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     status: Union[Unset, None, Any] = UNSET,
+    status_category: Union[Unset, None, Any] = UNSET,
     severity: Union[Unset, None, Any] = UNSET,
     incident_type: Union[Unset, None, Any] = UNSET,
     incident_role: Union[Unset, None, Any] = UNSET,
     custom_field: Union[Unset, None, Any] = UNSET,
 ) -> Response[IncidentsV2ListResponseBody]:
-    """List Incidents V2
+    r""" List Incidents V2
 
      List all incidents for an organisation.
 
@@ -373,6 +418,20 @@ async def asyncio_detailed(
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
+
+    ### By status category
+
+    Find all incidents that are in a status category. Possible values are \"triage\",
+    \"declined\", \"merged\", \"canceled\", \"live\", \"learning\" and \"closed\":
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[one_of]=live'
+
+    Or all incidents that are not in a status category:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[not_in]=live'
+
 
     ### By severity
 
@@ -438,44 +497,49 @@ async def asyncio_detailed(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
         status (Union[Unset, None, Any]):
+        status_category (Union[Unset, None, Any]):
         severity (Union[Unset, None, Any]):
         incident_type (Union[Unset, None, Any]):
         incident_role (Union[Unset, None, Any]):
         custom_field (Union[Unset, None, Any]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[IncidentsV2ListResponseBody]
-    """
+     """
 
     kwargs = _get_kwargs(
-        client=client,
         page_size=page_size,
         after=after,
         status=status,
+        status_category=status_category,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
         custom_field=custom_field,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, None, int] = 25,
     after: Union[Unset, None, str] = UNSET,
     status: Union[Unset, None, Any] = UNSET,
+    status_category: Union[Unset, None, Any] = UNSET,
     severity: Union[Unset, None, Any] = UNSET,
     incident_type: Union[Unset, None, Any] = UNSET,
     incident_role: Union[Unset, None, Any] = UNSET,
     custom_field: Union[Unset, None, Any] = UNSET,
 ) -> Optional[IncidentsV2ListResponseBody]:
-    """List Incidents V2
+    r""" List Incidents V2
 
      List all incidents for an organisation.
 
@@ -506,6 +570,20 @@ async def asyncio(
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
+
+    ### By status category
+
+    Find all incidents that are in a status category. Possible values are \"triage\",
+    \"declined\", \"merged\", \"canceled\", \"live\", \"learning\" and \"closed\":
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[one_of]=live'
+
+    Or all incidents that are not in a status category:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'status_category[not_in]=live'
+
 
     ### By severity
 
@@ -571,14 +649,19 @@ async def asyncio(
         page_size (Union[Unset, None, int]):  Default: 25.
         after (Union[Unset, None, str]):
         status (Union[Unset, None, Any]):
+        status_category (Union[Unset, None, Any]):
         severity (Union[Unset, None, Any]):
         incident_type (Union[Unset, None, Any]):
         incident_role (Union[Unset, None, Any]):
         custom_field (Union[Unset, None, Any]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[IncidentsV2ListResponseBody]
-    """
+        IncidentsV2ListResponseBody
+     """
 
     return (
         await asyncio_detailed(
@@ -586,6 +669,7 @@ async def asyncio(
             page_size=page_size,
             after=after,
             status=status,
+            status_category=status_category,
             severity=severity,
             incident_type=incident_type,
             incident_role=incident_role,

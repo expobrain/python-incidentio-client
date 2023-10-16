@@ -1,9 +1,10 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.catalog_v2_update_entry_request_body import (
     CatalogV2UpdateEntryRequestBody,
 )
@@ -16,47 +17,49 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    client: Client,
     json_body: CatalogV2UpdateEntryRequestBody,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v2/catalog_entries/{id}"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     json_json_body = json_body.to_dict()
 
     return {
         "method": "put",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v2/catalog_entries/{id}".format(
+            id=id,
+        ),
         "json": json_json_body,
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[CatalogV2UpdateEntryResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[CatalogV2UpdateEntryResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = CatalogV2UpdateEntryResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[CatalogV2UpdateEntryResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[CatalogV2UpdateEntryResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CatalogV2UpdateEntryRequestBody,
 ) -> Response[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
@@ -67,8 +70,13 @@ def sync_detailed(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[CatalogV2UpdateEntryResponseBody]
@@ -76,22 +84,20 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        client=client,
         json_body=json_body,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CatalogV2UpdateEntryRequestBody,
 ) -> Optional[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
@@ -102,11 +108,16 @@ def sync(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[CatalogV2UpdateEntryResponseBody]
+        CatalogV2UpdateEntryResponseBody
     """
 
     return sync_detailed(
@@ -119,7 +130,7 @@ def sync(
 async def asyncio_detailed(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CatalogV2UpdateEntryRequestBody,
 ) -> Response[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
@@ -130,8 +141,13 @@ async def asyncio_detailed(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
         Response[CatalogV2UpdateEntryResponseBody]
@@ -139,20 +155,18 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        client=client,
         json_body=json_body,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     id: str,
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     json_body: CatalogV2UpdateEntryRequestBody,
 ) -> Optional[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
@@ -163,11 +177,16 @@ async def asyncio(
         id (str):
         json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
             ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[CatalogV2UpdateEntryResponseBody]
+        CatalogV2UpdateEntryResponseBody
     """
 
     return (

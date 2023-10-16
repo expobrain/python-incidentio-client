@@ -3,7 +3,8 @@ from typing import Any, Dict, Optional, Union
 
 import httpx
 
-from ...client import Client
+from ... import errors
+from ...client import AuthenticatedClient, Client
 from ...models.actions_v1_list_incident_mode import ActionsV1ListIncidentMode
 from ...models.actions_v1_list_response_body import ActionsV1ListResponseBody
 from ...types import UNSET, Response, Unset
@@ -11,15 +12,11 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    client: Client,
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
 ) -> Dict[str, Any]:
-    url = f"{client.base_url}/v1/actions"
-
-    headers: Dict[str, str] = client.get_headers()
-    cookies: Dict[str, Any] = client.get_cookies()
+    pass
 
     params: Dict[str, Any] = {}
     params["incident_id"] = incident_id
@@ -36,34 +33,38 @@ def _get_kwargs(
 
     return {
         "method": "get",
-        "url": url,
-        "headers": headers,
-        "cookies": cookies,
-        "timeout": client.get_timeout(),
+        "url": "/v1/actions",
         "params": params,
     }
 
 
-def _parse_response(*, response: httpx.Response) -> Optional[ActionsV1ListResponseBody]:
+def _parse_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Optional[ActionsV1ListResponseBody]:
     if response.status_code == HTTPStatus.OK:
         response_200 = ActionsV1ListResponseBody.from_dict(response.json())
 
         return response_200
-    return None
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
 
 
-def _build_response(*, response: httpx.Response) -> Response[ActionsV1ListResponseBody]:
+def _build_response(
+    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+) -> Response[ActionsV1ListResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
         headers=response.headers,
-        parsed=_parse_response(response=response),
+        parsed=_parse_response(client=client, response=response),
     )
 
 
 def sync_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
@@ -77,28 +78,30 @@ def sync_detailed(
         is_follow_up (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[ActionsV1ListResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         incident_id=incident_id,
         is_follow_up=is_follow_up,
         incident_mode=incident_mode,
     )
 
-    response = httpx.request(
-        verify=client.verify_ssl,
+    response = client.get_httpx_client().request(
         **kwargs,
     )
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 def sync(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
@@ -112,8 +115,12 @@ def sync(
         is_follow_up (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[ActionsV1ListResponseBody]
+        ActionsV1ListResponseBody
     """
 
     return sync_detailed(
@@ -126,7 +133,7 @@ def sync(
 
 async def asyncio_detailed(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
@@ -140,26 +147,28 @@ async def asyncio_detailed(
         is_follow_up (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
         Response[ActionsV1ListResponseBody]
     """
 
     kwargs = _get_kwargs(
-        client=client,
         incident_id=incident_id,
         is_follow_up=is_follow_up,
         incident_mode=incident_mode,
     )
 
-    async with httpx.AsyncClient(verify=client.verify_ssl) as _client:
-        response = await _client.request(**kwargs)
+    response = await client.get_async_httpx_client().request(**kwargs)
 
-    return _build_response(response=response)
+    return _build_response(client=client, response=response)
 
 
 async def asyncio(
     *,
-    client: Client,
+    client: Union[AuthenticatedClient, Client],
     incident_id: Union[Unset, None, str] = UNSET,
     is_follow_up: Union[Unset, None, bool] = UNSET,
     incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
@@ -173,8 +182,12 @@ async def asyncio(
         is_follow_up (Union[Unset, None, bool]):
         incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
 
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
     Returns:
-        Response[ActionsV1ListResponseBody]
+        ActionsV1ListResponseBody
     """
 
     return (

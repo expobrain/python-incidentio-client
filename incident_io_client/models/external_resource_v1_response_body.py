@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.external_resource_v1_response_body_resource_type import (
     ExternalResourceV1ResponseBodyResourceType,
@@ -9,7 +10,7 @@ from ..models.external_resource_v1_response_body_resource_type import (
 T = TypeVar("T", bound="ExternalResourceV1ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class ExternalResourceV1ResponseBody:
     """
     Example:
@@ -28,7 +29,7 @@ class ExternalResourceV1ResponseBody:
     permalink: str
     resource_type: ExternalResourceV1ResponseBodyResourceType
     title: str
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         external_id = self.external_id

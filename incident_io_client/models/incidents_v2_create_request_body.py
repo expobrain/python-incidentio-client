@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.incidents_v2_create_request_body_mode import (
     IncidentsV2CreateRequestBodyMode,
@@ -28,7 +29,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="IncidentsV2CreateRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentsV2CreateRequestBody:
     """
     Example:
@@ -98,7 +99,7 @@ class IncidentsV2CreateRequestBody:
     severity_id: Union[Unset, str] = UNSET
     slack_team_id: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         idempotency_key = self.idempotency_key

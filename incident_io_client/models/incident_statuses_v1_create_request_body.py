@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.incident_statuses_v1_create_request_body_category import (
     IncidentStatusesV1CreateRequestBodyCategory,
@@ -9,7 +10,7 @@ from ..models.incident_statuses_v1_create_request_body_category import (
 T = TypeVar("T", bound="IncidentStatusesV1CreateRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentStatusesV1CreateRequestBody:
     """
     Example:
@@ -27,7 +28,7 @@ class IncidentStatusesV1CreateRequestBody:
     category: IncidentStatusesV1CreateRequestBodyCategory
     description: str
     name: str
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         category = self.category.value

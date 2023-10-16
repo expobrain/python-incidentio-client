@@ -1,7 +1,8 @@
 import datetime
 from typing import Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.incident_type_v2_response_body_create_in_triage import (
@@ -11,7 +12,7 @@ from ..models.incident_type_v2_response_body_create_in_triage import (
 T = TypeVar("T", bound="IncidentTypeV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class IncidentTypeV2ResponseBody:
     """
     Example:
@@ -39,7 +40,7 @@ class IncidentTypeV2ResponseBody:
     name: str
     private_incidents_only: bool
     updated_at: datetime.datetime
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         create_in_triage = self.create_in_triage.value

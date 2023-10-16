@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
     from ..models.identity_v1_response_body import IdentityV1ResponseBody
@@ -9,7 +10,7 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="UtilitiesV1IdentityResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class UtilitiesV1IdentityResponseBody:
     """
     Example:
@@ -20,7 +21,7 @@ class UtilitiesV1IdentityResponseBody:
     """
 
     identity: "IdentityV1ResponseBody"
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         identity = self.identity.to_dict()

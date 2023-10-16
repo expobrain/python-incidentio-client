@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
@@ -13,17 +14,19 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CatalogV2UpdateEntryRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogV2UpdateEntryRequestBody:
     """
     Example:
         {'aliases': ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal':
-            'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name':
-            'Primary On-call', 'rank': 3}
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call',
+            'rank': 3}
 
     Attributes:
         attribute_values (CatalogV2UpdateEntryRequestBodyAttributeValues): Values of this entry Example: {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}.
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}.
         name (str): Name is the human readable name of this entry Example: Primary On-call.
         aliases (Union[Unset, List[str]]): Optional aliases that can be used to reference this entry Example:
             ['lawrence@incident.io', 'lawrence'].
@@ -37,7 +40,7 @@ class CatalogV2UpdateEntryRequestBody:
     aliases: Union[Unset, List[str]] = UNSET
     external_id: Union[Unset, str] = UNSET
     rank: Union[Unset, int] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         attribute_values = self.attribute_values.to_dict()

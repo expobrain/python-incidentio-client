@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Type, TypeVar, Union
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..models.audit_log_target_v2_response_body_type import (
     AuditLogTargetV2ResponseBodyType,
@@ -10,7 +11,7 @@ from ..types import UNSET, Unset
 T = TypeVar("T", bound="AuditLogTargetV2ResponseBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class AuditLogTargetV2ResponseBody:
     """
     Example:
@@ -25,7 +26,7 @@ class AuditLogTargetV2ResponseBody:
     id: str
     type: AuditLogTargetV2ResponseBodyType
     name: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id

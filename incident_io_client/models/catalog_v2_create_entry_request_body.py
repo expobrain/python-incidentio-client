@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
-import attr
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
@@ -13,17 +14,19 @@ if TYPE_CHECKING:
 T = TypeVar("T", bound="CatalogV2CreateEntryRequestBody")
 
 
-@attr.s(auto_attribs=True)
+@_attrs_define
 class CatalogV2CreateEntryRequestBody:
     """
     Example:
         {'aliases': ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal':
-            'SEV123'}], 'value': {'literal': 'SEV123'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}
 
     Attributes:
         attribute_values (CatalogV2CreateEntryRequestBodyAttributeValues): Values of this entry Example: {'abc123':
-            {'array_value': [{'literal': 'SEV123'}], 'value': {'literal': 'SEV123'}}}.
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}.
         catalog_type_id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name is the human readable name of this entry Example: Primary On-call.
         aliases (Union[Unset, List[str]]): Optional aliases that can be used to reference this entry Example:
@@ -39,7 +42,7 @@ class CatalogV2CreateEntryRequestBody:
     aliases: Union[Unset, List[str]] = UNSET
     external_id: Union[Unset, str] = UNSET
     rank: Union[Unset, int] = UNSET
-    additional_properties: Dict[str, Any] = attr.ib(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         attribute_values = self.attribute_values.to_dict()
