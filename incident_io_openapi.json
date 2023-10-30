@@ -6374,11 +6374,18 @@
       },
       "CatalogEntryReferenceV2ResponseBody": {
         "example": {
+          "archived_at": "2021-08-17T14:28:57.801578Z",
           "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "catalog_entry_name": "Primary escalation",
           "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
         },
         "properties": {
+          "archived_at": {
+            "description": "When this entry was archived",
+            "example": "2021-08-17T14:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
           "catalog_entry_id": {
             "description": "ID of this catalog entry",
             "example": "01FCNDV6P870EA6S7TK1DSYDG0",
@@ -6415,6 +6422,7 @@
               "array_value": [
                 {
                   "catalog_entry": {
+                    "archived_at": "2021-08-17T14:28:57.801578Z",
                     "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -6426,11 +6434,13 @@
                   "literal": "SEV123",
                   "reference": "incident.severity",
                   "sort_key": "000020",
-                  "unavailable": false
+                  "unavailable": false,
+                  "value": "abc123"
                 }
               ],
               "value": {
                 "catalog_entry": {
+                  "archived_at": "2021-08-17T14:28:57.801578Z",
                   "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "catalog_entry_name": "Primary escalation",
                   "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -6442,7 +6452,8 @@
                 "literal": "SEV123",
                 "reference": "incident.severity",
                 "sort_key": "000020",
-                "unavailable": false
+                "unavailable": false,
+                "value": "abc123"
               }
             }
           },
@@ -6483,6 +6494,7 @@
                 "array_value": [
                   {
                     "catalog_entry": {
+                      "archived_at": "2021-08-17T14:28:57.801578Z",
                       "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -6494,11 +6506,13 @@
                     "literal": "SEV123",
                     "reference": "incident.severity",
                     "sort_key": "000020",
-                    "unavailable": false
+                    "unavailable": false,
+                    "value": "abc123"
                   }
                 ],
                 "value": {
                   "catalog_entry": {
+                    "archived_at": "2021-08-17T14:28:57.801578Z",
                     "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -6510,7 +6524,8 @@
                   "literal": "SEV123",
                   "reference": "incident.severity",
                   "sort_key": "000020",
-                  "unavailable": false
+                  "unavailable": false,
+                  "value": "abc123"
                 }
               }
             },
@@ -6850,6 +6865,7 @@
               "briefcase",
               "browser",
               "bulb",
+              "calendar",
               "clock",
               "cog",
               "database",
@@ -7040,6 +7056,7 @@
                 "array_value": [
                   {
                     "catalog_entry": {
+                      "archived_at": "2021-08-17T14:28:57.801578Z",
                       "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7051,11 +7068,13 @@
                     "literal": "SEV123",
                     "reference": "incident.severity",
                     "sort_key": "000020",
-                    "unavailable": false
+                    "unavailable": false,
+                    "value": "abc123"
                   }
                 ],
                 "value": {
                   "catalog_entry": {
+                    "archived_at": "2021-08-17T14:28:57.801578Z",
                     "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7067,7 +7086,8 @@
                   "literal": "SEV123",
                   "reference": "incident.severity",
                   "sort_key": "000020",
-                  "unavailable": false
+                  "unavailable": false,
+                  "value": "abc123"
                 }
               }
             },
@@ -7142,6 +7162,7 @@
               "briefcase",
               "browser",
               "bulb",
+              "calendar",
               "clock",
               "cog",
               "database",
@@ -7245,6 +7266,7 @@
                   "array_value": [
                     {
                       "catalog_entry": {
+                        "archived_at": "2021-08-17T14:28:57.801578Z",
                         "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                         "catalog_entry_name": "Primary escalation",
                         "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7256,11 +7278,13 @@
                       "literal": "SEV123",
                       "reference": "incident.severity",
                       "sort_key": "000020",
-                      "unavailable": false
+                      "unavailable": false,
+                      "value": "abc123"
                     }
                   ],
                   "value": {
                     "catalog_entry": {
+                      "archived_at": "2021-08-17T14:28:57.801578Z",
                       "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7272,7 +7296,8 @@
                     "literal": "SEV123",
                     "reference": "incident.severity",
                     "sort_key": "000020",
-                    "unavailable": false
+                    "unavailable": false,
+                    "value": "abc123"
                   }
                 }
               },
@@ -7337,6 +7362,7 @@
                     "array_value": [
                       {
                         "catalog_entry": {
+                          "archived_at": "2021-08-17T14:28:57.801578Z",
                           "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                           "catalog_entry_name": "Primary escalation",
                           "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7348,11 +7374,13 @@
                         "literal": "SEV123",
                         "reference": "incident.severity",
                         "sort_key": "000020",
-                        "unavailable": false
+                        "unavailable": false,
+                        "value": "abc123"
                       }
                     ],
                     "value": {
                       "catalog_entry": {
+                        "archived_at": "2021-08-17T14:28:57.801578Z",
                         "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                         "catalog_entry_name": "Primary escalation",
                         "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7364,7 +7392,8 @@
                       "literal": "SEV123",
                       "reference": "incident.severity",
                       "sort_key": "000020",
-                      "unavailable": false
+                      "unavailable": false,
+                      "value": "abc123"
                     }
                   }
                 },
@@ -7532,6 +7561,7 @@
                 "array_value": [
                   {
                     "catalog_entry": {
+                      "archived_at": "2021-08-17T14:28:57.801578Z",
                       "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7543,11 +7573,13 @@
                     "literal": "SEV123",
                     "reference": "incident.severity",
                     "sort_key": "000020",
-                    "unavailable": false
+                    "unavailable": false,
+                    "value": "abc123"
                   }
                 ],
                 "value": {
                   "catalog_entry": {
+                    "archived_at": "2021-08-17T14:28:57.801578Z",
                     "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7559,7 +7591,8 @@
                   "literal": "SEV123",
                   "reference": "incident.severity",
                   "sort_key": "000020",
-                  "unavailable": false
+                  "unavailable": false,
+                  "value": "abc123"
                 }
               }
             },
@@ -7762,6 +7795,7 @@
                 "array_value": [
                   {
                     "catalog_entry": {
+                      "archived_at": "2021-08-17T14:28:57.801578Z",
                       "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7773,11 +7807,13 @@
                     "literal": "SEV123",
                     "reference": "incident.severity",
                     "sort_key": "000020",
-                    "unavailable": false
+                    "unavailable": false,
+                    "value": "abc123"
                   }
                 ],
                 "value": {
                   "catalog_entry": {
+                    "archived_at": "2021-08-17T14:28:57.801578Z",
                     "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -7789,7 +7825,8 @@
                   "literal": "SEV123",
                   "reference": "incident.severity",
                   "sort_key": "000020",
-                  "unavailable": false
+                  "unavailable": false,
+                  "value": "abc123"
                 }
               }
             },
@@ -7900,6 +7937,7 @@
               "briefcase",
               "browser",
               "bulb",
+              "calendar",
               "clock",
               "cog",
               "database",
@@ -9835,6 +9873,7 @@
           "array_value": [
             {
               "catalog_entry": {
+                "archived_at": "2021-08-17T14:28:57.801578Z",
                 "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "catalog_entry_name": "Primary escalation",
                 "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -9846,11 +9885,13 @@
               "literal": "SEV123",
               "reference": "incident.severity",
               "sort_key": "000020",
-              "unavailable": false
+              "unavailable": false,
+              "value": "abc123"
             }
           ],
           "value": {
             "catalog_entry": {
+              "archived_at": "2021-08-17T14:28:57.801578Z",
               "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "catalog_entry_name": "Primary escalation",
               "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -9862,7 +9903,8 @@
             "literal": "SEV123",
             "reference": "incident.severity",
             "sort_key": "000020",
-            "unavailable": false
+            "unavailable": false,
+            "value": "abc123"
           }
         },
         "properties": {
@@ -9871,6 +9913,7 @@
             "example": [
               {
                 "catalog_entry": {
+                  "archived_at": "2021-08-17T14:28:57.801578Z",
                   "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "catalog_entry_name": "Primary escalation",
                   "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -9882,7 +9925,8 @@
                 "literal": "SEV123",
                 "reference": "incident.severity",
                 "sort_key": "000020",
-                "unavailable": false
+                "unavailable": false,
+                "value": "abc123"
               }
             ],
             "items": {
@@ -9920,6 +9964,7 @@
       "EngineParamBindingValueV2ResponseBody": {
         "example": {
           "catalog_entry": {
+            "archived_at": "2021-08-17T14:28:57.801578Z",
             "catalog_entry_id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "catalog_entry_name": "Primary escalation",
             "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
@@ -9931,7 +9976,8 @@
           "literal": "SEV123",
           "reference": "incident.severity",
           "sort_key": "000020",
-          "unavailable": false
+          "unavailable": false,
+          "value": "abc123"
         },
         "properties": {
           "catalog_entry": {
@@ -9976,6 +10022,11 @@
             "description": "Unavailable is true if we've failed to build the value for this binding",
             "example": false,
             "type": "boolean"
+          },
+          "value": {
+            "description": "Either the reference or the literal: this field is designed purely to make working with react-select easier",
+            "example": "abc123",
+            "type": "string"
           }
         },
         "required": [
@@ -10006,6 +10057,7 @@
             "description": "ID of the issue tracker provider",
             "enum": [
               "asana",
+              "click_up",
               "linear",
               "jira",
               "jira_server",
@@ -10040,6 +10092,7 @@
             "description": "ID of the issue tracker provider",
             "enum": [
               "asana",
+              "click_up",
               "linear",
               "jira",
               "jira_server",
@@ -13786,6 +13839,7 @@
             "slack_channel_id": "abc123"
           },
           "severity_id": "01FH5TZRWMNAFB0DZ23FD1TV96",
+          "slack_channel_name_override": "inc-123-database-down",
           "slack_team_id": "T02A1FSLE8J",
           "summary": "Our database is really really sad, and we don't know why yet.",
           "visibility": "public"
@@ -13886,6 +13940,11 @@
           "severity_id": {
             "description": "Severity to create incident as",
             "example": "01FH5TZRWMNAFB0DZ23FD1TV96",
+            "type": "string"
+          },
+          "slack_channel_name_override": {
+            "description": "Name of the Slack channel to create for this incident",
+            "example": "inc-123-database-down",
             "type": "string"
           },
           "slack_team_id": {
@@ -18303,6 +18362,41 @@
         ]
       }
     },
+    "/v1/openapiV3.json": {
+      "get": {
+        "description": "Get the OpenAPI (v3) definition.",
+        "operationId": "Utilities V1#OpenAPIV3",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "OpenAPIV3 Utilities V1",
+        "tags": [
+          "Utilities V1"
+        ]
+      }
+    },
     "/v1/severities": {
       "get": {
         "description": "List all incident severities for an organisation.",
@@ -19104,7 +19198,7 @@
     },
     "/v2/catalog_types/{id}/actions/update_schema": {
       "post": {
-        "description": "Update an existing catalog types schema, adding or removing attributes.\n\nUpdating the schema is handled separately from creating and updating types, so that you don't\nhave to worry about dependencies between types. For example, if type A has an attribute that\nreplies on type B, you would have to create type B first.\n\nBy allowing the creation of types without a schema, they can be created in any order, but it\nmeans that you need to make a separate call to this endpoint to update the schema.",
+        "description": "Update an existing catalog types schema, adding or removing attributes.\n\nUpdating the schema is handled separately from creating and updating types, so that you don't\nhave to worry about dependencies between types. For example, if type A has an attribute that\nrelies on type B, you would have to create type B first.\n\nBy allowing the creation of types without a schema, they can be created in any order, but it\nmeans that you need to make a separate call to this endpoint to update the schema.",
         "operationId": "Catalog V2#UpdateTypeSchema",
         "parameters": [
           {
@@ -19855,7 +19949,7 @@
             "schema": {}
           },
           {
-            "description": "Filter on the category of the incidents status. The accepted operators are 'one_of', or 'not_in'.",
+            "description": "Filter on the category of the incidents status. The accepted operators are 'one_of', or 'not_in'. If this is not provided, this value defaults to `{\"one_of\": [\"triage\", \"live\", \"learning\", \"closed\"] }`, meaning that canceled, declined and merged incidents are not included.",
             "in": "query",
             "name": "status_category",
             "schema": {}
@@ -19867,7 +19961,7 @@
             "schema": {}
           },
           {
-            "description": "Filter on incident type. The accepted operator is 'one_of'.",
+            "description": "Filter on incident type. The accepted operators are 'one_of, or 'not_in'.",
             "in": "query",
             "name": "incident_type",
             "schema": {}

@@ -7,6 +7,7 @@ class CatalogV2CreateTypeRequestBodyIcon(str, Enum):
     BRIEFCASE = "briefcase"
     BROWSER = "browser"
     BULB = "bulb"
+    CALENDAR = "calendar"
     CLOCK = "clock"
     COG = "cog"
     DATABASE = "database"
