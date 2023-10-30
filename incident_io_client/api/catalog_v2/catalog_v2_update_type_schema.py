@@ -68,7 +68,7 @@ def sync_detailed(
 
     Updating the schema is handled separately from creating and updating types, so that you don't
     have to worry about dependencies between types. For example, if type A has an attribute that
-    replies on type B, you would have to create type B first.
+    relies on type B, you would have to create type B first.
 
     By allowing the creation of types without a schema, they can be created in any order, but it
     means that you need to make a separate call to this endpoint to update the schema.
@@ -111,7 +111,7 @@ def sync(
 
     Updating the schema is handled separately from creating and updating types, so that you don't
     have to worry about dependencies between types. For example, if type A has an attribute that
-    replies on type B, you would have to create type B first.
+    relies on type B, you would have to create type B first.
 
     By allowing the creation of types without a schema, they can be created in any order, but it
     means that you need to make a separate call to this endpoint to update the schema.
@@ -149,7 +149,7 @@ async def asyncio_detailed(
 
     Updating the schema is handled separately from creating and updating types, so that you don't
     have to worry about dependencies between types. For example, if type A has an attribute that
-    replies on type B, you would have to create type B first.
+    relies on type B, you would have to create type B first.
 
     By allowing the creation of types without a schema, they can be created in any order, but it
     means that you need to make a separate call to this endpoint to update the schema.
@@ -190,7 +190,7 @@ async def asyncio(
 
     Updating the schema is handled separately from creating and updating types, so that you don't
     have to worry about dependencies between types. For example, if type A has an attribute that
-    replies on type B, you would have to create type B first.
+    relies on type B, you would have to create type B first.
 
     By allowing the creation of types without a schema, they can be created in any order, but it
     means that you need to make a separate call to this endpoint to update the schema.

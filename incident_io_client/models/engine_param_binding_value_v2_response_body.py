@@ -18,19 +18,19 @@ T = TypeVar("T", bound="EngineParamBindingValueV2ResponseBody")
 class EngineParamBindingValueV2ResponseBody:
     """
     Example:
-        {'catalog_entry': {'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
-            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-
-            closing incidents.', 'image_url': 'https://avatars.slack-
-            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
-            False}
+        {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
+            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
+            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}
 
     Attributes:
         label (str): Human readable label to be displayed for user to select Example: Lawrence Jones.
         sort_key (str): Gives an indication of how to sort the options when displayed to the user Example: 000020.
-        catalog_entry (Union[Unset, CatalogEntryReferenceV2ResponseBody]):  Example: {'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}.
+        catalog_entry (Union[Unset, CatalogEntryReferenceV2ResponseBody]):  Example: {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
         helptext (Union[Unset, str]): Gives a description of the option to the user Example: Collection of standalone
             automations like auto-closing incidents..
         image_url (Union[Unset, str]): If appropriate, URL to an image that can be displayed alongside the option
@@ -40,6 +40,8 @@ class EngineParamBindingValueV2ResponseBody:
         reference (Union[Unset, str]): If set, this is the reference into the trigger scope that is the value of this
             parameter Example: incident.severity.
         unavailable (Union[Unset, bool]): Unavailable is true if we've failed to build the value for this binding
+        value (Union[Unset, str]): Either the reference or the literal: this field is designed purely to make working
+            with react-select easier Example: abc123.
     """
 
     label: str
@@ -51,6 +53,7 @@ class EngineParamBindingValueV2ResponseBody:
     literal: Union[Unset, str] = UNSET
     reference: Union[Unset, str] = UNSET
     unavailable: Union[Unset, bool] = UNSET
+    value: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -66,6 +69,7 @@ class EngineParamBindingValueV2ResponseBody:
         literal = self.literal
         reference = self.reference
         unavailable = self.unavailable
+        value = self.value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -89,6 +93,8 @@ class EngineParamBindingValueV2ResponseBody:
             field_dict["reference"] = reference
         if unavailable is not UNSET:
             field_dict["unavailable"] = unavailable
+        if value is not UNSET:
+            field_dict["value"] = value
 
         return field_dict
 
@@ -122,6 +128,8 @@ class EngineParamBindingValueV2ResponseBody:
 
         unavailable = d.pop("unavailable", UNSET)
 
+        value = d.pop("value", UNSET)
+
         engine_param_binding_value_v2_response_body = cls(
             label=label,
             sort_key=sort_key,
@@ -132,6 +140,7 @@ class EngineParamBindingValueV2ResponseBody:
             literal=literal,
             reference=reference,
             unavailable=unavailable,
+            value=value,
         )
 
         engine_param_binding_value_v2_response_body.additional_properties = d
