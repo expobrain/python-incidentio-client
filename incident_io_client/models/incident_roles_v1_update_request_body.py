@@ -1,7 +1,9 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="IncidentRolesV1UpdateRequestBody")
 
@@ -11,30 +13,31 @@ class IncidentRolesV1UpdateRequestBody:
     """
     Example:
         {'description': 'The person currently coordinating the incident', 'instructions': 'Take point on the incident;
-            Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'shortform': 'lead'}
+            Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False, 'shortform':
+            'lead'}
 
     Attributes:
         description (str): Describes the purpose of the role Example: The person currently coordinating the incident.
         instructions (str): Provided to whoever is nominated for the role Example: Take point on the incident; Make sure
             people are clear on responsibilities.
         name (str): Human readable name of the incident role Example: Incident Lead.
-        required (bool): Whether incident require this role to be set Example: True.
         shortform (str): Short human readable name for Slack Example: lead.
+        required (Union[Unset, bool]): DEPRECATED: this will always be false.
     """
 
     description: str
     instructions: str
     name: str
-    required: bool
     shortform: str
+    required: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
         instructions = self.instructions
         name = self.name
-        required = self.required
         shortform = self.shortform
+        required = self.required
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -43,10 +46,11 @@ class IncidentRolesV1UpdateRequestBody:
                 "description": description,
                 "instructions": instructions,
                 "name": name,
-                "required": required,
                 "shortform": shortform,
             }
         )
+        if required is not UNSET:
+            field_dict["required"] = required
 
         return field_dict
 
@@ -59,16 +63,16 @@ class IncidentRolesV1UpdateRequestBody:
 
         name = d.pop("name")
 
-        required = d.pop("required")
-
         shortform = d.pop("shortform")
+
+        required = d.pop("required", UNSET)
 
         incident_roles_v1_update_request_body = cls(
             description=description,
             instructions=instructions,
             name=name,
-            required=required,
             shortform=shortform,
+            required=required,
         )
 
         incident_roles_v1_update_request_body.additional_properties = d

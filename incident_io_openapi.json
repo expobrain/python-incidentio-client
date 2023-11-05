@@ -9758,7 +9758,7 @@
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
           "name": "Incident Lead",
-          "required": true,
+          "required": false,
           "role_type": "lead",
           "shortform": "lead",
           "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -9794,7 +9794,7 @@
           },
           "required": {
             "description": "This field is deprecated.",
-            "example": true,
+            "example": false,
             "type": "boolean"
           },
           "role_type": {
@@ -9826,7 +9826,6 @@
           "id",
           "instructions",
           "name",
-          "required",
           "role_type",
           "shortform",
           "updated_at"
@@ -10922,7 +10921,7 @@
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
             "name": "Incident Lead",
-            "required": true,
+            "required": false,
             "role_type": "lead",
             "shortform": "lead",
             "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -10957,7 +10956,7 @@
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
             "name": "Incident Lead",
-            "required": true,
+            "required": false,
             "role_type": "lead",
             "shortform": "lead",
             "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -10984,7 +10983,7 @@
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
           "name": "Incident Lead",
-          "required": true,
+          "required": false,
           "role_type": "lead",
           "shortform": "lead",
           "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -11019,8 +11018,8 @@
             "type": "string"
           },
           "required": {
-            "description": "Whether incident require this role to be set",
-            "example": true,
+            "description": "DEPRECATED: this will always be false.",
+            "example": false,
             "type": "boolean"
           },
           "role_type": {
@@ -11052,7 +11051,6 @@
           "id",
           "instructions",
           "name",
-          "required",
           "role_type",
           "shortform",
           "updated_at"
@@ -11141,7 +11139,7 @@
           "description": "The person currently coordinating the incident",
           "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
           "name": "Incident Lead",
-          "required": true,
+          "required": false,
           "shortform": "lead"
         },
         "properties": {
@@ -11163,8 +11161,8 @@
             "type": "string"
           },
           "required": {
-            "description": "Whether incident require this role to be set",
-            "example": true,
+            "description": "DEPRECATED: this will always be false.",
+            "example": false,
             "type": "boolean"
           },
           "shortform": {
@@ -11192,7 +11190,7 @@
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
             "name": "Incident Lead",
-            "required": true,
+            "required": false,
             "role_type": "lead",
             "shortform": "lead",
             "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -11218,7 +11216,7 @@
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
               "name": "Incident Lead",
-              "required": true,
+              "required": false,
               "role_type": "lead",
               "shortform": "lead",
               "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -11234,7 +11232,7 @@
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                 "name": "Incident Lead",
-                "required": true,
+                "required": false,
                 "role_type": "lead",
                 "shortform": "lead",
                 "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -11260,7 +11258,7 @@
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
             "name": "Incident Lead",
-            "required": true,
+            "required": false,
             "role_type": "lead",
             "shortform": "lead",
             "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -11282,7 +11280,7 @@
           "description": "The person currently coordinating the incident",
           "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
           "name": "Incident Lead",
-          "required": true,
+          "required": false,
           "shortform": "lead"
         },
         "properties": {
@@ -11304,8 +11302,8 @@
             "type": "string"
           },
           "required": {
-            "description": "Whether incident require this role to be set",
-            "example": true,
+            "description": "DEPRECATED: this will always be false.",
+            "example": false,
             "type": "boolean"
           },
           "shortform": {
@@ -11319,7 +11317,6 @@
           "description",
           "instructions",
           "name",
-          "required",
           "shortform"
         ],
         "title": "IncidentRolesV1UpdateRequestBody",
@@ -11333,7 +11330,7 @@
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
             "name": "Incident Lead",
-            "required": true,
+            "required": false,
             "role_type": "lead",
             "shortform": "lead",
             "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -12235,7 +12232,7 @@
           "created_at": "2021-08-17T13:28:57.801578Z",
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-          "message": "The cat is getting irritable, best rescue it soon",
+          "message": "We're working on a fix, hoping to ship in the next 30 minutes",
           "new_incident_status": {
             "category": "triage",
             "created_at": "2021-08-17T13:28:57.801578Z",
@@ -12286,7 +12283,7 @@
           },
           "message": {
             "description": "Message that explains the context behind the update",
-            "example": "The cat is getting irritable, best rescue it soon",
+            "example": "We're working on a fix, hoping to ship in the next 30 minutes",
             "type": "string"
           },
           "new_incident_status": {
@@ -12316,7 +12313,7 @@
               "created_at": "2021-08-17T13:28:57.801578Z",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "message": "The cat is getting irritable, best rescue it soon",
+              "message": "We're working on a fix, hoping to ship in the next 30 minutes",
               "new_incident_status": {
                 "category": "triage",
                 "created_at": "2021-08-17T13:28:57.801578Z",
@@ -12361,7 +12358,7 @@
                 "created_at": "2021-08-17T13:28:57.801578Z",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "message": "The cat is getting irritable, best rescue it soon",
+                "message": "We're working on a fix, hoping to ship in the next 30 minutes",
                 "new_incident_status": {
                   "category": "triage",
                   "created_at": "2021-08-17T13:28:57.801578Z",
@@ -12482,7 +12479,7 @@
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                 "name": "Incident Lead",
-                "required": true,
+                "required": false,
                 "role_type": "lead",
                 "shortform": "lead",
                 "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -12610,7 +12607,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -12816,7 +12813,7 @@
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                 "name": "Incident Lead",
-                "required": true,
+                "required": false,
                 "role_type": "lead",
                 "shortform": "lead",
                 "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -12965,7 +12962,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -13079,7 +13076,7 @@
           },
           "workload_minutes_sleeping": {
             "description": "Amount of time spent on the incident in sleeping hours",
-            "example": 0,
+            "example": 0.0,
             "format": "double",
             "type": "number"
           },
@@ -13091,7 +13088,7 @@
           },
           "workload_minutes_working": {
             "description": "Amount of time spent on the incident in working hours",
-            "example": 20,
+            "example": 20.0,
             "format": "double",
             "type": "number"
           }
@@ -13348,7 +13345,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -13479,7 +13476,7 @@
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                     "name": "Incident Lead",
-                    "required": true,
+                    "required": false,
                     "role_type": "lead",
                     "shortform": "lead",
                     "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -13605,7 +13602,7 @@
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                       "name": "Incident Lead",
-                      "required": true,
+                      "required": false,
                       "role_type": "lead",
                       "shortform": "lead",
                       "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -13739,7 +13736,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -14053,7 +14050,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -14265,7 +14262,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -14419,7 +14416,7 @@
                     "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                     "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                     "name": "Incident Lead",
-                    "required": true,
+                    "required": false,
                     "role_type": "lead",
                     "shortform": "lead",
                     "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -14568,7 +14565,7 @@
                       "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                       "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                       "name": "Incident Lead",
-                      "required": true,
+                      "required": false,
                       "role_type": "lead",
                       "shortform": "lead",
                       "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -14725,7 +14722,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -15581,7 +15578,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -15720,7 +15717,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -16494,7 +16491,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"
@@ -16670,7 +16667,7 @@
                   "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                   "instructions": "Take point on the incident; Make sure people are clear on responsibilities",
                   "name": "Incident Lead",
-                  "required": true,
+                  "required": false,
                   "role_type": "lead",
                   "shortform": "lead",
                   "updated_at": "2021-08-17T13:28:57.801578Z"

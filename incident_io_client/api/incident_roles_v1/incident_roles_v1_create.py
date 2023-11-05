@@ -65,7 +65,7 @@ def sync_detailed(
     Args:
         json_body (IncidentRolesV1CreateRequestBody):  Example: {'description': 'The person
             currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
             'shortform': 'lead'}.
 
     Raises:
@@ -99,7 +99,7 @@ def sync(
     Args:
         json_body (IncidentRolesV1CreateRequestBody):  Example: {'description': 'The person
             currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
             'shortform': 'lead'}.
 
     Raises:
@@ -128,7 +128,7 @@ async def asyncio_detailed(
     Args:
         json_body (IncidentRolesV1CreateRequestBody):  Example: {'description': 'The person
             currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
             'shortform': 'lead'}.
 
     Raises:
@@ -160,7 +160,7 @@ async def asyncio(
     Args:
         json_body (IncidentRolesV1CreateRequestBody):  Example: {'description': 'The person
             currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
             'shortform': 'lead'}.
 
     Raises:

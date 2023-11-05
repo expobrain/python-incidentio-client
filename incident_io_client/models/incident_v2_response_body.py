@@ -53,7 +53,7 @@ class IncidentV2ResponseBody:
             'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
             'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
             person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': True,
+            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
             'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status':
             {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully
             mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
@@ -91,7 +91,7 @@ class IncidentV2ResponseBody:
             'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
+            responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}].
         incident_status (IncidentStatusV2ResponseBody):  Example: {'category': 'triage', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
@@ -134,7 +134,7 @@ class IncidentV2ResponseBody:
         workload_minutes_sleeping (Union[Unset, float]): Amount of time spent on the incident in sleeping hours
         workload_minutes_total (Union[Unset, float]): Amount of time spent on the incident in total Example: 60.7.
         workload_minutes_working (Union[Unset, float]): Amount of time spent on the incident in working hours Example:
-            20.
+            20.0.
     """
 
     created_at: datetime.datetime
