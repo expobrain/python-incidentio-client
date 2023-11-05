@@ -1,5 +1,5 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -8,6 +8,7 @@ from dateutil.parser import isoparse
 from ..models.embedded_incident_role_v2_response_body_role_type import (
     EmbeddedIncidentRoleV2ResponseBodyRoleType,
 )
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="EmbeddedIncidentRoleV2ResponseBody")
 
@@ -18,7 +19,7 @@ class EmbeddedIncidentRoleV2ResponseBody:
     Example:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
+            responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
@@ -28,10 +29,10 @@ class EmbeddedIncidentRoleV2ResponseBody:
         instructions (str): Provided to whoever is nominated for the role Example: Take point on the incident; Make sure
             people are clear on responsibilities.
         name (str): Human readable name of the incident role Example: Incident Lead.
-        required (bool): This field is deprecated. Example: True.
         role_type (EmbeddedIncidentRoleV2ResponseBodyRoleType): Type of incident role Example: lead.
         shortform (str): Short human readable name for Slack Example: lead.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
+        required (Union[Unset, bool]): This field is deprecated.
     """
 
     created_at: datetime.datetime
@@ -39,10 +40,10 @@ class EmbeddedIncidentRoleV2ResponseBody:
     id: str
     instructions: str
     name: str
-    required: bool
     role_type: EmbeddedIncidentRoleV2ResponseBodyRoleType
     shortform: str
     updated_at: datetime.datetime
+    required: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -52,11 +53,12 @@ class EmbeddedIncidentRoleV2ResponseBody:
         id = self.id
         instructions = self.instructions
         name = self.name
-        required = self.required
         role_type = self.role_type.value
 
         shortform = self.shortform
         updated_at = self.updated_at.isoformat()
+
+        required = self.required
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -67,12 +69,13 @@ class EmbeddedIncidentRoleV2ResponseBody:
                 "id": id,
                 "instructions": instructions,
                 "name": name,
-                "required": required,
                 "role_type": role_type,
                 "shortform": shortform,
                 "updated_at": updated_at,
             }
         )
+        if required is not UNSET:
+            field_dict["required"] = required
 
         return field_dict
 
@@ -89,13 +92,13 @@ class EmbeddedIncidentRoleV2ResponseBody:
 
         name = d.pop("name")
 
-        required = d.pop("required")
-
         role_type = EmbeddedIncidentRoleV2ResponseBodyRoleType(d.pop("role_type"))
 
         shortform = d.pop("shortform")
 
         updated_at = isoparse(d.pop("updated_at"))
+
+        required = d.pop("required", UNSET)
 
         embedded_incident_role_v2_response_body = cls(
             created_at=created_at,
@@ -103,10 +106,10 @@ class EmbeddedIncidentRoleV2ResponseBody:
             id=id,
             instructions=instructions,
             name=name,
-            required=required,
             role_type=role_type,
             shortform=shortform,
             updated_at=updated_at,
+            required=required,
         )
 
         embedded_incident_role_v2_response_body.additional_properties = d

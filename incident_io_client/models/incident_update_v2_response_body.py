@@ -21,7 +21,7 @@ class IncidentUpdateV2ResponseBody:
     """
     Example:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'message': 'The cat is getting irritable, best rescue it soon',
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'message': "We're working on a fix, hoping to ship in the next 30 minutes",
             'new_incident_status': {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             "Impact has been **fully mitigated**, and we're ready to learn from this incident.", 'id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'},
@@ -42,8 +42,8 @@ class IncidentUpdateV2ResponseBody:
         updater (ActorV2ResponseBody):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}.
-        message (Union[Unset, str]): Message that explains the context behind the update Example: The cat is getting
-            irritable, best rescue it soon.
+        message (Union[Unset, str]): Message that explains the context behind the update Example: We're working on a
+            fix, hoping to ship in the next 30 minutes.
         new_severity (Union[Unset, SeverityV2ResponseBody]):  Example: {'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1,
             'updated_at': '2021-08-17T13:28:57.801578Z'}.

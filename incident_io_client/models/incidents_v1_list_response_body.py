@@ -34,7 +34,7 @@ class IncidentsV1ListResponseBody:
             'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
+            responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
@@ -64,9 +64,9 @@ class IncidentsV1ListResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
             'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
             incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
-            clear on responsibilities', 'name': 'Incident Lead', 'required': True, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
+            clear on responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform':
+            'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always',
+            'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'real', 'name': 'Our database is sad', 'permalink':
             'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
