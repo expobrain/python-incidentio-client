@@ -56,4 +56,4 @@ jobs:
         run: |
           gh pr create --body "" --title "Updated API at $(date "+%Y-%m-%d")"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
