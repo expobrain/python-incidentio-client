@@ -134,7 +134,7 @@ class IncidentV2ResponseBody:
         workload_minutes_sleeping (Union[Unset, float]): Amount of time spent on the incident in sleeping hours
         workload_minutes_total (Union[Unset, float]): Amount of time spent on the incident in total Example: 60.7.
         workload_minutes_working (Union[Unset, float]): Amount of time spent on the incident in working hours Example:
-            20.0.
+            20.
     """
 
     created_at: datetime.datetime
