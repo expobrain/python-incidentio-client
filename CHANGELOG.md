@@ -1,3 +1,9 @@
+## 0.35.1 (2023-11-13)
+
+### Fix
+
+- Removed unused tomlim package (#328)
+
 ## 0.35.0 (2023-11-13)
 
 ### Feat
