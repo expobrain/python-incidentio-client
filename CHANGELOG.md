@@ -1,3 +1,14 @@
+## 0.34.2 (2023-11-13)
+
+### Fix
+
+- **deps-dev**: bump black from 23.10.1 to 23.11.0 in /example (#321)
+- **deps-dev**: bump mypy from 1.6.1 to 1.7.0 in /example (#322)
+- **deps-dev**: bump black from 23.10.1 to 23.11.0 (#323)
+- **deps-dev**: bump mkdocstrings-python from 1.7.3 to 1.7.4 (#324)
+- **deps-dev**: bump types-setuptools from 68.2.0.0 to 68.2.0.1 (#325)
+- **deps-dev**: bump mypy from 1.6.1 to 1.7.0 (#326)
+
 ## 0.34.1 (2023-11-13)
 
 ### Fix
