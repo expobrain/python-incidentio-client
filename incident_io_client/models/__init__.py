@@ -12,6 +12,25 @@ from .actions_v2_list_response_body import ActionsV2ListResponseBody
 from .actions_v2_show_response_body import ActionsV2ShowResponseBody
 from .actor_v1_response_body import ActorV1ResponseBody
 from .actor_v2_response_body import ActorV2ResponseBody
+from .alert_events_v2_create_http_request_body import AlertEventsV2CreateHTTPRequestBody
+from .alert_events_v2_create_http_request_body_metadata import (
+    AlertEventsV2CreateHTTPRequestBodyMetadata,
+)
+from .alert_events_v2_create_http_request_body_status import (
+    AlertEventsV2CreateHTTPRequestBodyStatus,
+)
+from .alert_events_v2_create_http_response_body import (
+    AlertEventsV2CreateHTTPResponseBody,
+)
+from .alert_events_v2_create_http_response_body_deduplication_key import (
+    AlertEventsV2CreateHTTPResponseBodyDeduplicationKey,
+)
+from .alert_events_v2_create_http_response_body_message import (
+    AlertEventsV2CreateHTTPResponseBodyMessage,
+)
+from .alert_events_v2_create_http_response_body_status import (
+    AlertEventsV2CreateHTTPResponseBodyStatus,
+)
 from .api_key_v1_response_body import APIKeyV1ResponseBody
 from .api_key_v2_response_body import APIKeyV2ResponseBody
 from .audit_log_actor_metadata_v2_response_body import (
@@ -707,6 +726,13 @@ __all__ = (
     "ActionV2ResponseBodyStatus",
     "ActorV1ResponseBody",
     "ActorV2ResponseBody",
+    "AlertEventsV2CreateHTTPRequestBody",
+    "AlertEventsV2CreateHTTPRequestBodyMetadata",
+    "AlertEventsV2CreateHTTPRequestBodyStatus",
+    "AlertEventsV2CreateHTTPResponseBody",
+    "AlertEventsV2CreateHTTPResponseBodyDeduplicationKey",
+    "AlertEventsV2CreateHTTPResponseBodyMessage",
+    "AlertEventsV2CreateHTTPResponseBodyStatus",
     "APIKeyV1ResponseBody",
     "APIKeyV2ResponseBody",
     "AuditLogActorMetadataV2ResponseBody",
