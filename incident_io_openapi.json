@@ -3616,234 +3616,6 @@
         "title": "AuditLogsInternalStatusPageUpdatedV1ResponseBody",
         "type": "object"
       },
-      "AuditLogsLearningTaskCreatedV1ResponseBody": {
-        "example": {
-          "action": "learning_task.created",
-          "actor": {
-            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-            "metadata": {
-              "user_base_role_slug": "admin",
-              "user_custom_role_slugs": "engineering,security"
-            },
-            "name": "John Doe",
-            "type": "user"
-          },
-          "context": {
-            "location": "1.2.3.4",
-            "user_agent": "Chrome/91.0.4472.114"
-          },
-          "occurred_at": "2021-08-17T13:28:57.801578Z",
-          "targets": [
-            {
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "name": "Schedule a debrief",
-              "type": "learning_task"
-            }
-          ],
-          "version": 1
-        },
-        "properties": {
-          "action": {
-            "description": "The type of log entry that this is",
-            "example": "learning_task.created",
-            "type": "string"
-          },
-          "actor": {
-            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
-          },
-          "context": {
-            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
-          },
-          "occurred_at": {
-            "description": "When the entry occurred",
-            "example": "2021-08-17T13:28:57.801578Z",
-            "format": "date-time",
-            "type": "string"
-          },
-          "targets": {
-            "description": "The custom field that was created",
-            "example": [
-              {
-                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "name": "Schedule a debrief",
-                "type": "learning_task"
-              }
-            ],
-            "items": {
-              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
-            },
-            "type": "array"
-          },
-          "version": {
-            "description": "Which version the event is",
-            "example": 1,
-            "format": "int64",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "action",
-          "actor",
-          "context",
-          "occurred_at",
-          "targets",
-          "version"
-        ],
-        "title": "AuditLogsLearningTaskCreatedV1ResponseBody",
-        "type": "object"
-      },
-      "AuditLogsLearningTaskDeletedV1ResponseBody": {
-        "example": {
-          "action": "learning_task.deleted",
-          "actor": {
-            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-            "metadata": {
-              "user_base_role_slug": "admin",
-              "user_custom_role_slugs": "engineering,security"
-            },
-            "name": "John Doe",
-            "type": "user"
-          },
-          "context": {
-            "location": "1.2.3.4",
-            "user_agent": "Chrome/91.0.4472.114"
-          },
-          "occurred_at": "2021-08-17T13:28:57.801578Z",
-          "targets": [
-            {
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "name": "Schedule a debrief",
-              "type": "learning_task"
-            }
-          ],
-          "version": 1
-        },
-        "properties": {
-          "action": {
-            "description": "The type of log entry that this is",
-            "example": "learning_task.deleted",
-            "type": "string"
-          },
-          "actor": {
-            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
-          },
-          "context": {
-            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
-          },
-          "occurred_at": {
-            "description": "When the entry occurred",
-            "example": "2021-08-17T13:28:57.801578Z",
-            "format": "date-time",
-            "type": "string"
-          },
-          "targets": {
-            "description": "The custom field that was created",
-            "example": [
-              {
-                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "name": "Schedule a debrief",
-                "type": "learning_task"
-              }
-            ],
-            "items": {
-              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
-            },
-            "type": "array"
-          },
-          "version": {
-            "description": "Which version the event is",
-            "example": 1,
-            "format": "int64",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "action",
-          "actor",
-          "context",
-          "occurred_at",
-          "targets",
-          "version"
-        ],
-        "title": "AuditLogsLearningTaskDeletedV1ResponseBody",
-        "type": "object"
-      },
-      "AuditLogsLearningTaskUpdatedV1ResponseBody": {
-        "example": {
-          "action": "learning_task.updated",
-          "actor": {
-            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-            "metadata": {
-              "user_base_role_slug": "admin",
-              "user_custom_role_slugs": "engineering,security"
-            },
-            "name": "John Doe",
-            "type": "user"
-          },
-          "context": {
-            "location": "1.2.3.4",
-            "user_agent": "Chrome/91.0.4472.114"
-          },
-          "occurred_at": "2021-08-17T13:28:57.801578Z",
-          "targets": [
-            {
-              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-              "name": "Schedule a debrief",
-              "type": "learning_task"
-            }
-          ],
-          "version": 1
-        },
-        "properties": {
-          "action": {
-            "description": "The type of log entry that this is",
-            "example": "learning_task.updated",
-            "type": "string"
-          },
-          "actor": {
-            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
-          },
-          "context": {
-            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
-          },
-          "occurred_at": {
-            "description": "When the entry occurred",
-            "example": "2021-08-17T13:28:57.801578Z",
-            "format": "date-time",
-            "type": "string"
-          },
-          "targets": {
-            "description": "The custom field that was created",
-            "example": [
-              {
-                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
-                "name": "Schedule a debrief",
-                "type": "learning_task"
-              }
-            ],
-            "items": {
-              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
-            },
-            "type": "array"
-          },
-          "version": {
-            "description": "Which version the event is",
-            "example": 1,
-            "format": "int64",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "action",
-          "actor",
-          "context",
-          "occurred_at",
-          "targets",
-          "version"
-        ],
-        "title": "AuditLogsLearningTaskUpdatedV1ResponseBody",
-        "type": "object"
-      },
       "AuditLogsNudgeCreatedV1ResponseBody": {
         "example": {
           "action": "nudge.created",
@@ -4298,6 +4070,234 @@
           "version"
         ],
         "title": "AuditLogsPolicyUpdatedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsPostIncidentTaskCreatedV1ResponseBody": {
+        "example": {
+          "action": "post_incident_task.created",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Schedule a debrief",
+              "type": "post_incident_task"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "post_incident_task.created",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Schedule a debrief",
+                "type": "post_incident_task"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsPostIncidentTaskCreatedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsPostIncidentTaskDeletedV1ResponseBody": {
+        "example": {
+          "action": "post_incident_task.deleted",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Schedule a debrief",
+              "type": "post_incident_task"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "post_incident_task.deleted",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Schedule a debrief",
+                "type": "post_incident_task"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsPostIncidentTaskDeletedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsPostIncidentTaskUpdatedV1ResponseBody": {
+        "example": {
+          "action": "post_incident_task.updated",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Schedule a debrief",
+              "type": "post_incident_task"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "post_incident_task.updated",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Schedule a debrief",
+                "type": "post_incident_task"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsPostIncidentTaskUpdatedV1ResponseBody",
         "type": "object"
       },
       "AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody": {
@@ -21624,102 +21624,6 @@
         ]
       }
     },
-    "/x-audit-logs/learning_task.created.1": {
-      "get": {
-        "description": "This entry is created whenever a learning task is created",
-        "operationId": "Audit logs#LearningTaskCreatedV1",
-        "responses": {
-          "200": {
-            "content": {
-              "application/gob": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskCreatedV1ResponseBody"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskCreatedV1ResponseBody"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskCreatedV1ResponseBody"
-                }
-              }
-            },
-            "description": "OK response."
-          }
-        },
-        "summary": "LearningTaskCreatedV1 Audit logs",
-        "tags": [
-          "Audit logs"
-        ]
-      }
-    },
-    "/x-audit-logs/learning_task.deleted.1": {
-      "get": {
-        "description": "This entry is created whenever a learning task is deleted",
-        "operationId": "Audit logs#LearningTaskDeletedV1",
-        "responses": {
-          "200": {
-            "content": {
-              "application/gob": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskDeletedV1ResponseBody"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskDeletedV1ResponseBody"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskDeletedV1ResponseBody"
-                }
-              }
-            },
-            "description": "OK response."
-          }
-        },
-        "summary": "LearningTaskDeletedV1 Audit logs",
-        "tags": [
-          "Audit logs"
-        ]
-      }
-    },
-    "/x-audit-logs/learning_task.updated.1": {
-      "get": {
-        "description": "This entry is created whenever a learning task is updated",
-        "operationId": "Audit logs#LearningTaskUpdatedV1",
-        "responses": {
-          "200": {
-            "content": {
-              "application/gob": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskUpdatedV1ResponseBody"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskUpdatedV1ResponseBody"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuditLogsLearningTaskUpdatedV1ResponseBody"
-                }
-              }
-            },
-            "description": "OK response."
-          }
-        },
-        "summary": "LearningTaskUpdatedV1 Audit logs",
-        "tags": [
-          "Audit logs"
-        ]
-      }
-    },
     "/x-audit-logs/nudge.created.1": {
       "get": {
         "description": "This entry is created whenever a nudge is created",
@@ -21907,6 +21811,102 @@
           }
         },
         "summary": "PolicyUpdatedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
+    "/x-audit-logs/post_incident_task.created.1": {
+      "get": {
+        "description": "This entry is created whenever a post-incident task is created",
+        "operationId": "Audit logs#PostIncidentTaskCreatedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskCreatedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskCreatedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskCreatedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "PostIncidentTaskCreatedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
+    "/x-audit-logs/post_incident_task.deleted.1": {
+      "get": {
+        "description": "This entry is created whenever a post-incident task is deleted",
+        "operationId": "Audit logs#PostIncidentTaskDeletedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskDeletedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskDeletedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskDeletedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "PostIncidentTaskDeletedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
+    "/x-audit-logs/post_incident_task.updated.1": {
+      "get": {
+        "description": "This entry is created whenever a post-incident task is updated",
+        "operationId": "Audit logs#PostIncidentTaskUpdatedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskUpdatedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskUpdatedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsPostIncidentTaskUpdatedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "PostIncidentTaskUpdatedV1 Audit logs",
         "tags": [
           "Audit logs"
         ]

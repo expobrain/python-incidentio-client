@@ -5,8 +5,8 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.audit_logs_learning_task_updated_v1_response_body import (
-    AuditLogsLearningTaskUpdatedV1ResponseBody,
+from ...models.audit_logs_post_incident_task_updated_v1_response_body import (
+    AuditLogsPostIncidentTaskUpdatedV1ResponseBody,
 )
 from ...types import Response
 
@@ -16,15 +16,15 @@ def _get_kwargs() -> Dict[str, Any]:
 
     return {
         "method": "get",
-        "url": "/x-audit-logs/learning_task.updated.1",
+        "url": "/x-audit-logs/post_incident_task.updated.1",
     }
 
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[AuditLogsLearningTaskUpdatedV1ResponseBody]:
+) -> Optional[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = AuditLogsLearningTaskUpdatedV1ResponseBody.from_dict(response.json())
+        response_200 = AuditLogsPostIncidentTaskUpdatedV1ResponseBody.from_dict(response.json())
 
         return response_200
     if client.raise_on_unexpected_status:
@@ -35,7 +35,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[AuditLogsLearningTaskUpdatedV1ResponseBody]:
+) -> Response[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -47,17 +47,17 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[AuditLogsLearningTaskUpdatedV1ResponseBody]:
-    """LearningTaskUpdatedV1 Audit logs
+) -> Response[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]:
+    """PostIncidentTaskUpdatedV1 Audit logs
 
-     This entry is created whenever a learning task is updated
+     This entry is created whenever a post-incident task is updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AuditLogsLearningTaskUpdatedV1ResponseBody]
+        Response[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]
     """
 
     kwargs = _get_kwargs()
@@ -72,17 +72,17 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[AuditLogsLearningTaskUpdatedV1ResponseBody]:
-    """LearningTaskUpdatedV1 Audit logs
+) -> Optional[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]:
+    """PostIncidentTaskUpdatedV1 Audit logs
 
-     This entry is created whenever a learning task is updated
+     This entry is created whenever a post-incident task is updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AuditLogsLearningTaskUpdatedV1ResponseBody
+        AuditLogsPostIncidentTaskUpdatedV1ResponseBody
     """
 
     return sync_detailed(
@@ -93,17 +93,17 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[AuditLogsLearningTaskUpdatedV1ResponseBody]:
-    """LearningTaskUpdatedV1 Audit logs
+) -> Response[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]:
+    """PostIncidentTaskUpdatedV1 Audit logs
 
-     This entry is created whenever a learning task is updated
+     This entry is created whenever a post-incident task is updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AuditLogsLearningTaskUpdatedV1ResponseBody]
+        Response[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]
     """
 
     kwargs = _get_kwargs()
@@ -116,17 +116,17 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[AuditLogsLearningTaskUpdatedV1ResponseBody]:
-    """LearningTaskUpdatedV1 Audit logs
+) -> Optional[AuditLogsPostIncidentTaskUpdatedV1ResponseBody]:
+    """PostIncidentTaskUpdatedV1 Audit logs
 
-     This entry is created whenever a learning task is updated
+     This entry is created whenever a post-incident task is updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AuditLogsLearningTaskUpdatedV1ResponseBody
+        AuditLogsPostIncidentTaskUpdatedV1ResponseBody
     """
 
     return (

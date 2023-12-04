@@ -164,15 +164,6 @@ from .audit_logs_internal_status_page_deleted_v1_response_body import (
 from .audit_logs_internal_status_page_updated_v1_response_body import (
     AuditLogsInternalStatusPageUpdatedV1ResponseBody,
 )
-from .audit_logs_learning_task_created_v1_response_body import (
-    AuditLogsLearningTaskCreatedV1ResponseBody,
-)
-from .audit_logs_learning_task_deleted_v1_response_body import (
-    AuditLogsLearningTaskDeletedV1ResponseBody,
-)
-from .audit_logs_learning_task_updated_v1_response_body import (
-    AuditLogsLearningTaskUpdatedV1ResponseBody,
-)
 from .audit_logs_nudge_created_v1_response_body import (
     AuditLogsNudgeCreatedV1ResponseBody,
 )
@@ -190,6 +181,15 @@ from .audit_logs_policy_deleted_v1_response_body import (
 )
 from .audit_logs_policy_updated_v1_response_body import (
     AuditLogsPolicyUpdatedV1ResponseBody,
+)
+from .audit_logs_post_incident_task_created_v1_response_body import (
+    AuditLogsPostIncidentTaskCreatedV1ResponseBody,
+)
+from .audit_logs_post_incident_task_deleted_v1_response_body import (
+    AuditLogsPostIncidentTaskDeletedV1ResponseBody,
+)
+from .audit_logs_post_incident_task_updated_v1_response_body import (
+    AuditLogsPostIncidentTaskUpdatedV1ResponseBody,
 )
 from .audit_logs_private_incident_access_attempted_v1_response_body import (
     AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody,
@@ -778,15 +778,15 @@ __all__ = (
     "AuditLogsInternalStatusPageCreatedV1ResponseBody",
     "AuditLogsInternalStatusPageDeletedV1ResponseBody",
     "AuditLogsInternalStatusPageUpdatedV1ResponseBody",
-    "AuditLogsLearningTaskCreatedV1ResponseBody",
-    "AuditLogsLearningTaskDeletedV1ResponseBody",
-    "AuditLogsLearningTaskUpdatedV1ResponseBody",
     "AuditLogsNudgeCreatedV1ResponseBody",
     "AuditLogsNudgeDeletedV1ResponseBody",
     "AuditLogsNudgeUpdatedV1ResponseBody",
     "AuditLogsPolicyCreatedV1ResponseBody",
     "AuditLogsPolicyDeletedV1ResponseBody",
     "AuditLogsPolicyUpdatedV1ResponseBody",
+    "AuditLogsPostIncidentTaskCreatedV1ResponseBody",
+    "AuditLogsPostIncidentTaskDeletedV1ResponseBody",
+    "AuditLogsPostIncidentTaskUpdatedV1ResponseBody",
     "AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody",
     "AuditLogsPrivateIncidentAccessRequestedV1ResponseBody",
     "AuditLogsPrivateIncidentMembershipGrantedV1ResponseBody",
