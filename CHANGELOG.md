@@ -1,3 +1,16 @@
+## 0.36.2 (2023-12-04)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools from 68.2.0.2 to 69.0.0.0 (#340)
+- **deps-dev**: bump types-pygments from 2.16.0.1 to 2.17.0.0 (#342)
+
+## v0.36.0 (2023-12-04)
+
+### Fix
+
+- **deps-dev**: bump commitizen from 3.12.0 to 3.13.0 (#341)
+
 ## v0.36.0 (2023-12-04)
 
 ### Fix
