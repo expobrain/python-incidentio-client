@@ -13,21 +13,21 @@ if TYPE_CHECKING:
     from ..models.audit_log_target_v2_response_body import AuditLogTargetV2ResponseBody
 
 
-T = TypeVar("T", bound="AuditLogsLearningTaskCreatedV1ResponseBody")
+T = TypeVar("T", bound="AuditLogsPostIncidentTaskDeletedV1ResponseBody")
 
 
 @_attrs_define
-class AuditLogsLearningTaskCreatedV1ResponseBody:
+class AuditLogsPostIncidentTaskDeletedV1ResponseBody:
     """
     Example:
-        {'action': 'learning_task.created', 'actor': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'metadata':
+        {'action': 'post_incident_task.deleted', 'actor': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'metadata':
             {'user_base_role_slug': 'admin', 'user_custom_role_slugs': 'engineering,security'}, 'name': 'John Doe', 'type':
             'user'}, 'context': {'location': '1.2.3.4', 'user_agent': 'Chrome/91.0.4472.114'}, 'occurred_at':
             '2021-08-17T13:28:57.801578Z', 'targets': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Schedule a debrief',
-            'type': 'learning_task'}], 'version': 1}
+            'type': 'post_incident_task'}], 'version': 1}
 
     Attributes:
-        action (str): The type of log entry that this is Example: learning_task.created.
+        action (str): The type of log entry that this is Example: post_incident_task.deleted.
         actor (AuditLogActorV2ResponseBody):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'metadata':
             {'user_base_role_slug': 'admin', 'user_custom_role_slugs': 'engineering,security'}, 'name': 'John Doe', 'type':
             'user'}.
@@ -35,7 +35,7 @@ class AuditLogsLearningTaskCreatedV1ResponseBody:
             'Chrome/91.0.4472.114'}.
         occurred_at (datetime.datetime): When the entry occurred Example: 2021-08-17T13:28:57.801578Z.
         targets (List['AuditLogTargetV2ResponseBody']): The custom field that was created Example: [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Schedule a debrief', 'type': 'learning_task'}].
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Schedule a debrief', 'type': 'post_incident_task'}].
         version (int): Which version the event is Example: 1.
     """
 
@@ -108,7 +108,7 @@ class AuditLogsLearningTaskCreatedV1ResponseBody:
 
         version = d.pop("version")
 
-        audit_logs_learning_task_created_v1_response_body = cls(
+        audit_logs_post_incident_task_deleted_v1_response_body = cls(
             action=action,
             actor=actor,
             context=context,
@@ -117,8 +117,8 @@ class AuditLogsLearningTaskCreatedV1ResponseBody:
             version=version,
         )
 
-        audit_logs_learning_task_created_v1_response_body.additional_properties = d
-        return audit_logs_learning_task_created_v1_response_body
+        audit_logs_post_incident_task_deleted_v1_response_body.additional_properties = d
+        return audit_logs_post_incident_task_deleted_v1_response_body
 
     @property
     def additional_keys(self) -> List[str]:

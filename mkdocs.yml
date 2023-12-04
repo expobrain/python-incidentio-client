@@ -29,6 +29,8 @@ nav:
           - actions_v2:
               - actions_v2_list: api_reference/api/actions_v2/actions_v2_list.md
               - actions_v2_show: api_reference/api/actions_v2/actions_v2_show.md
+          - alert_events_v2:
+              - alert_events_v2_create_http: api_reference/api/alert_events_v2/alert_events_v2_create_http.md
           - audit_logs:
               - audit_logs_announcement_rule_created_v1: api_reference/api/audit_logs/audit_logs_announcement_rule_created_v1.md
               - audit_logs_announcement_rule_deleted_v1: api_reference/api/audit_logs/audit_logs_announcement_rule_deleted_v1.md
@@ -67,15 +69,15 @@ nav:
               - audit_logs_internal_status_page_created_v1: api_reference/api/audit_logs/audit_logs_internal_status_page_created_v1.md
               - audit_logs_internal_status_page_deleted_v1: api_reference/api/audit_logs/audit_logs_internal_status_page_deleted_v1.md
               - audit_logs_internal_status_page_updated_v1: api_reference/api/audit_logs/audit_logs_internal_status_page_updated_v1.md
-              - audit_logs_learning_task_created_v1: api_reference/api/audit_logs/audit_logs_learning_task_created_v1.md
-              - audit_logs_learning_task_deleted_v1: api_reference/api/audit_logs/audit_logs_learning_task_deleted_v1.md
-              - audit_logs_learning_task_updated_v1: api_reference/api/audit_logs/audit_logs_learning_task_updated_v1.md
               - audit_logs_nudge_created_v1: api_reference/api/audit_logs/audit_logs_nudge_created_v1.md
               - audit_logs_nudge_deleted_v1: api_reference/api/audit_logs/audit_logs_nudge_deleted_v1.md
               - audit_logs_nudge_updated_v1: api_reference/api/audit_logs/audit_logs_nudge_updated_v1.md
               - audit_logs_policy_created_v1: api_reference/api/audit_logs/audit_logs_policy_created_v1.md
               - audit_logs_policy_deleted_v1: api_reference/api/audit_logs/audit_logs_policy_deleted_v1.md
               - audit_logs_policy_updated_v1: api_reference/api/audit_logs/audit_logs_policy_updated_v1.md
+              - audit_logs_post_incident_task_created_v1: api_reference/api/audit_logs/audit_logs_post_incident_task_created_v1.md
+              - audit_logs_post_incident_task_deleted_v1: api_reference/api/audit_logs/audit_logs_post_incident_task_deleted_v1.md
+              - audit_logs_post_incident_task_updated_v1: api_reference/api/audit_logs/audit_logs_post_incident_task_updated_v1.md
               - audit_logs_private_incident_access_attempted_v1: api_reference/api/audit_logs/audit_logs_private_incident_access_attempted_v1.md
               - audit_logs_private_incident_access_requested_v1: api_reference/api/audit_logs/audit_logs_private_incident_access_requested_v1.md
               - audit_logs_private_incident_membership_granted_v1:
@@ -224,6 +226,14 @@ nav:
           - actions_v2_show_response_body: api_reference/models/actions_v2_show_response_body.md
           - actor_v1_response_body: api_reference/models/actor_v1_response_body.md
           - actor_v2_response_body: api_reference/models/actor_v2_response_body.md
+          - alert_events_v2_create_http_request_body: api_reference/models/alert_events_v2_create_http_request_body.md
+          - alert_events_v2_create_http_request_body_metadata: api_reference/models/alert_events_v2_create_http_request_body_metadata.md
+          - alert_events_v2_create_http_request_body_status: api_reference/models/alert_events_v2_create_http_request_body_status.md
+          - alert_events_v2_create_http_response_body: api_reference/models/alert_events_v2_create_http_response_body.md
+          - alert_events_v2_create_http_response_body_deduplication_key:
+              api_reference/models/alert_events_v2_create_http_response_body_deduplication_key.md
+          - alert_events_v2_create_http_response_body_message: api_reference/models/alert_events_v2_create_http_response_body_message.md
+          - alert_events_v2_create_http_response_body_status: api_reference/models/alert_events_v2_create_http_response_body_status.md
           - api_key_v1_response_body: api_reference/models/api_key_v1_response_body.md
           - api_key_v2_response_body: api_reference/models/api_key_v2_response_body.md
           - audit_log_actor_metadata_v2_response_body: api_reference/models/audit_log_actor_metadata_v2_response_body.md
@@ -280,15 +290,15 @@ nav:
           - audit_logs_internal_status_page_created_v1_response_body: api_reference/models/audit_logs_internal_status_page_created_v1_response_body.md
           - audit_logs_internal_status_page_deleted_v1_response_body: api_reference/models/audit_logs_internal_status_page_deleted_v1_response_body.md
           - audit_logs_internal_status_page_updated_v1_response_body: api_reference/models/audit_logs_internal_status_page_updated_v1_response_body.md
-          - audit_logs_learning_task_created_v1_response_body: api_reference/models/audit_logs_learning_task_created_v1_response_body.md
-          - audit_logs_learning_task_deleted_v1_response_body: api_reference/models/audit_logs_learning_task_deleted_v1_response_body.md
-          - audit_logs_learning_task_updated_v1_response_body: api_reference/models/audit_logs_learning_task_updated_v1_response_body.md
           - audit_logs_nudge_created_v1_response_body: api_reference/models/audit_logs_nudge_created_v1_response_body.md
           - audit_logs_nudge_deleted_v1_response_body: api_reference/models/audit_logs_nudge_deleted_v1_response_body.md
           - audit_logs_nudge_updated_v1_response_body: api_reference/models/audit_logs_nudge_updated_v1_response_body.md
           - audit_logs_policy_created_v1_response_body: api_reference/models/audit_logs_policy_created_v1_response_body.md
           - audit_logs_policy_deleted_v1_response_body: api_reference/models/audit_logs_policy_deleted_v1_response_body.md
           - audit_logs_policy_updated_v1_response_body: api_reference/models/audit_logs_policy_updated_v1_response_body.md
+          - audit_logs_post_incident_task_created_v1_response_body: api_reference/models/audit_logs_post_incident_task_created_v1_response_body.md
+          - audit_logs_post_incident_task_deleted_v1_response_body: api_reference/models/audit_logs_post_incident_task_deleted_v1_response_body.md
+          - audit_logs_post_incident_task_updated_v1_response_body: api_reference/models/audit_logs_post_incident_task_updated_v1_response_body.md
           - audit_logs_private_incident_access_attempted_v1_response_body:
               api_reference/models/audit_logs_private_incident_access_attempted_v1_response_body.md
           - audit_logs_private_incident_access_requested_v1_response_body:
