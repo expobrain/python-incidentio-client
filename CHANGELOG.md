@@ -1,3 +1,17 @@
+## 0.36.0 (2023-12-04)
+
+### Feat
+
+- Updated API at 2023-11-27 (#332)
+
+### Fix
+
+- **deps-dev**: bump mypy from 1.7.0 to 1.7.1 in /example (#333)
+- **deps-dev**: bump mkdocs-material from 9.4.10 to 9.4.14 (#334)
+- **deps-dev**: bump mkdocstrings-python from 1.7.4 to 1.7.5 (#335)
+- **deps-dev**: bump mypy from 1.7.0 to 1.7.1 (#336)
+- **deps**: bump httpx from 0.25.1 to 0.25.2 (#337)
+
 ## 0.35.3 (2023-11-27)
 
 ### Fix
