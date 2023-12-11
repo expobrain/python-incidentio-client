@@ -55,11 +55,11 @@ repos:
         args:
           - "--py38-plus"
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 5.13.0
     hooks:
       - id: isort
   - repo: https://github.com/pycqa/bandit
-    rev: 1.7.5
+    rev: 1.7.6
     hooks:
       - id: bandit
         args:
@@ -81,7 +81,7 @@ repos:
       - id: python-no-log-warn
       - id: python-no-eval
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.12.0
+    rev: v3.13.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
