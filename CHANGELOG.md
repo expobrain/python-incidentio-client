@@ -1,3 +1,11 @@
+## 0.36.4 (2023-12-11)
+
+### Fix
+
+- **deps-dev**: bump isort from 5.12.0 to 5.13.0 (#348)
+- **deps-dev**: bump isort from 5.12.0 to 5.13.0 in /example (#347)
+- **deps-dev**: bump openapi-python-client from 0.15.2 to 0.16.0 (#349)
+
 ## 0.36.3 (2023-12-11)
 
 ### Fix
