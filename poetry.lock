@@ -783,19 +783,19 @@ files = [
 
 [[package]]
 name = "openapi-python-client"
-version = "0.16.0"
+version = "0.16.1"
 description = "Generate modern Python clients from OpenAPI"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "openapi_python_client-0.16.0-py3-none-any.whl", hash = "sha256:2250a718703f99d6e55ff1b6b0bb7bb37f8d6424343d0f86a03d420869860578"},
-    {file = "openapi_python_client-0.16.0.tar.gz", hash = "sha256:c1b76d97d1276462445cded66b8e0c9095fa11002f695e5dcc212b45b8bfee9c"},
+    {file = "openapi_python_client-0.16.1-py3-none-any.whl", hash = "sha256:61d2601df3abb1723919444434ade016e4512438846623758e79c1c1ea3ee8e6"},
+    {file = "openapi_python_client-0.16.1.tar.gz", hash = "sha256:bb5803a10a27a00158daf1c23311facc02fd68471c91631165dce8f2f3161607"},
 ]
 
 [package.dependencies]
 attrs = ">=21.3.0"
 colorama = {version = ">=0.4.3,<0.5.0", markers = "sys_platform == \"win32\""}
-httpx = ">=0.20.0,<0.26.0"
+httpx = ">=0.20.0,<0.27.0"
 jinja2 = ">=3.0.0,<4.0.0"
 pydantic = ">=2.1.1,<3.0.0"
 python-dateutil = ">=2.8.1,<3.0.0"
