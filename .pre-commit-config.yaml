@@ -41,7 +41,7 @@ repos:
             "--remove-duplicate-keys",
           ]
   - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.0.0
     hooks:
       - id: flake8
         additional_dependencies:
@@ -55,7 +55,7 @@ repos:
         args:
           - "--py38-plus"
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.0
+    rev: 5.13.2
     hooks:
       - id: isort
   - repo: https://github.com/pycqa/bandit
@@ -68,7 +68,7 @@ repos:
           - "-lll"
           - "tests"
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 23.11.0
+    rev: 23.12.1
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/pygrep-hooks
