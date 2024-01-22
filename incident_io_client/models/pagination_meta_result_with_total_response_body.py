@@ -28,7 +28,9 @@ class PaginationMetaResultWithTotalResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         page_size = self.page_size
+
         after = self.after
+
         total_record_count = self.total_record_count
 
         field_dict: Dict[str, Any] = {}

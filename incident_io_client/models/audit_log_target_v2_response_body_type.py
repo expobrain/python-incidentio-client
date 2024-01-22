@@ -2,6 +2,9 @@ from enum import Enum
 
 
 class AuditLogTargetV2ResponseBodyType(str, Enum):
+    ALERT_ROUTE = "alert_route"
+    ALERT_SCHEMA = "alert_schema"
+    ALERT_SOURCE = "alert_source"
     ANNOUNCEMENT_RULE = "announcement_rule"
     API_KEY = "api_key"
     CATALOG_TYPE = "catalog_type"

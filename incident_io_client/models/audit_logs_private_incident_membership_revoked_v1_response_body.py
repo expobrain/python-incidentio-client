@@ -51,6 +51,7 @@ class AuditLogsPrivateIncidentMembershipRevokedV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         action = self.action
+
         actor = self.actor.to_dict()
 
         context = self.context.to_dict()
@@ -60,7 +61,6 @@ class AuditLogsPrivateIncidentMembershipRevokedV1ResponseBody:
         targets = []
         for targets_item_data in self.targets:
             targets_item = targets_item_data.to_dict()
-
             targets.append(targets_item)
 
         version = self.version

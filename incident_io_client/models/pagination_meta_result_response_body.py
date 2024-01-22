@@ -26,6 +26,7 @@ class PaginationMetaResultResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         page_size = self.page_size
+
         after = self.after
 
         field_dict: Dict[str, Any] = {}

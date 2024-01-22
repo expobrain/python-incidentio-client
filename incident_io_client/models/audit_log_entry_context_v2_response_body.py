@@ -26,6 +26,7 @@ class AuditLogEntryContextV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         location = self.location
+
         user_agent = self.user_agent
 
         field_dict: Dict[str, Any] = {}

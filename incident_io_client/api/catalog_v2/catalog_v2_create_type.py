@@ -14,17 +14,22 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    json_body: CatalogV2CreateTypeRequestBody,
+    body: CatalogV2CreateTypeRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v2/catalog_types",
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -54,17 +59,17 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateTypeRequestBody,
+    body: CatalogV2CreateTypeRequestBody,
 ) -> Response[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
      Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
+        body (CatalogV2CreateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
+            clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
+            'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -75,7 +80,7 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -88,17 +93,17 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateTypeRequestBody,
+    body: CatalogV2CreateTypeRequestBody,
 ) -> Optional[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
      Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
+        body (CatalogV2CreateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
+            clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
+            'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -110,24 +115,24 @@ def sync(
 
     return sync_detailed(
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateTypeRequestBody,
+    body: CatalogV2CreateTypeRequestBody,
 ) -> Response[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
      Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
+        body (CatalogV2CreateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
+            clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
+            'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -138,7 +143,7 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -149,17 +154,17 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateTypeRequestBody,
+    body: CatalogV2CreateTypeRequestBody,
 ) -> Optional[CatalogV2CreateTypeResponseBody]:
     """CreateType Catalog V2
 
      Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        json_body (CatalogV2CreateTypeRequestBody):  Example: {'annotations':
-            {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
-            'Kubernetes Cluster', 'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
+        body (CatalogV2CreateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
+            clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
+            'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -172,6 +177,6 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

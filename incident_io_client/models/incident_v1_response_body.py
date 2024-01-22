@@ -147,22 +147,25 @@ class IncidentV1ResponseBody:
         custom_field_entries = []
         for custom_field_entries_item_data in self.custom_field_entries:
             custom_field_entries_item = custom_field_entries_item_data.to_dict()
-
             custom_field_entries.append(custom_field_entries_item)
 
         id = self.id
+
         incident_role_assignments = []
         for incident_role_assignments_item_data in self.incident_role_assignments:
             incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
-
             incident_role_assignments.append(incident_role_assignments_item)
 
         mode = self.mode.value
 
         name = self.name
+
         reference = self.reference
+
         slack_channel_id = self.slack_channel_id
+
         slack_team_id = self.slack_team_id
+
         status = self.status.value
 
         updated_at = self.updated_at.isoformat()
@@ -170,24 +173,28 @@ class IncidentV1ResponseBody:
         visibility = self.visibility.value
 
         call_url = self.call_url
+
         incident_type: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
         permalink = self.permalink
+
         postmortem_document_url = self.postmortem_document_url
+
         severity: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
         slack_channel_name = self.slack_channel_name
+
         summary = self.summary
+
         timestamps: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.timestamps, Unset):
             timestamps = []
             for timestamps_item_data in self.timestamps:
                 timestamps_item = timestamps_item_data.to_dict()
-
                 timestamps.append(timestamps_item)
 
         field_dict: Dict[str, Any] = {}

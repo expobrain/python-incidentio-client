@@ -52,8 +52,11 @@ class ActionV2ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         id = self.id
+
         incident_id = self.incident_id
+
         status = self.status.value
 
         updated_at = self.updated_at.isoformat()

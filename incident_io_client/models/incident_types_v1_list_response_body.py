@@ -32,7 +32,6 @@ class IncidentTypesV1ListResponseBody:
         incident_types = []
         for incident_types_item_data in self.incident_types:
             incident_types_item = incident_types_item_data.to_dict()
-
             incident_types.append(incident_types_item)
 
         field_dict: Dict[str, Any] = {}

@@ -17,30 +17,35 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     alert_source_config_id: str,
     *,
-    json_body: AlertEventsV2CreateHTTPRequestBody,
-    token: Union[Unset, None, str] = UNSET,
+    body: AlertEventsV2CreateHTTPRequestBody,
+    token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
-    headers = {}
+    headers: Dict[str, Any] = {}
     if not isinstance(authorization, Unset):
         headers["authorization"] = authorization
 
     params: Dict[str, Any] = {}
+
     params["token"] = token
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v2/alert_events/http/{alert_source_config_id}".format(
             alert_source_config_id=alert_source_config_id,
         ),
-        "json": json_json_body,
         "params": params,
-        "headers": headers,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -71,8 +76,8 @@ def sync_detailed(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: AlertEventsV2CreateHTTPRequestBody,
-    token: Union[Unset, None, str] = UNSET,
+    body: AlertEventsV2CreateHTTPRequestBody,
+    token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
 ) -> Response[AlertEventsV2CreateHTTPResponseBody]:
     """CreateHTTP Alert Events V2
@@ -81,13 +86,13 @@ def sync_detailed(
 
     Args:
         alert_source_config_id (str):
-        token (Union[Unset, None, str]):
+        token (Union[Unset, str]):
         authorization (Union[Unset, str]):
-        json_body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key':
-            '4293868629', 'description': "We've detected a number of timeouts on hello.world.com, the
-            service may be down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-
-            team']}, 'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123',
-            'status': 'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
+        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+            'description': "We've detected a number of timeouts on hello.world.com, the service may be
+            down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
+            'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
+            'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -99,7 +104,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         alert_source_config_id=alert_source_config_id,
-        json_body=json_body,
+        body=body,
         token=token,
         authorization=authorization,
     )
@@ -115,8 +120,8 @@ def sync(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: AlertEventsV2CreateHTTPRequestBody,
-    token: Union[Unset, None, str] = UNSET,
+    body: AlertEventsV2CreateHTTPRequestBody,
+    token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
 ) -> Optional[AlertEventsV2CreateHTTPResponseBody]:
     """CreateHTTP Alert Events V2
@@ -125,13 +130,13 @@ def sync(
 
     Args:
         alert_source_config_id (str):
-        token (Union[Unset, None, str]):
+        token (Union[Unset, str]):
         authorization (Union[Unset, str]):
-        json_body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key':
-            '4293868629', 'description': "We've detected a number of timeouts on hello.world.com, the
-            service may be down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-
-            team']}, 'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123',
-            'status': 'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
+        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+            'description': "We've detected a number of timeouts on hello.world.com, the service may be
+            down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
+            'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
+            'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -144,7 +149,7 @@ def sync(
     return sync_detailed(
         alert_source_config_id=alert_source_config_id,
         client=client,
-        json_body=json_body,
+        body=body,
         token=token,
         authorization=authorization,
     ).parsed
@@ -154,8 +159,8 @@ async def asyncio_detailed(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: AlertEventsV2CreateHTTPRequestBody,
-    token: Union[Unset, None, str] = UNSET,
+    body: AlertEventsV2CreateHTTPRequestBody,
+    token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
 ) -> Response[AlertEventsV2CreateHTTPResponseBody]:
     """CreateHTTP Alert Events V2
@@ -164,13 +169,13 @@ async def asyncio_detailed(
 
     Args:
         alert_source_config_id (str):
-        token (Union[Unset, None, str]):
+        token (Union[Unset, str]):
         authorization (Union[Unset, str]):
-        json_body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key':
-            '4293868629', 'description': "We've detected a number of timeouts on hello.world.com, the
-            service may be down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-
-            team']}, 'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123',
-            'status': 'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
+        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+            'description': "We've detected a number of timeouts on hello.world.com, the service may be
+            down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
+            'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
+            'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -182,7 +187,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         alert_source_config_id=alert_source_config_id,
-        json_body=json_body,
+        body=body,
         token=token,
         authorization=authorization,
     )
@@ -196,8 +201,8 @@ async def asyncio(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: AlertEventsV2CreateHTTPRequestBody,
-    token: Union[Unset, None, str] = UNSET,
+    body: AlertEventsV2CreateHTTPRequestBody,
+    token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
 ) -> Optional[AlertEventsV2CreateHTTPResponseBody]:
     """CreateHTTP Alert Events V2
@@ -206,13 +211,13 @@ async def asyncio(
 
     Args:
         alert_source_config_id (str):
-        token (Union[Unset, None, str]):
+        token (Union[Unset, str]):
         authorization (Union[Unset, str]):
-        json_body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key':
-            '4293868629', 'description': "We've detected a number of timeouts on hello.world.com, the
-            service may be down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-
-            team']}, 'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123',
-            'status': 'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
+        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+            'description': "We've detected a number of timeouts on hello.world.com, the service may be
+            down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
+            'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
+            'firing', 'title': '*errors.withMessage: PG::Error failed to connect'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -226,7 +231,7 @@ async def asyncio(
         await asyncio_detailed(
             alert_source_config_id=alert_source_config_id,
             client=client,
-            json_body=json_body,
+            body=body,
             token=token,
             authorization=authorization,
         )

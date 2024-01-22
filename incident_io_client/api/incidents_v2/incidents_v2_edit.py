@@ -13,19 +13,24 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    json_body: IncidentsV2EditRequestBody,
+    body: IncidentsV2EditRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v2/incidents/{id}/actions/edit".format(
             id=id,
         ),
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -56,7 +61,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentsV2EditRequestBody,
+    body: IncidentsV2EditRequestBody,
 ) -> Response[IncidentsV2EditResponseBody]:
     """Edit Incidents V2
 
@@ -70,7 +75,7 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
+        body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
             'https://zoom.us/foo', 'custom_field_entries': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
@@ -78,11 +83,11 @@ def sync_detailed(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet."}, 'notify_incident_channel': True}.
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
+            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -94,7 +99,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -108,7 +113,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentsV2EditRequestBody,
+    body: IncidentsV2EditRequestBody,
 ) -> Optional[IncidentsV2EditResponseBody]:
     """Edit Incidents V2
 
@@ -122,7 +127,7 @@ def sync(
 
     Args:
         id (str):
-        json_body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
+        body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
             'https://zoom.us/foo', 'custom_field_entries': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
@@ -130,11 +135,11 @@ def sync(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet."}, 'notify_incident_channel': True}.
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
+            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -147,7 +152,7 @@ def sync(
     return sync_detailed(
         id=id,
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
@@ -155,7 +160,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentsV2EditRequestBody,
+    body: IncidentsV2EditRequestBody,
 ) -> Response[IncidentsV2EditResponseBody]:
     """Edit Incidents V2
 
@@ -169,7 +174,7 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
+        body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
             'https://zoom.us/foo', 'custom_field_entries': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
@@ -177,11 +182,11 @@ async def asyncio_detailed(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet."}, 'notify_incident_channel': True}.
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
+            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -193,7 +198,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -205,7 +210,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentsV2EditRequestBody,
+    body: IncidentsV2EditRequestBody,
 ) -> Optional[IncidentsV2EditResponseBody]:
     """Edit Incidents V2
 
@@ -219,7 +224,7 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
+        body (IncidentsV2EditRequestBody):  Example: {'incident': {'call_url':
             'https://zoom.us/foo', 'custom_field_entries': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
@@ -227,11 +232,11 @@ async def asyncio(
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'incident_role_assignments': [{'assignee': {'email':
             'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_timestamp_values':
-            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't
-            know why yet."}, 'notify_incident_channel': True}.
+            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
+            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -245,6 +250,6 @@ async def asyncio(
         await asyncio_detailed(
             id=id,
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

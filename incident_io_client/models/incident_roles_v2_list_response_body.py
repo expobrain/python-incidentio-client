@@ -33,7 +33,6 @@ class IncidentRolesV2ListResponseBody:
         incident_roles = []
         for incident_roles_item_data in self.incident_roles:
             incident_roles_item = incident_roles_item_data.to_dict()
-
             incident_roles.append(incident_roles_item)
 
         field_dict: Dict[str, Any] = {}

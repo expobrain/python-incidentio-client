@@ -45,10 +45,13 @@ class CustomFieldV2ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         field_type = self.field_type.value
 
         id = self.id
+
         name = self.name
+
         updated_at = self.updated_at.isoformat()
 
         catalog_type_id = self.catalog_type_id

@@ -54,7 +54,9 @@ class CustomFieldValueV2ResponseBody:
             value_catalog_entry = self.value_catalog_entry.to_dict()
 
         value_link = self.value_link
+
         value_numeric = self.value_numeric
+
         value_option: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.value_option, Unset):
             value_option = self.value_option.to_dict()

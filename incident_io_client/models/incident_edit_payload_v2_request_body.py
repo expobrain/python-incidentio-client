@@ -30,9 +30,10 @@ class IncidentEditPayloadV2RequestBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it', 'value_timestamp':
             ''}]}], 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'summary': "Our database is really really sad, and we don't know why yet."}
+            'incident_status_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad',
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know
+            why yet."}
 
     Attributes:
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
@@ -44,6 +45,9 @@ class IncidentEditPayloadV2RequestBody:
         incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2RequestBody']]): Assign incident
             roles to these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
+        incident_status_id (Union[Unset, str]): Incident status to change incident to (you can only change an incident
+            from one active status to another, any other lifecycle changes must be taken via the app.) Example:
+            01FH5TZRWMNAFB0DZ23FD1TV96.
         incident_timestamp_values (Union[Unset, List['IncidentTimestampValuePayloadV2RequestBody']]): Assign the
             incident's timestamps to these values Example: [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}].
@@ -58,6 +62,7 @@ class IncidentEditPayloadV2RequestBody:
     incident_role_assignments: Union[
         Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]
     ] = UNSET
+    incident_status_id: Union[Unset, str] = UNSET
     incident_timestamp_values: Union[
         Unset, List["IncidentTimestampValuePayloadV2RequestBody"]
     ] = UNSET
@@ -68,12 +73,12 @@ class IncidentEditPayloadV2RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         call_url = self.call_url
+
         custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.custom_field_entries, Unset):
             custom_field_entries = []
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
-
                 custom_field_entries.append(custom_field_entries_item)
 
         incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -81,19 +86,21 @@ class IncidentEditPayloadV2RequestBody:
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
                 incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
-
                 incident_role_assignments.append(incident_role_assignments_item)
+
+        incident_status_id = self.incident_status_id
 
         incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
                 incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
-
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
         name = self.name
+
         severity_id = self.severity_id
+
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}
@@ -105,6 +112,8 @@ class IncidentEditPayloadV2RequestBody:
             field_dict["custom_field_entries"] = custom_field_entries
         if incident_role_assignments is not UNSET:
             field_dict["incident_role_assignments"] = incident_role_assignments
+        if incident_status_id is not UNSET:
+            field_dict["incident_status_id"] = incident_status_id
         if incident_timestamp_values is not UNSET:
             field_dict["incident_timestamp_values"] = incident_timestamp_values
         if name is not UNSET:
@@ -149,6 +158,8 @@ class IncidentEditPayloadV2RequestBody:
 
             incident_role_assignments.append(incident_role_assignments_item)
 
+        incident_status_id = d.pop("incident_status_id", UNSET)
+
         incident_timestamp_values = []
         _incident_timestamp_values = d.pop("incident_timestamp_values", UNSET)
         for incident_timestamp_values_item_data in _incident_timestamp_values or []:
@@ -168,6 +179,7 @@ class IncidentEditPayloadV2RequestBody:
             call_url=call_url,
             custom_field_entries=custom_field_entries,
             incident_role_assignments=incident_role_assignments,
+            incident_status_id=incident_status_id,
             incident_timestamp_values=incident_timestamp_values,
             name=name,
             severity_id=severity_id,

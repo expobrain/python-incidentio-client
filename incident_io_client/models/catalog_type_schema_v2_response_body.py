@@ -33,7 +33,6 @@ class CatalogTypeSchemaV2ResponseBody:
         attributes = []
         for attributes_item_data in self.attributes:
             attributes_item = attributes_item_data.to_dict()
-
             attributes.append(attributes_item)
 
         version = self.version

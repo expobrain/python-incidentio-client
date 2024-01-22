@@ -11,33 +11,31 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, List[str]] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, List[str]] = UNSET,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["page_size"] = page_size
 
     params["after"] = after
 
-    json_status: Union[Unset, None, List[str]] = UNSET
+    json_status: Union[Unset, List[str]] = UNSET
     if not isinstance(status, Unset):
-        if status is None:
-            json_status = None
-        else:
-            json_status = status
+        json_status = status
 
     params["status"] = json_status
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v1/incidents",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -67,18 +65,18 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, List[str]] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, List[str]] = UNSET,
 ) -> Response[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
      List all incidents for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, List[str]]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, List[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -104,18 +102,18 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, List[str]] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, List[str]] = UNSET,
 ) -> Optional[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
      List all incidents for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, List[str]]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, List[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -136,18 +134,18 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, List[str]] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, List[str]] = UNSET,
 ) -> Response[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
      List all incidents for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, List[str]]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, List[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -171,18 +169,18 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, List[str]] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, List[str]] = UNSET,
 ) -> Optional[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
      List all incidents for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, List[str]]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, List[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

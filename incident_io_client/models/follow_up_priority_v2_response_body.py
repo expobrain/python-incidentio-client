@@ -31,8 +31,11 @@ class FollowUpPriorityV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         name = self.name
+
         rank = self.rank
+
         description = self.description
 
         field_dict: Dict[str, Any] = {}

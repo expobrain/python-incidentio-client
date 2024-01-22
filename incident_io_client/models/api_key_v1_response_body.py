@@ -23,6 +23,7 @@ class APIKeyV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         name = self.name
 
         field_dict: Dict[str, Any] = {}

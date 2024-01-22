@@ -62,8 +62,11 @@ class ActionV1ResponseBody:
         created_at = self.created_at.isoformat()
 
         follow_up = self.follow_up
+
         id = self.id
+
         incident_id = self.incident_id
+
         status = self.status.value
 
         updated_at = self.updated_at.isoformat()
@@ -77,6 +80,7 @@ class ActionV1ResponseBody:
             completed_at = self.completed_at.isoformat()
 
         description = self.description
+
         external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()

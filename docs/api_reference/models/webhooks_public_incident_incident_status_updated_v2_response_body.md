@@ -1,0 +1,3 @@
+# incident_io_client.models.webhooks_public_incident_incident_status_updated_v2_response_body
+
+::: incident_io_client.models.webhooks_public_incident_incident_status_updated_v2_response_body

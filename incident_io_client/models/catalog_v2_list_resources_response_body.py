@@ -32,7 +32,6 @@ class CatalogV2ListResourcesResponseBody:
         resources = []
         for resources_item_data in self.resources:
             resources_item = resources_item_data.to_dict()
-
             resources.append(resources_item)
 
         field_dict: Dict[str, Any] = {}

@@ -23,6 +23,7 @@ class CustomFieldOptionsV1UpdateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         sort_key = self.sort_key
+
         value = self.value
 
         field_dict: Dict[str, Any] = {}

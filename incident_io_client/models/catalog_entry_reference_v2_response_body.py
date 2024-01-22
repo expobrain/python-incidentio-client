@@ -33,8 +33,11 @@ class CatalogEntryReferenceV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         catalog_entry_id = self.catalog_entry_id
+
         catalog_entry_name = self.catalog_entry_name
+
         catalog_type_id = self.catalog_type_id
+
         archived_at: Union[Unset, str] = UNSET
         if not isinstance(self.archived_at, Unset):
             archived_at = self.archived_at.isoformat()

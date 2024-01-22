@@ -58,17 +58,25 @@ class EngineParamBindingValueV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         label = self.label
+
         sort_key = self.sort_key
+
         catalog_entry: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.catalog_entry, Unset):
             catalog_entry = self.catalog_entry.to_dict()
 
         helptext = self.helptext
+
         image_url = self.image_url
+
         is_image_slack_icon = self.is_image_slack_icon
+
         literal = self.literal
+
         reference = self.reference
+
         unavailable = self.unavailable
+
         value = self.value
 
         field_dict: Dict[str, Any] = {}

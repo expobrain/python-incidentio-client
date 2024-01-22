@@ -43,14 +43,16 @@ class CustomFieldTypeInfoV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         field_type = self.field_type.value
 
         id = self.id
+
         name = self.name
+
         options = []
         for options_item_data in self.options:
             options_item = options_item_data.to_dict()
-
             options.append(options_item)
 
         field_dict: Dict[str, Any] = {}

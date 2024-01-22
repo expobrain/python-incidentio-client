@@ -16,30 +16,31 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    incident_id: Union[Unset, None, str] = UNSET,
-    external_id: Union[Unset, None, str] = UNSET,
-    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    external_id: Union[Unset, str] = UNSET,
+    resource_type: Union[Unset, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["incident_id"] = incident_id
 
     params["external_id"] = external_id
 
-    json_resource_type: Union[Unset, None, str] = UNSET
+    json_resource_type: Union[Unset, str] = UNSET
     if not isinstance(resource_type, Unset):
-        json_resource_type = resource_type.value if resource_type else None
+        json_resource_type = resource_type.value
 
     params["resource_type"] = json_resource_type
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v1/incident_attachments",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -69,9 +70,9 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    external_id: Union[Unset, None, str] = UNSET,
-    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    external_id: Union[Unset, str] = UNSET,
+    resource_type: Union[Unset, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -79,9 +80,9 @@ def sync_detailed(
     specific incident ID or a specific external resource type and external ID.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        external_id (Union[Unset, None, str]):
-        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
+        incident_id (Union[Unset, str]):
+        external_id (Union[Unset, str]):
+        resource_type (Union[Unset, IncidentAttachmentsV1ListResourceType]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -107,9 +108,9 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    external_id: Union[Unset, None, str] = UNSET,
-    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    external_id: Union[Unset, str] = UNSET,
+    resource_type: Union[Unset, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -117,9 +118,9 @@ def sync(
     specific incident ID or a specific external resource type and external ID.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        external_id (Union[Unset, None, str]):
-        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
+        incident_id (Union[Unset, str]):
+        external_id (Union[Unset, str]):
+        resource_type (Union[Unset, IncidentAttachmentsV1ListResourceType]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -140,9 +141,9 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    external_id: Union[Unset, None, str] = UNSET,
-    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    external_id: Union[Unset, str] = UNSET,
+    resource_type: Union[Unset, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -150,9 +151,9 @@ async def asyncio_detailed(
     specific incident ID or a specific external resource type and external ID.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        external_id (Union[Unset, None, str]):
-        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
+        incident_id (Union[Unset, str]):
+        external_id (Union[Unset, str]):
+        resource_type (Union[Unset, IncidentAttachmentsV1ListResourceType]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -176,9 +177,9 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    external_id: Union[Unset, None, str] = UNSET,
-    resource_type: Union[Unset, None, IncidentAttachmentsV1ListResourceType] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    external_id: Union[Unset, str] = UNSET,
+    resource_type: Union[Unset, IncidentAttachmentsV1ListResourceType] = UNSET,
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
@@ -186,9 +187,9 @@ async def asyncio(
     specific incident ID or a specific external resource type and external ID.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        external_id (Union[Unset, None, str]):
-        resource_type (Union[Unset, None, IncidentAttachmentsV1ListResourceType]):
+        incident_id (Union[Unset, str]):
+        external_id (Union[Unset, str]):
+        resource_type (Union[Unset, IncidentAttachmentsV1ListResourceType]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

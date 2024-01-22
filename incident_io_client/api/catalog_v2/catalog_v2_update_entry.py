@@ -17,19 +17,24 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    json_body: CatalogV2UpdateEntryRequestBody,
+    body: CatalogV2UpdateEntryRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "put",
         "url": "/v2/catalog_entries/{id}".format(
             id=id,
         ),
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -60,7 +65,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateEntryRequestBody,
+    body: CatalogV2UpdateEntryRequestBody,
 ) -> Response[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
 
@@ -68,11 +73,11 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'external_id':
-            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
+        body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name':
+            'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -84,7 +89,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -98,7 +103,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateEntryRequestBody,
+    body: CatalogV2UpdateEntryRequestBody,
 ) -> Optional[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
 
@@ -106,11 +111,11 @@ def sync(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'external_id':
-            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
+        body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name':
+            'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -123,7 +128,7 @@ def sync(
     return sync_detailed(
         id=id,
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
@@ -131,7 +136,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateEntryRequestBody,
+    body: CatalogV2UpdateEntryRequestBody,
 ) -> Response[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
 
@@ -139,11 +144,11 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'external_id':
-            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
+        body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name':
+            'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -155,7 +160,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -167,7 +172,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateEntryRequestBody,
+    body: CatalogV2UpdateEntryRequestBody,
 ) -> Optional[CatalogV2UpdateEntryResponseBody]:
     """UpdateEntry Catalog V2
 
@@ -175,11 +180,11 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'external_id':
-            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
+        body (CatalogV2UpdateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name':
+            'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -193,6 +198,6 @@ async def asyncio(
         await asyncio_detailed(
             id=id,
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

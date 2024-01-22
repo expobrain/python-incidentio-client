@@ -28,6 +28,7 @@ class IncidentTimestampV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         name = self.name
+
         last_occurred_at: Union[Unset, str] = UNSET
         if not isinstance(self.last_occurred_at, Unset):
             last_occurred_at = self.last_occurred_at.isoformat()

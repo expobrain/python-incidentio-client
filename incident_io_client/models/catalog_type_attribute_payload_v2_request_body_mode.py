@@ -3,6 +3,7 @@ from enum import Enum
 
 class CatalogTypeAttributePayloadV2RequestBodyMode(str, Enum):
     EXTERNAL = "external"
+    INTERNAL = "internal"
     MANUAL = "manual"
     VALUE_0 = ""
 

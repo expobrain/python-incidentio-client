@@ -51,7 +51,9 @@ class CatalogV2UpdateTypeRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         name = self.name
+
         annotations: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.annotations, Unset):
             annotations = self.annotations.to_dict()

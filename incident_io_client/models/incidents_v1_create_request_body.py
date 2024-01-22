@@ -90,6 +90,7 @@ class IncidentsV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         idempotency_key = self.idempotency_key
+
         visibility = self.visibility.value
 
         custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -97,7 +98,6 @@ class IncidentsV1CreateRequestBody:
             custom_field_entries = []
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
-
                 custom_field_entries.append(custom_field_entries_item)
 
         incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -105,19 +105,24 @@ class IncidentsV1CreateRequestBody:
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
                 incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
-
                 incident_role_assignments.append(incident_role_assignments_item)
 
         incident_type_id = self.incident_type_id
+
         mode: Union[Unset, str] = UNSET
         if not isinstance(self.mode, Unset):
             mode = self.mode.value
 
         name = self.name
+
         severity_id = self.severity_id
+
         slack_team_id = self.slack_team_id
+
         source_message_channel_id = self.source_message_channel_id
+
         source_message_timestamp = self.source_message_timestamp
+
         status: Union[Unset, str] = UNSET
         if not isinstance(self.status, Unset):
             status = self.status.value

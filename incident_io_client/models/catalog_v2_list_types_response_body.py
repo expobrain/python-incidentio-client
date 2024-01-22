@@ -41,7 +41,6 @@ class CatalogV2ListTypesResponseBody:
         catalog_types = []
         for catalog_types_item_data in self.catalog_types:
             catalog_types_item = catalog_types_item_data.to_dict()
-
             catalog_types.append(catalog_types_item)
 
         field_dict: Dict[str, Any] = {}

@@ -38,7 +38,6 @@ class CustomFieldOptionsV1ListResponseBody:
         custom_field_options = []
         for custom_field_options_item_data in self.custom_field_options:
             custom_field_options_item = custom_field_options_item_data.to_dict()
-
             custom_field_options.append(custom_field_options_item)
 
         pagination_meta = self.pagination_meta.to_dict()

@@ -42,7 +42,6 @@ class FollowUpsV2ListResponseBody:
         follow_ups = []
         for follow_ups_item_data in self.follow_ups:
             follow_ups_item = follow_ups_item_data.to_dict()
-
             follow_ups.append(follow_ups_item)
 
         field_dict: Dict[str, Any] = {}

@@ -26,6 +26,7 @@ class EngineParamBindingValuePayloadV2RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         literal = self.literal
+
         reference = self.reference
 
         field_dict: Dict[str, Any] = {}

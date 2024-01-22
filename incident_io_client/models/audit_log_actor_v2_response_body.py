@@ -41,6 +41,7 @@ class AuditLogActorV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         type = self.type.value
 
         metadata: Union[Unset, Dict[str, Any]] = UNSET

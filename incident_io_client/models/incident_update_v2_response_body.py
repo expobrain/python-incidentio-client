@@ -62,12 +62,15 @@ class IncidentUpdateV2ResponseBody:
         created_at = self.created_at.isoformat()
 
         id = self.id
+
         incident_id = self.incident_id
+
         new_incident_status = self.new_incident_status.to_dict()
 
         updater = self.updater.to_dict()
 
         message = self.message
+
         new_severity: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.new_severity, Unset):
             new_severity = self.new_severity.to_dict()

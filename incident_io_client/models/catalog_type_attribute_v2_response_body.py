@@ -34,10 +34,13 @@ class CatalogTypeAttributeV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         array = self.array
+
         id = self.id
+
         mode = self.mode.value
 
         name = self.name
+
         type = self.type
 
         field_dict: Dict[str, Any] = {}

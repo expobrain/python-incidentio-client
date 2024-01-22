@@ -14,12 +14,11 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     *,
     catalog_type_id: str,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["catalog_type_id"] = catalog_type_id
 
     params["page_size"] = page_size
@@ -28,11 +27,13 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v2/catalog_entries",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -63,8 +64,8 @@ def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Response[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -72,8 +73,8 @@ def sync_detailed(
 
     Args:
         catalog_type_id (str):
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -100,8 +101,8 @@ def sync(
     *,
     client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Optional[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -109,8 +110,8 @@ def sync(
 
     Args:
         catalog_type_id (str):
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -132,8 +133,8 @@ async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Response[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -141,8 +142,8 @@ async def asyncio_detailed(
 
     Args:
         catalog_type_id (str):
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -167,8 +168,8 @@ async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
     catalog_type_id: str,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Optional[CatalogV2ListEntriesResponseBody]:
     """ListEntries Catalog V2
 
@@ -176,8 +177,8 @@ async def asyncio(
 
     Args:
         catalog_type_id (str):
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

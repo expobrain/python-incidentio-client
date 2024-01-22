@@ -17,19 +17,24 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    json_body: IncidentRolesV2UpdateRequestBody,
+    body: IncidentRolesV2UpdateRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "put",
         "url": "/v2/incident_roles/{id}".format(
             id=id,
         ),
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -60,7 +65,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentRolesV2UpdateRequestBody,
+    body: IncidentRolesV2UpdateRequestBody,
 ) -> Response[IncidentRolesV2UpdateResponseBody]:
     """Update Incident Roles V2
 
@@ -68,9 +73,9 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person
-            currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
+        body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person currently
+            coordinating the incident', 'instructions': 'Take point on the incident; Make sure people
+            are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -82,7 +87,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -96,7 +101,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentRolesV2UpdateRequestBody,
+    body: IncidentRolesV2UpdateRequestBody,
 ) -> Optional[IncidentRolesV2UpdateResponseBody]:
     """Update Incident Roles V2
 
@@ -104,9 +109,9 @@ def sync(
 
     Args:
         id (str):
-        json_body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person
-            currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
+        body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person currently
+            coordinating the incident', 'instructions': 'Take point on the incident; Make sure people
+            are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -119,7 +124,7 @@ def sync(
     return sync_detailed(
         id=id,
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
@@ -127,7 +132,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentRolesV2UpdateRequestBody,
+    body: IncidentRolesV2UpdateRequestBody,
 ) -> Response[IncidentRolesV2UpdateResponseBody]:
     """Update Incident Roles V2
 
@@ -135,9 +140,9 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person
-            currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
+        body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person currently
+            coordinating the incident', 'instructions': 'Take point on the incident; Make sure people
+            are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -149,7 +154,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -161,7 +166,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentRolesV2UpdateRequestBody,
+    body: IncidentRolesV2UpdateRequestBody,
 ) -> Optional[IncidentRolesV2UpdateResponseBody]:
     """Update Incident Roles V2
 
@@ -169,9 +174,9 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person
-            currently coordinating the incident', 'instructions': 'Take point on the incident; Make
-            sure people are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
+        body (IncidentRolesV2UpdateRequestBody):  Example: {'description': 'The person currently
+            coordinating the incident', 'instructions': 'Take point on the incident; Make sure people
+            are clear on responsibilities', 'name': 'Incident Lead', 'shortform': 'lead'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -185,6 +190,6 @@ async def asyncio(
         await asyncio_detailed(
             id=id,
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

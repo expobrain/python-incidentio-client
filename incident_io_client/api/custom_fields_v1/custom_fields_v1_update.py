@@ -17,19 +17,24 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    json_body: CustomFieldsV1UpdateRequestBody,
+    body: CustomFieldsV1UpdateRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "put",
         "url": "/v1/custom_fields/{id}".format(
             id=id,
         ),
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -60,7 +65,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV1UpdateRequestBody,
+    body: CustomFieldsV1UpdateRequestBody,
 ) -> Response[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
 
@@ -68,10 +73,10 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
-            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
-            True, 'show_in_announcement_post': True}.
+        body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2': 'never',
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -83,7 +88,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -97,7 +102,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV1UpdateRequestBody,
+    body: CustomFieldsV1UpdateRequestBody,
 ) -> Optional[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
 
@@ -105,10 +110,10 @@ def sync(
 
     Args:
         id (str):
-        json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
-            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
-            True, 'show_in_announcement_post': True}.
+        body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2': 'never',
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -121,7 +126,7 @@ def sync(
     return sync_detailed(
         id=id,
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
@@ -129,7 +134,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV1UpdateRequestBody,
+    body: CustomFieldsV1UpdateRequestBody,
 ) -> Response[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
 
@@ -137,10 +142,10 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
-            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
-            True, 'show_in_announcement_post': True}.
+        body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2': 'never',
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -152,7 +157,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -164,7 +169,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV1UpdateRequestBody,
+    body: CustomFieldsV1UpdateRequestBody,
 ) -> Optional[CustomFieldsV1UpdateResponseBody]:
     """Update Custom Fields V1
 
@@ -172,10 +177,10 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2':
-            'never', 'show_before_closure': True, 'show_before_creation': True, 'show_before_update':
-            True, 'show_in_announcement_post': True}.
+        body (CustomFieldsV1UpdateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'name': 'Affected Team', 'required': 'never', 'required_v2': 'never',
+            'show_before_closure': True, 'show_before_creation': True, 'show_before_update': True,
+            'show_in_announcement_post': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -189,6 +194,6 @@ async def asyncio(
         await asyncio_detailed(
             id=id,
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

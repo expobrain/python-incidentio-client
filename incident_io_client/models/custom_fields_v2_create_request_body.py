@@ -29,6 +29,7 @@ class CustomFieldsV2CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         field_type = self.field_type.value
 
         name = self.name

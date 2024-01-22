@@ -55,7 +55,9 @@ class CatalogV2CreateTypeRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         name = self.name
+
         annotations: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.annotations, Unset):
             annotations = self.annotations.to_dict()
@@ -69,6 +71,7 @@ class CatalogV2CreateTypeRequestBody:
             icon = self.icon.value
 
         ranked = self.ranked
+
         type_name = self.type_name
 
         field_dict: Dict[str, Any] = {}

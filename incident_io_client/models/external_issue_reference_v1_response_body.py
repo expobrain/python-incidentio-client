@@ -33,7 +33,9 @@ class ExternalIssueReferenceV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         issue_name = self.issue_name
+
         issue_permalink = self.issue_permalink
+
         provider: Union[Unset, str] = UNSET
         if not isinstance(self.provider, Unset):
             provider = self.provider.value

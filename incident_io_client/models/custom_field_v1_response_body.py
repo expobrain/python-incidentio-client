@@ -82,22 +82,28 @@ class CustomFieldV1ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         field_type = self.field_type.value
 
         id = self.id
+
         name = self.name
+
         options = []
         for options_item_data in self.options:
             options_item = options_item_data.to_dict()
-
             options.append(options_item)
 
         show_before_closure = self.show_before_closure
+
         show_before_creation = self.show_before_creation
+
         show_before_update = self.show_before_update
+
         updated_at = self.updated_at.isoformat()
 
         catalog_type_id = self.catalog_type_id
+
         required: Union[Unset, str] = UNSET
         if not isinstance(self.required, Unset):
             required = self.required.value

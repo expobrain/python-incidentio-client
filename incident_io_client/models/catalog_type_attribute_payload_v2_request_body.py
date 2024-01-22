@@ -36,9 +36,13 @@ class CatalogTypeAttributePayloadV2RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         array = self.array
+
         name = self.name
+
         type = self.type
+
         id = self.id
+
         mode: Union[Unset, str] = UNSET
         if not isinstance(self.mode, Unset):
             mode = self.mode.value

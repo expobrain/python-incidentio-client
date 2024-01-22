@@ -36,10 +36,10 @@ class CustomFieldEntryPayloadV1RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         custom_field_id = self.custom_field_id
+
         values = []
         for values_item_data in self.values:
             values_item = values_item_data.to_dict()
-
             values.append(values_item)
 
         field_dict: Dict[str, Any] = {}

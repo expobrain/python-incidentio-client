@@ -13,13 +13,12 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
     custom_field_id: str,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["page_size"] = page_size
 
     params["after"] = after
@@ -28,11 +27,13 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v1/custom_field_options",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -62,8 +63,8 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
     custom_field_id: str,
 ) -> Response[CustomFieldOptionsV1ListResponseBody]:
     """List Custom Field Options V1
@@ -71,8 +72,8 @@ def sync_detailed(
      Show custom field options for a custom field
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
         custom_field_id (str):
 
     Raises:
@@ -99,8 +100,8 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
     custom_field_id: str,
 ) -> Optional[CustomFieldOptionsV1ListResponseBody]:
     """List Custom Field Options V1
@@ -108,8 +109,8 @@ def sync(
      Show custom field options for a custom field
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
         custom_field_id (str):
 
     Raises:
@@ -131,8 +132,8 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
     custom_field_id: str,
 ) -> Response[CustomFieldOptionsV1ListResponseBody]:
     """List Custom Field Options V1
@@ -140,8 +141,8 @@ async def asyncio_detailed(
      Show custom field options for a custom field
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
         custom_field_id (str):
 
     Raises:
@@ -166,8 +167,8 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
     custom_field_id: str,
 ) -> Optional[CustomFieldOptionsV1ListResponseBody]:
     """List Custom Field Options V1
@@ -175,8 +176,8 @@ async def asyncio(
      Show custom field options for a custom field
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
         custom_field_id (str):
 
     Raises:

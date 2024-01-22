@@ -48,10 +48,15 @@ class IncidentTypeV1ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         id = self.id
+
         is_default = self.is_default
+
         name = self.name
+
         private_incidents_only = self.private_incidents_only
+
         updated_at = self.updated_at.isoformat()
 
         field_dict: Dict[str, Any] = {}

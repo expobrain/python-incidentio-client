@@ -35,7 +35,6 @@ class ActionsV2ListResponseBody:
         actions = []
         for actions_item_data in self.actions:
             actions_item = actions_item_data.to_dict()
-
             actions.append(actions_item)
 
         field_dict: Dict[str, Any] = {}

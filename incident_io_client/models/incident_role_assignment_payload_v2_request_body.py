@@ -33,6 +33,7 @@ class IncidentRoleAssignmentPayloadV2RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         incident_role_id = self.incident_role_id
+
         assignee: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.assignee, Unset):
             assignee = self.assignee.to_dict()

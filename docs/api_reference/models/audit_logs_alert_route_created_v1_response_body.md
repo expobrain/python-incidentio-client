@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_alert_route_created_v1_response_body
+
+::: incident_io_client.models.audit_logs_alert_route_created_v1_response_body

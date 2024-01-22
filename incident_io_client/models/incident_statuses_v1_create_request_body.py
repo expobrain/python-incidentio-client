@@ -18,8 +18,9 @@ class IncidentStatusesV1CreateRequestBody:
             incident.", 'name': 'Closed'}
 
     Attributes:
-        category (IncidentStatusesV1CreateRequestBodyCategory): Whether the status should be considered 'live' or
-            'closed'. The triage and declined statuses cannot be created or modified. Example: live.
+        category (IncidentStatusesV1CreateRequestBodyCategory): Whether the status should be considered 'live' (now
+            renamed to active), 'learning' (now renamed to post-incident) or 'closed'. The triage and declined statuses
+            cannot be created or modified. Example: live.
         description (str): Rich text description of the incident status Example: Impact has been **fully mitigated**,
             and we're ready to learn from this incident..
         name (str): Unique name of this status Example: Closed.
@@ -34,6 +35,7 @@ class IncidentStatusesV1CreateRequestBody:
         category = self.category.value
 
         description = self.description
+
         name = self.name
 
         field_dict: Dict[str, Any] = {}

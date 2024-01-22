@@ -17,19 +17,24 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    json_body: CatalogV2UpdateTypeSchemaRequestBody,
+    body: CatalogV2UpdateTypeSchemaRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v2/catalog_types/{id}/actions/update_schema".format(
             id=id,
         ),
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -60,7 +65,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateTypeSchemaRequestBody,
+    body: CatalogV2UpdateTypeSchemaRequestBody,
 ) -> Response[CatalogV2UpdateTypeSchemaResponseBody]:
     """UpdateTypeSchema Catalog V2
 
@@ -75,8 +80,8 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
+            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
             'Custom["Service"]'}], 'version': 1}.
 
     Raises:
@@ -89,7 +94,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -103,7 +108,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateTypeSchemaRequestBody,
+    body: CatalogV2UpdateTypeSchemaRequestBody,
 ) -> Optional[CatalogV2UpdateTypeSchemaResponseBody]:
     """UpdateTypeSchema Catalog V2
 
@@ -118,8 +123,8 @@ def sync(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
+            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
             'Custom["Service"]'}], 'version': 1}.
 
     Raises:
@@ -133,7 +138,7 @@ def sync(
     return sync_detailed(
         id=id,
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
@@ -141,7 +146,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateTypeSchemaRequestBody,
+    body: CatalogV2UpdateTypeSchemaRequestBody,
 ) -> Response[CatalogV2UpdateTypeSchemaResponseBody]:
     """UpdateTypeSchema Catalog V2
 
@@ -156,8 +161,8 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
+            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
             'Custom["Service"]'}], 'version': 1}.
 
     Raises:
@@ -170,7 +175,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -182,7 +187,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2UpdateTypeSchemaRequestBody,
+    body: CatalogV2UpdateTypeSchemaRequestBody,
 ) -> Optional[CatalogV2UpdateTypeSchemaResponseBody]:
     """UpdateTypeSchema Catalog V2
 
@@ -197,8 +202,8 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array':
-            False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
+            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
             'Custom["Service"]'}], 'version': 1}.
 
     Raises:
@@ -213,6 +218,6 @@ async def asyncio(
         await asyncio_detailed(
             id=id,
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

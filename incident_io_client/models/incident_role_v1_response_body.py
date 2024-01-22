@@ -50,12 +50,17 @@ class IncidentRoleV1ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         id = self.id
+
         instructions = self.instructions
+
         name = self.name
+
         role_type = self.role_type.value
 
         shortform = self.shortform
+
         updated_at = self.updated_at.isoformat()
 
         required = self.required

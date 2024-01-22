@@ -28,7 +28,9 @@ class CustomFieldOptionsV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         custom_field_id = self.custom_field_id
+
         value = self.value
+
         sort_key = self.sort_key
 
         field_dict: Dict[str, Any] = {}

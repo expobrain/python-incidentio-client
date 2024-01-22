@@ -29,8 +29,11 @@ class IncidentRolesV2UpdateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         instructions = self.instructions
+
         name = self.name
+
         shortform = self.shortform
 
         field_dict: Dict[str, Any] = {}
