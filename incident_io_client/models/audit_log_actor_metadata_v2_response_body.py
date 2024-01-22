@@ -36,9 +36,13 @@ class AuditLogActorMetadataV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         api_key_roles = self.api_key_roles
+
         external_resource_external_id = self.external_resource_external_id
+
         external_resource_type = self.external_resource_type
+
         user_base_role_slug = self.user_base_role_slug
+
         user_custom_role_slugs = self.user_custom_role_slugs
 
         field_dict: Dict[str, Any] = {}

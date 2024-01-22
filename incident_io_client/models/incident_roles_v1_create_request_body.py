@@ -32,9 +32,13 @@ class IncidentRolesV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         instructions = self.instructions
+
         name = self.name
+
         required = self.required
+
         shortform = self.shortform
 
         field_dict: Dict[str, Any] = {}

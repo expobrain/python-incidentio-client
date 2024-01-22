@@ -31,6 +31,7 @@ class IncidentAttachmentsV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         incident_id = self.incident_id
+
         resource = self.resource.to_dict()
 
         field_dict: Dict[str, Any] = {}

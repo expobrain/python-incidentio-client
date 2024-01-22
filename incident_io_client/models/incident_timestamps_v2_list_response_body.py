@@ -30,7 +30,6 @@ class IncidentTimestampsV2ListResponseBody:
         incident_timestamps = []
         for incident_timestamps_item_data in self.incident_timestamps:
             incident_timestamps_item = incident_timestamps_item_data.to_dict()
-
             incident_timestamps.append(incident_timestamps_item)
 
         field_dict: Dict[str, Any] = {}

@@ -25,6 +25,7 @@ class IncidentStatusesV1UpdateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         name = self.name
 
         field_dict: Dict[str, Any] = {}

@@ -21,9 +21,9 @@ class IncidentStatusV1ResponseBody:
             'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
-        category (IncidentStatusV1ResponseBodyCategory): Whether this status is a live or closed status. If you have
-            enabled auto-create, there will also be 'triage' and 'declined' statuses, which cannot be modified. Example:
-            triage.
+        category (IncidentStatusV1ResponseBodyCategory): What category of status it is. All statuses apart from live
+            (renamed in the app to Active) and learning (renamed in the app to Post-incident) are managed by incident.io and
+            cannot be configured Example: triage.
         created_at (datetime.datetime):  Example: 2021-08-17T13:28:57.801578Z.
         description (str): Rich text description of the incident status Example: Impact has been **fully mitigated**,
             and we're ready to learn from this incident..
@@ -48,9 +48,13 @@ class IncidentStatusV1ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         id = self.id
+
         name = self.name
+
         rank = self.rank
+
         updated_at = self.updated_at.isoformat()
 
         field_dict: Dict[str, Any] = {}

@@ -46,11 +46,13 @@ class CatalogV2UpdateEntryRequestBody:
         attribute_values = self.attribute_values.to_dict()
 
         name = self.name
+
         aliases: Union[Unset, List[str]] = UNSET
         if not isinstance(self.aliases, Unset):
             aliases = self.aliases
 
         external_id = self.external_id
+
         rank = self.rank
 
         field_dict: Dict[str, Any] = {}

@@ -175,14 +175,13 @@ class IncidentV2ResponseBody:
         custom_field_entries = []
         for custom_field_entries_item_data in self.custom_field_entries:
             custom_field_entries_item = custom_field_entries_item_data.to_dict()
-
             custom_field_entries.append(custom_field_entries_item)
 
         id = self.id
+
         incident_role_assignments = []
         for incident_role_assignments_item_data in self.incident_role_assignments:
             incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
-
             incident_role_assignments.append(incident_role_assignments_item)
 
         incident_status = self.incident_status.to_dict()
@@ -190,14 +189,19 @@ class IncidentV2ResponseBody:
         mode = self.mode.value
 
         name = self.name
+
         reference = self.reference
+
         slack_channel_id = self.slack_channel_id
+
         slack_team_id = self.slack_team_id
+
         updated_at = self.updated_at.isoformat()
 
         visibility = self.visibility.value
 
         call_url = self.call_url
+
         external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()
@@ -207,7 +211,6 @@ class IncidentV2ResponseBody:
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
                 incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
-
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
         incident_type: Union[Unset, Dict[str, Any]] = UNSET
@@ -215,16 +218,23 @@ class IncidentV2ResponseBody:
             incident_type = self.incident_type.to_dict()
 
         permalink = self.permalink
+
         postmortem_document_url = self.postmortem_document_url
+
         severity: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
         slack_channel_name = self.slack_channel_name
+
         summary = self.summary
+
         workload_minutes_late = self.workload_minutes_late
+
         workload_minutes_sleeping = self.workload_minutes_sleeping
+
         workload_minutes_total = self.workload_minutes_total
+
         workload_minutes_working = self.workload_minutes_working
 
         field_dict: Dict[str, Any] = {}

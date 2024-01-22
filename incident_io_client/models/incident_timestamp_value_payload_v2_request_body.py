@@ -29,6 +29,7 @@ class IncidentTimestampValuePayloadV2RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         incident_timestamp_id = self.incident_timestamp_id
+
         value: Union[Unset, str] = UNSET
         if not isinstance(self.value, Unset):
             value = self.value.isoformat()

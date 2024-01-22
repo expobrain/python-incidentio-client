@@ -33,7 +33,6 @@ class CustomFieldsV2ListResponseBody:
         custom_fields = []
         for custom_fields_item_data in self.custom_fields:
             custom_fields_item = custom_fields_item_data.to_dict()
-
             custom_fields.append(custom_fields_item)
 
         field_dict: Dict[str, Any] = {}

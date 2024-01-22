@@ -11,18 +11,17 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, Any] = UNSET,
-    status_category: Union[Unset, None, Any] = UNSET,
-    severity: Union[Unset, None, Any] = UNSET,
-    incident_type: Union[Unset, None, Any] = UNSET,
-    incident_role: Union[Unset, None, Any] = UNSET,
-    custom_field: Union[Unset, None, Any] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, Any] = UNSET,
+    status_category: Union[Unset, Any] = UNSET,
+    severity: Union[Unset, Any] = UNSET,
+    incident_type: Union[Unset, Any] = UNSET,
+    incident_role: Union[Unset, Any] = UNSET,
+    custom_field: Union[Unset, Any] = UNSET,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["page_size"] = page_size
 
     params["after"] = after
@@ -41,11 +40,13 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v2/incidents",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -75,14 +76,14 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, Any] = UNSET,
-    status_category: Union[Unset, None, Any] = UNSET,
-    severity: Union[Unset, None, Any] = UNSET,
-    incident_type: Union[Unset, None, Any] = UNSET,
-    incident_role: Union[Unset, None, Any] = UNSET,
-    custom_field: Union[Unset, None, Any] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, Any] = UNSET,
+    status_category: Union[Unset, Any] = UNSET,
+    severity: Union[Unset, Any] = UNSET,
+    incident_type: Union[Unset, Any] = UNSET,
+    incident_role: Union[Unset, Any] = UNSET,
+    custom_field: Union[Unset, Any] = UNSET,
 ) -> Response[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -191,14 +192,14 @@ def sync_detailed(
     			--data 'custom_field[ABC][not_in]=XYZ'
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, Any]):
-        status_category (Union[Unset, None, Any]):
-        severity (Union[Unset, None, Any]):
-        incident_type (Union[Unset, None, Any]):
-        incident_role (Union[Unset, None, Any]):
-        custom_field (Union[Unset, None, Any]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, Any]):
+        status_category (Union[Unset, Any]):
+        severity (Union[Unset, Any]):
+        incident_type (Union[Unset, Any]):
+        incident_role (Union[Unset, Any]):
+        custom_field (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -229,14 +230,14 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, Any] = UNSET,
-    status_category: Union[Unset, None, Any] = UNSET,
-    severity: Union[Unset, None, Any] = UNSET,
-    incident_type: Union[Unset, None, Any] = UNSET,
-    incident_role: Union[Unset, None, Any] = UNSET,
-    custom_field: Union[Unset, None, Any] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, Any] = UNSET,
+    status_category: Union[Unset, Any] = UNSET,
+    severity: Union[Unset, Any] = UNSET,
+    incident_type: Union[Unset, Any] = UNSET,
+    incident_role: Union[Unset, Any] = UNSET,
+    custom_field: Union[Unset, Any] = UNSET,
 ) -> Optional[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -345,14 +346,14 @@ def sync(
     			--data 'custom_field[ABC][not_in]=XYZ'
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, Any]):
-        status_category (Union[Unset, None, Any]):
-        severity (Union[Unset, None, Any]):
-        incident_type (Union[Unset, None, Any]):
-        incident_role (Union[Unset, None, Any]):
-        custom_field (Union[Unset, None, Any]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, Any]):
+        status_category (Union[Unset, Any]):
+        severity (Union[Unset, Any]):
+        incident_type (Union[Unset, Any]):
+        incident_role (Union[Unset, Any]):
+        custom_field (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -378,14 +379,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, Any] = UNSET,
-    status_category: Union[Unset, None, Any] = UNSET,
-    severity: Union[Unset, None, Any] = UNSET,
-    incident_type: Union[Unset, None, Any] = UNSET,
-    incident_role: Union[Unset, None, Any] = UNSET,
-    custom_field: Union[Unset, None, Any] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, Any] = UNSET,
+    status_category: Union[Unset, Any] = UNSET,
+    severity: Union[Unset, Any] = UNSET,
+    incident_type: Union[Unset, Any] = UNSET,
+    incident_role: Union[Unset, Any] = UNSET,
+    custom_field: Union[Unset, Any] = UNSET,
 ) -> Response[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -494,14 +495,14 @@ async def asyncio_detailed(
     			--data 'custom_field[ABC][not_in]=XYZ'
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, Any]):
-        status_category (Union[Unset, None, Any]):
-        severity (Union[Unset, None, Any]):
-        incident_type (Union[Unset, None, Any]):
-        incident_role (Union[Unset, None, Any]):
-        custom_field (Union[Unset, None, Any]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, Any]):
+        status_category (Union[Unset, Any]):
+        severity (Union[Unset, Any]):
+        incident_type (Union[Unset, Any]):
+        incident_role (Union[Unset, Any]):
+        custom_field (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -530,14 +531,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
-    status: Union[Unset, None, Any] = UNSET,
-    status_category: Union[Unset, None, Any] = UNSET,
-    severity: Union[Unset, None, Any] = UNSET,
-    incident_type: Union[Unset, None, Any] = UNSET,
-    incident_role: Union[Unset, None, Any] = UNSET,
-    custom_field: Union[Unset, None, Any] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
+    status: Union[Unset, Any] = UNSET,
+    status_category: Union[Unset, Any] = UNSET,
+    severity: Union[Unset, Any] = UNSET,
+    incident_type: Union[Unset, Any] = UNSET,
+    incident_role: Union[Unset, Any] = UNSET,
+    custom_field: Union[Unset, Any] = UNSET,
 ) -> Optional[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -646,14 +647,14 @@ async def asyncio(
     			--data 'custom_field[ABC][not_in]=XYZ'
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
-        status (Union[Unset, None, Any]):
-        status_category (Union[Unset, None, Any]):
-        severity (Union[Unset, None, Any]):
-        incident_type (Union[Unset, None, Any]):
-        incident_role (Union[Unset, None, Any]):
-        custom_field (Union[Unset, None, Any]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
+        status (Union[Unset, Any]):
+        status_category (Union[Unset, Any]):
+        severity (Union[Unset, Any]):
+        incident_type (Union[Unset, Any]):
+        incident_role (Union[Unset, Any]):
+        custom_field (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

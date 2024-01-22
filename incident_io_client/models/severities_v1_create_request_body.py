@@ -27,7 +27,9 @@ class SeveritiesV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         name = self.name
+
         rank = self.rank
 
         field_dict: Dict[str, Any] = {}

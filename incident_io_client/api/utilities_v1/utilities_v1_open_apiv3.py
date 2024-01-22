@@ -10,12 +10,12 @@ from ...types import File, Response
 
 
 def _get_kwargs() -> Dict[str, Any]:
-    pass
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v1/openapiV3.json",
     }
+
+    return _kwargs
 
 
 def _parse_response(

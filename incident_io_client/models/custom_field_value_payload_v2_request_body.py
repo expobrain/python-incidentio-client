@@ -18,7 +18,8 @@ class CustomFieldValuePayloadV2RequestBody:
 
     Attributes:
         id (Union[Unset, str]): Unique identifier for the custom field value Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        value_catalog_entry_id (Union[Unset, str]): ID of the catalog entry Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        value_catalog_entry_id (Union[Unset, str]): ID of the catalog entry. You can also use an ExternalID or an Alias
+            of the catalog entry. Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         value_link (Union[Unset, str]): If the custom field type is 'link', this will contain the value assigned.
             Example: https://google.com/.
         value_numeric (Union[Unset, str]): If the custom field type is 'numeric', this will contain the value assigned.
@@ -40,11 +41,17 @@ class CustomFieldValuePayloadV2RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         value_catalog_entry_id = self.value_catalog_entry_id
+
         value_link = self.value_link
+
         value_numeric = self.value_numeric
+
         value_option_id = self.value_option_id
+
         value_text = self.value_text
+
         value_timestamp = self.value_timestamp
 
         field_dict: Dict[str, Any] = {}

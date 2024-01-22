@@ -25,7 +25,9 @@ class IncidentTimestampV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         name = self.name
+
         rank = self.rank
 
         field_dict: Dict[str, Any] = {}

@@ -11,14 +11,14 @@ from ...types import Response
 def _get_kwargs(
     id: str,
 ) -> Dict[str, Any]:
-    pass
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "delete",
         "url": "/v1/incident_attachments/{id}".format(
             id=id,
         ),
     }
+
+    return _kwargs
 
 
 def _parse_response(

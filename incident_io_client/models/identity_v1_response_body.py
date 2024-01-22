@@ -28,10 +28,10 @@ class IdentityV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         name = self.name
+
         roles = []
         for roles_item_data in self.roles:
             roles_item = roles_item_data.value
-
             roles.append(roles_item)
 
         field_dict: Dict[str, Any] = {}

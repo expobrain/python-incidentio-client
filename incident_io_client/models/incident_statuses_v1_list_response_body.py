@@ -32,7 +32,6 @@ class IncidentStatusesV1ListResponseBody:
         incident_statuses = []
         for incident_statuses_item_data in self.incident_statuses:
             incident_statuses_item = incident_statuses_item_data.to_dict()
-
             incident_statuses.append(incident_statuses_item)
 
         field_dict: Dict[str, Any] = {}

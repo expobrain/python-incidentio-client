@@ -27,7 +27,9 @@ class WebhookIncidentUserV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         incident_id = self.incident_id
+
         user_id = self.user_id
+
         actor_user_id = self.actor_user_id
 
         field_dict: Dict[str, Any] = {}

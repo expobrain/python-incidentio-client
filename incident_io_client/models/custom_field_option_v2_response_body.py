@@ -28,8 +28,11 @@ class CustomFieldOptionV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         custom_field_id = self.custom_field_id
+
         id = self.id
+
         sort_key = self.sort_key
+
         value = self.value
 
         field_dict: Dict[str, Any] = {}

@@ -12,12 +12,12 @@ from ...types import Response
 
 
 def _get_kwargs() -> Dict[str, Any]:
-    pass
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/x-audit-logs/severity.created.1",
     }
+
+    return _kwargs
 
 
 def _parse_response(

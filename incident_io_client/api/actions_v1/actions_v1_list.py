@@ -12,30 +12,31 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    incident_id: Union[Unset, None, str] = UNSET,
-    is_follow_up: Union[Unset, None, bool] = UNSET,
-    incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    is_follow_up: Union[Unset, bool] = UNSET,
+    incident_mode: Union[Unset, ActionsV1ListIncidentMode] = UNSET,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["incident_id"] = incident_id
 
     params["is_follow_up"] = is_follow_up
 
-    json_incident_mode: Union[Unset, None, str] = UNSET
+    json_incident_mode: Union[Unset, str] = UNSET
     if not isinstance(incident_mode, Unset):
-        json_incident_mode = incident_mode.value if incident_mode else None
+        json_incident_mode = incident_mode.value
 
     params["incident_mode"] = json_incident_mode
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v1/actions",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -65,18 +66,18 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    is_follow_up: Union[Unset, None, bool] = UNSET,
-    incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    is_follow_up: Union[Unset, bool] = UNSET,
+    incident_mode: Union[Unset, ActionsV1ListIncidentMode] = UNSET,
 ) -> Response[ActionsV1ListResponseBody]:
     """List Actions V1
 
      List all actions for an organisation.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        is_follow_up (Union[Unset, None, bool]):
-        incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
+        incident_id (Union[Unset, str]):
+        is_follow_up (Union[Unset, bool]):
+        incident_mode (Union[Unset, ActionsV1ListIncidentMode]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -102,18 +103,18 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    is_follow_up: Union[Unset, None, bool] = UNSET,
-    incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    is_follow_up: Union[Unset, bool] = UNSET,
+    incident_mode: Union[Unset, ActionsV1ListIncidentMode] = UNSET,
 ) -> Optional[ActionsV1ListResponseBody]:
     """List Actions V1
 
      List all actions for an organisation.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        is_follow_up (Union[Unset, None, bool]):
-        incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
+        incident_id (Union[Unset, str]):
+        is_follow_up (Union[Unset, bool]):
+        incident_mode (Union[Unset, ActionsV1ListIncidentMode]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -134,18 +135,18 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    is_follow_up: Union[Unset, None, bool] = UNSET,
-    incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    is_follow_up: Union[Unset, bool] = UNSET,
+    incident_mode: Union[Unset, ActionsV1ListIncidentMode] = UNSET,
 ) -> Response[ActionsV1ListResponseBody]:
     """List Actions V1
 
      List all actions for an organisation.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        is_follow_up (Union[Unset, None, bool]):
-        incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
+        incident_id (Union[Unset, str]):
+        is_follow_up (Union[Unset, bool]):
+        incident_mode (Union[Unset, ActionsV1ListIncidentMode]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -169,18 +170,18 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    incident_id: Union[Unset, None, str] = UNSET,
-    is_follow_up: Union[Unset, None, bool] = UNSET,
-    incident_mode: Union[Unset, None, ActionsV1ListIncidentMode] = UNSET,
+    incident_id: Union[Unset, str] = UNSET,
+    is_follow_up: Union[Unset, bool] = UNSET,
+    incident_mode: Union[Unset, ActionsV1ListIncidentMode] = UNSET,
 ) -> Optional[ActionsV1ListResponseBody]:
     """List Actions V1
 
      List all actions for an organisation.
 
     Args:
-        incident_id (Union[Unset, None, str]):
-        is_follow_up (Union[Unset, None, bool]):
-        incident_mode (Union[Unset, None, ActionsV1ListIncidentMode]):
+        incident_id (Union[Unset, str]):
+        is_follow_up (Union[Unset, bool]):
+        incident_mode (Union[Unset, ActionsV1ListIncidentMode]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -71,10 +71,13 @@ class FollowUpV2ResponseBody:
         created_at = self.created_at.isoformat()
 
         id = self.id
+
         incident_id = self.incident_id
+
         status = self.status.value
 
         title = self.title
+
         updated_at = self.updated_at.isoformat()
 
         assignee: Union[Unset, Dict[str, Any]] = UNSET
@@ -86,6 +89,7 @@ class FollowUpV2ResponseBody:
             completed_at = self.completed_at.isoformat()
 
         description = self.description
+
         external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()

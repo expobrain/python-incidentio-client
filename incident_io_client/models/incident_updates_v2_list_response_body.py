@@ -53,7 +53,6 @@ class IncidentUpdatesV2ListResponseBody:
         incident_updates = []
         for incident_updates_item_data in self.incident_updates:
             incident_updates_item = incident_updates_item_data.to_dict()
-
             incident_updates.append(incident_updates_item)
 
         pagination_meta: Union[Unset, Dict[str, Any]] = UNSET

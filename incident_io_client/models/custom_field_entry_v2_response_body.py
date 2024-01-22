@@ -51,7 +51,6 @@ class CustomFieldEntryV2ResponseBody:
         values = []
         for values_item_data in self.values:
             values_item = values_item_data.to_dict()
-
             values.append(values_item)
 
         field_dict: Dict[str, Any] = {}

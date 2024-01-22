@@ -13,19 +13,24 @@ from ...types import Response
 def _get_kwargs(
     id: str,
     *,
-    json_body: SeveritiesV1UpdateRequestBody,
+    body: SeveritiesV1UpdateRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "put",
         "url": "/v1/severities/{id}".format(
             id=id,
         ),
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -56,7 +61,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: SeveritiesV1UpdateRequestBody,
+    body: SeveritiesV1UpdateRequestBody,
 ) -> Response[SeveritiesV1UpdateResponseBody]:
     """Update Severities V1
 
@@ -64,7 +69,7 @@ def sync_detailed(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+        body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
             impact**.', 'name': 'Minor', 'rank': 1}.
 
     Raises:
@@ -77,7 +82,7 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -91,7 +96,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: SeveritiesV1UpdateRequestBody,
+    body: SeveritiesV1UpdateRequestBody,
 ) -> Optional[SeveritiesV1UpdateResponseBody]:
     """Update Severities V1
 
@@ -99,7 +104,7 @@ def sync(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+        body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
             impact**.', 'name': 'Minor', 'rank': 1}.
 
     Raises:
@@ -113,7 +118,7 @@ def sync(
     return sync_detailed(
         id=id,
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
@@ -121,7 +126,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: SeveritiesV1UpdateRequestBody,
+    body: SeveritiesV1UpdateRequestBody,
 ) -> Response[SeveritiesV1UpdateResponseBody]:
     """Update Severities V1
 
@@ -129,7 +134,7 @@ async def asyncio_detailed(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+        body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
             impact**.', 'name': 'Minor', 'rank': 1}.
 
     Raises:
@@ -142,7 +147,7 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         id=id,
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -154,7 +159,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: SeveritiesV1UpdateRequestBody,
+    body: SeveritiesV1UpdateRequestBody,
 ) -> Optional[SeveritiesV1UpdateResponseBody]:
     """Update Severities V1
 
@@ -162,7 +167,7 @@ async def asyncio(
 
     Args:
         id (str):
-        json_body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
+        body (SeveritiesV1UpdateRequestBody):  Example: {'description': 'Issues with **low
             impact**.', 'name': 'Minor', 'rank': 1}.
 
     Raises:
@@ -177,6 +182,6 @@ async def asyncio(
         await asyncio_detailed(
             id=id,
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

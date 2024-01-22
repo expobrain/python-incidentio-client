@@ -31,7 +31,9 @@ class ExternalIssueReferenceV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         issue_name = self.issue_name
+
         issue_permalink = self.issue_permalink
+
         provider = self.provider.value
 
         field_dict: Dict[str, Any] = {}

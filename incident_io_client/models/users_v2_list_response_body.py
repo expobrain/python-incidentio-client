@@ -38,7 +38,6 @@ class UsersV2ListResponseBody:
         users = []
         for users_item_data in self.users:
             users_item = users_item_data.to_dict()
-
             users.append(users_item)
 
         field_dict: Dict[str, Any] = {}

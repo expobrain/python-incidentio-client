@@ -82,7 +82,6 @@ class CatalogV2ListEntriesResponseBody:
         catalog_entries = []
         for catalog_entries_item_data in self.catalog_entries:
             catalog_entries_item = catalog_entries_item_data.to_dict()
-
             catalog_entries.append(catalog_entries_item)
 
         catalog_type = self.catalog_type.to_dict()

@@ -53,8 +53,11 @@ class AlertEventsV2CreateHTTPRequestBody:
         status = self.status.value
 
         title = self.title
+
         deduplication_key = self.deduplication_key
+
         description = self.description
+
         metadata: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.metadata, Unset):
             metadata = self.metadata.to_dict()

@@ -56,12 +56,17 @@ class CustomFieldsV1CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         description = self.description
+
         field_type = self.field_type.value
 
         name = self.name
+
         show_before_closure = self.show_before_closure
+
         show_before_creation = self.show_before_creation
+
         show_before_update = self.show_before_update
+
         required: Union[Unset, str] = UNSET
         if not isinstance(self.required, Unset):
             required = self.required.value

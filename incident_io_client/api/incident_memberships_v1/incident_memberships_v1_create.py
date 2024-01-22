@@ -16,17 +16,22 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    json_body: IncidentMembershipsV1CreateRequestBody,
+    body: IncidentMembershipsV1CreateRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v1/incident_memberships",
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -56,14 +61,14 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentMembershipsV1CreateRequestBody,
+    body: IncidentMembershipsV1CreateRequestBody,
 ) -> Response[IncidentMembershipsV1CreateResponseBody]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        json_body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
+        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
             '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
@@ -75,7 +80,7 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -88,14 +93,14 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentMembershipsV1CreateRequestBody,
+    body: IncidentMembershipsV1CreateRequestBody,
 ) -> Optional[IncidentMembershipsV1CreateResponseBody]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        json_body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
+        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
             '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
@@ -108,21 +113,21 @@ def sync(
 
     return sync_detailed(
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentMembershipsV1CreateRequestBody,
+    body: IncidentMembershipsV1CreateRequestBody,
 ) -> Response[IncidentMembershipsV1CreateResponseBody]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        json_body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
+        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
             '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
@@ -134,7 +139,7 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -145,14 +150,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: IncidentMembershipsV1CreateRequestBody,
+    body: IncidentMembershipsV1CreateRequestBody,
 ) -> Optional[IncidentMembershipsV1CreateResponseBody]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        json_body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
+        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
             '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
@@ -166,6 +171,6 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

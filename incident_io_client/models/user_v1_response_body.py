@@ -34,10 +34,13 @@ class UserV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         name = self.name
+
         role = self.role.value
 
         email = self.email
+
         slack_user_id = self.slack_user_id
 
         field_dict: Dict[str, Any] = {}

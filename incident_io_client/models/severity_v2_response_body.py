@@ -36,9 +36,13 @@ class SeverityV2ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         id = self.id
+
         name = self.name
+
         rank = self.rank
+
         updated_at = self.updated_at.isoformat()
 
         field_dict: Dict[str, Any] = {}

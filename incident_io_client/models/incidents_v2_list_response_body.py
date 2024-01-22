@@ -101,7 +101,6 @@ class IncidentsV2ListResponseBody:
         incidents = []
         for incidents_item_data in self.incidents:
             incidents_item = incidents_item_data.to_dict()
-
             incidents.append(incidents_item)
 
         pagination_meta: Union[Unset, Dict[str, Any]] = UNSET

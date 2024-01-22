@@ -107,6 +107,7 @@ class IncidentsV2CreateRequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         idempotency_key = self.idempotency_key
+
         visibility = self.visibility.value
 
         custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
@@ -114,40 +115,44 @@ class IncidentsV2CreateRequestBody:
             custom_field_entries = []
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
-
                 custom_field_entries.append(custom_field_entries_item)
 
         id = self.id
+
         incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
                 incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
-
                 incident_role_assignments.append(incident_role_assignments_item)
 
         incident_status_id = self.incident_status_id
+
         incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
                 incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
-
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
         incident_type_id = self.incident_type_id
+
         mode: Union[Unset, str] = UNSET
         if not isinstance(self.mode, Unset):
             mode = self.mode.value
 
         name = self.name
+
         retrospective_incident_options: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.retrospective_incident_options, Unset):
             retrospective_incident_options = self.retrospective_incident_options.to_dict()
 
         severity_id = self.severity_id
+
         slack_channel_name_override = self.slack_channel_name_override
+
         slack_team_id = self.slack_team_id
+
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}

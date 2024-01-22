@@ -34,8 +34,11 @@ class AuditLogUserSCIMGroupMappingChangedMetadataV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         after_base_role_slug = self.after_base_role_slug
+
         after_custom_role_slugs = self.after_custom_role_slugs
+
         before_base_role_slug = self.before_base_role_slug
+
         before_custom_role_slugs = self.before_custom_role_slugs
 
         field_dict: Dict[str, Any] = {}

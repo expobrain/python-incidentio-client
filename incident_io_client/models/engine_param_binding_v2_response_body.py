@@ -58,7 +58,6 @@ class EngineParamBindingV2ResponseBody:
             array_value = []
             for array_value_item_data in self.array_value:
                 array_value_item = array_value_item_data.to_dict()
-
                 array_value.append(array_value_item)
 
         value: Union[Unset, Dict[str, Any]] = UNSET

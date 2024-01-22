@@ -16,17 +16,22 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    json_body: CustomFieldsV2CreateRequestBody,
+    body: CustomFieldsV2CreateRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v2/custom_fields",
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -56,15 +61,15 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV2CreateRequestBody,
+    body: CustomFieldsV2CreateRequestBody,
 ) -> Response[CustomFieldsV2CreateResponseBody]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        json_body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -75,7 +80,7 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -88,15 +93,15 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV2CreateRequestBody,
+    body: CustomFieldsV2CreateRequestBody,
 ) -> Optional[CustomFieldsV2CreateResponseBody]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        json_body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -108,22 +113,22 @@ def sync(
 
     return sync_detailed(
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV2CreateRequestBody,
+    body: CustomFieldsV2CreateRequestBody,
 ) -> Response[CustomFieldsV2CreateResponseBody]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        json_body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -134,7 +139,7 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -145,15 +150,15 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldsV2CreateRequestBody,
+    body: CustomFieldsV2CreateRequestBody,
 ) -> Optional[CustomFieldsV2CreateResponseBody]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        json_body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
+            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -166,6 +171,6 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

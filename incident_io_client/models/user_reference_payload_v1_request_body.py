@@ -28,7 +28,9 @@ class UserReferencePayloadV1RequestBody:
 
     def to_dict(self) -> Dict[str, Any]:
         email = self.email
+
         id = self.id
+
         slack_user_id = self.slack_user_id
 
         field_dict: Dict[str, Any] = {}

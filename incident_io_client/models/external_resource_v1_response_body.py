@@ -33,7 +33,9 @@ class ExternalResourceV1ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         external_id = self.external_id
+
         permalink = self.permalink
+
         resource_type = self.resource_type.value
 
         title = self.title

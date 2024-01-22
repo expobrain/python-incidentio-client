@@ -28,6 +28,7 @@ class IncidentAttachmentsV1CreateRequestBodyResource:
 
     def to_dict(self) -> Dict[str, Any]:
         external_id = self.external_id
+
         resource_type = self.resource_type.value
 
         field_dict: Dict[str, Any] = {}

@@ -16,17 +16,22 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    json_body: CustomFieldOptionsV1CreateRequestBody,
+    body: CustomFieldOptionsV1CreateRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v1/custom_field_options",
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -56,7 +61,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldOptionsV1CreateRequestBody,
+    body: CustomFieldOptionsV1CreateRequestBody,
 ) -> Response[CustomFieldOptionsV1CreateResponseBody]:
     """Create Custom Field Options V1
 
@@ -64,7 +69,7 @@ def sync_detailed(
     appears near the end of the list.
 
     Args:
-        json_body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -76,7 +81,7 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -89,7 +94,7 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldOptionsV1CreateRequestBody,
+    body: CustomFieldOptionsV1CreateRequestBody,
 ) -> Optional[CustomFieldOptionsV1CreateResponseBody]:
     """Create Custom Field Options V1
 
@@ -97,7 +102,7 @@ def sync(
     appears near the end of the list.
 
     Args:
-        json_body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -110,14 +115,14 @@ def sync(
 
     return sync_detailed(
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldOptionsV1CreateRequestBody,
+    body: CustomFieldOptionsV1CreateRequestBody,
 ) -> Response[CustomFieldOptionsV1CreateResponseBody]:
     """Create Custom Field Options V1
 
@@ -125,7 +130,7 @@ async def asyncio_detailed(
     appears near the end of the list.
 
     Args:
-        json_body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -137,7 +142,7 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -148,7 +153,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CustomFieldOptionsV1CreateRequestBody,
+    body: CustomFieldOptionsV1CreateRequestBody,
 ) -> Optional[CustomFieldOptionsV1CreateResponseBody]:
     """Create Custom Field Options V1
 
@@ -156,7 +161,7 @@ async def asyncio(
     appears near the end of the list.
 
     Args:
-        json_body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -170,6 +175,6 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

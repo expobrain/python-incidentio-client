@@ -82,11 +82,15 @@ class CatalogEntryV2ResponseBody:
         attribute_values = self.attribute_values.to_dict()
 
         catalog_type_id = self.catalog_type_id
+
         created_at = self.created_at.isoformat()
 
         id = self.id
+
         name = self.name
+
         rank = self.rank
+
         updated_at = self.updated_at.isoformat()
 
         archived_at: Union[Unset, str] = UNSET

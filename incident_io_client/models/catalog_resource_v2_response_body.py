@@ -38,8 +38,11 @@ class CatalogResourceV2ResponseBody:
         category = self.category.value
 
         description = self.description
+
         label = self.label
+
         type = self.type
+
         value_docstring = self.value_docstring
 
         field_dict: Dict[str, Any] = {}

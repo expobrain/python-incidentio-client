@@ -11,23 +11,24 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
-    pass
-
     params: Dict[str, Any] = {}
+
     params["page_size"] = page_size
 
     params["after"] = after
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v2/users",
         "params": params,
     }
+
+    return _kwargs
 
 
 def _parse_response(
@@ -57,16 +58,16 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Response[UsersV2ListResponseBody]:
     """List Users V2
 
      List users for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -91,16 +92,16 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Optional[UsersV2ListResponseBody]:
     """List Users V2
 
      List users for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -120,16 +121,16 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Response[UsersV2ListResponseBody]:
     """List Users V2
 
      List users for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -152,16 +153,16 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    page_size: Union[Unset, None, int] = 25,
-    after: Union[Unset, None, str] = UNSET,
+    page_size: Union[Unset, int] = 25,
+    after: Union[Unset, str] = UNSET,
 ) -> Optional[UsersV2ListResponseBody]:
     """List Users V2
 
      List users for an organisation.
 
     Args:
-        page_size (Union[Unset, None, int]):  Default: 25.
-        after (Union[Unset, None, str]):
+        page_size (Union[Unset, int]):  Default: 25.
+        after (Union[Unset, str]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -85,20 +85,29 @@ class CatalogTypeV2ResponseBody:
         created_at = self.created_at.isoformat()
 
         description = self.description
+
         icon = self.icon.value
 
         id = self.id
+
         is_editable = self.is_editable
+
         name = self.name
+
         ranked = self.ranked
+
         schema = self.schema.to_dict()
 
         semantic_type = self.semantic_type
+
         type_name = self.type_name
+
         updated_at = self.updated_at.isoformat()
 
         estimated_count = self.estimated_count
+
         external_type = self.external_type
+
         required_integrations: Union[Unset, List[str]] = UNSET
         if not isinstance(self.required_integrations, Unset):
             required_integrations = self.required_integrations

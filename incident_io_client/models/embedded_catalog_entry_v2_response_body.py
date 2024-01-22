@@ -32,7 +32,9 @@ class EmbeddedCatalogEntryV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         name = self.name
+
         aliases: Union[Unset, List[str]] = UNSET
         if not isinstance(self.aliases, Unset):
             aliases = self.aliases

@@ -30,6 +30,7 @@ class AuditLogTargetV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
+
         type = self.type.value
 
         name = self.name

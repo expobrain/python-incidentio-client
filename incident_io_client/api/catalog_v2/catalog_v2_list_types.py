@@ -10,12 +10,12 @@ from ...types import Response
 
 
 def _get_kwargs() -> Dict[str, Any]:
-    pass
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/v2/catalog_types",
     }
+
+    return _kwargs
 
 
 def _parse_response(

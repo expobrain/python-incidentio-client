@@ -16,17 +16,22 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    json_body: CatalogV2CreateEntryRequestBody,
+    body: CatalogV2CreateEntryRequestBody,
 ) -> Dict[str, Any]:
-    pass
+    headers: Dict[str, Any] = {}
 
-    json_json_body = json_body.to_dict()
-
-    return {
+    _kwargs: Dict[str, Any] = {
         "method": "post",
         "url": "/v2/catalog_entries",
-        "json": json_json_body,
     }
+
+    _body = body.to_dict()
+
+    _kwargs["json"] = _body
+    headers["Content-Type"] = "application/json"
+
+    _kwargs["headers"] = headers
+    return _kwargs
 
 
 def _parse_response(
@@ -56,19 +61,18 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateEntryRequestBody,
+    body: CatalogV2CreateEntryRequestBody,
 ) -> Response[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
-        json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
-            3}.
+        body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -79,7 +83,7 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -92,19 +96,18 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateEntryRequestBody,
+    body: CatalogV2CreateEntryRequestBody,
 ) -> Optional[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
-        json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
-            3}.
+        body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -116,26 +119,25 @@ def sync(
 
     return sync_detailed(
         client=client,
-        json_body=json_body,
+        body=body,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateEntryRequestBody,
+    body: CatalogV2CreateEntryRequestBody,
 ) -> Response[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
-        json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
-            3}.
+        body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -146,7 +148,7 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
-        json_body=json_body,
+        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -157,19 +159,18 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    json_body: CatalogV2CreateEntryRequestBody,
+    body: CatalogV2CreateEntryRequestBody,
 ) -> Optional[CatalogV2CreateEntryResponseBody]:
     """CreateEntry Catalog V2
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
     Args:
-        json_body (CatalogV2CreateEntryRequestBody):  Example: {'aliases':
-            ['lawrence@incident.io', 'lawrence'], 'attribute_values': {'abc123': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank':
-            3}.
+        body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
+            'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'name': 'Primary On-call', 'rank': 3}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -182,6 +183,6 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            json_body=json_body,
+            body=body,
         )
     ).parsed

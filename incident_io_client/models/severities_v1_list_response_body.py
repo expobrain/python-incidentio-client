@@ -30,7 +30,6 @@ class SeveritiesV1ListResponseBody:
         severities = []
         for severities_item_data in self.severities:
             severities_item = severities_item_data.to_dict()
-
             severities.append(severities_item)
 
         field_dict: Dict[str, Any] = {}
