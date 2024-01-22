@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "${{ env.PYTHON_VERSION_FOR_BUMPING }}"
       - name: Cache multiple paths
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cache/pip
