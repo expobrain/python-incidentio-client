@@ -1,3 +1,12 @@
+## 0.37.8 (2024-01-22)
+
+### Fix
+
+- **deps-dev**: bump mkdocstrings-python from 1.7.5 to 1.8.0 (#372)
+- **deps-dev**: bump types-setuptools from 69.0.0.0 to 69.0.0.20240115 (#373)
+- **deps-dev**: bump mypy from 1.7.1 to 1.8.0 (#371)
+- **deps**: bump attrs from 23.1.0 to 23.2.0 (#370)
+
 ## 0.37.7 (2024-01-22)
 
 ### Fix
