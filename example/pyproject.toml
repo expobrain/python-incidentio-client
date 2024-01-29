@@ -14,7 +14,7 @@ python-dotenv = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 mypy = "^1.7"
-black = "^23.11"
+black = "^24.1"
 autoflake = "^1.7"
 pyupgrade = "^3.8.0"
 flake8 = "^5.0.4"
