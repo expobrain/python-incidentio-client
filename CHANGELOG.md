@@ -1,3 +1,12 @@
+## 0.38.2 (2024-01-29)
+
+### Fix
+
+- **deps-dev**: bump black from 23.11.0 to 24.1.1 in /example (#381)
+- **deps-dev**: bump mkdocs-material from 9.5.4 to 9.5.6 (#378)
+- **deps-dev**: bump black from 23.12.1 to 24.1.1 (#379)
+- **deps-dev**: bump types-setuptools (#380)
+
 ## 0.38.1 (2024-01-29)
 
 ### Fix
