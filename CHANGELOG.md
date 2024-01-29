@@ -1,3 +1,9 @@
+## 0.38.1 (2024-01-29)
+
+### Fix
+
+- **deps**: bump python-dotenv from 1.0.0 to 1.0.1 in /example (#382)
+
 ## 0.38.0 (2024-01-22)
 
 ### Feat
