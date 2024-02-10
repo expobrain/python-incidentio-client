@@ -51,9 +51,15 @@ def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[IncidentsV2ShowResponseBody]:
-    """Show Incidents V2
+    r""" Show Incidents V2
 
      Get a single incident.
+
+    The ID supplied can be either the incident's full ID, or the numeric part of its
+    reference. For example, to get INC-123, you could use either its full ID or:
+
+    		curl \
+    			--get 'https://api.incident.io/v2/incidents/123
 
     Args:
         id (str):
@@ -64,7 +70,7 @@ def sync_detailed(
 
     Returns:
         Response[IncidentsV2ShowResponseBody]
-    """
+     """
 
     kwargs = _get_kwargs(
         id=id,
@@ -82,9 +88,15 @@ def sync(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[IncidentsV2ShowResponseBody]:
-    """Show Incidents V2
+    r""" Show Incidents V2
 
      Get a single incident.
+
+    The ID supplied can be either the incident's full ID, or the numeric part of its
+    reference. For example, to get INC-123, you could use either its full ID or:
+
+    		curl \
+    			--get 'https://api.incident.io/v2/incidents/123
 
     Args:
         id (str):
@@ -95,7 +107,7 @@ def sync(
 
     Returns:
         IncidentsV2ShowResponseBody
-    """
+     """
 
     return sync_detailed(
         id=id,
@@ -108,9 +120,15 @@ async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[IncidentsV2ShowResponseBody]:
-    """Show Incidents V2
+    r""" Show Incidents V2
 
      Get a single incident.
+
+    The ID supplied can be either the incident's full ID, or the numeric part of its
+    reference. For example, to get INC-123, you could use either its full ID or:
+
+    		curl \
+    			--get 'https://api.incident.io/v2/incidents/123
 
     Args:
         id (str):
@@ -121,7 +139,7 @@ async def asyncio_detailed(
 
     Returns:
         Response[IncidentsV2ShowResponseBody]
-    """
+     """
 
     kwargs = _get_kwargs(
         id=id,
@@ -137,9 +155,15 @@ async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[IncidentsV2ShowResponseBody]:
-    """Show Incidents V2
+    r""" Show Incidents V2
 
      Get a single incident.
+
+    The ID supplied can be either the incident's full ID, or the numeric part of its
+    reference. For example, to get INC-123, you could use either its full ID or:
+
+    		curl \
+    			--get 'https://api.incident.io/v2/incidents/123
 
     Args:
         id (str):
@@ -150,7 +174,7 @@ async def asyncio(
 
     Returns:
         IncidentsV2ShowResponseBody
-    """
+     """
 
     return (
         await asyncio_detailed(

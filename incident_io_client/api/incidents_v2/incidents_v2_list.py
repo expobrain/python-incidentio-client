@@ -19,6 +19,7 @@ def _get_kwargs(
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
     custom_field: Union[Unset, Any] = UNSET,
+    mode: Union[Unset, Any] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
@@ -37,6 +38,8 @@ def _get_kwargs(
     params["incident_role"] = incident_role
 
     params["custom_field"] = custom_field
+
+    params["mode"] = mode
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -84,6 +87,7 @@ def sync_detailed(
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
     custom_field: Union[Unset, Any] = UNSET,
+    mode: Union[Unset, Any] = UNSET,
 ) -> Response[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -161,6 +165,23 @@ def sync_detailed(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'incident_type[not_in]=ABC'
 
+    ### By incident mode
+
+    By default, we return standard and retrospective incidents. This means that test and
+    tutorial incidents are filtered out. To override this behaviour, you can use the
+    mode filter to specify which modes you want to get.
+
+    To find incidents of all modes:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=standard&mode[one_of]=retrospective&mode[one_of]=test&mode[one_of]=tutorial'
+
+    To find just test incidents:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=test'
+
+
     ### By incident role
 
     Roles and custom fields have another nested layer in the query parameter, to account for
@@ -200,6 +221,7 @@ def sync_detailed(
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
         custom_field (Union[Unset, Any]):
+        mode (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -218,6 +240,7 @@ def sync_detailed(
         incident_type=incident_type,
         incident_role=incident_role,
         custom_field=custom_field,
+        mode=mode,
     )
 
     response = client.get_httpx_client().request(
@@ -238,6 +261,7 @@ def sync(
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
     custom_field: Union[Unset, Any] = UNSET,
+    mode: Union[Unset, Any] = UNSET,
 ) -> Optional[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -315,6 +339,23 @@ def sync(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'incident_type[not_in]=ABC'
 
+    ### By incident mode
+
+    By default, we return standard and retrospective incidents. This means that test and
+    tutorial incidents are filtered out. To override this behaviour, you can use the
+    mode filter to specify which modes you want to get.
+
+    To find incidents of all modes:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=standard&mode[one_of]=retrospective&mode[one_of]=test&mode[one_of]=tutorial'
+
+    To find just test incidents:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=test'
+
+
     ### By incident role
 
     Roles and custom fields have another nested layer in the query parameter, to account for
@@ -354,6 +395,7 @@ def sync(
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
         custom_field (Union[Unset, Any]):
+        mode (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -373,6 +415,7 @@ def sync(
         incident_type=incident_type,
         incident_role=incident_role,
         custom_field=custom_field,
+        mode=mode,
     ).parsed
 
 
@@ -387,6 +430,7 @@ async def asyncio_detailed(
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
     custom_field: Union[Unset, Any] = UNSET,
+    mode: Union[Unset, Any] = UNSET,
 ) -> Response[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -464,6 +508,23 @@ async def asyncio_detailed(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'incident_type[not_in]=ABC'
 
+    ### By incident mode
+
+    By default, we return standard and retrospective incidents. This means that test and
+    tutorial incidents are filtered out. To override this behaviour, you can use the
+    mode filter to specify which modes you want to get.
+
+    To find incidents of all modes:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=standard&mode[one_of]=retrospective&mode[one_of]=test&mode[one_of]=tutorial'
+
+    To find just test incidents:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=test'
+
+
     ### By incident role
 
     Roles and custom fields have another nested layer in the query parameter, to account for
@@ -503,6 +564,7 @@ async def asyncio_detailed(
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
         custom_field (Union[Unset, Any]):
+        mode (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -521,6 +583,7 @@ async def asyncio_detailed(
         incident_type=incident_type,
         incident_role=incident_role,
         custom_field=custom_field,
+        mode=mode,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -539,6 +602,7 @@ async def asyncio(
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
     custom_field: Union[Unset, Any] = UNSET,
+    mode: Union[Unset, Any] = UNSET,
 ) -> Optional[IncidentsV2ListResponseBody]:
     r""" List Incidents V2
 
@@ -616,6 +680,23 @@ async def asyncio(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'incident_type[not_in]=ABC'
 
+    ### By incident mode
+
+    By default, we return standard and retrospective incidents. This means that test and
+    tutorial incidents are filtered out. To override this behaviour, you can use the
+    mode filter to specify which modes you want to get.
+
+    To find incidents of all modes:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=standard&mode[one_of]=retrospective&mode[one_of]=test&mode[one_of]=tutorial'
+
+    To find just test incidents:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'mode[one_of]=test'
+
+
     ### By incident role
 
     Roles and custom fields have another nested layer in the query parameter, to account for
@@ -655,6 +736,7 @@ async def asyncio(
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
         custom_field (Union[Unset, Any]):
+        mode (Union[Unset, Any]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -675,5 +757,6 @@ async def asyncio(
             incident_type=incident_type,
             incident_role=incident_role,
             custom_field=custom_field,
+            mode=mode,
         )
     ).parsed
