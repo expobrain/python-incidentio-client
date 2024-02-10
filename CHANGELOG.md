@@ -1,3 +1,13 @@
+## 0.39.0 (2024-02-10)
+
+### Feat
+
+- Updated API at 2024-02-05 (#383)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.5.6 to 9.5.7 (#384)
+
 ## 0.38.3 (2024-02-05)
 
 ### Fix
