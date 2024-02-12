@@ -1,3 +1,11 @@
+## 0.39.2 (2024-02-12)
+
+### Fix
+
+- **deps-dev**: bump ruamel-yaml from 0.18.5 to 0.18.6 (#389)
+- **deps-dev**: bump mkdocs-material from 9.5.7 to 9.5.9 (#390)
+- **deps-dev**: bump isort from 5.13.0 to 5.13.2 in /example (#351)
+
 ## 0.39.1 (2024-02-10)
 
 ### Fix
