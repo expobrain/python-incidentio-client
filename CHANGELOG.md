@@ -1,3 +1,12 @@
+## 0.39.4 (2024-02-27)
+
+### Fix
+
+- **deps-dev**: bump openapi-python-client from 0.17.2 to 0.18.0 (#396)
+- **deps-dev**: bump black from 24.1.1 to 24.2.0 in /example (#391)
+- **deps-dev**: bump black from 24.1.1 to 24.2.0 (#393)
+- **deps-dev**: bump commitizen from 3.14.1 to 3.15.0 (#394)
+
 ## 0.39.3 (2024-02-25)
 
 ### Fix
