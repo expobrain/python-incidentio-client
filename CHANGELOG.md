@@ -1,3 +1,11 @@
+## 0.39.5 (2024-03-07)
+
+### Fix
+
+- **deps**: bump httpx from 0.26.0 to 0.27.0 (#403)
+- **deps-dev**: bump types-setuptools (#395)
+- **deps-dev**: bump mkdocs-material from 9.5.9 to 9.5.11 (#397)
+
 ## 0.39.4 (2024-02-27)
 
 ### Fix
