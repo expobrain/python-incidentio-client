@@ -28,6 +28,6 @@ jobs:
       - run: poetry build
       # From https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/#publishing-the-distribution-to-pypi-and-testpypi
       - name: Publish distribution 📦 to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1.8
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
