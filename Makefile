@@ -32,7 +32,9 @@ fmt:
 	poetry run autoflake \
 		--in-place \
 		--remove-all-unused-imports \
-		--ignore-init-module-imports \
+        --remove-unused-variable \
+        --expand-star-imports \
+        --remove-duplicate-keys \
 		-r \
 		.
 	poetry run isort --profile black .

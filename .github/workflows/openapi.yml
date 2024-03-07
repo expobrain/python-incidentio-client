@@ -24,10 +24,10 @@ jobs:
           path: |
             ~/.cache/pip
           key: ${{ runner.os }}-3.10-${{ hashFiles('**/poetry.lock') }}
-      - name: Install Poetry & Pre-commit
+      - name: Install Poetry
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
-          pip install poetry pre-commit
+          pip install poetry
       - name: Install dependencies
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
