@@ -1,5 +1,6 @@
 name: Checks that OpenAPI specs are up to date
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1"
 jobs:
