@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.user_v2_response_body import UserV2ResponseBody
+    from ..models.user_with_roles_v2_response_body import UserWithRolesV2ResponseBody
 
 
 T = TypeVar("T", bound="UsersV2ShowResponseBody")
@@ -14,15 +14,22 @@ T = TypeVar("T", bound="UsersV2ShowResponseBody")
 class UsersV2ShowResponseBody:
     """
     Example:
-        {'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
-            'viewer', 'slack_user_id': 'U02AYNF2XJM'}}
+        {'user': {'base_role': {'description': 'Elevated permissions for the customer success team.', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}, 'custom_roles':
+            [{'description': 'Elevated permissions for the customer success team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'Customer Success', 'slug': 'customer-success'}], 'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}
 
     Attributes:
-        user (UserV2ResponseBody):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
-            'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
+        user (UserWithRolesV2ResponseBody):  Example: {'base_role': {'description': 'Elevated permissions for the
+            customer success team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-
+            success'}, 'custom_roles': [{'description': 'Elevated permissions for the customer success team.', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}], 'email':
+            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
+            'slack_user_id': 'U02AYNF2XJM'}.
     """
 
-    user: "UserV2ResponseBody"
+    user: "UserWithRolesV2ResponseBody"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -40,10 +47,12 @@ class UsersV2ShowResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.user_v2_response_body import UserV2ResponseBody
+        from ..models.user_with_roles_v2_response_body import (
+            UserWithRolesV2ResponseBody,
+        )
 
         d = src_dict.copy()
-        user = UserV2ResponseBody.from_dict(d.pop("user"))
+        user = UserWithRolesV2ResponseBody.from_dict(d.pop("user"))
 
         users_v2_show_response_body = cls(
             user=user,

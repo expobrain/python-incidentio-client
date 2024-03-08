@@ -27,11 +27,12 @@ class CatalogTypeV2ResponseBody:
     Example:
         {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we run inside of GKE.',
-            'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True, 'required_integrations': ['pager_duty'],
-            'schema': {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier',
-            'type': 'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'type_name':
-            'Custom["BackstageGroup"]', 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'bolt', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
+            'registry_type': 'PagerDutyService', 'required_integrations': ['pager_duty'], 'schema': {'attributes':
+            [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+            'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'type_name': 'Custom["BackstageGroup"]',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         annotations (CatalogTypeV2ResponseBodyAnnotations): Annotations that can track metadata about this type Example:
@@ -47,13 +48,15 @@ class CatalogTypeV2ResponseBody:
         ranked (bool): If this type should be ranked Example: True.
         schema (CatalogTypeSchemaV2ResponseBody):  Example: {'attributes': [{'array': False, 'id':
             '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
-        semantic_type (str): Semantic type of this resource Example: custom.
+        semantic_type (str): Semantic type of this resource (unused) Example: custom.
         type_name (str): The type name of this catalog type, to be used when defining attributes. This is immutable once
             a CatalogType has been created. For non-externally sync types, it must follow the pattern Custom["SomeName "]
             Example: Custom["BackstageGroup"].
         updated_at (datetime.datetime): When this type was last updated Example: 2021-08-17T13:28:57.801578Z.
+        dynamic_resource_parameter (Union[Unset, str]): If this is a dynamic catalog type, this will be the unique
+            parameter for identitfying this resource externally. Example: abc123.
         estimated_count (Union[Unset, int]): If populated, gives an estimated count of entries for this type Example: 7.
-        external_type (Union[Unset, str]): The external resource this type is synced from, if any Example:
+        registry_type (Union[Unset, str]): The registry resource this type is synced from, if any Example:
             PagerDutyService.
         required_integrations (Union[Unset, List[str]]): If populated, the integrations required for this type Example:
             ['pager_duty'].
@@ -72,8 +75,9 @@ class CatalogTypeV2ResponseBody:
     semantic_type: str
     type_name: str
     updated_at: datetime.datetime
+    dynamic_resource_parameter: Union[Unset, str] = UNSET
     estimated_count: Union[Unset, int] = UNSET
-    external_type: Union[Unset, str] = UNSET
+    registry_type: Union[Unset, str] = UNSET
     required_integrations: Union[Unset, List[str]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -104,9 +108,11 @@ class CatalogTypeV2ResponseBody:
 
         updated_at = self.updated_at.isoformat()
 
+        dynamic_resource_parameter = self.dynamic_resource_parameter
+
         estimated_count = self.estimated_count
 
-        external_type = self.external_type
+        registry_type = self.registry_type
 
         required_integrations: Union[Unset, List[str]] = UNSET
         if not isinstance(self.required_integrations, Unset):
@@ -131,10 +137,12 @@ class CatalogTypeV2ResponseBody:
                 "updated_at": updated_at,
             }
         )
+        if dynamic_resource_parameter is not UNSET:
+            field_dict["dynamic_resource_parameter"] = dynamic_resource_parameter
         if estimated_count is not UNSET:
             field_dict["estimated_count"] = estimated_count
-        if external_type is not UNSET:
-            field_dict["external_type"] = external_type
+        if registry_type is not UNSET:
+            field_dict["registry_type"] = registry_type
         if required_integrations is not UNSET:
             field_dict["required_integrations"] = required_integrations
 
@@ -176,9 +184,11 @@ class CatalogTypeV2ResponseBody:
 
         updated_at = isoparse(d.pop("updated_at"))
 
+        dynamic_resource_parameter = d.pop("dynamic_resource_parameter", UNSET)
+
         estimated_count = d.pop("estimated_count", UNSET)
 
-        external_type = d.pop("external_type", UNSET)
+        registry_type = d.pop("registry_type", UNSET)
 
         required_integrations = cast(List[str], d.pop("required_integrations", UNSET))
 
@@ -196,8 +206,9 @@ class CatalogTypeV2ResponseBody:
             semantic_type=semantic_type,
             type_name=type_name,
             updated_at=updated_at,
+            dynamic_resource_parameter=dynamic_resource_parameter,
             estimated_count=estimated_count,
-            external_type=external_type,
+            registry_type=registry_type,
             required_integrations=required_integrations,
         )
 

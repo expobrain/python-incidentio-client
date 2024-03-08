@@ -32,12 +32,12 @@ class CatalogV2UpdateEntryResponseBody:
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank':
             3, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'catalog_type': {'annotations': {'incident.io/catalog-
             importer/id': 'id-of-config'}, 'color': 'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'estimated_count': 7, 'external_type':
-            'PagerDutyService', 'icon': 'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name':
-            'Kubernetes Cluster', 'ranked': True, 'required_integrations': ['pager_duty'], 'schema': {'attributes':
-            [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'type_name': 'Custom["BackstageGroup"]',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}
+            'Represents Kubernetes clusters that we run inside of GKE.', 'dynamic_resource_parameter': 'abc123',
+            'estimated_count': 7, 'icon': 'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name':
+            'Kubernetes Cluster', 'ranked': True, 'registry_type': 'PagerDutyService', 'required_integrations':
+            ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
+            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'type_name':
+            'Custom["BackstageGroup"]', 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
         catalog_entry (CatalogEntryV2ResponseBody):  Example: {'aliases': ['lawrence@incident.io', 'lawrence'],
@@ -58,12 +58,12 @@ class CatalogV2UpdateEntryResponseBody:
             3, 'updated_at': '2021-08-17T13:28:57.801578Z'}.
         catalog_type (CatalogTypeV2ResponseBody):  Example: {'annotations': {'incident.io/catalog-importer/id': 'id-of-
             config'}, 'color': 'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes
-            clusters that we run inside of GKE.', 'estimated_count': 7, 'external_type': 'PagerDutyService', 'icon': 'bolt',
-            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
-            'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1},
-            'semantic_type': 'custom', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}.
+            clusters that we run inside of GKE.', 'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon':
+            'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'name': 'Kubernetes Cluster', 'ranked': True,
+            'registry_type': 'PagerDutyService', 'required_integrations': ['pager_duty'], 'schema': {'attributes':
+            [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+            'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'type_name': 'Custom["BackstageGroup"]',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}.
     """
 
     catalog_entry: "CatalogEntryV2ResponseBody"

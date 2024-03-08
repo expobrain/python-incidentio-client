@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_escalation_path_updated_v1_response_body
+
+::: incident_io_client.models.audit_logs_escalation_path_updated_v1_response_body

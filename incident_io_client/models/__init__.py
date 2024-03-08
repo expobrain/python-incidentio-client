@@ -116,6 +116,15 @@ from .audit_logs_debrief_invite_rule_deleted_v1_response_body import (
 from .audit_logs_debrief_invite_rule_updated_v1_response_body import (
     AuditLogsDebriefInviteRuleUpdatedV1ResponseBody,
 )
+from .audit_logs_escalation_path_created_v1_response_body import (
+    AuditLogsEscalationPathCreatedV1ResponseBody,
+)
+from .audit_logs_escalation_path_deleted_v1_response_body import (
+    AuditLogsEscalationPathDeletedV1ResponseBody,
+)
+from .audit_logs_escalation_path_updated_v1_response_body import (
+    AuditLogsEscalationPathUpdatedV1ResponseBody,
+)
 from .audit_logs_follow_up_priority_created_v1_response_body import (
     AuditLogsFollowUpPriorityCreatedV1ResponseBody,
 )
@@ -232,6 +241,15 @@ from .audit_logs_rbac_role_deleted_v1_response_body import (
 )
 from .audit_logs_rbac_role_updated_v1_response_body import (
     AuditLogsRbacRoleUpdatedV1ResponseBody,
+)
+from .audit_logs_schedule_created_v1_response_body import (
+    AuditLogsScheduleCreatedV1ResponseBody,
+)
+from .audit_logs_schedule_deleted_v1_response_body import (
+    AuditLogsScheduleDeletedV1ResponseBody,
+)
+from .audit_logs_schedule_updated_v1_response_body import (
+    AuditLogsScheduleUpdatedV1ResponseBody,
 )
 from .audit_logs_scim_group_role_mappings_updated_v1_response_body import (
     AuditLogsScimGroupRoleMappingsUpdatedV1ResponseBody,
@@ -500,6 +518,12 @@ from .incident_attachments_v1_list_resource_type import (
 from .incident_attachments_v1_list_response_body import (
     IncidentAttachmentsV1ListResponseBody,
 )
+from .incident_duration_metric_v2_response_body import (
+    IncidentDurationMetricV2ResponseBody,
+)
+from .incident_duration_metric_with_value_v2_response_body import (
+    IncidentDurationMetricWithValueV2ResponseBody,
+)
 from .incident_edit_payload_v2_request_body import IncidentEditPayloadV2RequestBody
 from .incident_membership_response_body import IncidentMembershipResponseBody
 from .incident_memberships_v1_create_request_body import (
@@ -626,6 +650,7 @@ from .pagination_meta_result_response_body import PaginationMetaResultResponseBo
 from .pagination_meta_result_with_total_response_body import (
     PaginationMetaResultWithTotalResponseBody,
 )
+from .rbac_role_v2_response_body import RBACRoleV2ResponseBody
 from .retrospective_incident_options_v2_request_body import (
     RetrospectiveIncidentOptionsV2RequestBody,
 )
@@ -643,6 +668,8 @@ from .user_v1_response_body import UserV1ResponseBody
 from .user_v1_response_body_role import UserV1ResponseBodyRole
 from .user_v2_response_body import UserV2ResponseBody
 from .user_v2_response_body_role import UserV2ResponseBodyRole
+from .user_with_roles_v2_response_body import UserWithRolesV2ResponseBody
+from .user_with_roles_v2_response_body_role import UserWithRolesV2ResponseBodyRole
 from .users_v2_list_response_body import UsersV2ListResponseBody
 from .users_v2_show_response_body import UsersV2ShowResponseBody
 from .utilities_v1_identity_response_body import UtilitiesV1IdentityResponseBody
@@ -792,6 +819,9 @@ __all__ = (
     "AuditLogsDebriefInviteRuleCreatedV1ResponseBody",
     "AuditLogsDebriefInviteRuleDeletedV1ResponseBody",
     "AuditLogsDebriefInviteRuleUpdatedV1ResponseBody",
+    "AuditLogsEscalationPathCreatedV1ResponseBody",
+    "AuditLogsEscalationPathDeletedV1ResponseBody",
+    "AuditLogsEscalationPathUpdatedV1ResponseBody",
     "AuditLogsFollowUpPriorityCreatedV1ResponseBody",
     "AuditLogsFollowUpPriorityDeletedV1ResponseBody",
     "AuditLogsFollowUpPriorityUpdatedV1ResponseBody",
@@ -831,6 +861,9 @@ __all__ = (
     "AuditLogsRbacRoleCreatedV1ResponseBody",
     "AuditLogsRbacRoleDeletedV1ResponseBody",
     "AuditLogsRbacRoleUpdatedV1ResponseBody",
+    "AuditLogsScheduleCreatedV1ResponseBody",
+    "AuditLogsScheduleDeletedV1ResponseBody",
+    "AuditLogsScheduleUpdatedV1ResponseBody",
     "AuditLogsScimGroupRoleMappingsUpdatedV1ResponseBody",
     "AuditLogsSeverityCreatedV1ResponseBody",
     "AuditLogsSeverityDeletedV1ResponseBody",
@@ -966,6 +999,8 @@ __all__ = (
     "IncidentAttachmentsV1ListResourceType",
     "IncidentAttachmentsV1ListResponseBody",
     "IncidentAttachmentV1ResponseBody",
+    "IncidentDurationMetricV2ResponseBody",
+    "IncidentDurationMetricWithValueV2ResponseBody",
     "IncidentEditPayloadV2RequestBody",
     "IncidentMembershipResponseBody",
     "IncidentMembershipsV1CreateRequestBody",
@@ -1042,6 +1077,7 @@ __all__ = (
     "IncidentWithStatusChangeV2ResponseBody",
     "PaginationMetaResultResponseBody",
     "PaginationMetaResultWithTotalResponseBody",
+    "RBACRoleV2ResponseBody",
     "RetrospectiveIncidentOptionsV2RequestBody",
     "SeveritiesV1CreateRequestBody",
     "SeveritiesV1CreateResponseBody",
@@ -1059,6 +1095,8 @@ __all__ = (
     "UserV1ResponseBodyRole",
     "UserV2ResponseBody",
     "UserV2ResponseBodyRole",
+    "UserWithRolesV2ResponseBody",
+    "UserWithRolesV2ResponseBodyRole",
     "UtilitiesV1IdentityResponseBody",
     "WebhookIncidentUserV2ResponseBody",
     "WebhookPrivateResourceV2ResponseBody",
