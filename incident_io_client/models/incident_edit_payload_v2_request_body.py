@@ -59,13 +59,13 @@ class IncidentEditPayloadV2RequestBody:
 
     call_url: Union[Unset, str] = UNSET
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2RequestBody"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]] = (
-        UNSET
-    )
+    incident_role_assignments: Union[
+        Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]
+    ] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampValuePayloadV2RequestBody"]] = (
-        UNSET
-    )
+    incident_timestamp_values: Union[
+        Unset, List["IncidentTimestampValuePayloadV2RequestBody"]
+    ] = UNSET
     name: Union[Unset, str] = UNSET
     severity_id: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
