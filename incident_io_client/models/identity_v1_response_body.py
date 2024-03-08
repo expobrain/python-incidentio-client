@@ -14,19 +14,23 @@ T = TypeVar("T", bound="IdentityV1ResponseBody")
 class IdentityV1ResponseBody:
     """
     Example:
-        {'name': 'Alertmanager token', 'roles': ['incident_creator']}
+        {'dashboard_url': 'https://app.incident.io/my-org', 'name': 'Alertmanager token', 'roles': ['incident_creator']}
 
     Attributes:
+        dashboard_url (str): The dashboard URL for this organisation Example: https://app.incident.io/my-org.
         name (str): The name assigned to the current API Key Example: Alertmanager token.
         roles (List[IdentityV1ResponseBodyRolesItem]): Which roles have been enabled for this key Example:
             ['incident_creator'].
     """
 
+    dashboard_url: str
     name: str
     roles: List[IdentityV1ResponseBodyRolesItem]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        dashboard_url = self.dashboard_url
+
         name = self.name
 
         roles = []
@@ -38,6 +42,7 @@ class IdentityV1ResponseBody:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
+                "dashboard_url": dashboard_url,
                 "name": name,
                 "roles": roles,
             }
@@ -48,6 +53,8 @@ class IdentityV1ResponseBody:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
+        dashboard_url = d.pop("dashboard_url")
+
         name = d.pop("name")
 
         roles = []
@@ -58,6 +65,7 @@ class IdentityV1ResponseBody:
             roles.append(roles_item)
 
         identity_v1_response_body = cls(
+            dashboard_url=dashboard_url,
             name=name,
             roles=roles,
         )

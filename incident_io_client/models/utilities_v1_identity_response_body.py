@@ -14,10 +14,12 @@ T = TypeVar("T", bound="UtilitiesV1IdentityResponseBody")
 class UtilitiesV1IdentityResponseBody:
     """
     Example:
-        {'identity': {'name': 'Alertmanager token', 'roles': ['incident_creator']}}
+        {'identity': {'dashboard_url': 'https://app.incident.io/my-org', 'name': 'Alertmanager token', 'roles':
+            ['incident_creator']}}
 
     Attributes:
-        identity (IdentityV1ResponseBody):  Example: {'name': 'Alertmanager token', 'roles': ['incident_creator']}.
+        identity (IdentityV1ResponseBody):  Example: {'dashboard_url': 'https://app.incident.io/my-org', 'name':
+            'Alertmanager token', 'roles': ['incident_creator']}.
     """
 
     identity: "IdentityV1ResponseBody"

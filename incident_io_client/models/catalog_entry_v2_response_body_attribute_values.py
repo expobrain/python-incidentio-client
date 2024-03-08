@@ -40,7 +40,6 @@ class CatalogEntryV2ResponseBodyAttributeValues:
         field_dict: Dict[str, Any] = {}
         for prop_name, prop in self.additional_properties.items():
             field_dict[prop_name] = prop.to_dict()
-        field_dict.update({})
 
         return field_dict
 

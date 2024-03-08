@@ -8,6 +8,7 @@ class IncidentStatusV2ResponseBodyCategory(str, Enum):
     LEARNING = "learning"
     LIVE = "live"
     MERGED = "merged"
+    PAUSED = "paused"
     TRIAGE = "triage"
 
     def __str__(self) -> str:

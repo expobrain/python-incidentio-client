@@ -19,6 +19,9 @@ if TYPE_CHECKING:
     from ..models.external_issue_reference_v2_response_body import (
         ExternalIssueReferenceV2ResponseBody,
     )
+    from ..models.incident_duration_metric_with_value_v2_response_body import (
+        IncidentDurationMetricWithValueV2ResponseBody,
+    )
     from ..models.incident_role_assignment_v2_response_body import (
         IncidentRoleAssignmentV2ResponseBody,
     )
@@ -47,17 +50,18 @@ class IncidentV2ResponseBody:
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
-            'value_text': 'This is my text field, I hope you like it'}]}], 'external_issue_reference': {'issue_name':
-            'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
-            'provider': 'asana'}, 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
-            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
-            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
-            'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status':
-            {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully
-            mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values':
+            'value_text': 'This is my text field, I hope you like it'}]}], 'duration_metrics': [{'duration_metric': {'id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'value_seconds': 1}], 'external_issue_reference':
+            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
+            write-up', 'provider': 'asana'}, 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee':
+            {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
+            'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
+            'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take
+            point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required':
+            False, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}],
+            'incident_status': {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact
+            has been **fully mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values':
             [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value':
             {'value': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
@@ -110,6 +114,9 @@ class IncidentV2ResponseBody:
             centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
+        duration_metrics (Union[Unset, List['IncidentDurationMetricWithValueV2ResponseBody']]): Incident duration
+            metrics and their measurements for this incident Example: [{'duration_metric': {'id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'value_seconds': 1}].
         external_issue_reference (Union[Unset, ExternalIssueReferenceV2ResponseBody]):  Example: {'issue_name':
             'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up',
             'provider': 'asana'}.
@@ -151,10 +158,11 @@ class IncidentV2ResponseBody:
     updated_at: datetime.datetime
     visibility: IncidentV2ResponseBodyVisibility
     call_url: Union[Unset, str] = UNSET
+    duration_metrics: Union[Unset, List["IncidentDurationMetricWithValueV2ResponseBody"]] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2ResponseBody"] = UNSET
-    incident_timestamp_values: Union[
-        Unset, List["IncidentTimestampWithValueV2ResponseBody"]
-    ] = UNSET
+    incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2ResponseBody"]] = (
+        UNSET
+    )
     incident_type: Union[Unset, "IncidentTypeV2ResponseBody"] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
@@ -201,6 +209,13 @@ class IncidentV2ResponseBody:
         visibility = self.visibility.value
 
         call_url = self.call_url
+
+        duration_metrics: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.duration_metrics, Unset):
+            duration_metrics = []
+            for duration_metrics_item_data in self.duration_metrics:
+                duration_metrics_item = duration_metrics_item_data.to_dict()
+                duration_metrics.append(duration_metrics_item)
 
         external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
@@ -258,6 +273,8 @@ class IncidentV2ResponseBody:
         )
         if call_url is not UNSET:
             field_dict["call_url"] = call_url
+        if duration_metrics is not UNSET:
+            field_dict["duration_metrics"] = duration_metrics
         if external_issue_reference is not UNSET:
             field_dict["external_issue_reference"] = external_issue_reference
         if incident_timestamp_values is not UNSET:
@@ -293,6 +310,9 @@ class IncidentV2ResponseBody:
         )
         from ..models.external_issue_reference_v2_response_body import (
             ExternalIssueReferenceV2ResponseBody,
+        )
+        from ..models.incident_duration_metric_with_value_v2_response_body import (
+            IncidentDurationMetricWithValueV2ResponseBody,
         )
         from ..models.incident_role_assignment_v2_response_body import (
             IncidentRoleAssignmentV2ResponseBody,
@@ -348,6 +368,15 @@ class IncidentV2ResponseBody:
         visibility = IncidentV2ResponseBodyVisibility(d.pop("visibility"))
 
         call_url = d.pop("call_url", UNSET)
+
+        duration_metrics = []
+        _duration_metrics = d.pop("duration_metrics", UNSET)
+        for duration_metrics_item_data in _duration_metrics or []:
+            duration_metrics_item = IncidentDurationMetricWithValueV2ResponseBody.from_dict(
+                duration_metrics_item_data
+            )
+
+            duration_metrics.append(duration_metrics_item)
 
         _external_issue_reference = d.pop("external_issue_reference", UNSET)
         external_issue_reference: Union[Unset, ExternalIssueReferenceV2ResponseBody]
@@ -412,6 +441,7 @@ class IncidentV2ResponseBody:
             updated_at=updated_at,
             visibility=visibility,
             call_url=call_url,
+            duration_metrics=duration_metrics,
             external_issue_reference=external_issue_reference,
             incident_timestamp_values=incident_timestamp_values,
             incident_type=incident_type,
