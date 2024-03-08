@@ -86,19 +86,19 @@ class IncidentsV2CreateRequestBody:
     visibility: IncidentsV2CreateRequestBodyVisibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2RequestBody"]] = UNSET
     id: Union[Unset, str] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]] = (
-        UNSET
-    )
+    incident_role_assignments: Union[
+        Unset, List["IncidentRoleAssignmentPayloadV2RequestBody"]
+    ] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampValuePayloadV2RequestBody"]] = (
-        UNSET
-    )
+    incident_timestamp_values: Union[
+        Unset, List["IncidentTimestampValuePayloadV2RequestBody"]
+    ] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV2CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
-    retrospective_incident_options: Union[Unset, "RetrospectiveIncidentOptionsV2RequestBody"] = (
-        UNSET
-    )
+    retrospective_incident_options: Union[
+        Unset, "RetrospectiveIncidentOptionsV2RequestBody"
+    ] = UNSET
     severity_id: Union[Unset, str] = UNSET
     slack_channel_name_override: Union[Unset, str] = UNSET
     slack_team_id: Union[Unset, str] = UNSET
