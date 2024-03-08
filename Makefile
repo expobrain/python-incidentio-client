@@ -21,10 +21,7 @@ generate_client:
 	touch incident_io_client/py.typed
 	make fmt
 
-generate_format:
-	pre-commit run --all-files
-
-generate: generate_client generate_docs generate_format
+generate: generate_client generate_docs fmt
 
 fmt:
 	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \
