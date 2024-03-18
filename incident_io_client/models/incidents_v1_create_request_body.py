@@ -74,9 +74,9 @@ class IncidentsV1CreateRequestBody:
     idempotency_key: str
     visibility: IncidentsV1CreateRequestBodyVisibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV1RequestBody"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV1RequestBody"]] = (
-        UNSET
-    )
+    incident_role_assignments: Union[
+        Unset, List["IncidentRoleAssignmentPayloadV1RequestBody"]
+    ] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV1CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
