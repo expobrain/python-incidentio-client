@@ -1,3 +1,17 @@
+## 0.42.0 (2024-03-18)
+
+### Feat
+
+- Updated API at 2024-03-11 (#411)
+
+### Fix
+
+- **deps-dev**: bump openapi-python-client from 0.18.0 to 0.19.0 (#412)
+- **deps-dev**: bump types-pygments (#414)
+- **deps-dev**: bump types-setuptools (#413)
+- **deps-dev**: bump mypy from 1.8.0 to 1.9.0 in /example (#416)
+- **deps-dev**: bump commitizen from 3.16.0 to 3.18.0 (#415)
+
 ## 0.41.1 (2024-03-12)
 
 ### Fix
