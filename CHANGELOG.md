@@ -1,3 +1,11 @@
+## 0.43.1 (2024-03-18)
+
+### Fix
+
+- **deps-dev**: bump black from 24.2.0 to 24.3.0 in /example (#419)
+- **deps-dev**: bump mkdocstrings-python from 1.8.0 to 1.9.0 (#420)
+- **deps-dev**: bump commitizen from 3.18.0 to 3.18.4 (#424)
+
 ## 0.43.0 (2024-03-18)
 
 ### Feat
