@@ -26,7 +26,7 @@ class CatalogV2UpdateTypeRequestBody:
     Example:
         {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True}
+            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog'}
 
     Attributes:
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
@@ -39,6 +39,8 @@ class CatalogV2UpdateTypeRequestBody:
         icon (Union[Unset, CatalogV2UpdateTypeRequestBodyIcon]): Sets the display icon of this type in the dashboard
             Example: bolt.
         ranked (Union[Unset, bool]): If this type should be ranked Example: True.
+        source_repo_url (Union[Unset, str]): The url of the external repository where this type is managed Example:
+            https://github.com/my-company/incident-io-catalog.
     """
 
     description: str
@@ -47,6 +49,7 @@ class CatalogV2UpdateTypeRequestBody:
     color: Union[Unset, CatalogV2UpdateTypeRequestBodyColor] = UNSET
     icon: Union[Unset, CatalogV2UpdateTypeRequestBodyIcon] = UNSET
     ranked: Union[Unset, bool] = UNSET
+    source_repo_url: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -68,6 +71,8 @@ class CatalogV2UpdateTypeRequestBody:
 
         ranked = self.ranked
 
+        source_repo_url = self.source_repo_url
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -84,6 +89,8 @@ class CatalogV2UpdateTypeRequestBody:
             field_dict["icon"] = icon
         if ranked is not UNSET:
             field_dict["ranked"] = ranked
+        if source_repo_url is not UNSET:
+            field_dict["source_repo_url"] = source_repo_url
 
         return field_dict
 
@@ -121,6 +128,8 @@ class CatalogV2UpdateTypeRequestBody:
 
         ranked = d.pop("ranked", UNSET)
 
+        source_repo_url = d.pop("source_repo_url", UNSET)
+
         catalog_v2_update_type_request_body = cls(
             description=description,
             name=name,
@@ -128,6 +137,7 @@ class CatalogV2UpdateTypeRequestBody:
             color=color,
             icon=icon,
             ranked=ranked,
+            source_repo_url=source_repo_url,
         )
 
         catalog_v2_update_type_request_body.additional_properties = d
