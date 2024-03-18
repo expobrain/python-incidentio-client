@@ -26,7 +26,8 @@ class CatalogV2CreateTypeRequestBody:
     Example:
         {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
             'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True, 'type_name': 'Custom["BackstageGroup"]'}
+            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog', 'type_name':
+            'Custom["BackstageGroup"]'}
 
     Attributes:
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
@@ -39,6 +40,8 @@ class CatalogV2CreateTypeRequestBody:
         icon (Union[Unset, CatalogV2CreateTypeRequestBodyIcon]): Sets the display icon of this type in the dashboard
             Example: bolt.
         ranked (Union[Unset, bool]): If this type should be ranked Example: True.
+        source_repo_url (Union[Unset, str]): The url of the external repository where this type is managed Example:
+            https://github.com/my-company/incident-io-catalog.
         type_name (Union[Unset, str]): The type name of this catalog type, to be used when defining attributes. This is
             immutable once a CatalogType has been created. For non-externally sync types, it must follow the pattern
             Custom["SomeName "] Example: Custom["BackstageGroup"].
@@ -50,6 +53,7 @@ class CatalogV2CreateTypeRequestBody:
     color: Union[Unset, CatalogV2CreateTypeRequestBodyColor] = UNSET
     icon: Union[Unset, CatalogV2CreateTypeRequestBodyIcon] = UNSET
     ranked: Union[Unset, bool] = UNSET
+    source_repo_url: Union[Unset, str] = UNSET
     type_name: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -72,6 +76,8 @@ class CatalogV2CreateTypeRequestBody:
 
         ranked = self.ranked
 
+        source_repo_url = self.source_repo_url
+
         type_name = self.type_name
 
         field_dict: Dict[str, Any] = {}
@@ -90,6 +96,8 @@ class CatalogV2CreateTypeRequestBody:
             field_dict["icon"] = icon
         if ranked is not UNSET:
             field_dict["ranked"] = ranked
+        if source_repo_url is not UNSET:
+            field_dict["source_repo_url"] = source_repo_url
         if type_name is not UNSET:
             field_dict["type_name"] = type_name
 
@@ -129,6 +137,8 @@ class CatalogV2CreateTypeRequestBody:
 
         ranked = d.pop("ranked", UNSET)
 
+        source_repo_url = d.pop("source_repo_url", UNSET)
+
         type_name = d.pop("type_name", UNSET)
 
         catalog_v2_create_type_request_body = cls(
@@ -138,6 +148,7 @@ class CatalogV2CreateTypeRequestBody:
             color=color,
             icon=icon,
             ranked=ranked,
+            source_repo_url=source_repo_url,
             type_name=type_name,
         )
 

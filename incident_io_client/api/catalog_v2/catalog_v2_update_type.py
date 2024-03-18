@@ -74,7 +74,7 @@ def sync_detailed(
         body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
             importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
             clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True}.
+            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -111,7 +111,7 @@ def sync(
         body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
             importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
             clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True}.
+            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -143,7 +143,7 @@ async def asyncio_detailed(
         body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
             importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
             clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True}.
+            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -178,7 +178,7 @@ async def asyncio(
         body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
             importer/id': 'id-of-config'}, 'color': 'yellow', 'description': 'Represents Kubernetes
             clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True}.
+            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -5,6 +5,7 @@ class ExternalIssueReferenceV2ResponseBodyProvider(str, Enum):
     ASANA = "asana"
     CLICK_UP = "click_up"
     GITHUB = "github"
+    GITLAB = "gitlab"
     JIRA = "jira"
     JIRA_SERVER = "jira_server"
     LINEAR = "linear"
