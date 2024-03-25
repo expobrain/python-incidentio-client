@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class CatalogTypeAttributePayloadV2RequestBodyMode(str, Enum):
+    BACKLINK = "backlink"
     DYNAMIC = "dynamic"
     EXTERNAL = "external"
     INTERNAL = "internal"
