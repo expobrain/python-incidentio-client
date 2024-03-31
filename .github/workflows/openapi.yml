@@ -36,6 +36,11 @@ jobs:
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
           make generate
+      - name: Run pre-commit hooks
+        if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
+        run: |
+          pip install pre-commit
+          (pre-commit run --all-files ; exit 0)
       - name: Create new branch
         if: steps.verify-changed-openapi-specs.outputs.files_changed == 'true'
         run: |
