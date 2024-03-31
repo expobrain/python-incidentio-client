@@ -1,3 +1,11 @@
+## 0.43.2 (2024-03-31)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools (#421)
+- **deps-dev**: bump types-python-dateutil (#422)
+- **deps-dev**: bump black from 24.2.0 to 24.3.0 (#423)
+
 ## 0.43.1 (2024-03-18)
 
 ### Fix
