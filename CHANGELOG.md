@@ -1,3 +1,12 @@
+## 0.43.4 (2024-03-31)
+
+### Fix
+
+- **deps-dev**: bump commitizen from 3.18.4 to 3.21.3 (#432)
+- **deps-dev**: bump types-toml from 0.10.8.7 to 0.10.8.20240310 (#430)
+- **deps-dev**: bump mypy from 1.8.0 to 1.9.0 (#429)
+- **deps-dev**: bump commitizen from 3.18.4 to 3.20.0 (#428)
+
 ## 0.43.3 (2024-03-31)
 
 ### Fix
