@@ -54,7 +54,6 @@ jobs:
       - run: poetry install --no-interaction --no-ansi --sync
       - run: make lint
 
-
   bump-version:
     if: github.ref_name == github.event.repository.default_branch && !startsWith(github.event.head_commit.message, 'bump:')
     needs:
@@ -85,6 +84,8 @@ jobs:
           poetry install --with dev --no-interaction --no-ansi --sync
 
       - name: Create new version and changelog
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
