@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,6 +6,7 @@ from attrs import field as _attrs_field
 from ..models.catalog_type_attribute_v2_response_body_mode import (
     CatalogTypeAttributeV2ResponseBodyMode,
 )
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 
@@ -14,8 +15,8 @@ T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 class CatalogTypeAttributeV2ResponseBody:
     """
     Example:
-        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}
+        {'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name':
+            'tier', 'type': 'Custom["Service"]'}
 
     Attributes:
         array (bool): Whether this attribute is an array
@@ -23,6 +24,7 @@ class CatalogTypeAttributeV2ResponseBody:
         mode (CatalogTypeAttributeV2ResponseBodyMode): Controls how this attribute is modified Example: manual.
         name (str): Unique name of this attribute Example: tier.
         type (str): Catalog type name for this attribute Example: Custom["Service"].
+        backlink_attribute (Union[Unset, str]): The attribute to use (if this is a backlink) Example: abc123.
     """
 
     array: bool
@@ -30,6 +32,7 @@ class CatalogTypeAttributeV2ResponseBody:
     mode: CatalogTypeAttributeV2ResponseBodyMode
     name: str
     type: str
+    backlink_attribute: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -43,6 +46,8 @@ class CatalogTypeAttributeV2ResponseBody:
 
         type = self.type
 
+        backlink_attribute = self.backlink_attribute
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -54,6 +59,8 @@ class CatalogTypeAttributeV2ResponseBody:
                 "type": type,
             }
         )
+        if backlink_attribute is not UNSET:
+            field_dict["backlink_attribute"] = backlink_attribute
 
         return field_dict
 
@@ -70,12 +77,15 @@ class CatalogTypeAttributeV2ResponseBody:
 
         type = d.pop("type")
 
+        backlink_attribute = d.pop("backlink_attribute", UNSET)
+
         catalog_type_attribute_v2_response_body = cls(
             array=array,
             id=id,
             mode=mode,
             name=name,
             type=type,
+            backlink_attribute=backlink_attribute,
         )
 
         catalog_type_attribute_v2_response_body.additional_properties = d

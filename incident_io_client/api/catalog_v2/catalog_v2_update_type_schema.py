@@ -81,8 +81,8 @@ def sync_detailed(
     Args:
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}], 'version': 1}.
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
+            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -124,8 +124,8 @@ def sync(
     Args:
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}], 'version': 1}.
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
+            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -162,8 +162,8 @@ async def asyncio_detailed(
     Args:
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}], 'version': 1}.
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
+            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -203,8 +203,8 @@ async def asyncio(
     Args:
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}], 'version': 1}.
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
+            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

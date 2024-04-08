@@ -38,11 +38,11 @@ class CatalogV2ListEntriesResponseBody:
             'Represents Kubernetes clusters that we run inside of GKE.', 'dynamic_resource_parameter': 'abc123',
             'estimated_count': 7, 'icon': 'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False,
             'last_synced_at': '2021-08-17T13:28:57.801578Z', 'name': 'Kubernetes Cluster', 'ranked': True, 'registry_type':
-            'PagerDutyService', 'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1},
-            'semantic_type': 'custom', 'source_repo_url': 'https://github.com/my-company/incident-io-catalog', 'type_name':
-            'Custom["BackstageGroup"]', 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'pagination_meta': {'after':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}}
+            'PagerDutyService', 'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False,
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+            'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'source_repo_url': 'https://github.com/my-
+            company/incident-io-catalog', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'pagination_meta': {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}}
 
     Attributes:
         catalog_entries (List['CatalogEntryV2ResponseBody']):  Example: [{'aliases': ['lawrence@incident.io',
@@ -67,10 +67,11 @@ class CatalogV2ListEntriesResponseBody:
             clusters that we run inside of GKE.', 'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon':
             'bolt', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'last_synced_at':
             '2021-08-17T13:28:57.801578Z', 'name': 'Kubernetes Cluster', 'ranked': True, 'registry_type':
-            'PagerDutyService', 'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1},
-            'semantic_type': 'custom', 'source_repo_url': 'https://github.com/my-company/incident-io-catalog', 'type_name':
-            'Custom["BackstageGroup"]', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+            'PagerDutyService', 'required_integrations': ['pager_duty'], 'schema': {'attributes': [{'array': False,
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
+            'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'source_repo_url': 'https://github.com/my-
+            company/incident-io-catalog', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}.
         pagination_meta (PaginationMetaResultResponseBody):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0',
             'page_size': 25}.
     """

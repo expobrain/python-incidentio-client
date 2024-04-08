@@ -30,10 +30,10 @@ class CatalogTypeV2ResponseBody:
             'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'bolt', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'last_synced_at': '2021-08-17T13:28:57.801578Z', 'name':
             'Kubernetes Cluster', 'ranked': True, 'registry_type': 'PagerDutyService', 'required_integrations':
-            ['pager_duty'], 'schema': {'attributes': [{'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'source_repo_url':
-            'https://github.com/my-company/incident-io-catalog', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}
+            ['pager_duty'], 'schema': {'attributes': [{'array': False, 'backlink_attribute': 'abc123', 'id':
+            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1},
+            'semantic_type': 'custom', 'source_repo_url': 'https://github.com/my-company/incident-io-catalog', 'type_name':
+            'Custom["BackstageGroup"]', 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         annotations (CatalogTypeV2ResponseBodyAnnotations): Annotations that can track metadata about this type Example:
@@ -47,8 +47,9 @@ class CatalogTypeV2ResponseBody:
         is_editable (bool): Catalog types that are synced with external resources can't be edited
         name (str): Name is the human readable name of this type Example: Kubernetes Cluster.
         ranked (bool): If this type should be ranked Example: True.
-        schema (CatalogTypeSchemaV2ResponseBody):  Example: {'attributes': [{'array': False, 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
+        schema (CatalogTypeSchemaV2ResponseBody):  Example: {'attributes': [{'array': False, 'backlink_attribute':
+            'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type': 'Custom["Service"]'}],
+            'version': 1}.
         semantic_type (str): Semantic type of this resource (unused) Example: custom.
         type_name (str): The type name of this catalog type, to be used when defining attributes. This is immutable once
             a CatalogType has been created. For non-externally sync types, it must follow the pattern Custom["SomeName "]

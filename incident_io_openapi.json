@@ -7732,6 +7732,7 @@
       "CatalogTypeAttributePayloadV2RequestBody": {
         "example": {
           "array": false,
+          "backlink_attribute": "abc123",
           "id": "01GW2G3V0S59R238FAHPDS1R66",
           "mode": "manual",
           "name": "tier",
@@ -7742,6 +7743,11 @@
             "description": "Whether this attribute is an array",
             "example": false,
             "type": "boolean"
+          },
+          "backlink_attribute": {
+            "description": "The attribute to use (if this is a backlink)",
+            "example": "abc123",
+            "type": "string"
           },
           "id": {
             "description": "The ID of this attribute",
@@ -7783,6 +7789,7 @@
       "CatalogTypeAttributeV2ResponseBody": {
         "example": {
           "array": false,
+          "backlink_attribute": "abc123",
           "id": "01GW2G3V0S59R238FAHPDS1R66",
           "mode": "manual",
           "name": "tier",
@@ -7793,6 +7800,11 @@
             "description": "Whether this attribute is an array",
             "example": false,
             "type": "boolean"
+          },
+          "backlink_attribute": {
+            "description": "The attribute to use (if this is a backlink)",
+            "example": "abc123",
+            "type": "string"
           },
           "id": {
             "description": "The ID of this attribute",
@@ -7838,6 +7850,7 @@
           "attributes": [
             {
               "array": false,
+              "backlink_attribute": "abc123",
               "id": "01GW2G3V0S59R238FAHPDS1R66",
               "mode": "manual",
               "name": "tier",
@@ -7852,6 +7865,7 @@
             "example": [
               {
                 "array": false,
+                "backlink_attribute": "abc123",
                 "id": "01GW2G3V0S59R238FAHPDS1R66",
                 "mode": "manual",
                 "name": "tier",
@@ -7901,6 +7915,7 @@
             "attributes": [
               {
                 "array": false,
+                "backlink_attribute": "abc123",
                 "id": "01GW2G3V0S59R238FAHPDS1R66",
                 "mode": "manual",
                 "name": "tier",
@@ -8363,6 +8378,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -8469,6 +8485,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -8626,6 +8643,7 @@
                 "attributes": [
                   {
                     "array": false,
+                    "backlink_attribute": "abc123",
                     "id": "01GW2G3V0S59R238FAHPDS1R66",
                     "mode": "manual",
                     "name": "tier",
@@ -8667,6 +8685,7 @@
                   "attributes": [
                     {
                       "array": false,
+                      "backlink_attribute": "abc123",
                       "id": "01GW2G3V0S59R238FAHPDS1R66",
                       "mode": "manual",
                       "name": "tier",
@@ -8772,6 +8791,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -8826,6 +8846,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -9012,6 +9033,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -9163,6 +9185,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -9193,6 +9216,7 @@
           "attributes": [
             {
               "array": false,
+              "backlink_attribute": "abc123",
               "id": "01GW2G3V0S59R238FAHPDS1R66",
               "mode": "manual",
               "name": "tier",
@@ -9206,6 +9230,7 @@
             "example": [
               {
                 "array": false,
+                "backlink_attribute": "abc123",
                 "id": "01GW2G3V0S59R238FAHPDS1R66",
                 "mode": "manual",
                 "name": "tier",
@@ -9255,6 +9280,7 @@
               "attributes": [
                 {
                   "array": false,
+                  "backlink_attribute": "abc123",
                   "id": "01GW2G3V0S59R238FAHPDS1R66",
                   "mode": "manual",
                   "name": "tier",
@@ -13469,6 +13495,7 @@
           "created_at": "2021-08-17T13:28:57.801578Z",
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "merged_into_incident_id": "abc123",
           "message": "We're working on a fix, hoping to ship in the next 30 minutes",
           "new_incident_status": {
             "category": "triage",
@@ -13518,6 +13545,11 @@
             "example": "01FCNDV6P870EA6S7TK1DSYDG0",
             "type": "string"
           },
+          "merged_into_incident_id": {
+            "description": "The ID of the incident that this incident was merged into, if it was merged in to another incident",
+            "example": "abc123",
+            "type": "string"
+          },
           "message": {
             "description": "Message that explains the context behind the update",
             "example": "We're working on a fix, hoping to ship in the next 30 minutes",
@@ -13550,6 +13582,7 @@
               "created_at": "2021-08-17T13:28:57.801578Z",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "merged_into_incident_id": "abc123",
               "message": "We're working on a fix, hoping to ship in the next 30 minutes",
               "new_incident_status": {
                 "category": "triage",
@@ -13595,6 +13628,7 @@
                 "created_at": "2021-08-17T13:28:57.801578Z",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "incident_id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "merged_into_incident_id": "abc123",
                 "message": "We're working on a fix, hoping to ship in the next 30 minutes",
                 "new_incident_status": {
                   "category": "triage",
