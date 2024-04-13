@@ -1,3 +1,10 @@
+## 0.44.4 (2024-04-13)
+
+### Fix
+
+- **deps-dev**: bump mkdocstrings-python from 1.9.0 to 1.9.2 (#441)
+- **deps-dev**: bump mkdocs-material from 9.5.16 to 9.5.17 (#440)
+
 ## 0.44.3 (2024-04-13)
 
 ### Fix
