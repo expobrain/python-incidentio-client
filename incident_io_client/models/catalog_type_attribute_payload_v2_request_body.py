@@ -15,13 +15,14 @@ T = TypeVar("T", bound="CatalogTypeAttributePayloadV2RequestBody")
 class CatalogTypeAttributePayloadV2RequestBody:
     """
     Example:
-        {'array': False, 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'type':
-            'Custom["Service"]'}
+        {'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name':
+            'tier', 'type': 'Custom["Service"]'}
 
     Attributes:
         array (bool): Whether this attribute is an array
         name (str): Unique name of this attribute Example: tier.
         type (str): Catalog type name for this attribute Example: Custom["Service"].
+        backlink_attribute (Union[Unset, str]): The attribute to use (if this is a backlink) Example: abc123.
         id (Union[Unset, str]): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
         mode (Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode]): Controls how this attribute is modified
             Example: manual.
@@ -30,6 +31,7 @@ class CatalogTypeAttributePayloadV2RequestBody:
     array: bool
     name: str
     type: str
+    backlink_attribute: Union[Unset, str] = UNSET
     id: Union[Unset, str] = UNSET
     mode: Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -40,6 +42,8 @@ class CatalogTypeAttributePayloadV2RequestBody:
         name = self.name
 
         type = self.type
+
+        backlink_attribute = self.backlink_attribute
 
         id = self.id
 
@@ -56,6 +60,8 @@ class CatalogTypeAttributePayloadV2RequestBody:
                 "type": type,
             }
         )
+        if backlink_attribute is not UNSET:
+            field_dict["backlink_attribute"] = backlink_attribute
         if id is not UNSET:
             field_dict["id"] = id
         if mode is not UNSET:
@@ -72,6 +78,8 @@ class CatalogTypeAttributePayloadV2RequestBody:
 
         type = d.pop("type")
 
+        backlink_attribute = d.pop("backlink_attribute", UNSET)
+
         id = d.pop("id", UNSET)
 
         _mode = d.pop("mode", UNSET)
@@ -85,6 +93,7 @@ class CatalogTypeAttributePayloadV2RequestBody:
             array=array,
             name=name,
             type=type,
+            backlink_attribute=backlink_attribute,
             id=id,
             mode=mode,
         )
