@@ -1,3 +1,10 @@
+## 0.44.2 (2024-04-13)
+
+### Fix
+
+- **deps**: bump idna from 3.3 to 3.7 (#443)
+- **deps-dev**: bump openapi-python-client from 0.19.0 to 0.19.1 (#438)
+
 ## 0.44.1 (2024-04-01)
 
 ### Fix
