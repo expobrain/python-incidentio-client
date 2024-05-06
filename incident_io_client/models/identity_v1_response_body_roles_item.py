@@ -9,6 +9,8 @@ class IdentityV1ResponseBodyRolesItem(str, Enum):
     INCIDENT_EDITOR = "incident_editor"
     INCIDENT_MEMBERSHIPS_EDITOR = "incident_memberships_editor"
     MANAGE_SETTINGS = "manage_settings"
+    SCHEDULES_EDITOR = "schedules_editor"
+    SCHEDULES_READER = "schedules_reader"
     VIEWER = "viewer"
 
     def __str__(self) -> str:
