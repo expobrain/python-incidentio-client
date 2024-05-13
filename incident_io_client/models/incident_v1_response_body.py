@@ -88,7 +88,8 @@ class IncidentV1ResponseBody:
             retrospective incident Example: real.
         name (str): Explanation of the incident Example: Our database is sad.
         reference (str): Reference to this incident, as displayed across the product Example: INC-123.
-        slack_channel_id (str): ID of the Slack channel in the organisation Slack workspace Example: C02AW36C1M5.
+        slack_channel_id (str): ID of the Slack channel in the organisation Slack workspace. Note that the channel is
+            sometimes created asynchronously, so may not be present when the incident is just created. Example: C02AW36C1M5.
         slack_team_id (str): ID of the Slack team / workspace. This is only required if you are using a Slack Enterprise
             Grid with multiple teams. Example: T02A1FSLE8J.
         status (IncidentV1ResponseBodyStatus): Current status of the incident Example: triage.
