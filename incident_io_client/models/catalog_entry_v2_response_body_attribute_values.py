@@ -4,8 +4,8 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.engine_param_binding_v2_response_body import (
-        EngineParamBindingV2ResponseBody,
+    from ..models.catalog_entry_engine_param_binding_v2_response_body import (
+        CatalogEntryEngineParamBindingV2ResponseBody,
     )
 
 
@@ -32,8 +32,8 @@ class CatalogEntryV2ResponseBodyAttributeValues:
 
     """
 
-    additional_properties: Dict[str, "EngineParamBindingV2ResponseBody"] = _attrs_field(
-        init=False, factory=dict
+    additional_properties: Dict[str, "CatalogEntryEngineParamBindingV2ResponseBody"] = (
+        _attrs_field(init=False, factory=dict)
     )
 
     def to_dict(self) -> Dict[str, Any]:
@@ -45,8 +45,8 @@ class CatalogEntryV2ResponseBodyAttributeValues:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.engine_param_binding_v2_response_body import (
-            EngineParamBindingV2ResponseBody,
+        from ..models.catalog_entry_engine_param_binding_v2_response_body import (
+            CatalogEntryEngineParamBindingV2ResponseBody,
         )
 
         d = src_dict.copy()
@@ -54,7 +54,7 @@ class CatalogEntryV2ResponseBodyAttributeValues:
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = EngineParamBindingV2ResponseBody.from_dict(prop_dict)
+            additional_property = CatalogEntryEngineParamBindingV2ResponseBody.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
@@ -67,10 +67,10 @@ class CatalogEntryV2ResponseBodyAttributeValues:
     def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> "EngineParamBindingV2ResponseBody":
+    def __getitem__(self, key: str) -> "CatalogEntryEngineParamBindingV2ResponseBody":
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: "EngineParamBindingV2ResponseBody") -> None:
+    def __setitem__(self, key: str, value: "CatalogEntryEngineParamBindingV2ResponseBody") -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

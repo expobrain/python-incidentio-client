@@ -16,11 +16,12 @@ class IncidentRolesV1CreateRequestBody:
 
     Attributes:
         description (str): Describes the purpose of the role Example: The person currently coordinating the incident.
-        instructions (str): Provided to whoever is nominated for the role Example: Take point on the incident; Make sure
-            people are clear on responsibilities.
+        instructions (str): Provided to whoever is nominated for the role. Note that this will be empty for the
+            'reporter' role. Example: Take point on the incident; Make sure people are clear on responsibilities.
         name (str): Human readable name of the incident role Example: Incident Lead.
         required (bool): DEPRECATED: this will always be false.
-        shortform (str): Short human readable name for Slack Example: lead.
+        shortform (str): Short human readable name for Slack. Note that this will be empty for the 'reporter' role.
+            Example: lead.
     """
 
     description: str

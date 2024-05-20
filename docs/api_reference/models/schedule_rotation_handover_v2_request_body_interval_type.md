@@ -1,0 +1,3 @@
+# incident_io_client.models.schedule_rotation_handover_v2_request_body_interval_type
+
+::: incident_io_client.models.schedule_rotation_handover_v2_request_body_interval_type

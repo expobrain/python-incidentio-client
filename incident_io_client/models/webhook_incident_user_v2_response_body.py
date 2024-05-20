@@ -17,7 +17,8 @@ class WebhookIncidentUserV2ResponseBody:
     Attributes:
         incident_id (str): The ID of the incident Example: abc123.
         user_id (str): The ID of the user Example: abc123.
-        actor_user_id (Union[Unset, str]): The ID of the user who performed this action Example: abc123.
+        actor_user_id (Union[Unset, str]): The ID of the user who performed this action. If the action was not taken by
+            a user, for example it was taken by a Workflow, this will be empty. Example: abc123.
     """
 
     incident_id: str

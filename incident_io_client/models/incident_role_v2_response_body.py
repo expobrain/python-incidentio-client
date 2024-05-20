@@ -22,15 +22,16 @@ class IncidentRoleV2ResponseBody:
             '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
-        created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
+        created_at (datetime.datetime): When the role was created Example: 2021-08-17T13:28:57.801578Z.
         description (str): Describes the purpose of the role Example: The person currently coordinating the incident.
         id (str): Unique identifier for the role Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        instructions (str): Provided to whoever is nominated for the role Example: Take point on the incident; Make sure
-            people are clear on responsibilities.
+        instructions (str): Provided to whoever is nominated for the role. Note that this will be empty for the
+            'reporter' role. Example: Take point on the incident; Make sure people are clear on responsibilities.
         name (str): Human readable name of the incident role Example: Incident Lead.
         role_type (IncidentRoleV2ResponseBodyRoleType): Type of incident role Example: lead.
-        shortform (str): Short human readable name for Slack Example: lead.
-        updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
+        shortform (str): Short human readable name for Slack. Note that this will be empty for the 'reporter' role.
+            Example: lead.
+        updated_at (datetime.datetime): When the role was last updated Example: 2021-08-17T13:28:57.801578Z.
     """
 
     created_at: datetime.datetime
