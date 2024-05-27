@@ -15,6 +15,7 @@ def _get_kwargs(
     after: Union[Unset, str] = UNSET,
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
+    created_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -30,6 +31,8 @@ def _get_kwargs(
     params["status"] = status
 
     params["status_category"] = status_category
+
+    params["created_at"] = created_at
 
     params["severity"] = severity
 
@@ -83,6 +86,7 @@ def sync_detailed(
     after: Union[Unset, str] = UNSET,
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
+    created_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -120,6 +124,15 @@ def sync_detailed(
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
+
+    ### By created_at
+
+    Find all incidents created_at before or after a given date.
+    Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
+    following example finds all incidents created before or on 2021-01-02:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'created_at[lte]=2021-01-02'
 
     ### By status category
 
@@ -217,6 +230,7 @@ def sync_detailed(
         after (Union[Unset, str]):
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
+        created_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -236,6 +250,7 @@ def sync_detailed(
         after=after,
         status=status,
         status_category=status_category,
+        created_at=created_at,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -257,6 +272,7 @@ def sync(
     after: Union[Unset, str] = UNSET,
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
+    created_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -294,6 +310,15 @@ def sync(
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
+
+    ### By created_at
+
+    Find all incidents created_at before or after a given date.
+    Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
+    following example finds all incidents created before or on 2021-01-02:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'created_at[lte]=2021-01-02'
 
     ### By status category
 
@@ -391,6 +416,7 @@ def sync(
         after (Union[Unset, str]):
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
+        created_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -411,6 +437,7 @@ def sync(
         after=after,
         status=status,
         status_category=status_category,
+        created_at=created_at,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -426,6 +453,7 @@ async def asyncio_detailed(
     after: Union[Unset, str] = UNSET,
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
+    created_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -464,6 +492,15 @@ async def asyncio_detailed(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
 
+    ### By created_at
+
+    Find all incidents created_at before or after a given date.
+    Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
+    following example finds all incidents created before or on 2021-01-02:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'created_at[lte]=2021-01-02'
+
     ### By status category
 
     Find all incidents that are in a status category. Possible values are \"triage\",
@@ -560,6 +597,7 @@ async def asyncio_detailed(
         after (Union[Unset, str]):
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
+        created_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -579,6 +617,7 @@ async def asyncio_detailed(
         after=after,
         status=status,
         status_category=status_category,
+        created_at=created_at,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -598,6 +637,7 @@ async def asyncio(
     after: Union[Unset, str] = UNSET,
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
+    created_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -636,6 +676,15 @@ async def asyncio(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
 
+    ### By created_at
+
+    Find all incidents created_at before or after a given date.
+    Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
+    following example finds all incidents created before or on 2021-01-02:
+
+    		curl --get 'https://api.incident.io/v2/incidents' \
+    			--data 'created_at[lte]=2021-01-02'
+
     ### By status category
 
     Find all incidents that are in a status category. Possible values are \"triage\",
@@ -732,6 +781,7 @@ async def asyncio(
         after (Union[Unset, str]):
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
+        created_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -753,6 +803,7 @@ async def asyncio(
             after=after,
             status=status,
             status_category=status_category,
+            created_at=created_at,
             severity=severity,
             incident_type=incident_type,
             incident_role=incident_role,

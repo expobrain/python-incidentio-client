@@ -79,7 +79,8 @@ def sync_detailed(
             'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            'retrospective_incident_options': {'postmortem_document_url':
+            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
             don't know why yet.", 'visibility': 'public'}.
@@ -128,7 +129,8 @@ def sync(
             'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            'retrospective_incident_options': {'postmortem_document_url':
+            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
             don't know why yet.", 'visibility': 'public'}.
@@ -172,7 +174,8 @@ async def asyncio_detailed(
             'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            'retrospective_incident_options': {'postmortem_document_url':
+            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
             don't know why yet.", 'visibility': 'public'}.
@@ -219,7 +222,8 @@ async def asyncio(
             'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
+            'retrospective_incident_options': {'postmortem_document_url':
+            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
             don't know why yet.", 'visibility': 'public'}.
