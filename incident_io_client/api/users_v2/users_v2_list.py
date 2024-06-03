@@ -11,10 +11,16 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
+    email: Union[Unset, str] = UNSET,
+    slack_user_id: Union[Unset, str] = UNSET,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
+
+    params["email"] = email
+
+    params["slack_user_id"] = slack_user_id
 
     params["page_size"] = page_size
 
@@ -58,6 +64,8 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
+    email: Union[Unset, str] = UNSET,
+    slack_user_id: Union[Unset, str] = UNSET,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
 ) -> Response[UsersV2ListResponseBody]:
@@ -66,6 +74,8 @@ def sync_detailed(
      List users for an organisation.
 
     Args:
+        email (Union[Unset, str]):
+        slack_user_id (Union[Unset, str]):
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
 
@@ -78,6 +88,8 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        email=email,
+        slack_user_id=slack_user_id,
         page_size=page_size,
         after=after,
     )
@@ -92,6 +104,8 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
+    email: Union[Unset, str] = UNSET,
+    slack_user_id: Union[Unset, str] = UNSET,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
 ) -> Optional[UsersV2ListResponseBody]:
@@ -100,6 +114,8 @@ def sync(
      List users for an organisation.
 
     Args:
+        email (Union[Unset, str]):
+        slack_user_id (Union[Unset, str]):
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
 
@@ -113,6 +129,8 @@ def sync(
 
     return sync_detailed(
         client=client,
+        email=email,
+        slack_user_id=slack_user_id,
         page_size=page_size,
         after=after,
     ).parsed
@@ -121,6 +139,8 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
+    email: Union[Unset, str] = UNSET,
+    slack_user_id: Union[Unset, str] = UNSET,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
 ) -> Response[UsersV2ListResponseBody]:
@@ -129,6 +149,8 @@ async def asyncio_detailed(
      List users for an organisation.
 
     Args:
+        email (Union[Unset, str]):
+        slack_user_id (Union[Unset, str]):
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
 
@@ -141,6 +163,8 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        email=email,
+        slack_user_id=slack_user_id,
         page_size=page_size,
         after=after,
     )
@@ -153,6 +177,8 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
+    email: Union[Unset, str] = UNSET,
+    slack_user_id: Union[Unset, str] = UNSET,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
 ) -> Optional[UsersV2ListResponseBody]:
@@ -161,6 +187,8 @@ async def asyncio(
      List users for an organisation.
 
     Args:
+        email (Union[Unset, str]):
+        slack_user_id (Union[Unset, str]):
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
 
@@ -175,6 +203,8 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
+            email=email,
+            slack_user_id=slack_user_id,
             page_size=page_size,
             after=after,
         )

@@ -8,7 +8,7 @@ from ..models.webhooks_public_incident_incident_updated_v2_response_body_event_t
 )
 
 if TYPE_CHECKING:
-    from ..models.incident_v2_response_body import IncidentV2ResponseBody
+    from ..models.webhook_incident_v2_response_body import WebhookIncidentV2ResponseBody
 
 
 T = TypeVar("T", bound="WebhooksPublicIncidentIncidentUpdatedV2ResponseBody")
@@ -47,22 +47,23 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'name': 'Our database is sad', 'permalink':
             'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
-            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
-            **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
-            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}}
+            'reference': 'INC-123', 'related_incidents': ['INC-237'], 'severity': {'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5',
+            'slack_channel_name': 'inc-165-green-parrot', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really
+            really sad, and we don't know why yet.", 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public',
+            'workload_minutes_late': 40.7, 'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7,
+            'workload_minutes_working': 20}}
 
     Attributes:
         event_type (WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType): What type of event is this webhook
             for? Example: public_incident.incident_updated_v2.
-        public_incident_incident_updated_v2 (IncidentV2ResponseBody):  Example: {'call_url': 'https://zoom.us/foo',
-            'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
-            'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa
-            Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}, 'custom_field_entries': [{'custom_field':
-            {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+        public_incident_incident_updated_v2 (WebhookIncidentV2ResponseBody):  Example: {'call_url':
+            'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
+            'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
             'values': [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
@@ -86,16 +87,17 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'name': 'Our database is sad', 'permalink':
             'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
-            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
-            **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
-            'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}.
+            'reference': 'INC-123', 'related_incidents': ['INC-237'], 'severity': {'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5',
+            'slack_channel_name': 'inc-165-green-parrot', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really
+            really sad, and we don't know why yet.", 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public',
+            'workload_minutes_late': 40.7, 'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7,
+            'workload_minutes_working': 20}.
     """
 
     event_type: WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType
-    public_incident_incident_updated_v2: "IncidentV2ResponseBody"
+    public_incident_incident_updated_v2: "WebhookIncidentV2ResponseBody"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -116,14 +118,16 @@ class WebhooksPublicIncidentIncidentUpdatedV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_v2_response_body import IncidentV2ResponseBody
+        from ..models.webhook_incident_v2_response_body import (
+            WebhookIncidentV2ResponseBody,
+        )
 
         d = src_dict.copy()
         event_type = WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType(
             d.pop("event_type")
         )
 
-        public_incident_incident_updated_v2 = IncidentV2ResponseBody.from_dict(
+        public_incident_incident_updated_v2 = WebhookIncidentV2ResponseBody.from_dict(
             d.pop("public_incident.incident_updated_v2")
         )
 
