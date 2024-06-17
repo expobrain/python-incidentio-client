@@ -42,10 +42,10 @@ class IncidentsV2CreateRequestBody:
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name':
-            'Our database is sad', 'retrospective_incident_options': {'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down', 'slack_team_id':
-            'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.", 'visibility':
-            'public'}
+            'Our database is sad', 'retrospective_incident_options': {'postmortem_document_url':
+            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'slack_channel_name_override': 'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database
+            is really really sad, and we don't know why yet.", 'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
@@ -73,7 +73,7 @@ class IncidentsV2CreateRequestBody:
             importing as a retrospective incident Example: standard.
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         retrospective_incident_options (Union[Unset, RetrospectiveIncidentOptionsV2RequestBody]):  Example:
-            {'slack_channel_id': 'abc123'}.
+            {'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}.
         severity_id (Union[Unset, str]): Severity to create incident as Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
         slack_channel_name_override (Union[Unset, str]): Name of the Slack channel to create for this incident Example:
             inc-123-database-down.
