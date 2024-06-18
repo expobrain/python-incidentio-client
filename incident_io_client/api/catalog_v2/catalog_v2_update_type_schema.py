@@ -82,7 +82,8 @@ def sync_detailed(
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
             'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
+            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
+            'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -125,7 +126,8 @@ def sync(
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
             'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
+            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
+            'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -163,7 +165,8 @@ async def asyncio_detailed(
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
             'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
+            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
+            'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -204,7 +207,8 @@ async def asyncio(
         id (str):
         body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
             'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}.
+            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
+            'version': 1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

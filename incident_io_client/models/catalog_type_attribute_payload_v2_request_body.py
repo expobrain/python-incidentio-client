@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -8,6 +8,12 @@ from ..models.catalog_type_attribute_payload_v2_request_body_mode import (
 )
 from ..types import UNSET, Unset
 
+if TYPE_CHECKING:
+    from ..models.catalog_type_attribute_path_item_payload_v2_request_body import (
+        CatalogTypeAttributePathItemPayloadV2RequestBody,
+    )
+
+
 T = TypeVar("T", bound="CatalogTypeAttributePayloadV2RequestBody")
 
 
@@ -16,7 +22,7 @@ class CatalogTypeAttributePayloadV2RequestBody:
     """
     Example:
         {'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name':
-            'tier', 'type': 'Custom["Service"]'}
+            'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}
 
     Attributes:
         array (bool): Whether this attribute is an array
@@ -26,6 +32,8 @@ class CatalogTypeAttributePayloadV2RequestBody:
         id (Union[Unset, str]): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
         mode (Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode]): Controls how this attribute is modified
             Example: manual.
+        path (Union[Unset, List['CatalogTypeAttributePathItemPayloadV2RequestBody']]): The path to use (if this is an
+            path) Example: [{'attribute_id': 'abc123'}].
     """
 
     array: bool
@@ -34,6 +42,7 @@ class CatalogTypeAttributePayloadV2RequestBody:
     backlink_attribute: Union[Unset, str] = UNSET
     id: Union[Unset, str] = UNSET
     mode: Union[Unset, CatalogTypeAttributePayloadV2RequestBodyMode] = UNSET
+    path: Union[Unset, List["CatalogTypeAttributePathItemPayloadV2RequestBody"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -51,6 +60,13 @@ class CatalogTypeAttributePayloadV2RequestBody:
         if not isinstance(self.mode, Unset):
             mode = self.mode.value
 
+        path: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.path, Unset):
+            path = []
+            for path_item_data in self.path:
+                path_item = path_item_data.to_dict()
+                path.append(path_item)
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -66,11 +82,17 @@ class CatalogTypeAttributePayloadV2RequestBody:
             field_dict["id"] = id
         if mode is not UNSET:
             field_dict["mode"] = mode
+        if path is not UNSET:
+            field_dict["path"] = path
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.catalog_type_attribute_path_item_payload_v2_request_body import (
+            CatalogTypeAttributePathItemPayloadV2RequestBody,
+        )
+
         d = src_dict.copy()
         array = d.pop("array")
 
@@ -89,6 +111,13 @@ class CatalogTypeAttributePayloadV2RequestBody:
         else:
             mode = CatalogTypeAttributePayloadV2RequestBodyMode(_mode)
 
+        path = []
+        _path = d.pop("path", UNSET)
+        for path_item_data in _path or []:
+            path_item = CatalogTypeAttributePathItemPayloadV2RequestBody.from_dict(path_item_data)
+
+            path.append(path_item)
+
         catalog_type_attribute_payload_v2_request_body = cls(
             array=array,
             name=name,
@@ -96,6 +125,7 @@ class CatalogTypeAttributePayloadV2RequestBody:
             backlink_attribute=backlink_attribute,
             id=id,
             mode=mode,
+            path=path,
         )
 
         catalog_type_attribute_payload_v2_request_body.additional_properties = d

@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -8,6 +8,12 @@ from ..models.catalog_type_attribute_v2_response_body_mode import (
 )
 from ..types import UNSET, Unset
 
+if TYPE_CHECKING:
+    from ..models.catalog_type_attribute_path_item_v2_response_body import (
+        CatalogTypeAttributePathItemV2ResponseBody,
+    )
+
+
 T = TypeVar("T", bound="CatalogTypeAttributeV2ResponseBody")
 
 
@@ -16,7 +22,7 @@ class CatalogTypeAttributeV2ResponseBody:
     """
     Example:
         {'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name':
-            'tier', 'type': 'Custom["Service"]'}
+            'tier', 'path': [{'attribute_id': 'abc123', 'attribute_name': 'abc123'}], 'type': 'Custom["Service"]'}
 
     Attributes:
         array (bool): Whether this attribute is an array
@@ -25,6 +31,8 @@ class CatalogTypeAttributeV2ResponseBody:
         name (str): Unique name of this attribute Example: tier.
         type (str): Catalog type name for this attribute Example: Custom["Service"].
         backlink_attribute (Union[Unset, str]): The attribute to use (if this is a backlink) Example: abc123.
+        path (Union[Unset, List['CatalogTypeAttributePathItemV2ResponseBody']]): The path to use (if this is a path
+            attribute) Example: [{'attribute_id': 'abc123', 'attribute_name': 'abc123'}].
     """
 
     array: bool
@@ -33,6 +41,7 @@ class CatalogTypeAttributeV2ResponseBody:
     name: str
     type: str
     backlink_attribute: Union[Unset, str] = UNSET
+    path: Union[Unset, List["CatalogTypeAttributePathItemV2ResponseBody"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -48,6 +57,13 @@ class CatalogTypeAttributeV2ResponseBody:
 
         backlink_attribute = self.backlink_attribute
 
+        path: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.path, Unset):
+            path = []
+            for path_item_data in self.path:
+                path_item = path_item_data.to_dict()
+                path.append(path_item)
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -61,11 +77,17 @@ class CatalogTypeAttributeV2ResponseBody:
         )
         if backlink_attribute is not UNSET:
             field_dict["backlink_attribute"] = backlink_attribute
+        if path is not UNSET:
+            field_dict["path"] = path
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.catalog_type_attribute_path_item_v2_response_body import (
+            CatalogTypeAttributePathItemV2ResponseBody,
+        )
+
         d = src_dict.copy()
         array = d.pop("array")
 
@@ -79,6 +101,13 @@ class CatalogTypeAttributeV2ResponseBody:
 
         backlink_attribute = d.pop("backlink_attribute", UNSET)
 
+        path = []
+        _path = d.pop("path", UNSET)
+        for path_item_data in _path or []:
+            path_item = CatalogTypeAttributePathItemV2ResponseBody.from_dict(path_item_data)
+
+            path.append(path_item)
+
         catalog_type_attribute_v2_response_body = cls(
             array=array,
             id=id,
@@ -86,6 +115,7 @@ class CatalogTypeAttributeV2ResponseBody:
             name=name,
             type=type,
             backlink_attribute=backlink_attribute,
+            path=path,
         )
 
         catalog_type_attribute_v2_response_body.additional_properties = d

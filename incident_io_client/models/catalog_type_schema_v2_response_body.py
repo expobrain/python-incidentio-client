@@ -17,12 +17,13 @@ class CatalogTypeSchemaV2ResponseBody:
     """
     Example:
         {'attributes': [{'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode':
-            'manual', 'name': 'tier', 'type': 'Custom["Service"]'}], 'version': 1}
+            'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123', 'attribute_name': 'abc123'}], 'type':
+            'Custom["Service"]'}], 'version': 1}
 
     Attributes:
         attributes (List['CatalogTypeAttributeV2ResponseBody']): Attributes of this catalog type Example: [{'array':
             False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier',
-            'type': 'Custom["Service"]'}].
+            'path': [{'attribute_id': 'abc123', 'attribute_name': 'abc123'}], 'type': 'Custom["Service"]'}].
         version (int): The version number of this schema Example: 1.
     """
 
