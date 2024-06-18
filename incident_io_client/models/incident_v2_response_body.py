@@ -161,9 +161,9 @@ class IncidentV2ResponseBody:
     call_url: Union[Unset, str] = UNSET
     duration_metrics: Union[Unset, List["IncidentDurationMetricWithValueV2ResponseBody"]] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2ResponseBody"] = UNSET
-    incident_timestamp_values: Union[
-        Unset, List["IncidentTimestampWithValueV2ResponseBody"]
-    ] = UNSET
+    incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2ResponseBody"]] = (
+        UNSET
+    )
     incident_type: Union[Unset, "IncidentTypeV2ResponseBody"] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
