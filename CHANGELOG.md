@@ -1,3 +1,9 @@
+## 0.45.3 (2024-06-18)
+
+### Fix
+
+- **deps-dev**: bump the pip group with 2 updates (#480)
+
 ## 0.45.2 (2024-06-18)
 
 ### Fix
