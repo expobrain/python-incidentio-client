@@ -337,30 +337,30 @@ class WebhooksAllResponseBody:
     """
 
     event_type: WebhooksAllResponseBodyEventType
-    private_incident_action_created_v1: Union[
-        Unset, "WebhookPrivateResourceV2ResponseBody"
-    ] = UNSET
-    private_incident_action_updated_v1: Union[
-        Unset, "WebhookPrivateResourceV2ResponseBody"
-    ] = UNSET
-    private_incident_follow_up_created_v1: Union[
-        Unset, "WebhookPrivateResourceV2ResponseBody"
-    ] = UNSET
-    private_incident_follow_up_updated_v1: Union[
-        Unset, "WebhookPrivateResourceV2ResponseBody"
-    ] = UNSET
-    private_incident_incident_created_v2: Union[
-        Unset, "WebhookPrivateResourceV2ResponseBody"
-    ] = UNSET
-    private_incident_incident_updated_v2: Union[
-        Unset, "WebhookPrivateResourceV2ResponseBody"
-    ] = UNSET
-    private_incident_membership_granted_v1: Union[
-        Unset, "WebhookIncidentUserV2ResponseBody"
-    ] = UNSET
-    private_incident_membership_revoked_v1: Union[
-        Unset, "WebhookIncidentUserV2ResponseBody"
-    ] = UNSET
+    private_incident_action_created_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_action_updated_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_follow_up_created_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_follow_up_updated_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_incident_created_v2: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_incident_updated_v2: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_membership_granted_v1: Union[Unset, "WebhookIncidentUserV2ResponseBody"] = (
+        UNSET
+    )
+    private_incident_membership_revoked_v1: Union[Unset, "WebhookIncidentUserV2ResponseBody"] = (
+        UNSET
+    )
     public_incident_action_created_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
     public_incident_action_updated_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
     public_incident_follow_up_created_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
@@ -469,47 +469,47 @@ class WebhooksAllResponseBody:
         if private_incident_action_updated_v1 is not UNSET:
             field_dict["private_incident.action_updated_v1"] = private_incident_action_updated_v1
         if private_incident_follow_up_created_v1 is not UNSET:
-            field_dict[
-                "private_incident.follow_up_created_v1"
-            ] = private_incident_follow_up_created_v1
+            field_dict["private_incident.follow_up_created_v1"] = (
+                private_incident_follow_up_created_v1
+            )
         if private_incident_follow_up_updated_v1 is not UNSET:
-            field_dict[
-                "private_incident.follow_up_updated_v1"
-            ] = private_incident_follow_up_updated_v1
+            field_dict["private_incident.follow_up_updated_v1"] = (
+                private_incident_follow_up_updated_v1
+            )
         if private_incident_incident_created_v2 is not UNSET:
-            field_dict[
-                "private_incident.incident_created_v2"
-            ] = private_incident_incident_created_v2
+            field_dict["private_incident.incident_created_v2"] = (
+                private_incident_incident_created_v2
+            )
         if private_incident_incident_updated_v2 is not UNSET:
-            field_dict[
-                "private_incident.incident_updated_v2"
-            ] = private_incident_incident_updated_v2
+            field_dict["private_incident.incident_updated_v2"] = (
+                private_incident_incident_updated_v2
+            )
         if private_incident_membership_granted_v1 is not UNSET:
-            field_dict[
-                "private_incident.membership_granted_v1"
-            ] = private_incident_membership_granted_v1
+            field_dict["private_incident.membership_granted_v1"] = (
+                private_incident_membership_granted_v1
+            )
         if private_incident_membership_revoked_v1 is not UNSET:
-            field_dict[
-                "private_incident.membership_revoked_v1"
-            ] = private_incident_membership_revoked_v1
+            field_dict["private_incident.membership_revoked_v1"] = (
+                private_incident_membership_revoked_v1
+            )
         if public_incident_action_created_v1 is not UNSET:
             field_dict["public_incident.action_created_v1"] = public_incident_action_created_v1
         if public_incident_action_updated_v1 is not UNSET:
             field_dict["public_incident.action_updated_v1"] = public_incident_action_updated_v1
         if public_incident_follow_up_created_v1 is not UNSET:
-            field_dict[
-                "public_incident.follow_up_created_v1"
-            ] = public_incident_follow_up_created_v1
+            field_dict["public_incident.follow_up_created_v1"] = (
+                public_incident_follow_up_created_v1
+            )
         if public_incident_follow_up_updated_v1 is not UNSET:
-            field_dict[
-                "public_incident.follow_up_updated_v1"
-            ] = public_incident_follow_up_updated_v1
+            field_dict["public_incident.follow_up_updated_v1"] = (
+                public_incident_follow_up_updated_v1
+            )
         if public_incident_incident_created_v2 is not UNSET:
             field_dict["public_incident.incident_created_v2"] = public_incident_incident_created_v2
         if public_incident_incident_status_updated_v2 is not UNSET:
-            field_dict[
-                "public_incident.incident_status_updated_v2"
-            ] = public_incident_incident_status_updated_v2
+            field_dict["public_incident.incident_status_updated_v2"] = (
+                public_incident_incident_status_updated_v2
+            )
         if public_incident_incident_updated_v2 is not UNSET:
             field_dict["public_incident.incident_updated_v2"] = public_incident_incident_updated_v2
 
