@@ -1,3 +1,10 @@
+## 0.45.5 (2024-06-18)
+
+### Fix
+
+- **deps-dev**: bump black from 24.3.0 to 24.4.2 in /example (#457)
+- **deps-dev**: bump mkdocs-material from 9.5.17 to 9.5.27 (#479)
+
 ## 0.45.4 (2024-06-18)
 
 ### Fix
