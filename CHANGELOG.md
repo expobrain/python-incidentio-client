@@ -1,3 +1,9 @@
+## 0.45.6 (2024-06-18)
+
+### Fix
+
+- **deps-dev**: bump mkdocstrings-python from 1.9.2 to 1.10.4 (#481)
+
 ## 0.45.5 (2024-06-18)
 
 ### Fix
