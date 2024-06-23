@@ -1,3 +1,11 @@
+## 0.46.2 (2024-06-23)
+
+### Fix
+
+- **deps-dev**: bump mkdocstrings-python from 1.10.4 to 1.10.5 (#487)
+- **deps-dev**: bump types-pygments (#486)
+- **deps-dev**: bump commitizen from 3.24.0 to 3.27.0 (#485)
+
 ## 0.46.1 (2024-06-18)
 
 ### Fix
