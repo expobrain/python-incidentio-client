@@ -9,6 +9,7 @@ class IdentityV1ResponseBodyRolesItem(str, Enum):
     INCIDENT_EDITOR = "incident_editor"
     INCIDENT_MEMBERSHIPS_EDITOR = "incident_memberships_editor"
     MANAGE_SETTINGS = "manage_settings"
+    ON_CALL_EDITOR = "on_call_editor"
     PRIVATE_WORKFLOWS_EDITOR = "private_workflows_editor"
     SCHEDULES_EDITOR = "schedules_editor"
     SCHEDULES_READER = "schedules_reader"
