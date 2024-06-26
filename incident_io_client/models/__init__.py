@@ -497,6 +497,64 @@ from .engine_param_binding_value_v2_response_body import (
     EngineParamBindingValueV2ResponseBody,
 )
 from .engine_reference_v2_response_body import EngineReferenceV2ResponseBody
+from .escalation_path_node_if_else_payload_v2_request_body import (
+    EscalationPathNodeIfElsePayloadV2RequestBody,
+)
+from .escalation_path_node_if_else_v2_response_body import (
+    EscalationPathNodeIfElseV2ResponseBody,
+)
+from .escalation_path_node_level_v2_request_body import (
+    EscalationPathNodeLevelV2RequestBody,
+)
+from .escalation_path_node_level_v2_request_body_time_to_ack_interval_condition import (
+    EscalationPathNodeLevelV2RequestBodyTimeToAckIntervalCondition,
+)
+from .escalation_path_node_level_v2_response_body import (
+    EscalationPathNodeLevelV2ResponseBody,
+)
+from .escalation_path_node_level_v2_response_body_time_to_ack_interval_condition import (
+    EscalationPathNodeLevelV2ResponseBodyTimeToAckIntervalCondition,
+)
+from .escalation_path_node_payload_v2_request_body import (
+    EscalationPathNodePayloadV2RequestBody,
+)
+from .escalation_path_node_payload_v2_request_body_type import (
+    EscalationPathNodePayloadV2RequestBodyType,
+)
+from .escalation_path_node_repeat_v2_request_body import (
+    EscalationPathNodeRepeatV2RequestBody,
+)
+from .escalation_path_node_repeat_v2_response_body import (
+    EscalationPathNodeRepeatV2ResponseBody,
+)
+from .escalation_path_node_v2_response_body import EscalationPathNodeV2ResponseBody
+from .escalation_path_node_v2_response_body_type import (
+    EscalationPathNodeV2ResponseBodyType,
+)
+from .escalation_path_target_v2_request_body import EscalationPathTargetV2RequestBody
+from .escalation_path_target_v2_request_body_type import (
+    EscalationPathTargetV2RequestBodyType,
+)
+from .escalation_path_target_v2_request_body_urgency import (
+    EscalationPathTargetV2RequestBodyUrgency,
+)
+from .escalation_path_target_v2_response_body import EscalationPathTargetV2ResponseBody
+from .escalation_path_target_v2_response_body_type import (
+    EscalationPathTargetV2ResponseBodyType,
+)
+from .escalation_path_target_v2_response_body_urgency import (
+    EscalationPathTargetV2ResponseBodyUrgency,
+)
+from .escalation_path_v2_response_body import EscalationPathV2ResponseBody
+from .escalations_v2_create_path_request_body import EscalationsV2CreatePathRequestBody
+from .escalations_v2_create_path_response_body import (
+    EscalationsV2CreatePathResponseBody,
+)
+from .escalations_v2_show_path_response_body import EscalationsV2ShowPathResponseBody
+from .escalations_v2_update_path_request_body import EscalationsV2UpdatePathRequestBody
+from .escalations_v2_update_path_response_body import (
+    EscalationsV2UpdatePathResponseBody,
+)
 from .expression_branch_payload_v2_request_body import (
     ExpressionBranchPayloadV2RequestBody,
 )
@@ -945,6 +1003,12 @@ from .webhooks_public_incident_incident_updated_v2_response_body import (
 from .webhooks_public_incident_incident_updated_v2_response_body_event_type import (
     WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType,
 )
+from .weekday_interval_config_v2_request_body import WeekdayIntervalConfigV2RequestBody
+from .weekday_interval_config_v2_response_body import (
+    WeekdayIntervalConfigV2ResponseBody,
+)
+from .weekday_interval_v2_request_body import WeekdayIntervalV2RequestBody
+from .weekday_interval_v2_response_body import WeekdayIntervalV2ResponseBody
 from .workflow_delay_request_body import WorkflowDelayRequestBody
 from .workflow_delay_response_body import WorkflowDelayResponseBody
 from .workflow_response_body import WorkflowResponseBody
@@ -1226,6 +1290,30 @@ __all__ = (
     "EngineParamBindingValuePayloadV2RequestBody",
     "EngineParamBindingValueV2ResponseBody",
     "EngineReferenceV2ResponseBody",
+    "EscalationPathNodeIfElsePayloadV2RequestBody",
+    "EscalationPathNodeIfElseV2ResponseBody",
+    "EscalationPathNodeLevelV2RequestBody",
+    "EscalationPathNodeLevelV2RequestBodyTimeToAckIntervalCondition",
+    "EscalationPathNodeLevelV2ResponseBody",
+    "EscalationPathNodeLevelV2ResponseBodyTimeToAckIntervalCondition",
+    "EscalationPathNodePayloadV2RequestBody",
+    "EscalationPathNodePayloadV2RequestBodyType",
+    "EscalationPathNodeRepeatV2RequestBody",
+    "EscalationPathNodeRepeatV2ResponseBody",
+    "EscalationPathNodeV2ResponseBody",
+    "EscalationPathNodeV2ResponseBodyType",
+    "EscalationPathTargetV2RequestBody",
+    "EscalationPathTargetV2RequestBodyType",
+    "EscalationPathTargetV2RequestBodyUrgency",
+    "EscalationPathTargetV2ResponseBody",
+    "EscalationPathTargetV2ResponseBodyType",
+    "EscalationPathTargetV2ResponseBodyUrgency",
+    "EscalationPathV2ResponseBody",
+    "EscalationsV2CreatePathRequestBody",
+    "EscalationsV2CreatePathResponseBody",
+    "EscalationsV2ShowPathResponseBody",
+    "EscalationsV2UpdatePathRequestBody",
+    "EscalationsV2UpdatePathResponseBody",
     "ExpressionBranchesOptsPayloadV2RequestBody",
     "ExpressionBranchesOptsV2ResponseBody",
     "ExpressionBranchPayloadV2RequestBody",
@@ -1452,6 +1540,10 @@ __all__ = (
     "WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBodyEventType",
     "WebhooksPublicIncidentIncidentUpdatedV2ResponseBody",
     "WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType",
+    "WeekdayIntervalConfigV2RequestBody",
+    "WeekdayIntervalConfigV2ResponseBody",
+    "WeekdayIntervalV2RequestBody",
+    "WeekdayIntervalV2ResponseBody",
     "WorkflowDelayRequestBody",
     "WorkflowDelayResponseBody",
     "WorkflowResponseBody",

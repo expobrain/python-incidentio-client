@@ -1,0 +1,3 @@
+# incident_io_client.models.escalation_path_node_level_v2_response_body_time_to_ack_interval_condition
+
+::: incident_io_client.models.escalation_path_node_level_v2_response_body_time_to_ack_interval_condition
