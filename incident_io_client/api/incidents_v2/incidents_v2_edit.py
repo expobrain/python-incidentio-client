@@ -86,8 +86,9 @@ def sync_detailed(
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'slack_channel_name_override': 'inc-123-database-down', 'summary': "Our database is really
+            really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -138,8 +139,9 @@ def sync(
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'slack_channel_name_override': 'inc-123-database-down', 'summary': "Our database is really
+            really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -185,8 +187,9 @@ async def asyncio_detailed(
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'slack_channel_name_override': 'inc-123-database-down', 'summary': "Our database is really
+            really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -235,8 +238,9 @@ async def asyncio(
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our
-            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is
-            really really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
+            database is sad', 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
+            'slack_channel_name_override': 'inc-123-database-down', 'summary': "Our database is really
+            really sad, and we don't know why yet."}, 'notify_incident_channel': True}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -33,8 +33,8 @@ class AlertEventsV2CreateHTTPRequestBody:
         deduplication_key (Union[Unset, str]): A deduplication key can be provided to uniquely reference this alert from
             your alert source. If you send an event with the same deduplication_key multiple times, only one alert will be
             created in incident.io for this alert source config. Example: 4293868629.
-        description (Union[Unset, str]): Description that optionally adds more detail to title  Example: We've detected
-            a number of timeouts on hello.world.com, the service may be down. To fix....
+        description (Union[Unset, str]): Description that optionally adds more detail to title. Supports markdown.
+            Example: We've detected a number of timeouts on hello.world.com, the service may be down. To fix....
         metadata (Union[Unset, AlertEventsV2CreateHTTPRequestBodyMetadata]): Any additional metadata that you've
             configured your alert source to parse Example: {'service': 'hello.world.com', 'team': ['my-team']}.
         source_url (Union[Unset, str]): If applicable, a link to the alert in the upstream system Example:

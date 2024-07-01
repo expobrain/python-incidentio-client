@@ -351,6 +351,9 @@ from .catalog_type_v2_response_body import CatalogTypeV2ResponseBody
 from .catalog_type_v2_response_body_annotations import (
     CatalogTypeV2ResponseBodyAnnotations,
 )
+from .catalog_type_v2_response_body_categories_item import (
+    CatalogTypeV2ResponseBodyCategoriesItem,
+)
 from .catalog_type_v2_response_body_color import CatalogTypeV2ResponseBodyColor
 from .catalog_type_v2_response_body_icon import CatalogTypeV2ResponseBodyIcon
 from .catalog_v2_create_entry_request_body import CatalogV2CreateEntryRequestBody
@@ -361,6 +364,9 @@ from .catalog_v2_create_entry_response_body import CatalogV2CreateEntryResponseB
 from .catalog_v2_create_type_request_body import CatalogV2CreateTypeRequestBody
 from .catalog_v2_create_type_request_body_annotations import (
     CatalogV2CreateTypeRequestBodyAnnotations,
+)
+from .catalog_v2_create_type_request_body_categories_item import (
+    CatalogV2CreateTypeRequestBodyCategoriesItem,
 )
 from .catalog_v2_create_type_request_body_color import (
     CatalogV2CreateTypeRequestBodyColor,
@@ -380,6 +386,9 @@ from .catalog_v2_update_entry_response_body import CatalogV2UpdateEntryResponseB
 from .catalog_v2_update_type_request_body import CatalogV2UpdateTypeRequestBody
 from .catalog_v2_update_type_request_body_annotations import (
     CatalogV2UpdateTypeRequestBodyAnnotations,
+)
+from .catalog_v2_update_type_request_body_categories_item import (
+    CatalogV2UpdateTypeRequestBodyCategoriesItem,
 )
 from .catalog_v2_update_type_request_body_color import (
     CatalogV2UpdateTypeRequestBodyColor,
@@ -1206,6 +1215,7 @@ __all__ = (
     "CatalogTypeSchemaV2ResponseBody",
     "CatalogTypeV2ResponseBody",
     "CatalogTypeV2ResponseBodyAnnotations",
+    "CatalogTypeV2ResponseBodyCategoriesItem",
     "CatalogTypeV2ResponseBodyColor",
     "CatalogTypeV2ResponseBodyIcon",
     "CatalogV2CreateEntryRequestBody",
@@ -1213,6 +1223,7 @@ __all__ = (
     "CatalogV2CreateEntryResponseBody",
     "CatalogV2CreateTypeRequestBody",
     "CatalogV2CreateTypeRequestBodyAnnotations",
+    "CatalogV2CreateTypeRequestBodyCategoriesItem",
     "CatalogV2CreateTypeRequestBodyColor",
     "CatalogV2CreateTypeRequestBodyIcon",
     "CatalogV2CreateTypeResponseBody",
@@ -1226,6 +1237,7 @@ __all__ = (
     "CatalogV2UpdateEntryResponseBody",
     "CatalogV2UpdateTypeRequestBody",
     "CatalogV2UpdateTypeRequestBodyAnnotations",
+    "CatalogV2UpdateTypeRequestBodyCategoriesItem",
     "CatalogV2UpdateTypeRequestBodyColor",
     "CatalogV2UpdateTypeRequestBodyIcon",
     "CatalogV2UpdateTypeResponseBody",

@@ -16,6 +16,7 @@ def _get_kwargs(
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
     created_at: Union[Unset, Any] = UNSET,
+    updated_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -33,6 +34,8 @@ def _get_kwargs(
     params["status_category"] = status_category
 
     params["created_at"] = created_at
+
+    params["updated_at"] = updated_at
 
     params["severity"] = severity
 
@@ -87,6 +90,7 @@ def sync_detailed(
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
     created_at: Union[Unset, Any] = UNSET,
+    updated_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -125,11 +129,11 @@ def sync_detailed(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
 
-    ### By created_at
+    ### By created_at or updated_at
 
-    Find all incidents created_at before or after a given date.
+    Find all incidents that follow specified date parameters for created_at and updated_at fields.
     Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
-    following example finds all incidents created before or on 2021-01-02:
+    following example finds all incidents created before or on 2021-01-02T00:00:00Z:
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'created_at[lte]=2021-01-02'
@@ -231,6 +235,7 @@ def sync_detailed(
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
         created_at (Union[Unset, Any]):
+        updated_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -251,6 +256,7 @@ def sync_detailed(
         status=status,
         status_category=status_category,
         created_at=created_at,
+        updated_at=updated_at,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -273,6 +279,7 @@ def sync(
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
     created_at: Union[Unset, Any] = UNSET,
+    updated_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -311,11 +318,11 @@ def sync(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
 
-    ### By created_at
+    ### By created_at or updated_at
 
-    Find all incidents created_at before or after a given date.
+    Find all incidents that follow specified date parameters for created_at and updated_at fields.
     Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
-    following example finds all incidents created before or on 2021-01-02:
+    following example finds all incidents created before or on 2021-01-02T00:00:00Z:
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'created_at[lte]=2021-01-02'
@@ -417,6 +424,7 @@ def sync(
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
         created_at (Union[Unset, Any]):
+        updated_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -438,6 +446,7 @@ def sync(
         status=status,
         status_category=status_category,
         created_at=created_at,
+        updated_at=updated_at,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -454,6 +463,7 @@ async def asyncio_detailed(
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
     created_at: Union[Unset, Any] = UNSET,
+    updated_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -492,11 +502,11 @@ async def asyncio_detailed(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
 
-    ### By created_at
+    ### By created_at or updated_at
 
-    Find all incidents created_at before or after a given date.
+    Find all incidents that follow specified date parameters for created_at and updated_at fields.
     Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
-    following example finds all incidents created before or on 2021-01-02:
+    following example finds all incidents created before or on 2021-01-02T00:00:00Z:
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'created_at[lte]=2021-01-02'
@@ -598,6 +608,7 @@ async def asyncio_detailed(
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
         created_at (Union[Unset, Any]):
+        updated_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -618,6 +629,7 @@ async def asyncio_detailed(
         status=status,
         status_category=status_category,
         created_at=created_at,
+        updated_at=updated_at,
         severity=severity,
         incident_type=incident_type,
         incident_role=incident_role,
@@ -638,6 +650,7 @@ async def asyncio(
     status: Union[Unset, Any] = UNSET,
     status_category: Union[Unset, Any] = UNSET,
     created_at: Union[Unset, Any] = UNSET,
+    updated_at: Union[Unset, Any] = UNSET,
     severity: Union[Unset, Any] = UNSET,
     incident_type: Union[Unset, Any] = UNSET,
     incident_role: Union[Unset, Any] = UNSET,
@@ -676,11 +689,11 @@ async def asyncio(
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'status[not_in]=ABC'
 
-    ### By created_at
+    ### By created_at or updated_at
 
-    Find all incidents created_at before or after a given date.
+    Find all incidents that follow specified date parameters for created_at and updated_at fields.
     Possible values are \"gte\" (greater than or equal to) and \"lte\" (less than or equal to). The
-    following example finds all incidents created before or on 2021-01-02:
+    following example finds all incidents created before or on 2021-01-02T00:00:00Z:
 
     		curl --get 'https://api.incident.io/v2/incidents' \
     			--data 'created_at[lte]=2021-01-02'
@@ -782,6 +795,7 @@ async def asyncio(
         status (Union[Unset, Any]):
         status_category (Union[Unset, Any]):
         created_at (Union[Unset, Any]):
+        updated_at (Union[Unset, Any]):
         severity (Union[Unset, Any]):
         incident_type (Union[Unset, Any]):
         incident_role (Union[Unset, Any]):
@@ -804,6 +818,7 @@ async def asyncio(
             status=status,
             status_category=status_category,
             created_at=created_at,
+            updated_at=updated_at,
             severity=severity,
             incident_type=incident_type,
             incident_role=incident_role,

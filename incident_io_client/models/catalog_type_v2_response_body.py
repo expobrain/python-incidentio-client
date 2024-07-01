@@ -5,6 +5,9 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
+from ..models.catalog_type_v2_response_body_categories_item import (
+    CatalogTypeV2ResponseBodyCategoriesItem,
+)
 from ..models.catalog_type_v2_response_body_color import CatalogTypeV2ResponseBodyColor
 from ..models.catalog_type_v2_response_body_icon import CatalogTypeV2ResponseBodyIcon
 from ..types import UNSET, Unset
@@ -25,9 +28,9 @@ T = TypeVar("T", bound="CatalogTypeV2ResponseBody")
 class CatalogTypeV2ResponseBody:
     """
     Example:
-        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we run inside of GKE.',
-            'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'bolt', 'id':
+        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color':
+            'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we
+            run inside of GKE.', 'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'bolt', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'last_synced_at': '2021-08-17T13:28:57.801578Z', 'name':
             'Kubernetes Cluster', 'ranked': True, 'registry_type': 'PagerDutyService', 'required_integrations':
             ['pager_duty'], 'schema': {'attributes': [{'array': False, 'backlink_attribute': 'abc123', 'id':
@@ -39,6 +42,8 @@ class CatalogTypeV2ResponseBody:
     Attributes:
         annotations (CatalogTypeV2ResponseBodyAnnotations): Annotations that can track metadata about this type Example:
             {'incident.io/catalog-importer/id': 'id-of-config'}.
+        categories (List[CatalogTypeV2ResponseBodyCategoriesItem]): What categories is this type considered part of
+            Example: ['issue-tracker'].
         color (CatalogTypeV2ResponseBodyColor): Sets the display color of this type in the dashboard Example: yellow.
         created_at (datetime.datetime): When this type was created Example: 2021-08-17T13:28:57.801578Z.
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
@@ -70,6 +75,7 @@ class CatalogTypeV2ResponseBody:
     """
 
     annotations: "CatalogTypeV2ResponseBodyAnnotations"
+    categories: List[CatalogTypeV2ResponseBodyCategoriesItem]
     color: CatalogTypeV2ResponseBodyColor
     created_at: datetime.datetime
     description: str
@@ -92,6 +98,11 @@ class CatalogTypeV2ResponseBody:
 
     def to_dict(self) -> Dict[str, Any]:
         annotations = self.annotations.to_dict()
+
+        categories = []
+        for categories_item_data in self.categories:
+            categories_item = categories_item_data.value
+            categories.append(categories_item)
 
         color = self.color.value
 
@@ -138,6 +149,7 @@ class CatalogTypeV2ResponseBody:
         field_dict.update(
             {
                 "annotations": annotations,
+                "categories": categories,
                 "color": color,
                 "created_at": created_at,
                 "description": description,
@@ -178,6 +190,13 @@ class CatalogTypeV2ResponseBody:
 
         d = src_dict.copy()
         annotations = CatalogTypeV2ResponseBodyAnnotations.from_dict(d.pop("annotations"))
+
+        categories = []
+        _categories = d.pop("categories")
+        for categories_item_data in _categories:
+            categories_item = CatalogTypeV2ResponseBodyCategoriesItem(categories_item_data)
+
+            categories.append(categories_item)
 
         color = CatalogTypeV2ResponseBodyColor(d.pop("color"))
 
@@ -222,6 +241,7 @@ class CatalogTypeV2ResponseBody:
 
         catalog_type_v2_response_body = cls(
             annotations=annotations,
+            categories=categories,
             color=color,
             created_at=created_at,
             description=description,
