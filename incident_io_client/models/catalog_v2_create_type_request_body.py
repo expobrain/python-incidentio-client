@@ -3,6 +3,9 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.catalog_v2_create_type_request_body_categories_item import (
+    CatalogV2CreateTypeRequestBodyCategoriesItem,
+)
 from ..models.catalog_v2_create_type_request_body_color import (
     CatalogV2CreateTypeRequestBodyColor,
 )
@@ -24,10 +27,10 @@ T = TypeVar("T", bound="CatalogV2CreateTypeRequestBody")
 class CatalogV2CreateTypeRequestBody:
     """
     Example:
-        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'color': 'yellow', 'description':
-            'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name': 'Kubernetes Cluster',
-            'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog', 'type_name':
-            'Custom["BackstageGroup"]'}
+        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color':
+            'yellow', 'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
+            'Kubernetes Cluster', 'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog',
+            'type_name': 'Custom["BackstageGroup"]'}
 
     Attributes:
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
@@ -35,6 +38,8 @@ class CatalogV2CreateTypeRequestBody:
         name (str): Name is the human readable name of this type Example: Kubernetes Cluster.
         annotations (Union[Unset, CatalogV2CreateTypeRequestBodyAnnotations]): Annotations that can track metadata about
             this type Example: {'incident.io/catalog-importer/id': 'id-of-config'}.
+        categories (Union[Unset, List[CatalogV2CreateTypeRequestBodyCategoriesItem]]): What categories is this type
+            considered part of Example: ['issue-tracker'].
         color (Union[Unset, CatalogV2CreateTypeRequestBodyColor]): Sets the display color of this type in the dashboard
             Example: yellow.
         icon (Union[Unset, CatalogV2CreateTypeRequestBodyIcon]): Sets the display icon of this type in the dashboard
@@ -50,6 +55,7 @@ class CatalogV2CreateTypeRequestBody:
     description: str
     name: str
     annotations: Union[Unset, "CatalogV2CreateTypeRequestBodyAnnotations"] = UNSET
+    categories: Union[Unset, List[CatalogV2CreateTypeRequestBodyCategoriesItem]] = UNSET
     color: Union[Unset, CatalogV2CreateTypeRequestBodyColor] = UNSET
     icon: Union[Unset, CatalogV2CreateTypeRequestBodyIcon] = UNSET
     ranked: Union[Unset, bool] = UNSET
@@ -65,6 +71,13 @@ class CatalogV2CreateTypeRequestBody:
         annotations: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.annotations, Unset):
             annotations = self.annotations.to_dict()
+
+        categories: Union[Unset, List[str]] = UNSET
+        if not isinstance(self.categories, Unset):
+            categories = []
+            for categories_item_data in self.categories:
+                categories_item = categories_item_data.value
+                categories.append(categories_item)
 
         color: Union[Unset, str] = UNSET
         if not isinstance(self.color, Unset):
@@ -90,6 +103,8 @@ class CatalogV2CreateTypeRequestBody:
         )
         if annotations is not UNSET:
             field_dict["annotations"] = annotations
+        if categories is not UNSET:
+            field_dict["categories"] = categories
         if color is not UNSET:
             field_dict["color"] = color
         if icon is not UNSET:
@@ -121,6 +136,13 @@ class CatalogV2CreateTypeRequestBody:
         else:
             annotations = CatalogV2CreateTypeRequestBodyAnnotations.from_dict(_annotations)
 
+        categories = []
+        _categories = d.pop("categories", UNSET)
+        for categories_item_data in _categories or []:
+            categories_item = CatalogV2CreateTypeRequestBodyCategoriesItem(categories_item_data)
+
+            categories.append(categories_item)
+
         _color = d.pop("color", UNSET)
         color: Union[Unset, CatalogV2CreateTypeRequestBodyColor]
         if isinstance(_color, Unset):
@@ -145,6 +167,7 @@ class CatalogV2CreateTypeRequestBody:
             description=description,
             name=name,
             annotations=annotations,
+            categories=categories,
             color=color,
             icon=icon,
             ranked=ranked,

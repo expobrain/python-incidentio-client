@@ -24,8 +24,8 @@ class IncidentsV2EditRequestBody:
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
             'incident_status_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad',
-            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know
-            why yet."}, 'notify_incident_channel': True}
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down', 'summary':
+            "Our database is really really sad, and we don't know why yet."}, 'notify_incident_channel': True}
 
     Attributes:
         incident (IncidentEditPayloadV2RequestBody):  Example: {'call_url': 'https://zoom.us/foo',
@@ -37,8 +37,8 @@ class IncidentsV2EditRequestBody:
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id':
             '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad',
-            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know
-            why yet."}.
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down', 'summary':
+            "Our database is really really sad, and we don't know why yet."}.
         notify_incident_channel (bool): Should we send Slack channel notifications to inform responders of this update?
             Note that this won't work if the Slack channel has already been archived. Example: True.
     """
