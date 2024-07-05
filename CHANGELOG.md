@@ -1,3 +1,11 @@
+## 0.46.4 (2024-07-05)
+
+### Fix
+
+- **deps**: bump certifi from 2023.7.22 to 2024.7.4 in the pip group
+- **deps-dev**: bump mypy from 1.10.0 to 1.10.1 in /example
+- **deps-dev**: bump types-setuptools
+
 ## 0.46.3 (2024-07-05)
 
 ### Fix
