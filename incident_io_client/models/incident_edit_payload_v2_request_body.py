@@ -32,8 +32,8 @@ class IncidentEditPayloadV2RequestBody:
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
             'incident_status_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad',
-            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'summary': "Our database is really really sad, and we don't know
-            why yet."}
+            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down', 'summary':
+            "Our database is really really sad, and we don't know why yet."}
 
     Attributes:
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
@@ -53,6 +53,8 @@ class IncidentEditPayloadV2RequestBody:
             '2021-08-17T13:28:57.801578Z'}].
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
         severity_id (Union[Unset, str]): Severity to change incident to Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
+        slack_channel_name_override (Union[Unset, str]): Override the name of the incident Slack channel Example:
+            inc-123-database-down.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
     """
@@ -68,6 +70,7 @@ class IncidentEditPayloadV2RequestBody:
     )
     name: Union[Unset, str] = UNSET
     severity_id: Union[Unset, str] = UNSET
+    slack_channel_name_override: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -101,6 +104,8 @@ class IncidentEditPayloadV2RequestBody:
 
         severity_id = self.severity_id
 
+        slack_channel_name_override = self.slack_channel_name_override
+
         summary = self.summary
 
         field_dict: Dict[str, Any] = {}
@@ -120,6 +125,8 @@ class IncidentEditPayloadV2RequestBody:
             field_dict["name"] = name
         if severity_id is not UNSET:
             field_dict["severity_id"] = severity_id
+        if slack_channel_name_override is not UNSET:
+            field_dict["slack_channel_name_override"] = slack_channel_name_override
         if summary is not UNSET:
             field_dict["summary"] = summary
 
@@ -173,6 +180,8 @@ class IncidentEditPayloadV2RequestBody:
 
         severity_id = d.pop("severity_id", UNSET)
 
+        slack_channel_name_override = d.pop("slack_channel_name_override", UNSET)
+
         summary = d.pop("summary", UNSET)
 
         incident_edit_payload_v2_request_body = cls(
@@ -183,6 +192,7 @@ class IncidentEditPayloadV2RequestBody:
             incident_timestamp_values=incident_timestamp_values,
             name=name,
             severity_id=severity_id,
+            slack_channel_name_override=slack_channel_name_override,
             summary=summary,
         )
 
