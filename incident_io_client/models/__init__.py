@@ -540,7 +540,16 @@ from .escalation_path_node_v2_response_body import EscalationPathNodeV2ResponseB
 from .escalation_path_node_v2_response_body_type import (
     EscalationPathNodeV2ResponseBodyType,
 )
+from .escalation_path_round_robin_config_v2_request_body import (
+    EscalationPathRoundRobinConfigV2RequestBody,
+)
+from .escalation_path_round_robin_config_v2_response_body import (
+    EscalationPathRoundRobinConfigV2ResponseBody,
+)
 from .escalation_path_target_v2_request_body import EscalationPathTargetV2RequestBody
+from .escalation_path_target_v2_request_body_schedule_mode import (
+    EscalationPathTargetV2RequestBodyScheduleMode,
+)
 from .escalation_path_target_v2_request_body_type import (
     EscalationPathTargetV2RequestBodyType,
 )
@@ -548,6 +557,9 @@ from .escalation_path_target_v2_request_body_urgency import (
     EscalationPathTargetV2RequestBodyUrgency,
 )
 from .escalation_path_target_v2_response_body import EscalationPathTargetV2ResponseBody
+from .escalation_path_target_v2_response_body_schedule_mode import (
+    EscalationPathTargetV2ResponseBodyScheduleMode,
+)
 from .escalation_path_target_v2_response_body_type import (
     EscalationPathTargetV2ResponseBodyType,
 )
@@ -1314,10 +1326,14 @@ __all__ = (
     "EscalationPathNodeRepeatV2ResponseBody",
     "EscalationPathNodeV2ResponseBody",
     "EscalationPathNodeV2ResponseBodyType",
+    "EscalationPathRoundRobinConfigV2RequestBody",
+    "EscalationPathRoundRobinConfigV2ResponseBody",
     "EscalationPathTargetV2RequestBody",
+    "EscalationPathTargetV2RequestBodyScheduleMode",
     "EscalationPathTargetV2RequestBodyType",
     "EscalationPathTargetV2RequestBodyUrgency",
     "EscalationPathTargetV2ResponseBody",
+    "EscalationPathTargetV2ResponseBodyScheduleMode",
     "EscalationPathTargetV2ResponseBodyType",
     "EscalationPathTargetV2ResponseBodyUrgency",
     "EscalationPathV2ResponseBody",

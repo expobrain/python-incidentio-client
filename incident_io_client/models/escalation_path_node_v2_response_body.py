@@ -31,7 +31,8 @@ class EscalationPathNodeV2ResponseBody:
             'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'targets': [{'id': 'lawrencejones',
+            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
+            False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
             'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}
@@ -48,20 +49,23 @@ class EscalationPathNodeV2ResponseBody:
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}],
-            'else_path': [{}], 'then_path': [{}]}, 'level': {'targets': [{'id': 'lawrencejones', 'type': 'user', 'urgency':
-            'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled': False,
+            'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type':
+            'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'then_path': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
             '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'targets': [{'id': 'lawrencejones',
+            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
+            False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
             'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}]}.
-        level (Union[Unset, EscalationPathNodeLevelV2ResponseBody]):  Example: {'targets': [{'id': 'lawrencejones',
-            'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+        level (Union[Unset, EscalationPathNodeLevelV2ResponseBody]):  Example: {'round_robin_config': {'enabled': False,
+            'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type':
+            'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
         repeat (Union[Unset, EscalationPathNodeRepeatV2ResponseBody]):  Example: {'repeat_times': 3, 'to_node':
             '01FCNDV6P870EA6S7TK1DSYDG0'}.

@@ -26,8 +26,9 @@ class EscalationPathV2ResponseBody:
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}],
-            'else_path': [{}], 'then_path': [{}]}, 'level': {'targets': [{'id': 'lawrencejones', 'type': 'user', 'urgency':
-            'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled': False,
+            'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type':
+            'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'working_hours': [{'id': 'abc123', 'name':
             'abc123', 'timezone': 'abc123', 'weekday_intervals': [{'end_time': '17:00', 'start_time': '09:00', 'weekday':
@@ -41,7 +42,8 @@ class EscalationPathV2ResponseBody:
             'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'targets': [{'id': 'lawrencejones',
+            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
+            False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
             'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}].

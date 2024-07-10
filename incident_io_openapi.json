@@ -11976,9 +11976,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -12026,9 +12031,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -12107,9 +12117,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -12164,9 +12179,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -12265,9 +12285,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -12323,9 +12348,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -12420,9 +12450,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -12485,9 +12520,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -12519,9 +12559,14 @@
       },
       "EscalationPathNodeLevelV2RequestBody": {
         "example": {
+          "round_robin_config": {
+            "enabled": false,
+            "rotate_after_seconds": 120
+          },
           "targets": [
             {
               "id": "lawrencejones",
+              "schedule_mode": "currently_on_call",
               "type": "user",
               "urgency": "high"
             }
@@ -12531,11 +12576,15 @@
           "time_to_ack_weekday_interval_config_id": "01FCNDV6P870EA6S7TK1DSYDG0"
         },
         "properties": {
+          "round_robin_config": {
+            "$ref": "#/components/schemas/EscalationPathRoundRobinConfigV2RequestBody"
+          },
           "targets": {
             "description": "The targets for this level",
             "example": [
               {
                 "id": "lawrencejones",
+                "schedule_mode": "currently_on_call",
                 "type": "user",
                 "urgency": "high"
               }
@@ -12574,9 +12623,14 @@
       },
       "EscalationPathNodeLevelV2ResponseBody": {
         "example": {
+          "round_robin_config": {
+            "enabled": false,
+            "rotate_after_seconds": 120
+          },
           "targets": [
             {
               "id": "lawrencejones",
+              "schedule_mode": "currently_on_call",
               "type": "user",
               "urgency": "high"
             }
@@ -12586,11 +12640,15 @@
           "time_to_ack_weekday_interval_config_id": "01FCNDV6P870EA6S7TK1DSYDG0"
         },
         "properties": {
+          "round_robin_config": {
+            "$ref": "#/components/schemas/EscalationPathRoundRobinConfigV2ResponseBody"
+          },
           "targets": {
             "description": "The targets for this level",
             "example": [
               {
                 "id": "lawrencejones",
+                "schedule_mode": "currently_on_call",
                 "type": "user",
                 "urgency": "high"
               }
@@ -12659,9 +12717,14 @@
             ]
           },
           "level": {
+            "round_robin_config": {
+              "enabled": false,
+              "rotate_after_seconds": 120
+            },
             "targets": [
               {
                 "id": "lawrencejones",
+                "schedule_mode": "currently_on_call",
                 "type": "user",
                 "urgency": "high"
               }
@@ -12800,9 +12863,14 @@
             ]
           },
           "level": {
+            "round_robin_config": {
+              "enabled": false,
+              "rotate_after_seconds": 120
+            },
             "targets": [
               {
                 "id": "lawrencejones",
+                "schedule_mode": "currently_on_call",
                 "type": "user",
                 "urgency": "high"
               }
@@ -12851,9 +12919,58 @@
         "title": "EscalationPathNodeV2ResponseBody",
         "type": "object"
       },
+      "EscalationPathRoundRobinConfigV2RequestBody": {
+        "example": {
+          "enabled": false,
+          "rotate_after_seconds": 120
+        },
+        "properties": {
+          "enabled": {
+            "description": "Whether round robin is enabled for this level",
+            "example": false,
+            "type": "boolean"
+          },
+          "rotate_after_seconds": {
+            "description": "How long should we wait before rotating to the next target in a round robin, if not set will stick with a single target per level.",
+            "example": 120,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "title": "EscalationPathRoundRobinConfigV2RequestBody",
+        "type": "object"
+      },
+      "EscalationPathRoundRobinConfigV2ResponseBody": {
+        "example": {
+          "enabled": false,
+          "rotate_after_seconds": 120
+        },
+        "properties": {
+          "enabled": {
+            "description": "Whether round robin is enabled for this level",
+            "example": false,
+            "type": "boolean"
+          },
+          "rotate_after_seconds": {
+            "description": "How long should we wait before rotating to the next target in a round robin, if not set will stick with a single target per level.",
+            "example": 120,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "title": "EscalationPathRoundRobinConfigV2ResponseBody",
+        "type": "object"
+      },
       "EscalationPathTargetV2RequestBody": {
         "example": {
           "id": "lawrencejones",
+          "schedule_mode": "currently_on_call",
           "type": "user",
           "urgency": "high"
         },
@@ -12861,6 +12978,17 @@
           "id": {
             "description": "Uniquely identifies an entity of this type",
             "example": "lawrencejones",
+            "type": "string"
+          },
+          "schedule_mode": {
+            "description": "Only set for schedule targets, and either currently_on_call, all_users or all_users_for_rota and specifies which users to fetch from the schedule",
+            "enum": [
+              "currently_on_call",
+              "all_users_for_rota",
+              "all_users",
+              ""
+            ],
+            "example": "currently_on_call",
             "type": "string"
           },
           "type": {
@@ -12894,6 +13022,7 @@
       "EscalationPathTargetV2ResponseBody": {
         "example": {
           "id": "lawrencejones",
+          "schedule_mode": "currently_on_call",
           "type": "user",
           "urgency": "high"
         },
@@ -12901,6 +13030,17 @@
           "id": {
             "description": "Uniquely identifies an entity of this type",
             "example": "lawrencejones",
+            "type": "string"
+          },
+          "schedule_mode": {
+            "description": "Only set for schedule targets, and either currently_on_call, all_users or all_users_for_rota and specifies which users to fetch from the schedule",
+            "enum": [
+              "currently_on_call",
+              "all_users_for_rota",
+              "all_users",
+              ""
+            ],
+            "example": "currently_on_call",
             "type": "string"
           },
           "type": {
@@ -12975,9 +13115,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -13061,9 +13206,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -13149,9 +13299,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -13222,9 +13377,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -13319,9 +13479,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -13409,9 +13574,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -13489,9 +13659,14 @@
                 ]
               },
               "level": {
+                "round_robin_config": {
+                  "enabled": false,
+                  "rotate_after_seconds": 120
+                },
                 "targets": [
                   {
                     "id": "lawrencejones",
+                    "schedule_mode": "currently_on_call",
                     "type": "user",
                     "urgency": "high"
                   }
@@ -13562,9 +13737,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }
@@ -13659,9 +13839,14 @@
                   ]
                 },
                 "level": {
+                  "round_robin_config": {
+                    "enabled": false,
+                    "rotate_after_seconds": 120
+                  },
                   "targets": [
                     {
                       "id": "lawrencejones",
+                      "schedule_mode": "currently_on_call",
                       "type": "user",
                       "urgency": "high"
                     }

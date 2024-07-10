@@ -9,6 +9,9 @@ from ..models.escalation_path_node_level_v2_response_body_time_to_ack_interval_c
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.escalation_path_round_robin_config_v2_response_body import (
+        EscalationPathRoundRobinConfigV2ResponseBody,
+    )
     from ..models.escalation_path_target_v2_response_body import (
         EscalationPathTargetV2ResponseBody,
     )
@@ -21,12 +24,15 @@ T = TypeVar("T", bound="EscalationPathNodeLevelV2ResponseBody")
 class EscalationPathNodeLevelV2ResponseBody:
     """
     Example:
-        {'targets': [{'id': 'lawrencejones', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+        {'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones',
+            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
             'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
         targets (List['EscalationPathTargetV2ResponseBody']): The targets for this level Example: [{'id':
-            'lawrencejones', 'type': 'user', 'urgency': 'high'}].
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
+        round_robin_config (Union[Unset, EscalationPathRoundRobinConfigV2ResponseBody]):  Example: {'enabled': False,
+            'rotate_after_seconds': 120}.
         time_to_ack_interval_condition (Union[Unset, EscalationPathNodeLevelV2ResponseBodyTimeToAckIntervalCondition]):
             If the time to ack is relative to a time window, this defines whether we move when the window is active or
             inactive Example: active.
@@ -37,6 +43,7 @@ class EscalationPathNodeLevelV2ResponseBody:
     """
 
     targets: List["EscalationPathTargetV2ResponseBody"]
+    round_robin_config: Union[Unset, "EscalationPathRoundRobinConfigV2ResponseBody"] = UNSET
     time_to_ack_interval_condition: Union[
         Unset, EscalationPathNodeLevelV2ResponseBodyTimeToAckIntervalCondition
     ] = UNSET
@@ -49,6 +56,10 @@ class EscalationPathNodeLevelV2ResponseBody:
         for targets_item_data in self.targets:
             targets_item = targets_item_data.to_dict()
             targets.append(targets_item)
+
+        round_robin_config: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.round_robin_config, Unset):
+            round_robin_config = self.round_robin_config.to_dict()
 
         time_to_ack_interval_condition: Union[Unset, str] = UNSET
         if not isinstance(self.time_to_ack_interval_condition, Unset):
@@ -65,6 +76,8 @@ class EscalationPathNodeLevelV2ResponseBody:
                 "targets": targets,
             }
         )
+        if round_robin_config is not UNSET:
+            field_dict["round_robin_config"] = round_robin_config
         if time_to_ack_interval_condition is not UNSET:
             field_dict["time_to_ack_interval_condition"] = time_to_ack_interval_condition
         if time_to_ack_seconds is not UNSET:
@@ -78,6 +91,9 @@ class EscalationPathNodeLevelV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.escalation_path_round_robin_config_v2_response_body import (
+            EscalationPathRoundRobinConfigV2ResponseBody,
+        )
         from ..models.escalation_path_target_v2_response_body import (
             EscalationPathTargetV2ResponseBody,
         )
@@ -89,6 +105,15 @@ class EscalationPathNodeLevelV2ResponseBody:
             targets_item = EscalationPathTargetV2ResponseBody.from_dict(targets_item_data)
 
             targets.append(targets_item)
+
+        _round_robin_config = d.pop("round_robin_config", UNSET)
+        round_robin_config: Union[Unset, EscalationPathRoundRobinConfigV2ResponseBody]
+        if isinstance(_round_robin_config, Unset):
+            round_robin_config = UNSET
+        else:
+            round_robin_config = EscalationPathRoundRobinConfigV2ResponseBody.from_dict(
+                _round_robin_config
+            )
 
         _time_to_ack_interval_condition = d.pop("time_to_ack_interval_condition", UNSET)
         time_to_ack_interval_condition: Union[
@@ -111,6 +136,7 @@ class EscalationPathNodeLevelV2ResponseBody:
 
         escalation_path_node_level_v2_response_body = cls(
             targets=targets,
+            round_robin_config=round_robin_config,
             time_to_ack_interval_condition=time_to_ack_interval_condition,
             time_to_ack_seconds=time_to_ack_seconds,
             time_to_ack_weekday_interval_config_id=time_to_ack_weekday_interval_config_id,
