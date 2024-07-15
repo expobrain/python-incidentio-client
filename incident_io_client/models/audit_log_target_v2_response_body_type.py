@@ -12,6 +12,7 @@ class AuditLogTargetV2ResponseBodyType(str, Enum):
     DEBRIEF_INVITE_RULE = "debrief_invite_rule"
     ESCALATION_PATH = "escalation_path"
     FOLLOW_UP_PRIORITY = "follow_up_priority"
+    HOLIDAY_USER_FEED = "holiday_user_feed"
     INCIDENT = "incident"
     INCIDENT_DURATION_METRIC = "incident_duration_metric"
     INCIDENT_ROLE = "incident_role"

@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_route_incident_template_v2_response_body_priority_severity
+
+::: incident_io_client.models.alert_route_incident_template_v2_response_body_priority_severity
