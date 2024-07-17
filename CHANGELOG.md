@@ -1,3 +1,9 @@
+## 0.48.3 (2024-07-17)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools
+
 ## 0.48.2 (2024-07-17)
 
 ### Fix
