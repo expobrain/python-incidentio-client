@@ -1,3 +1,15 @@
+## 0.48.0 (2024-07-17)
+
+### Feat
+
+- Updated API at 2024-07-15
+- Updated API at 2024-07-08
+- Updated API at 2024-07-01
+
+### Fix
+
+- **deps**: bump certifi in /example in the pip group
+
 ## 0.46.4 (2024-07-05)
 
 ### Fix
