@@ -1,3 +1,9 @@
+## 0.48.1 (2024-07-17)
+
+### Fix
+
+- **deps-dev**: bump zipp from 3.8.0 to 3.19.1 in the pip group
+
 ## 0.48.0 (2024-07-17)
 
 ### Feat
