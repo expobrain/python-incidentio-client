@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_routes_v2_create_request_body
+
+::: incident_io_client.models.alert_routes_v2_create_request_body

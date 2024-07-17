@@ -578,6 +578,3022 @@
         "title": "AlertEventsV2CreateHTTPResponseBody",
         "type": "object"
       },
+      "AlertRouteEscalationBindingPayloadV2RequestBody": {
+        "example": {
+          "binding": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          }
+        },
+        "properties": {
+          "binding": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          }
+        },
+        "required": [
+          "binding"
+        ],
+        "title": "AlertRouteEscalationBindingPayloadV2RequestBody",
+        "type": "object"
+      },
+      "AlertRouteEscalationBindingV2ResponseBody": {
+        "example": {
+          "binding": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          }
+        },
+        "properties": {
+          "binding": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          }
+        },
+        "required": [
+          "binding"
+        ],
+        "title": "AlertRouteEscalationBindingV2ResponseBody",
+        "type": "object"
+      },
+      "AlertRouteIncidentTemplatePayloadV2RequestBody": {
+        "example": {
+          "custom_field_priorities": {
+            "abc123": "abc123"
+          },
+          "custom_fields": {
+            "custom_field_10014": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            }
+          },
+          "incident_mode": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "incident_type": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "name": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "priority_severity": "severity-first-wins",
+          "severity": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "summary": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "workspace": {
+            "array_value": [
+              {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          }
+        },
+        "properties": {
+          "custom_field_priorities": {
+            "additionalProperties": {
+              "example": "abc123",
+              "type": "string"
+            },
+            "description": "lookup of the priority options for each custom field in the template",
+            "example": {
+              "abc123": "abc123"
+            },
+            "type": "object"
+          },
+          "custom_fields": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+            },
+            "description": "Custom field keys mapped to values",
+            "example": {
+              "custom_field_10014": {
+                "array_value": [
+                  {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            },
+            "type": "object"
+          },
+          "incident_mode": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          },
+          "incident_type": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          },
+          "name": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          },
+          "priority_severity": {
+            "description": "option defining whether to cause subsequent alerts to increase the severity",
+            "enum": [
+              "severity-first-wins",
+              "severity-max"
+            ],
+            "example": "severity-first-wins",
+            "type": "string"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          },
+          "workspace": {
+            "$ref": "#/components/schemas/EngineParamBindingPayloadV2RequestBody"
+          }
+        },
+        "required": [
+          "custom_field_priorities",
+          "priority_severity"
+        ],
+        "title": "AlertRouteIncidentTemplatePayloadV2RequestBody",
+        "type": "object"
+      },
+      "AlertRouteIncidentTemplateV2ResponseBody": {
+        "example": {
+          "custom_field_priorities": {
+            "abc123": "first-wins"
+          },
+          "custom_fields": {
+            "custom_field_10014": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            }
+          },
+          "incident_mode": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "incident_type": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "name": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "priority_severity": "severity-first-wins",
+          "severity": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "summary": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          },
+          "workspace": {
+            "array_value": [
+              {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            ],
+            "value": {
+              "label": "Lawrence Jones",
+              "literal": "SEV123",
+              "reference": "incident.severity"
+            }
+          }
+        },
+        "properties": {
+          "custom_field_priorities": {
+            "additionalProperties": {
+              "enum": [
+                "first-wins",
+                "last-wins",
+                "append"
+              ],
+              "example": "first-wins",
+              "type": "string"
+            },
+            "description": "lookup of the priority options for each custom field in the template",
+            "example": {
+              "abc123": "first-wins"
+            },
+            "type": "object"
+          },
+          "custom_fields": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+            },
+            "description": "Custom field keys mapped to values",
+            "example": {
+              "custom_field_10014": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            },
+            "type": "object"
+          },
+          "incident_mode": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          },
+          "incident_type": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          },
+          "name": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          },
+          "priority_severity": {
+            "description": "binding to use to resolve the workspace to create an incident in",
+            "enum": [
+              "severity-first-wins",
+              "severity-max"
+            ],
+            "example": "severity-first-wins",
+            "type": "string"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          },
+          "workspace": {
+            "$ref": "#/components/schemas/EngineParamBindingV2ResponseBody"
+          }
+        },
+        "required": [
+          "custom_field_priorities",
+          "priority_severity"
+        ],
+        "title": "AlertRouteIncidentTemplateV2ResponseBody",
+        "type": "object"
+      },
+      "AlertRouteV2ResponseBody": {
+        "example": {
+          "condition_groups": [
+            {
+              "conditions": [
+                {
+                  "operation": {
+                    "label": "Lawrence Jones",
+                    "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                  },
+                  "param_bindings": [
+                    {
+                      "array_value": [
+                        {
+                          "label": "Lawrence Jones",
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      ],
+                      "value": {
+                        "label": "Lawrence Jones",
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    }
+                  ],
+                  "subject": {
+                    "label": "Incident Severity",
+                    "reference": "incident.severity"
+                  }
+                }
+              ]
+            }
+          ],
+          "defer_time_seconds": 1,
+          "escalation_bindings": [
+            {
+              "binding": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            }
+          ],
+          "expressions": [
+            {
+              "else_branch": {
+                "result": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              },
+              "label": "Team Slack channel",
+              "operations": [
+                {
+                  "branches": {
+                    "branches": [
+                      {
+                        "condition_groups": [
+                          {
+                            "conditions": [
+                              {
+                                "operation": {
+                                  "label": "Lawrence Jones",
+                                  "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                                },
+                                "param_bindings": [
+                                  {
+                                    "array_value": [
+                                      {
+                                        "label": "Lawrence Jones",
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    ],
+                                    "value": {
+                                      "label": "Lawrence Jones",
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  }
+                                ],
+                                "subject": {
+                                  "label": "Incident Severity",
+                                  "reference": "incident.severity"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "result": {
+                          "array_value": [
+                            {
+                              "label": "Lawrence Jones",
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          ],
+                          "value": {
+                            "label": "Lawrence Jones",
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        }
+                      }
+                    ],
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  },
+                  "filter": {
+                    "condition_groups": [
+                      {
+                        "conditions": [
+                          {
+                            "operation": {
+                              "label": "Lawrence Jones",
+                              "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                            },
+                            "param_bindings": [
+                              {
+                                "array_value": [
+                                  {
+                                    "label": "Lawrence Jones",
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                ],
+                                "value": {
+                                  "label": "Lawrence Jones",
+                                  "literal": "SEV123",
+                                  "reference": "incident.severity"
+                                }
+                              }
+                            ],
+                            "subject": {
+                              "label": "Incident Severity",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "navigate": {
+                    "reference": "1235",
+                    "reference_label": "Teams"
+                  },
+                  "operation_type": "navigate",
+                  "parse": {
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    },
+                    "source": "metadata.annotations[\"github.com/repo\"]"
+                  },
+                  "returns": {
+                    "array": true,
+                    "type": "IncidentStatus"
+                  }
+                }
+              ],
+              "reference": "abc123",
+              "returns": {
+                "array": true,
+                "type": "IncidentStatus"
+              },
+              "root_reference": "incident.status"
+            }
+          ],
+          "grouping_keys": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+            }
+          ],
+          "grouping_window_seconds": 1,
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+          "name": "Production incidents",
+          "template": {
+            "custom_field_priorities": {
+              "abc123": "first-wins"
+            },
+            "custom_fields": {
+              "custom_field_10014": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            },
+            "incident_mode": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "incident_type": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "name": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "priority_severity": "severity-first-wins",
+            "severity": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "summary": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "workspace": {
+              "array_value": [
+                {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "label": "Lawrence Jones",
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            }
+          }
+        },
+        "properties": {
+          "condition_groups": {
+            "description": "What condition groups must be true for this alert route to fire?",
+            "example": [
+              {
+                "conditions": [
+                  {
+                    "operation": {
+                      "label": "Lawrence Jones",
+                      "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                    },
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "label": "Lawrence Jones",
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "label": "Lawrence Jones",
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": {
+                      "label": "Incident Severity",
+                      "reference": "incident.severity"
+                    }
+                  }
+                ]
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConditionGroupV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "defer_time_seconds": {
+            "description": "How long should the escalation defer time be?",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          },
+          "escalation_bindings": {
+            "description": "Which escalation paths should this alert route escalate to?",
+            "example": [
+              {
+                "binding": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AlertRouteEscalationBindingV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "expressions": {
+            "description": "The expressions used in this template",
+            "example": [
+              {
+                "else_branch": {
+                  "result": {
+                    "array_value": [
+                      {
+                        "label": "Lawrence Jones",
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    ],
+                    "value": {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  }
+                },
+                "label": "Team Slack channel",
+                "operations": [
+                  {
+                    "branches": {
+                      "branches": [
+                        {
+                          "condition_groups": [
+                            {
+                              "conditions": [
+                                {
+                                  "operation": {
+                                    "label": "Lawrence Jones",
+                                    "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                                  },
+                                  "param_bindings": [
+                                    {
+                                      "array_value": [
+                                        {
+                                          "label": "Lawrence Jones",
+                                          "literal": "SEV123",
+                                          "reference": "incident.severity"
+                                        }
+                                      ],
+                                      "value": {
+                                        "label": "Lawrence Jones",
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    }
+                                  ],
+                                  "subject": {
+                                    "label": "Incident Severity",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "result": {
+                            "array_value": [
+                              {
+                                "label": "Lawrence Jones",
+                                "literal": "SEV123",
+                                "reference": "incident.severity"
+                              }
+                            ],
+                            "value": {
+                              "label": "Lawrence Jones",
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        }
+                      ],
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      }
+                    },
+                    "filter": {
+                      "condition_groups": [
+                        {
+                          "conditions": [
+                            {
+                              "operation": {
+                                "label": "Lawrence Jones",
+                                "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                              },
+                              "param_bindings": [
+                                {
+                                  "array_value": [
+                                    {
+                                      "label": "Lawrence Jones",
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  ],
+                                  "value": {
+                                    "label": "Lawrence Jones",
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ],
+                              "subject": {
+                                "label": "Incident Severity",
+                                "reference": "incident.severity"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "navigate": {
+                      "reference": "1235",
+                      "reference_label": "Teams"
+                    },
+                    "operation_type": "navigate",
+                    "parse": {
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      },
+                      "source": "metadata.annotations[\"github.com/repo\"]"
+                    },
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  }
+                ],
+                "reference": "abc123",
+                "returns": {
+                  "array": true,
+                  "type": "IncidentStatus"
+                },
+                "root_reference": "incident.status"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ExpressionV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "grouping_keys": {
+            "description": "Which attributes should this alert route use to group alerts?",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/GroupingKeyV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "grouping_window_seconds": {
+            "description": "How large should the grouping window be?",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          },
+          "id": {
+            "description": "Unique identifier for this alert route config",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of this alert route config, for the user's reference",
+            "example": "Production incidents",
+            "type": "string"
+          },
+          "template": {
+            "$ref": "#/components/schemas/AlertRouteIncidentTemplateV2ResponseBody"
+          }
+        },
+        "required": [
+          "condition_groups",
+          "defer_time_seconds",
+          "escalation_bindings",
+          "grouping_keys",
+          "grouping_window_seconds",
+          "id",
+          "name"
+        ],
+        "title": "AlertRouteV2ResponseBody",
+        "type": "object"
+      },
+      "AlertRoutesV2CreateRequestBody": {
+        "example": {
+          "alert_source_ids": [
+            "02FCNDV6P870EA6S7TK1DSYDG2"
+          ],
+          "auto_decline_enabled": false,
+          "condition_groups": [
+            {
+              "conditions": [
+                {
+                  "operation": "one_of",
+                  "param_bindings": [
+                    {
+                      "array_value": [
+                        {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      ],
+                      "value": {
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    }
+                  ],
+                  "subject": "incident.severity"
+                }
+              ]
+            }
+          ],
+          "defer_time_seconds": 1,
+          "enabled": false,
+          "escalation_bindings": [
+            {
+              "binding": {
+                "array_value": [
+                  {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            }
+          ],
+          "expressions": [
+            {
+              "else_branch": {
+                "result": {
+                  "array_value": [
+                    {
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              },
+              "label": "Team Slack channel",
+              "operations": [
+                {
+                  "branches": {
+                    "branches": [
+                      {
+                        "condition_groups": [
+                          {
+                            "conditions": [
+                              {
+                                "operation": "one_of",
+                                "param_bindings": [
+                                  {
+                                    "array_value": [
+                                      {
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    ],
+                                    "value": {
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  }
+                                ],
+                                "subject": "incident.severity"
+                              }
+                            ]
+                          }
+                        ],
+                        "result": {
+                          "array_value": [
+                            {
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          ],
+                          "value": {
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        }
+                      }
+                    ],
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  },
+                  "filter": {
+                    "condition_groups": [
+                      {
+                        "conditions": [
+                          {
+                            "operation": "one_of",
+                            "param_bindings": [
+                              {
+                                "array_value": [
+                                  {
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                ],
+                                "value": {
+                                  "literal": "SEV123",
+                                  "reference": "incident.severity"
+                                }
+                              }
+                            ],
+                            "subject": "incident.severity"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "navigate": {
+                    "reference": "catalog_attribute[\"01FCNDV6P870EA6S7TK1DSYD5H\"]"
+                  },
+                  "operation_type": "navigate",
+                  "parse": {
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    },
+                    "source": "metadata.annotations[\"github.com/repo\"]"
+                  }
+                }
+              ],
+              "reference": "abc123",
+              "root_reference": "incident.status"
+            }
+          ],
+          "grouping_keys": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+            }
+          ],
+          "grouping_window_seconds": 1,
+          "incident_condition_groups": [
+            {
+              "conditions": [
+                {
+                  "operation": "one_of",
+                  "param_bindings": [
+                    {
+                      "array_value": [
+                        {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      ],
+                      "value": {
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    }
+                  ],
+                  "subject": "incident.severity"
+                }
+              ]
+            }
+          ],
+          "incident_enabled": false,
+          "name": "Production incidents",
+          "template": {
+            "custom_field_priorities": {
+              "abc123": "abc123"
+            },
+            "custom_fields": {
+              "custom_field_10014": {
+                "array_value": [
+                  {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            },
+            "incident_mode": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "incident_type": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "name": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "priority_severity": "severity-first-wins",
+            "severity": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "summary": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "workspace": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            }
+          }
+        },
+        "properties": {
+          "alert_source_ids": {
+            "description": "The alert sources that will match this alert route",
+            "example": [
+              "02FCNDV6P870EA6S7TK1DSYDG2"
+            ],
+            "items": {
+              "example": "abc123",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "auto_decline_enabled": {
+            "description": "Should triage incidents be declined when alerts are resolved?",
+            "example": false,
+            "type": "boolean"
+          },
+          "condition_groups": {
+            "description": "What condition groups must be true for this alert route to fire?",
+            "example": [
+              {
+                "conditions": [
+                  {
+                    "operation": "one_of",
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": "incident.severity"
+                  }
+                ]
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConditionGroupPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "defer_time_seconds": {
+            "description": "How long should the escalation defer time be?",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          },
+          "enabled": {
+            "description": "Whether this alert route is enabled or not",
+            "example": false,
+            "type": "boolean"
+          },
+          "escalation_bindings": {
+            "description": "Which escalation paths should this alert route escalate to?",
+            "example": [
+              {
+                "binding": {
+                  "array_value": [
+                    {
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AlertRouteEscalationBindingPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "expressions": {
+            "description": "The expressions used in this template",
+            "example": [
+              {
+                "else_branch": {
+                  "result": {
+                    "array_value": [
+                      {
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    ],
+                    "value": {
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  }
+                },
+                "label": "Team Slack channel",
+                "operations": [
+                  {
+                    "branches": {
+                      "branches": [
+                        {
+                          "condition_groups": [
+                            {
+                              "conditions": [
+                                {
+                                  "operation": "one_of",
+                                  "param_bindings": [
+                                    {
+                                      "array_value": [
+                                        {
+                                          "literal": "SEV123",
+                                          "reference": "incident.severity"
+                                        }
+                                      ],
+                                      "value": {
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    }
+                                  ],
+                                  "subject": "incident.severity"
+                                }
+                              ]
+                            }
+                          ],
+                          "result": {
+                            "array_value": [
+                              {
+                                "literal": "SEV123",
+                                "reference": "incident.severity"
+                              }
+                            ],
+                            "value": {
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        }
+                      ],
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      }
+                    },
+                    "filter": {
+                      "condition_groups": [
+                        {
+                          "conditions": [
+                            {
+                              "operation": "one_of",
+                              "param_bindings": [
+                                {
+                                  "array_value": [
+                                    {
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  ],
+                                  "value": {
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ],
+                              "subject": "incident.severity"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "navigate": {
+                      "reference": "catalog_attribute[\"01FCNDV6P870EA6S7TK1DSYD5H\"]"
+                    },
+                    "operation_type": "navigate",
+                    "parse": {
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      },
+                      "source": "metadata.annotations[\"github.com/repo\"]"
+                    }
+                  }
+                ],
+                "reference": "abc123",
+                "root_reference": "incident.status"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ExpressionPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "grouping_keys": {
+            "description": "Which attributes should this alert route use to group alerts?",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/GroupingKeyV2RequestBody"
+            },
+            "type": "array"
+          },
+          "grouping_window_seconds": {
+            "description": "How large should the grouping window be?",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          },
+          "incident_condition_groups": {
+            "description": "What condition groups must be true for this alert route to create an incident?",
+            "example": [
+              {
+                "conditions": [
+                  {
+                    "operation": "one_of",
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": "incident.severity"
+                  }
+                ]
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConditionGroupPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "incident_enabled": {
+            "description": "Whether this alert route will create incidents or not",
+            "example": false,
+            "type": "boolean"
+          },
+          "name": {
+            "description": "The name of this alert route config, for the user's reference",
+            "example": "Production incidents",
+            "type": "string"
+          },
+          "template": {
+            "$ref": "#/components/schemas/AlertRouteIncidentTemplatePayloadV2RequestBody"
+          }
+        },
+        "title": "AlertRoutesV2CreateRequestBody",
+        "type": "object"
+      },
+      "AlertRoutesV2CreateResponseBody": {
+        "example": {
+          "alert_route": {
+            "condition_groups": [
+              {
+                "conditions": [
+                  {
+                    "operation": {
+                      "label": "Lawrence Jones",
+                      "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                    },
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "label": "Lawrence Jones",
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "label": "Lawrence Jones",
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": {
+                      "label": "Incident Severity",
+                      "reference": "incident.severity"
+                    }
+                  }
+                ]
+              }
+            ],
+            "defer_time_seconds": 1,
+            "escalation_bindings": [
+              {
+                "binding": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              }
+            ],
+            "expressions": [
+              {
+                "else_branch": {
+                  "result": {
+                    "array_value": [
+                      {
+                        "label": "Lawrence Jones",
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    ],
+                    "value": {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  }
+                },
+                "label": "Team Slack channel",
+                "operations": [
+                  {
+                    "branches": {
+                      "branches": [
+                        {
+                          "condition_groups": [
+                            {
+                              "conditions": [
+                                {
+                                  "operation": {
+                                    "label": "Lawrence Jones",
+                                    "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                                  },
+                                  "param_bindings": [
+                                    {
+                                      "array_value": [
+                                        {
+                                          "label": "Lawrence Jones",
+                                          "literal": "SEV123",
+                                          "reference": "incident.severity"
+                                        }
+                                      ],
+                                      "value": {
+                                        "label": "Lawrence Jones",
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    }
+                                  ],
+                                  "subject": {
+                                    "label": "Incident Severity",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "result": {
+                            "array_value": [
+                              {
+                                "label": "Lawrence Jones",
+                                "literal": "SEV123",
+                                "reference": "incident.severity"
+                              }
+                            ],
+                            "value": {
+                              "label": "Lawrence Jones",
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        }
+                      ],
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      }
+                    },
+                    "filter": {
+                      "condition_groups": [
+                        {
+                          "conditions": [
+                            {
+                              "operation": {
+                                "label": "Lawrence Jones",
+                                "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                              },
+                              "param_bindings": [
+                                {
+                                  "array_value": [
+                                    {
+                                      "label": "Lawrence Jones",
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  ],
+                                  "value": {
+                                    "label": "Lawrence Jones",
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ],
+                              "subject": {
+                                "label": "Incident Severity",
+                                "reference": "incident.severity"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "navigate": {
+                      "reference": "1235",
+                      "reference_label": "Teams"
+                    },
+                    "operation_type": "navigate",
+                    "parse": {
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      },
+                      "source": "metadata.annotations[\"github.com/repo\"]"
+                    },
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  }
+                ],
+                "reference": "abc123",
+                "returns": {
+                  "array": true,
+                  "type": "IncidentStatus"
+                },
+                "root_reference": "incident.status"
+              }
+            ],
+            "grouping_keys": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              }
+            ],
+            "grouping_window_seconds": 1,
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Production incidents",
+            "template": {
+              "custom_field_priorities": {
+                "abc123": "first-wins"
+              },
+              "custom_fields": {
+                "custom_field_10014": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              },
+              "incident_mode": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "incident_type": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "name": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "priority_severity": "severity-first-wins",
+              "severity": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "summary": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "workspace": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            }
+          }
+        },
+        "properties": {
+          "alert_route": {
+            "$ref": "#/components/schemas/AlertRouteV2ResponseBody"
+          }
+        },
+        "required": [
+          "alert_route"
+        ],
+        "title": "AlertRoutesV2CreateResponseBody",
+        "type": "object"
+      },
+      "AlertRoutesV2ShowResponseBody": {
+        "example": {
+          "alert_route": {
+            "condition_groups": [
+              {
+                "conditions": [
+                  {
+                    "operation": {
+                      "label": "Lawrence Jones",
+                      "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                    },
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "label": "Lawrence Jones",
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "label": "Lawrence Jones",
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": {
+                      "label": "Incident Severity",
+                      "reference": "incident.severity"
+                    }
+                  }
+                ]
+              }
+            ],
+            "defer_time_seconds": 1,
+            "escalation_bindings": [
+              {
+                "binding": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              }
+            ],
+            "expressions": [
+              {
+                "else_branch": {
+                  "result": {
+                    "array_value": [
+                      {
+                        "label": "Lawrence Jones",
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    ],
+                    "value": {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  }
+                },
+                "label": "Team Slack channel",
+                "operations": [
+                  {
+                    "branches": {
+                      "branches": [
+                        {
+                          "condition_groups": [
+                            {
+                              "conditions": [
+                                {
+                                  "operation": {
+                                    "label": "Lawrence Jones",
+                                    "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                                  },
+                                  "param_bindings": [
+                                    {
+                                      "array_value": [
+                                        {
+                                          "label": "Lawrence Jones",
+                                          "literal": "SEV123",
+                                          "reference": "incident.severity"
+                                        }
+                                      ],
+                                      "value": {
+                                        "label": "Lawrence Jones",
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    }
+                                  ],
+                                  "subject": {
+                                    "label": "Incident Severity",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "result": {
+                            "array_value": [
+                              {
+                                "label": "Lawrence Jones",
+                                "literal": "SEV123",
+                                "reference": "incident.severity"
+                              }
+                            ],
+                            "value": {
+                              "label": "Lawrence Jones",
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        }
+                      ],
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      }
+                    },
+                    "filter": {
+                      "condition_groups": [
+                        {
+                          "conditions": [
+                            {
+                              "operation": {
+                                "label": "Lawrence Jones",
+                                "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                              },
+                              "param_bindings": [
+                                {
+                                  "array_value": [
+                                    {
+                                      "label": "Lawrence Jones",
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  ],
+                                  "value": {
+                                    "label": "Lawrence Jones",
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ],
+                              "subject": {
+                                "label": "Incident Severity",
+                                "reference": "incident.severity"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "navigate": {
+                      "reference": "1235",
+                      "reference_label": "Teams"
+                    },
+                    "operation_type": "navigate",
+                    "parse": {
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      },
+                      "source": "metadata.annotations[\"github.com/repo\"]"
+                    },
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  }
+                ],
+                "reference": "abc123",
+                "returns": {
+                  "array": true,
+                  "type": "IncidentStatus"
+                },
+                "root_reference": "incident.status"
+              }
+            ],
+            "grouping_keys": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              }
+            ],
+            "grouping_window_seconds": 1,
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Production incidents",
+            "template": {
+              "custom_field_priorities": {
+                "abc123": "first-wins"
+              },
+              "custom_fields": {
+                "custom_field_10014": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              },
+              "incident_mode": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "incident_type": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "name": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "priority_severity": "severity-first-wins",
+              "severity": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "summary": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "workspace": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            }
+          }
+        },
+        "properties": {
+          "alert_route": {
+            "$ref": "#/components/schemas/AlertRouteV2ResponseBody"
+          }
+        },
+        "required": [
+          "alert_route"
+        ],
+        "title": "AlertRoutesV2ShowResponseBody",
+        "type": "object"
+      },
+      "AlertRoutesV2UpdateRequestBody": {
+        "example": {
+          "alert_source_ids": [
+            "02FCNDV6P870EA6S7TK1DSYDG2"
+          ],
+          "auto_decline_enabled": false,
+          "condition_groups": [
+            {
+              "conditions": [
+                {
+                  "operation": "one_of",
+                  "param_bindings": [
+                    {
+                      "array_value": [
+                        {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      ],
+                      "value": {
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    }
+                  ],
+                  "subject": "incident.severity"
+                }
+              ]
+            }
+          ],
+          "defer_time_seconds": 1,
+          "enabled": false,
+          "escalation_bindings": [
+            {
+              "binding": {
+                "array_value": [
+                  {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            }
+          ],
+          "expressions": [
+            {
+              "else_branch": {
+                "result": {
+                  "array_value": [
+                    {
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              },
+              "label": "Team Slack channel",
+              "operations": [
+                {
+                  "branches": {
+                    "branches": [
+                      {
+                        "condition_groups": [
+                          {
+                            "conditions": [
+                              {
+                                "operation": "one_of",
+                                "param_bindings": [
+                                  {
+                                    "array_value": [
+                                      {
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    ],
+                                    "value": {
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  }
+                                ],
+                                "subject": "incident.severity"
+                              }
+                            ]
+                          }
+                        ],
+                        "result": {
+                          "array_value": [
+                            {
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          ],
+                          "value": {
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        }
+                      }
+                    ],
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  },
+                  "filter": {
+                    "condition_groups": [
+                      {
+                        "conditions": [
+                          {
+                            "operation": "one_of",
+                            "param_bindings": [
+                              {
+                                "array_value": [
+                                  {
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                ],
+                                "value": {
+                                  "literal": "SEV123",
+                                  "reference": "incident.severity"
+                                }
+                              }
+                            ],
+                            "subject": "incident.severity"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "navigate": {
+                    "reference": "catalog_attribute[\"01FCNDV6P870EA6S7TK1DSYD5H\"]"
+                  },
+                  "operation_type": "navigate",
+                  "parse": {
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    },
+                    "source": "metadata.annotations[\"github.com/repo\"]"
+                  }
+                }
+              ],
+              "reference": "abc123",
+              "root_reference": "incident.status"
+            }
+          ],
+          "grouping_keys": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+            }
+          ],
+          "grouping_window_seconds": 1,
+          "incident_condition_groups": [
+            {
+              "conditions": [
+                {
+                  "operation": "one_of",
+                  "param_bindings": [
+                    {
+                      "array_value": [
+                        {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      ],
+                      "value": {
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    }
+                  ],
+                  "subject": "incident.severity"
+                }
+              ]
+            }
+          ],
+          "incident_enabled": false,
+          "name": "Production incidents",
+          "template": {
+            "custom_field_priorities": {
+              "abc123": "abc123"
+            },
+            "custom_fields": {
+              "custom_field_10014": {
+                "array_value": [
+                  {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            },
+            "incident_mode": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "incident_type": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "name": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "priority_severity": "severity-first-wins",
+            "severity": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "summary": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            },
+            "workspace": {
+              "array_value": [
+                {
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              ],
+              "value": {
+                "literal": "SEV123",
+                "reference": "incident.severity"
+              }
+            }
+          }
+        },
+        "properties": {
+          "alert_source_ids": {
+            "description": "The alert sources that will match this alert route",
+            "example": [
+              "02FCNDV6P870EA6S7TK1DSYDG2"
+            ],
+            "items": {
+              "example": "abc123",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "auto_decline_enabled": {
+            "description": "Should triage incidents be declined when alerts are resolved?",
+            "example": false,
+            "type": "boolean"
+          },
+          "condition_groups": {
+            "description": "What condition groups must be true for this alert route to fire?",
+            "example": [
+              {
+                "conditions": [
+                  {
+                    "operation": "one_of",
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": "incident.severity"
+                  }
+                ]
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConditionGroupPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "defer_time_seconds": {
+            "description": "How long should the escalation defer time be?",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          },
+          "enabled": {
+            "description": "Whether this alert route is enabled or not",
+            "example": false,
+            "type": "boolean"
+          },
+          "escalation_bindings": {
+            "description": "Which escalation paths should this alert route escalate to?",
+            "example": [
+              {
+                "binding": {
+                  "array_value": [
+                    {
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AlertRouteEscalationBindingPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "expressions": {
+            "description": "The expressions used in this template",
+            "example": [
+              {
+                "else_branch": {
+                  "result": {
+                    "array_value": [
+                      {
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    ],
+                    "value": {
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  }
+                },
+                "label": "Team Slack channel",
+                "operations": [
+                  {
+                    "branches": {
+                      "branches": [
+                        {
+                          "condition_groups": [
+                            {
+                              "conditions": [
+                                {
+                                  "operation": "one_of",
+                                  "param_bindings": [
+                                    {
+                                      "array_value": [
+                                        {
+                                          "literal": "SEV123",
+                                          "reference": "incident.severity"
+                                        }
+                                      ],
+                                      "value": {
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    }
+                                  ],
+                                  "subject": "incident.severity"
+                                }
+                              ]
+                            }
+                          ],
+                          "result": {
+                            "array_value": [
+                              {
+                                "literal": "SEV123",
+                                "reference": "incident.severity"
+                              }
+                            ],
+                            "value": {
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        }
+                      ],
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      }
+                    },
+                    "filter": {
+                      "condition_groups": [
+                        {
+                          "conditions": [
+                            {
+                              "operation": "one_of",
+                              "param_bindings": [
+                                {
+                                  "array_value": [
+                                    {
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  ],
+                                  "value": {
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ],
+                              "subject": "incident.severity"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "navigate": {
+                      "reference": "catalog_attribute[\"01FCNDV6P870EA6S7TK1DSYD5H\"]"
+                    },
+                    "operation_type": "navigate",
+                    "parse": {
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      },
+                      "source": "metadata.annotations[\"github.com/repo\"]"
+                    }
+                  }
+                ],
+                "reference": "abc123",
+                "root_reference": "incident.status"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ExpressionPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "grouping_keys": {
+            "description": "Which attributes should this alert route use to group alerts?",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/GroupingKeyV2RequestBody"
+            },
+            "type": "array"
+          },
+          "grouping_window_seconds": {
+            "description": "How large should the grouping window be?",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          },
+          "incident_condition_groups": {
+            "description": "What condition groups must be true for this alert route to create an incident?",
+            "example": [
+              {
+                "conditions": [
+                  {
+                    "operation": "one_of",
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": "incident.severity"
+                  }
+                ]
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ConditionGroupPayloadV2RequestBody"
+            },
+            "type": "array"
+          },
+          "incident_enabled": {
+            "description": "Whether this alert route will create incidents or not",
+            "example": false,
+            "type": "boolean"
+          },
+          "name": {
+            "description": "The name of this alert route config, for the user's reference",
+            "example": "Production incidents",
+            "type": "string"
+          },
+          "template": {
+            "$ref": "#/components/schemas/AlertRouteIncidentTemplatePayloadV2RequestBody"
+          }
+        },
+        "required": [
+          "alert_source_ids",
+          "auto_decline_enabled",
+          "condition_groups",
+          "defer_time_seconds",
+          "enabled",
+          "escalation_bindings",
+          "grouping_keys",
+          "grouping_window_seconds",
+          "incident_condition_groups",
+          "incident_enabled",
+          "name"
+        ],
+        "title": "AlertRoutesV2UpdateRequestBody",
+        "type": "object"
+      },
+      "AlertRoutesV2UpdateResponseBody": {
+        "example": {
+          "alert_route": {
+            "condition_groups": [
+              {
+                "conditions": [
+                  {
+                    "operation": {
+                      "label": "Lawrence Jones",
+                      "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                    },
+                    "param_bindings": [
+                      {
+                        "array_value": [
+                          {
+                            "label": "Lawrence Jones",
+                            "literal": "SEV123",
+                            "reference": "incident.severity"
+                          }
+                        ],
+                        "value": {
+                          "label": "Lawrence Jones",
+                          "literal": "SEV123",
+                          "reference": "incident.severity"
+                        }
+                      }
+                    ],
+                    "subject": {
+                      "label": "Incident Severity",
+                      "reference": "incident.severity"
+                    }
+                  }
+                ]
+              }
+            ],
+            "defer_time_seconds": 1,
+            "escalation_bindings": [
+              {
+                "binding": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              }
+            ],
+            "expressions": [
+              {
+                "else_branch": {
+                  "result": {
+                    "array_value": [
+                      {
+                        "label": "Lawrence Jones",
+                        "literal": "SEV123",
+                        "reference": "incident.severity"
+                      }
+                    ],
+                    "value": {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  }
+                },
+                "label": "Team Slack channel",
+                "operations": [
+                  {
+                    "branches": {
+                      "branches": [
+                        {
+                          "condition_groups": [
+                            {
+                              "conditions": [
+                                {
+                                  "operation": {
+                                    "label": "Lawrence Jones",
+                                    "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                                  },
+                                  "param_bindings": [
+                                    {
+                                      "array_value": [
+                                        {
+                                          "label": "Lawrence Jones",
+                                          "literal": "SEV123",
+                                          "reference": "incident.severity"
+                                        }
+                                      ],
+                                      "value": {
+                                        "label": "Lawrence Jones",
+                                        "literal": "SEV123",
+                                        "reference": "incident.severity"
+                                      }
+                                    }
+                                  ],
+                                  "subject": {
+                                    "label": "Incident Severity",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "result": {
+                            "array_value": [
+                              {
+                                "label": "Lawrence Jones",
+                                "literal": "SEV123",
+                                "reference": "incident.severity"
+                              }
+                            ],
+                            "value": {
+                              "label": "Lawrence Jones",
+                              "literal": "SEV123",
+                              "reference": "incident.severity"
+                            }
+                          }
+                        }
+                      ],
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      }
+                    },
+                    "filter": {
+                      "condition_groups": [
+                        {
+                          "conditions": [
+                            {
+                              "operation": {
+                                "label": "Lawrence Jones",
+                                "value": "01FCQSP07Z74QMMYPDDGQB9FTG"
+                              },
+                              "param_bindings": [
+                                {
+                                  "array_value": [
+                                    {
+                                      "label": "Lawrence Jones",
+                                      "literal": "SEV123",
+                                      "reference": "incident.severity"
+                                    }
+                                  ],
+                                  "value": {
+                                    "label": "Lawrence Jones",
+                                    "literal": "SEV123",
+                                    "reference": "incident.severity"
+                                  }
+                                }
+                              ],
+                              "subject": {
+                                "label": "Incident Severity",
+                                "reference": "incident.severity"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "navigate": {
+                      "reference": "1235",
+                      "reference_label": "Teams"
+                    },
+                    "operation_type": "navigate",
+                    "parse": {
+                      "returns": {
+                        "array": true,
+                        "type": "IncidentStatus"
+                      },
+                      "source": "metadata.annotations[\"github.com/repo\"]"
+                    },
+                    "returns": {
+                      "array": true,
+                      "type": "IncidentStatus"
+                    }
+                  }
+                ],
+                "reference": "abc123",
+                "returns": {
+                  "array": true,
+                  "type": "IncidentStatus"
+                },
+                "root_reference": "incident.status"
+              }
+            ],
+            "grouping_keys": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+              }
+            ],
+            "grouping_window_seconds": 1,
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "name": "Production incidents",
+            "template": {
+              "custom_field_priorities": {
+                "abc123": "first-wins"
+              },
+              "custom_fields": {
+                "custom_field_10014": {
+                  "array_value": [
+                    {
+                      "label": "Lawrence Jones",
+                      "literal": "SEV123",
+                      "reference": "incident.severity"
+                    }
+                  ],
+                  "value": {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                }
+              },
+              "incident_mode": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "incident_type": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "name": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "priority_severity": "severity-first-wins",
+              "severity": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "summary": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              },
+              "workspace": {
+                "array_value": [
+                  {
+                    "label": "Lawrence Jones",
+                    "literal": "SEV123",
+                    "reference": "incident.severity"
+                  }
+                ],
+                "value": {
+                  "label": "Lawrence Jones",
+                  "literal": "SEV123",
+                  "reference": "incident.severity"
+                }
+              }
+            }
+          }
+        },
+        "properties": {
+          "alert_route": {
+            "$ref": "#/components/schemas/AlertRouteV2ResponseBody"
+          }
+        },
+        "required": [
+          "alert_route"
+        ],
+        "title": "AlertRoutesV2UpdateResponseBody",
+        "type": "object"
+      },
       "AuditLogActorMetadataV2ResponseBody": {
         "example": {
           "api_key_roles": "abc123",
@@ -731,6 +3747,7 @@
               "debrief_invite_rule",
               "escalation_path",
               "follow_up_priority",
+              "holiday_user_feed",
               "incident",
               "incident_duration_metric",
               "incident_role",
@@ -2883,6 +5900,234 @@
           "version"
         ],
         "title": "AuditLogsFollowUpPriorityUpdatedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsHolidayUserFeedCreatedV1ResponseBody": {
+        "example": {
+          "action": "holiday_user_feed.created",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "US Team holidays",
+              "type": "holiday_user_feed"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "holiday_user_feed.created",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "US Team holidays",
+                "type": "holiday_user_feed"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsHolidayUserFeedCreatedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsHolidayUserFeedDeletedV1ResponseBody": {
+        "example": {
+          "action": "holiday_user_feed.deleted",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "US Team holidays",
+              "type": "holiday_user_feed"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "holiday_user_feed.deleted",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "US Team holidays",
+                "type": "holiday_user_feed"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsHolidayUserFeedDeletedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsHolidayUserFeedUpdatedV1ResponseBody": {
+        "example": {
+          "action": "holiday_user_feed.updated",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "US Team holidays",
+              "type": "holiday_user_feed"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "holiday_user_feed.updated",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "US Team holidays",
+                "type": "holiday_user_feed"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsHolidayUserFeedUpdatedV1ResponseBody",
         "type": "object"
       },
       "AuditLogsIncidentDurationMetricCreatedV1ResponseBody": {
@@ -15765,6 +19010,40 @@
           "follow_up"
         ],
         "title": "FollowUpsV2ShowResponseBody",
+        "type": "object"
+      },
+      "GroupingKeyV2RequestBody": {
+        "example": {
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+        },
+        "properties": {
+          "id": {
+            "description": "Unique identifier of the alert attribute the user wishes to group on",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "GroupingKeyV2RequestBody",
+        "type": "object"
+      },
+      "GroupingKeyV2ResponseBody": {
+        "example": {
+          "id": "01FCNDV6P870EA6S7TK1DSYDG0"
+        },
+        "properties": {
+          "id": {
+            "description": "Unique identifier of the alert attribute the user wishes to group on",
+            "example": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "GroupingKeyV2ResponseBody",
         "type": "object"
       },
       "IdentityV1ResponseBody": {
@@ -31174,6 +34453,189 @@
         "x-codegen-request-body-name": "CreateHTTPRequestBody"
       }
     },
+    "/v2/alert_routes": {
+      "post": {
+        "description": "Create an alert route.\n\nWe recommend you create alert routes in the incident.io dashboard where we allow\npreviewing filter and grouping rules.\n",
+        "operationId": "Alert Routes V2#Create",
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertRoutesV2CreateRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertRoutesV2CreateRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertRoutesV2CreateRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2CreateResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2CreateResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2CreateResponseBody"
+                }
+              }
+            },
+            "description": "Created response."
+          }
+        },
+        "summary": "Create Alert Routes V2",
+        "tags": [
+          "Alert Routes V2"
+        ],
+        "x-codegen-request-body-name": "CreateRequestBody"
+      }
+    },
+    "/v2/alert_routes/{id}": {
+      "delete": {
+        "description": "Archives an alert route.\n\nWe recommend you create alert routes in the incident.io dashboard where we allow\npreviewing filter and grouping rules.\n",
+        "operationId": "Alert Routes V2#Destroy",
+        "parameters": [
+          {
+            "description": "Unique identifier for this alert route config",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "No Content response."
+          }
+        },
+        "summary": "Destroy Alert Routes V2",
+        "tags": [
+          "Alert Routes V2"
+        ]
+      },
+      "get": {
+        "description": "Show an alert route.\n\nWe recommend you create alert routes in the incident.io dashboard where we allow\npreviewing filter and grouping rules.\n",
+        "operationId": "Alert Routes V2#Show",
+        "parameters": [
+          {
+            "description": "Unique identifier for this alert route config",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2ShowResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2ShowResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2ShowResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "Show Alert Routes V2",
+        "tags": [
+          "Alert Routes V2"
+        ]
+      },
+      "put": {
+        "description": "Updates an alert route.\n\nWe recommend you create alert routes in the incident.io dashboard where we allow\npreviewing filter and grouping rules.\n",
+        "operationId": "Alert Routes V2#Update",
+        "parameters": [
+          {
+            "description": "Unique identifier for this alert route config",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/gob": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertRoutesV2UpdateRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertRoutesV2UpdateRequestBody"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertRoutesV2UpdateRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2UpdateResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2UpdateResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertRoutesV2UpdateResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "Update Alert Routes V2",
+        "tags": [
+          "Alert Routes V2"
+        ],
+        "x-codegen-request-body-name": "UpdateRequestBody"
+      }
+    },
     "/v2/catalog_entries": {
       "get": {
         "description": "List entries for a catalog type.",
@@ -34366,6 +37828,102 @@
         ]
       }
     },
+    "/x-audit-logs/holiday_user_feed.created.1": {
+      "get": {
+        "description": "This entry is created whenever a holiday user feed is created",
+        "operationId": "Audit logs#HolidayUserFeedCreatedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedCreatedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedCreatedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedCreatedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "HolidayUserFeedCreatedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
+    "/x-audit-logs/holiday_user_feed.deleted.1": {
+      "get": {
+        "description": "This entry is created whenever a holiday user feed is deleted",
+        "operationId": "Audit logs#HolidayUserFeedDeletedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedDeletedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedDeletedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedDeletedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "HolidayUserFeedDeletedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
+    "/x-audit-logs/holiday_user_feed.updated.1": {
+      "get": {
+        "description": "This entry is created whenever a holiday user feed is updated",
+        "operationId": "Audit logs#HolidayUserFeedUpdatedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedUpdatedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedUpdatedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsHolidayUserFeedUpdatedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "HolidayUserFeedUpdatedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
     "/x-audit-logs/incident_duration_metric.created.1": {
       "get": {
         "description": "This entry is created whenever a incident duration metric is created",
@@ -36812,6 +40370,10 @@
     {
       "description": "Manage incident actions.\n\nIncident actions are used during an incident, to track work such as 'restart the database' or 'contact the customer'.\n\nYou can manage actions in the incident Slack channel with <code>/incident actions</code>, or on\nthe incident homepage.\n",
       "name": "Actions V2"
+    },
+    {
+      "description": "Create and manage alert routes.\n\nAlert routes take alerts from alert sources, filter them according to conditions, apply\ngrouping on alert attributes, then finally create:\n\n1. Incidents\n2. Escalations\n\nThese are best configured in the incident.io dashboard and exported via the UI to\nTerraform, as the configuration is complex.\n",
+      "name": "Alert Routes V2"
     },
     {
       "description": "To give you visibility over the changes that are made within your incident.io account, we use an audit log. Our audit log is powered by <a href=\"https://workos.com\" target=\"_blank\">WorkOS</a>. The log is available for customers on our [Enterprise plan](https://incident.io/pricing).\n\nThe audit log contains information about any configuration changes, as well as changes to a user's permissions (e.g. being given a new role, or access to a private incident).\n\nEach entry will have an actor (the person or system that made the change) and one or more targets (a thing that was modified by this change). It will also include the Location and User Agent of the actor, where applicable.\n\nEach entry will conform to a schema, which is documented here. Each entry also has a version, so that if our schema changes over time you\u2019ll still be able to parse old events.\n\nWe\u2019ll retain these entries for one year.\n\nAudit log entries start from 18 April, 2023 (there are no entries available from before that date).\n\n## Viewing your audit log\n\nYou can view your audit log via our [security settings](https://app.incident.io/settings/security) page.\n\nFrom there, you'll be able to:\n\n- View the entries via a web interface (filterable by target, event type, actor and date)\n- Export the entries for a given time period to a CSV\n- Set up a log stream to a provider of your choice (e.g. Splunk or an Amazon S3 bucket)\n\n## Understanding actors\n\nEach entry will have an actor associated with it, which is one of 5 types:\n\n### Users\n\nThis is for changes triggered by the actions of a particular user in your account.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"user\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Kelsey Mills\",\n    \"metadata\": {\n      \"user_base_role_slug\": \"admin\",\n      \"user_custom_role_slugs\": \"engineering,security\"\n    }\n  }\n```\n\n### API Keys\n\nThis is for changes triggered by an API key.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"api_key\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Lisa's development key\",\n    \"metadata\": {\n      \"api_key_roles\": \"incident_creator,global_access\"\n    }\n  }\n```\n\n### Integrations\n\nThis is for changes triggered by a system. Sometimes that will be a third party system (e.g. a user might be created\nvia Slack) or sometimes it might be something triggered from inside incident.io (e.g. a severity created as part of setup).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"system\",\n    \"id\": \"incident_setup\",\n    \"name\": \"incident.io (setup)\",\n    \"metadata\": {}\n  }\n```\n\n### Workflows\n\nThis is for changes triggered by a workflow: for example, a workflow that invites users to a private incident.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"workflow\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Auto-invite security team to private incidents\",\n    \"metadata\": {}\n  }\n```\n\n### External resources\n\nThis is for changes triggered by a specific [external resource](https://api-docs.incident.io/tag/Incident-Attachments-V1) (also known as an attachment).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"external_resource\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"#1234 Increased API latency\",\n    \"metadata\": {\n      \"external_resource_type\": \"pager_duty_incident\",\n      \"external_resource_external_id\": \"q1234\"\n    }\n  }\n```\n",
