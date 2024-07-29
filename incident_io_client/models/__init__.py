@@ -185,6 +185,9 @@ from .audit_logs_holiday_user_feed_deleted_v1_response_body import (
 from .audit_logs_holiday_user_feed_updated_v1_response_body import (
     AuditLogsHolidayUserFeedUpdatedV1ResponseBody,
 )
+from .audit_logs_incident_call_setting_updated_v1_response_body import (
+    AuditLogsIncidentCallSettingUpdatedV1ResponseBody,
+)
 from .audit_logs_incident_duration_metric_created_v1_response_body import (
     AuditLogsIncidentDurationMetricCreatedV1ResponseBody,
 )
@@ -1217,6 +1220,7 @@ __all__ = (
     "AuditLogsHolidayUserFeedCreatedV1ResponseBody",
     "AuditLogsHolidayUserFeedDeletedV1ResponseBody",
     "AuditLogsHolidayUserFeedUpdatedV1ResponseBody",
+    "AuditLogsIncidentCallSettingUpdatedV1ResponseBody",
     "AuditLogsIncidentDurationMetricCreatedV1ResponseBody",
     "AuditLogsIncidentDurationMetricDeletedV1ResponseBody",
     "AuditLogsIncidentDurationMetricUpdatedV1ResponseBody",

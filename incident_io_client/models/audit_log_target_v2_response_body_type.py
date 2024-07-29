@@ -14,6 +14,7 @@ class AuditLogTargetV2ResponseBodyType(str, Enum):
     FOLLOW_UP_PRIORITY = "follow_up_priority"
     HOLIDAY_USER_FEED = "holiday_user_feed"
     INCIDENT = "incident"
+    INCIDENT_CALL_SETTING = "incident_call_setting"
     INCIDENT_DURATION_METRIC = "incident_duration_metric"
     INCIDENT_ROLE = "incident_role"
     INCIDENT_STATUS = "incident_status"
