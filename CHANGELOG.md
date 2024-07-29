@@ -1,3 +1,10 @@
+## 0.48.5 (2024-07-29)
+
+### Fix
+
+- **deps-dev**: bump mypy from 1.10.1 to 1.11.0
+- **deps-dev**: bump mypy from 1.10.1 to 1.11.0 in /example
+
 ## 0.48.4 (2024-07-22)
 
 ### Fix
