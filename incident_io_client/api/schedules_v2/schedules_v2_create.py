@@ -71,8 +71,9 @@ def sync_detailed(
             'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval':
-            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'name': 'My
-            Schedule', 'timezone': 'America/Los_Angeles'}}.
+            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]},
+            'holidays_public_config': {'country_codes': ['abc123']}, 'name': 'My Schedule',
+            'timezone': 'America/Los_Angeles'}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -110,8 +111,9 @@ def sync(
             'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval':
-            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'name': 'My
-            Schedule', 'timezone': 'America/Los_Angeles'}}.
+            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]},
+            'holidays_public_config': {'country_codes': ['abc123']}, 'name': 'My Schedule',
+            'timezone': 'America/Los_Angeles'}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -144,8 +146,9 @@ async def asyncio_detailed(
             'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval':
-            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'name': 'My
-            Schedule', 'timezone': 'America/Los_Angeles'}}.
+            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]},
+            'holidays_public_config': {'country_codes': ['abc123']}, 'name': 'My Schedule',
+            'timezone': 'America/Los_Angeles'}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -181,8 +184,9 @@ async def asyncio(
             'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval':
-            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'name': 'My
-            Schedule', 'timezone': 'America/Los_Angeles'}}.
+            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]},
+            'holidays_public_config': {'country_codes': ['abc123']}, 'name': 'My Schedule',
+            'timezone': 'America/Los_Angeles'}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
