@@ -104,7 +104,7 @@ class ScheduleEntryV2ResponseBody:
 
         _user = d.pop("user", UNSET)
         user: Union[Unset, UserV2ResponseBody]
-        if isinstance(_user, Unset):
+        if isinstance(_user, Unset) or (_user is None):
             user = UNSET
         else:
             user = UserV2ResponseBody.from_dict(_user)
