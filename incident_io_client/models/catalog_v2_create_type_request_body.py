@@ -28,7 +28,7 @@ class CatalogV2CreateTypeRequestBody:
     """
     Example:
         {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color':
-            'yellow', 'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'bolt', 'name':
+            'yellow', 'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon': 'alert', 'name':
             'Kubernetes Cluster', 'ranked': True, 'source_repo_url': 'https://github.com/my-company/incident-io-catalog',
             'type_name': 'Custom["BackstageGroup"]'}
 
@@ -43,7 +43,7 @@ class CatalogV2CreateTypeRequestBody:
         color (Union[Unset, CatalogV2CreateTypeRequestBodyColor]): Sets the display color of this type in the dashboard
             Example: yellow.
         icon (Union[Unset, CatalogV2CreateTypeRequestBodyIcon]): Sets the display icon of this type in the dashboard
-            Example: bolt.
+            Example: alert.
         ranked (Union[Unset, bool]): If this type should be ranked Example: True.
         source_repo_url (Union[Unset, str]): The url of the external repository where this type is managed Example:
             https://github.com/my-company/incident-io-catalog.

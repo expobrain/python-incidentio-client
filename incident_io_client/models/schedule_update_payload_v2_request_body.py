@@ -9,6 +9,9 @@ if TYPE_CHECKING:
     from ..models.schedule_config_update_payload_v2_request_body import (
         ScheduleConfigUpdatePayloadV2RequestBody,
     )
+    from ..models.schedule_holidays_public_config_payload_v2_request_body import (
+        ScheduleHolidaysPublicConfigPayloadV2RequestBody,
+    )
     from ..models.schedule_update_payload_v2_request_body_annotations import (
         ScheduleUpdatePayloadV2RequestBodyAnnotations,
     )
@@ -26,7 +29,8 @@ class ScheduleUpdatePayloadV2RequestBody:
             'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com',
             'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
-            'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'name': 'My Schedule', 'timezone': 'America/Los_Angeles'}
+            'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'holidays_public_config': {'country_codes': ['abc123']},
+            'name': 'My Schedule', 'timezone': 'America/Los_Angeles'}
 
     Attributes:
         annotations (Union[Unset, ScheduleUpdatePayloadV2RequestBodyAnnotations]): Annotations that can track metadata
@@ -37,12 +41,17 @@ class ScheduleUpdatePayloadV2RequestBody:
             'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
             'start_time': '09:00', 'weekday': 'tuesday'}]}]}.
+        holidays_public_config (Union[Unset, ScheduleHolidaysPublicConfigPayloadV2RequestBody]):  Example:
+            {'country_codes': ['abc123']}.
         name (Union[Unset, str]): Name of the schedule Example: My Schedule.
         timezone (Union[Unset, str]): Timezone of the schedule Example: America/Los_Angeles.
     """
 
     annotations: Union[Unset, "ScheduleUpdatePayloadV2RequestBodyAnnotations"] = UNSET
     config: Union[Unset, "ScheduleConfigUpdatePayloadV2RequestBody"] = UNSET
+    holidays_public_config: Union[Unset, "ScheduleHolidaysPublicConfigPayloadV2RequestBody"] = (
+        UNSET
+    )
     name: Union[Unset, str] = UNSET
     timezone: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -56,6 +65,10 @@ class ScheduleUpdatePayloadV2RequestBody:
         if not isinstance(self.config, Unset):
             config = self.config.to_dict()
 
+        holidays_public_config: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.holidays_public_config, Unset):
+            holidays_public_config = self.holidays_public_config.to_dict()
+
         name = self.name
 
         timezone = self.timezone
@@ -67,6 +80,8 @@ class ScheduleUpdatePayloadV2RequestBody:
             field_dict["annotations"] = annotations
         if config is not UNSET:
             field_dict["config"] = config
+        if holidays_public_config is not UNSET:
+            field_dict["holidays_public_config"] = holidays_public_config
         if name is not UNSET:
             field_dict["name"] = name
         if timezone is not UNSET:
@@ -78,6 +93,9 @@ class ScheduleUpdatePayloadV2RequestBody:
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.schedule_config_update_payload_v2_request_body import (
             ScheduleConfigUpdatePayloadV2RequestBody,
+        )
+        from ..models.schedule_holidays_public_config_payload_v2_request_body import (
+            ScheduleHolidaysPublicConfigPayloadV2RequestBody,
         )
         from ..models.schedule_update_payload_v2_request_body_annotations import (
             ScheduleUpdatePayloadV2RequestBodyAnnotations,
@@ -98,6 +116,15 @@ class ScheduleUpdatePayloadV2RequestBody:
         else:
             config = ScheduleConfigUpdatePayloadV2RequestBody.from_dict(_config)
 
+        _holidays_public_config = d.pop("holidays_public_config", UNSET)
+        holidays_public_config: Union[Unset, ScheduleHolidaysPublicConfigPayloadV2RequestBody]
+        if isinstance(_holidays_public_config, Unset):
+            holidays_public_config = UNSET
+        else:
+            holidays_public_config = ScheduleHolidaysPublicConfigPayloadV2RequestBody.from_dict(
+                _holidays_public_config
+            )
+
         name = d.pop("name", UNSET)
 
         timezone = d.pop("timezone", UNSET)
@@ -105,6 +132,7 @@ class ScheduleUpdatePayloadV2RequestBody:
         schedule_update_payload_v2_request_body = cls(
             annotations=annotations,
             config=config,
+            holidays_public_config=holidays_public_config,
             name=name,
             timezone=timezone,
         )

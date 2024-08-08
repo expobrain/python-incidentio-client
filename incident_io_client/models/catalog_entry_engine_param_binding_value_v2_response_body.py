@@ -20,28 +20,30 @@ class CatalogEntryEngineParamBindingValueV2ResponseBody:
     Example:
         {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
-            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'abc123', 'image_url': 'abc123', 'is_image_slack_icon': False,
+            'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': 'abc123',
+            'unavailable': False, 'value': 'abc123'}
 
     Attributes:
         label (str): Human readable label to be displayed for user to select Example: Lawrence Jones.
-        sort_key (str): Gives an indication of how to sort the options when displayed to the user Example: 000020.
+        sort_key (str): This field is deprecated. It will not be present in any responses, and will be removed in a
+            future version Example: abc123.
         catalog_entry (Union[Unset, CatalogEntryReferenceV2ResponseBody]):  Example: {'archived_at':
             '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
             escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
-        helptext (Union[Unset, str]): Gives a description of the option to the user Example: Collection of standalone
-            automations like auto-closing incidents..
-        image_url (Union[Unset, str]): If appropriate, URL to an image that can be displayed alongside the option
-            Example: https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg.
-        is_image_slack_icon (Union[Unset, bool]): If true, the image_url is a Slack icon and should be displayed as such
+        helptext (Union[Unset, str]): This field is deprecated. It will not be present in any responses, and will be
+            removed in a future version Example: abc123.
+        image_url (Union[Unset, str]): This field is deprecated. It will not be present in any responses, and will be
+            removed in a future version Example: abc123.
+        is_image_slack_icon (Union[Unset, bool]): This field is deprecated. It will not be present in any responses, and
+            will be removed in a future version
         literal (Union[Unset, str]): If set, this is the literal value of the step parameter Example: SEV123.
-        reference (Union[Unset, str]): If set, this is the reference into the trigger scope that is the value of this
-            parameter Example: incident.severity.
-        unavailable (Union[Unset, bool]): Unavailable is true if we've failed to build the value for this binding
-        value (Union[Unset, str]): Either the reference or the literal: this field is designed purely to make working
-            with react-select easier Example: abc123.
+        reference (Union[Unset, str]): This field is deprecated. It will not be present in any responses, and will be
+            removed in a future version Example: incident.severity.
+        unavailable (Union[Unset, bool]): This field is deprecated. It will not be present in any responses, and will be
+            removed in a future version
+        value (Union[Unset, str]): This field is deprecated. It will not be present in any responses, and will be
+            removed in a future version Example: abc123.
     """
 
     label: str

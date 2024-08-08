@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class CatalogV2UpdateTypeRequestBodyIcon(str, Enum):
+    ALERT = "alert"
     BOLT = "bolt"
     BOX = "box"
     BRIEFCASE = "briefcase"
@@ -14,6 +15,7 @@ class CatalogV2UpdateTypeRequestBodyIcon(str, Enum):
     DATABASE = "database"
     DOC = "doc"
     EMAIL = "email"
+    ESCALATION_PATH = "escalation-path"
     FILES = "files"
     FLAG = "flag"
     FOLDER = "folder"
@@ -22,6 +24,7 @@ class CatalogV2UpdateTypeRequestBodyIcon(str, Enum):
     SERVER = "server"
     SEVERITY = "severity"
     STAR = "star"
+    STATUS_PAGE = "status-page"
     STORE = "store"
     TAG = "tag"
     USER = "user"

@@ -10,6 +10,9 @@ from ..types import UNSET, Unset
 if TYPE_CHECKING:
     from ..models.schedule_config_v2_response_body import ScheduleConfigV2ResponseBody
     from ..models.schedule_entry_v2_response_body import ScheduleEntryV2ResponseBody
+    from ..models.schedule_holidays_public_config_v2_response_body import (
+        ScheduleHolidaysPublicConfigV2ResponseBody,
+    )
     from ..models.schedule_v2_response_body_annotations import (
         ScheduleV2ResponseBodyAnnotations,
     )
@@ -32,8 +35,9 @@ class ScheduleV2ResponseBody:
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id':
             '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at':
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
-            'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'name': 'Primary On-Call Schedule', 'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}], 'holidays_public_config':
+            {'country_codes': ['GB', 'FR']}, 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Primary On-Call Schedule',
+            'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         annotations (ScheduleV2ResponseBodyAnnotations): Annotations that track metadata about this resource Example:
@@ -56,6 +60,8 @@ class ScheduleV2ResponseBody:
             '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at':
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}].
+        holidays_public_config (Union[Unset, ScheduleHolidaysPublicConfigV2ResponseBody]):  Example: {'country_codes':
+            ['GB', 'FR']}.
     """
 
     annotations: "ScheduleV2ResponseBodyAnnotations"
@@ -66,6 +72,7 @@ class ScheduleV2ResponseBody:
     updated_at: datetime.datetime
     config: Union[Unset, "ScheduleConfigV2ResponseBody"] = UNSET
     current_shifts: Union[Unset, List["ScheduleEntryV2ResponseBody"]] = UNSET
+    holidays_public_config: Union[Unset, "ScheduleHolidaysPublicConfigV2ResponseBody"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -92,6 +99,10 @@ class ScheduleV2ResponseBody:
                 current_shifts_item = current_shifts_item_data.to_dict()
                 current_shifts.append(current_shifts_item)
 
+        holidays_public_config: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.holidays_public_config, Unset):
+            holidays_public_config = self.holidays_public_config.to_dict()
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -108,6 +119,8 @@ class ScheduleV2ResponseBody:
             field_dict["config"] = config
         if current_shifts is not UNSET:
             field_dict["current_shifts"] = current_shifts
+        if holidays_public_config is not UNSET:
+            field_dict["holidays_public_config"] = holidays_public_config
 
         return field_dict
 
@@ -117,6 +130,9 @@ class ScheduleV2ResponseBody:
             ScheduleConfigV2ResponseBody,
         )
         from ..models.schedule_entry_v2_response_body import ScheduleEntryV2ResponseBody
+        from ..models.schedule_holidays_public_config_v2_response_body import (
+            ScheduleHolidaysPublicConfigV2ResponseBody,
+        )
         from ..models.schedule_v2_response_body_annotations import (
             ScheduleV2ResponseBodyAnnotations,
         )
@@ -148,6 +164,15 @@ class ScheduleV2ResponseBody:
 
             current_shifts.append(current_shifts_item)
 
+        _holidays_public_config = d.pop("holidays_public_config", UNSET)
+        holidays_public_config: Union[Unset, ScheduleHolidaysPublicConfigV2ResponseBody]
+        if isinstance(_holidays_public_config, Unset):
+            holidays_public_config = UNSET
+        else:
+            holidays_public_config = ScheduleHolidaysPublicConfigV2ResponseBody.from_dict(
+                _holidays_public_config
+            )
+
         schedule_v2_response_body = cls(
             annotations=annotations,
             created_at=created_at,
@@ -157,6 +182,7 @@ class ScheduleV2ResponseBody:
             updated_at=updated_at,
             config=config,
             current_shifts=current_shifts,
+            holidays_public_config=holidays_public_config,
         )
 
         schedule_v2_response_body.additional_properties = d

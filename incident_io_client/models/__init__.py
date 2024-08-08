@@ -185,6 +185,9 @@ from .audit_logs_holiday_user_feed_deleted_v1_response_body import (
 from .audit_logs_holiday_user_feed_updated_v1_response_body import (
     AuditLogsHolidayUserFeedUpdatedV1ResponseBody,
 )
+from .audit_logs_incident_call_setting_updated_v1_response_body import (
+    AuditLogsIncidentCallSettingUpdatedV1ResponseBody,
+)
 from .audit_logs_incident_duration_metric_created_v1_response_body import (
     AuditLogsIncidentDurationMetricCreatedV1ResponseBody,
 )
@@ -891,6 +894,12 @@ from .schedule_entries_list_payload_v2_response_body import (
     ScheduleEntriesListPayloadV2ResponseBody,
 )
 from .schedule_entry_v2_response_body import ScheduleEntryV2ResponseBody
+from .schedule_holidays_public_config_payload_v2_request_body import (
+    ScheduleHolidaysPublicConfigPayloadV2RequestBody,
+)
+from .schedule_holidays_public_config_v2_response_body import (
+    ScheduleHolidaysPublicConfigV2ResponseBody,
+)
 from .schedule_layer_create_payload_v2_request_body import (
     ScheduleLayerCreatePayloadV2RequestBody,
 )
@@ -1217,6 +1226,7 @@ __all__ = (
     "AuditLogsHolidayUserFeedCreatedV1ResponseBody",
     "AuditLogsHolidayUserFeedDeletedV1ResponseBody",
     "AuditLogsHolidayUserFeedUpdatedV1ResponseBody",
+    "AuditLogsIncidentCallSettingUpdatedV1ResponseBody",
     "AuditLogsIncidentDurationMetricCreatedV1ResponseBody",
     "AuditLogsIncidentDurationMetricDeletedV1ResponseBody",
     "AuditLogsIncidentDurationMetricUpdatedV1ResponseBody",
@@ -1553,6 +1563,8 @@ __all__ = (
     "ScheduleCreatePayloadV2RequestBodyAnnotations",
     "ScheduleEntriesListPayloadV2ResponseBody",
     "ScheduleEntryV2ResponseBody",
+    "ScheduleHolidaysPublicConfigPayloadV2RequestBody",
+    "ScheduleHolidaysPublicConfigV2ResponseBody",
     "ScheduleLayerCreatePayloadV2RequestBody",
     "ScheduleLayerUpdatePayloadV2RequestBody",
     "ScheduleLayerV2ResponseBody",
