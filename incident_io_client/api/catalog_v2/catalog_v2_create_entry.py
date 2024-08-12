@@ -67,6 +67,9 @@ def sync_detailed(
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
+    If you call this API with a payload where the external_id and catalog_type_id match an existing
+    entry, the existing entry will be updated.
+
     Args:
         body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
             'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
@@ -102,6 +105,9 @@ def sync(
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
 
+    If you call this API with a payload where the external_id and catalog_type_id match an existing
+    entry, the existing entry will be updated.
+
     Args:
         body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
             'lawrence'], 'attribute_values': {'abc123': {'array_value': [{'literal': 'SEV123',
@@ -131,6 +137,9 @@ async def asyncio_detailed(
     """CreateEntry Catalog V2
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
+
+    If you call this API with a payload where the external_id and catalog_type_id match an existing
+    entry, the existing entry will be updated.
 
     Args:
         body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',
@@ -164,6 +173,9 @@ async def asyncio(
     """CreateEntry Catalog V2
 
      Create an entry within the catalog. We support a maximum of 50,000 entries per type.
+
+    If you call this API with a payload where the external_id and catalog_type_id match an existing
+    entry, the existing entry will be updated.
 
     Args:
         body (CatalogV2CreateEntryRequestBody):  Example: {'aliases': ['lawrence@incident.io',

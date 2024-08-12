@@ -64,8 +64,8 @@ class AlertRoutesV2CreateRequestBody:
             'SEV123', 'reference': 'incident.severity'}}}}
 
     Attributes:
-        alert_source_ids (Union[Unset, List[str]]): The alert sources that will match this alert route Example:
-            ['02FCNDV6P870EA6S7TK1DSYDG2'].
+        alert_source_ids (Union[Unset, List[str]]): Legacy field - the alert sources that will match this alert route
+            Example: ['02FCNDV6P870EA6S7TK1DSYDG2'].
         auto_decline_enabled (Union[Unset, bool]): Should triage incidents be declined when alerts are resolved?
         condition_groups (Union[Unset, List['ConditionGroupPayloadV2RequestBody']]): What condition groups must be true
             for this alert route to fire? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':

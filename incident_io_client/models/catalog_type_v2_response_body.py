@@ -30,7 +30,7 @@ class CatalogTypeV2ResponseBody:
     Example:
         {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color':
             'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we
-            run inside of GKE.', 'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'bolt', 'id':
+            run inside of GKE.', 'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'alert', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'last_synced_at': '2021-08-17T13:28:57.801578Z', 'name':
             'Kubernetes Cluster', 'ranked': True, 'registry_type': 'PagerDutyService', 'required_integrations':
             ['pager_duty'], 'schema': {'attributes': [{'array': False, 'backlink_attribute': 'abc123', 'id':
@@ -48,7 +48,7 @@ class CatalogTypeV2ResponseBody:
         created_at (datetime.datetime): When this type was created Example: 2021-08-17T13:28:57.801578Z.
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
             inside of GKE..
-        icon (CatalogTypeV2ResponseBodyIcon): Sets the display icon of this type in the dashboard Example: bolt.
+        icon (CatalogTypeV2ResponseBodyIcon): Sets the display icon of this type in the dashboard Example: alert.
         id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         is_editable (bool): Catalog types that are synced with external resources can't be edited
         name (str): Name is the human readable name of this type Example: Kubernetes Cluster.

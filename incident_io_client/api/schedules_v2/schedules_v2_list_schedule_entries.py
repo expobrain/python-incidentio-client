@@ -76,7 +76,8 @@ def sync_detailed(
 ) -> Response[SchedulesV2ListScheduleEntriesResponseBody]:
     """ListScheduleEntries Schedules V2
 
-     Get a list of schedule entries.
+     Get a list of schedule entries. The endpoint will return all entries that overlap with the given
+    window, if one is provided.
 
     Args:
         schedule_id (str):
@@ -113,7 +114,8 @@ def sync(
 ) -> Optional[SchedulesV2ListScheduleEntriesResponseBody]:
     """ListScheduleEntries Schedules V2
 
-     Get a list of schedule entries.
+     Get a list of schedule entries. The endpoint will return all entries that overlap with the given
+    window, if one is provided.
 
     Args:
         schedule_id (str):
@@ -145,7 +147,8 @@ async def asyncio_detailed(
 ) -> Response[SchedulesV2ListScheduleEntriesResponseBody]:
     """ListScheduleEntries Schedules V2
 
-     Get a list of schedule entries.
+     Get a list of schedule entries. The endpoint will return all entries that overlap with the given
+    window, if one is provided.
 
     Args:
         schedule_id (str):
@@ -180,7 +183,8 @@ async def asyncio(
 ) -> Optional[SchedulesV2ListScheduleEntriesResponseBody]:
     """ListScheduleEntries Schedules V2
 
-     Get a list of schedule entries.
+     Get a list of schedule entries. The endpoint will return all entries that overlap with the given
+    window, if one is provided.
 
     Args:
         schedule_id (str):

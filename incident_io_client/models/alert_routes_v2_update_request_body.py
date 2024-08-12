@@ -64,7 +64,7 @@ class AlertRoutesV2UpdateRequestBody:
             'SEV123', 'reference': 'incident.severity'}}}}
 
     Attributes:
-        alert_source_ids (List[str]): The alert sources that will match this alert route Example:
+        alert_source_ids (List[str]): Legacy field - the alert sources that will match this alert route Example:
             ['02FCNDV6P870EA6S7TK1DSYDG2'].
         auto_decline_enabled (bool): Should triage incidents be declined when alerts are resolved?
         condition_groups (List['ConditionGroupPayloadV2RequestBody']): What condition groups must be true for this alert

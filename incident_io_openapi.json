@@ -1822,7 +1822,7 @@
         },
         "properties": {
           "alert_source_ids": {
-            "description": "The alert sources that will match this alert route",
+            "description": "Legacy field - the alert sources that will match this alert route",
             "example": [
               "02FCNDV6P870EA6S7TK1DSYDG2"
             ],
@@ -3002,7 +3002,7 @@
         },
         "properties": {
           "alert_source_ids": {
-            "description": "The alert sources that will match this alert route",
+            "description": "Legacy field - the alert sources that will match this alert route",
             "example": [
               "02FCNDV6P870EA6S7TK1DSYDG2"
             ],
@@ -3749,6 +3749,7 @@
               "follow_up_priority",
               "holiday_user_feed",
               "incident",
+              "incident_call_setting",
               "incident_duration_metric",
               "incident_role",
               "incident_status",
@@ -6128,6 +6129,82 @@
           "version"
         ],
         "title": "AuditLogsHolidayUserFeedUpdatedV1ResponseBody",
+        "type": "object"
+      },
+      "AuditLogsIncidentCallSettingUpdatedV1ResponseBody": {
+        "example": {
+          "action": "incident_call_setting.updated",
+          "actor": {
+            "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+            "metadata": {
+              "user_base_role_slug": "admin",
+              "user_custom_role_slugs": "engineering,security"
+            },
+            "name": "John Doe",
+            "type": "user"
+          },
+          "context": {
+            "location": "1.2.3.4",
+            "user_agent": "Chrome/91.0.4472.114"
+          },
+          "occurred_at": "2021-08-17T13:28:57.801578Z",
+          "targets": [
+            {
+              "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+              "name": "Incident call settings",
+              "type": "incident_call_setting"
+            }
+          ],
+          "version": 1
+        },
+        "properties": {
+          "action": {
+            "description": "The type of log entry that this is",
+            "example": "incident_call_setting.updated",
+            "type": "string"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/AuditLogActorV2ResponseBody"
+          },
+          "context": {
+            "$ref": "#/components/schemas/AuditLogEntryContextV2ResponseBody"
+          },
+          "occurred_at": {
+            "description": "When the entry occurred",
+            "example": "2021-08-17T13:28:57.801578Z",
+            "format": "date-time",
+            "type": "string"
+          },
+          "targets": {
+            "description": "The custom field that was created",
+            "example": [
+              {
+                "id": "01FCNDV6P870EA6S7TK1DSYDG0",
+                "name": "Incident call settings",
+                "type": "incident_call_setting"
+              }
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AuditLogTargetV2ResponseBody"
+            },
+            "type": "array"
+          },
+          "version": {
+            "description": "Which version the event is",
+            "example": 1,
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "action",
+          "actor",
+          "context",
+          "occurred_at",
+          "targets",
+          "version"
+        ],
+        "title": "AuditLogsIncidentCallSettingUpdatedV1ResponseBody",
         "type": "object"
       },
       "AuditLogsIncidentDurationMetricCreatedV1ResponseBody": {
@@ -10747,13 +10824,13 @@
                 "catalog_entry_name": "Primary escalation",
                 "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
               },
-              "helptext": "Collection of standalone automations like auto-closing incidents.",
-              "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+              "helptext": "abc123",
+              "image_url": "abc123",
               "is_image_slack_icon": false,
               "label": "Lawrence Jones",
               "literal": "SEV123",
               "reference": "incident.severity",
-              "sort_key": "000020",
+              "sort_key": "abc123",
               "unavailable": false,
               "value": "abc123"
             }
@@ -10765,13 +10842,13 @@
               "catalog_entry_name": "Primary escalation",
               "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
             },
-            "helptext": "Collection of standalone automations like auto-closing incidents.",
-            "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+            "helptext": "abc123",
+            "image_url": "abc123",
             "is_image_slack_icon": false,
             "label": "Lawrence Jones",
             "literal": "SEV123",
             "reference": "incident.severity",
-            "sort_key": "000020",
+            "sort_key": "abc123",
             "unavailable": false,
             "value": "abc123"
           }
@@ -10787,13 +10864,13 @@
                   "catalog_entry_name": "Primary escalation",
                   "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                 },
-                "helptext": "Collection of standalone automations like auto-closing incidents.",
-                "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                "helptext": "abc123",
+                "image_url": "abc123",
                 "is_image_slack_icon": false,
                 "label": "Lawrence Jones",
                 "literal": "SEV123",
                 "reference": "incident.severity",
-                "sort_key": "000020",
+                "sort_key": "abc123",
                 "unavailable": false,
                 "value": "abc123"
               }
@@ -10818,13 +10895,13 @@
             "catalog_entry_name": "Primary escalation",
             "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
           },
-          "helptext": "Collection of standalone automations like auto-closing incidents.",
-          "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+          "helptext": "abc123",
+          "image_url": "abc123",
           "is_image_slack_icon": false,
           "label": "Lawrence Jones",
           "literal": "SEV123",
           "reference": "incident.severity",
-          "sort_key": "000020",
+          "sort_key": "abc123",
           "unavailable": false,
           "value": "abc123"
         },
@@ -10833,17 +10910,17 @@
             "$ref": "#/components/schemas/CatalogEntryReferenceV2ResponseBody"
           },
           "helptext": {
-            "description": "Gives a description of the option to the user",
-            "example": "Collection of standalone automations like auto-closing incidents.",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
+            "example": "abc123",
             "type": "string"
           },
           "image_url": {
-            "description": "If appropriate, URL to an image that can be displayed alongside the option",
-            "example": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
+            "example": "abc123",
             "type": "string"
           },
           "is_image_slack_icon": {
-            "description": "If true, the image_url is a Slack icon and should be displayed as such",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
             "example": false,
             "type": "boolean"
           },
@@ -10858,22 +10935,22 @@
             "type": "string"
           },
           "reference": {
-            "description": "If set, this is the reference into the trigger scope that is the value of this parameter",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
             "example": "incident.severity",
             "type": "string"
           },
           "sort_key": {
-            "description": "Gives an indication of how to sort the options when displayed to the user",
-            "example": "000020",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
+            "example": "abc123",
             "type": "string"
           },
           "unavailable": {
-            "description": "Unavailable is true if we've failed to build the value for this binding",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
             "example": false,
             "type": "boolean"
           },
           "value": {
-            "description": "Either the reference or the literal: this field is designed purely to make working with react-select easier",
+            "description": "This field is deprecated. It will not be present in any responses, and will be removed in a future version",
             "example": "abc123",
             "type": "string"
           }
@@ -10940,13 +11017,13 @@
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                   },
-                  "helptext": "Collection of standalone automations like auto-closing incidents.",
-                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "helptext": "abc123",
+                  "image_url": "abc123",
                   "is_image_slack_icon": false,
                   "label": "Lawrence Jones",
                   "literal": "SEV123",
                   "reference": "incident.severity",
-                  "sort_key": "000020",
+                  "sort_key": "abc123",
                   "unavailable": false,
                   "value": "abc123"
                 }
@@ -10958,13 +11035,13 @@
                   "catalog_entry_name": "Primary escalation",
                   "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                 },
-                "helptext": "Collection of standalone automations like auto-closing incidents.",
-                "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                "helptext": "abc123",
+                "image_url": "abc123",
                 "is_image_slack_icon": false,
                 "label": "Lawrence Jones",
                 "literal": "SEV123",
                 "reference": "incident.severity",
-                "sort_key": "000020",
+                "sort_key": "abc123",
                 "unavailable": false,
                 "value": "abc123"
               }
@@ -11012,13 +11089,13 @@
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                     },
-                    "helptext": "Collection of standalone automations like auto-closing incidents.",
-                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "helptext": "abc123",
+                    "image_url": "abc123",
                     "is_image_slack_icon": false,
                     "label": "Lawrence Jones",
                     "literal": "SEV123",
                     "reference": "incident.severity",
-                    "sort_key": "000020",
+                    "sort_key": "abc123",
                     "unavailable": false,
                     "value": "abc123"
                   }
@@ -11030,13 +11107,13 @@
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                   },
-                  "helptext": "Collection of standalone automations like auto-closing incidents.",
-                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "helptext": "abc123",
+                  "image_url": "abc123",
                   "is_image_slack_icon": false,
                   "label": "Lawrence Jones",
                   "literal": "SEV123",
                   "reference": "incident.severity",
-                  "sort_key": "000020",
+                  "sort_key": "abc123",
                   "unavailable": false,
                   "value": "abc123"
                 }
@@ -11412,7 +11489,7 @@
           "description": "Represents Kubernetes clusters that we run inside of GKE.",
           "dynamic_resource_parameter": "abc123",
           "estimated_count": 7,
-          "icon": "bolt",
+          "icon": "alert",
           "id": "01FCNDV6P870EA6S7TK1DSYDG0",
           "is_editable": false,
           "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -11517,6 +11594,7 @@
           "icon": {
             "description": "Sets the display icon of this type in the dashboard",
             "enum": [
+              "alert",
               "bolt",
               "box",
               "briefcase",
@@ -11529,6 +11607,7 @@
               "database",
               "doc",
               "email",
+              "escalation-path",
               "files",
               "flag",
               "folder",
@@ -11536,13 +11615,14 @@
               "money",
               "server",
               "severity",
+              "status-page",
               "store",
               "star",
               "tag",
               "user",
               "users"
             ],
-            "example": "bolt",
+            "example": "alert",
             "type": "string"
           },
           "id": {
@@ -11738,13 +11818,13 @@
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                     },
-                    "helptext": "Collection of standalone automations like auto-closing incidents.",
-                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "helptext": "abc123",
+                    "image_url": "abc123",
                     "is_image_slack_icon": false,
                     "label": "Lawrence Jones",
                     "literal": "SEV123",
                     "reference": "incident.severity",
-                    "sort_key": "000020",
+                    "sort_key": "abc123",
                     "unavailable": false,
                     "value": "abc123"
                   }
@@ -11756,13 +11836,13 @@
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                   },
-                  "helptext": "Collection of standalone automations like auto-closing incidents.",
-                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "helptext": "abc123",
+                  "image_url": "abc123",
                   "is_image_slack_icon": false,
                   "label": "Lawrence Jones",
                   "literal": "SEV123",
                   "reference": "incident.severity",
-                  "sort_key": "000020",
+                  "sort_key": "abc123",
                   "unavailable": false,
                   "value": "abc123"
                 }
@@ -11798,7 +11878,7 @@
           ],
           "color": "yellow",
           "description": "Represents Kubernetes clusters that we run inside of GKE.",
-          "icon": "bolt",
+          "icon": "alert",
           "name": "Kubernetes Cluster",
           "ranked": true,
           "source_repo_url": "https://github.com/my-company/incident-io-catalog",
@@ -11858,6 +11938,7 @@
           "icon": {
             "description": "Sets the display icon of this type in the dashboard",
             "enum": [
+              "alert",
               "bolt",
               "box",
               "briefcase",
@@ -11870,6 +11951,7 @@
               "database",
               "doc",
               "email",
+              "escalation-path",
               "files",
               "flag",
               "folder",
@@ -11877,13 +11959,14 @@
               "money",
               "server",
               "severity",
+              "status-page",
               "store",
               "star",
               "tag",
               "user",
               "users"
             ],
-            "example": "bolt",
+            "example": "alert",
             "type": "string"
           },
           "name": {
@@ -11928,7 +12011,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -11993,13 +12076,13 @@
                         "catalog_entry_name": "Primary escalation",
                         "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                       },
-                      "helptext": "Collection of standalone automations like auto-closing incidents.",
-                      "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                      "helptext": "abc123",
+                      "image_url": "abc123",
                       "is_image_slack_icon": false,
                       "label": "Lawrence Jones",
                       "literal": "SEV123",
                       "reference": "incident.severity",
-                      "sort_key": "000020",
+                      "sort_key": "abc123",
                       "unavailable": false,
                       "value": "abc123"
                     }
@@ -12011,13 +12094,13 @@
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                     },
-                    "helptext": "Collection of standalone automations like auto-closing incidents.",
-                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "helptext": "abc123",
+                    "image_url": "abc123",
                     "is_image_slack_icon": false,
                     "label": "Lawrence Jones",
                     "literal": "SEV123",
                     "reference": "incident.severity",
-                    "sort_key": "000020",
+                    "sort_key": "abc123",
                     "unavailable": false,
                     "value": "abc123"
                   }
@@ -12044,7 +12127,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12102,13 +12185,13 @@
                           "catalog_entry_name": "Primary escalation",
                           "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                         },
-                        "helptext": "Collection of standalone automations like auto-closing incidents.",
-                        "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                        "helptext": "abc123",
+                        "image_url": "abc123",
                         "is_image_slack_icon": false,
                         "label": "Lawrence Jones",
                         "literal": "SEV123",
                         "reference": "incident.severity",
-                        "sort_key": "000020",
+                        "sort_key": "abc123",
                         "unavailable": false,
                         "value": "abc123"
                       }
@@ -12120,13 +12203,13 @@
                         "catalog_entry_name": "Primary escalation",
                         "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                       },
-                      "helptext": "Collection of standalone automations like auto-closing incidents.",
-                      "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                      "helptext": "abc123",
+                      "image_url": "abc123",
                       "is_image_slack_icon": false,
                       "label": "Lawrence Jones",
                       "literal": "SEV123",
                       "reference": "incident.severity",
-                      "sort_key": "000020",
+                      "sort_key": "abc123",
                       "unavailable": false,
                       "value": "abc123"
                     }
@@ -12211,7 +12294,7 @@
               "description": "Represents Kubernetes clusters that we run inside of GKE.",
               "dynamic_resource_parameter": "abc123",
               "estimated_count": 7,
-              "icon": "bolt",
+              "icon": "alert",
               "id": "01FCNDV6P870EA6S7TK1DSYDG0",
               "is_editable": false,
               "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12262,7 +12345,7 @@
                 "description": "Represents Kubernetes clusters that we run inside of GKE.",
                 "dynamic_resource_parameter": "abc123",
                 "estimated_count": 7,
-                "icon": "bolt",
+                "icon": "alert",
                 "id": "01FCNDV6P870EA6S7TK1DSYDG0",
                 "is_editable": false,
                 "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12327,13 +12410,13 @@
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                     },
-                    "helptext": "Collection of standalone automations like auto-closing incidents.",
-                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "helptext": "abc123",
+                    "image_url": "abc123",
                     "is_image_slack_icon": false,
                     "label": "Lawrence Jones",
                     "literal": "SEV123",
                     "reference": "incident.severity",
-                    "sort_key": "000020",
+                    "sort_key": "abc123",
                     "unavailable": false,
                     "value": "abc123"
                   }
@@ -12345,13 +12428,13 @@
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                   },
-                  "helptext": "Collection of standalone automations like auto-closing incidents.",
-                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "helptext": "abc123",
+                  "image_url": "abc123",
                   "is_image_slack_icon": false,
                   "label": "Lawrence Jones",
                   "literal": "SEV123",
                   "reference": "incident.severity",
-                  "sort_key": "000020",
+                  "sort_key": "abc123",
                   "unavailable": false,
                   "value": "abc123"
                 }
@@ -12377,7 +12460,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12441,7 +12524,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12587,13 +12670,13 @@
                       "catalog_entry_name": "Primary escalation",
                       "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                     },
-                    "helptext": "Collection of standalone automations like auto-closing incidents.",
-                    "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                    "helptext": "abc123",
+                    "image_url": "abc123",
                     "is_image_slack_icon": false,
                     "label": "Lawrence Jones",
                     "literal": "SEV123",
                     "reference": "incident.severity",
-                    "sort_key": "000020",
+                    "sort_key": "abc123",
                     "unavailable": false,
                     "value": "abc123"
                   }
@@ -12605,13 +12688,13 @@
                     "catalog_entry_name": "Primary escalation",
                     "catalog_type_id": "01FCNDV6P870EA6S7TK1DSYDG0"
                   },
-                  "helptext": "Collection of standalone automations like auto-closing incidents.",
-                  "image_url": "https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg",
+                  "helptext": "abc123",
+                  "image_url": "abc123",
                   "is_image_slack_icon": false,
                   "label": "Lawrence Jones",
                   "literal": "SEV123",
                   "reference": "incident.severity",
-                  "sort_key": "000020",
+                  "sort_key": "abc123",
                   "unavailable": false,
                   "value": "abc123"
                 }
@@ -12637,7 +12720,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12697,7 +12780,7 @@
           ],
           "color": "yellow",
           "description": "Represents Kubernetes clusters that we run inside of GKE.",
-          "icon": "bolt",
+          "icon": "alert",
           "name": "Kubernetes Cluster",
           "ranked": true,
           "source_repo_url": "https://github.com/my-company/incident-io-catalog"
@@ -12756,6 +12839,7 @@
           "icon": {
             "description": "Sets the display icon of this type in the dashboard",
             "enum": [
+              "alert",
               "bolt",
               "box",
               "briefcase",
@@ -12768,6 +12852,7 @@
               "database",
               "doc",
               "email",
+              "escalation-path",
               "files",
               "flag",
               "folder",
@@ -12775,13 +12860,14 @@
               "money",
               "server",
               "severity",
+              "status-page",
               "store",
               "star",
               "tag",
               "user",
               "users"
             ],
-            "example": "bolt",
+            "example": "alert",
             "type": "string"
           },
           "name": {
@@ -12821,7 +12907,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -12935,7 +13021,7 @@
             "description": "Represents Kubernetes clusters that we run inside of GKE.",
             "dynamic_resource_parameter": "abc123",
             "estimated_count": 7,
-            "icon": "bolt",
+            "icon": "alert",
             "id": "01FCNDV6P870EA6S7TK1DSYDG0",
             "is_editable": false,
             "last_synced_at": "2021-08-17T13:28:57.801578Z",
@@ -14986,7 +15072,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           },
           "updated_at": {
@@ -19739,7 +19824,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           },
           "updated_at": {
@@ -19815,7 +19899,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           },
           "updated_at": {
@@ -19872,7 +19955,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           }
         },
@@ -20013,7 +20095,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           }
         },
@@ -20079,7 +20160,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           }
         },
@@ -20209,7 +20289,6 @@
           "shortform": {
             "description": "Short human readable name for Slack. Note that this will be empty for the 'reporter' role.",
             "example": "lead",
-            "minLength": 1,
             "type": "string"
           }
         },
@@ -24398,6 +24477,11 @@
               }
             ]
           },
+          "holidays_public_config": {
+            "country_codes": [
+              "abc123"
+            ]
+          },
           "name": "My Schedule",
           "timezone": "America/Los_Angeles"
         },
@@ -24415,6 +24499,9 @@
           },
           "config": {
             "$ref": "#/components/schemas/ScheduleConfigCreatePayloadV2RequestBody"
+          },
+          "holidays_public_config": {
+            "$ref": "#/components/schemas/ScheduleHolidaysPublicConfigPayloadV2RequestBody"
           },
           "name": {
             "description": "Name of the schedule",
@@ -24619,6 +24706,58 @@
           "start_at"
         ],
         "title": "ScheduleEntryV2ResponseBody",
+        "type": "object"
+      },
+      "ScheduleHolidaysPublicConfigPayloadV2RequestBody": {
+        "example": {
+          "country_codes": [
+            "abc123"
+          ]
+        },
+        "properties": {
+          "country_codes": {
+            "description": "ISO 3166-1 alpha-2 country codes for the countries that this schedule is configured to view holidays for",
+            "example": [
+              "abc123"
+            ],
+            "items": {
+              "example": "abc123",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "country_codes"
+        ],
+        "title": "ScheduleHolidaysPublicConfigPayloadV2RequestBody",
+        "type": "object"
+      },
+      "ScheduleHolidaysPublicConfigV2ResponseBody": {
+        "example": {
+          "country_codes": [
+            "GB",
+            "FR"
+          ]
+        },
+        "properties": {
+          "country_codes": {
+            "description": "ISO 3166-1 alpha-2 country codes for the countries that this schedule is configured to view holidays for",
+            "example": [
+              "GB",
+              "FR"
+            ],
+            "items": {
+              "example": "abc123",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "country_codes"
+        ],
+        "title": "ScheduleHolidaysPublicConfigV2ResponseBody",
         "type": "object"
       },
       "ScheduleLayerCreatePayloadV2RequestBody": {
@@ -25230,6 +25369,11 @@
               }
             ]
           },
+          "holidays_public_config": {
+            "country_codes": [
+              "abc123"
+            ]
+          },
           "name": "My Schedule",
           "timezone": "America/Los_Angeles"
         },
@@ -25247,6 +25391,9 @@
           },
           "config": {
             "$ref": "#/components/schemas/ScheduleConfigUpdatePayloadV2RequestBody"
+          },
+          "holidays_public_config": {
+            "$ref": "#/components/schemas/ScheduleHolidaysPublicConfigPayloadV2RequestBody"
           },
           "name": {
             "description": "Name of the schedule",
@@ -25323,6 +25470,12 @@
               }
             }
           ],
+          "holidays_public_config": {
+            "country_codes": [
+              "GB",
+              "FR"
+            ]
+          },
           "id": "01G0J1EXE7AXZ2C93K61WBPYEH",
           "name": "Primary On-Call Schedule",
           "timezone": "Europe/London",
@@ -25371,6 +25524,9 @@
               "$ref": "#/components/schemas/ScheduleEntryV2ResponseBody"
             },
             "type": "array"
+          },
+          "holidays_public_config": {
+            "$ref": "#/components/schemas/ScheduleHolidaysPublicConfigV2ResponseBody"
           },
           "id": {
             "description": "Unique internal ID of the schedule",
@@ -25444,6 +25600,11 @@
                     }
                   ]
                 }
+              ]
+            },
+            "holidays_public_config": {
+              "country_codes": [
+                "abc123"
               ]
             },
             "name": "My Schedule",
@@ -25523,6 +25684,12 @@
                 }
               }
             ],
+            "holidays_public_config": {
+              "country_codes": [
+                "GB",
+                "FR"
+              ]
+            },
             "id": "01G0J1EXE7AXZ2C93K61WBPYEH",
             "name": "Primary On-Call Schedule",
             "timezone": "Europe/London",
@@ -25608,6 +25775,12 @@
                   }
                 }
               ],
+              "holidays_public_config": {
+                "country_codes": [
+                  "GB",
+                  "FR"
+                ]
+              },
               "id": "01G0J1EXE7AXZ2C93K61WBPYEH",
               "name": "Primary On-Call Schedule",
               "timezone": "Europe/London",
@@ -25681,6 +25854,12 @@
                     }
                   }
                 ],
+                "holidays_public_config": {
+                  "country_codes": [
+                    "GB",
+                    "FR"
+                  ]
+                },
                 "id": "01G0J1EXE7AXZ2C93K61WBPYEH",
                 "name": "Primary On-Call Schedule",
                 "timezone": "Europe/London",
@@ -25835,6 +26014,12 @@
                 }
               }
             ],
+            "holidays_public_config": {
+              "country_codes": [
+                "GB",
+                "FR"
+              ]
+            },
             "id": "01G0J1EXE7AXZ2C93K61WBPYEH",
             "name": "Primary On-Call Schedule",
             "timezone": "Europe/London",
@@ -25892,6 +26077,11 @@
                     }
                   ]
                 }
+              ]
+            },
+            "holidays_public_config": {
+              "country_codes": [
+                "abc123"
               ]
             },
             "name": "My Schedule",
@@ -25971,6 +26161,12 @@
                 }
               }
             ],
+            "holidays_public_config": {
+              "country_codes": [
+                "GB",
+                "FR"
+              ]
+            },
             "id": "01G0J1EXE7AXZ2C93K61WBPYEH",
             "name": "Primary On-Call Schedule",
             "timezone": "Europe/London",
@@ -33999,20 +34195,17 @@
             "content": {
               "application/gob": {
                 "schema": {
-                  "format": "binary",
-                  "type": "string"
+                  "type": "object"
                 }
               },
               "application/json": {
                 "schema": {
-                  "format": "binary",
-                  "type": "string"
+                  "type": "object"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "format": "binary",
-                  "type": "string"
+                  "type": "object"
                 }
               }
             },
@@ -34034,20 +34227,17 @@
             "content": {
               "application/gob": {
                 "schema": {
-                  "format": "binary",
-                  "type": "string"
+                  "type": "object"
                 }
               },
               "application/json": {
                 "schema": {
-                  "format": "binary",
-                  "type": "string"
+                  "type": "object"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "format": "binary",
-                  "type": "string"
+                  "type": "object"
                 }
               }
             },
@@ -34697,7 +34887,7 @@
         ]
       },
       "post": {
-        "description": "Create an entry within the catalog. We support a maximum of 50,000 entries per type.",
+        "description": "Create an entry within the catalog. We support a maximum of 50,000 entries per type.\n\nIf you call this API with a payload where the external_id and catalog_type_id match an existing entry, the existing entry will be updated.",
         "operationId": "Catalog V2#CreateEntry",
         "requestBody": {
           "content": {
@@ -36349,7 +36539,7 @@
     },
     "/v2/schedule_entries": {
       "get": {
-        "description": "Get a list of schedule entries.",
+        "description": "Get a list of schedule entries. The endpoint will return all entries that overlap with the given window, if one is provided.",
         "operationId": "Schedules V2#ListScheduleEntries",
         "parameters": [
           {
@@ -37919,6 +38109,38 @@
           }
         },
         "summary": "HolidayUserFeedUpdatedV1 Audit logs",
+        "tags": [
+          "Audit logs"
+        ]
+      }
+    },
+    "/x-audit-logs/incident_call_setting.updated.1": {
+      "get": {
+        "description": "This entry is created whenever an organisation's incident call settings are updated",
+        "operationId": "Audit logs#IncidentCallSettingUpdatedV1",
+        "responses": {
+          "200": {
+            "content": {
+              "application/gob": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsIncidentCallSettingUpdatedV1ResponseBody"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsIncidentCallSettingUpdatedV1ResponseBody"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditLogsIncidentCallSettingUpdatedV1ResponseBody"
+                }
+              }
+            },
+            "description": "OK response."
+          }
+        },
+        "summary": "IncidentCallSettingUpdatedV1 Audit logs",
         "tags": [
           "Audit logs"
         ]
@@ -40376,7 +40598,7 @@
       "name": "Alert Routes V2"
     },
     {
-      "description": "To give you visibility over the changes that are made within your incident.io account, we use an audit log. Our audit log is powered by <a href=\"https://workos.com\" target=\"_blank\">WorkOS</a>. The log is available for customers on our [Enterprise plan](https://incident.io/pricing).\n\nThe audit log contains information about any configuration changes, as well as changes to a user's permissions (e.g. being given a new role, or access to a private incident).\n\nEach entry will have an actor (the person or system that made the change) and one or more targets (a thing that was modified by this change). It will also include the Location and User Agent of the actor, where applicable.\n\nEach entry will conform to a schema, which is documented here. Each entry also has a version, so that if our schema changes over time you\u2019ll still be able to parse old events.\n\nWe\u2019ll retain these entries for one year.\n\nAudit log entries start from 18 April, 2023 (there are no entries available from before that date).\n\n## Viewing your audit log\n\nYou can view your audit log via our [security settings](https://app.incident.io/settings/security) page.\n\nFrom there, you'll be able to:\n\n- View the entries via a web interface (filterable by target, event type, actor and date)\n- Export the entries for a given time period to a CSV\n- Set up a log stream to a provider of your choice (e.g. Splunk or an Amazon S3 bucket)\n\n## Understanding actors\n\nEach entry will have an actor associated with it, which is one of 5 types:\n\n### Users\n\nThis is for changes triggered by the actions of a particular user in your account.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"user\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Kelsey Mills\",\n    \"metadata\": {\n      \"user_base_role_slug\": \"admin\",\n      \"user_custom_role_slugs\": \"engineering,security\"\n    }\n  }\n```\n\n### API Keys\n\nThis is for changes triggered by an API key.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"api_key\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Lisa's development key\",\n    \"metadata\": {\n      \"api_key_roles\": \"incident_creator,global_access\"\n    }\n  }\n```\n\n### Integrations\n\nThis is for changes triggered by a system. Sometimes that will be a third party system (e.g. a user might be created\nvia Slack) or sometimes it might be something triggered from inside incident.io (e.g. a severity created as part of setup).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"system\",\n    \"id\": \"incident_setup\",\n    \"name\": \"incident.io (setup)\",\n    \"metadata\": {}\n  }\n```\n\n### Workflows\n\nThis is for changes triggered by a workflow: for example, a workflow that invites users to a private incident.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"workflow\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Auto-invite security team to private incidents\",\n    \"metadata\": {}\n  }\n```\n\n### External resources\n\nThis is for changes triggered by a specific [external resource](https://api-docs.incident.io/tag/Incident-Attachments-V1) (also known as an attachment).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"external_resource\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"#1234 Increased API latency\",\n    \"metadata\": {\n      \"external_resource_type\": \"pager_duty_incident\",\n      \"external_resource_external_id\": \"q1234\"\n    }\n  }\n```\n",
+      "description": "To give you visibility over the changes that are made within your incident.io account, we use an audit log. Our audit log is powered by <a href=\"https://workos.com\" target=\"_blank\">WorkOS</a>. The log is available for customers on our [Enterprise plan](https://incident.io/pricing).\n\nThe audit log contains information about any configuration changes, as well as changes to a user's permissions (e.g. being given a new role, or access to a private incident).\n\nEach entry will have an actor (the person or system that made the change) and one or more targets (a thing that was modified by this change). It will also include the Location and User Agent of the actor, where applicable.\n\nEach entry will conform to a schema, which is documented here. Each entry also has a version, so that if our schema changes over time you’ll still be able to parse old events.\n\nWe’ll retain these entries for one year.\n\nAudit log entries start from 18 April, 2023 (there are no entries available from before that date).\n\n## Viewing your audit log\n\nYou can view your audit log via our [security settings](https://app.incident.io/settings/security) page.\n\nFrom there, you'll be able to:\n\n- View the entries via a web interface (filterable by target, event type, actor and date)\n- Export the entries for a given time period to a CSV\n- Set up a log stream to a provider of your choice (e.g. Splunk or an Amazon S3 bucket)\n\n## Understanding actors\n\nEach entry will have an actor associated with it, which is one of 5 types:\n\n### Users\n\nThis is for changes triggered by the actions of a particular user in your account.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"user\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Kelsey Mills\",\n    \"metadata\": {\n      \"user_base_role_slug\": \"admin\",\n      \"user_custom_role_slugs\": \"engineering,security\"\n    }\n  }\n```\n\n### API Keys\n\nThis is for changes triggered by an API key.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"api_key\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Lisa's development key\",\n    \"metadata\": {\n      \"api_key_roles\": \"incident_creator,global_access\"\n    }\n  }\n```\n\n### Integrations\n\nThis is for changes triggered by a system. Sometimes that will be a third party system (e.g. a user might be created\nvia Slack) or sometimes it might be something triggered from inside incident.io (e.g. a severity created as part of setup).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"system\",\n    \"id\": \"incident_setup\",\n    \"name\": \"incident.io (setup)\",\n    \"metadata\": {}\n  }\n```\n\n### Workflows\n\nThis is for changes triggered by a workflow: for example, a workflow that invites users to a private incident.\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"workflow\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"Auto-invite security team to private incidents\",\n    \"metadata\": {}\n  }\n```\n\n### External resources\n\nThis is for changes triggered by a specific [external resource](https://api-docs.incident.io/tag/Incident-Attachments-V1) (also known as an attachment).\n\nAs an example:\n\n```\n\"actor\": {\n    \"type\": \"external_resource\",\n    \"id\": \"01G0J1EXE7AXZ2C93K61WBPYEH\",\n    \"name\": \"#1234 Increased API latency\",\n    \"metadata\": {\n      \"external_resource_type\": \"pager_duty_incident\",\n      \"external_resource_external_id\": \"q1234\"\n    }\n  }\n```\n",
       "name": "Audit logs"
     },
     {
@@ -40468,7 +40690,7 @@
       "name": "Utilities V1"
     },
     {
-      "description": "Webhooks can be used to receive notifications when certain events occur in incident.io. This might be useful for annotating graphs in a monitoring tool with incidents, or keeping track of follow-ups in another system. Our webhooks are powered by <a href=\"https://svix.com\" target=\"_blank\">Svix</a>.\n\n## Getting started with webhooks\n\nTo start using webhooks, you\u2019ll need to create a webhook endpoint. You can do this in the same way that you\u2019d create any other endpoint in your application. If you\u2019d like to play around with our webhooks, we\u2019d recommend using <a href=\"https://www.svix.com/play/\" target=\"_blank\">Svix play</a> which allows you to set up an endpoint and inspect the payloads via their web interface. There are also other services (e.g. <a href=\"https://ngrok.com/\" target=\"_blank\">ngrok</a>) which have great debugging tools to help getting started with webhooks.\n\nOnce you have a webhook endpoint set up, you can head to <a href=\"https://app.incident.io/settings/webhooks\" target=\"_blank\">Settings > Webhooks</a> to configure your endpoint. In here you'll be able to choose which types of events you'd like to recieve, send test events, see recent event deliveries, and retry any failed events.\n\n## Status codes, errors and retries\n\nWhen processing webhooks, please return a 2xx status code (e.g. `200 OK` or `204 No Content`). If the endpoint returns a non-2xx status code, we\u2019ll try to resend the event with a backoff over the next 24 hours. If attempts to a specific endpoint repeatedly fail over a 5 day period, we\u2019ll mark the endpoint as disabled and notify you via email. If you do miss some messages (e.g. due to unexpected downtime), Svix offer a number of options for [replaying messages](https://docs.svix.com/receiving/using-app-portal/replaying-messages) which you can access via <a href=\"https://app.incident.io/settings/webhooks\" target=\"_blank\">Settings > Webhooks</a>.\n\n## Verifying webhooks\n\nIt\u2019s important to know whether a webhook has come from incident.io, or a third party that might be trying to exploit a vulnerability. To avoid this, we send a `signature` in the header of our webhooks, which you can verify using the `Signing secret` from the webhook endpoint settings page. The webhooks we send will have three headers that you\u2019ll want to look at:\n\n```json\n{\n  \"webhook-id\": \"123\",\n  \"webhook-timestamp\": 1676033031,\n  \"webhook-signature\": \"v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=\"\n}\n```\n\nThese are signed using a HMAC signature in the following format:\n\n```\n${webhook-id}.${webhook-timestamp}.${request_body}\n```\n\nYou can verify the signature either using the <a href=\"https://docs.svix.com/receiving/verifying-payloads/how\" target=\"_blank\">Svix client libraries</a>, or manually by following <a href=\"https://docs.svix.com/receiving/verifying-payloads/how-manual\" target=\"_blank\">these instructions</a>.\n\n## Keeping another system in-line with incident.io\n\nA common use-case for webhooks is to keep another system up-to-date with everything that\u2019s happening in incident.io. As we deliver webhooks individually over HTTPS, we cannot guarantee that they\u2019ll be delivered in the correct order. That means that, to keep the other system up-to-date, we\u2019d recommend that you build an application which:\n\n- Receives a webhook about INC-123\n- Makes a request to our public API to get the latest state of INC-123\n- Save that state to your system\n\nThis means you aren\u2019t relying on the order in which you receive webhooks to make sure your system remains up-to-date.\n\n## Webhooks on private incidents\n\nIn general, we try to send webhooks with all the relevant information in the payload (e.g. the name, summary, status etc.). However, private incidents are the exception. For private incidents, we only send the ID of the resource that\u2019s been changed. If your integration needs to access the full data, you\u2019ll need to <a href=\"https://help.incident.io/en/articles/6149651-our-api\" target=\"_blank\">create an API Key</a> that can view private incidents. You can then use that key to get the details about the specific incident or follow-up. This is to make sure we don\u2019t leak information about private incidents to a system that shouldn\u2019t have access to them.\n",
+      "description": "Webhooks can be used to receive notifications when certain events occur in incident.io. This might be useful for annotating graphs in a monitoring tool with incidents, or keeping track of follow-ups in another system. Our webhooks are powered by <a href=\"https://svix.com\" target=\"_blank\">Svix</a>.\n\n## Getting started with webhooks\n\nTo start using webhooks, you’ll need to create a webhook endpoint. You can do this in the same way that you’d create any other endpoint in your application. If you’d like to play around with our webhooks, we’d recommend using <a href=\"https://www.svix.com/play/\" target=\"_blank\">Svix play</a> which allows you to set up an endpoint and inspect the payloads via their web interface. There are also other services (e.g. <a href=\"https://ngrok.com/\" target=\"_blank\">ngrok</a>) which have great debugging tools to help getting started with webhooks.\n\nOnce you have a webhook endpoint set up, you can head to <a href=\"https://app.incident.io/settings/webhooks\" target=\"_blank\">Settings > Webhooks</a> to configure your endpoint. In here you'll be able to choose which types of events you'd like to recieve, send test events, see recent event deliveries, and retry any failed events.\n\n## Status codes, errors and retries\n\nWhen processing webhooks, please return a 2xx status code (e.g. `200 OK` or `204 No Content`). If the endpoint returns a non-2xx status code, we’ll try to resend the event with a backoff over the next 24 hours. If attempts to a specific endpoint repeatedly fail over a 5 day period, we’ll mark the endpoint as disabled and notify you via email. If you do miss some messages (e.g. due to unexpected downtime), Svix offer a number of options for [replaying messages](https://docs.svix.com/receiving/using-app-portal/replaying-messages) which you can access via <a href=\"https://app.incident.io/settings/webhooks\" target=\"_blank\">Settings > Webhooks</a>.\n\n## Verifying webhooks\n\nIt’s important to know whether a webhook has come from incident.io, or a third party that might be trying to exploit a vulnerability. To avoid this, we send a `signature` in the header of our webhooks, which you can verify using the `Signing secret` from the webhook endpoint settings page. The webhooks we send will have three headers that you’ll want to look at:\n\n```json\n{\n  \"webhook-id\": \"123\",\n  \"webhook-timestamp\": 1676033031,\n  \"webhook-signature\": \"v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=\"\n}\n```\n\nThese are signed using a HMAC signature in the following format:\n\n```\n${webhook-id}.${webhook-timestamp}.${request_body}\n```\n\nYou can verify the signature either using the <a href=\"https://docs.svix.com/receiving/verifying-payloads/how\" target=\"_blank\">Svix client libraries</a>, or manually by following <a href=\"https://docs.svix.com/receiving/verifying-payloads/how-manual\" target=\"_blank\">these instructions</a>.\n\n## Keeping another system in-line with incident.io\n\nA common use-case for webhooks is to keep another system up-to-date with everything that’s happening in incident.io. As we deliver webhooks individually over HTTPS, we cannot guarantee that they’ll be delivered in the correct order. That means that, to keep the other system up-to-date, we’d recommend that you build an application which:\n\n- Receives a webhook about INC-123\n- Makes a request to our public API to get the latest state of INC-123\n- Save that state to your system\n\nThis means you aren’t relying on the order in which you receive webhooks to make sure your system remains up-to-date.\n\n## Webhooks on private incidents\n\nIn general, we try to send webhooks with all the relevant information in the payload (e.g. the name, summary, status etc.). However, private incidents are the exception. For private incidents, we only send the ID of the resource that’s been changed. If your integration needs to access the full data, you’ll need to <a href=\"https://help.incident.io/en/articles/6149651-our-api\" target=\"_blank\">create an API Key</a> that can view private incidents. You can then use that key to get the details about the specific incident or follow-up. This is to make sure we don’t leak information about private incidents to a system that shouldn’t have access to them.\n",
       "name": "Webhooks"
     },
     {
