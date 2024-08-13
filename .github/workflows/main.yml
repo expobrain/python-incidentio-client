@@ -78,15 +78,13 @@ jobs:
           path: |
             ~/.cache/pip
             ~/.cache/pre-commit
-          key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_BUMPING }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
         run: |
           pip install poetry~=${{ env.POETRY_VERSION }}
           poetry install --with dev --no-interaction --no-ansi --sync
 
       - name: Create new version and changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --local user.email "github-actions@githhub.com"
           git config --local user.name "Github Actions"
