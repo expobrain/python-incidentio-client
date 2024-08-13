@@ -78,7 +78,7 @@ jobs:
           path: |
             ~/.cache/pip
             ~/.cache/pre-commit
-          key: ${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_BUMPING }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
         run: |
           pip install poetry~=${{ env.POETRY_VERSION }}
