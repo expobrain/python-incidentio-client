@@ -85,8 +85,6 @@ jobs:
           poetry install --with dev --no-interaction --no-ansi --sync
 
       - name: Create new version and changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --local user.email "github-actions@githhub.com"
           git config --local user.name "Github Actions"
