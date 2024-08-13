@@ -5,14 +5,16 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.utilities_v1_open_api_response_200 import UtilitiesV1OpenAPIResponse200
+from ...models.audit_logs_incident_call_setting_updated_v1_response_body import (
+    AuditLogsIncidentCallSettingUpdatedV1ResponseBody,
+)
 from ...types import Response
 
 
 def _get_kwargs() -> Dict[str, Any]:
     _kwargs: Dict[str, Any] = {
         "method": "get",
-        "url": "/v1/openapi.json",
+        "url": "/x-audit-logs/incident_call_setting.updated.1",
     }
 
     return _kwargs
@@ -20,9 +22,9 @@ def _get_kwargs() -> Dict[str, Any]:
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[UtilitiesV1OpenAPIResponse200]:
+) -> Optional[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = UtilitiesV1OpenAPIResponse200.from_dict(response.json())
+        response_200 = AuditLogsIncidentCallSettingUpdatedV1ResponseBody.from_dict(response.json())
 
         return response_200
     if client.raise_on_unexpected_status:
@@ -33,7 +35,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[UtilitiesV1OpenAPIResponse200]:
+) -> Response[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -45,17 +47,17 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[UtilitiesV1OpenAPIResponse200]:
-    """OpenAPI Utilities V1
+) -> Response[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]:
+    """IncidentCallSettingUpdatedV1 Audit logs
 
-     Get the OpenAPI (v2) definition.
+     This entry is created whenever an organisation's incident call settings are updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UtilitiesV1OpenAPIResponse200]
+        Response[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]
     """
 
     kwargs = _get_kwargs()
@@ -70,17 +72,17 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[UtilitiesV1OpenAPIResponse200]:
-    """OpenAPI Utilities V1
+) -> Optional[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]:
+    """IncidentCallSettingUpdatedV1 Audit logs
 
-     Get the OpenAPI (v2) definition.
+     This entry is created whenever an organisation's incident call settings are updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UtilitiesV1OpenAPIResponse200
+        AuditLogsIncidentCallSettingUpdatedV1ResponseBody
     """
 
     return sync_detailed(
@@ -91,17 +93,17 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[UtilitiesV1OpenAPIResponse200]:
-    """OpenAPI Utilities V1
+) -> Response[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]:
+    """IncidentCallSettingUpdatedV1 Audit logs
 
-     Get the OpenAPI (v2) definition.
+     This entry is created whenever an organisation's incident call settings are updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[UtilitiesV1OpenAPIResponse200]
+        Response[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]
     """
 
     kwargs = _get_kwargs()
@@ -114,17 +116,17 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[UtilitiesV1OpenAPIResponse200]:
-    """OpenAPI Utilities V1
+) -> Optional[AuditLogsIncidentCallSettingUpdatedV1ResponseBody]:
+    """IncidentCallSettingUpdatedV1 Audit logs
 
-     Get the OpenAPI (v2) definition.
+     This entry is created whenever an organisation's incident call settings are updated
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        UtilitiesV1OpenAPIResponse200
+        AuditLogsIncidentCallSettingUpdatedV1ResponseBody
     """
 
     return (

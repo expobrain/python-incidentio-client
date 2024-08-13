@@ -1,12 +1,14 @@
 from http import HTTPStatus
-from io import BytesIO
 from typing import Any, Dict, Optional, Union
 
 import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...types import File, Response
+from ...models.utilities_v1_open_apiv3_response_200 import (
+    UtilitiesV1OpenAPIV3Response200,
+)
+from ...types import Response
 
 
 def _get_kwargs() -> Dict[str, Any]:
@@ -20,9 +22,9 @@ def _get_kwargs() -> Dict[str, Any]:
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[File]:
+) -> Optional[UtilitiesV1OpenAPIV3Response200]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = File(payload=BytesIO(response.json()))
+        response_200 = UtilitiesV1OpenAPIV3Response200.from_dict(response.json())
 
         return response_200
     if client.raise_on_unexpected_status:
@@ -33,7 +35,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[File]:
+) -> Response[UtilitiesV1OpenAPIV3Response200]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -45,7 +47,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[File]:
+) -> Response[UtilitiesV1OpenAPIV3Response200]:
     """OpenAPIV3 Utilities V1
 
      Get the OpenAPI (v3) definition.
@@ -55,7 +57,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[File]
+        Response[UtilitiesV1OpenAPIV3Response200]
     """
 
     kwargs = _get_kwargs()
@@ -70,7 +72,7 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[File]:
+) -> Optional[UtilitiesV1OpenAPIV3Response200]:
     """OpenAPIV3 Utilities V1
 
      Get the OpenAPI (v3) definition.
@@ -80,7 +82,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        File
+        UtilitiesV1OpenAPIV3Response200
     """
 
     return sync_detailed(
@@ -91,7 +93,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[File]:
+) -> Response[UtilitiesV1OpenAPIV3Response200]:
     """OpenAPIV3 Utilities V1
 
      Get the OpenAPI (v3) definition.
@@ -101,7 +103,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[File]
+        Response[UtilitiesV1OpenAPIV3Response200]
     """
 
     kwargs = _get_kwargs()
@@ -114,7 +116,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[File]:
+) -> Optional[UtilitiesV1OpenAPIV3Response200]:
     """OpenAPIV3 Utilities V1
 
      Get the OpenAPI (v3) definition.
@@ -124,7 +126,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        File
+        UtilitiesV1OpenAPIV3Response200
     """
 
     return (
