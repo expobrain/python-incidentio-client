@@ -5,7 +5,8 @@ env:
   POETRY_VERSION: "1.3"
 
 on:
-  create:
+  workflow_dispatch:
+  push:
     tags:
       - "*"
 
@@ -25,7 +26,7 @@ jobs:
           path: |
             ~/.cache/pip
             .venv
-          key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_BUMPING }}-${{ hashFiles('**/poetry.lock') }}
+          key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_PACKAGING }}-${{ hashFiles('**/poetry.lock') }}
       - run: pip install poetry~=${{ env.POETRY_VERSION }}
       - run: poetry build
       # From https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/#publishing-the-distribution-to-pypi-and-testpypi
