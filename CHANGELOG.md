@@ -1,3 +1,13 @@
+## 0.49.0 (2024-08-13)
+
+### Feat
+
+- Updated API at 2024-08-12
+
+### Fix
+
+- aligned package version
+
 ## 0.48.6 (2024-08-08)
 
 ### Fix
