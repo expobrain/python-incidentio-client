@@ -1,3 +1,10 @@
+## 0.49.4 (2024-08-14)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools
+- **deps-dev**: bump mypy from 1.11.0 to 1.11.1
+
 ## 0.49.3 (2024-08-14)
 
 ### Fix
