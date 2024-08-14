@@ -1,3 +1,9 @@
+## 0.49.7 (2024-08-14)
+
+### Fix
+
+- **deps-dev**: bump black from 24.4.2 to 24.8.0 in /example
+
 ## 0.49.6 (2024-08-14)
 
 ### Fix
