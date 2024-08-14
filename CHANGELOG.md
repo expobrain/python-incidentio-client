@@ -1,3 +1,9 @@
+## 0.49.5 (2024-08-14)
+
+### Fix
+
+- use Github PAT token on creating new tag
+
 ## 0.49.4 (2024-08-14)
 
 ### Fix
