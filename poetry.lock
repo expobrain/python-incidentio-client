@@ -1091,17 +1091,17 @@ files = [
 
 [[package]]
 name = "pyupgrade"
-version = "3.8.0"
+version = "3.16.0"
 description = "A tool to automatically upgrade syntax for newer versions."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.8.1"
 files = [
-    {file = "pyupgrade-3.8.0-py2.py3-none-any.whl", hash = "sha256:08d0e6129f5e9da7e7a581bdbea689e0d49c3c93eeaf156a07ae2fd794f52660"},
-    {file = "pyupgrade-3.8.0.tar.gz", hash = "sha256:1facb0b8407cca468dfcc1d13717e3a85aa37b9e6e7338664ad5bfe5ef50c867"},
+    {file = "pyupgrade-3.16.0-py2.py3-none-any.whl", hash = "sha256:7a54ee28f3024d027048d49d101e5c702e88c85edc3a1d08b636c50ebef2a97d"},
+    {file = "pyupgrade-3.16.0.tar.gz", hash = "sha256:237893a05d5b117259b31b423f23cbae4bce0b7eae57ba9a52c06098c2ddd76f"},
 ]
 
 [package.dependencies]
-tokenize-rt = ">=3.2.0"
+tokenize-rt = ">=5.2.0"
 
 [[package]]
 name = "pyyaml"
@@ -1437,13 +1437,13 @@ tests = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "tokenize-rt"
-version = "4.2.1"
+version = "6.0.0"
 description = "A wrapper around the stdlib `tokenize` which roundtrips."
 optional = false
-python-versions = ">=3.6.1"
+python-versions = ">=3.8"
 files = [
-    {file = "tokenize_rt-4.2.1-py2.py3-none-any.whl", hash = "sha256:08a27fa032a81cf45e8858d0ac706004fcd523e8463415ddf1442be38e204ea8"},
-    {file = "tokenize_rt-4.2.1.tar.gz", hash = "sha256:0d4f69026fed520f8a1e0103aa36c406ef4661417f20ca643f913e33531b3b94"},
+    {file = "tokenize_rt-6.0.0-py2.py3-none-any.whl", hash = "sha256:d4ff7ded2873512938b4f8cbb98c9b07118f01d30ac585a30d7a88353ca36d22"},
+    {file = "tokenize_rt-6.0.0.tar.gz", hash = "sha256:b9711bdfc51210211137499b5e355d3de5ec88a85d2025c520cbb921b5194367"},
 ]
 
 [[package]]
