@@ -14,7 +14,7 @@ skip_glob = ".venv"
 
 [tool.poetry]
 name = "python-incidentio-client"
-version = "0.49.19"
+version = "0.50.0"
 description = "Python client for Incident.io"
 repository = "https://github.com/expobrain/python-incidentio-client"
 authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
@@ -72,7 +72,7 @@ ignore_missing_imports = true
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.49.19"
+version = "0.50.0"
 version_files = [
     "pyproject.toml:^version"
 ]
