@@ -4,10 +4,8 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.pagination_meta_result_response_body import (
-        PaginationMetaResultResponseBody,
-    )
-    from ..models.user_with_roles_v2_response_body import UserWithRolesV2ResponseBody
+    from ..models.pagination_meta_result import PaginationMetaResult
+    from ..models.user_with_roles_v2 import UserWithRolesV2
 
 
 T = TypeVar("T", bound="UsersV2ListResponseBody")
@@ -25,18 +23,17 @@ class UsersV2ListResponseBody:
             Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}]}
 
     Attributes:
-        pagination_meta (PaginationMetaResultResponseBody):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'page_size': 25}.
-        users (List['UserWithRolesV2ResponseBody']):  Example: [{'base_role': {'description': 'Elevated permissions for
-            the customer success team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-
-            success'}, 'custom_roles': [{'description': 'Elevated permissions for the customer success team.', 'id':
+        pagination_meta (PaginationMetaResult):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
+        users (List['UserWithRolesV2']):  Example: [{'base_role': {'description': 'Elevated permissions for the customer
+            success team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'},
+            'custom_roles': [{'description': 'Elevated permissions for the customer success team.', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}], 'email':
             'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
             'slack_user_id': 'U02AYNF2XJM'}].
     """
 
-    pagination_meta: "PaginationMetaResultResponseBody"
-    users: List["UserWithRolesV2ResponseBody"]
+    pagination_meta: "PaginationMetaResult"
+    users: List["UserWithRolesV2"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -60,20 +57,16 @@ class UsersV2ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.pagination_meta_result_response_body import (
-            PaginationMetaResultResponseBody,
-        )
-        from ..models.user_with_roles_v2_response_body import (
-            UserWithRolesV2ResponseBody,
-        )
+        from ..models.pagination_meta_result import PaginationMetaResult
+        from ..models.user_with_roles_v2 import UserWithRolesV2
 
         d = src_dict.copy()
-        pagination_meta = PaginationMetaResultResponseBody.from_dict(d.pop("pagination_meta"))
+        pagination_meta = PaginationMetaResult.from_dict(d.pop("pagination_meta"))
 
         users = []
         _users = d.pop("users")
         for users_item_data in _users:
-            users_item = UserWithRolesV2ResponseBody.from_dict(users_item_data)
+            users_item = UserWithRolesV2.from_dict(users_item_data)
 
             users.append(users_item)
 

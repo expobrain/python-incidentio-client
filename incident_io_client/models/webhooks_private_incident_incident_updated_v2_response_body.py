@@ -8,9 +8,7 @@ from ..models.webhooks_private_incident_incident_updated_v2_response_body_event_
 )
 
 if TYPE_CHECKING:
-    from ..models.webhook_private_resource_v2_response_body import (
-        WebhookPrivateResourceV2ResponseBody,
-    )
+    from ..models.webhook_private_resource_v2 import WebhookPrivateResourceV2
 
 
 T = TypeVar("T", bound="WebhooksPrivateIncidentIncidentUpdatedV2ResponseBody")
@@ -25,11 +23,11 @@ class WebhooksPrivateIncidentIncidentUpdatedV2ResponseBody:
     Attributes:
         event_type (WebhooksPrivateIncidentIncidentUpdatedV2ResponseBodyEventType): What type of event is this webhook
             for? Example: private_incident.incident_updated_v2.
-        private_incident_incident_updated_v2 (WebhookPrivateResourceV2ResponseBody):  Example: {'id': 'abc123'}.
+        private_incident_incident_updated_v2 (WebhookPrivateResourceV2):  Example: {'id': 'abc123'}.
     """
 
     event_type: WebhooksPrivateIncidentIncidentUpdatedV2ResponseBodyEventType
-    private_incident_incident_updated_v2: "WebhookPrivateResourceV2ResponseBody"
+    private_incident_incident_updated_v2: "WebhookPrivateResourceV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -50,16 +48,14 @@ class WebhooksPrivateIncidentIncidentUpdatedV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.webhook_private_resource_v2_response_body import (
-            WebhookPrivateResourceV2ResponseBody,
-        )
+        from ..models.webhook_private_resource_v2 import WebhookPrivateResourceV2
 
         d = src_dict.copy()
         event_type = WebhooksPrivateIncidentIncidentUpdatedV2ResponseBodyEventType(
             d.pop("event_type")
         )
 
-        private_incident_incident_updated_v2 = WebhookPrivateResourceV2ResponseBody.from_dict(
+        private_incident_incident_updated_v2 = WebhookPrivateResourceV2.from_dict(
             d.pop("private_incident.incident_updated_v2")
         )
 

@@ -6,11 +6,9 @@ from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 if TYPE_CHECKING:
-    from ..models.audit_log_actor_v2_response_body import AuditLogActorV2ResponseBody
-    from ..models.audit_log_entry_context_v2_response_body import (
-        AuditLogEntryContextV2ResponseBody,
-    )
-    from ..models.audit_log_target_v2_response_body import AuditLogTargetV2ResponseBody
+    from ..models.audit_log_actor_v2 import AuditLogActorV2
+    from ..models.audit_log_entry_context_v2 import AuditLogEntryContextV2
+    from ..models.audit_log_target_v2 import AuditLogTargetV2
 
 
 T = TypeVar("T", bound="AuditLogsStatusPageSubPageCreatedV1ResponseBody")
@@ -28,22 +26,20 @@ class AuditLogsStatusPageSubPageCreatedV1ResponseBody:
 
     Attributes:
         action (str): The type of log entry that this is Example: status_page_sub_page.created.
-        actor (AuditLogActorV2ResponseBody):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'metadata':
-            {'user_base_role_slug': 'admin', 'user_custom_role_slugs': 'engineering,security'}, 'name': 'John Doe', 'type':
-            'user'}.
-        context (AuditLogEntryContextV2ResponseBody):  Example: {'location': '1.2.3.4', 'user_agent':
-            'Chrome/91.0.4472.114'}.
+        actor (AuditLogActorV2):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'metadata': {'user_base_role_slug':
+            'admin', 'user_custom_role_slugs': 'engineering,security'}, 'name': 'John Doe', 'type': 'user'}.
+        context (AuditLogEntryContextV2):  Example: {'location': '1.2.3.4', 'user_agent': 'Chrome/91.0.4472.114'}.
         occurred_at (datetime.datetime): When the entry occurred Example: 2021-08-17T13:28:57.801578Z.
-        targets (List['AuditLogTargetV2ResponseBody']): The custom field that was created Example: [{'id':
+        targets (List['AuditLogTargetV2']): The custom field that was created Example: [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Superpayments France', 'type': 'status_page_sub_page'}].
         version (int): Which version the event is Example: 1.
     """
 
     action: str
-    actor: "AuditLogActorV2ResponseBody"
-    context: "AuditLogEntryContextV2ResponseBody"
+    actor: "AuditLogActorV2"
+    context: "AuditLogEntryContextV2"
     occurred_at: datetime.datetime
-    targets: List["AuditLogTargetV2ResponseBody"]
+    targets: List["AuditLogTargetV2"]
     version: int
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -80,29 +76,23 @@ class AuditLogsStatusPageSubPageCreatedV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.audit_log_actor_v2_response_body import (
-            AuditLogActorV2ResponseBody,
-        )
-        from ..models.audit_log_entry_context_v2_response_body import (
-            AuditLogEntryContextV2ResponseBody,
-        )
-        from ..models.audit_log_target_v2_response_body import (
-            AuditLogTargetV2ResponseBody,
-        )
+        from ..models.audit_log_actor_v2 import AuditLogActorV2
+        from ..models.audit_log_entry_context_v2 import AuditLogEntryContextV2
+        from ..models.audit_log_target_v2 import AuditLogTargetV2
 
         d = src_dict.copy()
         action = d.pop("action")
 
-        actor = AuditLogActorV2ResponseBody.from_dict(d.pop("actor"))
+        actor = AuditLogActorV2.from_dict(d.pop("actor"))
 
-        context = AuditLogEntryContextV2ResponseBody.from_dict(d.pop("context"))
+        context = AuditLogEntryContextV2.from_dict(d.pop("context"))
 
         occurred_at = isoparse(d.pop("occurred_at"))
 
         targets = []
         _targets = d.pop("targets")
         for targets_item_data in _targets:
-            targets_item = AuditLogTargetV2ResponseBody.from_dict(targets_item_data)
+            targets_item = AuditLogTargetV2.from_dict(targets_item_data)
 
             targets.append(targets_item)
 

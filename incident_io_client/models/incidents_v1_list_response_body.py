@@ -6,10 +6,8 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.incident_v1_response_body import IncidentV1ResponseBody
-    from ..models.pagination_meta_result_with_total_response_body import (
-        PaginationMetaResultWithTotalResponseBody,
-    )
+    from ..models.incident_v1 import IncidentV1
+    from ..models.pagination_meta_result_with_total import PaginationMetaResultWithTotal
 
 
 T = TypeVar("T", bound="IncidentsV1ListResponseBody")
@@ -49,7 +47,7 @@ class IncidentsV1ListResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}}
 
     Attributes:
-        incidents (List['IncidentV1ResponseBody']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
+        incidents (List['IncidentV1']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}, 'custom_field_entries': [{'custom_field': {'description':
@@ -76,12 +74,12 @@ class IncidentsV1ListResponseBody:
             'slack_team_id': 'T02A1FSLE8J', 'status': 'triage', 'summary': "Our database is really really sad, and we don't
             know why yet.", 'timestamps': [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}],
             'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}].
-        pagination_meta (Union[Unset, PaginationMetaResultWithTotalResponseBody]):  Example: {'after':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}.
+        pagination_meta (Union[Unset, PaginationMetaResultWithTotal]):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'page_size': 25, 'total_record_count': 238}.
     """
 
-    incidents: List["IncidentV1ResponseBody"]
-    pagination_meta: Union[Unset, "PaginationMetaResultWithTotalResponseBody"] = UNSET
+    incidents: List["IncidentV1"]
+    pagination_meta: Union[Unset, "PaginationMetaResultWithTotal"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -108,25 +106,25 @@ class IncidentsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_v1_response_body import IncidentV1ResponseBody
-        from ..models.pagination_meta_result_with_total_response_body import (
-            PaginationMetaResultWithTotalResponseBody,
+        from ..models.incident_v1 import IncidentV1
+        from ..models.pagination_meta_result_with_total import (
+            PaginationMetaResultWithTotal,
         )
 
         d = src_dict.copy()
         incidents = []
         _incidents = d.pop("incidents")
         for incidents_item_data in _incidents:
-            incidents_item = IncidentV1ResponseBody.from_dict(incidents_item_data)
+            incidents_item = IncidentV1.from_dict(incidents_item_data)
 
             incidents.append(incidents_item)
 
         _pagination_meta = d.pop("pagination_meta", UNSET)
-        pagination_meta: Union[Unset, PaginationMetaResultWithTotalResponseBody]
+        pagination_meta: Union[Unset, PaginationMetaResultWithTotal]
         if isinstance(_pagination_meta, Unset):
             pagination_meta = UNSET
         else:
-            pagination_meta = PaginationMetaResultWithTotalResponseBody.from_dict(_pagination_meta)
+            pagination_meta = PaginationMetaResultWithTotal.from_dict(_pagination_meta)
 
         incidents_v1_list_response_body = cls(
             incidents=incidents,

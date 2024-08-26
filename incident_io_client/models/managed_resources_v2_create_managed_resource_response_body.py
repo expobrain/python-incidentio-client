@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.managed_resource_v2_response_body import ManagedResourceV2ResponseBody
+    from ..models.managed_resource_v2 import ManagedResourceV2
 
 
 T = TypeVar("T", bound="ManagedResourcesV2CreateManagedResourceResponseBody")
@@ -19,12 +19,12 @@ class ManagedResourcesV2CreateManagedResourceResponseBody:
             company/infrastructure'}}
 
     Attributes:
-        managed_resource (ManagedResourceV2ResponseBody):  Example: {'annotations': {'incident.io/terraform/version':
-            '3.0.0'}, 'managed_by': 'dashboard', 'resource_id': 'abc123', 'resource_type': 'schedule', 'source_url':
+        managed_resource (ManagedResourceV2):  Example: {'annotations': {'incident.io/terraform/version': '3.0.0'},
+            'managed_by': 'dashboard', 'resource_id': 'abc123', 'resource_type': 'schedule', 'source_url':
             'https://github.com/my-company/infrastructure'}.
     """
 
-    managed_resource: "ManagedResourceV2ResponseBody"
+    managed_resource: "ManagedResourceV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -42,12 +42,10 @@ class ManagedResourcesV2CreateManagedResourceResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.managed_resource_v2_response_body import (
-            ManagedResourceV2ResponseBody,
-        )
+        from ..models.managed_resource_v2 import ManagedResourceV2
 
         d = src_dict.copy()
-        managed_resource = ManagedResourceV2ResponseBody.from_dict(d.pop("managed_resource"))
+        managed_resource = ManagedResourceV2.from_dict(d.pop("managed_resource"))
 
         managed_resources_v2_create_managed_resource_response_body = cls(
             managed_resource=managed_resource,

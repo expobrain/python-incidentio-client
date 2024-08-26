@@ -1,0 +1,3 @@
+# incident_io_client.models.schedule_update_payload_v2_annotations
+
+::: incident_io_client.models.schedule_update_payload_v2_annotations

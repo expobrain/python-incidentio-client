@@ -1,0 +1,3 @@
+# incident_io_client.models.schedule_rotation_working_interval_v2
+
+::: incident_io_client.models.schedule_rotation_working_interval_v2

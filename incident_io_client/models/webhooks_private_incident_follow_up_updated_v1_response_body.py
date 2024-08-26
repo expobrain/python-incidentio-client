@@ -8,9 +8,7 @@ from ..models.webhooks_private_incident_follow_up_updated_v1_response_body_event
 )
 
 if TYPE_CHECKING:
-    from ..models.webhook_private_resource_v2_response_body import (
-        WebhookPrivateResourceV2ResponseBody,
-    )
+    from ..models.webhook_private_resource_v2 import WebhookPrivateResourceV2
 
 
 T = TypeVar("T", bound="WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBody")
@@ -26,11 +24,11 @@ class WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBody:
     Attributes:
         event_type (WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBodyEventType): What type of event is this webhook
             for? Example: private_incident.follow_up_updated_v1.
-        private_incident_follow_up_updated_v1 (WebhookPrivateResourceV2ResponseBody):  Example: {'id': 'abc123'}.
+        private_incident_follow_up_updated_v1 (WebhookPrivateResourceV2):  Example: {'id': 'abc123'}.
     """
 
     event_type: WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBodyEventType
-    private_incident_follow_up_updated_v1: "WebhookPrivateResourceV2ResponseBody"
+    private_incident_follow_up_updated_v1: "WebhookPrivateResourceV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,16 +51,14 @@ class WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.webhook_private_resource_v2_response_body import (
-            WebhookPrivateResourceV2ResponseBody,
-        )
+        from ..models.webhook_private_resource_v2 import WebhookPrivateResourceV2
 
         d = src_dict.copy()
         event_type = WebhooksPrivateIncidentFollowUpUpdatedV1ResponseBodyEventType(
             d.pop("event_type")
         )
 
-        private_incident_follow_up_updated_v1 = WebhookPrivateResourceV2ResponseBody.from_dict(
+        private_incident_follow_up_updated_v1 = WebhookPrivateResourceV2.from_dict(
             d.pop("private_incident.follow_up_updated_v1")
         )
 

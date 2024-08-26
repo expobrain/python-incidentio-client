@@ -1,3 +1,0 @@
-# incident_io_client.models.incident_duration_metric_v2_response_body
-
-::: incident_io_client.models.incident_duration_metric_v2_response_body

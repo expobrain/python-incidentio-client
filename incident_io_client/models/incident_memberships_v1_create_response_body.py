@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_membership_response_body import (
-        IncidentMembershipResponseBody,
-    )
+    from ..models.incident_membership import IncidentMembership
 
 
 T = TypeVar("T", bound="IncidentMembershipsV1CreateResponseBody")
@@ -22,13 +20,13 @@ class IncidentMembershipsV1CreateResponseBody:
             'slack_user_id': 'U02AYNF2XJM'}}}
 
     Attributes:
-        incident_membership (IncidentMembershipResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z',
-            'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'updated_at':
+        incident_membership (IncidentMembership):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'updated_at':
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}.
     """
 
-    incident_membership: "IncidentMembershipResponseBody"
+    incident_membership: "IncidentMembership"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -46,14 +44,10 @@ class IncidentMembershipsV1CreateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_membership_response_body import (
-            IncidentMembershipResponseBody,
-        )
+        from ..models.incident_membership import IncidentMembership
 
         d = src_dict.copy()
-        incident_membership = IncidentMembershipResponseBody.from_dict(
-            d.pop("incident_membership")
-        )
+        incident_membership = IncidentMembership.from_dict(d.pop("incident_membership"))
 
         incident_memberships_v1_create_response_body = cls(
             incident_membership=incident_membership,

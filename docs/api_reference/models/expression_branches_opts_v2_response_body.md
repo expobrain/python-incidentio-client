@@ -1,3 +1,0 @@
-# incident_io_client.models.expression_branches_opts_v2_response_body
-
-::: incident_io_client.models.expression_branches_opts_v2_response_body

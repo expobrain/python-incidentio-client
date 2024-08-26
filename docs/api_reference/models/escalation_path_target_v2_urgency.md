@@ -1,0 +1,3 @@
+# incident_io_client.models.escalation_path_target_v2_urgency
+
+::: incident_io_client.models.escalation_path_target_v2_urgency

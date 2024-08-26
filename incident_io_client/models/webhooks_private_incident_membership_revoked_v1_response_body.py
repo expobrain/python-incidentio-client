@@ -8,9 +8,7 @@ from ..models.webhooks_private_incident_membership_revoked_v1_response_body_even
 )
 
 if TYPE_CHECKING:
-    from ..models.webhook_incident_user_v2_response_body import (
-        WebhookIncidentUserV2ResponseBody,
-    )
+    from ..models.webhook_incident_user_v2 import WebhookIncidentUserV2
 
 
 T = TypeVar("T", bound="WebhooksPrivateIncidentMembershipRevokedV1ResponseBody")
@@ -26,12 +24,12 @@ class WebhooksPrivateIncidentMembershipRevokedV1ResponseBody:
     Attributes:
         event_type (WebhooksPrivateIncidentMembershipRevokedV1ResponseBodyEventType): What type of event is this webhook
             for? Example: private_incident.membership_revoked_v1.
-        private_incident_membership_revoked_v1 (WebhookIncidentUserV2ResponseBody):  Example: {'actor_user_id':
-            'abc123', 'incident_id': 'abc123', 'user_id': 'abc123'}.
+        private_incident_membership_revoked_v1 (WebhookIncidentUserV2):  Example: {'actor_user_id': 'abc123',
+            'incident_id': 'abc123', 'user_id': 'abc123'}.
     """
 
     event_type: WebhooksPrivateIncidentMembershipRevokedV1ResponseBodyEventType
-    private_incident_membership_revoked_v1: "WebhookIncidentUserV2ResponseBody"
+    private_incident_membership_revoked_v1: "WebhookIncidentUserV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -54,16 +52,14 @@ class WebhooksPrivateIncidentMembershipRevokedV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.webhook_incident_user_v2_response_body import (
-            WebhookIncidentUserV2ResponseBody,
-        )
+        from ..models.webhook_incident_user_v2 import WebhookIncidentUserV2
 
         d = src_dict.copy()
         event_type = WebhooksPrivateIncidentMembershipRevokedV1ResponseBodyEventType(
             d.pop("event_type")
         )
 
-        private_incident_membership_revoked_v1 = WebhookIncidentUserV2ResponseBody.from_dict(
+        private_incident_membership_revoked_v1 = WebhookIncidentUserV2.from_dict(
             d.pop("private_incident.membership_revoked_v1")
         )
 

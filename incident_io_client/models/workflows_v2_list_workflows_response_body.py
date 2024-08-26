@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.workflow_slim_response_body import WorkflowSlimResponseBody
+    from ..models.workflow_slim import WorkflowSlim
 
 
 T = TypeVar("T", bound="WorkflowsV2ListWorkflowsResponseBody")
@@ -45,38 +45,38 @@ class WorkflowsV2ListWorkflowsResponseBody:
             'version': 3}]}
 
     Attributes:
-        workflows (List['WorkflowSlimResponseBody']):  Example: [{'condition_groups': [{'conditions': [{'operation':
-            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
-            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
-            Severity', 'reference': 'incident.severity'}}]}], 'continue_on_step_error': True, 'delay':
-            {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions': [{'else_branch': {'result':
-            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack
-            channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation':
-            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
-            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
-            Severity', 'reference': 'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones',
+        workflows (List['WorkflowSlim']):  Example: [{'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}], 'continue_on_step_error': True, 'delay': {'conditions_apply_over_delay': False,
+            'for_seconds': 60}, 'expressions': [{'else_branch': {'result': {'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter':
-            {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations': [{'branches':
+            {'branches': [{'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
             '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}]}]}, 'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type':
-            'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
-            'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference':
-            'abc123', 'returns': {'array': True, 'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}], 'folder':
-            'My folder 01', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'include_private_incidents': True, 'name': 'My workflow',
-            'once_for': [{'array': False, 'key': 'incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"]', 'label': 'Incident
-            -> Affected Team', 'type': 'IncidentSeverity'}], 'runs_from': '2021-08-17T13:28:57.801578Z',
-            'runs_on_incident_modes': ['standard', 'retrospective'], 'runs_on_incidents': 'newly_created', 'state':
-            'active', 'steps': [{'label': 'PagerDuty Escalate', 'name': 'pagerduty.escalate'}], 'trigger': {'label':
-            'Incident Updated', 'name': 'incident.updated'}, 'version': 3}].
+            'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups':
+            [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
+            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}]},
+            'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type': 'navigate', 'parse':
+            {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source': 'metadata.annotations["github.com/repo"]'},
+            'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference': 'abc123', 'returns': {'array': True,
+            'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}], 'folder': 'My folder 01', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'include_private_incidents': True, 'name': 'My workflow', 'once_for': [{'array':
+            False, 'key': 'incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"]', 'label': 'Incident -> Affected Team',
+            'type': 'IncidentSeverity'}], 'runs_from': '2021-08-17T13:28:57.801578Z', 'runs_on_incident_modes': ['standard',
+            'retrospective'], 'runs_on_incidents': 'newly_created', 'state': 'active', 'steps': [{'label': 'PagerDuty
+            Escalate', 'name': 'pagerduty.escalate'}], 'trigger': {'label': 'Incident Updated', 'name': 'incident.updated'},
+            'version': 3}].
     """
 
-    workflows: List["WorkflowSlimResponseBody"]
+    workflows: List["WorkflowSlim"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -97,13 +97,13 @@ class WorkflowsV2ListWorkflowsResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.workflow_slim_response_body import WorkflowSlimResponseBody
+        from ..models.workflow_slim import WorkflowSlim
 
         d = src_dict.copy()
         workflows = []
         _workflows = d.pop("workflows")
         for workflows_item_data in _workflows:
-            workflows_item = WorkflowSlimResponseBody.from_dict(workflows_item_data)
+            workflows_item = WorkflowSlim.from_dict(workflows_item_data)
 
             workflows.append(workflows_item)
 

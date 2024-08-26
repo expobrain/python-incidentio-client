@@ -1,3 +1,0 @@
-# incident_io_client.models.workflow_slim_response_body_runs_on_incident_modes_item
-
-::: incident_io_client.models.workflow_slim_response_body_runs_on_incident_modes_item

@@ -1,3 +1,0 @@
-# incident_io_client.models.escalation_path_target_v2_request_body_schedule_mode
-
-::: incident_io_client.models.escalation_path_target_v2_request_body_schedule_mode

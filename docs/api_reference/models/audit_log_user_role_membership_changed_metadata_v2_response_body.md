@@ -1,3 +1,0 @@
-# incident_io_client.models.audit_log_user_role_membership_changed_metadata_v2_response_body
-
-::: incident_io_client.models.audit_log_user_role_membership_changed_metadata_v2_response_body

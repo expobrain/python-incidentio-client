@@ -1,3 +1,0 @@
-# incident_io_client.models.embedded_catalog_entry_v1_response_body
-
-::: incident_io_client.models.embedded_catalog_entry_v1_response_body
