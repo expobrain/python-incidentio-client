@@ -19,23 +19,11 @@ generate_client:
 	poetry run openapi-python-client generate --meta none --path incident_io_openapi.json
 
 	touch incident_io_client/py.typed
-	make fmt
-
-generate: generate_client generate_docs fmt
 
 fmt:
-	find . -type d -name ".venv" -prune -o -print -type f -name "*.py" \
-		-exec poetry run pyupgrade --exit-zero-even-if-changed --py38-plus {} \+ 1> /dev/null
-	poetry run autoflake \
-		--in-place \
-		--remove-all-unused-imports \
-        --remove-unused-variable \
-        --expand-star-imports \
-        --remove-duplicate-keys \
-		-r \
-		.
-	poetry run isort --profile black .
-	poetry run black .
+	pre-commit run --all-files ; exit 0
+
+generate: generate_client generate_docs fmt
 
 lint:
 	poetry run mypy incident_io_client scripts
