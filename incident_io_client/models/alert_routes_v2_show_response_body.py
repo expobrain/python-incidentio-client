@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.alert_route_v2_response_body import AlertRouteV2ResponseBody
+    from ..models.alert_route_v2 import AlertRouteV2
 
 
 T = TypeVar("T", bound="AlertRoutesV2ShowResponseBody")
@@ -57,10 +57,10 @@ class AlertRoutesV2ShowResponseBody:
             'SEV123', 'reference': 'incident.severity'}}}}}
 
     Attributes:
-        alert_route (AlertRouteV2ResponseBody):  Example: {'condition_groups': [{'conditions': [{'operation': {'label':
-            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+        alert_route (AlertRouteV2):  Example: {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence
+            Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
             'incident.severity'}}]}], 'defer_time_seconds': 1, 'escalation_bindings': [{'binding': {'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}], 'expressions': [{'else_branch':
@@ -100,7 +100,7 @@ class AlertRoutesV2ShowResponseBody:
             'SEV123', 'reference': 'incident.severity'}}}}.
     """
 
-    alert_route: "AlertRouteV2ResponseBody"
+    alert_route: "AlertRouteV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -118,10 +118,10 @@ class AlertRoutesV2ShowResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.alert_route_v2_response_body import AlertRouteV2ResponseBody
+        from ..models.alert_route_v2 import AlertRouteV2
 
         d = src_dict.copy()
-        alert_route = AlertRouteV2ResponseBody.from_dict(d.pop("alert_route"))
+        alert_route = AlertRouteV2.from_dict(d.pop("alert_route"))
 
         alert_routes_v2_show_response_body = cls(
             alert_route=alert_route,

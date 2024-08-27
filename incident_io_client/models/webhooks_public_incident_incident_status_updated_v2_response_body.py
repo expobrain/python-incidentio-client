@@ -8,9 +8,7 @@ from ..models.webhooks_public_incident_incident_status_updated_v2_response_body_
 )
 
 if TYPE_CHECKING:
-    from ..models.incident_with_status_change_v2_response_body import (
-        IncidentWithStatusChangeV2ResponseBody,
-    )
+    from ..models.incident_with_status_change_v2 import IncidentWithStatusChangeV2
 
 
 T = TypeVar("T", bound="WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBody")
@@ -66,8 +64,8 @@ class WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBody:
     Attributes:
         event_type (WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBodyEventType): What type of event is this
             webhook for? Example: public_incident.incident_status_updated_v2.
-        public_incident_incident_status_updated_v2 (IncidentWithStatusChangeV2ResponseBody):  Example: {'incident':
-            {'call_url': 'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
+        public_incident_incident_status_updated_v2 (IncidentWithStatusChangeV2):  Example: {'incident': {'call_url':
+            'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
             'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
@@ -110,7 +108,7 @@ class WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBody:
     """
 
     event_type: WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBodyEventType
-    public_incident_incident_status_updated_v2: "IncidentWithStatusChangeV2ResponseBody"
+    public_incident_incident_status_updated_v2: "IncidentWithStatusChangeV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -133,19 +131,15 @@ class WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_with_status_change_v2_response_body import (
-            IncidentWithStatusChangeV2ResponseBody,
-        )
+        from ..models.incident_with_status_change_v2 import IncidentWithStatusChangeV2
 
         d = src_dict.copy()
         event_type = WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBodyEventType(
             d.pop("event_type")
         )
 
-        public_incident_incident_status_updated_v2 = (
-            IncidentWithStatusChangeV2ResponseBody.from_dict(
-                d.pop("public_incident.incident_status_updated_v2")
-            )
+        public_incident_incident_status_updated_v2 = IncidentWithStatusChangeV2.from_dict(
+            d.pop("public_incident.incident_status_updated_v2")
         )
 
         webhooks_public_incident_incident_status_updated_v2_response_body = cls(

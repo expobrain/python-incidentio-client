@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_type_v1_response_body import IncidentTypeV1ResponseBody
+    from ..models.incident_type_v1 import IncidentTypeV1
 
 
 T = TypeVar("T", bound="IncidentTypesV1ListResponseBody")
@@ -19,13 +19,13 @@ class IncidentTypesV1ListResponseBody:
             'Production Outage', 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        incident_types (List['IncidentTypeV1ResponseBody']):  Example: [{'create_in_triage': 'always', 'created_at':
+        incident_types (List['IncidentTypeV1']):  Example: [{'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
-    incident_types: List["IncidentTypeV1ResponseBody"]
+    incident_types: List["IncidentTypeV1"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -46,13 +46,13 @@ class IncidentTypesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_type_v1_response_body import IncidentTypeV1ResponseBody
+        from ..models.incident_type_v1 import IncidentTypeV1
 
         d = src_dict.copy()
         incident_types = []
         _incident_types = d.pop("incident_types")
         for incident_types_item_data in _incident_types:
-            incident_types_item = IncidentTypeV1ResponseBody.from_dict(incident_types_item_data)
+            incident_types_item = IncidentTypeV1.from_dict(incident_types_item_data)
 
             incident_types.append(incident_types_item)
 

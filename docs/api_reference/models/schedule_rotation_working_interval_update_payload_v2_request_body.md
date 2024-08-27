@@ -1,3 +1,0 @@
-# incident_io_client.models.schedule_rotation_working_interval_update_payload_v2_request_body
-
-::: incident_io_client.models.schedule_rotation_working_interval_update_payload_v2_request_body

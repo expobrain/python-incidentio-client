@@ -5,14 +5,14 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.incidents_v2_create_request_body import IncidentsV2CreateRequestBody
+from ...models.incident_create_payload_v2 import IncidentCreatePayloadV2
 from ...models.incidents_v2_create_response_body import IncidentsV2CreateResponseBody
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: IncidentsV2CreateRequestBody,
+    body: IncidentCreatePayloadV2,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -57,7 +57,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentsV2CreateRequestBody,
+    body: IncidentCreatePayloadV2,
 ) -> Response[IncidentsV2CreateResponseBody]:
     r"""Create Incidents V2
 
@@ -67,10 +67,10 @@ def sync_detailed(
     will not be announced in Slack.
 
     Args:
-        body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
-            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+        body (IncidentCreatePayloadV2):  Example: {'custom_field_entries': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
             uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
@@ -107,7 +107,7 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentsV2CreateRequestBody,
+    body: IncidentCreatePayloadV2,
 ) -> Optional[IncidentsV2CreateResponseBody]:
     r"""Create Incidents V2
 
@@ -117,10 +117,10 @@ def sync(
     will not be announced in Slack.
 
     Args:
-        body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
-            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+        body (IncidentCreatePayloadV2):  Example: {'custom_field_entries': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
             uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
@@ -152,7 +152,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentsV2CreateRequestBody,
+    body: IncidentCreatePayloadV2,
 ) -> Response[IncidentsV2CreateResponseBody]:
     r"""Create Incidents V2
 
@@ -162,10 +162,10 @@ async def asyncio_detailed(
     will not be announced in Slack.
 
     Args:
-        body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
-            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+        body (IncidentCreatePayloadV2):  Example: {'custom_field_entries': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
             uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
@@ -200,7 +200,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentsV2CreateRequestBody,
+    body: IncidentCreatePayloadV2,
 ) -> Optional[IncidentsV2CreateResponseBody]:
     r"""Create Incidents V2
 
@@ -210,10 +210,10 @@ async def asyncio(
     will not be announced in Slack.
 
     Args:
-        body (IncidentsV2CreateRequestBody):  Example: {'custom_field_entries':
-            [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
+        body (IncidentCreatePayloadV2):  Example: {'custom_field_entries': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
+            'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
             'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
             uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':

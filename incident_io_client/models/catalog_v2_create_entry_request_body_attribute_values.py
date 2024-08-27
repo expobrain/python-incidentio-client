@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.engine_param_binding_payload_v2_request_body import (
-        EngineParamBindingPayloadV2RequestBody,
-    )
+    from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
 
 T = TypeVar("T", bound="CatalogV2CreateEntryRequestBodyAttributeValues")
@@ -22,7 +20,7 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
 
     """
 
-    additional_properties: Dict[str, "EngineParamBindingPayloadV2RequestBody"] = _attrs_field(
+    additional_properties: Dict[str, "EngineParamBindingPayloadV2"] = _attrs_field(
         init=False, factory=dict
     )
 
@@ -35,16 +33,14 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.engine_param_binding_payload_v2_request_body import (
-            EngineParamBindingPayloadV2RequestBody,
-        )
+        from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
         d = src_dict.copy()
         catalog_v2_create_entry_request_body_attribute_values = cls()
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = EngineParamBindingPayloadV2RequestBody.from_dict(prop_dict)
+            additional_property = EngineParamBindingPayloadV2.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
@@ -57,10 +53,10 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
     def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> "EngineParamBindingPayloadV2RequestBody":
+    def __getitem__(self, key: str) -> "EngineParamBindingPayloadV2":
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: "EngineParamBindingPayloadV2RequestBody") -> None:
+    def __setitem__(self, key: str, value: "EngineParamBindingPayloadV2") -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

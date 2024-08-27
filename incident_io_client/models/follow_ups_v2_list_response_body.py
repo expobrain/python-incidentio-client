@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.follow_up_v2_response_body import FollowUpV2ResponseBody
+    from ..models.follow_up_v2 import FollowUpV2
 
 
 T = TypeVar("T", bound="FollowUpsV2ListResponseBody")
@@ -24,7 +24,7 @@ class FollowUpsV2ListResponseBody:
             'title': 'Cat is stuck in the tree', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        follow_ups (List['FollowUpV2ResponseBody']):  Example: [{'assignee': {'email': 'lisa@incident.io', 'id':
+        follow_ups (List['FollowUpV2']):  Example: [{'assignee': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
             'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Call
             the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
@@ -35,7 +35,7 @@ class FollowUpsV2ListResponseBody:
             '2021-08-17T13:28:57.801578Z'}].
     """
 
-    follow_ups: List["FollowUpV2ResponseBody"]
+    follow_ups: List["FollowUpV2"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -56,13 +56,13 @@ class FollowUpsV2ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.follow_up_v2_response_body import FollowUpV2ResponseBody
+        from ..models.follow_up_v2 import FollowUpV2
 
         d = src_dict.copy()
         follow_ups = []
         _follow_ups = d.pop("follow_ups")
         for follow_ups_item_data in _follow_ups:
-            follow_ups_item = FollowUpV2ResponseBody.from_dict(follow_ups_item_data)
+            follow_ups_item = FollowUpV2.from_dict(follow_ups_item_data)
 
             follow_ups.append(follow_ups_item)
 

@@ -1,3 +1,0 @@
-# incident_io_client.models.schedule_rotation_working_interval_v2_response_body_weekday
-
-::: incident_io_client.models.schedule_rotation_working_interval_v2_response_body_weekday

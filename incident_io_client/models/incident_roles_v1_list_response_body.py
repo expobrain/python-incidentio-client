@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_role_v1_response_body import IncidentRoleV1ResponseBody
+    from ..models.incident_role_v1 import IncidentRoleV1
 
 
 T = TypeVar("T", bound="IncidentRolesV1ListResponseBody")
@@ -20,14 +20,13 @@ class IncidentRolesV1ListResponseBody:
             'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        incident_roles (List['IncidentRoleV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident
-            Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead', 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}].
+        incident_roles (List['IncidentRoleV1']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z', 'description':
+            'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take
+            point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required':
+            False, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
-    incident_roles: List["IncidentRoleV1ResponseBody"]
+    incident_roles: List["IncidentRoleV1"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -48,13 +47,13 @@ class IncidentRolesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_role_v1_response_body import IncidentRoleV1ResponseBody
+        from ..models.incident_role_v1 import IncidentRoleV1
 
         d = src_dict.copy()
         incident_roles = []
         _incident_roles = d.pop("incident_roles")
         for incident_roles_item_data in _incident_roles:
-            incident_roles_item = IncidentRoleV1ResponseBody.from_dict(incident_roles_item_data)
+            incident_roles_item = IncidentRoleV1.from_dict(incident_roles_item_data)
 
             incident_roles.append(incident_roles_item)
 

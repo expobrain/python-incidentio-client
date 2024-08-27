@@ -9,17 +9,11 @@ from ..models.webhooks_all_response_body_event_type import (
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.action_v1_response_body import ActionV1ResponseBody
-    from ..models.incident_with_status_change_v2_response_body import (
-        IncidentWithStatusChangeV2ResponseBody,
-    )
-    from ..models.webhook_incident_user_v2_response_body import (
-        WebhookIncidentUserV2ResponseBody,
-    )
-    from ..models.webhook_incident_v2_response_body import WebhookIncidentV2ResponseBody
-    from ..models.webhook_private_resource_v2_response_body import (
-        WebhookPrivateResourceV2ResponseBody,
-    )
+    from ..models.action_v1 import ActionV1
+    from ..models.incident_with_status_change_v2 import IncidentWithStatusChangeV2
+    from ..models.webhook_incident_user_v2 import WebhookIncidentUserV2
+    from ..models.webhook_incident_v2 import WebhookIncidentV2
+    from ..models.webhook_private_resource_v2 import WebhookPrivateResourceV2
 
 
 T = TypeVar("T", bound="WebhooksAllResponseBody")
@@ -176,51 +170,45 @@ class WebhooksAllResponseBody:
     Attributes:
         event_type (WebhooksAllResponseBodyEventType): What type of event is this webhook for? Example:
             public_incident.incident_created_v2.
-        private_incident_action_created_v1 (Union[Unset, WebhookPrivateResourceV2ResponseBody]):  Example: {'id':
-            'abc123'}.
-        private_incident_action_updated_v1 (Union[Unset, WebhookPrivateResourceV2ResponseBody]):  Example: {'id':
-            'abc123'}.
-        private_incident_follow_up_created_v1 (Union[Unset, WebhookPrivateResourceV2ResponseBody]):  Example: {'id':
-            'abc123'}.
-        private_incident_follow_up_updated_v1 (Union[Unset, WebhookPrivateResourceV2ResponseBody]):  Example: {'id':
-            'abc123'}.
-        private_incident_incident_created_v2 (Union[Unset, WebhookPrivateResourceV2ResponseBody]):  Example: {'id':
-            'abc123'}.
-        private_incident_incident_updated_v2 (Union[Unset, WebhookPrivateResourceV2ResponseBody]):  Example: {'id':
-            'abc123'}.
-        private_incident_membership_granted_v1 (Union[Unset, WebhookIncidentUserV2ResponseBody]):  Example:
-            {'actor_user_id': 'abc123', 'incident_id': 'abc123', 'user_id': 'abc123'}.
-        private_incident_membership_revoked_v1 (Union[Unset, WebhookIncidentUserV2ResponseBody]):  Example:
-            {'actor_user_id': 'abc123', 'incident_id': 'abc123', 'user_id': 'abc123'}.
-        public_incident_action_created_v1 (Union[Unset, ActionV1ResponseBody]):  Example: {'assignee': {'email':
+        private_incident_action_created_v1 (Union[Unset, WebhookPrivateResourceV2]):  Example: {'id': 'abc123'}.
+        private_incident_action_updated_v1 (Union[Unset, WebhookPrivateResourceV2]):  Example: {'id': 'abc123'}.
+        private_incident_follow_up_created_v1 (Union[Unset, WebhookPrivateResourceV2]):  Example: {'id': 'abc123'}.
+        private_incident_follow_up_updated_v1 (Union[Unset, WebhookPrivateResourceV2]):  Example: {'id': 'abc123'}.
+        private_incident_incident_created_v2 (Union[Unset, WebhookPrivateResourceV2]):  Example: {'id': 'abc123'}.
+        private_incident_incident_updated_v2 (Union[Unset, WebhookPrivateResourceV2]):  Example: {'id': 'abc123'}.
+        private_incident_membership_granted_v1 (Union[Unset, WebhookIncidentUserV2]):  Example: {'actor_user_id':
+            'abc123', 'incident_id': 'abc123', 'user_id': 'abc123'}.
+        private_incident_membership_revoked_v1 (Union[Unset, WebhookIncidentUserV2]):  Example: {'actor_user_id':
+            'abc123', 'incident_id': 'abc123', 'user_id': 'abc123'}.
+        public_incident_action_created_v1 (Union[Unset, ActionV1]):  Example: {'assignee': {'email': 'lisa@incident.io',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id':
+            'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'Call the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
+            'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'asana'}, 'follow_up':
+            True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        public_incident_action_updated_v1 (Union[Unset, ActionV1]):  Example: {'assignee': {'email': 'lisa@incident.io',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id':
+            'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z',
+            'description': 'Call the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
+            'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'asana'}, 'follow_up':
+            True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        public_incident_follow_up_created_v1 (Union[Unset, ActionV1]):  Example: {'assignee': {'email':
             'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
             'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
             {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
             write-up', 'provider': 'asana'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
-        public_incident_action_updated_v1 (Union[Unset, ActionV1ResponseBody]):  Example: {'assignee': {'email':
+        public_incident_follow_up_updated_v1 (Union[Unset, ActionV1]):  Example: {'assignee': {'email':
             'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
             'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
             {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
             write-up', 'provider': 'asana'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
-        public_incident_follow_up_created_v1 (Union[Unset, ActionV1ResponseBody]):  Example: {'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
-            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'asana'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
-        public_incident_follow_up_updated_v1 (Union[Unset, ActionV1ResponseBody]):  Example: {'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
-            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'asana'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
-        public_incident_incident_created_v2 (Union[Unset, WebhookIncidentV2ResponseBody]):  Example: {'call_url':
+        public_incident_incident_created_v2 (Union[Unset, WebhookIncidentV2]):  Example: {'call_url':
             'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
@@ -256,32 +244,31 @@ class WebhooksAllResponseBody:
             really sad, and we don't know why yet.", 'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public',
             'workload_minutes_late': 40.7, 'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7,
             'workload_minutes_working': 20}.
-        public_incident_incident_status_updated_v2 (Union[Unset, IncidentWithStatusChangeV2ResponseBody]):  Example:
-            {'incident': {'call_url': 'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator':
-            {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}}, 'custom_field_entries': [{'custom_field': {'description': 'Which team is
-            impacted by this issue', 'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected
-            Team', 'options': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'sort_key': 10, 'value': 'Product'}]}, 'values': [{'value_catalog_entry': {'aliases': ['lawrence@incident.io',
-            'lawrence'], 'external_id': '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
-            'Primary On-call'}, 'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option':
-            {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
-            'Product'}, 'value_text': 'This is my text field, I hope you like it'}]}], 'duration_metrics':
-            [{'duration_metric': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'value_seconds': 1}],
-            'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-
-            io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'asana'}, 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
-            'incident_role_assignments': [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status': {'category': 'triage', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
-            from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values': [{'incident_timestamp': {'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value': {'value':
-            '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
+        public_incident_incident_status_updated_v2 (Union[Unset, IncidentWithStatusChangeV2]):  Example: {'incident':
+            {'call_url': 'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
+            'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
+            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
+            'values': [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
+            'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
+            'value_text': 'This is my text field, I hope you like it'}]}], 'duration_metrics': [{'duration_metric': {'id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'value_seconds': 1}], 'external_issue_reference':
+            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
+            write-up', 'provider': 'asana'}, 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee':
+            {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
+            'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
+            'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take
+            point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required':
+            False, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}],
+            'incident_status': {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact
+            has been **fully mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H',
+            'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values':
+            [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value':
+            {'value': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'name': 'Our database is sad', 'permalink':
@@ -298,7 +285,7 @@ class WebhooksAllResponseBody:
             'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're
             ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4,
             'updated_at': '2021-08-17T13:28:57.801578Z'}}.
-        public_incident_incident_updated_v2 (Union[Unset, WebhookIncidentV2ResponseBody]):  Example: {'call_url':
+        public_incident_incident_updated_v2 (Union[Unset, WebhookIncidentV2]):  Example: {'call_url':
             'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
@@ -337,39 +324,21 @@ class WebhooksAllResponseBody:
     """
 
     event_type: WebhooksAllResponseBodyEventType
-    private_incident_action_created_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_action_updated_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_follow_up_created_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_follow_up_updated_v1: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_incident_created_v2: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_incident_updated_v2: Union[Unset, "WebhookPrivateResourceV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_membership_granted_v1: Union[Unset, "WebhookIncidentUserV2ResponseBody"] = (
-        UNSET
-    )
-    private_incident_membership_revoked_v1: Union[Unset, "WebhookIncidentUserV2ResponseBody"] = (
-        UNSET
-    )
-    public_incident_action_created_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
-    public_incident_action_updated_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
-    public_incident_follow_up_created_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
-    public_incident_follow_up_updated_v1: Union[Unset, "ActionV1ResponseBody"] = UNSET
-    public_incident_incident_created_v2: Union[Unset, "WebhookIncidentV2ResponseBody"] = UNSET
-    public_incident_incident_status_updated_v2: Union[
-        Unset, "IncidentWithStatusChangeV2ResponseBody"
-    ] = UNSET
-    public_incident_incident_updated_v2: Union[Unset, "WebhookIncidentV2ResponseBody"] = UNSET
+    private_incident_action_created_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_action_updated_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_follow_up_created_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_follow_up_updated_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_incident_created_v2: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_incident_updated_v2: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_membership_granted_v1: Union[Unset, "WebhookIncidentUserV2"] = UNSET
+    private_incident_membership_revoked_v1: Union[Unset, "WebhookIncidentUserV2"] = UNSET
+    public_incident_action_created_v1: Union[Unset, "ActionV1"] = UNSET
+    public_incident_action_updated_v1: Union[Unset, "ActionV1"] = UNSET
+    public_incident_follow_up_created_v1: Union[Unset, "ActionV1"] = UNSET
+    public_incident_follow_up_updated_v1: Union[Unset, "ActionV1"] = UNSET
+    public_incident_incident_created_v2: Union[Unset, "WebhookIncidentV2"] = UNSET
+    public_incident_incident_status_updated_v2: Union[Unset, "IncidentWithStatusChangeV2"] = UNSET
+    public_incident_incident_updated_v2: Union[Unset, "WebhookIncidentV2"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -517,177 +486,165 @@ class WebhooksAllResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.action_v1_response_body import ActionV1ResponseBody
-        from ..models.incident_with_status_change_v2_response_body import (
-            IncidentWithStatusChangeV2ResponseBody,
-        )
-        from ..models.webhook_incident_user_v2_response_body import (
-            WebhookIncidentUserV2ResponseBody,
-        )
-        from ..models.webhook_incident_v2_response_body import (
-            WebhookIncidentV2ResponseBody,
-        )
-        from ..models.webhook_private_resource_v2_response_body import (
-            WebhookPrivateResourceV2ResponseBody,
-        )
+        from ..models.action_v1 import ActionV1
+        from ..models.incident_with_status_change_v2 import IncidentWithStatusChangeV2
+        from ..models.webhook_incident_user_v2 import WebhookIncidentUserV2
+        from ..models.webhook_incident_v2 import WebhookIncidentV2
+        from ..models.webhook_private_resource_v2 import WebhookPrivateResourceV2
 
         d = src_dict.copy()
         event_type = WebhooksAllResponseBodyEventType(d.pop("event_type"))
 
         _private_incident_action_created_v1 = d.pop("private_incident.action_created_v1", UNSET)
-        private_incident_action_created_v1: Union[Unset, WebhookPrivateResourceV2ResponseBody]
+        private_incident_action_created_v1: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_action_created_v1, Unset):
             private_incident_action_created_v1 = UNSET
         else:
-            private_incident_action_created_v1 = WebhookPrivateResourceV2ResponseBody.from_dict(
+            private_incident_action_created_v1 = WebhookPrivateResourceV2.from_dict(
                 _private_incident_action_created_v1
             )
 
         _private_incident_action_updated_v1 = d.pop("private_incident.action_updated_v1", UNSET)
-        private_incident_action_updated_v1: Union[Unset, WebhookPrivateResourceV2ResponseBody]
+        private_incident_action_updated_v1: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_action_updated_v1, Unset):
             private_incident_action_updated_v1 = UNSET
         else:
-            private_incident_action_updated_v1 = WebhookPrivateResourceV2ResponseBody.from_dict(
+            private_incident_action_updated_v1 = WebhookPrivateResourceV2.from_dict(
                 _private_incident_action_updated_v1
             )
 
         _private_incident_follow_up_created_v1 = d.pop(
             "private_incident.follow_up_created_v1", UNSET
         )
-        private_incident_follow_up_created_v1: Union[Unset, WebhookPrivateResourceV2ResponseBody]
+        private_incident_follow_up_created_v1: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_follow_up_created_v1, Unset):
             private_incident_follow_up_created_v1 = UNSET
         else:
-            private_incident_follow_up_created_v1 = WebhookPrivateResourceV2ResponseBody.from_dict(
+            private_incident_follow_up_created_v1 = WebhookPrivateResourceV2.from_dict(
                 _private_incident_follow_up_created_v1
             )
 
         _private_incident_follow_up_updated_v1 = d.pop(
             "private_incident.follow_up_updated_v1", UNSET
         )
-        private_incident_follow_up_updated_v1: Union[Unset, WebhookPrivateResourceV2ResponseBody]
+        private_incident_follow_up_updated_v1: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_follow_up_updated_v1, Unset):
             private_incident_follow_up_updated_v1 = UNSET
         else:
-            private_incident_follow_up_updated_v1 = WebhookPrivateResourceV2ResponseBody.from_dict(
+            private_incident_follow_up_updated_v1 = WebhookPrivateResourceV2.from_dict(
                 _private_incident_follow_up_updated_v1
             )
 
         _private_incident_incident_created_v2 = d.pop(
             "private_incident.incident_created_v2", UNSET
         )
-        private_incident_incident_created_v2: Union[Unset, WebhookPrivateResourceV2ResponseBody]
+        private_incident_incident_created_v2: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_incident_created_v2, Unset):
             private_incident_incident_created_v2 = UNSET
         else:
-            private_incident_incident_created_v2 = WebhookPrivateResourceV2ResponseBody.from_dict(
+            private_incident_incident_created_v2 = WebhookPrivateResourceV2.from_dict(
                 _private_incident_incident_created_v2
             )
 
         _private_incident_incident_updated_v2 = d.pop(
             "private_incident.incident_updated_v2", UNSET
         )
-        private_incident_incident_updated_v2: Union[Unset, WebhookPrivateResourceV2ResponseBody]
+        private_incident_incident_updated_v2: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_incident_updated_v2, Unset):
             private_incident_incident_updated_v2 = UNSET
         else:
-            private_incident_incident_updated_v2 = WebhookPrivateResourceV2ResponseBody.from_dict(
+            private_incident_incident_updated_v2 = WebhookPrivateResourceV2.from_dict(
                 _private_incident_incident_updated_v2
             )
 
         _private_incident_membership_granted_v1 = d.pop(
             "private_incident.membership_granted_v1", UNSET
         )
-        private_incident_membership_granted_v1: Union[Unset, WebhookIncidentUserV2ResponseBody]
+        private_incident_membership_granted_v1: Union[Unset, WebhookIncidentUserV2]
         if isinstance(_private_incident_membership_granted_v1, Unset):
             private_incident_membership_granted_v1 = UNSET
         else:
-            private_incident_membership_granted_v1 = WebhookIncidentUserV2ResponseBody.from_dict(
+            private_incident_membership_granted_v1 = WebhookIncidentUserV2.from_dict(
                 _private_incident_membership_granted_v1
             )
 
         _private_incident_membership_revoked_v1 = d.pop(
             "private_incident.membership_revoked_v1", UNSET
         )
-        private_incident_membership_revoked_v1: Union[Unset, WebhookIncidentUserV2ResponseBody]
+        private_incident_membership_revoked_v1: Union[Unset, WebhookIncidentUserV2]
         if isinstance(_private_incident_membership_revoked_v1, Unset):
             private_incident_membership_revoked_v1 = UNSET
         else:
-            private_incident_membership_revoked_v1 = WebhookIncidentUserV2ResponseBody.from_dict(
+            private_incident_membership_revoked_v1 = WebhookIncidentUserV2.from_dict(
                 _private_incident_membership_revoked_v1
             )
 
         _public_incident_action_created_v1 = d.pop("public_incident.action_created_v1", UNSET)
-        public_incident_action_created_v1: Union[Unset, ActionV1ResponseBody]
+        public_incident_action_created_v1: Union[Unset, ActionV1]
         if isinstance(_public_incident_action_created_v1, Unset):
             public_incident_action_created_v1 = UNSET
         else:
-            public_incident_action_created_v1 = ActionV1ResponseBody.from_dict(
+            public_incident_action_created_v1 = ActionV1.from_dict(
                 _public_incident_action_created_v1
             )
 
         _public_incident_action_updated_v1 = d.pop("public_incident.action_updated_v1", UNSET)
-        public_incident_action_updated_v1: Union[Unset, ActionV1ResponseBody]
+        public_incident_action_updated_v1: Union[Unset, ActionV1]
         if isinstance(_public_incident_action_updated_v1, Unset):
             public_incident_action_updated_v1 = UNSET
         else:
-            public_incident_action_updated_v1 = ActionV1ResponseBody.from_dict(
+            public_incident_action_updated_v1 = ActionV1.from_dict(
                 _public_incident_action_updated_v1
             )
 
         _public_incident_follow_up_created_v1 = d.pop(
             "public_incident.follow_up_created_v1", UNSET
         )
-        public_incident_follow_up_created_v1: Union[Unset, ActionV1ResponseBody]
+        public_incident_follow_up_created_v1: Union[Unset, ActionV1]
         if isinstance(_public_incident_follow_up_created_v1, Unset):
             public_incident_follow_up_created_v1 = UNSET
         else:
-            public_incident_follow_up_created_v1 = ActionV1ResponseBody.from_dict(
+            public_incident_follow_up_created_v1 = ActionV1.from_dict(
                 _public_incident_follow_up_created_v1
             )
 
         _public_incident_follow_up_updated_v1 = d.pop(
             "public_incident.follow_up_updated_v1", UNSET
         )
-        public_incident_follow_up_updated_v1: Union[Unset, ActionV1ResponseBody]
+        public_incident_follow_up_updated_v1: Union[Unset, ActionV1]
         if isinstance(_public_incident_follow_up_updated_v1, Unset):
             public_incident_follow_up_updated_v1 = UNSET
         else:
-            public_incident_follow_up_updated_v1 = ActionV1ResponseBody.from_dict(
+            public_incident_follow_up_updated_v1 = ActionV1.from_dict(
                 _public_incident_follow_up_updated_v1
             )
 
         _public_incident_incident_created_v2 = d.pop("public_incident.incident_created_v2", UNSET)
-        public_incident_incident_created_v2: Union[Unset, WebhookIncidentV2ResponseBody]
+        public_incident_incident_created_v2: Union[Unset, WebhookIncidentV2]
         if isinstance(_public_incident_incident_created_v2, Unset):
             public_incident_incident_created_v2 = UNSET
         else:
-            public_incident_incident_created_v2 = WebhookIncidentV2ResponseBody.from_dict(
+            public_incident_incident_created_v2 = WebhookIncidentV2.from_dict(
                 _public_incident_incident_created_v2
             )
 
         _public_incident_incident_status_updated_v2 = d.pop(
             "public_incident.incident_status_updated_v2", UNSET
         )
-        public_incident_incident_status_updated_v2: Union[
-            Unset, IncidentWithStatusChangeV2ResponseBody
-        ]
+        public_incident_incident_status_updated_v2: Union[Unset, IncidentWithStatusChangeV2]
         if isinstance(_public_incident_incident_status_updated_v2, Unset):
             public_incident_incident_status_updated_v2 = UNSET
         else:
-            public_incident_incident_status_updated_v2 = (
-                IncidentWithStatusChangeV2ResponseBody.from_dict(
-                    _public_incident_incident_status_updated_v2
-                )
+            public_incident_incident_status_updated_v2 = IncidentWithStatusChangeV2.from_dict(
+                _public_incident_incident_status_updated_v2
             )
 
         _public_incident_incident_updated_v2 = d.pop("public_incident.incident_updated_v2", UNSET)
-        public_incident_incident_updated_v2: Union[Unset, WebhookIncidentV2ResponseBody]
+        public_incident_incident_updated_v2: Union[Unset, WebhookIncidentV2]
         if isinstance(_public_incident_incident_updated_v2, Unset):
             public_incident_incident_updated_v2 = UNSET
         else:
-            public_incident_incident_updated_v2 = WebhookIncidentV2ResponseBody.from_dict(
+            public_incident_incident_updated_v2 = WebhookIncidentV2.from_dict(
                 _public_incident_incident_updated_v2
             )
 

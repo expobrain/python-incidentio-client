@@ -6,10 +6,8 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.incident_v2_response_body import IncidentV2ResponseBody
-    from ..models.pagination_meta_result_with_total_response_body import (
-        PaginationMetaResultWithTotalResponseBody,
-    )
+    from ..models.incident_v2 import IncidentV2
+    from ..models.pagination_meta_result_with_total import PaginationMetaResultWithTotal
 
 
 T = TypeVar("T", bound="IncidentsV2ListResponseBody")
@@ -57,7 +55,7 @@ class IncidentsV2ListResponseBody:
             'pagination_meta': {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}}
 
     Attributes:
-        incidents (List['IncidentV2ResponseBody']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
+        incidents (List['IncidentV2']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}, 'custom_field_entries': [{'custom_field': {'description':
@@ -92,12 +90,12 @@ class IncidentsV2ListResponseBody:
             'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
             'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
             'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}].
-        pagination_meta (Union[Unset, PaginationMetaResultWithTotalResponseBody]):  Example: {'after':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}.
+        pagination_meta (Union[Unset, PaginationMetaResultWithTotal]):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'page_size': 25, 'total_record_count': 238}.
     """
 
-    incidents: List["IncidentV2ResponseBody"]
-    pagination_meta: Union[Unset, "PaginationMetaResultWithTotalResponseBody"] = UNSET
+    incidents: List["IncidentV2"]
+    pagination_meta: Union[Unset, "PaginationMetaResultWithTotal"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -124,25 +122,25 @@ class IncidentsV2ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_v2_response_body import IncidentV2ResponseBody
-        from ..models.pagination_meta_result_with_total_response_body import (
-            PaginationMetaResultWithTotalResponseBody,
+        from ..models.incident_v2 import IncidentV2
+        from ..models.pagination_meta_result_with_total import (
+            PaginationMetaResultWithTotal,
         )
 
         d = src_dict.copy()
         incidents = []
         _incidents = d.pop("incidents")
         for incidents_item_data in _incidents:
-            incidents_item = IncidentV2ResponseBody.from_dict(incidents_item_data)
+            incidents_item = IncidentV2.from_dict(incidents_item_data)
 
             incidents.append(incidents_item)
 
         _pagination_meta = d.pop("pagination_meta", UNSET)
-        pagination_meta: Union[Unset, PaginationMetaResultWithTotalResponseBody]
+        pagination_meta: Union[Unset, PaginationMetaResultWithTotal]
         if isinstance(_pagination_meta, Unset):
             pagination_meta = UNSET
         else:
-            pagination_meta = PaginationMetaResultWithTotalResponseBody.from_dict(_pagination_meta)
+            pagination_meta = PaginationMetaResultWithTotal.from_dict(_pagination_meta)
 
         incidents_v2_list_response_body = cls(
             incidents=incidents,

@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_timestamp_v2_response_body import (
-        IncidentTimestampV2ResponseBody,
-    )
+    from ..models.incident_timestamp_v2 import IncidentTimestampV2
 
 
 T = TypeVar("T", bound="IncidentTimestampsV2ShowResponseBody")
@@ -19,11 +17,11 @@ class IncidentTimestampsV2ShowResponseBody:
         {'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}}
 
     Attributes:
-        incident_timestamp (IncidentTimestampV2ResponseBody):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Impact started', 'rank': 1}.
+        incident_timestamp (IncidentTimestampV2):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact
+            started', 'rank': 1}.
     """
 
-    incident_timestamp: "IncidentTimestampV2ResponseBody"
+    incident_timestamp: "IncidentTimestampV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -41,12 +39,10 @@ class IncidentTimestampsV2ShowResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_timestamp_v2_response_body import (
-            IncidentTimestampV2ResponseBody,
-        )
+        from ..models.incident_timestamp_v2 import IncidentTimestampV2
 
         d = src_dict.copy()
-        incident_timestamp = IncidentTimestampV2ResponseBody.from_dict(d.pop("incident_timestamp"))
+        incident_timestamp = IncidentTimestampV2.from_dict(d.pop("incident_timestamp"))
 
         incident_timestamps_v2_show_response_body = cls(
             incident_timestamp=incident_timestamp,

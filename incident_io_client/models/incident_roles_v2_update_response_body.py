@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
+    from ..models.incident_role_v2 import IncidentRoleV2
 
 
 T = TypeVar("T", bound="IncidentRolesV2UpdateResponseBody")
@@ -20,13 +20,13 @@ class IncidentRolesV2UpdateResponseBody:
             'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
-        incident_role (IncidentRoleV2ResponseBody):  Example: {'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident
-            Lead', 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        incident_role (IncidentRoleV2):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The
+            person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on
+            the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'role_type': 'lead',
+            'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
     """
 
-    incident_role: "IncidentRoleV2ResponseBody"
+    incident_role: "IncidentRoleV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -44,10 +44,10 @@ class IncidentRolesV2UpdateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_role_v2_response_body import IncidentRoleV2ResponseBody
+        from ..models.incident_role_v2 import IncidentRoleV2
 
         d = src_dict.copy()
-        incident_role = IncidentRoleV2ResponseBody.from_dict(d.pop("incident_role"))
+        incident_role = IncidentRoleV2.from_dict(d.pop("incident_role"))
 
         incident_roles_v2_update_response_body = cls(
             incident_role=incident_role,
