@@ -1,3 +1,0 @@
-# incident_io_client.models.audit_log_private_incident_access_attempted_metadata_v2_response_body_outcome
-
-::: incident_io_client.models.audit_log_private_incident_access_attempted_metadata_v2_response_body_outcome

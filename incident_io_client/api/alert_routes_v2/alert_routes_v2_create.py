@@ -69,8 +69,42 @@ def sync_detailed(
     previewing filter and grouping rules.
 
     Args:
-        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_source_ids':
-            ['02FCNDV6P870EA6S7TK1DSYDG2'], 'auto_decline_enabled': False, 'condition_groups':
+        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
+            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of
+            standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}], 'params': [{'array':
+            True, 'default_value': {'array_value': [{'catalog_entry': {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like
+            auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What
+            slack channel should we send the message to?', 'infer_reference': True, 'label': 'To
+            date', 'name': 'severity', 'optional': True, 'type': 'IncidentSeverity'}], 'subject':
+            {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}], 'auto_decline_enabled': False, 'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
@@ -145,8 +179,42 @@ def sync(
     previewing filter and grouping rules.
 
     Args:
-        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_source_ids':
-            ['02FCNDV6P870EA6S7TK1DSYDG2'], 'auto_decline_enabled': False, 'condition_groups':
+        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
+            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of
+            standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}], 'params': [{'array':
+            True, 'default_value': {'array_value': [{'catalog_entry': {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like
+            auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What
+            slack channel should we send the message to?', 'infer_reference': True, 'label': 'To
+            date', 'name': 'severity', 'optional': True, 'type': 'IncidentSeverity'}], 'subject':
+            {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}], 'auto_decline_enabled': False, 'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
@@ -216,8 +284,42 @@ async def asyncio_detailed(
     previewing filter and grouping rules.
 
     Args:
-        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_source_ids':
-            ['02FCNDV6P870EA6S7TK1DSYDG2'], 'auto_decline_enabled': False, 'condition_groups':
+        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
+            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of
+            standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}], 'params': [{'array':
+            True, 'default_value': {'array_value': [{'catalog_entry': {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like
+            auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What
+            slack channel should we send the message to?', 'infer_reference': True, 'label': 'To
+            date', 'name': 'severity', 'optional': True, 'type': 'IncidentSeverity'}], 'subject':
+            {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}], 'auto_decline_enabled': False, 'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
@@ -290,8 +392,42 @@ async def asyncio(
     previewing filter and grouping rules.
 
     Args:
-        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_source_ids':
-            ['02FCNDV6P870EA6S7TK1DSYDG2'], 'auto_decline_enabled': False, 'condition_groups':
+        body (AlertRoutesV2CreateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
+            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of
+            standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}], 'params': [{'array':
+            True, 'default_value': {'array_value': [{'catalog_entry': {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like
+            auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value':
+            {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation',
+            'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone
+            automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon':
+            False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What
+            slack channel should we send the message to?', 'infer_reference': True, 'label': 'To
+            date', 'name': 'severity', 'optional': True, 'type': 'IncidentSeverity'}], 'subject':
+            {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}], 'auto_decline_enabled': False, 'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,

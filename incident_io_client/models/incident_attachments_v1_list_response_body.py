@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_attachment_v1_response_body import (
-        IncidentAttachmentV1ResponseBody,
-    )
+    from ..models.incident_attachment_v1 import IncidentAttachmentV1
 
 
 T = TypeVar("T", bound="IncidentAttachmentsV1ListResponseBody")
@@ -21,13 +19,13 @@ class IncidentAttachmentsV1ListResponseBody:
             'pager_duty_incident', 'title': 'The database has gone down'}}]}
 
     Attributes:
-        incident_attachments (List['IncidentAttachmentV1ResponseBody']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
+        incident_attachments (List['IncidentAttachmentV1']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource': {'external_id': '123', 'permalink':
             'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
             gone down'}}].
     """
 
-    incident_attachments: List["IncidentAttachmentV1ResponseBody"]
+    incident_attachments: List["IncidentAttachmentV1"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -48,15 +46,13 @@ class IncidentAttachmentsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_attachment_v1_response_body import (
-            IncidentAttachmentV1ResponseBody,
-        )
+        from ..models.incident_attachment_v1 import IncidentAttachmentV1
 
         d = src_dict.copy()
         incident_attachments = []
         _incident_attachments = d.pop("incident_attachments")
         for incident_attachments_item_data in _incident_attachments:
-            incident_attachments_item = IncidentAttachmentV1ResponseBody.from_dict(
+            incident_attachments_item = IncidentAttachmentV1.from_dict(
                 incident_attachments_item_data
             )
 

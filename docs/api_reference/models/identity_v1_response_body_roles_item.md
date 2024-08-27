@@ -1,3 +1,0 @@
-# incident_io_client.models.identity_v1_response_body_roles_item
-
-::: incident_io_client.models.identity_v1_response_body_roles_item

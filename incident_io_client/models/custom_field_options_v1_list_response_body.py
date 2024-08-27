@@ -4,12 +4,8 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.custom_field_option_v1_response_body import (
-        CustomFieldOptionV1ResponseBody,
-    )
-    from ..models.pagination_meta_result_response_body import (
-        PaginationMetaResultResponseBody,
-    )
+    from ..models.custom_field_option_v1 import CustomFieldOptionV1
+    from ..models.pagination_meta_result import PaginationMetaResult
 
 
 T = TypeVar("T", bound="CustomFieldOptionsV1ListResponseBody")
@@ -24,14 +20,13 @@ class CustomFieldOptionsV1ListResponseBody:
             25}}
 
     Attributes:
-        custom_field_options (List['CustomFieldOptionV1ResponseBody']):  Example: [{'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
-        pagination_meta (PaginationMetaResultResponseBody):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'page_size': 25}.
+        custom_field_options (List['CustomFieldOptionV1']):  Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
+        pagination_meta (PaginationMetaResult):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
     """
 
-    custom_field_options: List["CustomFieldOptionV1ResponseBody"]
-    pagination_meta: "PaginationMetaResultResponseBody"
+    custom_field_options: List["CustomFieldOptionV1"]
+    pagination_meta: "PaginationMetaResult"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -55,24 +50,20 @@ class CustomFieldOptionsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.custom_field_option_v1_response_body import (
-            CustomFieldOptionV1ResponseBody,
-        )
-        from ..models.pagination_meta_result_response_body import (
-            PaginationMetaResultResponseBody,
-        )
+        from ..models.custom_field_option_v1 import CustomFieldOptionV1
+        from ..models.pagination_meta_result import PaginationMetaResult
 
         d = src_dict.copy()
         custom_field_options = []
         _custom_field_options = d.pop("custom_field_options")
         for custom_field_options_item_data in _custom_field_options:
-            custom_field_options_item = CustomFieldOptionV1ResponseBody.from_dict(
+            custom_field_options_item = CustomFieldOptionV1.from_dict(
                 custom_field_options_item_data
             )
 
             custom_field_options.append(custom_field_options_item)
 
-        pagination_meta = PaginationMetaResultResponseBody.from_dict(d.pop("pagination_meta"))
+        pagination_meta = PaginationMetaResult.from_dict(d.pop("pagination_meta"))
 
         custom_field_options_v1_list_response_body = cls(
             custom_field_options=custom_field_options,

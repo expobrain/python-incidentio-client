@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.schedule_v2_response_body import ScheduleV2ResponseBody
+    from ..models.schedule_v2 import ScheduleV2
 
 
 T = TypeVar("T", bound="SchedulesV2ShowResponseBody")
@@ -29,8 +29,8 @@ class SchedulesV2ShowResponseBody:
             'name': 'Primary On-Call Schedule', 'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}}
 
     Attributes:
-        schedule (ScheduleV2ResponseBody):  Example: {'annotations': {'incident.io/terraform/version': '3.0.0'},
-            'config': {'rotations': [{'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at':
+        schedule (ScheduleV2):  Example: {'annotations': {'incident.io/terraform/version': '3.0.0'}, 'config':
+            {'rotations': [{'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at':
             '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name':
             'Primary On-Call Schedule', 'users': [{'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
@@ -44,7 +44,7 @@ class SchedulesV2ShowResponseBody:
             'name': 'Primary On-Call Schedule', 'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
     """
 
-    schedule: "ScheduleV2ResponseBody"
+    schedule: "ScheduleV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -62,10 +62,10 @@ class SchedulesV2ShowResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.schedule_v2_response_body import ScheduleV2ResponseBody
+        from ..models.schedule_v2 import ScheduleV2
 
         d = src_dict.copy()
-        schedule = ScheduleV2ResponseBody.from_dict(d.pop("schedule"))
+        schedule = ScheduleV2.from_dict(d.pop("schedule"))
 
         schedules_v2_show_response_body = cls(
             schedule=schedule,

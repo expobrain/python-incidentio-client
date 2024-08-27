@@ -1,0 +1,3 @@
+# incident_io_client.models.incident_type_v1_create_in_triage
+
+::: incident_io_client.models.incident_type_v1_create_in_triage

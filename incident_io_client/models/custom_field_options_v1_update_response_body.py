@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.custom_field_option_v1_response_body import (
-        CustomFieldOptionV1ResponseBody,
-    )
+    from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
 
 T = TypeVar("T", bound="CustomFieldOptionsV1UpdateResponseBody")
@@ -20,11 +18,11 @@ class CustomFieldOptionsV1UpdateResponseBody:
             'sort_key': 10, 'value': 'Product'}}
 
     Attributes:
-        custom_field_option (CustomFieldOptionV1ResponseBody):  Example: {'custom_field_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
+        custom_field_option (CustomFieldOptionV1):  Example: {'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
     """
 
-    custom_field_option: "CustomFieldOptionV1ResponseBody"
+    custom_field_option: "CustomFieldOptionV1"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -42,14 +40,10 @@ class CustomFieldOptionsV1UpdateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.custom_field_option_v1_response_body import (
-            CustomFieldOptionV1ResponseBody,
-        )
+        from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
         d = src_dict.copy()
-        custom_field_option = CustomFieldOptionV1ResponseBody.from_dict(
-            d.pop("custom_field_option")
-        )
+        custom_field_option = CustomFieldOptionV1.from_dict(d.pop("custom_field_option"))
 
         custom_field_options_v1_update_response_body = cls(
             custom_field_option=custom_field_option,

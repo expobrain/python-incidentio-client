@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.custom_field_v1_response_body import CustomFieldV1ResponseBody
+    from ..models.custom_field_v1 import CustomFieldV1
 
 
 T = TypeVar("T", bound="CustomFieldsV1ListResponseBody")
@@ -22,7 +22,7 @@ class CustomFieldsV1ListResponseBody:
             'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        custom_fields (List['CustomFieldV1ResponseBody']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+        custom_fields (List['CustomFieldV1']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue',
             'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
@@ -31,7 +31,7 @@ class CustomFieldsV1ListResponseBody:
             '2021-08-17T13:28:57.801578Z'}].
     """
 
-    custom_fields: List["CustomFieldV1ResponseBody"]
+    custom_fields: List["CustomFieldV1"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -52,13 +52,13 @@ class CustomFieldsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.custom_field_v1_response_body import CustomFieldV1ResponseBody
+        from ..models.custom_field_v1 import CustomFieldV1
 
         d = src_dict.copy()
         custom_fields = []
         _custom_fields = d.pop("custom_fields")
         for custom_fields_item_data in _custom_fields:
-            custom_fields_item = CustomFieldV1ResponseBody.from_dict(custom_fields_item_data)
+            custom_fields_item = CustomFieldV1.from_dict(custom_fields_item_data)
 
             custom_fields.append(custom_fields_item)
 

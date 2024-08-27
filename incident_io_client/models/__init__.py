@@ -1,20 +1,18 @@
 """ Contains all the data models used in inputs/outputs """
 
-from .action_v1_response_body import ActionV1ResponseBody
-from .action_v1_response_body_status import ActionV1ResponseBodyStatus
-from .action_v2_response_body import ActionV2ResponseBody
-from .action_v2_response_body_status import ActionV2ResponseBodyStatus
+from .action_v1 import ActionV1
+from .action_v1_status import ActionV1Status
+from .action_v2 import ActionV2
+from .action_v2_status import ActionV2Status
 from .actions_v1_list_incident_mode import ActionsV1ListIncidentMode
 from .actions_v1_list_response_body import ActionsV1ListResponseBody
 from .actions_v1_show_response_body import ActionsV1ShowResponseBody
 from .actions_v2_list_incident_mode import ActionsV2ListIncidentMode
 from .actions_v2_list_response_body import ActionsV2ListResponseBody
 from .actions_v2_show_response_body import ActionsV2ShowResponseBody
-from .actor_v1_response_body import ActorV1ResponseBody
-from .actor_v2_response_body import ActorV2ResponseBody
-from .after_pagination_meta_result_v2_response_body import (
-    AfterPaginationMetaResultV2ResponseBody,
-)
+from .actor_v1 import ActorV1
+from .actor_v2 import ActorV2
+from .after_pagination_meta_result_v2 import AfterPaginationMetaResultV2
 from .alert_events_v2_create_http_request_body import AlertEventsV2CreateHTTPRequestBody
 from .alert_events_v2_create_http_request_body_metadata import (
     AlertEventsV2CreateHTTPRequestBodyMetadata,
@@ -22,78 +20,65 @@ from .alert_events_v2_create_http_request_body_metadata import (
 from .alert_events_v2_create_http_request_body_status import (
     AlertEventsV2CreateHTTPRequestBodyStatus,
 )
-from .alert_events_v2_create_http_response_body import (
-    AlertEventsV2CreateHTTPResponseBody,
+from .alert_result import AlertResult
+from .alert_result_deduplication_key import AlertResultDeduplicationKey
+from .alert_result_message import AlertResultMessage
+from .alert_result_status import AlertResultStatus
+from .alert_route_alert_source import AlertRouteAlertSource
+from .alert_route_escalation_binding_payload_v2 import (
+    AlertRouteEscalationBindingPayloadV2,
 )
-from .alert_events_v2_create_http_response_body_deduplication_key import (
-    AlertEventsV2CreateHTTPResponseBodyDeduplicationKey,
+from .alert_route_escalation_binding_v2 import AlertRouteEscalationBindingV2
+from .alert_route_incident_template_payload_v2 import (
+    AlertRouteIncidentTemplatePayloadV2,
 )
-from .alert_events_v2_create_http_response_body_message import (
-    AlertEventsV2CreateHTTPResponseBodyMessage,
+from .alert_route_incident_template_payload_v2_custom_field_priorities import (
+    AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities,
 )
-from .alert_events_v2_create_http_response_body_status import (
-    AlertEventsV2CreateHTTPResponseBodyStatus,
+from .alert_route_incident_template_payload_v2_custom_fields import (
+    AlertRouteIncidentTemplatePayloadV2CustomFields,
 )
-from .alert_route_escalation_binding_payload_v2_request_body import (
-    AlertRouteEscalationBindingPayloadV2RequestBody,
+from .alert_route_incident_template_payload_v2_priority_severity import (
+    AlertRouteIncidentTemplatePayloadV2PrioritySeverity,
 )
-from .alert_route_escalation_binding_v2_response_body import (
-    AlertRouteEscalationBindingV2ResponseBody,
+from .alert_route_incident_template_v2 import AlertRouteIncidentTemplateV2
+from .alert_route_incident_template_v2_custom_field_priorities import (
+    AlertRouteIncidentTemplateV2CustomFieldPriorities,
 )
-from .alert_route_incident_template_payload_v2_request_body import (
-    AlertRouteIncidentTemplatePayloadV2RequestBody,
+from .alert_route_incident_template_v2_custom_field_priorities_additional_property import (
+    AlertRouteIncidentTemplateV2CustomFieldPrioritiesAdditionalProperty,
 )
-from .alert_route_incident_template_payload_v2_request_body_custom_field_priorities import (
-    AlertRouteIncidentTemplatePayloadV2RequestBodyCustomFieldPriorities,
+from .alert_route_incident_template_v2_custom_fields import (
+    AlertRouteIncidentTemplateV2CustomFields,
 )
-from .alert_route_incident_template_payload_v2_request_body_custom_fields import (
-    AlertRouteIncidentTemplatePayloadV2RequestBodyCustomFields,
+from .alert_route_incident_template_v2_priority_severity import (
+    AlertRouteIncidentTemplateV2PrioritySeverity,
 )
-from .alert_route_incident_template_payload_v2_request_body_priority_severity import (
-    AlertRouteIncidentTemplatePayloadV2RequestBodyPrioritySeverity,
-)
-from .alert_route_incident_template_v2_response_body import (
-    AlertRouteIncidentTemplateV2ResponseBody,
-)
-from .alert_route_incident_template_v2_response_body_custom_field_priorities import (
-    AlertRouteIncidentTemplateV2ResponseBodyCustomFieldPriorities,
-)
-from .alert_route_incident_template_v2_response_body_custom_field_priorities_additional_property import (
-    AlertRouteIncidentTemplateV2ResponseBodyCustomFieldPrioritiesAdditionalProperty,
-)
-from .alert_route_incident_template_v2_response_body_custom_fields import (
-    AlertRouteIncidentTemplateV2ResponseBodyCustomFields,
-)
-from .alert_route_incident_template_v2_response_body_priority_severity import (
-    AlertRouteIncidentTemplateV2ResponseBodyPrioritySeverity,
-)
-from .alert_route_v2_response_body import AlertRouteV2ResponseBody
+from .alert_route_v2 import AlertRouteV2
 from .alert_routes_v2_create_request_body import AlertRoutesV2CreateRequestBody
 from .alert_routes_v2_create_response_body import AlertRoutesV2CreateResponseBody
 from .alert_routes_v2_show_response_body import AlertRoutesV2ShowResponseBody
 from .alert_routes_v2_update_request_body import AlertRoutesV2UpdateRequestBody
 from .alert_routes_v2_update_response_body import AlertRoutesV2UpdateResponseBody
-from .api_key_v1_response_body import APIKeyV1ResponseBody
-from .api_key_v2_response_body import APIKeyV2ResponseBody
-from .audit_log_actor_metadata_v2_response_body import (
-    AuditLogActorMetadataV2ResponseBody,
+from .api_key_v1 import APIKeyV1
+from .api_key_v2 import APIKeyV2
+from .audit_log_actor_metadata_v2 import AuditLogActorMetadataV2
+from .audit_log_actor_v2 import AuditLogActorV2
+from .audit_log_actor_v2_type import AuditLogActorV2Type
+from .audit_log_entry_context_v2 import AuditLogEntryContextV2
+from .audit_log_private_incident_access_attempted_metadata_v2 import (
+    AuditLogPrivateIncidentAccessAttemptedMetadataV2,
 )
-from .audit_log_actor_v2_response_body import AuditLogActorV2ResponseBody
-from .audit_log_actor_v2_response_body_type import AuditLogActorV2ResponseBodyType
-from .audit_log_entry_context_v2_response_body import AuditLogEntryContextV2ResponseBody
-from .audit_log_private_incident_access_attempted_metadata_v2_response_body import (
-    AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody,
+from .audit_log_private_incident_access_attempted_metadata_v2_outcome import (
+    AuditLogPrivateIncidentAccessAttemptedMetadataV2Outcome,
 )
-from .audit_log_private_incident_access_attempted_metadata_v2_response_body_outcome import (
-    AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBodyOutcome,
+from .audit_log_target_v2 import AuditLogTargetV2
+from .audit_log_target_v2_type import AuditLogTargetV2Type
+from .audit_log_user_role_membership_changed_metadata_v2 import (
+    AuditLogUserRoleMembershipChangedMetadataV2,
 )
-from .audit_log_target_v2_response_body import AuditLogTargetV2ResponseBody
-from .audit_log_target_v2_response_body_type import AuditLogTargetV2ResponseBodyType
-from .audit_log_user_role_membership_changed_metadata_v2_response_body import (
-    AuditLogUserRoleMembershipChangedMetadataV2ResponseBody,
-)
-from .audit_log_user_scim_group_mapping_changed_metadata_v2_response_body import (
-    AuditLogUserSCIMGroupMappingChangedMetadataV2ResponseBody,
+from .audit_log_user_scim_group_mapping_changed_metadata_v2 import (
+    AuditLogUserSCIMGroupMappingChangedMetadataV2,
 )
 from .audit_logs_alert_route_created_v1_response_body import (
     AuditLogsAlertRouteCreatedV1ResponseBody,
@@ -364,49 +349,30 @@ from .audit_logs_workflow_deleted_v1_response_body import (
 from .audit_logs_workflow_updated_v1_response_body import (
     AuditLogsWorkflowUpdatedV1ResponseBody,
 )
-from .catalog_entry_engine_param_binding_v2_response_body import (
-    CatalogEntryEngineParamBindingV2ResponseBody,
+from .catalog_entry_engine_param_binding_v2 import CatalogEntryEngineParamBindingV2
+from .catalog_entry_engine_param_binding_value_v2 import (
+    CatalogEntryEngineParamBindingValueV2,
 )
-from .catalog_entry_engine_param_binding_value_v2_response_body import (
-    CatalogEntryEngineParamBindingValueV2ResponseBody,
+from .catalog_entry_reference import CatalogEntryReference
+from .catalog_entry_reference_v2 import CatalogEntryReferenceV2
+from .catalog_entry_v2 import CatalogEntryV2
+from .catalog_entry_v2_attribute_values import CatalogEntryV2AttributeValues
+from .catalog_resource_v2 import CatalogResourceV2
+from .catalog_resource_v2_category import CatalogResourceV2Category
+from .catalog_type_attribute_path_item_payload_v2 import (
+    CatalogTypeAttributePathItemPayloadV2,
 )
-from .catalog_entry_reference_v2_response_body import (
-    CatalogEntryReferenceV2ResponseBody,
-)
-from .catalog_entry_v2_response_body import CatalogEntryV2ResponseBody
-from .catalog_entry_v2_response_body_attribute_values import (
-    CatalogEntryV2ResponseBodyAttributeValues,
-)
-from .catalog_resource_v2_response_body import CatalogResourceV2ResponseBody
-from .catalog_resource_v2_response_body_category import (
-    CatalogResourceV2ResponseBodyCategory,
-)
-from .catalog_type_attribute_path_item_payload_v2_request_body import (
-    CatalogTypeAttributePathItemPayloadV2RequestBody,
-)
-from .catalog_type_attribute_path_item_v2_response_body import (
-    CatalogTypeAttributePathItemV2ResponseBody,
-)
-from .catalog_type_attribute_payload_v2_request_body import (
-    CatalogTypeAttributePayloadV2RequestBody,
-)
-from .catalog_type_attribute_payload_v2_request_body_mode import (
-    CatalogTypeAttributePayloadV2RequestBodyMode,
-)
-from .catalog_type_attribute_v2_response_body import CatalogTypeAttributeV2ResponseBody
-from .catalog_type_attribute_v2_response_body_mode import (
-    CatalogTypeAttributeV2ResponseBodyMode,
-)
-from .catalog_type_schema_v2_response_body import CatalogTypeSchemaV2ResponseBody
-from .catalog_type_v2_response_body import CatalogTypeV2ResponseBody
-from .catalog_type_v2_response_body_annotations import (
-    CatalogTypeV2ResponseBodyAnnotations,
-)
-from .catalog_type_v2_response_body_categories_item import (
-    CatalogTypeV2ResponseBodyCategoriesItem,
-)
-from .catalog_type_v2_response_body_color import CatalogTypeV2ResponseBodyColor
-from .catalog_type_v2_response_body_icon import CatalogTypeV2ResponseBodyIcon
+from .catalog_type_attribute_path_item_v2 import CatalogTypeAttributePathItemV2
+from .catalog_type_attribute_payload_v2 import CatalogTypeAttributePayloadV2
+from .catalog_type_attribute_payload_v2_mode import CatalogTypeAttributePayloadV2Mode
+from .catalog_type_attribute_v2 import CatalogTypeAttributeV2
+from .catalog_type_attribute_v2_mode import CatalogTypeAttributeV2Mode
+from .catalog_type_schema_v2 import CatalogTypeSchemaV2
+from .catalog_type_v2 import CatalogTypeV2
+from .catalog_type_v2_annotations import CatalogTypeV2Annotations
+from .catalog_type_v2_categories_item import CatalogTypeV2CategoriesItem
+from .catalog_type_v2_color import CatalogTypeV2Color
+from .catalog_type_v2_icon import CatalogTypeV2Icon
 from .catalog_v2_create_entry_request_body import CatalogV2CreateEntryRequestBody
 from .catalog_v2_create_entry_request_body_attribute_values import (
     CatalogV2CreateEntryRequestBodyAttributeValues,
@@ -452,22 +418,33 @@ from .catalog_v2_update_type_schema_request_body import (
 from .catalog_v2_update_type_schema_response_body import (
     CatalogV2UpdateTypeSchemaResponseBody,
 )
-from .condition_group_payload_v2_request_body import ConditionGroupPayloadV2RequestBody
-from .condition_group_v2_response_body import ConditionGroupV2ResponseBody
-from .condition_operation_v2_response_body import ConditionOperationV2ResponseBody
-from .condition_payload_v2_request_body import ConditionPayloadV2RequestBody
-from .condition_subject_v2_response_body import ConditionSubjectV2ResponseBody
-from .condition_v2_response_body import ConditionV2ResponseBody
-from .custom_field_entry_payload_v1_request_body import (
-    CustomFieldEntryPayloadV1RequestBody,
+from .condition import Condition
+from .condition_group import ConditionGroup
+from .condition_group_payload_v2 import ConditionGroupPayloadV2
+from .condition_group_v2 import ConditionGroupV2
+from .condition_operation import ConditionOperation
+from .condition_operation_v2 import ConditionOperationV2
+from .condition_payload_v2 import ConditionPayloadV2
+from .condition_subject import ConditionSubject
+from .condition_subject_color import ConditionSubjectColor
+from .condition_subject_icon import ConditionSubjectIcon
+from .condition_subject_v2 import ConditionSubjectV2
+from .condition_v2 import ConditionV2
+from .create_workflow_payload import CreateWorkflowPayload
+from .create_workflow_payload_annotations import CreateWorkflowPayloadAnnotations
+from .create_workflow_payload_runs_on_incident_modes_item import (
+    CreateWorkflowPayloadRunsOnIncidentModesItem,
 )
-from .custom_field_entry_payload_v2_request_body import (
-    CustomFieldEntryPayloadV2RequestBody,
+from .create_workflow_payload_runs_on_incidents import (
+    CreateWorkflowPayloadRunsOnIncidents,
 )
-from .custom_field_entry_v1_response_body import CustomFieldEntryV1ResponseBody
-from .custom_field_entry_v2_response_body import CustomFieldEntryV2ResponseBody
-from .custom_field_option_v1_response_body import CustomFieldOptionV1ResponseBody
-from .custom_field_option_v2_response_body import CustomFieldOptionV2ResponseBody
+from .create_workflow_payload_state import CreateWorkflowPayloadState
+from .custom_field_entry_payload_v1 import CustomFieldEntryPayloadV1
+from .custom_field_entry_payload_v2 import CustomFieldEntryPayloadV2
+from .custom_field_entry_v1 import CustomFieldEntryV1
+from .custom_field_entry_v2 import CustomFieldEntryV2
+from .custom_field_option_v1 import CustomFieldOptionV1
+from .custom_field_option_v2 import CustomFieldOptionV2
 from .custom_field_options_v1_create_request_body import (
     CustomFieldOptionsV1CreateRequestBody,
 )
@@ -486,30 +463,20 @@ from .custom_field_options_v1_update_request_body import (
 from .custom_field_options_v1_update_response_body import (
     CustomFieldOptionsV1UpdateResponseBody,
 )
-from .custom_field_type_info_v1_response_body import CustomFieldTypeInfoV1ResponseBody
-from .custom_field_type_info_v1_response_body_field_type import (
-    CustomFieldTypeInfoV1ResponseBodyFieldType,
-)
-from .custom_field_type_info_v2_response_body import CustomFieldTypeInfoV2ResponseBody
-from .custom_field_type_info_v2_response_body_field_type import (
-    CustomFieldTypeInfoV2ResponseBodyFieldType,
-)
-from .custom_field_v1_response_body import CustomFieldV1ResponseBody
-from .custom_field_v1_response_body_field_type import CustomFieldV1ResponseBodyFieldType
-from .custom_field_v1_response_body_required import CustomFieldV1ResponseBodyRequired
-from .custom_field_v1_response_body_required_v2 import (
-    CustomFieldV1ResponseBodyRequiredV2,
-)
-from .custom_field_v2_response_body import CustomFieldV2ResponseBody
-from .custom_field_v2_response_body_field_type import CustomFieldV2ResponseBodyFieldType
-from .custom_field_value_payload_v1_request_body import (
-    CustomFieldValuePayloadV1RequestBody,
-)
-from .custom_field_value_payload_v2_request_body import (
-    CustomFieldValuePayloadV2RequestBody,
-)
-from .custom_field_value_v1_response_body import CustomFieldValueV1ResponseBody
-from .custom_field_value_v2_response_body import CustomFieldValueV2ResponseBody
+from .custom_field_type_info_v1 import CustomFieldTypeInfoV1
+from .custom_field_type_info_v1_field_type import CustomFieldTypeInfoV1FieldType
+from .custom_field_type_info_v2 import CustomFieldTypeInfoV2
+from .custom_field_type_info_v2_field_type import CustomFieldTypeInfoV2FieldType
+from .custom_field_v1 import CustomFieldV1
+from .custom_field_v1_field_type import CustomFieldV1FieldType
+from .custom_field_v1_required import CustomFieldV1Required
+from .custom_field_v1_required_v2 import CustomFieldV1RequiredV2
+from .custom_field_v2 import CustomFieldV2
+from .custom_field_v2_field_type import CustomFieldV2FieldType
+from .custom_field_value_payload_v1 import CustomFieldValuePayloadV1
+from .custom_field_value_payload_v2 import CustomFieldValuePayloadV2
+from .custom_field_value_v1 import CustomFieldValueV1
+from .custom_field_value_v2 import CustomFieldValueV2
 from .custom_fields_v1_create_request_body import CustomFieldsV1CreateRequestBody
 from .custom_fields_v1_create_request_body_field_type import (
     CustomFieldsV1CreateRequestBodyFieldType,
@@ -540,84 +507,35 @@ from .custom_fields_v2_list_response_body import CustomFieldsV2ListResponseBody
 from .custom_fields_v2_show_response_body import CustomFieldsV2ShowResponseBody
 from .custom_fields_v2_update_request_body import CustomFieldsV2UpdateRequestBody
 from .custom_fields_v2_update_response_body import CustomFieldsV2UpdateResponseBody
-from .embedded_catalog_entry_v1_response_body import EmbeddedCatalogEntryV1ResponseBody
-from .embedded_catalog_entry_v2_response_body import EmbeddedCatalogEntryV2ResponseBody
-from .embedded_incident_role_v2_response_body import EmbeddedIncidentRoleV2ResponseBody
-from .embedded_incident_role_v2_response_body_role_type import (
-    EmbeddedIncidentRoleV2ResponseBodyRoleType,
+from .embedded_catalog_entry_v1 import EmbeddedCatalogEntryV1
+from .embedded_catalog_entry_v2 import EmbeddedCatalogEntryV2
+from .embedded_incident_role_v2 import EmbeddedIncidentRoleV2
+from .embedded_incident_role_v2_role_type import EmbeddedIncidentRoleV2RoleType
+from .engine_param import EngineParam
+from .engine_param_binding import EngineParamBinding
+from .engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
+from .engine_param_binding_v2 import EngineParamBindingV2
+from .engine_param_binding_value import EngineParamBindingValue
+from .engine_param_binding_value_payload_v2 import EngineParamBindingValuePayloadV2
+from .engine_param_binding_value_v2 import EngineParamBindingValueV2
+from .engine_reference_v2 import EngineReferenceV2
+from .escalation_path_node_if_else_payload_v2 import EscalationPathNodeIfElsePayloadV2
+from .escalation_path_node_if_else_v2 import EscalationPathNodeIfElseV2
+from .escalation_path_node_level_v2 import EscalationPathNodeLevelV2
+from .escalation_path_node_level_v2_time_to_ack_interval_condition import (
+    EscalationPathNodeLevelV2TimeToAckIntervalCondition,
 )
-from .engine_param_binding_payload_v2_request_body import (
-    EngineParamBindingPayloadV2RequestBody,
-)
-from .engine_param_binding_v2_response_body import EngineParamBindingV2ResponseBody
-from .engine_param_binding_value_payload_v2_request_body import (
-    EngineParamBindingValuePayloadV2RequestBody,
-)
-from .engine_param_binding_value_v2_response_body import (
-    EngineParamBindingValueV2ResponseBody,
-)
-from .engine_reference_v2_response_body import EngineReferenceV2ResponseBody
-from .escalation_path_node_if_else_payload_v2_request_body import (
-    EscalationPathNodeIfElsePayloadV2RequestBody,
-)
-from .escalation_path_node_if_else_v2_response_body import (
-    EscalationPathNodeIfElseV2ResponseBody,
-)
-from .escalation_path_node_level_v2_request_body import (
-    EscalationPathNodeLevelV2RequestBody,
-)
-from .escalation_path_node_level_v2_request_body_time_to_ack_interval_condition import (
-    EscalationPathNodeLevelV2RequestBodyTimeToAckIntervalCondition,
-)
-from .escalation_path_node_level_v2_response_body import (
-    EscalationPathNodeLevelV2ResponseBody,
-)
-from .escalation_path_node_level_v2_response_body_time_to_ack_interval_condition import (
-    EscalationPathNodeLevelV2ResponseBodyTimeToAckIntervalCondition,
-)
-from .escalation_path_node_payload_v2_request_body import (
-    EscalationPathNodePayloadV2RequestBody,
-)
-from .escalation_path_node_payload_v2_request_body_type import (
-    EscalationPathNodePayloadV2RequestBodyType,
-)
-from .escalation_path_node_repeat_v2_request_body import (
-    EscalationPathNodeRepeatV2RequestBody,
-)
-from .escalation_path_node_repeat_v2_response_body import (
-    EscalationPathNodeRepeatV2ResponseBody,
-)
-from .escalation_path_node_v2_response_body import EscalationPathNodeV2ResponseBody
-from .escalation_path_node_v2_response_body_type import (
-    EscalationPathNodeV2ResponseBodyType,
-)
-from .escalation_path_round_robin_config_v2_request_body import (
-    EscalationPathRoundRobinConfigV2RequestBody,
-)
-from .escalation_path_round_robin_config_v2_response_body import (
-    EscalationPathRoundRobinConfigV2ResponseBody,
-)
-from .escalation_path_target_v2_request_body import EscalationPathTargetV2RequestBody
-from .escalation_path_target_v2_request_body_schedule_mode import (
-    EscalationPathTargetV2RequestBodyScheduleMode,
-)
-from .escalation_path_target_v2_request_body_type import (
-    EscalationPathTargetV2RequestBodyType,
-)
-from .escalation_path_target_v2_request_body_urgency import (
-    EscalationPathTargetV2RequestBodyUrgency,
-)
-from .escalation_path_target_v2_response_body import EscalationPathTargetV2ResponseBody
-from .escalation_path_target_v2_response_body_schedule_mode import (
-    EscalationPathTargetV2ResponseBodyScheduleMode,
-)
-from .escalation_path_target_v2_response_body_type import (
-    EscalationPathTargetV2ResponseBodyType,
-)
-from .escalation_path_target_v2_response_body_urgency import (
-    EscalationPathTargetV2ResponseBodyUrgency,
-)
-from .escalation_path_v2_response_body import EscalationPathV2ResponseBody
+from .escalation_path_node_payload_v2 import EscalationPathNodePayloadV2
+from .escalation_path_node_payload_v2_type import EscalationPathNodePayloadV2Type
+from .escalation_path_node_repeat_v2 import EscalationPathNodeRepeatV2
+from .escalation_path_node_v2 import EscalationPathNodeV2
+from .escalation_path_node_v2_type import EscalationPathNodeV2Type
+from .escalation_path_round_robin_config_v2 import EscalationPathRoundRobinConfigV2
+from .escalation_path_target_v2 import EscalationPathTargetV2
+from .escalation_path_target_v2_schedule_mode import EscalationPathTargetV2ScheduleMode
+from .escalation_path_target_v2_type import EscalationPathTargetV2Type
+from .escalation_path_target_v2_urgency import EscalationPathTargetV2Urgency
+from .escalation_path_v2 import EscalationPathV2
 from .escalations_v2_create_path_request_body import EscalationsV2CreatePathRequestBody
 from .escalations_v2_create_path_response_body import (
     EscalationsV2CreatePathResponseBody,
@@ -627,73 +545,42 @@ from .escalations_v2_update_path_request_body import EscalationsV2UpdatePathRequ
 from .escalations_v2_update_path_response_body import (
     EscalationsV2UpdatePathResponseBody,
 )
-from .expression_branch_payload_v2_request_body import (
-    ExpressionBranchPayloadV2RequestBody,
+from .expression_branch_payload_v2 import ExpressionBranchPayloadV2
+from .expression_branch_v2 import ExpressionBranchV2
+from .expression_branches_opts_payload_v2 import ExpressionBranchesOptsPayloadV2
+from .expression_branches_opts_v2 import ExpressionBranchesOptsV2
+from .expression_else_branch_payload_v2 import ExpressionElseBranchPayloadV2
+from .expression_else_branch_v2 import ExpressionElseBranchV2
+from .expression_filter_opts_payload_v2 import ExpressionFilterOptsPayloadV2
+from .expression_filter_opts_v2 import ExpressionFilterOptsV2
+from .expression_navigate_opts_payload_v2 import ExpressionNavigateOptsPayloadV2
+from .expression_navigate_opts_v2 import ExpressionNavigateOptsV2
+from .expression_operation_payload_v2 import ExpressionOperationPayloadV2
+from .expression_operation_payload_v2_operation_type import (
+    ExpressionOperationPayloadV2OperationType,
 )
-from .expression_branch_v2_response_body import ExpressionBranchV2ResponseBody
-from .expression_branches_opts_payload_v2_request_body import (
-    ExpressionBranchesOptsPayloadV2RequestBody,
-)
-from .expression_branches_opts_v2_response_body import (
-    ExpressionBranchesOptsV2ResponseBody,
-)
-from .expression_else_branch_payload_v2_request_body import (
-    ExpressionElseBranchPayloadV2RequestBody,
-)
-from .expression_else_branch_v2_response_body import ExpressionElseBranchV2ResponseBody
-from .expression_filter_opts_payload_v2_request_body import (
-    ExpressionFilterOptsPayloadV2RequestBody,
-)
-from .expression_filter_opts_v2_response_body import ExpressionFilterOptsV2ResponseBody
-from .expression_navigate_opts_payload_v2_request_body import (
-    ExpressionNavigateOptsPayloadV2RequestBody,
-)
-from .expression_navigate_opts_v2_response_body import (
-    ExpressionNavigateOptsV2ResponseBody,
-)
-from .expression_operation_payload_v2_request_body import (
-    ExpressionOperationPayloadV2RequestBody,
-)
-from .expression_operation_payload_v2_request_body_operation_type import (
-    ExpressionOperationPayloadV2RequestBodyOperationType,
-)
-from .expression_operation_v2_response_body import ExpressionOperationV2ResponseBody
-from .expression_operation_v2_response_body_operation_type import (
-    ExpressionOperationV2ResponseBodyOperationType,
-)
-from .expression_parse_opts_payload_v2_request_body import (
-    ExpressionParseOptsPayloadV2RequestBody,
-)
-from .expression_parse_opts_v2_response_body import ExpressionParseOptsV2ResponseBody
-from .expression_payload_v2_request_body import ExpressionPayloadV2RequestBody
-from .expression_v2_response_body import ExpressionV2ResponseBody
-from .external_issue_reference_v1_response_body import (
-    ExternalIssueReferenceV1ResponseBody,
-)
-from .external_issue_reference_v1_response_body_provider import (
-    ExternalIssueReferenceV1ResponseBodyProvider,
-)
-from .external_issue_reference_v2_response_body import (
-    ExternalIssueReferenceV2ResponseBody,
-)
-from .external_issue_reference_v2_response_body_provider import (
-    ExternalIssueReferenceV2ResponseBodyProvider,
-)
-from .external_resource_v1_response_body import ExternalResourceV1ResponseBody
-from .external_resource_v1_response_body_resource_type import (
-    ExternalResourceV1ResponseBodyResourceType,
-)
-from .follow_up_priority_v2_response_body import FollowUpPriorityV2ResponseBody
-from .follow_up_v2_response_body import FollowUpV2ResponseBody
-from .follow_up_v2_response_body_status import FollowUpV2ResponseBodyStatus
+from .expression_operation_v2 import ExpressionOperationV2
+from .expression_operation_v2_operation_type import ExpressionOperationV2OperationType
+from .expression_parse_opts_payload_v2 import ExpressionParseOptsPayloadV2
+from .expression_parse_opts_v2 import ExpressionParseOptsV2
+from .expression_payload_v2 import ExpressionPayloadV2
+from .expression_v2 import ExpressionV2
+from .external_issue_reference_v1 import ExternalIssueReferenceV1
+from .external_issue_reference_v1_provider import ExternalIssueReferenceV1Provider
+from .external_issue_reference_v2 import ExternalIssueReferenceV2
+from .external_issue_reference_v2_provider import ExternalIssueReferenceV2Provider
+from .external_resource_v1 import ExternalResourceV1
+from .external_resource_v1_resource_type import ExternalResourceV1ResourceType
+from .follow_up_priority_v2 import FollowUpPriorityV2
+from .follow_up_v2 import FollowUpV2
+from .follow_up_v2_status import FollowUpV2Status
 from .follow_ups_v2_list_incident_mode import FollowUpsV2ListIncidentMode
 from .follow_ups_v2_list_response_body import FollowUpsV2ListResponseBody
 from .follow_ups_v2_show_response_body import FollowUpsV2ShowResponseBody
-from .grouping_key_v2_request_body import GroupingKeyV2RequestBody
-from .grouping_key_v2_response_body import GroupingKeyV2ResponseBody
-from .identity_v1_response_body import IdentityV1ResponseBody
-from .identity_v1_response_body_roles_item import IdentityV1ResponseBodyRolesItem
-from .incident_attachment_v1_response_body import IncidentAttachmentV1ResponseBody
+from .grouping_key_v2 import GroupingKeyV2
+from .identity_v1 import IdentityV1
+from .identity_v1_roles_item import IdentityV1RolesItem
+from .incident_attachment_v1 import IncidentAttachmentV1
 from .incident_attachments_v1_create_request_body import (
     IncidentAttachmentsV1CreateRequestBody,
 )
@@ -712,14 +599,13 @@ from .incident_attachments_v1_list_resource_type import (
 from .incident_attachments_v1_list_response_body import (
     IncidentAttachmentsV1ListResponseBody,
 )
-from .incident_duration_metric_v2_response_body import (
-    IncidentDurationMetricV2ResponseBody,
-)
-from .incident_duration_metric_with_value_v2_response_body import (
-    IncidentDurationMetricWithValueV2ResponseBody,
-)
-from .incident_edit_payload_v2_request_body import IncidentEditPayloadV2RequestBody
-from .incident_membership_response_body import IncidentMembershipResponseBody
+from .incident_create_payload_v2 import IncidentCreatePayloadV2
+from .incident_create_payload_v2_mode import IncidentCreatePayloadV2Mode
+from .incident_create_payload_v2_visibility import IncidentCreatePayloadV2Visibility
+from .incident_duration_metric_v2 import IncidentDurationMetricV2
+from .incident_duration_metric_with_value_v2 import IncidentDurationMetricWithValueV2
+from .incident_edit_payload_v2 import IncidentEditPayloadV2
+from .incident_membership import IncidentMembership
 from .incident_memberships_v1_create_request_body import (
     IncidentMembershipsV1CreateRequestBody,
 )
@@ -729,22 +615,14 @@ from .incident_memberships_v1_create_response_body import (
 from .incident_memberships_v1_revoke_request_body import (
     IncidentMembershipsV1RevokeRequestBody,
 )
-from .incident_role_assignment_payload_v1_request_body import (
-    IncidentRoleAssignmentPayloadV1RequestBody,
-)
-from .incident_role_assignment_payload_v2_request_body import (
-    IncidentRoleAssignmentPayloadV2RequestBody,
-)
-from .incident_role_assignment_v1_response_body import (
-    IncidentRoleAssignmentV1ResponseBody,
-)
-from .incident_role_assignment_v2_response_body import (
-    IncidentRoleAssignmentV2ResponseBody,
-)
-from .incident_role_v1_response_body import IncidentRoleV1ResponseBody
-from .incident_role_v1_response_body_role_type import IncidentRoleV1ResponseBodyRoleType
-from .incident_role_v2_response_body import IncidentRoleV2ResponseBody
-from .incident_role_v2_response_body_role_type import IncidentRoleV2ResponseBodyRoleType
+from .incident_role_assignment_payload_v1 import IncidentRoleAssignmentPayloadV1
+from .incident_role_assignment_payload_v2 import IncidentRoleAssignmentPayloadV2
+from .incident_role_assignment_v1 import IncidentRoleAssignmentV1
+from .incident_role_assignment_v2 import IncidentRoleAssignmentV2
+from .incident_role_v1 import IncidentRoleV1
+from .incident_role_v1_role_type import IncidentRoleV1RoleType
+from .incident_role_v2 import IncidentRoleV2
+from .incident_role_v2_role_type import IncidentRoleV2RoleType
 from .incident_roles_v1_create_request_body import IncidentRolesV1CreateRequestBody
 from .incident_roles_v1_create_response_body import IncidentRolesV1CreateResponseBody
 from .incident_roles_v1_list_response_body import IncidentRolesV1ListResponseBody
@@ -757,14 +635,10 @@ from .incident_roles_v2_list_response_body import IncidentRolesV2ListResponseBod
 from .incident_roles_v2_show_response_body import IncidentRolesV2ShowResponseBody
 from .incident_roles_v2_update_request_body import IncidentRolesV2UpdateRequestBody
 from .incident_roles_v2_update_response_body import IncidentRolesV2UpdateResponseBody
-from .incident_status_v1_response_body import IncidentStatusV1ResponseBody
-from .incident_status_v1_response_body_category import (
-    IncidentStatusV1ResponseBodyCategory,
-)
-from .incident_status_v2_response_body import IncidentStatusV2ResponseBody
-from .incident_status_v2_response_body_category import (
-    IncidentStatusV2ResponseBodyCategory,
-)
+from .incident_status_v1 import IncidentStatusV1
+from .incident_status_v1_category import IncidentStatusV1Category
+from .incident_status_v2 import IncidentStatusV2
+from .incident_status_v2_category import IncidentStatusV2Category
 from .incident_statuses_v1_create_request_body import (
     IncidentStatusesV1CreateRequestBody,
 )
@@ -782,45 +656,33 @@ from .incident_statuses_v1_update_request_body import (
 from .incident_statuses_v1_update_response_body import (
     IncidentStatusesV1UpdateResponseBody,
 )
-from .incident_timestamp_v1_response_body import IncidentTimestampV1ResponseBody
-from .incident_timestamp_v2_response_body import IncidentTimestampV2ResponseBody
-from .incident_timestamp_value_payload_v2_request_body import (
-    IncidentTimestampValuePayloadV2RequestBody,
-)
-from .incident_timestamp_value_v2_response_body import (
-    IncidentTimestampValueV2ResponseBody,
-)
-from .incident_timestamp_with_value_v2_response_body import (
-    IncidentTimestampWithValueV2ResponseBody,
-)
+from .incident_timestamp_v1 import IncidentTimestampV1
+from .incident_timestamp_v2 import IncidentTimestampV2
+from .incident_timestamp_value_payload_v2 import IncidentTimestampValuePayloadV2
+from .incident_timestamp_value_v2 import IncidentTimestampValueV2
+from .incident_timestamp_with_value_v2 import IncidentTimestampWithValueV2
 from .incident_timestamps_v2_list_response_body import (
     IncidentTimestampsV2ListResponseBody,
 )
 from .incident_timestamps_v2_show_response_body import (
     IncidentTimestampsV2ShowResponseBody,
 )
-from .incident_type_v1_response_body import IncidentTypeV1ResponseBody
-from .incident_type_v1_response_body_create_in_triage import (
-    IncidentTypeV1ResponseBodyCreateInTriage,
-)
-from .incident_type_v2_response_body import IncidentTypeV2ResponseBody
-from .incident_type_v2_response_body_create_in_triage import (
-    IncidentTypeV2ResponseBodyCreateInTriage,
-)
+from .incident_type_v1 import IncidentTypeV1
+from .incident_type_v1_create_in_triage import IncidentTypeV1CreateInTriage
+from .incident_type_v2 import IncidentTypeV2
+from .incident_type_v2_create_in_triage import IncidentTypeV2CreateInTriage
 from .incident_types_v1_list_response_body import IncidentTypesV1ListResponseBody
 from .incident_types_v1_show_response_body import IncidentTypesV1ShowResponseBody
-from .incident_update_v2_response_body import IncidentUpdateV2ResponseBody
+from .incident_update_v2 import IncidentUpdateV2
 from .incident_updates_v2_list_response_body import IncidentUpdatesV2ListResponseBody
-from .incident_v1_response_body import IncidentV1ResponseBody
-from .incident_v1_response_body_mode import IncidentV1ResponseBodyMode
-from .incident_v1_response_body_status import IncidentV1ResponseBodyStatus
-from .incident_v1_response_body_visibility import IncidentV1ResponseBodyVisibility
-from .incident_v2_response_body import IncidentV2ResponseBody
-from .incident_v2_response_body_mode import IncidentV2ResponseBodyMode
-from .incident_v2_response_body_visibility import IncidentV2ResponseBodyVisibility
-from .incident_with_status_change_v2_response_body import (
-    IncidentWithStatusChangeV2ResponseBody,
-)
+from .incident_v1 import IncidentV1
+from .incident_v1_mode import IncidentV1Mode
+from .incident_v1_status import IncidentV1Status
+from .incident_v1_visibility import IncidentV1Visibility
+from .incident_v2 import IncidentV2
+from .incident_v2_mode import IncidentV2Mode
+from .incident_v2_visibility import IncidentV2Visibility
+from .incident_with_status_change_v2 import IncidentWithStatusChangeV2
 from .incidents_v1_create_request_body import IncidentsV1CreateRequestBody
 from .incidents_v1_create_request_body_mode import IncidentsV1CreateRequestBodyMode
 from .incidents_v1_create_request_body_status import IncidentsV1CreateRequestBodyStatus
@@ -830,26 +692,15 @@ from .incidents_v1_create_request_body_visibility import (
 from .incidents_v1_create_response_body import IncidentsV1CreateResponseBody
 from .incidents_v1_list_response_body import IncidentsV1ListResponseBody
 from .incidents_v1_show_response_body import IncidentsV1ShowResponseBody
-from .incidents_v2_create_request_body import IncidentsV2CreateRequestBody
-from .incidents_v2_create_request_body_mode import IncidentsV2CreateRequestBodyMode
-from .incidents_v2_create_request_body_visibility import (
-    IncidentsV2CreateRequestBodyVisibility,
-)
 from .incidents_v2_create_response_body import IncidentsV2CreateResponseBody
 from .incidents_v2_edit_request_body import IncidentsV2EditRequestBody
 from .incidents_v2_edit_response_body import IncidentsV2EditResponseBody
 from .incidents_v2_list_response_body import IncidentsV2ListResponseBody
 from .incidents_v2_show_response_body import IncidentsV2ShowResponseBody
-from .managed_resource_v2_response_body import ManagedResourceV2ResponseBody
-from .managed_resource_v2_response_body_annotations import (
-    ManagedResourceV2ResponseBodyAnnotations,
-)
-from .managed_resource_v2_response_body_managed_by import (
-    ManagedResourceV2ResponseBodyManagedBy,
-)
-from .managed_resource_v2_response_body_resource_type import (
-    ManagedResourceV2ResponseBodyResourceType,
-)
+from .managed_resource_v2 import ManagedResourceV2
+from .managed_resource_v2_annotations import ManagedResourceV2Annotations
+from .managed_resource_v2_managed_by import ManagedResourceV2ManagedBy
+from .managed_resource_v2_resource_type import ManagedResourceV2ResourceType
 from .managed_resources_v2_create_managed_resource_request_body import (
     ManagedResourcesV2CreateManagedResourceRequestBody,
 )
@@ -862,94 +713,55 @@ from .managed_resources_v2_create_managed_resource_request_body_resource_type im
 from .managed_resources_v2_create_managed_resource_response_body import (
     ManagedResourcesV2CreateManagedResourceResponseBody,
 )
-from .management_meta_v2_response_body import ManagementMetaV2ResponseBody
-from .management_meta_v2_response_body_annotations import (
-    ManagementMetaV2ResponseBodyAnnotations,
+from .management_meta_v2 import ManagementMetaV2
+from .management_meta_v2_annotations import ManagementMetaV2Annotations
+from .management_meta_v2_managed_by import ManagementMetaV2ManagedBy
+from .pagination_meta_result import PaginationMetaResult
+from .pagination_meta_result_with_total import PaginationMetaResultWithTotal
+from .rbac_role_v2 import RBACRoleV2
+from .retrospective_incident_options_v2 import RetrospectiveIncidentOptionsV2
+from .returns_meta_v2 import ReturnsMetaV2
+from .schedule_config_create_payload_v2 import ScheduleConfigCreatePayloadV2
+from .schedule_config_update_payload_v2 import ScheduleConfigUpdatePayloadV2
+from .schedule_config_v2 import ScheduleConfigV2
+from .schedule_create_payload_v2 import ScheduleCreatePayloadV2
+from .schedule_create_payload_v2_annotations import ScheduleCreatePayloadV2Annotations
+from .schedule_entries_list_payload_v2 import ScheduleEntriesListPayloadV2
+from .schedule_entry_v2 import ScheduleEntryV2
+from .schedule_holidays_public_config_payload_v2 import (
+    ScheduleHolidaysPublicConfigPayloadV2,
 )
-from .management_meta_v2_response_body_managed_by import (
-    ManagementMetaV2ResponseBodyManagedBy,
+from .schedule_holidays_public_config_v2 import ScheduleHolidaysPublicConfigV2
+from .schedule_layer_create_payload_v2 import ScheduleLayerCreatePayloadV2
+from .schedule_layer_update_payload_v2 import ScheduleLayerUpdatePayloadV2
+from .schedule_layer_v2 import ScheduleLayerV2
+from .schedule_rotation_create_payload_v2 import ScheduleRotationCreatePayloadV2
+from .schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
+from .schedule_rotation_handover_v2_interval_type import (
+    ScheduleRotationHandoverV2IntervalType,
 )
-from .pagination_meta_result_response_body import PaginationMetaResultResponseBody
-from .pagination_meta_result_with_total_response_body import (
-    PaginationMetaResultWithTotalResponseBody,
+from .schedule_rotation_update_payload_v2 import ScheduleRotationUpdatePayloadV2
+from .schedule_rotation_v2 import ScheduleRotationV2
+from .schedule_rotation_working_interval_create_payload_v2 import (
+    ScheduleRotationWorkingIntervalCreatePayloadV2,
 )
-from .rbac_role_v2_response_body import RBACRoleV2ResponseBody
-from .retrospective_incident_options_v2_request_body import (
-    RetrospectiveIncidentOptionsV2RequestBody,
+from .schedule_rotation_working_interval_create_payload_v2_weekday import (
+    ScheduleRotationWorkingIntervalCreatePayloadV2Weekday,
 )
-from .returns_meta_v2_request_body import ReturnsMetaV2RequestBody
-from .returns_meta_v2_response_body import ReturnsMetaV2ResponseBody
-from .schedule_config_create_payload_v2_request_body import (
-    ScheduleConfigCreatePayloadV2RequestBody,
+from .schedule_rotation_working_interval_update_payload_v2 import (
+    ScheduleRotationWorkingIntervalUpdatePayloadV2,
 )
-from .schedule_config_update_payload_v2_request_body import (
-    ScheduleConfigUpdatePayloadV2RequestBody,
+from .schedule_rotation_working_interval_update_payload_v2_weekday import (
+    ScheduleRotationWorkingIntervalUpdatePayloadV2Weekday,
 )
-from .schedule_config_v2_response_body import ScheduleConfigV2ResponseBody
-from .schedule_create_payload_v2_request_body import ScheduleCreatePayloadV2RequestBody
-from .schedule_create_payload_v2_request_body_annotations import (
-    ScheduleCreatePayloadV2RequestBodyAnnotations,
+from .schedule_rotation_working_interval_v2 import ScheduleRotationWorkingIntervalV2
+from .schedule_rotation_working_interval_v2_weekday import (
+    ScheduleRotationWorkingIntervalV2Weekday,
 )
-from .schedule_entries_list_payload_v2_response_body import (
-    ScheduleEntriesListPayloadV2ResponseBody,
-)
-from .schedule_entry_v2_response_body import ScheduleEntryV2ResponseBody
-from .schedule_holidays_public_config_payload_v2_request_body import (
-    ScheduleHolidaysPublicConfigPayloadV2RequestBody,
-)
-from .schedule_holidays_public_config_v2_response_body import (
-    ScheduleHolidaysPublicConfigV2ResponseBody,
-)
-from .schedule_layer_create_payload_v2_request_body import (
-    ScheduleLayerCreatePayloadV2RequestBody,
-)
-from .schedule_layer_update_payload_v2_request_body import (
-    ScheduleLayerUpdatePayloadV2RequestBody,
-)
-from .schedule_layer_v2_response_body import ScheduleLayerV2ResponseBody
-from .schedule_rotation_create_payload_v2_request_body import (
-    ScheduleRotationCreatePayloadV2RequestBody,
-)
-from .schedule_rotation_handover_v2_request_body import (
-    ScheduleRotationHandoverV2RequestBody,
-)
-from .schedule_rotation_handover_v2_request_body_interval_type import (
-    ScheduleRotationHandoverV2RequestBodyIntervalType,
-)
-from .schedule_rotation_handover_v2_response_body import (
-    ScheduleRotationHandoverV2ResponseBody,
-)
-from .schedule_rotation_handover_v2_response_body_interval_type import (
-    ScheduleRotationHandoverV2ResponseBodyIntervalType,
-)
-from .schedule_rotation_update_payload_v2_request_body import (
-    ScheduleRotationUpdatePayloadV2RequestBody,
-)
-from .schedule_rotation_v2_response_body import ScheduleRotationV2ResponseBody
-from .schedule_rotation_working_interval_create_payload_v2_request_body import (
-    ScheduleRotationWorkingIntervalCreatePayloadV2RequestBody,
-)
-from .schedule_rotation_working_interval_create_payload_v2_request_body_weekday import (
-    ScheduleRotationWorkingIntervalCreatePayloadV2RequestBodyWeekday,
-)
-from .schedule_rotation_working_interval_update_payload_v2_request_body import (
-    ScheduleRotationWorkingIntervalUpdatePayloadV2RequestBody,
-)
-from .schedule_rotation_working_interval_update_payload_v2_request_body_weekday import (
-    ScheduleRotationWorkingIntervalUpdatePayloadV2RequestBodyWeekday,
-)
-from .schedule_rotation_working_interval_v2_response_body import (
-    ScheduleRotationWorkingIntervalV2ResponseBody,
-)
-from .schedule_rotation_working_interval_v2_response_body_weekday import (
-    ScheduleRotationWorkingIntervalV2ResponseBodyWeekday,
-)
-from .schedule_update_payload_v2_request_body import ScheduleUpdatePayloadV2RequestBody
-from .schedule_update_payload_v2_request_body_annotations import (
-    ScheduleUpdatePayloadV2RequestBodyAnnotations,
-)
-from .schedule_v2_response_body import ScheduleV2ResponseBody
-from .schedule_v2_response_body_annotations import ScheduleV2ResponseBodyAnnotations
+from .schedule_update_payload_v2 import ScheduleUpdatePayloadV2
+from .schedule_update_payload_v2_annotations import ScheduleUpdatePayloadV2Annotations
+from .schedule_v2 import ScheduleV2
+from .schedule_v2_annotations import ScheduleV2Annotations
 from .schedules_v2_create_request_body import SchedulesV2CreateRequestBody
 from .schedules_v2_create_response_body import SchedulesV2CreateResponseBody
 from .schedules_v2_list_response_body import SchedulesV2ListResponseBody
@@ -965,34 +777,39 @@ from .severities_v1_list_response_body import SeveritiesV1ListResponseBody
 from .severities_v1_show_response_body import SeveritiesV1ShowResponseBody
 from .severities_v1_update_request_body import SeveritiesV1UpdateRequestBody
 from .severities_v1_update_response_body import SeveritiesV1UpdateResponseBody
-from .severity_v1_response_body import SeverityV1ResponseBody
-from .severity_v2_response_body import SeverityV2ResponseBody
-from .step_config_payload_request_body import StepConfigPayloadRequestBody
-from .step_config_response_body import StepConfigResponseBody
-from .step_config_slim_response_body import StepConfigSlimResponseBody
-from .trigger_slim_response_body import TriggerSlimResponseBody
-from .user_reference_payload_v1_request_body import UserReferencePayloadV1RequestBody
-from .user_reference_payload_v2_request_body import UserReferencePayloadV2RequestBody
-from .user_v1_response_body import UserV1ResponseBody
-from .user_v1_response_body_role import UserV1ResponseBodyRole
-from .user_v2_response_body import UserV2ResponseBody
-from .user_v2_response_body_role import UserV2ResponseBodyRole
-from .user_with_roles_v2_response_body import UserWithRolesV2ResponseBody
-from .user_with_roles_v2_response_body_role import UserWithRolesV2ResponseBodyRole
+from .severity_v1 import SeverityV1
+from .severity_v2 import SeverityV2
+from .step_config import StepConfig
+from .step_config_payload import StepConfigPayload
+from .step_config_slim import StepConfigSlim
+from .trigger_slim import TriggerSlim
+from .update_workflow_payload import UpdateWorkflowPayload
+from .update_workflow_payload_annotations import UpdateWorkflowPayloadAnnotations
+from .update_workflow_payload_runs_on_incident_modes_item import (
+    UpdateWorkflowPayloadRunsOnIncidentModesItem,
+)
+from .update_workflow_payload_runs_on_incidents import (
+    UpdateWorkflowPayloadRunsOnIncidents,
+)
+from .update_workflow_payload_state import UpdateWorkflowPayloadState
+from .user_reference_payload_v1 import UserReferencePayloadV1
+from .user_reference_payload_v2 import UserReferencePayloadV2
+from .user_v1 import UserV1
+from .user_v1_role import UserV1Role
+from .user_v2 import UserV2
+from .user_v2_role import UserV2Role
+from .user_with_roles_v2 import UserWithRolesV2
+from .user_with_roles_v2_role import UserWithRolesV2Role
 from .users_v2_list_response_body import UsersV2ListResponseBody
 from .users_v2_show_response_body import UsersV2ShowResponseBody
 from .utilities_v1_identity_response_body import UtilitiesV1IdentityResponseBody
 from .utilities_v1_open_api_response_200 import UtilitiesV1OpenAPIResponse200
 from .utilities_v1_open_apiv3_response_200 import UtilitiesV1OpenAPIV3Response200
-from .webhook_incident_user_v2_response_body import WebhookIncidentUserV2ResponseBody
-from .webhook_incident_v2_response_body import WebhookIncidentV2ResponseBody
-from .webhook_incident_v2_response_body_mode import WebhookIncidentV2ResponseBodyMode
-from .webhook_incident_v2_response_body_visibility import (
-    WebhookIncidentV2ResponseBodyVisibility,
-)
-from .webhook_private_resource_v2_response_body import (
-    WebhookPrivateResourceV2ResponseBody,
-)
+from .webhook_incident_user_v2 import WebhookIncidentUserV2
+from .webhook_incident_v2 import WebhookIncidentV2
+from .webhook_incident_v2_mode import WebhookIncidentV2Mode
+from .webhook_incident_v2_visibility import WebhookIncidentV2Visibility
+from .webhook_private_resource_v2 import WebhookPrivateResourceV2
 from .webhooks_all_response_body import WebhooksAllResponseBody
 from .webhooks_all_response_body_event_type import WebhooksAllResponseBodyEventType
 from .webhooks_private_incident_action_created_v1_response_body import (
@@ -1085,45 +902,19 @@ from .webhooks_public_incident_incident_updated_v2_response_body import (
 from .webhooks_public_incident_incident_updated_v2_response_body_event_type import (
     WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType,
 )
-from .weekday_interval_config_v2_request_body import WeekdayIntervalConfigV2RequestBody
-from .weekday_interval_config_v2_response_body import (
-    WeekdayIntervalConfigV2ResponseBody,
+from .weekday_interval_config_v2 import WeekdayIntervalConfigV2
+from .weekday_interval_v2 import WeekdayIntervalV2
+from .workflow import Workflow
+from .workflow_delay import WorkflowDelay
+from .workflow_runs_on_incident_modes_item import WorkflowRunsOnIncidentModesItem
+from .workflow_runs_on_incidents import WorkflowRunsOnIncidents
+from .workflow_slim import WorkflowSlim
+from .workflow_slim_runs_on_incident_modes_item import (
+    WorkflowSlimRunsOnIncidentModesItem,
 )
-from .weekday_interval_v2_request_body import WeekdayIntervalV2RequestBody
-from .weekday_interval_v2_response_body import WeekdayIntervalV2ResponseBody
-from .workflow_delay_request_body import WorkflowDelayRequestBody
-from .workflow_delay_response_body import WorkflowDelayResponseBody
-from .workflow_response_body import WorkflowResponseBody
-from .workflow_response_body_runs_on_incident_modes_item import (
-    WorkflowResponseBodyRunsOnIncidentModesItem,
-)
-from .workflow_response_body_runs_on_incidents import (
-    WorkflowResponseBodyRunsOnIncidents,
-)
-from .workflow_response_body_state import WorkflowResponseBodyState
-from .workflow_slim_response_body import WorkflowSlimResponseBody
-from .workflow_slim_response_body_runs_on_incident_modes_item import (
-    WorkflowSlimResponseBodyRunsOnIncidentModesItem,
-)
-from .workflow_slim_response_body_runs_on_incidents import (
-    WorkflowSlimResponseBodyRunsOnIncidents,
-)
-from .workflow_slim_response_body_state import WorkflowSlimResponseBodyState
-from .workflows_v2_create_workflow_request_body import (
-    WorkflowsV2CreateWorkflowRequestBody,
-)
-from .workflows_v2_create_workflow_request_body_annotations import (
-    WorkflowsV2CreateWorkflowRequestBodyAnnotations,
-)
-from .workflows_v2_create_workflow_request_body_runs_on_incident_modes_item import (
-    WorkflowsV2CreateWorkflowRequestBodyRunsOnIncidentModesItem,
-)
-from .workflows_v2_create_workflow_request_body_runs_on_incidents import (
-    WorkflowsV2CreateWorkflowRequestBodyRunsOnIncidents,
-)
-from .workflows_v2_create_workflow_request_body_state import (
-    WorkflowsV2CreateWorkflowRequestBodyState,
-)
+from .workflow_slim_runs_on_incidents import WorkflowSlimRunsOnIncidents
+from .workflow_slim_state import WorkflowSlimState
+from .workflow_state import WorkflowState
 from .workflows_v2_create_workflow_response_body import (
     WorkflowsV2CreateWorkflowResponseBody,
 )
@@ -1132,21 +923,6 @@ from .workflows_v2_list_workflows_response_body import (
 )
 from .workflows_v2_show_workflow_response_body import (
     WorkflowsV2ShowWorkflowResponseBody,
-)
-from .workflows_v2_update_workflow_request_body import (
-    WorkflowsV2UpdateWorkflowRequestBody,
-)
-from .workflows_v2_update_workflow_request_body_annotations import (
-    WorkflowsV2UpdateWorkflowRequestBodyAnnotations,
-)
-from .workflows_v2_update_workflow_request_body_runs_on_incident_modes_item import (
-    WorkflowsV2UpdateWorkflowRequestBodyRunsOnIncidentModesItem,
-)
-from .workflows_v2_update_workflow_request_body_runs_on_incidents import (
-    WorkflowsV2UpdateWorkflowRequestBodyRunsOnIncidents,
-)
-from .workflows_v2_update_workflow_request_body_state import (
-    WorkflowsV2UpdateWorkflowRequestBodyState,
 )
 from .workflows_v2_update_workflow_response_body import (
     WorkflowsV2UpdateWorkflowResponseBody,
@@ -1159,45 +935,46 @@ __all__ = (
     "ActionsV2ListIncidentMode",
     "ActionsV2ListResponseBody",
     "ActionsV2ShowResponseBody",
-    "ActionV1ResponseBody",
-    "ActionV1ResponseBodyStatus",
-    "ActionV2ResponseBody",
-    "ActionV2ResponseBodyStatus",
-    "ActorV1ResponseBody",
-    "ActorV2ResponseBody",
-    "AfterPaginationMetaResultV2ResponseBody",
+    "ActionV1",
+    "ActionV1Status",
+    "ActionV2",
+    "ActionV2Status",
+    "ActorV1",
+    "ActorV2",
+    "AfterPaginationMetaResultV2",
     "AlertEventsV2CreateHTTPRequestBody",
     "AlertEventsV2CreateHTTPRequestBodyMetadata",
     "AlertEventsV2CreateHTTPRequestBodyStatus",
-    "AlertEventsV2CreateHTTPResponseBody",
-    "AlertEventsV2CreateHTTPResponseBodyDeduplicationKey",
-    "AlertEventsV2CreateHTTPResponseBodyMessage",
-    "AlertEventsV2CreateHTTPResponseBodyStatus",
-    "AlertRouteEscalationBindingPayloadV2RequestBody",
-    "AlertRouteEscalationBindingV2ResponseBody",
-    "AlertRouteIncidentTemplatePayloadV2RequestBody",
-    "AlertRouteIncidentTemplatePayloadV2RequestBodyCustomFieldPriorities",
-    "AlertRouteIncidentTemplatePayloadV2RequestBodyCustomFields",
-    "AlertRouteIncidentTemplatePayloadV2RequestBodyPrioritySeverity",
-    "AlertRouteIncidentTemplateV2ResponseBody",
-    "AlertRouteIncidentTemplateV2ResponseBodyCustomFieldPriorities",
-    "AlertRouteIncidentTemplateV2ResponseBodyCustomFieldPrioritiesAdditionalProperty",
-    "AlertRouteIncidentTemplateV2ResponseBodyCustomFields",
-    "AlertRouteIncidentTemplateV2ResponseBodyPrioritySeverity",
+    "AlertResult",
+    "AlertResultDeduplicationKey",
+    "AlertResultMessage",
+    "AlertResultStatus",
+    "AlertRouteAlertSource",
+    "AlertRouteEscalationBindingPayloadV2",
+    "AlertRouteEscalationBindingV2",
+    "AlertRouteIncidentTemplatePayloadV2",
+    "AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities",
+    "AlertRouteIncidentTemplatePayloadV2CustomFields",
+    "AlertRouteIncidentTemplatePayloadV2PrioritySeverity",
+    "AlertRouteIncidentTemplateV2",
+    "AlertRouteIncidentTemplateV2CustomFieldPriorities",
+    "AlertRouteIncidentTemplateV2CustomFieldPrioritiesAdditionalProperty",
+    "AlertRouteIncidentTemplateV2CustomFields",
+    "AlertRouteIncidentTemplateV2PrioritySeverity",
     "AlertRoutesV2CreateRequestBody",
     "AlertRoutesV2CreateResponseBody",
     "AlertRoutesV2ShowResponseBody",
     "AlertRoutesV2UpdateRequestBody",
     "AlertRoutesV2UpdateResponseBody",
-    "AlertRouteV2ResponseBody",
-    "APIKeyV1ResponseBody",
-    "APIKeyV2ResponseBody",
-    "AuditLogActorMetadataV2ResponseBody",
-    "AuditLogActorV2ResponseBody",
-    "AuditLogActorV2ResponseBodyType",
-    "AuditLogEntryContextV2ResponseBody",
-    "AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBody",
-    "AuditLogPrivateIncidentAccessAttemptedMetadataV2ResponseBodyOutcome",
+    "AlertRouteV2",
+    "APIKeyV1",
+    "APIKeyV2",
+    "AuditLogActorMetadataV2",
+    "AuditLogActorV2",
+    "AuditLogActorV2Type",
+    "AuditLogEntryContextV2",
+    "AuditLogPrivateIncidentAccessAttemptedMetadataV2",
+    "AuditLogPrivateIncidentAccessAttemptedMetadataV2Outcome",
     "AuditLogsAlertRouteCreatedV1ResponseBody",
     "AuditLogsAlertRouteDeletedV1ResponseBody",
     "AuditLogsAlertRouteUpdatedV1ResponseBody",
@@ -1289,29 +1066,30 @@ __all__ = (
     "AuditLogsWorkflowCreatedV1ResponseBody",
     "AuditLogsWorkflowDeletedV1ResponseBody",
     "AuditLogsWorkflowUpdatedV1ResponseBody",
-    "AuditLogTargetV2ResponseBody",
-    "AuditLogTargetV2ResponseBodyType",
-    "AuditLogUserRoleMembershipChangedMetadataV2ResponseBody",
-    "AuditLogUserSCIMGroupMappingChangedMetadataV2ResponseBody",
-    "CatalogEntryEngineParamBindingV2ResponseBody",
-    "CatalogEntryEngineParamBindingValueV2ResponseBody",
-    "CatalogEntryReferenceV2ResponseBody",
-    "CatalogEntryV2ResponseBody",
-    "CatalogEntryV2ResponseBodyAttributeValues",
-    "CatalogResourceV2ResponseBody",
-    "CatalogResourceV2ResponseBodyCategory",
-    "CatalogTypeAttributePathItemPayloadV2RequestBody",
-    "CatalogTypeAttributePathItemV2ResponseBody",
-    "CatalogTypeAttributePayloadV2RequestBody",
-    "CatalogTypeAttributePayloadV2RequestBodyMode",
-    "CatalogTypeAttributeV2ResponseBody",
-    "CatalogTypeAttributeV2ResponseBodyMode",
-    "CatalogTypeSchemaV2ResponseBody",
-    "CatalogTypeV2ResponseBody",
-    "CatalogTypeV2ResponseBodyAnnotations",
-    "CatalogTypeV2ResponseBodyCategoriesItem",
-    "CatalogTypeV2ResponseBodyColor",
-    "CatalogTypeV2ResponseBodyIcon",
+    "AuditLogTargetV2",
+    "AuditLogTargetV2Type",
+    "AuditLogUserRoleMembershipChangedMetadataV2",
+    "AuditLogUserSCIMGroupMappingChangedMetadataV2",
+    "CatalogEntryEngineParamBindingV2",
+    "CatalogEntryEngineParamBindingValueV2",
+    "CatalogEntryReference",
+    "CatalogEntryReferenceV2",
+    "CatalogEntryV2",
+    "CatalogEntryV2AttributeValues",
+    "CatalogResourceV2",
+    "CatalogResourceV2Category",
+    "CatalogTypeAttributePathItemPayloadV2",
+    "CatalogTypeAttributePathItemV2",
+    "CatalogTypeAttributePayloadV2",
+    "CatalogTypeAttributePayloadV2Mode",
+    "CatalogTypeAttributeV2",
+    "CatalogTypeAttributeV2Mode",
+    "CatalogTypeSchemaV2",
+    "CatalogTypeV2",
+    "CatalogTypeV2Annotations",
+    "CatalogTypeV2CategoriesItem",
+    "CatalogTypeV2Color",
+    "CatalogTypeV2Icon",
     "CatalogV2CreateEntryRequestBody",
     "CatalogV2CreateEntryRequestBodyAttributeValues",
     "CatalogV2CreateEntryResponseBody",
@@ -1337,24 +1115,35 @@ __all__ = (
     "CatalogV2UpdateTypeResponseBody",
     "CatalogV2UpdateTypeSchemaRequestBody",
     "CatalogV2UpdateTypeSchemaResponseBody",
-    "ConditionGroupPayloadV2RequestBody",
-    "ConditionGroupV2ResponseBody",
-    "ConditionOperationV2ResponseBody",
-    "ConditionPayloadV2RequestBody",
-    "ConditionSubjectV2ResponseBody",
-    "ConditionV2ResponseBody",
-    "CustomFieldEntryPayloadV1RequestBody",
-    "CustomFieldEntryPayloadV2RequestBody",
-    "CustomFieldEntryV1ResponseBody",
-    "CustomFieldEntryV2ResponseBody",
+    "Condition",
+    "ConditionGroup",
+    "ConditionGroupPayloadV2",
+    "ConditionGroupV2",
+    "ConditionOperation",
+    "ConditionOperationV2",
+    "ConditionPayloadV2",
+    "ConditionSubject",
+    "ConditionSubjectColor",
+    "ConditionSubjectIcon",
+    "ConditionSubjectV2",
+    "ConditionV2",
+    "CreateWorkflowPayload",
+    "CreateWorkflowPayloadAnnotations",
+    "CreateWorkflowPayloadRunsOnIncidentModesItem",
+    "CreateWorkflowPayloadRunsOnIncidents",
+    "CreateWorkflowPayloadState",
+    "CustomFieldEntryPayloadV1",
+    "CustomFieldEntryPayloadV2",
+    "CustomFieldEntryV1",
+    "CustomFieldEntryV2",
     "CustomFieldOptionsV1CreateRequestBody",
     "CustomFieldOptionsV1CreateResponseBody",
     "CustomFieldOptionsV1ListResponseBody",
     "CustomFieldOptionsV1ShowResponseBody",
     "CustomFieldOptionsV1UpdateRequestBody",
     "CustomFieldOptionsV1UpdateResponseBody",
-    "CustomFieldOptionV1ResponseBody",
-    "CustomFieldOptionV2ResponseBody",
+    "CustomFieldOptionV1",
+    "CustomFieldOptionV2",
     "CustomFieldsV1CreateRequestBody",
     "CustomFieldsV1CreateRequestBodyFieldType",
     "CustomFieldsV1CreateRequestBodyRequired",
@@ -1373,109 +1162,106 @@ __all__ = (
     "CustomFieldsV2ShowResponseBody",
     "CustomFieldsV2UpdateRequestBody",
     "CustomFieldsV2UpdateResponseBody",
-    "CustomFieldTypeInfoV1ResponseBody",
-    "CustomFieldTypeInfoV1ResponseBodyFieldType",
-    "CustomFieldTypeInfoV2ResponseBody",
-    "CustomFieldTypeInfoV2ResponseBodyFieldType",
-    "CustomFieldV1ResponseBody",
-    "CustomFieldV1ResponseBodyFieldType",
-    "CustomFieldV1ResponseBodyRequired",
-    "CustomFieldV1ResponseBodyRequiredV2",
-    "CustomFieldV2ResponseBody",
-    "CustomFieldV2ResponseBodyFieldType",
-    "CustomFieldValuePayloadV1RequestBody",
-    "CustomFieldValuePayloadV2RequestBody",
-    "CustomFieldValueV1ResponseBody",
-    "CustomFieldValueV2ResponseBody",
-    "EmbeddedCatalogEntryV1ResponseBody",
-    "EmbeddedCatalogEntryV2ResponseBody",
-    "EmbeddedIncidentRoleV2ResponseBody",
-    "EmbeddedIncidentRoleV2ResponseBodyRoleType",
-    "EngineParamBindingPayloadV2RequestBody",
-    "EngineParamBindingV2ResponseBody",
-    "EngineParamBindingValuePayloadV2RequestBody",
-    "EngineParamBindingValueV2ResponseBody",
-    "EngineReferenceV2ResponseBody",
-    "EscalationPathNodeIfElsePayloadV2RequestBody",
-    "EscalationPathNodeIfElseV2ResponseBody",
-    "EscalationPathNodeLevelV2RequestBody",
-    "EscalationPathNodeLevelV2RequestBodyTimeToAckIntervalCondition",
-    "EscalationPathNodeLevelV2ResponseBody",
-    "EscalationPathNodeLevelV2ResponseBodyTimeToAckIntervalCondition",
-    "EscalationPathNodePayloadV2RequestBody",
-    "EscalationPathNodePayloadV2RequestBodyType",
-    "EscalationPathNodeRepeatV2RequestBody",
-    "EscalationPathNodeRepeatV2ResponseBody",
-    "EscalationPathNodeV2ResponseBody",
-    "EscalationPathNodeV2ResponseBodyType",
-    "EscalationPathRoundRobinConfigV2RequestBody",
-    "EscalationPathRoundRobinConfigV2ResponseBody",
-    "EscalationPathTargetV2RequestBody",
-    "EscalationPathTargetV2RequestBodyScheduleMode",
-    "EscalationPathTargetV2RequestBodyType",
-    "EscalationPathTargetV2RequestBodyUrgency",
-    "EscalationPathTargetV2ResponseBody",
-    "EscalationPathTargetV2ResponseBodyScheduleMode",
-    "EscalationPathTargetV2ResponseBodyType",
-    "EscalationPathTargetV2ResponseBodyUrgency",
-    "EscalationPathV2ResponseBody",
+    "CustomFieldTypeInfoV1",
+    "CustomFieldTypeInfoV1FieldType",
+    "CustomFieldTypeInfoV2",
+    "CustomFieldTypeInfoV2FieldType",
+    "CustomFieldV1",
+    "CustomFieldV1FieldType",
+    "CustomFieldV1Required",
+    "CustomFieldV1RequiredV2",
+    "CustomFieldV2",
+    "CustomFieldV2FieldType",
+    "CustomFieldValuePayloadV1",
+    "CustomFieldValuePayloadV2",
+    "CustomFieldValueV1",
+    "CustomFieldValueV2",
+    "EmbeddedCatalogEntryV1",
+    "EmbeddedCatalogEntryV2",
+    "EmbeddedIncidentRoleV2",
+    "EmbeddedIncidentRoleV2RoleType",
+    "EngineParam",
+    "EngineParamBinding",
+    "EngineParamBindingPayloadV2",
+    "EngineParamBindingV2",
+    "EngineParamBindingValue",
+    "EngineParamBindingValuePayloadV2",
+    "EngineParamBindingValueV2",
+    "EngineReferenceV2",
+    "EscalationPathNodeIfElsePayloadV2",
+    "EscalationPathNodeIfElseV2",
+    "EscalationPathNodeLevelV2",
+    "EscalationPathNodeLevelV2TimeToAckIntervalCondition",
+    "EscalationPathNodePayloadV2",
+    "EscalationPathNodePayloadV2Type",
+    "EscalationPathNodeRepeatV2",
+    "EscalationPathNodeV2",
+    "EscalationPathNodeV2Type",
+    "EscalationPathRoundRobinConfigV2",
+    "EscalationPathTargetV2",
+    "EscalationPathTargetV2ScheduleMode",
+    "EscalationPathTargetV2Type",
+    "EscalationPathTargetV2Urgency",
+    "EscalationPathV2",
     "EscalationsV2CreatePathRequestBody",
     "EscalationsV2CreatePathResponseBody",
     "EscalationsV2ShowPathResponseBody",
     "EscalationsV2UpdatePathRequestBody",
     "EscalationsV2UpdatePathResponseBody",
-    "ExpressionBranchesOptsPayloadV2RequestBody",
-    "ExpressionBranchesOptsV2ResponseBody",
-    "ExpressionBranchPayloadV2RequestBody",
-    "ExpressionBranchV2ResponseBody",
-    "ExpressionElseBranchPayloadV2RequestBody",
-    "ExpressionElseBranchV2ResponseBody",
-    "ExpressionFilterOptsPayloadV2RequestBody",
-    "ExpressionFilterOptsV2ResponseBody",
-    "ExpressionNavigateOptsPayloadV2RequestBody",
-    "ExpressionNavigateOptsV2ResponseBody",
-    "ExpressionOperationPayloadV2RequestBody",
-    "ExpressionOperationPayloadV2RequestBodyOperationType",
-    "ExpressionOperationV2ResponseBody",
-    "ExpressionOperationV2ResponseBodyOperationType",
-    "ExpressionParseOptsPayloadV2RequestBody",
-    "ExpressionParseOptsV2ResponseBody",
-    "ExpressionPayloadV2RequestBody",
-    "ExpressionV2ResponseBody",
-    "ExternalIssueReferenceV1ResponseBody",
-    "ExternalIssueReferenceV1ResponseBodyProvider",
-    "ExternalIssueReferenceV2ResponseBody",
-    "ExternalIssueReferenceV2ResponseBodyProvider",
-    "ExternalResourceV1ResponseBody",
-    "ExternalResourceV1ResponseBodyResourceType",
-    "FollowUpPriorityV2ResponseBody",
+    "ExpressionBranchesOptsPayloadV2",
+    "ExpressionBranchesOptsV2",
+    "ExpressionBranchPayloadV2",
+    "ExpressionBranchV2",
+    "ExpressionElseBranchPayloadV2",
+    "ExpressionElseBranchV2",
+    "ExpressionFilterOptsPayloadV2",
+    "ExpressionFilterOptsV2",
+    "ExpressionNavigateOptsPayloadV2",
+    "ExpressionNavigateOptsV2",
+    "ExpressionOperationPayloadV2",
+    "ExpressionOperationPayloadV2OperationType",
+    "ExpressionOperationV2",
+    "ExpressionOperationV2OperationType",
+    "ExpressionParseOptsPayloadV2",
+    "ExpressionParseOptsV2",
+    "ExpressionPayloadV2",
+    "ExpressionV2",
+    "ExternalIssueReferenceV1",
+    "ExternalIssueReferenceV1Provider",
+    "ExternalIssueReferenceV2",
+    "ExternalIssueReferenceV2Provider",
+    "ExternalResourceV1",
+    "ExternalResourceV1ResourceType",
+    "FollowUpPriorityV2",
     "FollowUpsV2ListIncidentMode",
     "FollowUpsV2ListResponseBody",
     "FollowUpsV2ShowResponseBody",
-    "FollowUpV2ResponseBody",
-    "FollowUpV2ResponseBodyStatus",
-    "GroupingKeyV2RequestBody",
-    "GroupingKeyV2ResponseBody",
-    "IdentityV1ResponseBody",
-    "IdentityV1ResponseBodyRolesItem",
+    "FollowUpV2",
+    "FollowUpV2Status",
+    "GroupingKeyV2",
+    "IdentityV1",
+    "IdentityV1RolesItem",
     "IncidentAttachmentsV1CreateRequestBody",
     "IncidentAttachmentsV1CreateRequestBodyResource",
     "IncidentAttachmentsV1CreateRequestBodyResourceResourceType",
     "IncidentAttachmentsV1CreateResponseBody",
     "IncidentAttachmentsV1ListResourceType",
     "IncidentAttachmentsV1ListResponseBody",
-    "IncidentAttachmentV1ResponseBody",
-    "IncidentDurationMetricV2ResponseBody",
-    "IncidentDurationMetricWithValueV2ResponseBody",
-    "IncidentEditPayloadV2RequestBody",
-    "IncidentMembershipResponseBody",
+    "IncidentAttachmentV1",
+    "IncidentCreatePayloadV2",
+    "IncidentCreatePayloadV2Mode",
+    "IncidentCreatePayloadV2Visibility",
+    "IncidentDurationMetricV2",
+    "IncidentDurationMetricWithValueV2",
+    "IncidentEditPayloadV2",
+    "IncidentMembership",
     "IncidentMembershipsV1CreateRequestBody",
     "IncidentMembershipsV1CreateResponseBody",
     "IncidentMembershipsV1RevokeRequestBody",
-    "IncidentRoleAssignmentPayloadV1RequestBody",
-    "IncidentRoleAssignmentPayloadV2RequestBody",
-    "IncidentRoleAssignmentV1ResponseBody",
-    "IncidentRoleAssignmentV2ResponseBody",
+    "IncidentRoleAssignmentPayloadV1",
+    "IncidentRoleAssignmentPayloadV2",
+    "IncidentRoleAssignmentV1",
+    "IncidentRoleAssignmentV2",
     "IncidentRolesV1CreateRequestBody",
     "IncidentRolesV1CreateResponseBody",
     "IncidentRolesV1ListResponseBody",
@@ -1488,10 +1274,10 @@ __all__ = (
     "IncidentRolesV2ShowResponseBody",
     "IncidentRolesV2UpdateRequestBody",
     "IncidentRolesV2UpdateResponseBody",
-    "IncidentRoleV1ResponseBody",
-    "IncidentRoleV1ResponseBodyRoleType",
-    "IncidentRoleV2ResponseBody",
-    "IncidentRoleV2ResponseBodyRoleType",
+    "IncidentRoleV1",
+    "IncidentRoleV1RoleType",
+    "IncidentRoleV2",
+    "IncidentRoleV2RoleType",
     "IncidentStatusesV1CreateRequestBody",
     "IncidentStatusesV1CreateRequestBodyCategory",
     "IncidentStatusesV1CreateResponseBody",
@@ -1499,10 +1285,10 @@ __all__ = (
     "IncidentStatusesV1ShowResponseBody",
     "IncidentStatusesV1UpdateRequestBody",
     "IncidentStatusesV1UpdateResponseBody",
-    "IncidentStatusV1ResponseBody",
-    "IncidentStatusV1ResponseBodyCategory",
-    "IncidentStatusV2ResponseBody",
-    "IncidentStatusV2ResponseBodyCategory",
+    "IncidentStatusV1",
+    "IncidentStatusV1Category",
+    "IncidentStatusV2",
+    "IncidentStatusV2Category",
     "IncidentsV1CreateRequestBody",
     "IncidentsV1CreateRequestBodyMode",
     "IncidentsV1CreateRequestBodyStatus",
@@ -1510,9 +1296,6 @@ __all__ = (
     "IncidentsV1CreateResponseBody",
     "IncidentsV1ListResponseBody",
     "IncidentsV1ShowResponseBody",
-    "IncidentsV2CreateRequestBody",
-    "IncidentsV2CreateRequestBodyMode",
-    "IncidentsV2CreateRequestBodyVisibility",
     "IncidentsV2CreateResponseBody",
     "IncidentsV2EditRequestBody",
     "IncidentsV2EditResponseBody",
@@ -1520,69 +1303,66 @@ __all__ = (
     "IncidentsV2ShowResponseBody",
     "IncidentTimestampsV2ListResponseBody",
     "IncidentTimestampsV2ShowResponseBody",
-    "IncidentTimestampV1ResponseBody",
-    "IncidentTimestampV2ResponseBody",
-    "IncidentTimestampValuePayloadV2RequestBody",
-    "IncidentTimestampValueV2ResponseBody",
-    "IncidentTimestampWithValueV2ResponseBody",
+    "IncidentTimestampV1",
+    "IncidentTimestampV2",
+    "IncidentTimestampValuePayloadV2",
+    "IncidentTimestampValueV2",
+    "IncidentTimestampWithValueV2",
     "IncidentTypesV1ListResponseBody",
     "IncidentTypesV1ShowResponseBody",
-    "IncidentTypeV1ResponseBody",
-    "IncidentTypeV1ResponseBodyCreateInTriage",
-    "IncidentTypeV2ResponseBody",
-    "IncidentTypeV2ResponseBodyCreateInTriage",
+    "IncidentTypeV1",
+    "IncidentTypeV1CreateInTriage",
+    "IncidentTypeV2",
+    "IncidentTypeV2CreateInTriage",
     "IncidentUpdatesV2ListResponseBody",
-    "IncidentUpdateV2ResponseBody",
-    "IncidentV1ResponseBody",
-    "IncidentV1ResponseBodyMode",
-    "IncidentV1ResponseBodyStatus",
-    "IncidentV1ResponseBodyVisibility",
-    "IncidentV2ResponseBody",
-    "IncidentV2ResponseBodyMode",
-    "IncidentV2ResponseBodyVisibility",
-    "IncidentWithStatusChangeV2ResponseBody",
+    "IncidentUpdateV2",
+    "IncidentV1",
+    "IncidentV1Mode",
+    "IncidentV1Status",
+    "IncidentV1Visibility",
+    "IncidentV2",
+    "IncidentV2Mode",
+    "IncidentV2Visibility",
+    "IncidentWithStatusChangeV2",
     "ManagedResourcesV2CreateManagedResourceRequestBody",
     "ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations",
     "ManagedResourcesV2CreateManagedResourceRequestBodyResourceType",
     "ManagedResourcesV2CreateManagedResourceResponseBody",
-    "ManagedResourceV2ResponseBody",
-    "ManagedResourceV2ResponseBodyAnnotations",
-    "ManagedResourceV2ResponseBodyManagedBy",
-    "ManagedResourceV2ResponseBodyResourceType",
-    "ManagementMetaV2ResponseBody",
-    "ManagementMetaV2ResponseBodyAnnotations",
-    "ManagementMetaV2ResponseBodyManagedBy",
-    "PaginationMetaResultResponseBody",
-    "PaginationMetaResultWithTotalResponseBody",
-    "RBACRoleV2ResponseBody",
-    "RetrospectiveIncidentOptionsV2RequestBody",
-    "ReturnsMetaV2RequestBody",
-    "ReturnsMetaV2ResponseBody",
-    "ScheduleConfigCreatePayloadV2RequestBody",
-    "ScheduleConfigUpdatePayloadV2RequestBody",
-    "ScheduleConfigV2ResponseBody",
-    "ScheduleCreatePayloadV2RequestBody",
-    "ScheduleCreatePayloadV2RequestBodyAnnotations",
-    "ScheduleEntriesListPayloadV2ResponseBody",
-    "ScheduleEntryV2ResponseBody",
-    "ScheduleHolidaysPublicConfigPayloadV2RequestBody",
-    "ScheduleHolidaysPublicConfigV2ResponseBody",
-    "ScheduleLayerCreatePayloadV2RequestBody",
-    "ScheduleLayerUpdatePayloadV2RequestBody",
-    "ScheduleLayerV2ResponseBody",
-    "ScheduleRotationCreatePayloadV2RequestBody",
-    "ScheduleRotationHandoverV2RequestBody",
-    "ScheduleRotationHandoverV2RequestBodyIntervalType",
-    "ScheduleRotationHandoverV2ResponseBody",
-    "ScheduleRotationHandoverV2ResponseBodyIntervalType",
-    "ScheduleRotationUpdatePayloadV2RequestBody",
-    "ScheduleRotationV2ResponseBody",
-    "ScheduleRotationWorkingIntervalCreatePayloadV2RequestBody",
-    "ScheduleRotationWorkingIntervalCreatePayloadV2RequestBodyWeekday",
-    "ScheduleRotationWorkingIntervalUpdatePayloadV2RequestBody",
-    "ScheduleRotationWorkingIntervalUpdatePayloadV2RequestBodyWeekday",
-    "ScheduleRotationWorkingIntervalV2ResponseBody",
-    "ScheduleRotationWorkingIntervalV2ResponseBodyWeekday",
+    "ManagedResourceV2",
+    "ManagedResourceV2Annotations",
+    "ManagedResourceV2ManagedBy",
+    "ManagedResourceV2ResourceType",
+    "ManagementMetaV2",
+    "ManagementMetaV2Annotations",
+    "ManagementMetaV2ManagedBy",
+    "PaginationMetaResult",
+    "PaginationMetaResultWithTotal",
+    "RBACRoleV2",
+    "RetrospectiveIncidentOptionsV2",
+    "ReturnsMetaV2",
+    "ScheduleConfigCreatePayloadV2",
+    "ScheduleConfigUpdatePayloadV2",
+    "ScheduleConfigV2",
+    "ScheduleCreatePayloadV2",
+    "ScheduleCreatePayloadV2Annotations",
+    "ScheduleEntriesListPayloadV2",
+    "ScheduleEntryV2",
+    "ScheduleHolidaysPublicConfigPayloadV2",
+    "ScheduleHolidaysPublicConfigV2",
+    "ScheduleLayerCreatePayloadV2",
+    "ScheduleLayerUpdatePayloadV2",
+    "ScheduleLayerV2",
+    "ScheduleRotationCreatePayloadV2",
+    "ScheduleRotationHandoverV2",
+    "ScheduleRotationHandoverV2IntervalType",
+    "ScheduleRotationUpdatePayloadV2",
+    "ScheduleRotationV2",
+    "ScheduleRotationWorkingIntervalCreatePayloadV2",
+    "ScheduleRotationWorkingIntervalCreatePayloadV2Weekday",
+    "ScheduleRotationWorkingIntervalUpdatePayloadV2",
+    "ScheduleRotationWorkingIntervalUpdatePayloadV2Weekday",
+    "ScheduleRotationWorkingIntervalV2",
+    "ScheduleRotationWorkingIntervalV2Weekday",
     "SchedulesV2CreateRequestBody",
     "SchedulesV2CreateResponseBody",
     "SchedulesV2ListResponseBody",
@@ -1590,40 +1370,45 @@ __all__ = (
     "SchedulesV2ShowResponseBody",
     "SchedulesV2UpdateRequestBody",
     "SchedulesV2UpdateResponseBody",
-    "ScheduleUpdatePayloadV2RequestBody",
-    "ScheduleUpdatePayloadV2RequestBodyAnnotations",
-    "ScheduleV2ResponseBody",
-    "ScheduleV2ResponseBodyAnnotations",
+    "ScheduleUpdatePayloadV2",
+    "ScheduleUpdatePayloadV2Annotations",
+    "ScheduleV2",
+    "ScheduleV2Annotations",
     "SeveritiesV1CreateRequestBody",
     "SeveritiesV1CreateResponseBody",
     "SeveritiesV1ListResponseBody",
     "SeveritiesV1ShowResponseBody",
     "SeveritiesV1UpdateRequestBody",
     "SeveritiesV1UpdateResponseBody",
-    "SeverityV1ResponseBody",
-    "SeverityV2ResponseBody",
-    "StepConfigPayloadRequestBody",
-    "StepConfigResponseBody",
-    "StepConfigSlimResponseBody",
-    "TriggerSlimResponseBody",
-    "UserReferencePayloadV1RequestBody",
-    "UserReferencePayloadV2RequestBody",
+    "SeverityV1",
+    "SeverityV2",
+    "StepConfig",
+    "StepConfigPayload",
+    "StepConfigSlim",
+    "TriggerSlim",
+    "UpdateWorkflowPayload",
+    "UpdateWorkflowPayloadAnnotations",
+    "UpdateWorkflowPayloadRunsOnIncidentModesItem",
+    "UpdateWorkflowPayloadRunsOnIncidents",
+    "UpdateWorkflowPayloadState",
+    "UserReferencePayloadV1",
+    "UserReferencePayloadV2",
     "UsersV2ListResponseBody",
     "UsersV2ShowResponseBody",
-    "UserV1ResponseBody",
-    "UserV1ResponseBodyRole",
-    "UserV2ResponseBody",
-    "UserV2ResponseBodyRole",
-    "UserWithRolesV2ResponseBody",
-    "UserWithRolesV2ResponseBodyRole",
+    "UserV1",
+    "UserV1Role",
+    "UserV2",
+    "UserV2Role",
+    "UserWithRolesV2",
+    "UserWithRolesV2Role",
     "UtilitiesV1IdentityResponseBody",
     "UtilitiesV1OpenAPIResponse200",
     "UtilitiesV1OpenAPIV3Response200",
-    "WebhookIncidentUserV2ResponseBody",
-    "WebhookIncidentV2ResponseBody",
-    "WebhookIncidentV2ResponseBodyMode",
-    "WebhookIncidentV2ResponseBodyVisibility",
-    "WebhookPrivateResourceV2ResponseBody",
+    "WebhookIncidentUserV2",
+    "WebhookIncidentV2",
+    "WebhookIncidentV2Mode",
+    "WebhookIncidentV2Visibility",
+    "WebhookPrivateResourceV2",
     "WebhooksAllResponseBody",
     "WebhooksAllResponseBodyEventType",
     "WebhooksPrivateIncidentActionCreatedV1ResponseBody",
@@ -1656,32 +1441,19 @@ __all__ = (
     "WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBodyEventType",
     "WebhooksPublicIncidentIncidentUpdatedV2ResponseBody",
     "WebhooksPublicIncidentIncidentUpdatedV2ResponseBodyEventType",
-    "WeekdayIntervalConfigV2RequestBody",
-    "WeekdayIntervalConfigV2ResponseBody",
-    "WeekdayIntervalV2RequestBody",
-    "WeekdayIntervalV2ResponseBody",
-    "WorkflowDelayRequestBody",
-    "WorkflowDelayResponseBody",
-    "WorkflowResponseBody",
-    "WorkflowResponseBodyRunsOnIncidentModesItem",
-    "WorkflowResponseBodyRunsOnIncidents",
-    "WorkflowResponseBodyState",
-    "WorkflowSlimResponseBody",
-    "WorkflowSlimResponseBodyRunsOnIncidentModesItem",
-    "WorkflowSlimResponseBodyRunsOnIncidents",
-    "WorkflowSlimResponseBodyState",
-    "WorkflowsV2CreateWorkflowRequestBody",
-    "WorkflowsV2CreateWorkflowRequestBodyAnnotations",
-    "WorkflowsV2CreateWorkflowRequestBodyRunsOnIncidentModesItem",
-    "WorkflowsV2CreateWorkflowRequestBodyRunsOnIncidents",
-    "WorkflowsV2CreateWorkflowRequestBodyState",
+    "WeekdayIntervalConfigV2",
+    "WeekdayIntervalV2",
+    "Workflow",
+    "WorkflowDelay",
+    "WorkflowRunsOnIncidentModesItem",
+    "WorkflowRunsOnIncidents",
+    "WorkflowSlim",
+    "WorkflowSlimRunsOnIncidentModesItem",
+    "WorkflowSlimRunsOnIncidents",
+    "WorkflowSlimState",
+    "WorkflowState",
     "WorkflowsV2CreateWorkflowResponseBody",
     "WorkflowsV2ListWorkflowsResponseBody",
     "WorkflowsV2ShowWorkflowResponseBody",
-    "WorkflowsV2UpdateWorkflowRequestBody",
-    "WorkflowsV2UpdateWorkflowRequestBodyAnnotations",
-    "WorkflowsV2UpdateWorkflowRequestBodyRunsOnIncidentModesItem",
-    "WorkflowsV2UpdateWorkflowRequestBodyRunsOnIncidents",
-    "WorkflowsV2UpdateWorkflowRequestBodyState",
     "WorkflowsV2UpdateWorkflowResponseBody",
 )

@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.schedule_update_payload_v2_request_body import (
-        ScheduleUpdatePayloadV2RequestBody,
-    )
+    from ..models.schedule_update_payload_v2 import ScheduleUpdatePayloadV2
 
 
 T = TypeVar("T", bound="SchedulesV2UpdateRequestBody")
@@ -25,17 +23,17 @@ class SchedulesV2UpdateRequestBody:
             'name': 'My Schedule', 'timezone': 'America/Los_Angeles'}}
 
     Attributes:
-        schedule (ScheduleUpdatePayloadV2RequestBody):  Example: {'annotations': {'incident.io/terraform/version':
-            'version-of-terraform'}, 'config': {'rotations': [{'effective_from': '2021-08-17T13:28:57.801578Z',
-            'handover_start_at': '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1, 'interval_type': 'daily'}],
-            'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name':
-            'My Rotation', 'users': [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
+        schedule (ScheduleUpdatePayloadV2):  Example: {'annotations': {'incident.io/terraform/version': 'version-of-
+            terraform'}, 'config': {'rotations': [{'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at':
+            '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My
+            Rotation', 'users': [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
             'USER123'}], 'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]},
             'holidays_public_config': {'country_codes': ['abc123']}, 'name': 'My Schedule', 'timezone':
             'America/Los_Angeles'}.
     """
 
-    schedule: "ScheduleUpdatePayloadV2RequestBody"
+    schedule: "ScheduleUpdatePayloadV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -53,12 +51,10 @@ class SchedulesV2UpdateRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.schedule_update_payload_v2_request_body import (
-            ScheduleUpdatePayloadV2RequestBody,
-        )
+        from ..models.schedule_update_payload_v2 import ScheduleUpdatePayloadV2
 
         d = src_dict.copy()
-        schedule = ScheduleUpdatePayloadV2RequestBody.from_dict(d.pop("schedule"))
+        schedule = ScheduleUpdatePayloadV2.from_dict(d.pop("schedule"))
 
         schedules_v2_update_request_body = cls(
             schedule=schedule,

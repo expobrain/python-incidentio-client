@@ -1,3 +1,0 @@
-# incident_io_client.models.managed_resource_v2_response_body_managed_by
-
-::: incident_io_client.models.managed_resource_v2_response_body_managed_by

@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.incident_v2_response_body import IncidentV2ResponseBody
+    from ..models.incident_v2 import IncidentV2
 
 
 T = TypeVar("T", bound="IncidentsV2CreateResponseBody")
@@ -51,7 +51,7 @@ class IncidentsV2CreateResponseBody:
             'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}}
 
     Attributes:
-        incident (IncidentV2ResponseBody):  Example: {'call_url': 'https://zoom.us/foo', 'created_at':
+        incident (IncidentV2):  Example: {'call_url': 'https://zoom.us/foo', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}, 'custom_field_entries': [{'custom_field': {'description':
@@ -88,7 +88,7 @@ class IncidentsV2CreateResponseBody:
             'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}.
     """
 
-    incident: "IncidentV2ResponseBody"
+    incident: "IncidentV2"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -106,10 +106,10 @@ class IncidentsV2CreateResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.incident_v2_response_body import IncidentV2ResponseBody
+        from ..models.incident_v2 import IncidentV2
 
         d = src_dict.copy()
-        incident = IncidentV2ResponseBody.from_dict(d.pop("incident"))
+        incident = IncidentV2.from_dict(d.pop("incident"))
 
         incidents_v2_create_response_body = cls(
             incident=incident,

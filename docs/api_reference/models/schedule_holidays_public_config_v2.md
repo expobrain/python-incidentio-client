@@ -1,0 +1,3 @@
+# incident_io_client.models.schedule_holidays_public_config_v2
+
+::: incident_io_client.models.schedule_holidays_public_config_v2

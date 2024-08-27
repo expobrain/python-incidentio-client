@@ -8,7 +8,7 @@ from ..models.webhooks_public_incident_follow_up_updated_v1_response_body_event_
 )
 
 if TYPE_CHECKING:
-    from ..models.action_v1_response_body import ActionV1ResponseBody
+    from ..models.action_v1 import ActionV1
 
 
 T = TypeVar("T", bound="WebhooksPublicIncidentFollowUpUpdatedV1ResponseBody")
@@ -29,17 +29,17 @@ class WebhooksPublicIncidentFollowUpUpdatedV1ResponseBody:
     Attributes:
         event_type (WebhooksPublicIncidentFollowUpUpdatedV1ResponseBodyEventType): What type of event is this webhook
             for? Example: public_incident.follow_up_updated_v1.
-        public_incident_follow_up_updated_v1 (ActionV1ResponseBody):  Example: {'assignee': {'email':
-            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
-            'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
-            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'asana'}, 'follow_up': True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        public_incident_follow_up_updated_v1 (ActionV1):  Example: {'assignee': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
+            'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Call
+            the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
+            'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'asana'}, 'follow_up':
+            True, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}.
     """
 
     event_type: WebhooksPublicIncidentFollowUpUpdatedV1ResponseBodyEventType
-    public_incident_follow_up_updated_v1: "ActionV1ResponseBody"
+    public_incident_follow_up_updated_v1: "ActionV1"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -60,14 +60,14 @@ class WebhooksPublicIncidentFollowUpUpdatedV1ResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.action_v1_response_body import ActionV1ResponseBody
+        from ..models.action_v1 import ActionV1
 
         d = src_dict.copy()
         event_type = WebhooksPublicIncidentFollowUpUpdatedV1ResponseBodyEventType(
             d.pop("event_type")
         )
 
-        public_incident_follow_up_updated_v1 = ActionV1ResponseBody.from_dict(
+        public_incident_follow_up_updated_v1 = ActionV1.from_dict(
             d.pop("public_incident.follow_up_updated_v1")
         )
 

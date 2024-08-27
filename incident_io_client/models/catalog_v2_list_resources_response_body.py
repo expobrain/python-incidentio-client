@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.catalog_resource_v2_response_body import CatalogResourceV2ResponseBody
+    from ..models.catalog_resource_v2 import CatalogResourceV2
 
 
 T = TypeVar("T", bound="CatalogV2ListResourcesResponseBody")
@@ -19,13 +19,12 @@ class CatalogV2ListResourcesResponseBody:
             ID of the repository or a string of <owner>/<repo>, e.g. incident-io/website'}]}
 
     Attributes:
-        resources (List['CatalogResourceV2ResponseBody']):  Example: [{'category': 'custom', 'description': 'Boolean
-            true or false value', 'label': 'GitHub Repository', 'type': 'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]',
-            'value_docstring': 'Either the GraphQL node ID of the repository or a string of <owner>/<repo>, e.g. incident-
-            io/website'}].
+        resources (List['CatalogResourceV2']):  Example: [{'category': 'custom', 'description': 'Boolean true or false
+            value', 'label': 'GitHub Repository', 'type': 'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]', 'value_docstring':
+            'Either the GraphQL node ID of the repository or a string of <owner>/<repo>, e.g. incident-io/website'}].
     """
 
-    resources: List["CatalogResourceV2ResponseBody"]
+    resources: List["CatalogResourceV2"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -46,15 +45,13 @@ class CatalogV2ListResourcesResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.catalog_resource_v2_response_body import (
-            CatalogResourceV2ResponseBody,
-        )
+        from ..models.catalog_resource_v2 import CatalogResourceV2
 
         d = src_dict.copy()
         resources = []
         _resources = d.pop("resources")
         for resources_item_data in _resources:
-            resources_item = CatalogResourceV2ResponseBody.from_dict(resources_item_data)
+            resources_item = CatalogResourceV2.from_dict(resources_item_data)
 
             resources.append(resources_item)
 

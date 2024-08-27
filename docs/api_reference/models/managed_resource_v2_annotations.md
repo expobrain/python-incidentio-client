@@ -1,0 +1,3 @@
+# incident_io_client.models.managed_resource_v2_annotations
+
+::: incident_io_client.models.managed_resource_v2_annotations

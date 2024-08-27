@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.action_v1_response_body import ActionV1ResponseBody
+    from ..models.action_v1 import ActionV1
 
 
 T = TypeVar("T", bound="ActionsV1ListResponseBody")
@@ -22,7 +22,7 @@ class ActionsV1ListResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        actions (List['ActionV1ResponseBody']):  Example: [{'assignee': {'email': 'lisa@incident.io', 'id':
+        actions (List['ActionV1']):  Example: [{'assignee': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
             'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Call
             the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
@@ -31,7 +31,7 @@ class ActionsV1ListResponseBody:
             'updated_at': '2021-08-17T13:28:57.801578Z'}].
     """
 
-    actions: List["ActionV1ResponseBody"]
+    actions: List["ActionV1"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -52,13 +52,13 @@ class ActionsV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.action_v1_response_body import ActionV1ResponseBody
+        from ..models.action_v1 import ActionV1
 
         d = src_dict.copy()
         actions = []
         _actions = d.pop("actions")
         for actions_item_data in _actions:
-            actions_item = ActionV1ResponseBody.from_dict(actions_item_data)
+            actions_item = ActionV1.from_dict(actions_item_data)
 
             actions.append(actions_item)
 

@@ -4,8 +4,8 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.management_meta_v2_response_body import ManagementMetaV2ResponseBody
-    from ..models.workflow_response_body import WorkflowResponseBody
+    from ..models.management_meta_v2 import ManagementMetaV2
+    from ..models.workflow import Workflow
 
 
 T = TypeVar("T", bound="WorkflowsV2CreateWorkflowResponseBody")
@@ -42,19 +42,20 @@ class WorkflowsV2CreateWorkflowResponseBody:
             'My folder 01', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'include_private_incidents': True, 'name': 'My workflow',
             'once_for': [{'array': False, 'key': 'incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"]', 'label': 'Incident
             -> Affected Team', 'type': 'IncidentSeverity'}], 'runs_from': '2021-08-17T13:28:57.801578Z',
-            'runs_on_incident_modes': ['standard', 'retrospective'], 'runs_on_incidents': 'newly_created', 'state':
-            'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'label': 'PagerDuty Escalate', 'name':
-            'pagerduty.escalate', 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}]}], 'trigger': {'label': 'Incident Updated', 'name': 'incident.updated'}, 'version': 3}}
+            'runs_on_incident_modes': ['standard', 'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform':
+            'abc123', 'state': 'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'label': 'PagerDuty Escalate',
+            'name': 'pagerduty.escalate', 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}]}], 'trigger': {'label': 'Incident Updated', 'name': 'incident.updated'},
+            'version': 3}}
 
     Attributes:
-        management_meta (ManagementMetaV2ResponseBody):  Example: {'annotations': {'incident.io/terraform/version':
-            '3.0.0'}, 'managed_by': 'dashboard', 'source_url': 'https://github.com/my-company/infrastructure'}.
-        workflow (WorkflowResponseBody):  Example: {'condition_groups': [{'conditions': [{'operation': {'label':
-            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+        management_meta (ManagementMetaV2):  Example: {'annotations': {'incident.io/terraform/version': '3.0.0'},
+            'managed_by': 'dashboard', 'source_url': 'https://github.com/my-company/infrastructure'}.
+        workflow (Workflow):  Example: {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones',
+            'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
             'incident.severity'}}]}], 'continue_on_step_error': True, 'delay': {'conditions_apply_over_delay': False,
             'for_seconds': 60}, 'expressions': [{'else_branch': {'result': {'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
@@ -77,15 +78,15 @@ class WorkflowsV2CreateWorkflowResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'include_private_incidents': True, 'name': 'My workflow', 'once_for': [{'array':
             False, 'key': 'incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"]', 'label': 'Incident -> Affected Team',
             'type': 'IncidentSeverity'}], 'runs_from': '2021-08-17T13:28:57.801578Z', 'runs_on_incident_modes': ['standard',
-            'retrospective'], 'runs_on_incidents': 'newly_created', 'state': 'active', 'steps': [{'for_each': 'abc123',
-            'id': 'abc123', 'label': 'PagerDuty Escalate', 'name': 'pagerduty.escalate', 'param_bindings': [{'array_value':
-            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}]}], 'trigger': {'label': 'Incident
-            Updated', 'name': 'incident.updated'}, 'version': 3}.
+            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'abc123', 'state': 'active', 'steps':
+            [{'for_each': 'abc123', 'id': 'abc123', 'label': 'PagerDuty Escalate', 'name': 'pagerduty.escalate',
+            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}]}], 'trigger': {'label': 'Incident Updated', 'name': 'incident.updated'}, 'version': 3}.
     """
 
-    management_meta: "ManagementMetaV2ResponseBody"
-    workflow: "WorkflowResponseBody"
+    management_meta: "ManagementMetaV2"
+    workflow: "Workflow"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -106,15 +107,13 @@ class WorkflowsV2CreateWorkflowResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.management_meta_v2_response_body import (
-            ManagementMetaV2ResponseBody,
-        )
-        from ..models.workflow_response_body import WorkflowResponseBody
+        from ..models.management_meta_v2 import ManagementMetaV2
+        from ..models.workflow import Workflow
 
         d = src_dict.copy()
-        management_meta = ManagementMetaV2ResponseBody.from_dict(d.pop("management_meta"))
+        management_meta = ManagementMetaV2.from_dict(d.pop("management_meta"))
 
-        workflow = WorkflowResponseBody.from_dict(d.pop("workflow"))
+        workflow = Workflow.from_dict(d.pop("workflow"))
 
         workflows_v2_create_workflow_response_body = cls(
             management_meta=management_meta,

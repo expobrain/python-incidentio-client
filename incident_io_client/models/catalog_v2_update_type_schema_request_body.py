@@ -4,9 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.catalog_type_attribute_payload_v2_request_body import (
-        CatalogTypeAttributePayloadV2RequestBody,
-    )
+    from ..models.catalog_type_attribute_payload_v2 import CatalogTypeAttributePayloadV2
 
 
 T = TypeVar("T", bound="CatalogV2UpdateTypeSchemaRequestBody")
@@ -20,13 +18,13 @@ class CatalogV2UpdateTypeSchemaRequestBody:
             'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}], 'version': 1}
 
     Attributes:
-        attributes (List['CatalogTypeAttributePayloadV2RequestBody']):  Example: [{'array': False, 'backlink_attribute':
-            'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'path': [{'attribute_id':
-            'abc123'}], 'type': 'Custom["Service"]'}].
+        attributes (List['CatalogTypeAttributePayloadV2']):  Example: [{'array': False, 'backlink_attribute': 'abc123',
+            'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123'}],
+            'type': 'Custom["Service"]'}].
         version (int):  Example: 1.
     """
 
-    attributes: List["CatalogTypeAttributePayloadV2RequestBody"]
+    attributes: List["CatalogTypeAttributePayloadV2"]
     version: int
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -51,17 +49,15 @@ class CatalogV2UpdateTypeSchemaRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.catalog_type_attribute_payload_v2_request_body import (
-            CatalogTypeAttributePayloadV2RequestBody,
+        from ..models.catalog_type_attribute_payload_v2 import (
+            CatalogTypeAttributePayloadV2,
         )
 
         d = src_dict.copy()
         attributes = []
         _attributes = d.pop("attributes")
         for attributes_item_data in _attributes:
-            attributes_item = CatalogTypeAttributePayloadV2RequestBody.from_dict(
-                attributes_item_data
-            )
+            attributes_item = CatalogTypeAttributePayloadV2.from_dict(attributes_item_data)
 
             attributes.append(attributes_item)
 

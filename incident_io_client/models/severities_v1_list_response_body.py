@@ -4,7 +4,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.severity_v1_response_body import SeverityV1ResponseBody
+    from ..models.severity_v1 import SeverityV1
 
 
 T = TypeVar("T", bound="SeveritiesV1ListResponseBody")
@@ -18,12 +18,12 @@ class SeveritiesV1ListResponseBody:
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        severities (List['SeverityV1ResponseBody']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z',
-            'description': 'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}].
+        severities (List['SeverityV1']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues
+            with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}].
     """
 
-    severities: List["SeverityV1ResponseBody"]
+    severities: List["SeverityV1"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -44,13 +44,13 @@ class SeveritiesV1ListResponseBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.severity_v1_response_body import SeverityV1ResponseBody
+        from ..models.severity_v1 import SeverityV1
 
         d = src_dict.copy()
         severities = []
         _severities = d.pop("severities")
         for severities_item_data in _severities:
-            severities_item = SeverityV1ResponseBody.from_dict(severities_item_data)
+            severities_item = SeverityV1.from_dict(severities_item_data)
 
             severities.append(severities_item)
 

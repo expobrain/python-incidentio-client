@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,19 +6,16 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.alert_route_escalation_binding_payload_v2_request_body import (
-        AlertRouteEscalationBindingPayloadV2RequestBody,
+    from ..models.alert_route_alert_source import AlertRouteAlertSource
+    from ..models.alert_route_escalation_binding_payload_v2 import (
+        AlertRouteEscalationBindingPayloadV2,
     )
-    from ..models.alert_route_incident_template_payload_v2_request_body import (
-        AlertRouteIncidentTemplatePayloadV2RequestBody,
+    from ..models.alert_route_incident_template_payload_v2 import (
+        AlertRouteIncidentTemplatePayloadV2,
     )
-    from ..models.condition_group_payload_v2_request_body import (
-        ConditionGroupPayloadV2RequestBody,
-    )
-    from ..models.expression_payload_v2_request_body import (
-        ExpressionPayloadV2RequestBody,
-    )
-    from ..models.grouping_key_v2_request_body import GroupingKeyV2RequestBody
+    from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
+    from ..models.expression_payload_v2 import ExpressionPayloadV2
+    from ..models.grouping_key_v2 import GroupingKeyV2
 
 
 T = TypeVar("T", bound="AlertRoutesV2UpdateRequestBody")
@@ -28,8 +25,35 @@ T = TypeVar("T", bound="AlertRoutesV2UpdateRequestBody")
 class AlertRoutesV2UpdateRequestBody:
     """
     Example:
-        {'alert_source_ids': ['02FCNDV6P870EA6S7TK1DSYDG2'], 'auto_decline_enabled': False, 'condition_groups':
-            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
+        {'alert_sources': [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions':
+            [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
+            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
+            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations
+            like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
+            False, 'value': 'abc123'}}], 'params': [{'array': True, 'default_value': {'array_value': [{'catalog_entry':
+            {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'catalog_entry_name': 'Primary escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext':
+            'Collection of standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
+            False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
+            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
+            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
+            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What slack channel should we
+            send the message to?', 'infer_reference': True, 'label': 'To date', 'name': 'severity', 'optional': True,
+            'type': 'IncidentSeverity'}], 'subject': {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity',
+            'reference': 'incident.severity'}}]}]}], 'auto_decline_enabled': False, 'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
             'incident.severity'}]}], 'defer_time_seconds': 1, 'enabled': False, 'escalation_bindings': [{'binding':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
@@ -64,30 +88,57 @@ class AlertRoutesV2UpdateRequestBody:
             'SEV123', 'reference': 'incident.severity'}}}}
 
     Attributes:
-        alert_source_ids (List[str]): Legacy field - the alert sources that will match this alert route Example:
-            ['02FCNDV6P870EA6S7TK1DSYDG2'].
+        alert_sources (List['AlertRouteAlertSource']): Which alert sources should this alert route match? Example:
+            [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'catalog_entry':
+            {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'catalog_entry_name': 'Primary escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext':
+            'Collection of standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
+            False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
+            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
+            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
+            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}], 'params': [{'array': True, 'default_value':
+            {'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
+            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
+            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
+            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
+            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations
+            like auto-closing incidents.', 'image_url': 'https://avatars.slack-
+            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
+            False, 'value': 'abc123'}}, 'description': 'What slack channel should we send the message to?',
+            'infer_reference': True, 'label': 'To date', 'name': 'severity', 'optional': True, 'type': 'IncidentSeverity'}],
+            'subject': {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}].
         auto_decline_enabled (bool): Should triage incidents be declined when alerts are resolved?
-        condition_groups (List['ConditionGroupPayloadV2RequestBody']): What condition groups must be true for this alert
-            route to fire? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+        condition_groups (List['ConditionGroupPayloadV2']): What condition groups must be true for this alert route to
+            fire? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}].
         defer_time_seconds (int): How long should the escalation defer time be? Example: 1.
         enabled (bool): Whether this alert route is enabled or not
-        escalation_bindings (List['AlertRouteEscalationBindingPayloadV2RequestBody']): Which escalation paths should
-            this alert route escalate to? Example: [{'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+        escalation_bindings (List['AlertRouteEscalationBindingPayloadV2']): Which escalation paths should this alert
+            route escalate to? Example: [{'binding': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}].
-        grouping_keys (List['GroupingKeyV2RequestBody']): Which attributes should this alert route use to group alerts?
-            Example: [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}].
+        grouping_keys (List['GroupingKeyV2']): Which attributes should this alert route use to group alerts? Example:
+            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}].
         grouping_window_seconds (int): How large should the grouping window be? Example: 1.
-        incident_condition_groups (List['ConditionGroupPayloadV2RequestBody']): What condition groups must be true for
-            this alert route to create an incident? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':
+        incident_condition_groups (List['ConditionGroupPayloadV2']): What condition groups must be true for this alert
+            route to create an incident? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}].
         incident_enabled (bool): Whether this alert route will create incidents or not
         name (str): The name of this alert route config, for the user's reference Example: Production incidents.
-        expressions (Union[Unset, List['ExpressionPayloadV2RequestBody']]): The expressions used in this template
-            Example: [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
+        expressions (Union[Unset, List['ExpressionPayloadV2']]): The expressions used in this template Example:
+            [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
             [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal':
@@ -98,12 +149,12 @@ class AlertRoutesV2UpdateRequestBody:
             'incident.severity'}]}]}, 'navigate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'},
             'operation_type': 'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference': 'incident.status'}].
-        template (Union[Unset, AlertRouteIncidentTemplatePayloadV2RequestBody]):  Example: {'custom_field_priorities':
-            {'abc123': 'abc123'}, 'custom_fields': {'custom_field_10014': {'array_value': [{'literal': 'SEV123',
-            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
-            'incident_mode': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal':
-            'SEV123', 'reference': 'incident.severity'}}, 'incident_type': {'array_value': [{'literal': 'SEV123',
-            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'name':
+        template (Union[Unset, AlertRouteIncidentTemplatePayloadV2]):  Example: {'custom_field_priorities': {'abc123':
+            'abc123'}, 'custom_fields': {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'incident_mode':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'incident_type': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'name':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}, 'priority_severity': 'severity-first-wins', 'severity': {'array_value':
             [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
@@ -113,23 +164,26 @@ class AlertRoutesV2UpdateRequestBody:
             'incident.severity'}}}.
     """
 
-    alert_source_ids: List[str]
+    alert_sources: List["AlertRouteAlertSource"]
     auto_decline_enabled: bool
-    condition_groups: List["ConditionGroupPayloadV2RequestBody"]
+    condition_groups: List["ConditionGroupPayloadV2"]
     defer_time_seconds: int
     enabled: bool
-    escalation_bindings: List["AlertRouteEscalationBindingPayloadV2RequestBody"]
-    grouping_keys: List["GroupingKeyV2RequestBody"]
+    escalation_bindings: List["AlertRouteEscalationBindingPayloadV2"]
+    grouping_keys: List["GroupingKeyV2"]
     grouping_window_seconds: int
-    incident_condition_groups: List["ConditionGroupPayloadV2RequestBody"]
+    incident_condition_groups: List["ConditionGroupPayloadV2"]
     incident_enabled: bool
     name: str
-    expressions: Union[Unset, List["ExpressionPayloadV2RequestBody"]] = UNSET
-    template: Union[Unset, "AlertRouteIncidentTemplatePayloadV2RequestBody"] = UNSET
+    expressions: Union[Unset, List["ExpressionPayloadV2"]] = UNSET
+    template: Union[Unset, "AlertRouteIncidentTemplatePayloadV2"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        alert_source_ids = self.alert_source_ids
+        alert_sources = []
+        for alert_sources_item_data in self.alert_sources:
+            alert_sources_item = alert_sources_item_data.to_dict()
+            alert_sources.append(alert_sources_item)
 
         auto_decline_enabled = self.auto_decline_enabled
 
@@ -178,7 +232,7 @@ class AlertRoutesV2UpdateRequestBody:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "alert_source_ids": alert_source_ids,
+                "alert_sources": alert_sources,
                 "auto_decline_enabled": auto_decline_enabled,
                 "condition_groups": condition_groups,
                 "defer_time_seconds": defer_time_seconds,
@@ -200,31 +254,31 @@ class AlertRoutesV2UpdateRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.alert_route_escalation_binding_payload_v2_request_body import (
-            AlertRouteEscalationBindingPayloadV2RequestBody,
+        from ..models.alert_route_alert_source import AlertRouteAlertSource
+        from ..models.alert_route_escalation_binding_payload_v2 import (
+            AlertRouteEscalationBindingPayloadV2,
         )
-        from ..models.alert_route_incident_template_payload_v2_request_body import (
-            AlertRouteIncidentTemplatePayloadV2RequestBody,
+        from ..models.alert_route_incident_template_payload_v2 import (
+            AlertRouteIncidentTemplatePayloadV2,
         )
-        from ..models.condition_group_payload_v2_request_body import (
-            ConditionGroupPayloadV2RequestBody,
-        )
-        from ..models.expression_payload_v2_request_body import (
-            ExpressionPayloadV2RequestBody,
-        )
-        from ..models.grouping_key_v2_request_body import GroupingKeyV2RequestBody
+        from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
+        from ..models.expression_payload_v2 import ExpressionPayloadV2
+        from ..models.grouping_key_v2 import GroupingKeyV2
 
         d = src_dict.copy()
-        alert_source_ids = cast(List[str], d.pop("alert_source_ids"))
+        alert_sources = []
+        _alert_sources = d.pop("alert_sources")
+        for alert_sources_item_data in _alert_sources:
+            alert_sources_item = AlertRouteAlertSource.from_dict(alert_sources_item_data)
+
+            alert_sources.append(alert_sources_item)
 
         auto_decline_enabled = d.pop("auto_decline_enabled")
 
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:
-            condition_groups_item = ConditionGroupPayloadV2RequestBody.from_dict(
-                condition_groups_item_data
-            )
+            condition_groups_item = ConditionGroupPayloadV2.from_dict(condition_groups_item_data)
 
             condition_groups.append(condition_groups_item)
 
@@ -235,7 +289,7 @@ class AlertRoutesV2UpdateRequestBody:
         escalation_bindings = []
         _escalation_bindings = d.pop("escalation_bindings")
         for escalation_bindings_item_data in _escalation_bindings:
-            escalation_bindings_item = AlertRouteEscalationBindingPayloadV2RequestBody.from_dict(
+            escalation_bindings_item = AlertRouteEscalationBindingPayloadV2.from_dict(
                 escalation_bindings_item_data
             )
 
@@ -244,7 +298,7 @@ class AlertRoutesV2UpdateRequestBody:
         grouping_keys = []
         _grouping_keys = d.pop("grouping_keys")
         for grouping_keys_item_data in _grouping_keys:
-            grouping_keys_item = GroupingKeyV2RequestBody.from_dict(grouping_keys_item_data)
+            grouping_keys_item = GroupingKeyV2.from_dict(grouping_keys_item_data)
 
             grouping_keys.append(grouping_keys_item)
 
@@ -253,7 +307,7 @@ class AlertRoutesV2UpdateRequestBody:
         incident_condition_groups = []
         _incident_condition_groups = d.pop("incident_condition_groups")
         for incident_condition_groups_item_data in _incident_condition_groups:
-            incident_condition_groups_item = ConditionGroupPayloadV2RequestBody.from_dict(
+            incident_condition_groups_item = ConditionGroupPayloadV2.from_dict(
                 incident_condition_groups_item_data
             )
 
@@ -266,19 +320,19 @@ class AlertRoutesV2UpdateRequestBody:
         expressions = []
         _expressions = d.pop("expressions", UNSET)
         for expressions_item_data in _expressions or []:
-            expressions_item = ExpressionPayloadV2RequestBody.from_dict(expressions_item_data)
+            expressions_item = ExpressionPayloadV2.from_dict(expressions_item_data)
 
             expressions.append(expressions_item)
 
         _template = d.pop("template", UNSET)
-        template: Union[Unset, AlertRouteIncidentTemplatePayloadV2RequestBody]
+        template: Union[Unset, AlertRouteIncidentTemplatePayloadV2]
         if isinstance(_template, Unset):
             template = UNSET
         else:
-            template = AlertRouteIncidentTemplatePayloadV2RequestBody.from_dict(_template)
+            template = AlertRouteIncidentTemplatePayloadV2.from_dict(_template)
 
         alert_routes_v2_update_request_body = cls(
-            alert_source_ids=alert_source_ids,
+            alert_sources=alert_sources,
             auto_decline_enabled=auto_decline_enabled,
             condition_groups=condition_groups,
             defer_time_seconds=defer_time_seconds,

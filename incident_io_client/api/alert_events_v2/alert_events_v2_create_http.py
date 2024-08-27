@@ -8,9 +8,7 @@ from ...client import AuthenticatedClient, Client
 from ...models.alert_events_v2_create_http_request_body import (
     AlertEventsV2CreateHTTPRequestBody,
 )
-from ...models.alert_events_v2_create_http_response_body import (
-    AlertEventsV2CreateHTTPResponseBody,
-)
+from ...models.alert_result import AlertResult
 from ...types import UNSET, Response, Unset
 
 
@@ -50,9 +48,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[AlertEventsV2CreateHTTPResponseBody]:
+) -> Optional[AlertResult]:
     if response.status_code == HTTPStatus.ACCEPTED:
-        response_202 = AlertEventsV2CreateHTTPResponseBody.from_dict(response.json())
+        response_202 = AlertResult.from_dict(response.json())
 
         return response_202
     if client.raise_on_unexpected_status:
@@ -63,7 +61,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[AlertEventsV2CreateHTTPResponseBody]:
+) -> Response[AlertResult]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -79,7 +77,7 @@ def sync_detailed(
     body: AlertEventsV2CreateHTTPRequestBody,
     token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Response[AlertEventsV2CreateHTTPResponseBody]:
+) -> Response[AlertResult]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
@@ -99,7 +97,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AlertEventsV2CreateHTTPResponseBody]
+        Response[AlertResult]
     """
 
     kwargs = _get_kwargs(
@@ -123,7 +121,7 @@ def sync(
     body: AlertEventsV2CreateHTTPRequestBody,
     token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Optional[AlertEventsV2CreateHTTPResponseBody]:
+) -> Optional[AlertResult]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
@@ -143,7 +141,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AlertEventsV2CreateHTTPResponseBody
+        AlertResult
     """
 
     return sync_detailed(
@@ -162,7 +160,7 @@ async def asyncio_detailed(
     body: AlertEventsV2CreateHTTPRequestBody,
     token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Response[AlertEventsV2CreateHTTPResponseBody]:
+) -> Response[AlertResult]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
@@ -182,7 +180,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AlertEventsV2CreateHTTPResponseBody]
+        Response[AlertResult]
     """
 
     kwargs = _get_kwargs(
@@ -204,7 +202,7 @@ async def asyncio(
     body: AlertEventsV2CreateHTTPRequestBody,
     token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Optional[AlertEventsV2CreateHTTPResponseBody]:
+) -> Optional[AlertResult]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
@@ -224,7 +222,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AlertEventsV2CreateHTTPResponseBody
+        AlertResult
     """
 
     return (
