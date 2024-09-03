@@ -138,10 +138,8 @@ class WebhooksPublicIncidentIncidentStatusUpdatedV2ResponseBody:
             d.pop("event_type")
         )
 
-        public_incident_incident_status_updated_v2 = (
-            IncidentWithStatusChangeV2.from_dict(
-                d.pop("public_incident.incident_status_updated_v2")
-            )
+        public_incident_incident_status_updated_v2 = IncidentWithStatusChangeV2.from_dict(
+            d.pop("public_incident.incident_status_updated_v2")
         )
 
         webhooks_public_incident_incident_status_updated_v2_response_body = cls(

@@ -98,9 +98,7 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
 
         context = AuditLogEntryContextV2.from_dict(d.pop("context"))
 
-        metadata = AuditLogPrivateIncidentAccessAttemptedMetadataV2.from_dict(
-            d.pop("metadata")
-        )
+        metadata = AuditLogPrivateIncidentAccessAttemptedMetadataV2.from_dict(d.pop("metadata"))
 
         occurred_at = isoparse(d.pop("occurred_at"))
 

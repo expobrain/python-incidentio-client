@@ -326,32 +326,18 @@ class WebhooksAllResponseBody:
     event_type: WebhooksAllResponseBodyEventType
     private_incident_action_created_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
     private_incident_action_updated_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
-    private_incident_follow_up_created_v1: Union[
-        Unset, "WebhookPrivateResourceV2"
-    ] = UNSET
-    private_incident_follow_up_updated_v1: Union[
-        Unset, "WebhookPrivateResourceV2"
-    ] = UNSET
-    private_incident_incident_created_v2: Union[
-        Unset, "WebhookPrivateResourceV2"
-    ] = UNSET
-    private_incident_incident_updated_v2: Union[
-        Unset, "WebhookPrivateResourceV2"
-    ] = UNSET
-    private_incident_membership_granted_v1: Union[
-        Unset, "WebhookIncidentUserV2"
-    ] = UNSET
-    private_incident_membership_revoked_v1: Union[
-        Unset, "WebhookIncidentUserV2"
-    ] = UNSET
+    private_incident_follow_up_created_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_follow_up_updated_v1: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_incident_created_v2: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_incident_updated_v2: Union[Unset, "WebhookPrivateResourceV2"] = UNSET
+    private_incident_membership_granted_v1: Union[Unset, "WebhookIncidentUserV2"] = UNSET
+    private_incident_membership_revoked_v1: Union[Unset, "WebhookIncidentUserV2"] = UNSET
     public_incident_action_created_v1: Union[Unset, "ActionV1"] = UNSET
     public_incident_action_updated_v1: Union[Unset, "ActionV1"] = UNSET
     public_incident_follow_up_created_v1: Union[Unset, "ActionV1"] = UNSET
     public_incident_follow_up_updated_v1: Union[Unset, "ActionV1"] = UNSET
     public_incident_incident_created_v2: Union[Unset, "WebhookIncidentV2"] = UNSET
-    public_incident_incident_status_updated_v2: Union[
-        Unset, "IncidentWithStatusChangeV2"
-    ] = UNSET
+    public_incident_incident_status_updated_v2: Union[Unset, "IncidentWithStatusChangeV2"] = UNSET
     public_incident_incident_updated_v2: Union[Unset, "WebhookIncidentV2"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -360,15 +346,11 @@ class WebhooksAllResponseBody:
 
         private_incident_action_created_v1: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.private_incident_action_created_v1, Unset):
-            private_incident_action_created_v1 = (
-                self.private_incident_action_created_v1.to_dict()
-            )
+            private_incident_action_created_v1 = self.private_incident_action_created_v1.to_dict()
 
         private_incident_action_updated_v1: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.private_incident_action_updated_v1, Unset):
-            private_incident_action_updated_v1 = (
-                self.private_incident_action_updated_v1.to_dict()
-            )
+            private_incident_action_updated_v1 = self.private_incident_action_updated_v1.to_dict()
 
         private_incident_follow_up_created_v1: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.private_incident_follow_up_created_v1, Unset):
@@ -408,15 +390,11 @@ class WebhooksAllResponseBody:
 
         public_incident_action_created_v1: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.public_incident_action_created_v1, Unset):
-            public_incident_action_created_v1 = (
-                self.public_incident_action_created_v1.to_dict()
-            )
+            public_incident_action_created_v1 = self.public_incident_action_created_v1.to_dict()
 
         public_incident_action_updated_v1: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.public_incident_action_updated_v1, Unset):
-            public_incident_action_updated_v1 = (
-                self.public_incident_action_updated_v1.to_dict()
-            )
+            public_incident_action_updated_v1 = self.public_incident_action_updated_v1.to_dict()
 
         public_incident_follow_up_created_v1: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.public_incident_follow_up_created_v1, Unset):
@@ -456,65 +434,53 @@ class WebhooksAllResponseBody:
             }
         )
         if private_incident_action_created_v1 is not UNSET:
-            field_dict[
-                "private_incident.action_created_v1"
-            ] = private_incident_action_created_v1
+            field_dict["private_incident.action_created_v1"] = private_incident_action_created_v1
         if private_incident_action_updated_v1 is not UNSET:
-            field_dict[
-                "private_incident.action_updated_v1"
-            ] = private_incident_action_updated_v1
+            field_dict["private_incident.action_updated_v1"] = private_incident_action_updated_v1
         if private_incident_follow_up_created_v1 is not UNSET:
-            field_dict[
-                "private_incident.follow_up_created_v1"
-            ] = private_incident_follow_up_created_v1
+            field_dict["private_incident.follow_up_created_v1"] = (
+                private_incident_follow_up_created_v1
+            )
         if private_incident_follow_up_updated_v1 is not UNSET:
-            field_dict[
-                "private_incident.follow_up_updated_v1"
-            ] = private_incident_follow_up_updated_v1
+            field_dict["private_incident.follow_up_updated_v1"] = (
+                private_incident_follow_up_updated_v1
+            )
         if private_incident_incident_created_v2 is not UNSET:
-            field_dict[
-                "private_incident.incident_created_v2"
-            ] = private_incident_incident_created_v2
+            field_dict["private_incident.incident_created_v2"] = (
+                private_incident_incident_created_v2
+            )
         if private_incident_incident_updated_v2 is not UNSET:
-            field_dict[
-                "private_incident.incident_updated_v2"
-            ] = private_incident_incident_updated_v2
+            field_dict["private_incident.incident_updated_v2"] = (
+                private_incident_incident_updated_v2
+            )
         if private_incident_membership_granted_v1 is not UNSET:
-            field_dict[
-                "private_incident.membership_granted_v1"
-            ] = private_incident_membership_granted_v1
+            field_dict["private_incident.membership_granted_v1"] = (
+                private_incident_membership_granted_v1
+            )
         if private_incident_membership_revoked_v1 is not UNSET:
-            field_dict[
-                "private_incident.membership_revoked_v1"
-            ] = private_incident_membership_revoked_v1
+            field_dict["private_incident.membership_revoked_v1"] = (
+                private_incident_membership_revoked_v1
+            )
         if public_incident_action_created_v1 is not UNSET:
-            field_dict[
-                "public_incident.action_created_v1"
-            ] = public_incident_action_created_v1
+            field_dict["public_incident.action_created_v1"] = public_incident_action_created_v1
         if public_incident_action_updated_v1 is not UNSET:
-            field_dict[
-                "public_incident.action_updated_v1"
-            ] = public_incident_action_updated_v1
+            field_dict["public_incident.action_updated_v1"] = public_incident_action_updated_v1
         if public_incident_follow_up_created_v1 is not UNSET:
-            field_dict[
-                "public_incident.follow_up_created_v1"
-            ] = public_incident_follow_up_created_v1
+            field_dict["public_incident.follow_up_created_v1"] = (
+                public_incident_follow_up_created_v1
+            )
         if public_incident_follow_up_updated_v1 is not UNSET:
-            field_dict[
-                "public_incident.follow_up_updated_v1"
-            ] = public_incident_follow_up_updated_v1
+            field_dict["public_incident.follow_up_updated_v1"] = (
+                public_incident_follow_up_updated_v1
+            )
         if public_incident_incident_created_v2 is not UNSET:
-            field_dict[
-                "public_incident.incident_created_v2"
-            ] = public_incident_incident_created_v2
+            field_dict["public_incident.incident_created_v2"] = public_incident_incident_created_v2
         if public_incident_incident_status_updated_v2 is not UNSET:
-            field_dict[
-                "public_incident.incident_status_updated_v2"
-            ] = public_incident_incident_status_updated_v2
+            field_dict["public_incident.incident_status_updated_v2"] = (
+                public_incident_incident_status_updated_v2
+            )
         if public_incident_incident_updated_v2 is not UNSET:
-            field_dict[
-                "public_incident.incident_updated_v2"
-            ] = public_incident_incident_updated_v2
+            field_dict["public_incident.incident_updated_v2"] = public_incident_incident_updated_v2
 
         return field_dict
 
@@ -529,9 +495,7 @@ class WebhooksAllResponseBody:
         d = src_dict.copy()
         event_type = WebhooksAllResponseBodyEventType(d.pop("event_type"))
 
-        _private_incident_action_created_v1 = d.pop(
-            "private_incident.action_created_v1", UNSET
-        )
+        _private_incident_action_created_v1 = d.pop("private_incident.action_created_v1", UNSET)
         private_incident_action_created_v1: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_action_created_v1, Unset):
             private_incident_action_created_v1 = UNSET
@@ -540,9 +504,7 @@ class WebhooksAllResponseBody:
                 _private_incident_action_created_v1
             )
 
-        _private_incident_action_updated_v1 = d.pop(
-            "private_incident.action_updated_v1", UNSET
-        )
+        _private_incident_action_updated_v1 = d.pop("private_incident.action_updated_v1", UNSET)
         private_incident_action_updated_v1: Union[Unset, WebhookPrivateResourceV2]
         if isinstance(_private_incident_action_updated_v1, Unset):
             private_incident_action_updated_v1 = UNSET
@@ -617,9 +579,7 @@ class WebhooksAllResponseBody:
                 _private_incident_membership_revoked_v1
             )
 
-        _public_incident_action_created_v1 = d.pop(
-            "public_incident.action_created_v1", UNSET
-        )
+        _public_incident_action_created_v1 = d.pop("public_incident.action_created_v1", UNSET)
         public_incident_action_created_v1: Union[Unset, ActionV1]
         if isinstance(_public_incident_action_created_v1, Unset):
             public_incident_action_created_v1 = UNSET
@@ -628,9 +588,7 @@ class WebhooksAllResponseBody:
                 _public_incident_action_created_v1
             )
 
-        _public_incident_action_updated_v1 = d.pop(
-            "public_incident.action_updated_v1", UNSET
-        )
+        _public_incident_action_updated_v1 = d.pop("public_incident.action_updated_v1", UNSET)
         public_incident_action_updated_v1: Union[Unset, ActionV1]
         if isinstance(_public_incident_action_updated_v1, Unset):
             public_incident_action_updated_v1 = UNSET
@@ -661,9 +619,7 @@ class WebhooksAllResponseBody:
                 _public_incident_follow_up_updated_v1
             )
 
-        _public_incident_incident_created_v2 = d.pop(
-            "public_incident.incident_created_v2", UNSET
-        )
+        _public_incident_incident_created_v2 = d.pop("public_incident.incident_created_v2", UNSET)
         public_incident_incident_created_v2: Union[Unset, WebhookIncidentV2]
         if isinstance(_public_incident_incident_created_v2, Unset):
             public_incident_incident_created_v2 = UNSET
@@ -675,21 +631,15 @@ class WebhooksAllResponseBody:
         _public_incident_incident_status_updated_v2 = d.pop(
             "public_incident.incident_status_updated_v2", UNSET
         )
-        public_incident_incident_status_updated_v2: Union[
-            Unset, IncidentWithStatusChangeV2
-        ]
+        public_incident_incident_status_updated_v2: Union[Unset, IncidentWithStatusChangeV2]
         if isinstance(_public_incident_incident_status_updated_v2, Unset):
             public_incident_incident_status_updated_v2 = UNSET
         else:
-            public_incident_incident_status_updated_v2 = (
-                IncidentWithStatusChangeV2.from_dict(
-                    _public_incident_incident_status_updated_v2
-                )
+            public_incident_incident_status_updated_v2 = IncidentWithStatusChangeV2.from_dict(
+                _public_incident_incident_status_updated_v2
             )
 
-        _public_incident_incident_updated_v2 = d.pop(
-            "public_incident.incident_updated_v2", UNSET
-        )
+        _public_incident_incident_updated_v2 = d.pop("public_incident.incident_updated_v2", UNSET)
         public_incident_incident_updated_v2: Union[Unset, WebhookIncidentV2]
         if isinstance(_public_incident_incident_updated_v2, Unset):
             public_incident_incident_updated_v2 = UNSET
