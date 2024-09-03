@@ -1,3 +1,10 @@
+## 0.52.2 (2024-09-03)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.5.33 to 9.5.34
+- **deps-dev**: bump mkdocstrings-python from 1.10.8 to 1.10.9
+
 ## 0.52.1 (2024-09-03)
 
 ### Fix
