@@ -24,7 +24,7 @@ jobs:
             ~/.cache/pre-commit
           key: ${{ runner.os }}-${{ env.PYTHON_VERSION_FOR_BUMPING }}-${{ hashFiles('**/.pre-commit-config.yaml') }}
       - uses: browniebroke/pre-commit-autoupdate-action@main
-      - uses: peter-evans/create-pull-request@v6
+      - uses: peter-evans/create-pull-request@v7
         if: always()
         with:
           token: ${{ secrets.PAT_TOKEN }}
