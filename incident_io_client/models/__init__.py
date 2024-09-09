@@ -735,6 +735,7 @@ from .schedule_holidays_public_config_v2 import ScheduleHolidaysPublicConfigV2
 from .schedule_layer_create_payload_v2 import ScheduleLayerCreatePayloadV2
 from .schedule_layer_update_payload_v2 import ScheduleLayerUpdatePayloadV2
 from .schedule_layer_v2 import ScheduleLayerV2
+from .schedule_override_v2 import ScheduleOverrideV2
 from .schedule_rotation_create_payload_v2 import ScheduleRotationCreatePayloadV2
 from .schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
 from .schedule_rotation_handover_v2_interval_type import (
@@ -762,6 +763,12 @@ from .schedule_update_payload_v2 import ScheduleUpdatePayloadV2
 from .schedule_update_payload_v2_annotations import ScheduleUpdatePayloadV2Annotations
 from .schedule_v2 import ScheduleV2
 from .schedule_v2_annotations import ScheduleV2Annotations
+from .schedules_v2_create_override_request_body import (
+    SchedulesV2CreateOverrideRequestBody,
+)
+from .schedules_v2_create_override_response_body import (
+    SchedulesV2CreateOverrideResponseBody,
+)
 from .schedules_v2_create_request_body import SchedulesV2CreateRequestBody
 from .schedules_v2_create_response_body import SchedulesV2CreateResponseBody
 from .schedules_v2_list_response_body import SchedulesV2ListResponseBody
@@ -1352,6 +1359,7 @@ __all__ = (
     "ScheduleLayerCreatePayloadV2",
     "ScheduleLayerUpdatePayloadV2",
     "ScheduleLayerV2",
+    "ScheduleOverrideV2",
     "ScheduleRotationCreatePayloadV2",
     "ScheduleRotationHandoverV2",
     "ScheduleRotationHandoverV2IntervalType",
@@ -1363,6 +1371,8 @@ __all__ = (
     "ScheduleRotationWorkingIntervalUpdatePayloadV2Weekday",
     "ScheduleRotationWorkingIntervalV2",
     "ScheduleRotationWorkingIntervalV2Weekday",
+    "SchedulesV2CreateOverrideRequestBody",
+    "SchedulesV2CreateOverrideResponseBody",
     "SchedulesV2CreateRequestBody",
     "SchedulesV2CreateResponseBody",
     "SchedulesV2ListResponseBody",

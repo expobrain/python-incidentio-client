@@ -4,6 +4,7 @@ from enum import Enum
 class ConditionSubjectIcon(str, Enum):
     ACTION = "action"
     ALERT = "alert"
+    ANNOUNCEMENT = "announcement"
     BOLT = "bolt"
     BOOK = "book"
     BOX = "box"
@@ -36,6 +37,7 @@ class ConditionSubjectIcon(str, Enum):
     INCIDENT = "incident"
     INCIDENT_TYPE = "incident_type"
     KEY = "key"
+    LOCK = "lock"
     MERGE = "merge"
     MESSAGE = "message"
     MONEY = "money"
