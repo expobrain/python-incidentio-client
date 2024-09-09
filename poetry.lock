@@ -793,13 +793,13 @@ files = [
 
 [[package]]
 name = "openapi-python-client"
-version = "0.21.4"
+version = "0.21.5"
 description = "Generate modern Python clients from OpenAPI"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "openapi_python_client-0.21.4-py3-none-any.whl", hash = "sha256:3de5de93639462ccc56d62b367db5088763864fca833b0ca3b1055c632cdd195"},
-    {file = "openapi_python_client-0.21.4.tar.gz", hash = "sha256:5c21ed6e36f2b9aa83bce0d5c3ea7bc0d1744cefa0642bd40e3646bde2a6a952"},
+    {file = "openapi_python_client-0.21.5-py3-none-any.whl", hash = "sha256:4dc5c2b1372da10258856b442fd533c25a61480862aeb10f9168301c2541dffe"},
+    {file = "openapi_python_client-0.21.5.tar.gz", hash = "sha256:bf74c2a4bae69ad6d7643c834aafca6b9f691d2446695a79e410cf1925adc63d"},
 ]
 
 [package.dependencies]
