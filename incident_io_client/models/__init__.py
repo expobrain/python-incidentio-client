@@ -24,7 +24,7 @@ from .alert_result import AlertResult
 from .alert_result_deduplication_key import AlertResultDeduplicationKey
 from .alert_result_message import AlertResultMessage
 from .alert_result_status import AlertResultStatus
-from .alert_route_alert_source import AlertRouteAlertSource
+from .alert_route_alert_source_payload_v2 import AlertRouteAlertSourcePayloadV2
 from .alert_route_escalation_binding_payload_v2 import (
     AlertRouteEscalationBindingPayloadV2,
 )
@@ -353,7 +353,6 @@ from .catalog_entry_engine_param_binding_v2 import CatalogEntryEngineParamBindin
 from .catalog_entry_engine_param_binding_value_v2 import (
     CatalogEntryEngineParamBindingValueV2,
 )
-from .catalog_entry_reference import CatalogEntryReference
 from .catalog_entry_reference_v2 import CatalogEntryReferenceV2
 from .catalog_entry_v2 import CatalogEntryV2
 from .catalog_entry_v2_attribute_values import CatalogEntryV2AttributeValues
@@ -418,16 +417,10 @@ from .catalog_v2_update_type_schema_request_body import (
 from .catalog_v2_update_type_schema_response_body import (
     CatalogV2UpdateTypeSchemaResponseBody,
 )
-from .condition import Condition
-from .condition_group import ConditionGroup
 from .condition_group_payload_v2 import ConditionGroupPayloadV2
 from .condition_group_v2 import ConditionGroupV2
-from .condition_operation import ConditionOperation
 from .condition_operation_v2 import ConditionOperationV2
 from .condition_payload_v2 import ConditionPayloadV2
-from .condition_subject import ConditionSubject
-from .condition_subject_color import ConditionSubjectColor
-from .condition_subject_icon import ConditionSubjectIcon
 from .condition_subject_v2 import ConditionSubjectV2
 from .condition_v2 import ConditionV2
 from .create_workflow_payload import CreateWorkflowPayload
@@ -511,11 +504,8 @@ from .embedded_catalog_entry_v1 import EmbeddedCatalogEntryV1
 from .embedded_catalog_entry_v2 import EmbeddedCatalogEntryV2
 from .embedded_incident_role_v2 import EmbeddedIncidentRoleV2
 from .embedded_incident_role_v2_role_type import EmbeddedIncidentRoleV2RoleType
-from .engine_param import EngineParam
-from .engine_param_binding import EngineParamBinding
 from .engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 from .engine_param_binding_v2 import EngineParamBindingV2
-from .engine_param_binding_value import EngineParamBindingValue
 from .engine_param_binding_value_payload_v2 import EngineParamBindingValuePayloadV2
 from .engine_param_binding_value_v2 import EngineParamBindingValueV2
 from .engine_reference_v2 import EngineReferenceV2
@@ -735,6 +725,7 @@ from .schedule_holidays_public_config_v2 import ScheduleHolidaysPublicConfigV2
 from .schedule_layer_create_payload_v2 import ScheduleLayerCreatePayloadV2
 from .schedule_layer_update_payload_v2 import ScheduleLayerUpdatePayloadV2
 from .schedule_layer_v2 import ScheduleLayerV2
+from .schedule_override_v2 import ScheduleOverrideV2
 from .schedule_rotation_create_payload_v2 import ScheduleRotationCreatePayloadV2
 from .schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
 from .schedule_rotation_handover_v2_interval_type import (
@@ -762,6 +753,12 @@ from .schedule_update_payload_v2 import ScheduleUpdatePayloadV2
 from .schedule_update_payload_v2_annotations import ScheduleUpdatePayloadV2Annotations
 from .schedule_v2 import ScheduleV2
 from .schedule_v2_annotations import ScheduleV2Annotations
+from .schedules_v2_create_override_request_body import (
+    SchedulesV2CreateOverrideRequestBody,
+)
+from .schedules_v2_create_override_response_body import (
+    SchedulesV2CreateOverrideResponseBody,
+)
 from .schedules_v2_create_request_body import SchedulesV2CreateRequestBody
 from .schedules_v2_create_response_body import SchedulesV2CreateResponseBody
 from .schedules_v2_list_response_body import SchedulesV2ListResponseBody
@@ -949,7 +946,7 @@ __all__ = (
     "AlertResultDeduplicationKey",
     "AlertResultMessage",
     "AlertResultStatus",
-    "AlertRouteAlertSource",
+    "AlertRouteAlertSourcePayloadV2",
     "AlertRouteEscalationBindingPayloadV2",
     "AlertRouteEscalationBindingV2",
     "AlertRouteIncidentTemplatePayloadV2",
@@ -1072,7 +1069,6 @@ __all__ = (
     "AuditLogUserSCIMGroupMappingChangedMetadataV2",
     "CatalogEntryEngineParamBindingV2",
     "CatalogEntryEngineParamBindingValueV2",
-    "CatalogEntryReference",
     "CatalogEntryReferenceV2",
     "CatalogEntryV2",
     "CatalogEntryV2AttributeValues",
@@ -1115,16 +1111,10 @@ __all__ = (
     "CatalogV2UpdateTypeResponseBody",
     "CatalogV2UpdateTypeSchemaRequestBody",
     "CatalogV2UpdateTypeSchemaResponseBody",
-    "Condition",
-    "ConditionGroup",
     "ConditionGroupPayloadV2",
     "ConditionGroupV2",
-    "ConditionOperation",
     "ConditionOperationV2",
     "ConditionPayloadV2",
-    "ConditionSubject",
-    "ConditionSubjectColor",
-    "ConditionSubjectIcon",
     "ConditionSubjectV2",
     "ConditionV2",
     "CreateWorkflowPayload",
@@ -1180,11 +1170,8 @@ __all__ = (
     "EmbeddedCatalogEntryV2",
     "EmbeddedIncidentRoleV2",
     "EmbeddedIncidentRoleV2RoleType",
-    "EngineParam",
-    "EngineParamBinding",
     "EngineParamBindingPayloadV2",
     "EngineParamBindingV2",
-    "EngineParamBindingValue",
     "EngineParamBindingValuePayloadV2",
     "EngineParamBindingValueV2",
     "EngineReferenceV2",
@@ -1352,6 +1339,7 @@ __all__ = (
     "ScheduleLayerCreatePayloadV2",
     "ScheduleLayerUpdatePayloadV2",
     "ScheduleLayerV2",
+    "ScheduleOverrideV2",
     "ScheduleRotationCreatePayloadV2",
     "ScheduleRotationHandoverV2",
     "ScheduleRotationHandoverV2IntervalType",
@@ -1363,6 +1351,8 @@ __all__ = (
     "ScheduleRotationWorkingIntervalUpdatePayloadV2Weekday",
     "ScheduleRotationWorkingIntervalV2",
     "ScheduleRotationWorkingIntervalV2Weekday",
+    "SchedulesV2CreateOverrideRequestBody",
+    "SchedulesV2CreateOverrideResponseBody",
     "SchedulesV2CreateRequestBody",
     "SchedulesV2CreateResponseBody",
     "SchedulesV2ListResponseBody",
