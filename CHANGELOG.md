@@ -1,3 +1,9 @@
+## 0.52.5 (2024-09-26)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.5.34 to 9.5.36
+
 ## 0.52.4 (2024-09-10)
 
 ### Fix
