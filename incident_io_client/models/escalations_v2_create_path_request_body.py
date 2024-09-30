@@ -23,6 +23,9 @@ class EscalationsV2CreatePathRequestBody:
             'incident.severity'}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled': False,
             'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type':
             'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
+            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'working_hours': [{'id': 'abc123', 'name':
             'abc123', 'timezone': 'abc123', 'weekday_intervals': [{'end_time': '17:00', 'start_time': '09:00', 'weekday':
@@ -36,6 +39,9 @@ class EscalationsV2CreatePathRequestBody:
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': 'incident.severity'}], 'else_path': [{}],
             'then_path': [{}]}, 'level': {'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120}, 'targets':
             [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
+            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
             'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}].
@@ -95,7 +101,9 @@ class EscalationsV2CreatePathRequestBody:
         working_hours = []
         _working_hours = d.pop("working_hours", UNSET)
         for working_hours_item_data in _working_hours or []:
-            working_hours_item = WeekdayIntervalConfigV2.from_dict(working_hours_item_data)
+            working_hours_item = WeekdayIntervalConfigV2.from_dict(
+                working_hours_item_data
+            )
 
             working_hours.append(working_hours_item)
 

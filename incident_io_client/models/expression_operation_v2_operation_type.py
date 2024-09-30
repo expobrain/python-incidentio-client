@@ -11,6 +11,7 @@ class ExpressionOperationV2OperationType(str, Enum):
     NAVIGATE = "navigate"
     PARSE = "parse"
     RANDOM = "random"
+    SUM = "sum"
 
     def __str__(self) -> str:
         return str(self.value)
