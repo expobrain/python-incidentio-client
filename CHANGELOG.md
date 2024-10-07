@@ -1,3 +1,10 @@
+## 0.52.8 (2024-10-07)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.5.36 to 9.5.39
+- **deps-dev**: bump commitizen from 3.29.0 to 3.29.1
+
 ## 0.52.7 (2024-10-01)
 
 ### Fix
