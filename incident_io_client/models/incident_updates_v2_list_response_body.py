@@ -79,7 +79,9 @@ class IncidentUpdatesV2ListResponseBody:
         incident_updates = []
         _incident_updates = d.pop("incident_updates")
         for incident_updates_item_data in _incident_updates:
-            incident_updates_item = IncidentUpdateV2.from_dict(incident_updates_item_data)
+            incident_updates_item = IncidentUpdateV2.from_dict(
+                incident_updates_item_data
+            )
 
             incident_updates.append(incident_updates_item)
 
