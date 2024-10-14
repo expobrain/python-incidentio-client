@@ -6,7 +6,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.alert_route_alert_source import AlertRouteAlertSource
+    from ..models.alert_route_alert_source_payload_v2 import (
+        AlertRouteAlertSourcePayloadV2,
+    )
     from ..models.alert_route_escalation_binding_payload_v2 import (
         AlertRouteEscalationBindingPayloadV2,
     )
@@ -26,97 +28,49 @@ class AlertRoutesV2CreateRequestBody:
     """
     Example:
         {'alert_sources': [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions':
-            [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
-            [{'array_value': [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
-            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at':
-            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
-            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations
-            like auto-closing incidents.', 'image_url': 'https://avatars.slack-
-            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
-            False, 'value': 'abc123'}}], 'params': [{'array': True, 'default_value': {'array_value': [{'catalog_entry':
-            {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'catalog_entry_name': 'Primary escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext':
-            'Collection of standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
-            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
-            False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
-            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
-            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What slack channel should we
-            send the message to?', 'infer_reference': True, 'label': 'To date', 'name': 'severity', 'optional': True,
-            'type': 'IncidentSeverity'}], 'subject': {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity',
-            'reference': 'incident.severity'}}]}]}], 'auto_decline_enabled': False, 'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
-            'incident.severity'}]}], 'defer_time_seconds': 1, 'enabled': False, 'escalation_bindings': [{'binding':
+            'incident.severity'}]}]}], 'auto_decline_enabled': False, 'condition_groups': [{'conditions': [{'operation':
+            'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}],
+            'defer_time_seconds': 1, 'enabled': False, 'escalation_bindings': [{'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'expressions': [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label':
+            'Team Slack channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
+            'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
+            'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
+            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse': {'returns': {'array':
+            True, 'type': 'IncidentStatus'}, 'source': 'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123',
+            'root_reference': 'incident.status'}], 'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}],
+            'grouping_window_seconds': 1, 'incident_condition_groups': [{'conditions': [{'operation': 'one_of',
+            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}],
+            'incident_enabled': False, 'name': 'Production incidents', 'template': {'custom_field_priorities': {'abc123':
+            'abc123'}, 'custom_fields': {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'incident_mode':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}], 'expressions': [{'else_branch': {'result': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}, 'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
-            [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123',
-            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}],
-            'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions':
-            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
-            'incident.severity'}]}]}, 'navigate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'},
-            'operation_type': 'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
-            'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference': 'incident.status'}],
-            'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}], 'grouping_window_seconds': 1,
-            'incident_condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value':
+            'reference': 'incident.severity'}}, 'incident_type': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'name':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'priority_severity': 'severity-first-wins', 'severity': {'array_value':
             [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'incident_enabled': False, 'name': 'Production
-            incidents', 'template': {'custom_field_priorities': {'abc123': 'abc123'}, 'custom_fields':
-            {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'incident_mode': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'incident_type': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal':
-            'SEV123', 'reference': 'incident.severity'}}, 'name': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
-            'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'summary': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'workspace': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal':
-            'SEV123', 'reference': 'incident.severity'}}}}
+            'incident.severity'}}, 'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}}
 
     Attributes:
-        alert_sources (Union[Unset, List['AlertRouteAlertSource']]): Which alert sources should this alert route match?
-            Example: [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation':
-            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
-            [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
-            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at':
-            '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary
-            escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations
-            like auto-closing incidents.', 'image_url': 'https://avatars.slack-
-            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
-            False, 'value': 'abc123'}}], 'params': [{'array': True, 'default_value': {'array_value': [{'catalog_entry':
-            {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'catalog_entry_name': 'Primary escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext':
-            'Collection of standalone automations like auto-closing incidents.', 'image_url': 'https://avatars.slack-
-            edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg', 'is_image_slack_icon': False, 'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity', 'sort_key': '000020', 'unavailable':
-            False, 'value': 'abc123'}], 'value': {'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z',
-            'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'Collection of standalone automations like auto-closing incidents.',
-            'image_url': 'https://avatars.slack-edge.com/2021-08-09/2372763167857_6f65d94928b0a0ac590b_192.jpg',
-            'is_image_slack_icon': False, 'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity',
-            'sort_key': '000020', 'unavailable': False, 'value': 'abc123'}}, 'description': 'What slack channel should we
-            send the message to?', 'infer_reference': True, 'label': 'To date', 'name': 'severity', 'optional': True,
-            'type': 'IncidentSeverity'}], 'subject': {'color': 'yellow', 'icon': 'action', 'label': 'Incident Severity',
-            'reference': 'incident.severity'}}]}]}].
+        alert_sources (Union[Unset, List['AlertRouteAlertSourcePayloadV2']]): Which alert sources should this alert
+            route match? Example: [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
+            'incident.severity'}]}]}].
         auto_decline_enabled (Union[Unset, bool]): Should triage incidents be declined when alerts are resolved?
         condition_groups (Union[Unset, List['ConditionGroupPayloadV2']]): What condition groups must be true for this
             alert route to fire? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value':
@@ -165,7 +119,7 @@ class AlertRoutesV2CreateRequestBody:
             'incident.severity'}}}.
     """
 
-    alert_sources: Union[Unset, List["AlertRouteAlertSource"]] = UNSET
+    alert_sources: Union[Unset, List["AlertRouteAlertSourcePayloadV2"]] = UNSET
     auto_decline_enabled: Union[Unset, bool] = UNSET
     condition_groups: Union[Unset, List["ConditionGroupPayloadV2"]] = UNSET
     defer_time_seconds: Union[Unset, int] = UNSET
@@ -273,7 +227,9 @@ class AlertRoutesV2CreateRequestBody:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.alert_route_alert_source import AlertRouteAlertSource
+        from ..models.alert_route_alert_source_payload_v2 import (
+            AlertRouteAlertSourcePayloadV2,
+        )
         from ..models.alert_route_escalation_binding_payload_v2 import (
             AlertRouteEscalationBindingPayloadV2,
         )
@@ -288,7 +244,7 @@ class AlertRoutesV2CreateRequestBody:
         alert_sources = []
         _alert_sources = d.pop("alert_sources", UNSET)
         for alert_sources_item_data in _alert_sources or []:
-            alert_sources_item = AlertRouteAlertSource.from_dict(alert_sources_item_data)
+            alert_sources_item = AlertRouteAlertSourcePayloadV2.from_dict(alert_sources_item_data)
 
             alert_sources.append(alert_sources_item)
 

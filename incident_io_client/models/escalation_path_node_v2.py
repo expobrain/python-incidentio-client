@@ -9,6 +9,9 @@ from ..types import UNSET, Unset
 if TYPE_CHECKING:
     from ..models.escalation_path_node_if_else_v2 import EscalationPathNodeIfElseV2
     from ..models.escalation_path_node_level_v2 import EscalationPathNodeLevelV2
+    from ..models.escalation_path_node_notify_channel_v2 import (
+        EscalationPathNodeNotifyChannelV2,
+    )
     from ..models.escalation_path_node_repeat_v2 import EscalationPathNodeRepeatV2
 
 
@@ -26,6 +29,9 @@ class EscalationPathNodeV2:
             'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
             False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
             'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
+            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}
 
@@ -44,20 +50,29 @@ class EscalationPathNodeV2:
             {'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones',
             'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
             'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
-            'repeat': {'repeat_times': 3, 'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'then_path':
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones',
-            'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'notify_channel': {'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user',
+            'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
+            'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'then_path': [{'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
             'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
             False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
             'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
+            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}]}.
         level (Union[Unset, EscalationPathNodeLevelV2]):  Example: {'round_robin_config': {'enabled': False,
             'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type':
             'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
+        notify_channel (Union[Unset, EscalationPathNodeNotifyChannelV2]):  Example: {'targets': [{'id': 'lawrencejones',
+            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
         repeat (Union[Unset, EscalationPathNodeRepeatV2]):  Example: {'repeat_times': 3, 'to_node':
             '01FCNDV6P870EA6S7TK1DSYDG0'}.
     """
@@ -66,6 +81,7 @@ class EscalationPathNodeV2:
     type: EscalationPathNodeV2Type
     if_else: Union[Unset, "EscalationPathNodeIfElseV2"] = UNSET
     level: Union[Unset, "EscalationPathNodeLevelV2"] = UNSET
+    notify_channel: Union[Unset, "EscalationPathNodeNotifyChannelV2"] = UNSET
     repeat: Union[Unset, "EscalationPathNodeRepeatV2"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -81,6 +97,10 @@ class EscalationPathNodeV2:
         level: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.level, Unset):
             level = self.level.to_dict()
+
+        notify_channel: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.notify_channel, Unset):
+            notify_channel = self.notify_channel.to_dict()
 
         repeat: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.repeat, Unset):
@@ -98,6 +118,8 @@ class EscalationPathNodeV2:
             field_dict["if_else"] = if_else
         if level is not UNSET:
             field_dict["level"] = level
+        if notify_channel is not UNSET:
+            field_dict["notify_channel"] = notify_channel
         if repeat is not UNSET:
             field_dict["repeat"] = repeat
 
@@ -107,6 +129,9 @@ class EscalationPathNodeV2:
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.escalation_path_node_if_else_v2 import EscalationPathNodeIfElseV2
         from ..models.escalation_path_node_level_v2 import EscalationPathNodeLevelV2
+        from ..models.escalation_path_node_notify_channel_v2 import (
+            EscalationPathNodeNotifyChannelV2,
+        )
         from ..models.escalation_path_node_repeat_v2 import EscalationPathNodeRepeatV2
 
         d = src_dict.copy()
@@ -128,6 +153,13 @@ class EscalationPathNodeV2:
         else:
             level = EscalationPathNodeLevelV2.from_dict(_level)
 
+        _notify_channel = d.pop("notify_channel", UNSET)
+        notify_channel: Union[Unset, EscalationPathNodeNotifyChannelV2]
+        if isinstance(_notify_channel, Unset):
+            notify_channel = UNSET
+        else:
+            notify_channel = EscalationPathNodeNotifyChannelV2.from_dict(_notify_channel)
+
         _repeat = d.pop("repeat", UNSET)
         repeat: Union[Unset, EscalationPathNodeRepeatV2]
         if isinstance(_repeat, Unset):
@@ -140,6 +172,7 @@ class EscalationPathNodeV2:
             type=type,
             if_else=if_else,
             level=level,
+            notify_channel=notify_channel,
             repeat=repeat,
         )
 

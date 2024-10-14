@@ -13,6 +13,7 @@ class IdentityV1RolesItem(str, Enum):
     PRIVATE_WORKFLOWS_EDITOR = "private_workflows_editor"
     SCHEDULES_EDITOR = "schedules_editor"
     SCHEDULES_READER = "schedules_reader"
+    SCHEDULE_OVERRIDES_EDITOR = "schedule_overrides_editor"
     VIEWER = "viewer"
     WORKFLOWS_EDITOR = "workflows_editor"
 
