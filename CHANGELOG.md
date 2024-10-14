@@ -1,3 +1,9 @@
+## 0.52.9 (2024-10-14)
+
+### Fix
+
+- **deps-dev**: bump types-python-dateutil
+
 ## 0.52.8 (2024-10-07)
 
 ### Fix
