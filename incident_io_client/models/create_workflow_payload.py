@@ -202,9 +202,7 @@ class CreateWorkflowPayload:
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:
-            condition_groups_item = ConditionGroupPayloadV2.from_dict(
-                condition_groups_item_data
-            )
+            condition_groups_item = ConditionGroupPayloadV2.from_dict(condition_groups_item_data)
 
             condition_groups.append(condition_groups_item)
 
@@ -232,9 +230,7 @@ class CreateWorkflowPayload:
 
             runs_on_incident_modes.append(runs_on_incident_modes_item)
 
-        runs_on_incidents = CreateWorkflowPayloadRunsOnIncidents(
-            d.pop("runs_on_incidents")
-        )
+        runs_on_incidents = CreateWorkflowPayloadRunsOnIncidents(d.pop("runs_on_incidents"))
 
         steps = []
         _steps = d.pop("steps")

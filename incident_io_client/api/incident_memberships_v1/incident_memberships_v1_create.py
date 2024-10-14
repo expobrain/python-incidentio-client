@@ -38,9 +38,7 @@ def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[IncidentMembershipsV1CreateResponseBody]:
     if response.status_code == HTTPStatus.CREATED:
-        response_201 = IncidentMembershipsV1CreateResponseBody.from_dict(
-            response.json()
-        )
+        response_201 = IncidentMembershipsV1CreateResponseBody.from_dict(response.json())
 
         return response_201
     if client.raise_on_unexpected_status:
