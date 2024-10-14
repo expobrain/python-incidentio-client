@@ -43,20 +43,22 @@ class WebhookIncidentV2:
             'value_text': 'This is my text field, I hope you like it'}]}], 'duration_metrics': [{'duration_metric': {'id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'value_seconds': 1}], 'external_issue_reference':
             {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'asana'}, 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee':
-            {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
-            'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
-            'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take
-            point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required':
-            False, 'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}],
-            'incident_status': {'category': 'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact
-            has been **fully mitigated**, and we're ready to learn from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'name': 'Closed', 'rank': 4, 'updated_at': '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values':
-            [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value':
-            {'value': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
+            write-up', 'provider': 'asana'}, 'has_debrief': False, 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
+            'incident_role_assignments': [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
+            responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
+            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status': {'category': 'triage', 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
+            from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values': [{'incident_timestamp': {'id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact started', 'rank': 1}, 'value': {'value':
+            '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'name': 'Our database is sad', 'permalink':
+            'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'most_recent_update_message': "We're working
+            on a fix, hoping to ship in the next 30 minutes", 'name': 'Our database is sad', 'permalink':
             'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
             'reference': 'INC-123', 'related_incidents': ['INC-237'], 'severity': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
@@ -112,6 +114,7 @@ class WebhookIncidentV2:
         external_issue_reference (Union[Unset, ExternalIssueReferenceV2]):  Example: {'issue_name': 'INC-123',
             'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider':
             'asana'}.
+        has_debrief (Union[Unset, bool]): If this incident has a debrief attached
         incident_timestamp_values (Union[Unset, List['IncidentTimestampWithValueV2']]): Incident lifecycle events and
             when they occurred Example: [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact
             started', 'rank': 1}, 'value': {'value': '2021-08-17T13:28:57.801578Z'}}].
@@ -119,6 +122,8 @@ class WebhookIncidentV2:
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        most_recent_update_message (Union[Unset, str]): Message that explains the context behind the update Example:
+            We're working on a fix, hoping to ship in the next 30 minutes.
         permalink (Union[Unset, str]): A permanent link to the homepage for this incident Example:
             https://app.incident.io/incidents/123.
         postmortem_document_url (Union[Unset, str]): Description of the incident Example:
@@ -135,7 +140,7 @@ class WebhookIncidentV2:
         workload_minutes_sleeping (Union[Unset, float]): Amount of time spent on the incident in sleeping hours
         workload_minutes_total (Union[Unset, float]): Amount of time spent on the incident in total Example: 60.7.
         workload_minutes_working (Union[Unset, float]): Amount of time spent on the incident in working hours Example:
-            20.
+            20.0.
     """
 
     created_at: datetime.datetime
@@ -154,8 +159,12 @@ class WebhookIncidentV2:
     call_url: Union[Unset, str] = UNSET
     duration_metrics: Union[Unset, List["IncidentDurationMetricWithValueV2"]] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2"] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2"]] = UNSET
+    has_debrief: Union[Unset, bool] = UNSET
+    incident_timestamp_values: Union[
+        Unset, List["IncidentTimestampWithValueV2"]
+    ] = UNSET
     incident_type: Union[Unset, "IncidentTypeV2"] = UNSET
+    most_recent_update_message: Union[Unset, str] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
     related_incidents: Union[Unset, List[str]] = UNSET
@@ -182,7 +191,9 @@ class WebhookIncidentV2:
 
         incident_role_assignments = []
         for incident_role_assignments_item_data in self.incident_role_assignments:
-            incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
+            incident_role_assignments_item = (
+                incident_role_assignments_item_data.to_dict()
+            )
             incident_role_assignments.append(incident_role_assignments_item)
 
         incident_status = self.incident_status.to_dict()
@@ -214,16 +225,22 @@ class WebhookIncidentV2:
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()
 
+        has_debrief = self.has_debrief
+
         incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
-                incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
+                incident_timestamp_values_item = (
+                    incident_timestamp_values_item_data.to_dict()
+                )
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
         incident_type: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
+
+        most_recent_update_message = self.most_recent_update_message
 
         permalink = self.permalink
 
@@ -274,10 +291,14 @@ class WebhookIncidentV2:
             field_dict["duration_metrics"] = duration_metrics
         if external_issue_reference is not UNSET:
             field_dict["external_issue_reference"] = external_issue_reference
+        if has_debrief is not UNSET:
+            field_dict["has_debrief"] = has_debrief
         if incident_timestamp_values is not UNSET:
             field_dict["incident_timestamp_values"] = incident_timestamp_values
         if incident_type is not UNSET:
             field_dict["incident_type"] = incident_type
+        if most_recent_update_message is not UNSET:
+            field_dict["most_recent_update_message"] = most_recent_update_message
         if permalink is not UNSET:
             field_dict["permalink"] = permalink
         if postmortem_document_url is not UNSET:
@@ -378,6 +399,8 @@ class WebhookIncidentV2:
                 _external_issue_reference
             )
 
+        has_debrief = d.pop("has_debrief", UNSET)
+
         incident_timestamp_values = []
         _incident_timestamp_values = d.pop("incident_timestamp_values", UNSET)
         for incident_timestamp_values_item_data in _incident_timestamp_values or []:
@@ -393,6 +416,8 @@ class WebhookIncidentV2:
             incident_type = UNSET
         else:
             incident_type = IncidentTypeV2.from_dict(_incident_type)
+
+        most_recent_update_message = d.pop("most_recent_update_message", UNSET)
 
         permalink = d.pop("permalink", UNSET)
 
@@ -436,8 +461,10 @@ class WebhookIncidentV2:
             call_url=call_url,
             duration_metrics=duration_metrics,
             external_issue_reference=external_issue_reference,
+            has_debrief=has_debrief,
             incident_timestamp_values=incident_timestamp_values,
             incident_type=incident_type,
+            most_recent_update_message=most_recent_update_message,
             permalink=permalink,
             postmortem_document_url=postmortem_document_url,
             related_incidents=related_incidents,

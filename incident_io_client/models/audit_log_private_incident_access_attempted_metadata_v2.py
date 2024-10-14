@@ -22,7 +22,9 @@ class AuditLogPrivateIncidentAccessAttemptedMetadataV2:
             able to access the private incident Example: granted.
     """
 
-    outcome: Union[Unset, AuditLogPrivateIncidentAccessAttemptedMetadataV2Outcome] = UNSET
+    outcome: Union[
+        Unset, AuditLogPrivateIncidentAccessAttemptedMetadataV2Outcome
+    ] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
