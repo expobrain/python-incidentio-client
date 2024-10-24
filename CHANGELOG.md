@@ -1,3 +1,9 @@
+## 0.53.1 (2024-10-24)
+
+### Fix
+
+- **deps-dev**: bump mypy from 1.11.2 to 1.12.1 in /example
+
 ## 0.53.0 (2024-10-14)
 
 ### Feat
