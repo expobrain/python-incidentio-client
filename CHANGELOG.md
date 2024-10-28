@@ -1,3 +1,13 @@
+## 0.53.2 (2024-10-28)
+
+### Fix
+
+- **deps-dev**: bump commitizen from 3.29.1 to 3.30.0
+- **deps-dev**: bump types-setuptools
+- **deps-dev**: bump mkdocs-material from 9.5.40 to 9.5.42
+- **deps-dev**: bump openapi-python-client from 0.21.5 to 0.21.6
+- **deps-dev**: bump mypy from 1.11.2 to 1.12.1
+
 ## 0.53.1 (2024-10-24)
 
 ### Fix
