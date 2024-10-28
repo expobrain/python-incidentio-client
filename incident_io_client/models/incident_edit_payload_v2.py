@@ -59,9 +59,13 @@ class IncidentEditPayloadV2:
 
     call_url: Union[Unset, str] = UNSET
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV2"]] = UNSET
+    incident_role_assignments: Union[
+        Unset, List["IncidentRoleAssignmentPayloadV2"]
+    ] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampValuePayloadV2"]] = UNSET
+    incident_timestamp_values: Union[
+        Unset, List["IncidentTimestampValuePayloadV2"]
+    ] = UNSET
     name: Union[Unset, str] = UNSET
     severity_id: Union[Unset, str] = UNSET
     slack_channel_name_override: Union[Unset, str] = UNSET
@@ -82,7 +86,9 @@ class IncidentEditPayloadV2:
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
-                incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
+                incident_role_assignments_item = (
+                    incident_role_assignments_item_data.to_dict()
+                )
                 incident_role_assignments.append(incident_role_assignments_item)
 
         incident_status_id = self.incident_status_id
@@ -91,7 +97,9 @@ class IncidentEditPayloadV2:
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
-                incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
+                incident_timestamp_values_item = (
+                    incident_timestamp_values_item_data.to_dict()
+                )
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
         name = self.name

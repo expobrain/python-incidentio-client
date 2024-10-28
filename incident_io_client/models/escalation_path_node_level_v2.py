@@ -65,7 +65,9 @@ class EscalationPathNodeLevelV2:
 
         time_to_ack_seconds = self.time_to_ack_seconds
 
-        time_to_ack_weekday_interval_config_id = self.time_to_ack_weekday_interval_config_id
+        time_to_ack_weekday_interval_config_id = (
+            self.time_to_ack_weekday_interval_config_id
+        )
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -77,13 +79,15 @@ class EscalationPathNodeLevelV2:
         if round_robin_config is not UNSET:
             field_dict["round_robin_config"] = round_robin_config
         if time_to_ack_interval_condition is not UNSET:
-            field_dict["time_to_ack_interval_condition"] = time_to_ack_interval_condition
+            field_dict[
+                "time_to_ack_interval_condition"
+            ] = time_to_ack_interval_condition
         if time_to_ack_seconds is not UNSET:
             field_dict["time_to_ack_seconds"] = time_to_ack_seconds
         if time_to_ack_weekday_interval_config_id is not UNSET:
-            field_dict["time_to_ack_weekday_interval_config_id"] = (
-                time_to_ack_weekday_interval_config_id
-            )
+            field_dict[
+                "time_to_ack_weekday_interval_config_id"
+            ] = time_to_ack_weekday_interval_config_id
 
         return field_dict
 
@@ -107,7 +111,9 @@ class EscalationPathNodeLevelV2:
         if isinstance(_round_robin_config, Unset):
             round_robin_config = UNSET
         else:
-            round_robin_config = EscalationPathRoundRobinConfigV2.from_dict(_round_robin_config)
+            round_robin_config = EscalationPathRoundRobinConfigV2.from_dict(
+                _round_robin_config
+            )
 
         _time_to_ack_interval_condition = d.pop("time_to_ack_interval_condition", UNSET)
         time_to_ack_interval_condition: Union[
@@ -116,8 +122,10 @@ class EscalationPathNodeLevelV2:
         if isinstance(_time_to_ack_interval_condition, Unset):
             time_to_ack_interval_condition = UNSET
         else:
-            time_to_ack_interval_condition = EscalationPathNodeLevelV2TimeToAckIntervalCondition(
-                _time_to_ack_interval_condition
+            time_to_ack_interval_condition = (
+                EscalationPathNodeLevelV2TimeToAckIntervalCondition(
+                    _time_to_ack_interval_condition
+                )
             )
 
         time_to_ack_seconds = d.pop("time_to_ack_seconds", UNSET)
