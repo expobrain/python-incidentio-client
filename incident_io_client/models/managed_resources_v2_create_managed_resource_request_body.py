@@ -62,8 +62,10 @@ class ManagedResourcesV2CreateManagedResourceRequestBody:
         )
 
         d = src_dict.copy()
-        annotations = ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations.from_dict(
-            d.pop("annotations")
+        annotations = (
+            ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations.from_dict(
+                d.pop("annotations")
+            )
         )
 
         resource_id = d.pop("resource_id")
