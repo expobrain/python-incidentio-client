@@ -1,3 +1,12 @@
+## 0.53.3 (2024-11-06)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.5.42 to 9.5.43
+- **deps-dev**: bump mypy from 1.12.1 to 1.13.0 in /example
+- **deps-dev**: bump types-setuptools
+- **deps-dev**: bump mypy from 1.12.1 to 1.13.0
+
 ## 0.53.2 (2024-10-28)
 
 ### Fix
