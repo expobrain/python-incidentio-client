@@ -11,8 +11,8 @@ from ...models.webhooks_private_incident_membership_revoked_v1_response_body imp
 from ...types import Response
 
 
-def _get_kwargs() -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+def _get_kwargs() -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/x-webhooks/private_incident.membership_revoked_v1",
     }

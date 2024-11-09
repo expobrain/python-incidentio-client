@@ -26,16 +26,16 @@ class CustomFieldsV2ListResponseBody:
             '2021-08-17T13:28:57.801578Z'}].
     """
 
-    custom_fields: List["CustomFieldV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    custom_fields: list["CustomFieldV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_fields = []
         for custom_fields_item_data in self.custom_fields:
             custom_fields_item = custom_fields_item_data.to_dict()
             custom_fields.append(custom_fields_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -46,7 +46,7 @@ class CustomFieldsV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_v2 import CustomFieldV2
 
         d = src_dict.copy()
@@ -65,7 +65,7 @@ class CustomFieldsV2ListResponseBody:
         return custom_fields_v2_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

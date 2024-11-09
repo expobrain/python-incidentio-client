@@ -49,16 +49,16 @@ class ScheduleRotationV2:
     """
 
     handover_start_at: datetime.datetime
-    handovers: List["ScheduleRotationHandoverV2"]
+    handovers: list["ScheduleRotationHandoverV2"]
     id: str
-    layers: List["ScheduleLayerV2"]
+    layers: list["ScheduleLayerV2"]
     name: str
-    users: List["UserV2"]
+    users: list["UserV2"]
     effective_from: Union[Unset, datetime.datetime] = UNSET
-    working_interval: Union[Unset, List["ScheduleRotationWorkingIntervalV2"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    working_interval: Union[Unset, list["ScheduleRotationWorkingIntervalV2"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         handover_start_at = self.handover_start_at.isoformat()
 
         handovers = []
@@ -84,14 +84,14 @@ class ScheduleRotationV2:
         if not isinstance(self.effective_from, Unset):
             effective_from = self.effective_from.isoformat()
 
-        working_interval: Union[Unset, List[Dict[str, Any]]] = UNSET
+        working_interval: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.working_interval, Unset):
             working_interval = []
             for working_interval_item_data in self.working_interval:
                 working_interval_item = working_interval_item_data.to_dict()
                 working_interval.append(working_interval_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -111,7 +111,7 @@ class ScheduleRotationV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.schedule_layer_v2 import ScheduleLayerV2
         from ..models.schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
         from ..models.schedule_rotation_working_interval_v2 import (
@@ -178,7 +178,7 @@ class ScheduleRotationV2:
         return schedule_rotation_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

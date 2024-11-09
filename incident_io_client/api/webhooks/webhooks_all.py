@@ -9,8 +9,8 @@ from ...models.webhooks_all_response_body import WebhooksAllResponseBody
 from ...types import Response
 
 
-def _get_kwargs() -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+def _get_kwargs() -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/x-webhooks/__all__",
     }

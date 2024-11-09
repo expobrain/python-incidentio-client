@@ -61,9 +61,9 @@ class FollowUpV2:
     description: Union[Unset, str] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2"] = UNSET
     priority: Union[Unset, "FollowUpPriorityV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         id = self.id
@@ -76,7 +76,7 @@ class FollowUpV2:
 
         updated_at = self.updated_at.isoformat()
 
-        assignee: Union[Unset, Dict[str, Any]] = UNSET
+        assignee: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.assignee, Unset):
             assignee = self.assignee.to_dict()
 
@@ -86,15 +86,15 @@ class FollowUpV2:
 
         description = self.description
 
-        external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
+        external_issue_reference: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()
 
-        priority: Union[Unset, Dict[str, Any]] = UNSET
+        priority: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.priority, Unset):
             priority = self.priority.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -120,7 +120,7 @@ class FollowUpV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.external_issue_reference_v2 import ExternalIssueReferenceV2
         from ..models.follow_up_priority_v2 import FollowUpPriorityV2
         from ..models.user_v2 import UserV2
@@ -188,7 +188,7 @@ class FollowUpV2:
         return follow_up_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

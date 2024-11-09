@@ -24,11 +24,11 @@ class CatalogV2UpdateTypeSchemaRequestBody:
         version (int):  Example: 1.
     """
 
-    attributes: List["CatalogTypeAttributePayloadV2"]
+    attributes: list["CatalogTypeAttributePayloadV2"]
     version: int
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         attributes = []
         for attributes_item_data in self.attributes:
             attributes_item = attributes_item_data.to_dict()
@@ -36,7 +36,7 @@ class CatalogV2UpdateTypeSchemaRequestBody:
 
         version = self.version
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -48,7 +48,7 @@ class CatalogV2UpdateTypeSchemaRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_type_attribute_payload_v2 import (
             CatalogTypeAttributePayloadV2,
         )
@@ -72,7 +72,7 @@ class CatalogV2UpdateTypeSchemaRequestBody:
         return catalog_v2_update_type_schema_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

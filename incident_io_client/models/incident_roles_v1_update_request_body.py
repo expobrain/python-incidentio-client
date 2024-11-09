@@ -31,9 +31,9 @@ class IncidentRolesV1UpdateRequestBody:
     name: str
     shortform: str
     required: Union[Unset, bool] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         description = self.description
 
         instructions = self.instructions
@@ -44,7 +44,7 @@ class IncidentRolesV1UpdateRequestBody:
 
         required = self.required
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -60,7 +60,7 @@ class IncidentRolesV1UpdateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         description = d.pop("description")
 
@@ -84,7 +84,7 @@ class IncidentRolesV1UpdateRequestBody:
         return incident_roles_v1_update_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

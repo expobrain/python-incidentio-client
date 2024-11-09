@@ -54,14 +54,14 @@ class CatalogEntryEngineParamBindingValueV2:
     reference: Union[Unset, str] = UNSET
     unavailable: Union[Unset, bool] = UNSET
     value: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         label = self.label
 
         sort_key = self.sort_key
 
-        catalog_entry: Union[Unset, Dict[str, Any]] = UNSET
+        catalog_entry: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.catalog_entry, Unset):
             catalog_entry = self.catalog_entry.to_dict()
 
@@ -79,7 +79,7 @@ class CatalogEntryEngineParamBindingValueV2:
 
         value = self.value
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -107,7 +107,7 @@ class CatalogEntryEngineParamBindingValueV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_entry_reference_v2 import CatalogEntryReferenceV2
 
         d = src_dict.copy()
@@ -153,7 +153,7 @@ class CatalogEntryEngineParamBindingValueV2:
         return catalog_entry_engine_param_binding_value_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

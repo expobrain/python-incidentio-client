@@ -33,10 +33,10 @@ class UsersV2ListResponseBody:
     """
 
     pagination_meta: "PaginationMetaResult"
-    users: List["UserWithRolesV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    users: list["UserWithRolesV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         pagination_meta = self.pagination_meta.to_dict()
 
         users = []
@@ -44,7 +44,7 @@ class UsersV2ListResponseBody:
             users_item = users_item_data.to_dict()
             users.append(users_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -56,7 +56,7 @@ class UsersV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.pagination_meta_result import PaginationMetaResult
         from ..models.user_with_roles_v2 import UserWithRolesV2
 
@@ -79,7 +79,7 @@ class UsersV2ListResponseBody:
         return users_v2_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

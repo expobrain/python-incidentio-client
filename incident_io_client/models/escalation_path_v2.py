@@ -56,11 +56,11 @@ class EscalationPathV2:
 
     id: str
     name: str
-    path: List["EscalationPathNodeV2"]
-    working_hours: Union[Unset, List["WeekdayIntervalConfigV2"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    path: list["EscalationPathNodeV2"]
+    working_hours: Union[Unset, list["WeekdayIntervalConfigV2"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -70,14 +70,14 @@ class EscalationPathV2:
             path_item = path_item_data.to_dict()
             path.append(path_item)
 
-        working_hours: Union[Unset, List[Dict[str, Any]]] = UNSET
+        working_hours: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.working_hours, Unset):
             working_hours = []
             for working_hours_item_data in self.working_hours:
                 working_hours_item = working_hours_item_data.to_dict()
                 working_hours.append(working_hours_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -92,7 +92,7 @@ class EscalationPathV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.escalation_path_node_v2 import EscalationPathNodeV2
         from ..models.weekday_interval_config_v2 import WeekdayIntervalConfigV2
 
@@ -126,7 +126,7 @@ class EscalationPathV2:
         return escalation_path_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

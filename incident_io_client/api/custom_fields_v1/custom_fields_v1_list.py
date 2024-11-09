@@ -9,8 +9,8 @@ from ...models.custom_fields_v1_list_response_body import CustomFieldsV1ListResp
 from ...types import Response
 
 
-def _get_kwargs() -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+def _get_kwargs() -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v1/custom_fields",
     }

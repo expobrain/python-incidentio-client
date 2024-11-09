@@ -24,16 +24,16 @@ class CustomFieldOptionsV1CreateRequestBody:
     custom_field_id: str
     value: str
     sort_key: Union[Unset, int] = 1000
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field_id = self.custom_field_id
 
         value = self.value
 
         sort_key = self.sort_key
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -47,7 +47,7 @@ class CustomFieldOptionsV1CreateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         custom_field_id = d.pop("custom_field_id")
 
@@ -65,7 +65,7 @@ class CustomFieldOptionsV1CreateRequestBody:
         return custom_field_options_v1_create_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

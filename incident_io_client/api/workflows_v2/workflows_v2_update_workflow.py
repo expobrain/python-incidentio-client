@@ -16,10 +16,10 @@ def _get_kwargs(
     id: str,
     *,
     body: UpdateWorkflowPayload,
-) -> Dict[str, Any]:
-    headers: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    headers: dict[str, Any] = {}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "put",
         "url": "/v2/workflows/{id}".format(
             id=id,

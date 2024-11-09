@@ -115,18 +115,18 @@ class AlertRouteV2:
             'SEV123', 'reference': 'incident.severity'}}}.
     """
 
-    condition_groups: List["ConditionGroupV2"]
+    condition_groups: list["ConditionGroupV2"]
     defer_time_seconds: int
-    escalation_bindings: List["AlertRouteEscalationBindingV2"]
-    grouping_keys: List["GroupingKeyV2"]
+    escalation_bindings: list["AlertRouteEscalationBindingV2"]
+    grouping_keys: list["GroupingKeyV2"]
     grouping_window_seconds: int
     id: str
     name: str
-    expressions: Union[Unset, List["ExpressionV2"]] = UNSET
+    expressions: Union[Unset, list["ExpressionV2"]] = UNSET
     template: Union[Unset, "AlertRouteIncidentTemplateV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         condition_groups = []
         for condition_groups_item_data in self.condition_groups:
             condition_groups_item = condition_groups_item_data.to_dict()
@@ -150,18 +150,18 @@ class AlertRouteV2:
 
         name = self.name
 
-        expressions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        expressions: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.expressions, Unset):
             expressions = []
             for expressions_item_data in self.expressions:
                 expressions_item = expressions_item_data.to_dict()
                 expressions.append(expressions_item)
 
-        template: Union[Unset, Dict[str, Any]] = UNSET
+        template: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.template, Unset):
             template = self.template.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -182,7 +182,7 @@ class AlertRouteV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.alert_route_escalation_binding_v2 import (
             AlertRouteEscalationBindingV2,
         )
@@ -255,7 +255,7 @@ class AlertRouteV2:
         return alert_route_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

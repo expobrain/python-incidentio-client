@@ -38,10 +38,10 @@ class CustomFieldEntryV1:
     """
 
     custom_field: "CustomFieldTypeInfoV1"
-    values: List["CustomFieldValueV1"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    values: list["CustomFieldValueV1"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field = self.custom_field.to_dict()
 
         values = []
@@ -49,7 +49,7 @@ class CustomFieldEntryV1:
             values_item = values_item_data.to_dict()
             values.append(values_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -61,7 +61,7 @@ class CustomFieldEntryV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_type_info_v1 import CustomFieldTypeInfoV1
         from ..models.custom_field_value_v1 import CustomFieldValueV1
 
@@ -84,7 +84,7 @@ class CustomFieldEntryV1:
         return custom_field_entry_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

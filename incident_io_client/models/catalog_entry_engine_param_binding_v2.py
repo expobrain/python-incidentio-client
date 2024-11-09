@@ -42,23 +42,23 @@ class CatalogEntryEngineParamBindingV2:
             'sort_key': 'abc123', 'unavailable': False, 'value': 'abc123'}.
     """
 
-    array_value: Union[Unset, List["CatalogEntryEngineParamBindingValueV2"]] = UNSET
+    array_value: Union[Unset, list["CatalogEntryEngineParamBindingValueV2"]] = UNSET
     value: Union[Unset, "CatalogEntryEngineParamBindingValueV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        array_value: Union[Unset, List[Dict[str, Any]]] = UNSET
+    def to_dict(self) -> dict[str, Any]:
+        array_value: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.array_value, Unset):
             array_value = []
             for array_value_item_data in self.array_value:
                 array_value_item = array_value_item_data.to_dict()
                 array_value.append(array_value_item)
 
-        value: Union[Unset, Dict[str, Any]] = UNSET
+        value: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.value, Unset):
             value = self.value.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if array_value is not UNSET:
@@ -69,7 +69,7 @@ class CatalogEntryEngineParamBindingV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_entry_engine_param_binding_value_v2 import (
             CatalogEntryEngineParamBindingValueV2,
         )
@@ -100,7 +100,7 @@ class CatalogEntryEngineParamBindingV2:
         return catalog_entry_engine_param_binding_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

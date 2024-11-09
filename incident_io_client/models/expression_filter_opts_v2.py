@@ -29,16 +29,16 @@ class ExpressionFilterOptsV2:
             'incident.severity'}}]}].
     """
 
-    condition_groups: List["ConditionGroupV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    condition_groups: list["ConditionGroupV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         condition_groups = []
         for condition_groups_item_data in self.condition_groups:
             condition_groups_item = condition_groups_item_data.to_dict()
             condition_groups.append(condition_groups_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -49,7 +49,7 @@ class ExpressionFilterOptsV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.condition_group_v2 import ConditionGroupV2
 
         d = src_dict.copy()
@@ -68,7 +68,7 @@ class ExpressionFilterOptsV2:
         return expression_filter_opts_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

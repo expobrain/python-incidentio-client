@@ -50,21 +50,21 @@ class SchedulesV2ListResponseBody:
             'page_size': 25, 'total_record_count': 238}.
     """
 
-    schedules: List["ScheduleV2"]
+    schedules: list["ScheduleV2"]
     pagination_meta: Union[Unset, "PaginationMetaResultWithTotal"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         schedules = []
         for schedules_item_data in self.schedules:
             schedules_item = schedules_item_data.to_dict()
             schedules.append(schedules_item)
 
-        pagination_meta: Union[Unset, Dict[str, Any]] = UNSET
+        pagination_meta: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.pagination_meta, Unset):
             pagination_meta = self.pagination_meta.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -77,7 +77,7 @@ class SchedulesV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.pagination_meta_result_with_total import (
             PaginationMetaResultWithTotal,
         )
@@ -107,7 +107,7 @@ class SchedulesV2ListResponseBody:
         return schedules_v2_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

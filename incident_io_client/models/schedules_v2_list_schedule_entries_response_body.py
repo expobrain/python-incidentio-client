@@ -54,16 +54,16 @@ class SchedulesV2ListScheduleEntriesResponseBody:
 
     schedule_entries: "ScheduleEntriesListPayloadV2"
     pagination_meta: Union[Unset, "AfterPaginationMetaResultV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         schedule_entries = self.schedule_entries.to_dict()
 
-        pagination_meta: Union[Unset, Dict[str, Any]] = UNSET
+        pagination_meta: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.pagination_meta, Unset):
             pagination_meta = self.pagination_meta.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -76,7 +76,7 @@ class SchedulesV2ListScheduleEntriesResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.after_pagination_meta_result_v2 import AfterPaginationMetaResultV2
         from ..models.schedule_entries_list_payload_v2 import (
             ScheduleEntriesListPayloadV2,
@@ -101,7 +101,7 @@ class SchedulesV2ListScheduleEntriesResponseBody:
         return schedules_v2_list_schedule_entries_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

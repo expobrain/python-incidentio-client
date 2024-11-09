@@ -25,14 +25,14 @@ class IncidentDurationMetricWithValueV2:
 
     duration_metric: "IncidentDurationMetricV2"
     value_seconds: Union[Unset, int] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         duration_metric = self.duration_metric.to_dict()
 
         value_seconds = self.value_seconds
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -45,7 +45,7 @@ class IncidentDurationMetricWithValueV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.incident_duration_metric_v2 import IncidentDurationMetricV2
 
         d = src_dict.copy()
@@ -62,7 +62,7 @@ class IncidentDurationMetricWithValueV2:
         return incident_duration_metric_with_value_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

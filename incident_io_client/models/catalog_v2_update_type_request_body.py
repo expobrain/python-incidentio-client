@@ -51,23 +51,23 @@ class CatalogV2UpdateTypeRequestBody:
     description: str
     name: str
     annotations: Union[Unset, "CatalogV2UpdateTypeRequestBodyAnnotations"] = UNSET
-    categories: Union[Unset, List[CatalogV2UpdateTypeRequestBodyCategoriesItem]] = UNSET
+    categories: Union[Unset, list[CatalogV2UpdateTypeRequestBodyCategoriesItem]] = UNSET
     color: Union[Unset, CatalogV2UpdateTypeRequestBodyColor] = UNSET
     icon: Union[Unset, CatalogV2UpdateTypeRequestBodyIcon] = UNSET
     ranked: Union[Unset, bool] = UNSET
     source_repo_url: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         description = self.description
 
         name = self.name
 
-        annotations: Union[Unset, Dict[str, Any]] = UNSET
+        annotations: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.annotations, Unset):
             annotations = self.annotations.to_dict()
 
-        categories: Union[Unset, List[str]] = UNSET
+        categories: Union[Unset, list[str]] = UNSET
         if not isinstance(self.categories, Unset):
             categories = []
             for categories_item_data in self.categories:
@@ -86,7 +86,7 @@ class CatalogV2UpdateTypeRequestBody:
 
         source_repo_url = self.source_repo_url
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -110,7 +110,7 @@ class CatalogV2UpdateTypeRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_v2_update_type_request_body_annotations import (
             CatalogV2UpdateTypeRequestBodyAnnotations,
         )
@@ -167,7 +167,7 @@ class CatalogV2UpdateTypeRequestBody:
         return catalog_v2_update_type_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

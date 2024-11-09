@@ -111,9 +111,9 @@ class IncidentV1:
 
     created_at: datetime.datetime
     creator: "ActorV1"
-    custom_field_entries: List["CustomFieldEntryV1"]
+    custom_field_entries: list["CustomFieldEntryV1"]
     id: str
-    incident_role_assignments: List["IncidentRoleAssignmentV1"]
+    incident_role_assignments: list["IncidentRoleAssignmentV1"]
     mode: IncidentV1Mode
     name: str
     reference: str
@@ -129,10 +129,10 @@ class IncidentV1:
     severity: Union[Unset, "SeverityV1"] = UNSET
     slack_channel_name: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
-    timestamps: Union[Unset, List["IncidentTimestampV1"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    timestamps: Union[Unset, list["IncidentTimestampV1"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         creator = self.creator.to_dict()
@@ -167,7 +167,7 @@ class IncidentV1:
 
         call_url = self.call_url
 
-        incident_type: Union[Unset, Dict[str, Any]] = UNSET
+        incident_type: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
@@ -175,7 +175,7 @@ class IncidentV1:
 
         postmortem_document_url = self.postmortem_document_url
 
-        severity: Union[Unset, Dict[str, Any]] = UNSET
+        severity: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
@@ -183,14 +183,14 @@ class IncidentV1:
 
         summary = self.summary
 
-        timestamps: Union[Unset, List[Dict[str, Any]]] = UNSET
+        timestamps: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.timestamps, Unset):
             timestamps = []
             for timestamps_item_data in self.timestamps:
                 timestamps_item = timestamps_item_data.to_dict()
                 timestamps.append(timestamps_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -229,7 +229,7 @@ class IncidentV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.actor_v1 import ActorV1
         from ..models.custom_field_entry_v1 import CustomFieldEntryV1
         from ..models.incident_role_assignment_v1 import IncidentRoleAssignmentV1
@@ -337,7 +337,7 @@ class IncidentV1:
         return incident_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

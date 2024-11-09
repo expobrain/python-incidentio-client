@@ -42,14 +42,14 @@ class IncidentsV2EditRequestBody:
 
     incident: "IncidentEditPayloadV2"
     notify_incident_channel: bool
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         incident = self.incident.to_dict()
 
         notify_incident_channel = self.notify_incident_channel
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -61,7 +61,7 @@ class IncidentsV2EditRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.incident_edit_payload_v2 import IncidentEditPayloadV2
 
         d = src_dict.copy()
@@ -78,7 +78,7 @@ class IncidentsV2EditRequestBody:
         return incidents_v2_edit_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

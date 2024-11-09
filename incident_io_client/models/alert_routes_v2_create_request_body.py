@@ -121,23 +121,23 @@ class AlertRoutesV2CreateRequestBody:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}.
     """
 
-    alert_sources: Union[Unset, List["AlertRouteAlertSourcePayloadV2"]] = UNSET
+    alert_sources: Union[Unset, list["AlertRouteAlertSourcePayloadV2"]] = UNSET
     auto_decline_enabled: Union[Unset, bool] = UNSET
-    condition_groups: Union[Unset, List["ConditionGroupPayloadV2"]] = UNSET
+    condition_groups: Union[Unset, list["ConditionGroupPayloadV2"]] = UNSET
     defer_time_seconds: Union[Unset, int] = UNSET
     enabled: Union[Unset, bool] = UNSET
-    escalation_bindings: Union[Unset, List["AlertRouteEscalationBindingPayloadV2"]] = UNSET
-    expressions: Union[Unset, List["ExpressionPayloadV2"]] = UNSET
-    grouping_keys: Union[Unset, List["GroupingKeyV2"]] = UNSET
+    escalation_bindings: Union[Unset, list["AlertRouteEscalationBindingPayloadV2"]] = UNSET
+    expressions: Union[Unset, list["ExpressionPayloadV2"]] = UNSET
+    grouping_keys: Union[Unset, list["GroupingKeyV2"]] = UNSET
     grouping_window_seconds: Union[Unset, int] = UNSET
-    incident_condition_groups: Union[Unset, List["ConditionGroupPayloadV2"]] = UNSET
+    incident_condition_groups: Union[Unset, list["ConditionGroupPayloadV2"]] = UNSET
     incident_enabled: Union[Unset, bool] = UNSET
     name: Union[Unset, str] = UNSET
     template: Union[Unset, "AlertRouteIncidentTemplatePayloadV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        alert_sources: Union[Unset, List[Dict[str, Any]]] = UNSET
+    def to_dict(self) -> dict[str, Any]:
+        alert_sources: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.alert_sources, Unset):
             alert_sources = []
             for alert_sources_item_data in self.alert_sources:
@@ -146,7 +146,7 @@ class AlertRoutesV2CreateRequestBody:
 
         auto_decline_enabled = self.auto_decline_enabled
 
-        condition_groups: Union[Unset, List[Dict[str, Any]]] = UNSET
+        condition_groups: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.condition_groups, Unset):
             condition_groups = []
             for condition_groups_item_data in self.condition_groups:
@@ -157,21 +157,21 @@ class AlertRoutesV2CreateRequestBody:
 
         enabled = self.enabled
 
-        escalation_bindings: Union[Unset, List[Dict[str, Any]]] = UNSET
+        escalation_bindings: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.escalation_bindings, Unset):
             escalation_bindings = []
             for escalation_bindings_item_data in self.escalation_bindings:
                 escalation_bindings_item = escalation_bindings_item_data.to_dict()
                 escalation_bindings.append(escalation_bindings_item)
 
-        expressions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        expressions: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.expressions, Unset):
             expressions = []
             for expressions_item_data in self.expressions:
                 expressions_item = expressions_item_data.to_dict()
                 expressions.append(expressions_item)
 
-        grouping_keys: Union[Unset, List[Dict[str, Any]]] = UNSET
+        grouping_keys: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.grouping_keys, Unset):
             grouping_keys = []
             for grouping_keys_item_data in self.grouping_keys:
@@ -180,7 +180,7 @@ class AlertRoutesV2CreateRequestBody:
 
         grouping_window_seconds = self.grouping_window_seconds
 
-        incident_condition_groups: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_condition_groups: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_condition_groups, Unset):
             incident_condition_groups = []
             for incident_condition_groups_item_data in self.incident_condition_groups:
@@ -191,11 +191,11 @@ class AlertRoutesV2CreateRequestBody:
 
         name = self.name
 
-        template: Union[Unset, Dict[str, Any]] = UNSET
+        template: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.template, Unset):
             template = self.template.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if alert_sources is not UNSET:
@@ -228,7 +228,7 @@ class AlertRoutesV2CreateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.alert_route_alert_source_payload_v2 import (
             AlertRouteAlertSourcePayloadV2,
         )
@@ -328,7 +328,7 @@ class AlertRoutesV2CreateRequestBody:
         return alert_routes_v2_create_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

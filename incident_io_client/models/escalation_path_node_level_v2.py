@@ -40,22 +40,22 @@ class EscalationPathNodeLevelV2:
             this identifies which window it is relative to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
     """
 
-    targets: List["EscalationPathTargetV2"]
+    targets: list["EscalationPathTargetV2"]
     round_robin_config: Union[Unset, "EscalationPathRoundRobinConfigV2"] = UNSET
     time_to_ack_interval_condition: Union[
         Unset, EscalationPathNodeLevelV2TimeToAckIntervalCondition
     ] = UNSET
     time_to_ack_seconds: Union[Unset, int] = UNSET
     time_to_ack_weekday_interval_config_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         targets = []
         for targets_item_data in self.targets:
             targets_item = targets_item_data.to_dict()
             targets.append(targets_item)
 
-        round_robin_config: Union[Unset, Dict[str, Any]] = UNSET
+        round_robin_config: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.round_robin_config, Unset):
             round_robin_config = self.round_robin_config.to_dict()
 
@@ -67,7 +67,7 @@ class EscalationPathNodeLevelV2:
 
         time_to_ack_weekday_interval_config_id = self.time_to_ack_weekday_interval_config_id
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -88,7 +88,7 @@ class EscalationPathNodeLevelV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.escalation_path_round_robin_config_v2 import (
             EscalationPathRoundRobinConfigV2,
         )
@@ -138,7 +138,7 @@ class EscalationPathNodeLevelV2:
         return escalation_path_node_level_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

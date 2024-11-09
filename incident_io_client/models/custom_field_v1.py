@@ -59,7 +59,7 @@ class CustomFieldV1:
     field_type: CustomFieldV1FieldType
     id: str
     name: str
-    options: List["CustomFieldOptionV1"]
+    options: list["CustomFieldOptionV1"]
     show_before_closure: bool
     show_before_creation: bool
     show_before_update: bool
@@ -68,9 +68,9 @@ class CustomFieldV1:
     required: Union[Unset, CustomFieldV1Required] = UNSET
     required_v2: Union[Unset, CustomFieldV1RequiredV2] = UNSET
     show_in_announcement_post: Union[Unset, bool] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         description = self.description
@@ -106,7 +106,7 @@ class CustomFieldV1:
 
         show_in_announcement_post = self.show_in_announcement_post
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -134,7 +134,7 @@ class CustomFieldV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
         d = src_dict.copy()
@@ -202,7 +202,7 @@ class CustomFieldV1:
         return custom_field_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

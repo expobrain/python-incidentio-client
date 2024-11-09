@@ -60,28 +60,28 @@ class ExpressionOperationPayloadV2:
     filter_: Union[Unset, "ExpressionFilterOptsPayloadV2"] = UNSET
     navigate: Union[Unset, "ExpressionNavigateOptsPayloadV2"] = UNSET
     parse: Union[Unset, "ExpressionParseOptsPayloadV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         operation_type = self.operation_type.value
 
-        branches: Union[Unset, Dict[str, Any]] = UNSET
+        branches: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.branches, Unset):
             branches = self.branches.to_dict()
 
-        filter_: Union[Unset, Dict[str, Any]] = UNSET
+        filter_: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.filter_, Unset):
             filter_ = self.filter_.to_dict()
 
-        navigate: Union[Unset, Dict[str, Any]] = UNSET
+        navigate: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.navigate, Unset):
             navigate = self.navigate.to_dict()
 
-        parse: Union[Unset, Dict[str, Any]] = UNSET
+        parse: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.parse, Unset):
             parse = self.parse.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -100,7 +100,7 @@ class ExpressionOperationPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.expression_branches_opts_payload_v2 import (
             ExpressionBranchesOptsPayloadV2,
         )
@@ -157,7 +157,7 @@ class ExpressionOperationPayloadV2:
         return expression_operation_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -37,17 +37,17 @@ class CatalogV2UpdateEntryRequestBody:
 
     attribute_values: "CatalogV2UpdateEntryRequestBodyAttributeValues"
     name: str
-    aliases: Union[Unset, List[str]] = UNSET
+    aliases: Union[Unset, list[str]] = UNSET
     external_id: Union[Unset, str] = UNSET
     rank: Union[Unset, int] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         attribute_values = self.attribute_values.to_dict()
 
         name = self.name
 
-        aliases: Union[Unset, List[str]] = UNSET
+        aliases: Union[Unset, list[str]] = UNSET
         if not isinstance(self.aliases, Unset):
             aliases = self.aliases
 
@@ -55,7 +55,7 @@ class CatalogV2UpdateEntryRequestBody:
 
         rank = self.rank
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -73,7 +73,7 @@ class CatalogV2UpdateEntryRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_v2_update_entry_request_body_attribute_values import (
             CatalogV2UpdateEntryRequestBodyAttributeValues,
         )
@@ -85,7 +85,7 @@ class CatalogV2UpdateEntryRequestBody:
 
         name = d.pop("name")
 
-        aliases = cast(List[str], d.pop("aliases", UNSET))
+        aliases = cast(list[str], d.pop("aliases", UNSET))
 
         external_id = d.pop("external_id", UNSET)
 
@@ -103,7 +103,7 @@ class CatalogV2UpdateEntryRequestBody:
         return catalog_v2_update_entry_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

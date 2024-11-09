@@ -24,16 +24,16 @@ class UserReferencePayloadV1:
     email: Union[Unset, str] = UNSET
     id: Union[Unset, str] = UNSET
     slack_user_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         email = self.email
 
         id = self.id
 
         slack_user_id = self.slack_user_id
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if email is not UNSET:
@@ -46,7 +46,7 @@ class UserReferencePayloadV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         email = d.pop("email", UNSET)
 
@@ -64,7 +64,7 @@ class UserReferencePayloadV1:
         return user_reference_payload_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

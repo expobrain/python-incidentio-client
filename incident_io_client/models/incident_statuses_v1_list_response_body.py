@@ -25,16 +25,16 @@ class IncidentStatusesV1ListResponseBody:
             '2021-08-17T13:28:57.801578Z'}].
     """
 
-    incident_statuses: List["IncidentStatusV1"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    incident_statuses: list["IncidentStatusV1"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         incident_statuses = []
         for incident_statuses_item_data in self.incident_statuses:
             incident_statuses_item = incident_statuses_item_data.to_dict()
             incident_statuses.append(incident_statuses_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -45,7 +45,7 @@ class IncidentStatusesV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.incident_status_v1 import IncidentStatusV1
 
         d = src_dict.copy()
@@ -64,7 +64,7 @@ class IncidentStatusesV1ListResponseBody:
         return incident_statuses_v1_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

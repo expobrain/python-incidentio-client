@@ -1,6 +1,6 @@
 [tool.black]
 line-length = 99
-target-version = ["py38", "py39", "py310", "py311"]
+target-version = ["py39", "py310", "py311", "py312", "py313"]
 exclude = '''
 /(
     \.git|.venv
@@ -23,7 +23,7 @@ readme = "README.md"
 packages = [{ include = "incident_io_client" }]
 
 [tool.poetry.dependencies]
-python = ">=3.8.1,<4"
+python = "^3.9"
 httpx = ">=0.22.0"
 attrs = ">=20.1.0"
 python-dateutil = ">=2.8.0"

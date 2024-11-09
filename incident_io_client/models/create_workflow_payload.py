@@ -93,24 +93,24 @@ class CreateWorkflowPayload:
             Example: active.
     """
 
-    condition_groups: List["ConditionGroupPayloadV2"]
+    condition_groups: list["ConditionGroupPayloadV2"]
     continue_on_step_error: bool
-    expressions: List["ExpressionPayloadV2"]
+    expressions: list["ExpressionPayloadV2"]
     include_private_incidents: bool
     name: str
-    once_for: List[str]
-    runs_on_incident_modes: List[CreateWorkflowPayloadRunsOnIncidentModesItem]
+    once_for: list[str]
+    runs_on_incident_modes: list[CreateWorkflowPayloadRunsOnIncidentModesItem]
     runs_on_incidents: CreateWorkflowPayloadRunsOnIncidents
-    steps: List["StepConfigPayload"]
+    steps: list["StepConfigPayload"]
     trigger: str
     annotations: Union[Unset, "CreateWorkflowPayloadAnnotations"] = UNSET
     delay: Union[Unset, "WorkflowDelay"] = UNSET
     folder: Union[Unset, str] = UNSET
     shortform: Union[Unset, str] = UNSET
     state: Union[Unset, CreateWorkflowPayloadState] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         condition_groups = []
         for condition_groups_item_data in self.condition_groups:
             condition_groups_item = condition_groups_item_data.to_dict()
@@ -143,11 +143,11 @@ class CreateWorkflowPayload:
 
         trigger = self.trigger
 
-        annotations: Union[Unset, Dict[str, Any]] = UNSET
+        annotations: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.annotations, Unset):
             annotations = self.annotations.to_dict()
 
-        delay: Union[Unset, Dict[str, Any]] = UNSET
+        delay: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.delay, Unset):
             delay = self.delay.to_dict()
 
@@ -159,7 +159,7 @@ class CreateWorkflowPayload:
         if not isinstance(self.state, Unset):
             state = self.state.value
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -189,7 +189,7 @@ class CreateWorkflowPayload:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
         from ..models.create_workflow_payload_annotations import (
             CreateWorkflowPayloadAnnotations,
@@ -219,7 +219,7 @@ class CreateWorkflowPayload:
 
         name = d.pop("name")
 
-        once_for = cast(List[str], d.pop("once_for"))
+        once_for = cast(list[str], d.pop("once_for"))
 
         runs_on_incident_modes = []
         _runs_on_incident_modes = d.pop("runs_on_incident_modes")
@@ -288,7 +288,7 @@ class CreateWorkflowPayload:
         return create_workflow_payload
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

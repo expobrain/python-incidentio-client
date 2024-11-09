@@ -39,11 +39,11 @@ class AuditLogsHolidayUserFeedDeletedV1ResponseBody:
     actor: "AuditLogActorV2"
     context: "AuditLogEntryContextV2"
     occurred_at: datetime.datetime
-    targets: List["AuditLogTargetV2"]
+    targets: list["AuditLogTargetV2"]
     version: int
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         action = self.action
 
         actor = self.actor.to_dict()
@@ -59,7 +59,7 @@ class AuditLogsHolidayUserFeedDeletedV1ResponseBody:
 
         version = self.version
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -75,7 +75,7 @@ class AuditLogsHolidayUserFeedDeletedV1ResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.audit_log_actor_v2 import AuditLogActorV2
         from ..models.audit_log_entry_context_v2 import AuditLogEntryContextV2
         from ..models.audit_log_target_v2 import AuditLogTargetV2
@@ -111,7 +111,7 @@ class AuditLogsHolidayUserFeedDeletedV1ResponseBody:
         return audit_logs_holiday_user_feed_deleted_v1_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

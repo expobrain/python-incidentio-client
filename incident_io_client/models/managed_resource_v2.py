@@ -36,9 +36,9 @@ class ManagedResourceV2:
     resource_id: str
     resource_type: ManagedResourceV2ResourceType
     source_url: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         annotations = self.annotations.to_dict()
 
         managed_by = self.managed_by.value
@@ -49,7 +49,7 @@ class ManagedResourceV2:
 
         source_url = self.source_url
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -65,7 +65,7 @@ class ManagedResourceV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.managed_resource_v2_annotations import (
             ManagedResourceV2Annotations,
         )
@@ -93,7 +93,7 @@ class ManagedResourceV2:
         return managed_resource_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

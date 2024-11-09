@@ -57,7 +57,7 @@ class CatalogEntryV2:
             the type Example: 761722cd-d1d7-477b-ac7e-90f9e079dc33.
     """
 
-    aliases: List[str]
+    aliases: list[str]
     attribute_values: "CatalogEntryV2AttributeValues"
     catalog_type_id: str
     created_at: datetime.datetime
@@ -67,9 +67,9 @@ class CatalogEntryV2:
     updated_at: datetime.datetime
     archived_at: Union[Unset, datetime.datetime] = UNSET
     external_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         aliases = self.aliases
 
         attribute_values = self.attribute_values.to_dict()
@@ -92,7 +92,7 @@ class CatalogEntryV2:
 
         external_id = self.external_id
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -114,13 +114,13 @@ class CatalogEntryV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_entry_v2_attribute_values import (
             CatalogEntryV2AttributeValues,
         )
 
         d = src_dict.copy()
-        aliases = cast(List[str], d.pop("aliases"))
+        aliases = cast(list[str], d.pop("aliases"))
 
         attribute_values = CatalogEntryV2AttributeValues.from_dict(d.pop("attribute_values"))
 
@@ -162,7 +162,7 @@ class CatalogEntryV2:
         return catalog_entry_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

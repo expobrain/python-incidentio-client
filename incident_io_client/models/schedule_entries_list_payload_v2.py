@@ -47,12 +47,12 @@ class ScheduleEntriesListPayloadV2:
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}].
     """
 
-    final: List["ScheduleEntryV2"]
-    overrides: List["ScheduleEntryV2"]
-    scheduled: List["ScheduleEntryV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    final: list["ScheduleEntryV2"]
+    overrides: list["ScheduleEntryV2"]
+    scheduled: list["ScheduleEntryV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         final = []
         for final_item_data in self.final:
             final_item = final_item_data.to_dict()
@@ -68,7 +68,7 @@ class ScheduleEntriesListPayloadV2:
             scheduled_item = scheduled_item_data.to_dict()
             scheduled.append(scheduled_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -81,7 +81,7 @@ class ScheduleEntriesListPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.schedule_entry_v2 import ScheduleEntryV2
 
         d = src_dict.copy()
@@ -116,7 +116,7 @@ class ScheduleEntriesListPayloadV2:
         return schedule_entries_list_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

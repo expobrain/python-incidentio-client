@@ -25,11 +25,11 @@ class CustomFieldOptionsV1ListResponseBody:
         pagination_meta (PaginationMetaResult):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
     """
 
-    custom_field_options: List["CustomFieldOptionV1"]
+    custom_field_options: list["CustomFieldOptionV1"]
     pagination_meta: "PaginationMetaResult"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field_options = []
         for custom_field_options_item_data in self.custom_field_options:
             custom_field_options_item = custom_field_options_item_data.to_dict()
@@ -37,7 +37,7 @@ class CustomFieldOptionsV1ListResponseBody:
 
         pagination_meta = self.pagination_meta.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -49,7 +49,7 @@ class CustomFieldOptionsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
         from ..models.pagination_meta_result import PaginationMetaResult
 
@@ -74,7 +74,7 @@ class CustomFieldOptionsV1ListResponseBody:
         return custom_field_options_v1_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -11,8 +11,8 @@ from ...models.audit_logs_private_incident_access_requested_v1_response_body imp
 from ...types import Response
 
 
-def _get_kwargs() -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+def _get_kwargs() -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/x-audit-logs/private_incident.access_requested.1",
     }

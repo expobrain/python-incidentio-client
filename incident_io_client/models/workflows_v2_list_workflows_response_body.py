@@ -76,16 +76,16 @@ class WorkflowsV2ListWorkflowsResponseBody:
             'name': 'incident.updated'}, 'version': 3}].
     """
 
-    workflows: List["WorkflowSlim"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    workflows: list["WorkflowSlim"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         workflows = []
         for workflows_item_data in self.workflows:
             workflows_item = workflows_item_data.to_dict()
             workflows.append(workflows_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -96,7 +96,7 @@ class WorkflowsV2ListWorkflowsResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.workflow_slim import WorkflowSlim
 
         d = src_dict.copy()
@@ -115,7 +115,7 @@ class WorkflowsV2ListWorkflowsResponseBody:
         return workflows_v2_list_workflows_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

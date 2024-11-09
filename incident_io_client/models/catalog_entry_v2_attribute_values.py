@@ -29,19 +29,19 @@ class CatalogEntryV2AttributeValues:
 
     """
 
-    additional_properties: Dict[str, "CatalogEntryEngineParamBindingV2"] = _attrs_field(
+    additional_properties: dict[str, "CatalogEntryEngineParamBindingV2"] = _attrs_field(
         init=False, factory=dict
     )
 
-    def to_dict(self) -> Dict[str, Any]:
-        field_dict: Dict[str, Any] = {}
+    def to_dict(self) -> dict[str, Any]:
+        field_dict: dict[str, Any] = {}
         for prop_name, prop in self.additional_properties.items():
             field_dict[prop_name] = prop.to_dict()
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.catalog_entry_engine_param_binding_v2 import (
             CatalogEntryEngineParamBindingV2,
         )
@@ -59,7 +59,7 @@ class CatalogEntryV2AttributeValues:
         return catalog_entry_v2_attribute_values
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> "CatalogEntryEngineParamBindingV2":

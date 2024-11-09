@@ -9,8 +9,8 @@ from ...models.catalog_v2_list_types_response_body import CatalogV2ListTypesResp
 from ...types import Response
 
 
-def _get_kwargs() -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+def _get_kwargs() -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v2/catalog_types",
     }

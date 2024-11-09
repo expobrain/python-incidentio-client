@@ -15,16 +15,16 @@ class ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations:
 
     """
 
-    additional_properties: Dict[str, str] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, str] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        field_dict: Dict[str, Any] = {}
+    def to_dict(self) -> dict[str, Any]:
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         managed_resources_v2_create_managed_resource_request_body_annotations = cls()
 
@@ -34,7 +34,7 @@ class ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations:
         return managed_resources_v2_create_managed_resource_request_body_annotations
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> str:

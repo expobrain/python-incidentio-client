@@ -32,11 +32,11 @@ class StepConfigPayload:
 
     id: str
     name: str
-    param_bindings: List["EngineParamBindingPayloadV2"]
+    param_bindings: list["EngineParamBindingPayloadV2"]
     for_each: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -48,7 +48,7 @@ class StepConfigPayload:
 
         for_each = self.for_each
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -63,7 +63,7 @@ class StepConfigPayload:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
         d = src_dict.copy()
@@ -91,7 +91,7 @@ class StepConfigPayload:
         return step_config_payload
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

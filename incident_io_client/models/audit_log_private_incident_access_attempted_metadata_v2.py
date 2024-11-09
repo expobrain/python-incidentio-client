@@ -23,14 +23,14 @@ class AuditLogPrivateIncidentAccessAttemptedMetadataV2:
     """
 
     outcome: Union[Unset, AuditLogPrivateIncidentAccessAttemptedMetadataV2Outcome] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         outcome: Union[Unset, str] = UNSET
         if not isinstance(self.outcome, Unset):
             outcome = self.outcome.value
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if outcome is not UNSET:
@@ -39,7 +39,7 @@ class AuditLogPrivateIncidentAccessAttemptedMetadataV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         _outcome = d.pop("outcome", UNSET)
         outcome: Union[Unset, AuditLogPrivateIncidentAccessAttemptedMetadataV2Outcome]
@@ -56,7 +56,7 @@ class AuditLogPrivateIncidentAccessAttemptedMetadataV2:
         return audit_log_private_incident_access_attempted_metadata_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

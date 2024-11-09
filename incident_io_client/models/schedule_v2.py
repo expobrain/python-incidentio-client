@@ -69,11 +69,11 @@ class ScheduleV2:
     timezone: str
     updated_at: datetime.datetime
     config: Union[Unset, "ScheduleConfigV2"] = UNSET
-    current_shifts: Union[Unset, List["ScheduleEntryV2"]] = UNSET
+    current_shifts: Union[Unset, list["ScheduleEntryV2"]] = UNSET
     holidays_public_config: Union[Unset, "ScheduleHolidaysPublicConfigV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         annotations = self.annotations.to_dict()
 
         created_at = self.created_at.isoformat()
@@ -86,22 +86,22 @@ class ScheduleV2:
 
         updated_at = self.updated_at.isoformat()
 
-        config: Union[Unset, Dict[str, Any]] = UNSET
+        config: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.config, Unset):
             config = self.config.to_dict()
 
-        current_shifts: Union[Unset, List[Dict[str, Any]]] = UNSET
+        current_shifts: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.current_shifts, Unset):
             current_shifts = []
             for current_shifts_item_data in self.current_shifts:
                 current_shifts_item = current_shifts_item_data.to_dict()
                 current_shifts.append(current_shifts_item)
 
-        holidays_public_config: Union[Unset, Dict[str, Any]] = UNSET
+        holidays_public_config: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.holidays_public_config, Unset):
             holidays_public_config = self.holidays_public_config.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -123,7 +123,7 @@ class ScheduleV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.schedule_config_v2 import ScheduleConfigV2
         from ..models.schedule_entry_v2 import ScheduleEntryV2
         from ..models.schedule_holidays_public_config_v2 import (
@@ -183,7 +183,7 @@ class ScheduleV2:
         return schedule_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

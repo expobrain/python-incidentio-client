@@ -28,10 +28,10 @@ class WeekdayIntervalConfigV2:
     id: str
     name: str
     timezone: str
-    weekday_intervals: List["WeekdayIntervalV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    weekday_intervals: list["WeekdayIntervalV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -43,7 +43,7 @@ class WeekdayIntervalConfigV2:
             weekday_intervals_item = weekday_intervals_item_data.to_dict()
             weekday_intervals.append(weekday_intervals_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -57,7 +57,7 @@ class WeekdayIntervalConfigV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.weekday_interval_v2 import WeekdayIntervalV2
 
         d = src_dict.copy()
@@ -85,7 +85,7 @@ class WeekdayIntervalConfigV2:
         return weekday_interval_config_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

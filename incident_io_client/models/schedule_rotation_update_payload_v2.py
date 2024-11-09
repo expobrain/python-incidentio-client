@@ -46,15 +46,15 @@ class ScheduleRotationUpdatePayloadV2:
 
     effective_from: Union[Unset, datetime.datetime] = UNSET
     handover_start_at: Union[Unset, datetime.datetime] = UNSET
-    handovers: Union[Unset, List["ScheduleRotationHandoverV2"]] = UNSET
+    handovers: Union[Unset, list["ScheduleRotationHandoverV2"]] = UNSET
     id: Union[Unset, str] = UNSET
-    layers: Union[Unset, List["ScheduleLayerUpdatePayloadV2"]] = UNSET
+    layers: Union[Unset, list["ScheduleLayerUpdatePayloadV2"]] = UNSET
     name: Union[Unset, str] = UNSET
-    users: Union[Unset, List["UserReferencePayloadV2"]] = UNSET
-    working_interval: Union[Unset, List["ScheduleRotationWorkingIntervalUpdatePayloadV2"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    users: Union[Unset, list["UserReferencePayloadV2"]] = UNSET
+    working_interval: Union[Unset, list["ScheduleRotationWorkingIntervalUpdatePayloadV2"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         effective_from: Union[Unset, str] = UNSET
         if not isinstance(self.effective_from, Unset):
             effective_from = self.effective_from.isoformat()
@@ -63,7 +63,7 @@ class ScheduleRotationUpdatePayloadV2:
         if not isinstance(self.handover_start_at, Unset):
             handover_start_at = self.handover_start_at.isoformat()
 
-        handovers: Union[Unset, List[Dict[str, Any]]] = UNSET
+        handovers: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.handovers, Unset):
             handovers = []
             for handovers_item_data in self.handovers:
@@ -72,7 +72,7 @@ class ScheduleRotationUpdatePayloadV2:
 
         id = self.id
 
-        layers: Union[Unset, List[Dict[str, Any]]] = UNSET
+        layers: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.layers, Unset):
             layers = []
             for layers_item_data in self.layers:
@@ -81,21 +81,21 @@ class ScheduleRotationUpdatePayloadV2:
 
         name = self.name
 
-        users: Union[Unset, List[Dict[str, Any]]] = UNSET
+        users: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.users, Unset):
             users = []
             for users_item_data in self.users:
                 users_item = users_item_data.to_dict()
                 users.append(users_item)
 
-        working_interval: Union[Unset, List[Dict[str, Any]]] = UNSET
+        working_interval: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.working_interval, Unset):
             working_interval = []
             for working_interval_item_data in self.working_interval:
                 working_interval_item = working_interval_item_data.to_dict()
                 working_interval.append(working_interval_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if effective_from is not UNSET:
@@ -118,7 +118,7 @@ class ScheduleRotationUpdatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.schedule_layer_update_payload_v2 import (
             ScheduleLayerUpdatePayloadV2,
         )
@@ -192,7 +192,7 @@ class ScheduleRotationUpdatePayloadV2:
         return schedule_rotation_update_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

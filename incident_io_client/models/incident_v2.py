@@ -139,9 +139,9 @@ class IncidentV2:
 
     created_at: datetime.datetime
     creator: "ActorV2"
-    custom_field_entries: List["CustomFieldEntryV2"]
+    custom_field_entries: list["CustomFieldEntryV2"]
     id: str
-    incident_role_assignments: List["IncidentRoleAssignmentV2"]
+    incident_role_assignments: list["IncidentRoleAssignmentV2"]
     incident_status: "IncidentStatusV2"
     mode: IncidentV2Mode
     name: str
@@ -151,10 +151,10 @@ class IncidentV2:
     updated_at: datetime.datetime
     visibility: IncidentV2Visibility
     call_url: Union[Unset, str] = UNSET
-    duration_metrics: Union[Unset, List["IncidentDurationMetricWithValueV2"]] = UNSET
+    duration_metrics: Union[Unset, list["IncidentDurationMetricWithValueV2"]] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2"] = UNSET
     has_debrief: Union[Unset, bool] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2"]] = UNSET
+    incident_timestamp_values: Union[Unset, list["IncidentTimestampWithValueV2"]] = UNSET
     incident_type: Union[Unset, "IncidentTypeV2"] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
@@ -165,9 +165,9 @@ class IncidentV2:
     workload_minutes_sleeping: Union[Unset, float] = UNSET
     workload_minutes_total: Union[Unset, float] = UNSET
     workload_minutes_working: Union[Unset, float] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         creator = self.creator.to_dict()
@@ -202,27 +202,27 @@ class IncidentV2:
 
         call_url = self.call_url
 
-        duration_metrics: Union[Unset, List[Dict[str, Any]]] = UNSET
+        duration_metrics: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.duration_metrics, Unset):
             duration_metrics = []
             for duration_metrics_item_data in self.duration_metrics:
                 duration_metrics_item = duration_metrics_item_data.to_dict()
                 duration_metrics.append(duration_metrics_item)
 
-        external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
+        external_issue_reference: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()
 
         has_debrief = self.has_debrief
 
-        incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_timestamp_values: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
                 incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
-        incident_type: Union[Unset, Dict[str, Any]] = UNSET
+        incident_type: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
@@ -230,7 +230,7 @@ class IncidentV2:
 
         postmortem_document_url = self.postmortem_document_url
 
-        severity: Union[Unset, Dict[str, Any]] = UNSET
+        severity: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
@@ -246,7 +246,7 @@ class IncidentV2:
 
         workload_minutes_working = self.workload_minutes_working
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -299,7 +299,7 @@ class IncidentV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.actor_v2 import ActorV2
         from ..models.custom_field_entry_v2 import CustomFieldEntryV2
         from ..models.external_issue_reference_v2 import ExternalIssueReferenceV2
@@ -451,7 +451,7 @@ class IncidentV2:
         return incident_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

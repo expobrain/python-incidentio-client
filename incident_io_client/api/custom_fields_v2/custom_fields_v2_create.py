@@ -17,10 +17,10 @@ from ...types import Response
 def _get_kwargs(
     *,
     body: CustomFieldsV2CreateRequestBody,
-) -> Dict[str, Any]:
-    headers: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    headers: dict[str, Any] = {}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/v2/custom_fields",
     }

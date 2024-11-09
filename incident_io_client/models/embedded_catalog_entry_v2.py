@@ -26,22 +26,22 @@ class EmbeddedCatalogEntryV2:
 
     id: str
     name: str
-    aliases: Union[Unset, List[str]] = UNSET
+    aliases: Union[Unset, list[str]] = UNSET
     external_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
 
-        aliases: Union[Unset, List[str]] = UNSET
+        aliases: Union[Unset, list[str]] = UNSET
         if not isinstance(self.aliases, Unset):
             aliases = self.aliases
 
         external_id = self.external_id
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -57,13 +57,13 @@ class EmbeddedCatalogEntryV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         id = d.pop("id")
 
         name = d.pop("name")
 
-        aliases = cast(List[str], d.pop("aliases", UNSET))
+        aliases = cast(list[str], d.pop("aliases", UNSET))
 
         external_id = d.pop("external_id", UNSET)
 
@@ -78,7 +78,7 @@ class EmbeddedCatalogEntryV2:
         return embedded_catalog_entry_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

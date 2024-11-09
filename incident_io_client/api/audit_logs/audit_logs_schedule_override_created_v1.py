@@ -11,8 +11,8 @@ from ...models.audit_logs_schedule_override_created_v1_response_body import (
 from ...types import Response
 
 
-def _get_kwargs() -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+def _get_kwargs() -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/x-audit-logs/schedule_override.created.1",
     }

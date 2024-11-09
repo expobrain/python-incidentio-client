@@ -25,12 +25,12 @@ class AlertRouteEscalationBindingV2:
     """
 
     binding: "EngineParamBindingV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         binding = self.binding.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -41,7 +41,7 @@ class AlertRouteEscalationBindingV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
         d = src_dict.copy()
@@ -55,7 +55,7 @@ class AlertRouteEscalationBindingV2:
         return alert_route_escalation_binding_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

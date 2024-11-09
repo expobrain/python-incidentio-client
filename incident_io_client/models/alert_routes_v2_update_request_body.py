@@ -119,22 +119,22 @@ class AlertRoutesV2UpdateRequestBody:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}.
     """
 
-    alert_sources: List["AlertRouteAlertSourcePayloadV2"]
+    alert_sources: list["AlertRouteAlertSourcePayloadV2"]
     auto_decline_enabled: bool
-    condition_groups: List["ConditionGroupPayloadV2"]
+    condition_groups: list["ConditionGroupPayloadV2"]
     defer_time_seconds: int
     enabled: bool
-    escalation_bindings: List["AlertRouteEscalationBindingPayloadV2"]
-    grouping_keys: List["GroupingKeyV2"]
+    escalation_bindings: list["AlertRouteEscalationBindingPayloadV2"]
+    grouping_keys: list["GroupingKeyV2"]
     grouping_window_seconds: int
-    incident_condition_groups: List["ConditionGroupPayloadV2"]
+    incident_condition_groups: list["ConditionGroupPayloadV2"]
     incident_enabled: bool
     name: str
-    expressions: Union[Unset, List["ExpressionPayloadV2"]] = UNSET
+    expressions: Union[Unset, list["ExpressionPayloadV2"]] = UNSET
     template: Union[Unset, "AlertRouteIncidentTemplatePayloadV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         alert_sources = []
         for alert_sources_item_data in self.alert_sources:
             alert_sources_item = alert_sources_item_data.to_dict()
@@ -172,18 +172,18 @@ class AlertRoutesV2UpdateRequestBody:
 
         name = self.name
 
-        expressions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        expressions: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.expressions, Unset):
             expressions = []
             for expressions_item_data in self.expressions:
                 expressions_item = expressions_item_data.to_dict()
                 expressions.append(expressions_item)
 
-        template: Union[Unset, Dict[str, Any]] = UNSET
+        template: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.template, Unset):
             template = self.template.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -208,7 +208,7 @@ class AlertRoutesV2UpdateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.alert_route_alert_source_payload_v2 import (
             AlertRouteAlertSourcePayloadV2,
         )
@@ -308,7 +308,7 @@ class AlertRoutesV2UpdateRequestBody:
         return alert_routes_v2_update_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

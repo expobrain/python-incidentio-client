@@ -34,10 +34,10 @@ class CustomFieldTypeInfoV2:
     field_type: CustomFieldTypeInfoV2FieldType
     id: str
     name: str
-    options: List["CustomFieldOptionV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    options: list["CustomFieldOptionV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         description = self.description
 
         field_type = self.field_type.value
@@ -51,7 +51,7 @@ class CustomFieldTypeInfoV2:
             options_item = options_item_data.to_dict()
             options.append(options_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -66,7 +66,7 @@ class CustomFieldTypeInfoV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_option_v2 import CustomFieldOptionV2
 
         d = src_dict.copy()
@@ -97,7 +97,7 @@ class CustomFieldTypeInfoV2:
         return custom_field_type_info_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

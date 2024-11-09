@@ -33,18 +33,18 @@ class ScheduleConfigCreatePayloadV2:
             'start_time': '09:00', 'weekday': 'tuesday'}]}].
     """
 
-    rotations: Union[Unset, List["ScheduleRotationCreatePayloadV2"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    rotations: Union[Unset, list["ScheduleRotationCreatePayloadV2"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        rotations: Union[Unset, List[Dict[str, Any]]] = UNSET
+    def to_dict(self) -> dict[str, Any]:
+        rotations: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.rotations, Unset):
             rotations = []
             for rotations_item_data in self.rotations:
                 rotations_item = rotations_item_data.to_dict()
                 rotations.append(rotations_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if rotations is not UNSET:
@@ -53,7 +53,7 @@ class ScheduleConfigCreatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.schedule_rotation_create_payload_v2 import (
             ScheduleRotationCreatePayloadV2,
         )
@@ -74,7 +74,7 @@ class ScheduleConfigCreatePayloadV2:
         return schedule_config_create_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

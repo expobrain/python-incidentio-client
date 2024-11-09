@@ -13,15 +13,15 @@ def _get_kwargs(
     *,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
-    status: Union[Unset, List[str]] = UNSET,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+    status: Union[Unset, list[str]] = UNSET,
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     params["page_size"] = page_size
 
     params["after"] = after
 
-    json_status: Union[Unset, List[str]] = UNSET
+    json_status: Union[Unset, list[str]] = UNSET
     if not isinstance(status, Unset):
         json_status = status
 
@@ -29,7 +29,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v1/incidents",
         "params": params,
@@ -67,7 +67,7 @@ def sync_detailed(
     client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
-    status: Union[Unset, List[str]] = UNSET,
+    status: Union[Unset, list[str]] = UNSET,
 ) -> Response[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
@@ -104,7 +104,7 @@ def sync(
     client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
-    status: Union[Unset, List[str]] = UNSET,
+    status: Union[Unset, list[str]] = UNSET,
 ) -> Optional[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
@@ -136,7 +136,7 @@ async def asyncio_detailed(
     client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
-    status: Union[Unset, List[str]] = UNSET,
+    status: Union[Unset, list[str]] = UNSET,
 ) -> Response[IncidentsV1ListResponseBody]:
     """List Incidents V1
 
@@ -171,7 +171,7 @@ async def asyncio(
     client: Union[AuthenticatedClient, Client],
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
-    status: Union[Unset, List[str]] = UNSET,
+    status: Union[Unset, list[str]] = UNSET,
 ) -> Optional[IncidentsV1ListResponseBody]:
     """List Incidents V1
 

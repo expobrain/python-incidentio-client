@@ -21,16 +21,16 @@ class IncidentTimestampsV2ListResponseBody:
             'Impact started', 'rank': 1}].
     """
 
-    incident_timestamps: List["IncidentTimestampV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    incident_timestamps: list["IncidentTimestampV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         incident_timestamps = []
         for incident_timestamps_item_data in self.incident_timestamps:
             incident_timestamps_item = incident_timestamps_item_data.to_dict()
             incident_timestamps.append(incident_timestamps_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -41,7 +41,7 @@ class IncidentTimestampsV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.incident_timestamp_v2 import IncidentTimestampV2
 
         d = src_dict.copy()
@@ -60,7 +60,7 @@ class IncidentTimestampsV2ListResponseBody:
         return incident_timestamps_v2_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

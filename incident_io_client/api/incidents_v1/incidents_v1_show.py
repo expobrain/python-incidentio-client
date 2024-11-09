@@ -11,8 +11,8 @@ from ...types import Response
 
 def _get_kwargs(
     id: str,
-) -> Dict[str, Any]:
-    _kwargs: Dict[str, Any] = {
+) -> dict[str, Any]:
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v1/incidents/{id}".format(
             id=id,

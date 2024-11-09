@@ -52,9 +52,9 @@ class CustomFieldsV1CreateRequestBody:
     required: Union[Unset, CustomFieldsV1CreateRequestBodyRequired] = UNSET
     required_v2: Union[Unset, CustomFieldsV1CreateRequestBodyRequiredV2] = UNSET
     show_in_announcement_post: Union[Unset, bool] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         description = self.description
 
         field_type = self.field_type.value
@@ -77,7 +77,7 @@ class CustomFieldsV1CreateRequestBody:
 
         show_in_announcement_post = self.show_in_announcement_post
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -99,7 +99,7 @@ class CustomFieldsV1CreateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         description = d.pop("description")
 
@@ -145,7 +145,7 @@ class CustomFieldsV1CreateRequestBody:
         return custom_fields_v1_create_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

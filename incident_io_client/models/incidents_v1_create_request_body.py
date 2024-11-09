@@ -71,8 +71,8 @@ class IncidentsV1CreateRequestBody:
 
     idempotency_key: str
     visibility: IncidentsV1CreateRequestBodyVisibility
-    custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV1"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV1"]] = UNSET
+    custom_field_entries: Union[Unset, list["CustomFieldEntryPayloadV1"]] = UNSET
+    incident_role_assignments: Union[Unset, list["IncidentRoleAssignmentPayloadV1"]] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV1CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
@@ -82,21 +82,21 @@ class IncidentsV1CreateRequestBody:
     source_message_timestamp: Union[Unset, str] = UNSET
     status: Union[Unset, IncidentsV1CreateRequestBodyStatus] = UNSET
     summary: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         idempotency_key = self.idempotency_key
 
         visibility = self.visibility.value
 
-        custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
+        custom_field_entries: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.custom_field_entries, Unset):
             custom_field_entries = []
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
                 custom_field_entries.append(custom_field_entries_item)
 
-        incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_role_assignments: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
@@ -125,7 +125,7 @@ class IncidentsV1CreateRequestBody:
 
         summary = self.summary
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -159,7 +159,7 @@ class IncidentsV1CreateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_entry_payload_v1 import CustomFieldEntryPayloadV1
         from ..models.incident_role_assignment_payload_v1 import (
             IncidentRoleAssignmentPayloadV1,
@@ -236,7 +236,7 @@ class IncidentsV1CreateRequestBody:
         return incidents_v1_create_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

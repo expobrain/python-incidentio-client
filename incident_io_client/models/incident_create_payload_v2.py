@@ -79,10 +79,10 @@ class IncidentCreatePayloadV2:
 
     idempotency_key: str
     visibility: IncidentCreatePayloadV2Visibility
-    custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV2"]] = UNSET
+    custom_field_entries: Union[Unset, list["CustomFieldEntryPayloadV2"]] = UNSET
+    incident_role_assignments: Union[Unset, list["IncidentRoleAssignmentPayloadV2"]] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampValuePayloadV2"]] = UNSET
+    incident_timestamp_values: Union[Unset, list["IncidentTimestampValuePayloadV2"]] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentCreatePayloadV2Mode] = UNSET
     name: Union[Unset, str] = UNSET
@@ -91,21 +91,21 @@ class IncidentCreatePayloadV2:
     slack_channel_name_override: Union[Unset, str] = UNSET
     slack_team_id: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         idempotency_key = self.idempotency_key
 
         visibility = self.visibility.value
 
-        custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
+        custom_field_entries: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.custom_field_entries, Unset):
             custom_field_entries = []
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
                 custom_field_entries.append(custom_field_entries_item)
 
-        incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_role_assignments: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
@@ -114,7 +114,7 @@ class IncidentCreatePayloadV2:
 
         incident_status_id = self.incident_status_id
 
-        incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_timestamp_values: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
@@ -129,7 +129,7 @@ class IncidentCreatePayloadV2:
 
         name = self.name
 
-        retrospective_incident_options: Union[Unset, Dict[str, Any]] = UNSET
+        retrospective_incident_options: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.retrospective_incident_options, Unset):
             retrospective_incident_options = self.retrospective_incident_options.to_dict()
 
@@ -141,7 +141,7 @@ class IncidentCreatePayloadV2:
 
         summary = self.summary
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -177,7 +177,7 @@ class IncidentCreatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.custom_field_entry_payload_v2 import CustomFieldEntryPayloadV2
         from ..models.incident_role_assignment_payload_v2 import (
             IncidentRoleAssignmentPayloadV2,
@@ -272,7 +272,7 @@ class IncidentCreatePayloadV2:
         return incident_create_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

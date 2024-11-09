@@ -79,42 +79,42 @@ class AlertRouteIncidentTemplateV2:
     severity: Union[Unset, "EngineParamBindingV2"] = UNSET
     summary: Union[Unset, "EngineParamBindingV2"] = UNSET
     workspace: Union[Unset, "EngineParamBindingV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field_priorities = self.custom_field_priorities.to_dict()
 
         priority_severity = self.priority_severity.value
 
-        custom_fields: Union[Unset, Dict[str, Any]] = UNSET
+        custom_fields: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.custom_fields, Unset):
             custom_fields = self.custom_fields.to_dict()
 
-        incident_mode: Union[Unset, Dict[str, Any]] = UNSET
+        incident_mode: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_mode, Unset):
             incident_mode = self.incident_mode.to_dict()
 
-        incident_type: Union[Unset, Dict[str, Any]] = UNSET
+        incident_type: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
-        name: Union[Unset, Dict[str, Any]] = UNSET
+        name: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.name, Unset):
             name = self.name.to_dict()
 
-        severity: Union[Unset, Dict[str, Any]] = UNSET
+        severity: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
-        summary: Union[Unset, Dict[str, Any]] = UNSET
+        summary: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.summary, Unset):
             summary = self.summary.to_dict()
 
-        workspace: Union[Unset, Dict[str, Any]] = UNSET
+        workspace: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.workspace, Unset):
             workspace = self.workspace.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -140,7 +140,7 @@ class AlertRouteIncidentTemplateV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         from ..models.alert_route_incident_template_v2_custom_field_priorities import (
             AlertRouteIncidentTemplateV2CustomFieldPriorities,
         )
@@ -223,7 +223,7 @@ class AlertRouteIncidentTemplateV2:
         return alert_route_incident_template_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
