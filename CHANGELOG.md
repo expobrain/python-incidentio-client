@@ -1,3 +1,10 @@
+## 0.53.6 (2024-11-11)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools
+- **deps-dev**: bump mkdocs-material from 9.5.43 to 9.5.44
+
 ## 0.53.5 (2024-11-11)
 
 ### Fix
