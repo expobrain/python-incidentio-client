@@ -1,3 +1,10 @@
+## 0.53.7 (2024-11-18)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools
+- **deps-dev**: bump commitizen from 3.30.1 to 3.31.0
+
 ## 0.53.6 (2024-11-11)
 
 ### Fix
