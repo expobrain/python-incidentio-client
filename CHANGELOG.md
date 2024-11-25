@@ -1,3 +1,9 @@
+## 0.53.8 (2024-11-25)
+
+### Fix
+
+- **deps-dev**: bump openapi-python-client from 0.21.6 to 0.21.7
+
 ## 0.53.7 (2024-11-18)
 
 ### Fix
