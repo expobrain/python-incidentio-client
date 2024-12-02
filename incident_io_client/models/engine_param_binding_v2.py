@@ -60,7 +60,9 @@ class EngineParamBindingV2:
         array_value = []
         _array_value = d.pop("array_value", UNSET)
         for array_value_item_data in _array_value or []:
-            array_value_item = EngineParamBindingValueV2.from_dict(array_value_item_data)
+            array_value_item = EngineParamBindingValueV2.from_dict(
+                array_value_item_data
+            )
 
             array_value.append(array_value_item)
 

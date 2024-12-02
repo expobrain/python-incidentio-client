@@ -35,7 +35,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[WorkflowsV2CreateWorkflowResponseBody]:
-    if response.status_code == HTTPStatus.CREATED:
+    if response.status_code == 201:
         response_201 = WorkflowsV2CreateWorkflowResponseBody.from_dict(response.json())
 
         return response_201
