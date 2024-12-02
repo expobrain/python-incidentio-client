@@ -33,7 +33,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[SeveritiesV1CreateResponseBody]:
-    if response.status_code == HTTPStatus.CREATED:
+    if response.status_code == 201:
         response_201 = SeveritiesV1CreateResponseBody.from_dict(response.json())
 
         return response_201
