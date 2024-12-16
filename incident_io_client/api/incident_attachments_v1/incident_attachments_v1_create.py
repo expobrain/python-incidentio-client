@@ -37,8 +37,10 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[IncidentAttachmentsV1CreateResponseBody]:
-    if response.status_code == HTTPStatus.CREATED:
-        response_201 = IncidentAttachmentsV1CreateResponseBody.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = IncidentAttachmentsV1CreateResponseBody.from_dict(
+            response.json()
+        )
 
         return response_201
     if client.raise_on_unexpected_status:
