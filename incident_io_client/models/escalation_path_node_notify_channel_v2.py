@@ -24,13 +24,13 @@ class EscalationPathNodeNotifyChannelV2:
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
-        targets (List['EscalationPathTargetV2']): The targets for this level Example: [{'id': 'lawrencejones',
-            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
+        targets (List['EscalationPathTargetV2']): The targets (Slack channels) for this level Example: [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
         time_to_ack_interval_condition (Union[Unset, EscalationPathNodeNotifyChannelV2TimeToAckIntervalCondition]): If
             the time to ack is relative to a time window, this defines whether we move when the window is active or inactive
             Example: active.
-        time_to_ack_seconds (Union[Unset, int]): How long should we wait for this level to acknowledge before
-            escalating? Example: 1800.
+        time_to_ack_seconds (Union[Unset, int]): How long should we wait for this level to acknowledge before moving on
+            to the next node in the path? Example: 1800.
         time_to_ack_weekday_interval_config_id (Union[Unset, str]): If the time to ack is relative to a time window,
             this identifies which window it is relative to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
     """
@@ -55,7 +55,9 @@ class EscalationPathNodeNotifyChannelV2:
 
         time_to_ack_seconds = self.time_to_ack_seconds
 
-        time_to_ack_weekday_interval_config_id = self.time_to_ack_weekday_interval_config_id
+        time_to_ack_weekday_interval_config_id = (
+            self.time_to_ack_weekday_interval_config_id
+        )
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -65,13 +67,15 @@ class EscalationPathNodeNotifyChannelV2:
             }
         )
         if time_to_ack_interval_condition is not UNSET:
-            field_dict["time_to_ack_interval_condition"] = time_to_ack_interval_condition
+            field_dict[
+                "time_to_ack_interval_condition"
+            ] = time_to_ack_interval_condition
         if time_to_ack_seconds is not UNSET:
             field_dict["time_to_ack_seconds"] = time_to_ack_seconds
         if time_to_ack_weekday_interval_config_id is not UNSET:
-            field_dict["time_to_ack_weekday_interval_config_id"] = (
-                time_to_ack_weekday_interval_config_id
-            )
+            field_dict[
+                "time_to_ack_weekday_interval_config_id"
+            ] = time_to_ack_weekday_interval_config_id
 
         return field_dict
 

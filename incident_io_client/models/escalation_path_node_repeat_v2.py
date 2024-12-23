@@ -13,8 +13,8 @@ class EscalationPathNodeRepeatV2:
         {'repeat_times': 3, 'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
-        repeat_times (int): How many times to repeat these steps Example: 3.
-        to_node (str): Which node ID we begin repeating from Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        repeat_times (int): How many times to repeat these nodes Example: 3.
+        to_node (str): Which node ID we begin repeating from. Example: 01FCNDV6P870EA6S7TK1DSYDG0.
     """
 
     repeat_times: int
