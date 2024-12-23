@@ -13,7 +13,7 @@ python-incidentio-client = { path = "..", develop = true }
 python-dotenv = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
-mypy = "^1.13"
+mypy = "^1.14"
 black = "^24.8"
 autoflake = "^1.7"
 pyupgrade = "^3.8.0"
