@@ -1,3 +1,13 @@
+## 0.53.12 (2024-12-23)
+
+### Fix
+
+- **deps-dev**: bump click from 8.1.7 to 8.1.8
+- **deps**: bump attrs from 24.2.0 to 24.3.0
+- **deps-dev**: bump flake8-bugbear from 24.10.31 to 24.12.12
+- **deps-dev**: bump mypy from 1.13.0 to 1.14.0 in /example
+- **deps-dev**: bump mypy from 1.13.0 to 1.14.0
+
 ## 0.53.11 (2024-12-23)
 
 ### Fix
