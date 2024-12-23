@@ -1,3 +1,10 @@
+## 0.53.11 (2024-12-23)
+
+### Fix
+
+- **deps-dev**: bump types-python-dateutil
+- **deps-dev**: bump mkdocs-material from 9.5.47 to 9.5.48
+
 ## 0.53.10 (2024-12-09)
 
 ### Fix
