@@ -49,7 +49,7 @@ repos:
           - flake8-datetime-utcnow-plugin
         exclude: ^incident_io_client/
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.19.0
+    rev: v3.19.1
     hooks:
       - id: pyupgrade
         args:
