@@ -160,7 +160,9 @@ class WebhookIncidentV2:
     duration_metrics: Union[Unset, List["IncidentDurationMetricWithValueV2"]] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2"] = UNSET
     has_debrief: Union[Unset, bool] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2"]] = UNSET
+    incident_timestamp_values: Union[
+        Unset, List["IncidentTimestampWithValueV2"]
+    ] = UNSET
     incident_type: Union[Unset, "IncidentTypeV2"] = UNSET
     most_recent_update_message: Union[Unset, str] = UNSET
     permalink: Union[Unset, str] = UNSET
@@ -189,7 +191,9 @@ class WebhookIncidentV2:
 
         incident_role_assignments = []
         for incident_role_assignments_item_data in self.incident_role_assignments:
-            incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
+            incident_role_assignments_item = (
+                incident_role_assignments_item_data.to_dict()
+            )
             incident_role_assignments.append(incident_role_assignments_item)
 
         incident_status = self.incident_status.to_dict()
@@ -227,7 +231,9 @@ class WebhookIncidentV2:
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
-                incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
+                incident_timestamp_values_item = (
+                    incident_timestamp_values_item_data.to_dict()
+                )
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
         incident_type: Union[Unset, Dict[str, Any]] = UNSET

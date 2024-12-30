@@ -23,7 +23,7 @@ def _get_kwargs() -> Dict[str, Any]:
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[AuditLogsIncidentDurationMetricDeletedV1ResponseBody]:
-    if response.status_code == HTTPStatus.OK:
+    if response.status_code == 200:
         response_200 = AuditLogsIncidentDurationMetricDeletedV1ResponseBody.from_dict(
             response.json()
         )
