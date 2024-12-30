@@ -9,6 +9,7 @@ class ExternalResourceV1ResourceType(str, Enum):
     GOOGLE_CALENDAR_EVENT = "google_calendar_event"
     JIRA_ISSUE = "jira_issue"
     OPSGENIE_ALERT = "opsgenie_alert"
+    OUTLOOK_CALENDAR_EVENT = "outlook_calendar_event"
     PAGER_DUTY_INCIDENT = "pager_duty_incident"
     SCRUBBED = "scrubbed"
     SENTRY_ISSUE = "sentry_issue"
