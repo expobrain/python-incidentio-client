@@ -1,3 +1,9 @@
+## 0.53.14 (2025-01-05)
+
+### Fix
+
+- **deps-dev**: bump jinja2 from 3.1.4 to 3.1.5 in the pip group
+
 ## 0.53.13 (2024-12-30)
 
 ### Fix
