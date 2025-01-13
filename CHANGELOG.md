@@ -1,3 +1,13 @@
+## 0.53.15 (2025-01-13)
+
+### Fix
+
+- **deps-dev**: bump types-setuptools
+- **deps-dev**: bump types-pygments
+- **deps-dev**: bump ruamel-yaml from 0.18.6 to 0.18.10
+- **deps-dev**: bump mypy from 1.14.0 to 1.14.1 in /example
+- **deps-dev**: bump mypy from 1.14.0 to 1.14.1
+
 ## 0.53.14 (2025-01-05)
 
 ### Fix
