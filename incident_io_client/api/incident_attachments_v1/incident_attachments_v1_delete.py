@@ -24,7 +24,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[Any]:
-    if response.status_code == HTTPStatus.NO_CONTENT:
+    if response.status_code == 204:
         return None
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -50,7 +50,7 @@ def sync_detailed(
 ) -> Response[Any]:
     """Delete Incident Attachments V1
 
-     Unattaches an external resouce from an incident
+     Unattaches an external resource from an incident
 
     Args:
         id (str):
@@ -81,7 +81,7 @@ async def asyncio_detailed(
 ) -> Response[Any]:
     """Delete Incident Attachments V1
 
-     Unattaches an external resouce from an incident
+     Unattaches an external resource from an incident
 
     Args:
         id (str):

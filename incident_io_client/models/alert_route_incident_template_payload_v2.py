@@ -33,10 +33,11 @@ class AlertRouteIncidentTemplatePayloadV2:
             'reference': 'incident.severity'}}, 'name': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
             'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'summary': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'workspace': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal':
-            'SEV123', 'reference': 'incident.severity'}}}
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'start_in_triage': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}
 
     Attributes:
         custom_field_priorities (AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities): lookup of the priority
@@ -54,6 +55,8 @@ class AlertRouteIncidentTemplatePayloadV2:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}.
         severity (Union[Unset, EngineParamBindingPayloadV2]):  Example: {'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}.
+        start_in_triage (Union[Unset, EngineParamBindingPayloadV2]):  Example: {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}.
         summary (Union[Unset, EngineParamBindingPayloadV2]):  Example: {'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}.
         workspace (Union[Unset, EngineParamBindingPayloadV2]):  Example: {'array_value': [{'literal': 'SEV123',
@@ -62,11 +65,14 @@ class AlertRouteIncidentTemplatePayloadV2:
 
     custom_field_priorities: "AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities"
     priority_severity: AlertRouteIncidentTemplatePayloadV2PrioritySeverity
-    custom_fields: Union[Unset, "AlertRouteIncidentTemplatePayloadV2CustomFields"] = UNSET
+    custom_fields: Union[
+        Unset, "AlertRouteIncidentTemplatePayloadV2CustomFields"
+    ] = UNSET
     incident_mode: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     incident_type: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     name: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     severity: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
+    start_in_triage: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     summary: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     workspace: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -96,6 +102,10 @@ class AlertRouteIncidentTemplatePayloadV2:
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
+        start_in_triage: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.start_in_triage, Unset):
+            start_in_triage = self.start_in_triage.to_dict()
+
         summary: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.summary, Unset):
             summary = self.summary.to_dict()
@@ -122,6 +132,8 @@ class AlertRouteIncidentTemplatePayloadV2:
             field_dict["name"] = name
         if severity is not UNSET:
             field_dict["severity"] = severity
+        if start_in_triage is not UNSET:
+            field_dict["start_in_triage"] = start_in_triage
         if summary is not UNSET:
             field_dict["summary"] = summary
         if workspace is not UNSET:
@@ -187,6 +199,13 @@ class AlertRouteIncidentTemplatePayloadV2:
         else:
             severity = EngineParamBindingPayloadV2.from_dict(_severity)
 
+        _start_in_triage = d.pop("start_in_triage", UNSET)
+        start_in_triage: Union[Unset, EngineParamBindingPayloadV2]
+        if isinstance(_start_in_triage, Unset):
+            start_in_triage = UNSET
+        else:
+            start_in_triage = EngineParamBindingPayloadV2.from_dict(_start_in_triage)
+
         _summary = d.pop("summary", UNSET)
         summary: Union[Unset, EngineParamBindingPayloadV2]
         if isinstance(_summary, Unset):
@@ -209,6 +228,7 @@ class AlertRouteIncidentTemplatePayloadV2:
             incident_type=incident_type,
             name=name,
             severity=severity,
+            start_in_triage=start_in_triage,
             summary=summary,
             workspace=workspace,
         )

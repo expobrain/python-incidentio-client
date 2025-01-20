@@ -46,7 +46,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
-    if response.status_code == HTTPStatus.OK:
+    if response.status_code == 200:
         response_200 = IncidentAttachmentsV1ListResponseBody.from_dict(response.json())
 
         return response_200
@@ -76,7 +76,7 @@ def sync_detailed(
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for a given external resource or incident. You must provide either a
+     List all incident attachments for a given external resource or incident. You must provide either a
     specific incident ID or a specific external resource type and external ID.
 
     Args:
@@ -114,7 +114,7 @@ def sync(
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for a given external resource or incident. You must provide either a
+     List all incident attachments for a given external resource or incident. You must provide either a
     specific incident ID or a specific external resource type and external ID.
 
     Args:
@@ -147,7 +147,7 @@ async def asyncio_detailed(
 ) -> Response[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for a given external resource or incident. You must provide either a
+     List all incident attachments for a given external resource or incident. You must provide either a
     specific incident ID or a specific external resource type and external ID.
 
     Args:
@@ -183,7 +183,7 @@ async def asyncio(
 ) -> Optional[IncidentAttachmentsV1ListResponseBody]:
     """List Incident Attachments V1
 
-     List all incident attachements for a given external resource or incident. You must provide either a
+     List all incident attachments for a given external resource or incident. You must provide either a
     specific incident ID or a specific external resource type and external ID.
 
     Args:
