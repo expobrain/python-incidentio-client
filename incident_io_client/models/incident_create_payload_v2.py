@@ -32,29 +32,28 @@ class IncidentCreatePayloadV2:
         {'custom_field_entries': [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}], 'id':
-            '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-uuid', 'incident_role_assignments': [{'assignee':
-            {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'},
-            'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
-            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name':
-            'Our database is sad', 'retrospective_incident_options': {'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96',
-            'slack_channel_name_override': 'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database
-            is really really sad, and we don't know why yet.", 'visibility': 'public'}
+            'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}], 'idempotency_key': 'alert-
+            uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values': [{'incident_timestamp_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
+            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
+            'retrospective_incident_options': {'postmortem_document_url': 'https://docs.google.com/my_doc_id',
+            'slack_channel_id': 'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override':
+            'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
+            don't know why yet.", 'visibility': 'public'}
 
     Attributes:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
         visibility (IncidentCreatePayloadV2Visibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
-            centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
+            centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV2']]): Set the incident's custom fields to
             these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}].
-        id (Union[Unset, str]): Unique identifier for the incident Example: 01FDAG4SAP5TYPT98WGR2N7W91.
         incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2']]): Assign incident roles to
             these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
@@ -81,7 +80,6 @@ class IncidentCreatePayloadV2:
     idempotency_key: str
     visibility: IncidentCreatePayloadV2Visibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2"]] = UNSET
-    id: Union[Unset, str] = UNSET
     incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV2"]] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
     incident_timestamp_values: Union[Unset, List["IncidentTimestampValuePayloadV2"]] = UNSET
@@ -106,8 +104,6 @@ class IncidentCreatePayloadV2:
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
                 custom_field_entries.append(custom_field_entries_item)
-
-        id = self.id
 
         incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.incident_role_assignments, Unset):
@@ -155,8 +151,6 @@ class IncidentCreatePayloadV2:
         )
         if custom_field_entries is not UNSET:
             field_dict["custom_field_entries"] = custom_field_entries
-        if id is not UNSET:
-            field_dict["id"] = id
         if incident_role_assignments is not UNSET:
             field_dict["incident_role_assignments"] = incident_role_assignments
         if incident_status_id is not UNSET:
@@ -208,8 +202,6 @@ class IncidentCreatePayloadV2:
             )
 
             custom_field_entries.append(custom_field_entries_item)
-
-        id = d.pop("id", UNSET)
 
         incident_role_assignments = []
         _incident_role_assignments = d.pop("incident_role_assignments", UNSET)
@@ -263,7 +255,6 @@ class IncidentCreatePayloadV2:
             idempotency_key=idempotency_key,
             visibility=visibility,
             custom_field_entries=custom_field_entries,
-            id=id,
             incident_role_assignments=incident_role_assignments,
             incident_status_id=incident_status_id,
             incident_timestamp_values=incident_timestamp_values,

@@ -3,10 +3,6 @@ from typing import Any, Dict, List, Type, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.alert_result_deduplication_key import AlertResultDeduplicationKey
-from ..models.alert_result_message import AlertResultMessage
-from ..models.alert_result_status import AlertResultStatus
-
 T = TypeVar("T", bound="AlertResult")
 
 
@@ -17,24 +13,22 @@ class AlertResult:
         {'deduplication_key': 'unique-key', 'message': 'Event accepted for processing', 'status': 'success'}
 
     Attributes:
-        deduplication_key (AlertResultDeduplicationKey): The deduplication key that the event has been processed with
-            Example: unique-key.
-        message (AlertResultMessage): Human readable message giving detail about the event Example: Event accepted for
-            processing.
-        status (AlertResultStatus): Status of the event Example: success.
+        deduplication_key (str): The deduplication key that the event has been processed with Example: unique-key.
+        message (str): Human readable message giving detail about the event Example: Event accepted for processing.
+        status (str): Status of the event Example: success.
     """
 
-    deduplication_key: AlertResultDeduplicationKey
-    message: AlertResultMessage
-    status: AlertResultStatus
+    deduplication_key: str
+    message: str
+    status: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        deduplication_key = self.deduplication_key.value
+        deduplication_key = self.deduplication_key
 
-        message = self.message.value
+        message = self.message
 
-        status = self.status.value
+        status = self.status
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -51,11 +45,11 @@ class AlertResult:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        deduplication_key = AlertResultDeduplicationKey(d.pop("deduplication_key"))
+        deduplication_key = d.pop("deduplication_key")
 
-        message = AlertResultMessage(d.pop("message"))
+        message = d.pop("message")
 
-        status = AlertResultStatus(d.pop("status"))
+        status = d.pop("status")
 
         alert_result = cls(
             deduplication_key=deduplication_key,

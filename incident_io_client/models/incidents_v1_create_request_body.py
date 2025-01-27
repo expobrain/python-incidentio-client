@@ -43,7 +43,7 @@ class IncidentsV1CreateRequestBody:
         idempotency_key (str): Unique string used to de-duplicate incident create requests Example: alert-uuid.
         visibility (IncidentsV1CreateRequestBodyVisibility): Whether the incident should be open to anyone in your Slack
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
-            centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
+            centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV1']]): Set the incident's custom fields to
             these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':

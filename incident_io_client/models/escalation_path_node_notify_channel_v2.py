@@ -24,13 +24,13 @@ class EscalationPathNodeNotifyChannelV2:
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
-        targets (List['EscalationPathTargetV2']): The targets for this level Example: [{'id': 'lawrencejones',
-            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
+        targets (List['EscalationPathTargetV2']): The targets (Slack channels) for this level Example: [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
         time_to_ack_interval_condition (Union[Unset, EscalationPathNodeNotifyChannelV2TimeToAckIntervalCondition]): If
             the time to ack is relative to a time window, this defines whether we move when the window is active or inactive
             Example: active.
-        time_to_ack_seconds (Union[Unset, int]): How long should we wait for this level to acknowledge before
-            escalating? Example: 1800.
+        time_to_ack_seconds (Union[Unset, int]): How long should we wait for this level to acknowledge before moving on
+            to the next node in the path? Example: 1800.
         time_to_ack_weekday_interval_config_id (Union[Unset, str]): If the time to ack is relative to a time window,
             this identifies which window it is relative to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
     """

@@ -105,7 +105,7 @@ class WebhookIncidentV2:
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
         visibility (WebhookIncidentV2Visibility): Whether the incident should be open to anyone in your Slack workspace
             (public), or invite-only (private). For more information on Private Incidents see our [help
-            centre](https://help.incident.io/en/articles/5947963-can-we-mark-incidents-as-sensitive-and-restrict-access).
+            centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
         duration_metrics (Union[Unset, List['IncidentDurationMetricWithValueV2']]): Incident duration metrics and their
