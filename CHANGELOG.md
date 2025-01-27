@@ -1,3 +1,10 @@
+## 0.53.16 (2025-01-27)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.5.49 to 9.5.50
+- **deps**: bump attrs from 24.3.0 to 25.1.0
+
 ## 0.53.15 (2025-01-13)
 
 ### Fix
