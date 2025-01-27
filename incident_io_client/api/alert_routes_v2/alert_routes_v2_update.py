@@ -38,7 +38,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[AlertRoutesV2UpdateResponseBody]:
-    if response.status_code == HTTPStatus.OK:
+    if response.status_code == 200:
         response_200 = AlertRoutesV2UpdateResponseBody.from_dict(response.json())
 
         return response_200
@@ -115,6 +115,8 @@ def sync_detailed(
             'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
             'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
+            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
             'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
@@ -198,6 +200,8 @@ def sync(
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
             'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
+            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
             'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
@@ -274,6 +278,8 @@ async def asyncio_detailed(
             'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
             'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
+            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
             'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
@@ -354,6 +360,8 @@ async def asyncio(
             'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
             'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
+            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
             'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':

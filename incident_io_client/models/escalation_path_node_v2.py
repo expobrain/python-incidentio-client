@@ -36,8 +36,16 @@ class EscalationPathNodeV2:
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}
 
     Attributes:
-        id (str): Unique internal ID of the escalation path node Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        type (EscalationPathNodeV2Type): The type of this node: level or branch Example: if_else.
+        id (str): An ID for this node, unique within the escalation path.
+
+            This allows you to reference the node in other nodes, such as when configuring a 'repeat' node. Example:
+            01FCNDV6P870EA6S7TK1DSYDG0.
+        type (EscalationPathNodeV2Type): The type of this node. Available types are:
+            * level: A set of targets (users or schedules) that should be paged, either all at once, or with a round-robin
+            configuration.
+            * notify_channel: Send the escalation to a Slack channel, where it can be acked by anyone in the channel.
+            * if_else: Branch the escalation based on a set of conditions.
+            * repeat: Go back to a previous node and repeat the logic from there. Example: if_else.
         if_else (Union[Unset, EscalationPathNodeIfElseV2]):  Example: {'conditions': [{'operation': {'label': 'Lawrence
             Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':

@@ -33,7 +33,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[IncidentsV2CreateResponseBody]:
-    if response.status_code == HTTPStatus.OK:
+    if response.status_code == 200:
         response_200 = IncidentsV2CreateResponseBody.from_dict(response.json())
 
         return response_200
@@ -72,18 +72,17 @@ def sync_detailed(
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
-            uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
-            don't know why yet.", 'visibility': 'public'}.
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'retrospective_incident_options':
+            {'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id':
+            'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override':
+            'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -122,18 +121,17 @@ def sync(
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
-            uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
-            don't know why yet.", 'visibility': 'public'}.
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'retrospective_incident_options':
+            {'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id':
+            'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override':
+            'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -167,18 +165,17 @@ async def asyncio_detailed(
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
-            uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
-            don't know why yet.", 'visibility': 'public'}.
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'retrospective_incident_options':
+            {'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id':
+            'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override':
+            'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -215,18 +212,17 @@ async def asyncio(
             'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
-            'value_timestamp': ''}]}], 'id': '01FDAG4SAP5TYPT98WGR2N7W91', 'idempotency_key': 'alert-
-            uuid', 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96'}], 'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'incident_timestamp_values': [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H',
-            'value': '2021-08-17T13:28:57.801578Z'}], 'incident_type_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode': 'standard', 'name': 'Our database is sad',
-            'retrospective_incident_options': {'postmortem_document_url':
-            'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}, 'severity_id':
-            '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we
-            don't know why yet.", 'visibility': 'public'}.
+            'value_timestamp': ''}]}], 'idempotency_key': 'alert-uuid', 'incident_role_assignments':
+            [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
+            'incident_status_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'incident_timestamp_values':
+            [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
+            '2021-08-17T13:28:57.801578Z'}], 'incident_type_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'mode':
+            'standard', 'name': 'Our database is sad', 'retrospective_incident_options':
+            {'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id':
+            'abc123'}, 'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override':
+            'inc-123-database-down', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is
+            really really sad, and we don't know why yet.", 'visibility': 'public'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
