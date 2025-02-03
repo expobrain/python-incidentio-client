@@ -811,7 +811,7 @@ from .schedules_v2_list_response_body import SchedulesV2ListResponseBody
 from .schedules_v2_list_schedule_entries_response_body import (
     SchedulesV2ListScheduleEntriesResponseBody,
 )
-from .schedules_v2_show_response_body import SchedulesV2ShowResponseBody
+from .schedules_v2_show_result import SchedulesV2ShowResult
 from .schedules_v2_update_request_body import SchedulesV2UpdateRequestBody
 from .schedules_v2_update_response_body import SchedulesV2UpdateResponseBody
 from .severities_v1_create_request_body import SeveritiesV1CreateRequestBody
@@ -1417,7 +1417,7 @@ __all__ = (
     "SchedulesV2CreateResponseBody",
     "SchedulesV2ListResponseBody",
     "SchedulesV2ListScheduleEntriesResponseBody",
-    "SchedulesV2ShowResponseBody",
+    "SchedulesV2ShowResult",
     "SchedulesV2UpdateRequestBody",
     "SchedulesV2UpdateResponseBody",
     "ScheduleUpdatePayloadV2",
