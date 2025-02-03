@@ -55,7 +55,7 @@ repos:
         args:
           - "--py38-plus"
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 6.0.0
     hooks:
       - id: isort
   - repo: https://github.com/pycqa/bandit
@@ -68,7 +68,7 @@ repos:
           - "-lll"
           - "tests"
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.10.0
+    rev: 25.1.0
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/pygrep-hooks
