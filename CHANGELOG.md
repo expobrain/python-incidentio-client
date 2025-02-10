@@ -1,3 +1,9 @@
+## 0.54.2 (2025-02-10)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.6.1 to 9.6.3
+
 ## 0.54.1 (2025-02-03)
 
 ### Fix
