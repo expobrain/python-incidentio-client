@@ -72,7 +72,9 @@ class IncidentsV1CreateRequestBody:
     idempotency_key: str
     visibility: IncidentsV1CreateRequestBodyVisibility
     custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV1"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV1"]] = UNSET
+    incident_role_assignments: Union[
+        Unset, List["IncidentRoleAssignmentPayloadV1"]
+    ] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentsV1CreateRequestBodyMode] = UNSET
     name: Union[Unset, str] = UNSET
@@ -100,7 +102,9 @@ class IncidentsV1CreateRequestBody:
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
-                incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
+                incident_role_assignments_item = (
+                    incident_role_assignments_item_data.to_dict()
+                )
                 incident_role_assignments.append(incident_role_assignments_item)
 
         incident_type_id = self.incident_type_id
