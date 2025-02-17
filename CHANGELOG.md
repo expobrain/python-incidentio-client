@@ -1,3 +1,10 @@
+## 0.54.3 (2025-02-17)
+
+### Fix
+
+- **deps-dev**: bump flake8 from 7.1.1 to 7.1.2
+- **deps-dev**: bump mkdocs-material from 9.6.3 to 9.6.4
+
 ## 0.54.2 (2025-02-10)
 
 ### Fix
