@@ -57,7 +57,9 @@ class CatalogV2UpdateTypeSchemaRequestBody:
         attributes = []
         _attributes = d.pop("attributes")
         for attributes_item_data in _attributes:
-            attributes_item = CatalogTypeAttributePayloadV2.from_dict(attributes_item_data)
+            attributes_item = CatalogTypeAttributePayloadV2.from_dict(
+                attributes_item_data
+            )
 
             attributes.append(attributes_item)
 
