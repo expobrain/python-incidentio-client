@@ -7,11 +7,11 @@ if TYPE_CHECKING:
     from ..models.schedule_v2 import ScheduleV2
 
 
-T = TypeVar("T", bound="SchedulesV2ShowResponseBody")
+T = TypeVar("T", bound="SchedulesV2ShowResult")
 
 
 @_attrs_define
-class SchedulesV2ShowResponseBody:
+class SchedulesV2ShowResult:
     """
     Example:
         {'schedule': {'annotations': {'incident.io/terraform/version': '3.0.0'}, 'config': {'rotations':
@@ -67,12 +67,12 @@ class SchedulesV2ShowResponseBody:
         d = src_dict.copy()
         schedule = ScheduleV2.from_dict(d.pop("schedule"))
 
-        schedules_v2_show_response_body = cls(
+        schedules_v2_show_result = cls(
             schedule=schedule,
         )
 
-        schedules_v2_show_response_body.additional_properties = d
-        return schedules_v2_show_response_body
+        schedules_v2_show_result.additional_properties = d
+        return schedules_v2_show_result
 
     @property
     def additional_keys(self) -> List[str]:

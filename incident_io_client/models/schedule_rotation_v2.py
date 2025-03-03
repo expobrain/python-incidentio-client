@@ -39,10 +39,11 @@ class ScheduleRotationV2:
         layers (List['ScheduleLayerV2']): Controls how many people are on-call concurrently Example: [{'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}].
         name (str): Human readable name synced from external provider Example: Primary On-Call Schedule.
+        users (List['UserV2']): Users who are available to be scheduled on this rota Example: [{'email':
+            'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
+            'slack_user_id': 'U02AYNF2XJM'}].
         effective_from (Union[Unset, datetime.datetime]): When this rotation config will be effective from Example:
             2021-08-17T13:28:57.801578Z.
-        users (Union[Unset, List['UserV2']]):  Example: [{'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}].
         working_interval (Union[Unset, List['ScheduleRotationWorkingIntervalV2']]):  Example: [{'end_time': '17:00',
             'start_time': '09:00', 'weekday': 'tuesday'}].
     """
@@ -52,8 +53,8 @@ class ScheduleRotationV2:
     id: str
     layers: List["ScheduleLayerV2"]
     name: str
+    users: List["UserV2"]
     effective_from: Union[Unset, datetime.datetime] = UNSET
-    users: Union[Unset, List["UserV2"]] = UNSET
     working_interval: Union[Unset, List["ScheduleRotationWorkingIntervalV2"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -74,16 +75,14 @@ class ScheduleRotationV2:
 
         name = self.name
 
+        users = []
+        for users_item_data in self.users:
+            users_item = users_item_data.to_dict()
+            users.append(users_item)
+
         effective_from: Union[Unset, str] = UNSET
         if not isinstance(self.effective_from, Unset):
             effective_from = self.effective_from.isoformat()
-
-        users: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.users, Unset):
-            users = []
-            for users_item_data in self.users:
-                users_item = users_item_data.to_dict()
-                users.append(users_item)
 
         working_interval: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.working_interval, Unset):
@@ -101,12 +100,11 @@ class ScheduleRotationV2:
                 "id": id,
                 "layers": layers,
                 "name": name,
+                "users": users,
             }
         )
         if effective_from is not UNSET:
             field_dict["effective_from"] = effective_from
-        if users is not UNSET:
-            field_dict["users"] = users
         if working_interval is not UNSET:
             field_dict["working_interval"] = working_interval
 
@@ -142,19 +140,19 @@ class ScheduleRotationV2:
 
         name = d.pop("name")
 
+        users = []
+        _users = d.pop("users")
+        for users_item_data in _users:
+            users_item = UserV2.from_dict(users_item_data)
+
+            users.append(users_item)
+
         _effective_from = d.pop("effective_from", UNSET)
         effective_from: Union[Unset, datetime.datetime]
         if isinstance(_effective_from, Unset):
             effective_from = UNSET
         else:
             effective_from = isoparse(_effective_from)
-
-        users = []
-        _users = d.pop("users", UNSET)
-        for users_item_data in _users or []:
-            users_item = UserV2.from_dict(users_item_data)
-
-            users.append(users_item)
 
         working_interval = []
         _working_interval = d.pop("working_interval", UNSET)
@@ -171,8 +169,8 @@ class ScheduleRotationV2:
             id=id,
             layers=layers,
             name=name,
-            effective_from=effective_from,
             users=users,
+            effective_from=effective_from,
             working_interval=working_interval,
         )
 
