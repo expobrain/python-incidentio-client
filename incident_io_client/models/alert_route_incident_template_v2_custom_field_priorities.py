@@ -38,14 +38,14 @@ class AlertRouteIncidentTemplateV2CustomFieldPriorities:
         additional_properties = {}
         for prop_name, prop_dict in d.items():
             additional_property = (
-                AlertRouteIncidentTemplateV2CustomFieldPrioritiesAdditionalProperty(prop_dict)
+                AlertRouteIncidentTemplateV2CustomFieldPrioritiesAdditionalProperty(
+                    prop_dict
+                )
             )
 
             additional_properties[prop_name] = additional_property
 
-        alert_route_incident_template_v2_custom_field_priorities.additional_properties = (
-            additional_properties
-        )
+        alert_route_incident_template_v2_custom_field_priorities.additional_properties = additional_properties
         return alert_route_incident_template_v2_custom_field_priorities
 
     @property

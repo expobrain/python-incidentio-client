@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.schedules_v2_show_response_body import SchedulesV2ShowResponseBody
+from ...models.schedules_v2_show_result import SchedulesV2ShowResult
 from ...types import Response
 
 
@@ -24,9 +24,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[SchedulesV2ShowResponseBody]:
+) -> Optional[SchedulesV2ShowResult]:
     if response.status_code == 200:
-        response_200 = SchedulesV2ShowResponseBody.from_dict(response.json())
+        response_200 = SchedulesV2ShowResult.from_dict(response.json())
 
         return response_200
     if client.raise_on_unexpected_status:
@@ -37,7 +37,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[SchedulesV2ShowResponseBody]:
+) -> Response[SchedulesV2ShowResult]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -50,7 +50,7 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[SchedulesV2ShowResponseBody]:
+) -> Response[SchedulesV2ShowResult]:
     """Show Schedules V2
 
      Get a single schedule.
@@ -63,7 +63,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SchedulesV2ShowResponseBody]
+        Response[SchedulesV2ShowResult]
     """
 
     kwargs = _get_kwargs(
@@ -81,7 +81,7 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[SchedulesV2ShowResponseBody]:
+) -> Optional[SchedulesV2ShowResult]:
     """Show Schedules V2
 
      Get a single schedule.
@@ -94,7 +94,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SchedulesV2ShowResponseBody
+        SchedulesV2ShowResult
     """
 
     return sync_detailed(
@@ -107,7 +107,7 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[SchedulesV2ShowResponseBody]:
+) -> Response[SchedulesV2ShowResult]:
     """Show Schedules V2
 
      Get a single schedule.
@@ -120,7 +120,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[SchedulesV2ShowResponseBody]
+        Response[SchedulesV2ShowResult]
     """
 
     kwargs = _get_kwargs(
@@ -136,7 +136,7 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[SchedulesV2ShowResponseBody]:
+) -> Optional[SchedulesV2ShowResult]:
     """Show Schedules V2
 
      Get a single schedule.
@@ -149,7 +149,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        SchedulesV2ShowResponseBody
+        SchedulesV2ShowResult
     """
 
     return (
