@@ -101,7 +101,9 @@ class EscalationsV2CreatePathRequestBody:
         working_hours = []
         _working_hours = d.pop("working_hours", UNSET)
         for working_hours_item_data in _working_hours or []:
-            working_hours_item = WeekdayIntervalConfigV2.from_dict(working_hours_item_data)
+            working_hours_item = WeekdayIntervalConfigV2.from_dict(
+                working_hours_item_data
+            )
 
             working_hours.append(working_hours_item)
 
