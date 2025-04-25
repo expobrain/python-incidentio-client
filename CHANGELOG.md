@@ -1,3 +1,9 @@
+## 0.55.4 (2025-04-25)
+
+### Fix
+
+- **deps**: bump h11 from 0.12.0 to 0.16.0 in /example in the pip group
+
 ## 0.55.3 (2025-04-09)
 
 ### Fix
