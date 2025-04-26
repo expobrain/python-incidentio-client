@@ -168,7 +168,9 @@ class EscalationPathNodePayloadV2:
         if isinstance(_notify_channel, Unset):
             notify_channel = UNSET
         else:
-            notify_channel = EscalationPathNodeNotifyChannelV2.from_dict(_notify_channel)
+            notify_channel = EscalationPathNodeNotifyChannelV2.from_dict(
+                _notify_channel
+            )
 
         _repeat = d.pop("repeat", UNSET)
         repeat: Union[Unset, EscalationPathNodeRepeatV2]
