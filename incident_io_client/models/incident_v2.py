@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -71,7 +72,7 @@ class IncidentV2:
         creator (ActorV2):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
             'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
             'viewer', 'slack_user_id': 'U02AYNF2XJM'}}.
-        custom_field_entries (List['CustomFieldEntryV2']): Custom field entries for this incident Example:
+        custom_field_entries (list['CustomFieldEntryV2']): Custom field entries for this incident Example:
             [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
@@ -81,7 +82,7 @@ class IncidentV2:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             'value_text': 'This is my text field, I hope you like it'}]}].
         id (str): Unique identifier for the incident Example: 01FDAG4SAP5TYPT98WGR2N7W91.
-        incident_role_assignments (List['IncidentRoleAssignmentV2']): A list of who is assigned to each role for this
+        incident_role_assignments (list['IncidentRoleAssignmentV2']): A list of who is assigned to each role for this
             incident Example: [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa
             Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
@@ -106,14 +107,14 @@ class IncidentV2:
             centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
-        duration_metrics (Union[Unset, List['IncidentDurationMetricWithValueV2']]): Incident duration metrics and their
+        duration_metrics (Union[Unset, list['IncidentDurationMetricWithValueV2']]): Incident duration metrics and their
             measurements for this incident Example: [{'duration_metric': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
             'Lasted'}, 'value_seconds': 1}].
         external_issue_reference (Union[Unset, ExternalIssueReferenceV2]):  Example: {'issue_name': 'INC-123',
             'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider':
             'asana'}.
         has_debrief (Union[Unset, bool]): If this incident has a debrief attached
-        incident_timestamp_values (Union[Unset, List['IncidentTimestampWithValueV2']]): Incident lifecycle events and
+        incident_timestamp_values (Union[Unset, list['IncidentTimestampWithValueV2']]): Incident lifecycle events and
             when they occurred Example: [{'incident_timestamp': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Impact
             started', 'rank': 1}, 'value': {'value': '2021-08-17T13:28:57.801578Z'}}].
         incident_type (Union[Unset, IncidentTypeV2]):  Example: {'create_in_triage': 'always', 'created_at':
@@ -139,9 +140,9 @@ class IncidentV2:
 
     created_at: datetime.datetime
     creator: "ActorV2"
-    custom_field_entries: List["CustomFieldEntryV2"]
+    custom_field_entries: list["CustomFieldEntryV2"]
     id: str
-    incident_role_assignments: List["IncidentRoleAssignmentV2"]
+    incident_role_assignments: list["IncidentRoleAssignmentV2"]
     incident_status: "IncidentStatusV2"
     mode: IncidentV2Mode
     name: str
@@ -151,10 +152,10 @@ class IncidentV2:
     updated_at: datetime.datetime
     visibility: IncidentV2Visibility
     call_url: Union[Unset, str] = UNSET
-    duration_metrics: Union[Unset, List["IncidentDurationMetricWithValueV2"]] = UNSET
+    duration_metrics: Union[Unset, list["IncidentDurationMetricWithValueV2"]] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2"] = UNSET
     has_debrief: Union[Unset, bool] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2"]] = UNSET
+    incident_timestamp_values: Union[Unset, list["IncidentTimestampWithValueV2"]] = UNSET
     incident_type: Union[Unset, "IncidentTypeV2"] = UNSET
     permalink: Union[Unset, str] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
@@ -165,9 +166,9 @@ class IncidentV2:
     workload_minutes_sleeping: Union[Unset, float] = UNSET
     workload_minutes_total: Union[Unset, float] = UNSET
     workload_minutes_working: Union[Unset, float] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         creator = self.creator.to_dict()
@@ -202,27 +203,27 @@ class IncidentV2:
 
         call_url = self.call_url
 
-        duration_metrics: Union[Unset, List[Dict[str, Any]]] = UNSET
+        duration_metrics: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.duration_metrics, Unset):
             duration_metrics = []
             for duration_metrics_item_data in self.duration_metrics:
                 duration_metrics_item = duration_metrics_item_data.to_dict()
                 duration_metrics.append(duration_metrics_item)
 
-        external_issue_reference: Union[Unset, Dict[str, Any]] = UNSET
+        external_issue_reference: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.external_issue_reference, Unset):
             external_issue_reference = self.external_issue_reference.to_dict()
 
         has_debrief = self.has_debrief
 
-        incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_timestamp_values: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
                 incident_timestamp_values_item = incident_timestamp_values_item_data.to_dict()
                 incident_timestamp_values.append(incident_timestamp_values_item)
 
-        incident_type: Union[Unset, Dict[str, Any]] = UNSET
+        incident_type: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
@@ -230,7 +231,7 @@ class IncidentV2:
 
         postmortem_document_url = self.postmortem_document_url
 
-        severity: Union[Unset, Dict[str, Any]] = UNSET
+        severity: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
@@ -246,7 +247,7 @@ class IncidentV2:
 
         workload_minutes_working = self.workload_minutes_working
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -299,7 +300,7 @@ class IncidentV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.actor_v2 import ActorV2
         from ..models.custom_field_entry_v2 import CustomFieldEntryV2
         from ..models.external_issue_reference_v2 import ExternalIssueReferenceV2
@@ -314,7 +315,7 @@ class IncidentV2:
         from ..models.incident_type_v2 import IncidentTypeV2
         from ..models.severity_v2 import SeverityV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         created_at = isoparse(d.pop("created_at"))
 
         creator = ActorV2.from_dict(d.pop("creator"))
@@ -451,7 +452,7 @@ class IncidentV2:
         return incident_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

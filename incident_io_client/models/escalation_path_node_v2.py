@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -40,7 +41,7 @@ class EscalationPathNodeV2:
 
             This allows you to reference the node in other nodes, such as when configuring a 'repeat' node. Example:
             01FCNDV6P870EA6S7TK1DSYDG0.
-        type (EscalationPathNodeV2Type): The type of this node. Available types are:
+        type_ (EscalationPathNodeV2Type): The type of this node. Available types are:
             * level: A set of targets (users or schedules) that should be paged, either all at once, or with a round-robin
             configuration.
             * notify_channel: Send the escalation to a Slack channel, where it can be acked by anyone in the channel.
@@ -86,40 +87,40 @@ class EscalationPathNodeV2:
     """
 
     id: str
-    type: EscalationPathNodeV2Type
+    type_: EscalationPathNodeV2Type
     if_else: Union[Unset, "EscalationPathNodeIfElseV2"] = UNSET
     level: Union[Unset, "EscalationPathNodeLevelV2"] = UNSET
     notify_channel: Union[Unset, "EscalationPathNodeNotifyChannelV2"] = UNSET
     repeat: Union[Unset, "EscalationPathNodeRepeatV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
-        type = self.type.value
+        type_ = self.type_.value
 
-        if_else: Union[Unset, Dict[str, Any]] = UNSET
+        if_else: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.if_else, Unset):
             if_else = self.if_else.to_dict()
 
-        level: Union[Unset, Dict[str, Any]] = UNSET
+        level: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.level, Unset):
             level = self.level.to_dict()
 
-        notify_channel: Union[Unset, Dict[str, Any]] = UNSET
+        notify_channel: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.notify_channel, Unset):
             notify_channel = self.notify_channel.to_dict()
 
-        repeat: Union[Unset, Dict[str, Any]] = UNSET
+        repeat: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.repeat, Unset):
             repeat = self.repeat.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "id": id,
-                "type": type,
+                "type": type_,
             }
         )
         if if_else is not UNSET:
@@ -134,7 +135,7 @@ class EscalationPathNodeV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.escalation_path_node_if_else_v2 import EscalationPathNodeIfElseV2
         from ..models.escalation_path_node_level_v2 import EscalationPathNodeLevelV2
         from ..models.escalation_path_node_notify_channel_v2 import (
@@ -142,10 +143,10 @@ class EscalationPathNodeV2:
         )
         from ..models.escalation_path_node_repeat_v2 import EscalationPathNodeRepeatV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
-        type = EscalationPathNodeV2Type(d.pop("type"))
+        type_ = EscalationPathNodeV2Type(d.pop("type"))
 
         _if_else = d.pop("if_else", UNSET)
         if_else: Union[Unset, EscalationPathNodeIfElseV2]
@@ -177,7 +178,7 @@ class EscalationPathNodeV2:
 
         escalation_path_node_v2 = cls(
             id=id,
-            type=type,
+            type_=type_,
             if_else=if_else,
             level=level,
             notify_channel=notify_channel,
@@ -188,7 +189,7 @@ class EscalationPathNodeV2:
         return escalation_path_node_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

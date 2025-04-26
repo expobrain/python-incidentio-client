@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,18 +30,18 @@ class ActorV2:
 
     api_key: Union[Unset, "APIKeyV2"] = UNSET
     user: Union[Unset, "UserV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        api_key: Union[Unset, Dict[str, Any]] = UNSET
+    def to_dict(self) -> dict[str, Any]:
+        api_key: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.api_key, Unset):
             api_key = self.api_key.to_dict()
 
-        user: Union[Unset, Dict[str, Any]] = UNSET
+        user: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.user, Unset):
             user = self.user.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if api_key is not UNSET:
@@ -51,11 +52,11 @@ class ActorV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.api_key_v2 import APIKeyV2
         from ..models.user_v2 import UserV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         _api_key = d.pop("api_key", UNSET)
         api_key: Union[Unset, APIKeyV2]
         if isinstance(_api_key, Unset):
@@ -79,7 +80,7 @@ class ActorV2:
         return actor_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

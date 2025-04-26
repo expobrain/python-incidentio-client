@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -47,9 +48,9 @@ class AlertEventsV2CreateHTTPRequestBody:
     description: Union[Unset, str] = UNSET
     metadata: Union[Unset, "AlertEventsV2CreateHTTPRequestBodyMetadata"] = UNSET
     source_url: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         status = self.status.value
 
         title = self.title
@@ -58,13 +59,13 @@ class AlertEventsV2CreateHTTPRequestBody:
 
         description = self.description
 
-        metadata: Union[Unset, Dict[str, Any]] = UNSET
+        metadata: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.metadata, Unset):
             metadata = self.metadata.to_dict()
 
         source_url = self.source_url
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -84,12 +85,12 @@ class AlertEventsV2CreateHTTPRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.alert_events_v2_create_http_request_body_metadata import (
             AlertEventsV2CreateHTTPRequestBodyMetadata,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         status = AlertEventsV2CreateHTTPRequestBodyStatus(d.pop("status"))
 
         title = d.pop("title")
@@ -120,7 +121,7 @@ class AlertEventsV2CreateHTTPRequestBody:
         return alert_events_v2_create_http_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

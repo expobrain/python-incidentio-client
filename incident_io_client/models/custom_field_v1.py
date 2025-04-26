@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -34,7 +35,7 @@ class CustomFieldV1:
         field_type (CustomFieldV1FieldType): Type of custom field Example: single_select.
         id (str): Unique identifier for the custom field Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Human readable name for the custom field Example: Affected Team.
-        options (List['CustomFieldOptionV1']): What options are available for this custom field, if this field has
+        options (list['CustomFieldOptionV1']): What options are available for this custom field, if this field has
             options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}].
         show_before_closure (bool): Whether a custom field should be shown in the incident resolve modal. If this custom
@@ -59,7 +60,7 @@ class CustomFieldV1:
     field_type: CustomFieldV1FieldType
     id: str
     name: str
-    options: List["CustomFieldOptionV1"]
+    options: list["CustomFieldOptionV1"]
     show_before_closure: bool
     show_before_creation: bool
     show_before_update: bool
@@ -68,9 +69,9 @@ class CustomFieldV1:
     required: Union[Unset, CustomFieldV1Required] = UNSET
     required_v2: Union[Unset, CustomFieldV1RequiredV2] = UNSET
     show_in_announcement_post: Union[Unset, bool] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         description = self.description
@@ -106,7 +107,7 @@ class CustomFieldV1:
 
         show_in_announcement_post = self.show_in_announcement_post
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -134,10 +135,10 @@ class CustomFieldV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         created_at = isoparse(d.pop("created_at"))
 
         description = d.pop("description")
@@ -202,7 +203,7 @@ class CustomFieldV1:
         return custom_field_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

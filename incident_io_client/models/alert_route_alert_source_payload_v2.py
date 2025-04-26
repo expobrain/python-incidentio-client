@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,17 +21,17 @@ class AlertRouteAlertSourcePayloadV2:
 
     Attributes:
         alert_source_id (str): The alert source ID that will match for the route Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        condition_groups (List['ConditionGroupPayloadV2']): What conditions should alerts from this source meet to be
+        condition_groups (list['ConditionGroupPayloadV2']): What conditions should alerts from this source meet to be
             included in this alert route? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}].
     """
 
     alert_source_id: str
-    condition_groups: List["ConditionGroupPayloadV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    condition_groups: list["ConditionGroupPayloadV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         alert_source_id = self.alert_source_id
 
         condition_groups = []
@@ -38,7 +39,7 @@ class AlertRouteAlertSourcePayloadV2:
             condition_groups_item = condition_groups_item_data.to_dict()
             condition_groups.append(condition_groups_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -50,10 +51,10 @@ class AlertRouteAlertSourcePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         alert_source_id = d.pop("alert_source_id")
 
         condition_groups = []
@@ -72,7 +73,7 @@ class AlertRouteAlertSourcePayloadV2:
         return alert_route_alert_source_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

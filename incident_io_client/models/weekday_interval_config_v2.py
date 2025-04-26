@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,17 +22,17 @@ class WeekdayIntervalConfigV2:
         id (str): The unique identifier for this set of working intervals Example: abc123.
         name (str): A human readable label for this set of working intervals Example: abc123.
         timezone (str): How to interpret all the intervals Example: abc123.
-        weekday_intervals (List['WeekdayIntervalV2']):  Example: [{'end_time': '17:00', 'start_time': '09:00',
+        weekday_intervals (list['WeekdayIntervalV2']):  Example: [{'end_time': '17:00', 'start_time': '09:00',
             'weekday': 'abc123'}].
     """
 
     id: str
     name: str
     timezone: str
-    weekday_intervals: List["WeekdayIntervalV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    weekday_intervals: list["WeekdayIntervalV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -43,7 +44,7 @@ class WeekdayIntervalConfigV2:
             weekday_intervals_item = weekday_intervals_item_data.to_dict()
             weekday_intervals.append(weekday_intervals_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -57,10 +58,10 @@ class WeekdayIntervalConfigV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.weekday_interval_v2 import WeekdayIntervalV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
         name = d.pop("name")
@@ -85,7 +86,7 @@ class WeekdayIntervalConfigV2:
         return weekday_interval_config_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

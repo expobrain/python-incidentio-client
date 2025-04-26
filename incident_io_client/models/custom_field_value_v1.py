@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -42,10 +43,10 @@ class CustomFieldValueV1:
     value_numeric: Union[Unset, str] = UNSET
     value_option: Union[Unset, "CustomFieldOptionV1"] = UNSET
     value_text: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        value_catalog_entry: Union[Unset, Dict[str, Any]] = UNSET
+    def to_dict(self) -> dict[str, Any]:
+        value_catalog_entry: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.value_catalog_entry, Unset):
             value_catalog_entry = self.value_catalog_entry.to_dict()
 
@@ -53,13 +54,13 @@ class CustomFieldValueV1:
 
         value_numeric = self.value_numeric
 
-        value_option: Union[Unset, Dict[str, Any]] = UNSET
+        value_option: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.value_option, Unset):
             value_option = self.value_option.to_dict()
 
         value_text = self.value_text
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if value_catalog_entry is not UNSET:
@@ -76,11 +77,11 @@ class CustomFieldValueV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
         from ..models.embedded_catalog_entry_v1 import EmbeddedCatalogEntryV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         _value_catalog_entry = d.pop("value_catalog_entry", UNSET)
         value_catalog_entry: Union[Unset, EmbeddedCatalogEntryV1]
         if isinstance(_value_catalog_entry, Unset):
@@ -113,7 +114,7 @@ class CustomFieldValueV1:
         return custom_field_value_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -36,7 +37,7 @@ class CatalogTypeV2:
     Attributes:
         annotations (CatalogTypeV2Annotations): Annotations that can track metadata about this type Example:
             {'incident.io/catalog-importer/id': 'id-of-config'}.
-        categories (List[CatalogTypeV2CategoriesItem]): What categories is this type considered part of Example:
+        categories (list[CatalogTypeV2CategoriesItem]): What categories is this type considered part of Example:
             ['issue-tracker'].
         color (CatalogTypeV2Color): Sets the display color of this type in the dashboard Example: yellow.
         created_at (datetime.datetime): When this type was created Example: 2021-08-17T13:28:57.801578Z.
@@ -62,14 +63,14 @@ class CatalogTypeV2:
             Example: 2021-08-17T13:28:57.801578Z.
         registry_type (Union[Unset, str]): The registry resource this type is synced from, if any Example:
             PagerDutyService.
-        required_integrations (Union[Unset, List[str]]): If populated, the integrations required for this type Example:
+        required_integrations (Union[Unset, list[str]]): If populated, the integrations required for this type Example:
             ['pager_duty'].
         source_repo_url (Union[Unset, str]): The url of the external repository where this type is managed Example:
             https://github.com/my-company/incident-io-catalog.
     """
 
     annotations: "CatalogTypeV2Annotations"
-    categories: List[CatalogTypeV2CategoriesItem]
+    categories: list[CatalogTypeV2CategoriesItem]
     color: CatalogTypeV2Color
     created_at: datetime.datetime
     description: str
@@ -86,11 +87,11 @@ class CatalogTypeV2:
     estimated_count: Union[Unset, int] = UNSET
     last_synced_at: Union[Unset, datetime.datetime] = UNSET
     registry_type: Union[Unset, str] = UNSET
-    required_integrations: Union[Unset, List[str]] = UNSET
+    required_integrations: Union[Unset, list[str]] = UNSET
     source_repo_url: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         annotations = self.annotations.to_dict()
 
         categories = []
@@ -132,13 +133,13 @@ class CatalogTypeV2:
 
         registry_type = self.registry_type
 
-        required_integrations: Union[Unset, List[str]] = UNSET
+        required_integrations: Union[Unset, list[str]] = UNSET
         if not isinstance(self.required_integrations, Unset):
             required_integrations = self.required_integrations
 
         source_repo_url = self.source_repo_url
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -174,11 +175,11 @@ class CatalogTypeV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_type_schema_v2 import CatalogTypeSchemaV2
         from ..models.catalog_type_v2_annotations import CatalogTypeV2Annotations
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         annotations = CatalogTypeV2Annotations.from_dict(d.pop("annotations"))
 
         categories = []
@@ -225,7 +226,7 @@ class CatalogTypeV2:
 
         registry_type = d.pop("registry_type", UNSET)
 
-        required_integrations = cast(List[str], d.pop("required_integrations", UNSET))
+        required_integrations = cast(list[str], d.pop("required_integrations", UNSET))
 
         source_repo_url = d.pop("source_repo_url", UNSET)
 
@@ -256,7 +257,7 @@ class CatalogTypeV2:
         return catalog_type_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

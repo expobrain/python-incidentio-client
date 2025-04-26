@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -42,7 +43,7 @@ class CatalogV2ListEntriesResponseBody:
             'page_size': 25}}
 
     Attributes:
-        catalog_entries (List['CatalogEntryV2']):  Example: [{'aliases': ['lawrence@incident.io', 'lawrence'],
+        catalog_entries (list['CatalogEntryV2']):  Example: [{'aliases': ['lawrence@incident.io', 'lawrence'],
             'archived_at': '2021-08-17T14:28:57.801578Z', 'attribute_values': {'abc123': {'array_value': [{'catalog_entry':
             {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'catalog_entry_name': 'Primary escalation', 'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext':
@@ -69,12 +70,12 @@ class CatalogV2ListEntriesResponseBody:
         pagination_meta (PaginationMetaResult):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
     """
 
-    catalog_entries: List["CatalogEntryV2"]
+    catalog_entries: list["CatalogEntryV2"]
     catalog_type: "CatalogTypeV2"
     pagination_meta: "PaginationMetaResult"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         catalog_entries = []
         for catalog_entries_item_data in self.catalog_entries:
             catalog_entries_item = catalog_entries_item_data.to_dict()
@@ -84,7 +85,7 @@ class CatalogV2ListEntriesResponseBody:
 
         pagination_meta = self.pagination_meta.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -97,12 +98,12 @@ class CatalogV2ListEntriesResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_entry_v2 import CatalogEntryV2
         from ..models.catalog_type_v2 import CatalogTypeV2
         from ..models.pagination_meta_result import PaginationMetaResult
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         catalog_entries = []
         _catalog_entries = d.pop("catalog_entries")
         for catalog_entries_item_data in _catalog_entries:
@@ -124,7 +125,7 @@ class CatalogV2ListEntriesResponseBody:
         return catalog_v2_list_entries_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

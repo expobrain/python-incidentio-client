@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -39,12 +40,12 @@ class CatalogV2UpdateTypeResponseBody:
     """
 
     catalog_type: "CatalogTypeV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         catalog_type = self.catalog_type.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -55,10 +56,10 @@ class CatalogV2UpdateTypeResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_type_v2 import CatalogTypeV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         catalog_type = CatalogTypeV2.from_dict(d.pop("catalog_type"))
 
         catalog_v2_update_type_response_body = cls(
@@ -69,7 +70,7 @@ class CatalogV2UpdateTypeResponseBody:
         return catalog_v2_update_type_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -23,18 +24,18 @@ class ConditionV2:
 
     Attributes:
         operation (ConditionOperationV2):  Example: {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
-        param_bindings (List['EngineParamBindingV2']): Bindings for the operation parameters Example: [{'array_value':
+        param_bindings (list['EngineParamBindingV2']): Bindings for the operation parameters Example: [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}].
         subject (ConditionSubjectV2):  Example: {'label': 'Incident Severity', 'reference': 'incident.severity'}.
     """
 
     operation: "ConditionOperationV2"
-    param_bindings: List["EngineParamBindingV2"]
+    param_bindings: list["EngineParamBindingV2"]
     subject: "ConditionSubjectV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         operation = self.operation.to_dict()
 
         param_bindings = []
@@ -44,7 +45,7 @@ class ConditionV2:
 
         subject = self.subject.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -57,12 +58,12 @@ class ConditionV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_operation_v2 import ConditionOperationV2
         from ..models.condition_subject_v2 import ConditionSubjectV2
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         operation = ConditionOperationV2.from_dict(d.pop("operation"))
 
         param_bindings = []
@@ -84,7 +85,7 @@ class ConditionV2:
         return condition_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

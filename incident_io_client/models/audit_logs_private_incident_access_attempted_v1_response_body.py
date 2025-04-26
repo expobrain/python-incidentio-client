@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -34,7 +35,7 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
         context (AuditLogEntryContextV2):  Example: {'location': '1.2.3.4', 'user_agent': 'Chrome/91.0.4472.114'}.
         metadata (AuditLogPrivateIncidentAccessAttemptedMetadataV2):  Example: {'outcome': 'granted'}.
         occurred_at (datetime.datetime): When the entry occurred Example: 2021-08-17T13:28:57.801578Z.
-        targets (List['AuditLogTargetV2']): The custom field that was created Example: [{'id':
+        targets (list['AuditLogTargetV2']): The custom field that was created Example: [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': '#INC-123 The website is slow', 'type': 'incident'}].
         version (int): Which version the event is Example: 1.
     """
@@ -44,11 +45,11 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
     context: "AuditLogEntryContextV2"
     metadata: "AuditLogPrivateIncidentAccessAttemptedMetadataV2"
     occurred_at: datetime.datetime
-    targets: List["AuditLogTargetV2"]
+    targets: list["AuditLogTargetV2"]
     version: int
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         action = self.action
 
         actor = self.actor.to_dict()
@@ -66,7 +67,7 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
 
         version = self.version
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -83,7 +84,7 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.audit_log_actor_v2 import AuditLogActorV2
         from ..models.audit_log_entry_context_v2 import AuditLogEntryContextV2
         from ..models.audit_log_private_incident_access_attempted_metadata_v2 import (
@@ -91,7 +92,7 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
         )
         from ..models.audit_log_target_v2 import AuditLogTargetV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         action = d.pop("action")
 
         actor = AuditLogActorV2.from_dict(d.pop("actor"))
@@ -125,7 +126,7 @@ class AuditLogsPrivateIncidentAccessAttemptedV1ResponseBody:
         return audit_logs_private_incident_access_attempted_v1_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

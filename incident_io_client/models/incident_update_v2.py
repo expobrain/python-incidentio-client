@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -59,9 +60,9 @@ class IncidentUpdateV2:
     merged_into_incident_id: Union[Unset, str] = UNSET
     message: Union[Unset, str] = UNSET
     new_severity: Union[Unset, "SeverityV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         id = self.id
@@ -76,11 +77,11 @@ class IncidentUpdateV2:
 
         message = self.message
 
-        new_severity: Union[Unset, Dict[str, Any]] = UNSET
+        new_severity: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.new_severity, Unset):
             new_severity = self.new_severity.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -101,12 +102,12 @@ class IncidentUpdateV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.actor_v2 import ActorV2
         from ..models.incident_status_v2 import IncidentStatusV2
         from ..models.severity_v2 import SeverityV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         created_at = isoparse(d.pop("created_at"))
 
         id = d.pop("id")
@@ -143,7 +144,7 @@ class IncidentUpdateV2:
         return incident_update_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

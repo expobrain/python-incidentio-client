@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,7 +23,7 @@ class CustomFieldsV1ListResponseBody:
             'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        custom_fields (List['CustomFieldV1']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+        custom_fields (list['CustomFieldV1']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue',
             'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
@@ -31,16 +32,16 @@ class CustomFieldsV1ListResponseBody:
             '2021-08-17T13:28:57.801578Z'}].
     """
 
-    custom_fields: List["CustomFieldV1"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    custom_fields: list["CustomFieldV1"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_fields = []
         for custom_fields_item_data in self.custom_fields:
             custom_fields_item = custom_fields_item_data.to_dict()
             custom_fields.append(custom_fields_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -51,10 +52,10 @@ class CustomFieldsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_v1 import CustomFieldV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_fields = []
         _custom_fields = d.pop("custom_fields")
         for custom_fields_item_data in _custom_fields:
@@ -70,7 +71,7 @@ class CustomFieldsV1ListResponseBody:
         return custom_fields_v1_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

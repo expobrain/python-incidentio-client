@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -46,9 +47,9 @@ class ActionV2:
     updated_at: datetime.datetime
     assignee: Union[Unset, "UserV2"] = UNSET
     completed_at: Union[Unset, datetime.datetime] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         created_at = self.created_at.isoformat()
 
         description = self.description
@@ -61,7 +62,7 @@ class ActionV2:
 
         updated_at = self.updated_at.isoformat()
 
-        assignee: Union[Unset, Dict[str, Any]] = UNSET
+        assignee: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.assignee, Unset):
             assignee = self.assignee.to_dict()
 
@@ -69,7 +70,7 @@ class ActionV2:
         if not isinstance(self.completed_at, Unset):
             completed_at = self.completed_at.isoformat()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -89,10 +90,10 @@ class ActionV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.user_v2 import UserV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         created_at = isoparse(d.pop("created_at"))
 
         description = d.pop("description")
@@ -134,7 +135,7 @@ class ActionV2:
         return action_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

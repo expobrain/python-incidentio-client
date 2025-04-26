@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,20 +20,20 @@ class AlertRouteIncidentTemplateV2CustomFieldPriorities:
 
     """
 
-    additional_properties: Dict[
+    additional_properties: dict[
         str, AlertRouteIncidentTemplateV2CustomFieldPrioritiesAdditionalProperty
     ] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        field_dict: Dict[str, Any] = {}
+    def to_dict(self) -> dict[str, Any]:
+        field_dict: dict[str, Any] = {}
         for prop_name, prop in self.additional_properties.items():
             field_dict[prop_name] = prop.value
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         alert_route_incident_template_v2_custom_field_priorities = cls()
 
         additional_properties = {}
@@ -49,7 +50,7 @@ class AlertRouteIncidentTemplateV2CustomFieldPriorities:
         return alert_route_incident_template_v2_custom_field_priorities
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(

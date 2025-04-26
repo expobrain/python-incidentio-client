@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -26,12 +27,12 @@ class CustomFieldsV2UpdateResponseBody:
     """
 
     custom_field: "CustomFieldV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field = self.custom_field.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -42,10 +43,10 @@ class CustomFieldsV2UpdateResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_v2 import CustomFieldV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field = CustomFieldV2.from_dict(d.pop("custom_field"))
 
         custom_fields_v2_update_response_body = cls(
@@ -56,7 +57,7 @@ class CustomFieldsV2UpdateResponseBody:
         return custom_fields_v2_update_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

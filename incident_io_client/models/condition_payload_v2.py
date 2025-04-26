@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,18 +21,18 @@ class ConditionPayloadV2:
 
     Attributes:
         operation (str): The name of the operation on the subject Example: one_of.
-        param_bindings (List['EngineParamBindingPayloadV2']): List of parameter bindings Example: [{'array_value':
+        param_bindings (list['EngineParamBindingPayloadV2']): List of parameter bindings Example: [{'array_value':
             [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}].
         subject (str): The reference of the subject in the trigger scope Example: incident.severity.
     """
 
     operation: str
-    param_bindings: List["EngineParamBindingPayloadV2"]
+    param_bindings: list["EngineParamBindingPayloadV2"]
     subject: str
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         operation = self.operation
 
         param_bindings = []
@@ -41,7 +42,7 @@ class ConditionPayloadV2:
 
         subject = self.subject
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -54,10 +55,10 @@ class ConditionPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         operation = d.pop("operation")
 
         param_bindings = []
@@ -79,7 +80,7 @@ class ConditionPayloadV2:
         return condition_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

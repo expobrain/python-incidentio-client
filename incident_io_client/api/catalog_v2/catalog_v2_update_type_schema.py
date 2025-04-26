@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -18,10 +18,10 @@ def _get_kwargs(
     id: str,
     *,
     body: CatalogV2UpdateTypeSchemaRequestBody,
-) -> Dict[str, Any]:
-    headers: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    headers: dict[str, Any] = {}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/v2/catalog_types/{id}/actions/update_schema".format(
             id=id,
