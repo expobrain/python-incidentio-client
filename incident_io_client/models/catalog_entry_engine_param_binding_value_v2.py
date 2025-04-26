@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -107,10 +108,10 @@ class CatalogEntryEngineParamBindingValueV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_entry_reference_v2 import CatalogEntryReferenceV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         label = d.pop("label")
 
         sort_key = d.pop("sort_key")

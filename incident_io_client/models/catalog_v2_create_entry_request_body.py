@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,7 +30,7 @@ class CatalogV2CreateEntryRequestBody:
             'reference': 'incident.severity'}}}.
         catalog_type_id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name is the human readable name of this entry Example: Primary On-call.
-        aliases (Union[Unset, List[str]]): Optional aliases that can be used to reference this entry Example:
+        aliases (Union[Unset, list[str]]): Optional aliases that can be used to reference this entry Example:
             ['lawrence@incident.io', 'lawrence'].
         external_id (Union[Unset, str]): An optional alternative ID for this entry, which is ensured to be unique for
             the type Example: 761722cd-d1d7-477b-ac7e-90f9e079dc33.
@@ -78,12 +79,12 @@ class CatalogV2CreateEntryRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_v2_create_entry_request_body_attribute_values import (
             CatalogV2CreateEntryRequestBodyAttributeValues,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         attribute_values = CatalogV2CreateEntryRequestBodyAttributeValues.from_dict(
             d.pop("attribute_values")
         )

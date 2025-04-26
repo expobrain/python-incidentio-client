@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,7 +19,7 @@ class SeveritiesV1ListResponseBody:
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        severities (List['SeverityV1']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues
+        severities (list['SeverityV1']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues
             with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}].
     """
@@ -43,10 +44,10 @@ class SeveritiesV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.severity_v1 import SeverityV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         severities = []
         _severities = d.pop("severities")
         for severities_item_data in _severities:

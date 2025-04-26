@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,7 +22,7 @@ class CustomFieldEntryPayloadV1:
 
     Attributes:
         custom_field_id (str): ID of the custom field this entry is linked against Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        values (List['CustomFieldValuePayloadV1']): List of values to associate with this entry. Use an empty array to
+        values (list['CustomFieldValuePayloadV1']): List of values to associate with this entry. Use an empty array to
             unset the value of the custom field. Example: [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link': 'https://google.com/', 'value_numeric': '123.456',
             'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it',
@@ -52,10 +53,10 @@ class CustomFieldEntryPayloadV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_value_payload_v1 import CustomFieldValuePayloadV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field_id = d.pop("custom_field_id")
 
         values = []

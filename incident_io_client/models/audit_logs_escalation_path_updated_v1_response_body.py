@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -30,7 +31,7 @@ class AuditLogsEscalationPathUpdatedV1ResponseBody:
             'admin', 'user_custom_role_slugs': 'engineering,security'}, 'name': 'John Doe', 'type': 'user'}.
         context (AuditLogEntryContextV2):  Example: {'location': '1.2.3.4', 'user_agent': 'Chrome/91.0.4472.114'}.
         occurred_at (datetime.datetime): When the entry occurred Example: 2021-08-17T13:28:57.801578Z.
-        targets (List['AuditLogTargetV2']): The custom field that was created Example: [{'id':
+        targets (list['AuditLogTargetV2']): The custom field that was created Example: [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Critical incidents', 'type': 'escalation_path'}].
         version (int): Which version the event is Example: 1.
     """
@@ -75,12 +76,12 @@ class AuditLogsEscalationPathUpdatedV1ResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.audit_log_actor_v2 import AuditLogActorV2
         from ..models.audit_log_entry_context_v2 import AuditLogEntryContextV2
         from ..models.audit_log_target_v2 import AuditLogTargetV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         action = d.pop("action")
 
         actor = AuditLogActorV2.from_dict(d.pop("actor"))

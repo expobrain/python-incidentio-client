@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -33,14 +34,14 @@ class ScheduleRotationCreatePayloadV2:
         name (str): Name of the rotation Example: My Rotation.
         effective_from (Union[Unset, datetime.datetime]):  Example: 2021-08-17T13:28:57.801578Z.
         handover_start_at (Union[Unset, datetime.datetime]):  Example: 2021-08-17T13:28:57.801578Z.
-        handovers (Union[Unset, List['ScheduleRotationHandoverV2']]):  Example: [{'interval': 1, 'interval_type':
+        handovers (Union[Unset, list['ScheduleRotationHandoverV2']]):  Example: [{'interval': 1, 'interval_type':
             'daily'}].
         id (Union[Unset, str]): Unique identifier of the rotation Example: 01G0J1EXE7AXZ2C93K61WBPYEH.
-        layers (Union[Unset, List['ScheduleLayerCreatePayloadV2']]):  Example: [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+        layers (Union[Unset, list['ScheduleLayerCreatePayloadV2']]):  Example: [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}].
-        users (Union[Unset, List['UserReferencePayloadV2']]):  Example: [{'email': 'bob@example.com', 'id':
+        users (Union[Unset, list['UserReferencePayloadV2']]):  Example: [{'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}].
-        working_interval (Union[Unset, List['ScheduleRotationWorkingIntervalCreatePayloadV2']]):  Example: [{'end_time':
+        working_interval (Union[Unset, list['ScheduleRotationWorkingIntervalCreatePayloadV2']]):  Example: [{'end_time':
             '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}].
     """
 
@@ -120,7 +121,7 @@ class ScheduleRotationCreatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.schedule_layer_create_payload_v2 import (
             ScheduleLayerCreatePayloadV2,
         )
@@ -130,7 +131,7 @@ class ScheduleRotationCreatePayloadV2:
         )
         from ..models.user_reference_payload_v2 import UserReferencePayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         name = d.pop("name")
 
         _effective_from = d.pop("effective_from", UNSET)

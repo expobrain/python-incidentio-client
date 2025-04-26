@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,17 +28,17 @@ class CatalogTypeAttributePayloadV2:
     Attributes:
         array (bool): Whether this attribute is an array
         name (str): Unique name of this attribute Example: tier.
-        type (str): Catalog type name for this attribute Example: Custom["Service"].
+        type_ (str): Catalog type name for this attribute Example: Custom["Service"].
         backlink_attribute (Union[Unset, str]): The attribute to use (if this is a backlink) Example: abc123.
         id (Union[Unset, str]): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
         mode (Union[Unset, CatalogTypeAttributePayloadV2Mode]): Controls how this attribute is modified Example: manual.
-        path (Union[Unset, List['CatalogTypeAttributePathItemPayloadV2']]): The path to use (if this is an path)
+        path (Union[Unset, list['CatalogTypeAttributePathItemPayloadV2']]): The path to use (if this is an path)
             Example: [{'attribute_id': 'abc123'}].
     """
 
     array: bool
     name: str
-    type: str
+    type_: str
     backlink_attribute: Union[Unset, str] = UNSET
     id: Union[Unset, str] = UNSET
     mode: Union[Unset, CatalogTypeAttributePayloadV2Mode] = UNSET
@@ -49,7 +50,7 @@ class CatalogTypeAttributePayloadV2:
 
         name = self.name
 
-        type = self.type
+        type_ = self.type_
 
         backlink_attribute = self.backlink_attribute
 
@@ -72,7 +73,7 @@ class CatalogTypeAttributePayloadV2:
             {
                 "array": array,
                 "name": name,
-                "type": type,
+                "type": type_,
             }
         )
         if backlink_attribute is not UNSET:
@@ -87,17 +88,17 @@ class CatalogTypeAttributePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_type_attribute_path_item_payload_v2 import (
             CatalogTypeAttributePathItemPayloadV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         array = d.pop("array")
 
         name = d.pop("name")
 
-        type = d.pop("type")
+        type_ = d.pop("type")
 
         backlink_attribute = d.pop("backlink_attribute", UNSET)
 
@@ -120,7 +121,7 @@ class CatalogTypeAttributePayloadV2:
         catalog_type_attribute_payload_v2 = cls(
             array=array,
             name=name,
-            type=type,
+            type_=type_,
             backlink_attribute=backlink_attribute,
             id=id,
             mode=mode,

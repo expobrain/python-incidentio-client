@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,7 +18,7 @@ class IdentityV1:
     Attributes:
         dashboard_url (str): The dashboard URL for this organisation Example: https://app.incident.io/my-org.
         name (str): The name assigned to the current API Key Example: Alertmanager token.
-        roles (List[IdentityV1RolesItem]): Which roles have been enabled for this key Example: ['incident_creator'].
+        roles (list[IdentityV1RolesItem]): Which roles have been enabled for this key Example: ['incident_creator'].
     """
 
     dashboard_url: str
@@ -48,8 +49,8 @@ class IdentityV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         dashboard_url = d.pop("dashboard_url")
 
         name = d.pop("name")

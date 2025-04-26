@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,7 +28,7 @@ class EscalationPathNodeLevelV2:
             'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
-        targets (List['EscalationPathTargetV2']): The targets (users or schedules) for this level Example: [{'id':
+        targets (list['EscalationPathTargetV2']): The targets (users or schedules) for this level Example: [{'id':
             'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
         round_robin_config (Union[Unset, EscalationPathRoundRobinConfigV2]):  Example: {'enabled': False,
             'rotate_after_seconds': 120}.
@@ -88,13 +89,13 @@ class EscalationPathNodeLevelV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.escalation_path_round_robin_config_v2 import (
             EscalationPathRoundRobinConfigV2,
         )
         from ..models.escalation_path_target_v2 import EscalationPathTargetV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         targets = []
         _targets = d.pop("targets")
         for targets_item_data in _targets:

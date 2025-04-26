@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -23,7 +24,7 @@ class ConditionV2:
 
     Attributes:
         operation (ConditionOperationV2):  Example: {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
-        param_bindings (List['EngineParamBindingV2']): Bindings for the operation parameters Example: [{'array_value':
+        param_bindings (list['EngineParamBindingV2']): Bindings for the operation parameters Example: [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}].
         subject (ConditionSubjectV2):  Example: {'label': 'Incident Severity', 'reference': 'incident.severity'}.
@@ -57,12 +58,12 @@ class ConditionV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_operation_v2 import ConditionOperationV2
         from ..models.condition_subject_v2 import ConditionSubjectV2
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         operation = ConditionOperationV2.from_dict(d.pop("operation"))
 
         param_bindings = []

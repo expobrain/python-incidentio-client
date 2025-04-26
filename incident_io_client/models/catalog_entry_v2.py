@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -33,7 +34,7 @@ class CatalogEntryV2:
             3, 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
-        aliases (List[str]): Optional aliases that can be used to reference this entry Example: ['lawrence@incident.io',
+        aliases (list[str]): Optional aliases that can be used to reference this entry Example: ['lawrence@incident.io',
             'lawrence'].
         attribute_values (CatalogEntryV2AttributeValues): Values of this entry Example: {'abc123': {'array_value':
             [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
@@ -114,12 +115,12 @@ class CatalogEntryV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_entry_v2_attribute_values import (
             CatalogEntryV2AttributeValues,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         aliases = cast(list[str], d.pop("aliases"))
 
         attribute_values = CatalogEntryV2AttributeValues.from_dict(d.pop("attribute_values"))

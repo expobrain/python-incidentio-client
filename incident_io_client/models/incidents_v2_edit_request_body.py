@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -61,10 +62,10 @@ class IncidentsV2EditRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_edit_payload_v2 import IncidentEditPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incident = IncidentEditPayloadV2.from_dict(d.pop("incident"))
 
         notify_incident_channel = d.pop("notify_incident_channel")

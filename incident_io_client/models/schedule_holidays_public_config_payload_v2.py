@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar, cast
+from collections.abc import Mapping
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -13,7 +14,7 @@ class ScheduleHolidaysPublicConfigPayloadV2:
         {'country_codes': ['abc123']}
 
     Attributes:
-        country_codes (List[str]): ISO 3166-1 alpha-2 country codes for the countries that this schedule is configured
+        country_codes (list[str]): ISO 3166-1 alpha-2 country codes for the countries that this schedule is configured
             to view holidays for Example: ['abc123'].
     """
 
@@ -34,8 +35,8 @@ class ScheduleHolidaysPublicConfigPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         country_codes = cast(list[str], d.pop("country_codes"))
 
         schedule_holidays_public_config_payload_v2 = cls(

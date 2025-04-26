@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -76,11 +77,11 @@ class CustomFieldValueV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_option_v2 import CustomFieldOptionV2
         from ..models.embedded_catalog_entry_v2 import EmbeddedCatalogEntryV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         _value_catalog_entry = d.pop("value_catalog_entry", UNSET)
         value_catalog_entry: Union[Unset, EmbeddedCatalogEntryV2]
         if isinstance(_value_catalog_entry, Unset):

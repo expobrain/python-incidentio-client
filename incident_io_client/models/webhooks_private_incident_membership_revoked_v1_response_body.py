@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -51,10 +52,10 @@ class WebhooksPrivateIncidentMembershipRevokedV1ResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.webhook_incident_user_v2 import WebhookIncidentUserV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         event_type = WebhooksPrivateIncidentMembershipRevokedV1ResponseBodyEventType(
             d.pop("event_type")
         )

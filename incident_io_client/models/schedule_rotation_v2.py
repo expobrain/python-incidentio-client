@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -33,18 +34,18 @@ class ScheduleRotationV2:
     Attributes:
         handover_start_at (datetime.datetime): Defines the next moment we'll trigger a handover Example:
             2021-08-17T13:28:57.801578Z.
-        handovers (List['ScheduleRotationHandoverV2']): Defines the handover intervals for this rota, in order they
+        handovers (list['ScheduleRotationHandoverV2']): Defines the handover intervals for this rota, in order they
             should apply Example: [{'interval': 1, 'interval_type': 'daily'}].
         id (str): Unique internal ID of the rotation Example: 01G0J1EXE7AXZ2C93K61WBPYEH.
-        layers (List['ScheduleLayerV2']): Controls how many people are on-call concurrently Example: [{'id':
+        layers (list['ScheduleLayerV2']): Controls how many people are on-call concurrently Example: [{'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}].
         name (str): Human readable name synced from external provider Example: Primary On-Call Schedule.
-        users (List['UserV2']): Users who are available to be scheduled on this rota Example: [{'email':
+        users (list['UserV2']): Users who are available to be scheduled on this rota Example: [{'email':
             'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer',
             'slack_user_id': 'U02AYNF2XJM'}].
         effective_from (Union[Unset, datetime.datetime]): When this rotation config will be effective from Example:
             2021-08-17T13:28:57.801578Z.
-        working_interval (Union[Unset, List['ScheduleRotationWorkingIntervalV2']]):  Example: [{'end_time': '17:00',
+        working_interval (Union[Unset, list['ScheduleRotationWorkingIntervalV2']]):  Example: [{'end_time': '17:00',
             'start_time': '09:00', 'weekday': 'tuesday'}].
     """
 
@@ -111,7 +112,7 @@ class ScheduleRotationV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.schedule_layer_v2 import ScheduleLayerV2
         from ..models.schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
         from ..models.schedule_rotation_working_interval_v2 import (
@@ -119,7 +120,7 @@ class ScheduleRotationV2:
         )
         from ..models.user_v2 import UserV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         handover_start_at = isoparse(d.pop("handover_start_at"))
 
         handovers = []

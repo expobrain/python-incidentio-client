@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -32,10 +33,10 @@ class CatalogV2CreateEntryRequestBodyAttributeValues:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         catalog_v2_create_entry_request_body_attribute_values = cls()
 
         additional_properties = {}

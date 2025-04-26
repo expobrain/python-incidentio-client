@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -137,11 +138,11 @@ class IncidentWithStatusChangeV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_status_v2 import IncidentStatusV2
         from ..models.incident_v2 import IncidentV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incident = IncidentV2.from_dict(d.pop("incident"))
 
         new_status = IncidentStatusV2.from_dict(d.pop("new_status"))

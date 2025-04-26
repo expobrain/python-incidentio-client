@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -86,7 +87,7 @@ class ScheduleUpdatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.schedule_config_update_payload_v2 import (
             ScheduleConfigUpdatePayloadV2,
         )
@@ -97,7 +98,7 @@ class ScheduleUpdatePayloadV2:
             ScheduleUpdatePayloadV2Annotations,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         _annotations = d.pop("annotations", UNSET)
         annotations: Union[Unset, ScheduleUpdatePayloadV2Annotations]
         if isinstance(_annotations, Unset):

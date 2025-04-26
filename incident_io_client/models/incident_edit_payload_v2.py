@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -35,18 +36,18 @@ class IncidentEditPayloadV2:
 
     Attributes:
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
-        custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV2']]): Set the incident's custom fields to
+        custom_field_entries (Union[Unset, list['CustomFieldEntryPayloadV2']]): Set the incident's custom fields to
             these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}].
-        incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2']]): Assign incident roles to
+        incident_role_assignments (Union[Unset, list['IncidentRoleAssignmentPayloadV2']]): Assign incident roles to
             these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
         incident_status_id (Union[Unset, str]): Incident status to change incident to (you can only change an incident
             from one active status to another, any other lifecycle changes must be taken via the app.) Example:
             01FH5TZRWMNAFB0DZ23FD1TV96.
-        incident_timestamp_values (Union[Unset, List['IncidentTimestampValuePayloadV2']]): Assign the incident's
+        incident_timestamp_values (Union[Unset, list['IncidentTimestampValuePayloadV2']]): Assign the incident's
             timestamps to these values Example: [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}].
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
@@ -127,7 +128,7 @@ class IncidentEditPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_entry_payload_v2 import CustomFieldEntryPayloadV2
         from ..models.incident_role_assignment_payload_v2 import (
             IncidentRoleAssignmentPayloadV2,
@@ -136,7 +137,7 @@ class IncidentEditPayloadV2:
             IncidentTimestampValuePayloadV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         call_url = d.pop("call_url", UNSET)
 
         custom_field_entries = []

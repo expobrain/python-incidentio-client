@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -33,7 +34,7 @@ class EscalationsV2UpdatePathRequestBody:
 
     Attributes:
         name (str): The name of this escalation path, for the user's reference. Example: Urgent Support.
-        path (List['EscalationPathNodePayloadV2']): The nodes that form the levels and branches of this escalation path.
+        path (list['EscalationPathNodePayloadV2']): The nodes that form the levels and branches of this escalation path.
             Example: [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': 'one_of',
             'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': 'incident.severity'}], 'else_path': [{}],
@@ -45,7 +46,7 @@ class EscalationsV2UpdatePathRequestBody:
             'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}].
-        working_hours (Union[Unset, List['WeekdayIntervalConfigV2']]): The working hours for this escalation path.
+        working_hours (Union[Unset, list['WeekdayIntervalConfigV2']]): The working hours for this escalation path.
             Example: [{'id': 'abc123', 'name': 'abc123', 'timezone': 'abc123', 'weekday_intervals': [{'end_time': '17:00',
             'start_time': '09:00', 'weekday': 'abc123'}]}].
     """
@@ -84,11 +85,11 @@ class EscalationsV2UpdatePathRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.escalation_path_node_payload_v2 import EscalationPathNodePayloadV2
         from ..models.weekday_interval_config_v2 import WeekdayIntervalConfigV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         name = d.pop("name")
 
         path = []

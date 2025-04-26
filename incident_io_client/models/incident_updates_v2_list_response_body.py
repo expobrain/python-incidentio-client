@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -30,7 +31,7 @@ class IncidentUpdatesV2ListResponseBody:
             'page_size': 25}}
 
     Attributes:
-        incident_updates (List['IncidentUpdateV2']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z', 'id':
+        incident_updates (list['IncidentUpdateV2']):  Example: [{'created_at': '2021-08-17T13:28:57.801578Z', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'merged_into_incident_id': 'abc123',
             'message': "We're working on a fix, hoping to ship in the next 30 minutes", 'new_incident_status': {'category':
             'triage', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and
@@ -71,11 +72,11 @@ class IncidentUpdatesV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_update_v2 import IncidentUpdateV2
         from ..models.pagination_meta_result import PaginationMetaResult
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incident_updates = []
         _incident_updates = d.pop("incident_updates")
         for incident_updates_item_data in _incident_updates:

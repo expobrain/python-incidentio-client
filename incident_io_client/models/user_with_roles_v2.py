@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -26,7 +27,7 @@ class UserWithRolesV2:
     Attributes:
         base_role (RBACRoleV2):  Example: {'description': 'Elevated permissions for the customer success team.', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}.
-        custom_roles (List['RBACRoleV2']):  Example: [{'description': 'Elevated permissions for the customer success
+        custom_roles (list['RBACRoleV2']):  Example: [{'description': 'Elevated permissions for the customer success
             team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}].
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name of the user Example: Lisa Karlin Curtis.
@@ -82,10 +83,10 @@ class UserWithRolesV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.rbac_role_v2 import RBACRoleV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         base_role = RBACRoleV2.from_dict(d.pop("base_role"))
 
         custom_roles = []

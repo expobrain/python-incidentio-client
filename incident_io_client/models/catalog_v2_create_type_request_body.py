@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -38,7 +39,7 @@ class CatalogV2CreateTypeRequestBody:
         name (str): Name is the human readable name of this type Example: Kubernetes Cluster.
         annotations (Union[Unset, CatalogV2CreateTypeRequestBodyAnnotations]): Annotations that can track metadata about
             this type Example: {'incident.io/catalog-importer/id': 'id-of-config'}.
-        categories (Union[Unset, List[CatalogV2CreateTypeRequestBodyCategoriesItem]]): What categories is this type
+        categories (Union[Unset, list[CatalogV2CreateTypeRequestBodyCategoriesItem]]): What categories is this type
             considered part of Example: ['issue-tracker'].
         color (Union[Unset, CatalogV2CreateTypeRequestBodyColor]): Sets the display color of this type in the dashboard
             Example: yellow.
@@ -119,12 +120,12 @@ class CatalogV2CreateTypeRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_v2_create_type_request_body_annotations import (
             CatalogV2CreateTypeRequestBodyAnnotations,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         description = d.pop("description")
 
         name = d.pop("name")

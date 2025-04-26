@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,7 +23,7 @@ class CustomFieldsV1ListResponseBody:
             'show_before_update': True, 'show_in_announcement_post': True, 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        custom_fields (List['CustomFieldV1']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+        custom_fields (list['CustomFieldV1']):  Example: [{'catalog_type_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Which team is impacted by this issue',
             'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
@@ -51,10 +52,10 @@ class CustomFieldsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_v1 import CustomFieldV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_fields = []
         _custom_fields = d.pop("custom_fields")
         for custom_fields_item_data in _custom_fields:

@@ -2,14 +2,7 @@
 
 from collections.abc import MutableMapping
 from http import HTTPStatus
-from typing import (
-    BinaryIO,
-    Generic,
-    Literal,
-    Optional,
-    Tuple,
-    TypeVar,
-)
+from typing import BinaryIO, Generic, Literal, Optional, TypeVar
 
 from attrs import define
 
@@ -50,4 +43,4 @@ class Response(Generic[T]):
     parsed: Optional[T]
 
 
-__all__ = ["File", "Response", "FileJsonType", "Unset", "UNSET"]
+__all__ = ["UNSET", "File", "FileJsonType", "Response", "Unset"]

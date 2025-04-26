@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -39,7 +40,7 @@ class ExpressionV2:
 
     Attributes:
         label (str): The human readable label of the expression Example: Team Slack channel.
-        operations (List['ExpressionOperationV2']):  Example: [{'branches': {'branches': [{'condition_groups':
+        operations (list['ExpressionOperationV2']):  Example: [{'branches': {'branches': [{'condition_groups':
             [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
@@ -105,12 +106,12 @@ class ExpressionV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.expression_else_branch_v2 import ExpressionElseBranchV2
         from ..models.expression_operation_v2 import ExpressionOperationV2
         from ..models.returns_meta_v2 import ReturnsMetaV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         label = d.pop("label")
 
         operations = []

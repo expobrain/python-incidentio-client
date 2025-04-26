@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -107,14 +108,14 @@ class ExpressionOperationV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.expression_branches_opts_v2 import ExpressionBranchesOptsV2
         from ..models.expression_filter_opts_v2 import ExpressionFilterOptsV2
         from ..models.expression_navigate_opts_v2 import ExpressionNavigateOptsV2
         from ..models.expression_parse_opts_v2 import ExpressionParseOptsV2
         from ..models.returns_meta_v2 import ReturnsMetaV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         operation_type = ExpressionOperationV2OperationType(d.pop("operation_type"))
 
         returns = ReturnsMetaV2.from_dict(d.pop("returns"))

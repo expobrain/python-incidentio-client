@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -46,12 +47,12 @@ class IncidentAttachmentsV1CreateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_attachments_v1_create_request_body_resource import (
             IncidentAttachmentsV1CreateRequestBodyResource,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incident_id = d.pop("incident_id")
 
         resource = IncidentAttachmentsV1CreateRequestBodyResource.from_dict(d.pop("resource"))

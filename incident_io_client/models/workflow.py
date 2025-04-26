@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -61,13 +62,13 @@ class Workflow:
             'incident.severity'}}]}], 'trigger': {'label': 'Incident Updated', 'name': 'incident.updated'}, 'version': 3}
 
     Attributes:
-        condition_groups (List['ConditionGroupV2']): Conditions that apply to the workflow trigger Example:
+        condition_groups (list['ConditionGroupV2']): Conditions that apply to the workflow trigger Example:
             [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}].
         continue_on_step_error (bool): Whether to continue executing the workflow if a step fails Example: True.
-        expressions (List['ExpressionV2']): Expressions that make variables available in the scope Example:
+        expressions (list['ExpressionV2']): Expressions that make variables available in the scope Example:
             [{'else_branch': {'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}}}, 'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
@@ -89,15 +90,15 @@ class Workflow:
         id (str): Unique identifier for the workflow Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         include_private_incidents (bool): Whether to include private incidents Example: True.
         name (str): The human-readable name of the workflow Example: My workflow.
-        once_for (List['EngineReferenceV2']): This workflow will run 'once for' a list of references Example: [{'array':
+        once_for (list['EngineReferenceV2']): This workflow will run 'once for' a list of references Example: [{'array':
             False, 'key': 'incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"]', 'label': 'Incident -> Affected Team',
             'type': 'IncidentSeverity'}].
-        runs_on_incident_modes (List[WorkflowRunsOnIncidentModesItem]): Which modes of incident this should run on
+        runs_on_incident_modes (list[WorkflowRunsOnIncidentModesItem]): Which modes of incident this should run on
             (defaults to just standard incidents) Example: ['standard', 'retrospective'].
         runs_on_incidents (WorkflowRunsOnIncidents): Which incidents should the workflow be applied to? (newly_created
             or newly_created_and_active) Example: newly_created.
         state (WorkflowState): The state of the workflow (e.g. is it draft, or disabled) Example: active.
-        steps (List['StepConfig']): Steps that are executed as part of the workflow Example: [{'for_each': 'abc123',
+        steps (list['StepConfig']): Steps that are executed as part of the workflow Example: [{'for_each': 'abc123',
             'id': 'abc123', 'label': 'PagerDuty Escalate', 'name': 'pagerduty.escalate', 'param_bindings': [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}]}].
@@ -215,7 +216,7 @@ class Workflow:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_group_v2 import ConditionGroupV2
         from ..models.engine_reference_v2 import EngineReferenceV2
         from ..models.expression_v2 import ExpressionV2
@@ -223,7 +224,7 @@ class Workflow:
         from ..models.trigger_slim import TriggerSlim
         from ..models.workflow_delay import WorkflowDelay
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:

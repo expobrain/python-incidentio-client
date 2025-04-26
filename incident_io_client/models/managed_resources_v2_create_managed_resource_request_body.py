@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -56,12 +57,12 @@ class ManagedResourcesV2CreateManagedResourceRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.managed_resources_v2_create_managed_resource_request_body_annotations import (
             ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         annotations = ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations.from_dict(
             d.pop("annotations")
         )

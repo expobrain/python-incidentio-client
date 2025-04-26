@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -30,17 +31,17 @@ class ScheduleEntriesListPayloadV2:
             'U02AYNF2XJM'}}]}
 
     Attributes:
-        final (List['ScheduleEntryV2']):  Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id':
+        final (list['ScheduleEntryV2']):  Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id':
             '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at':
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}].
-        overrides (List['ScheduleEntryV2']):  Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id':
+        overrides (list['ScheduleEntryV2']):  Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id':
             '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at':
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}].
-        scheduled (List['ScheduleEntryV2']):  Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id':
+        scheduled (list['ScheduleEntryV2']):  Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id':
             '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at':
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
@@ -81,10 +82,10 @@ class ScheduleEntriesListPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.schedule_entry_v2 import ScheduleEntryV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         final = []
         _final = d.pop("final")
         for final_item_data in _final:

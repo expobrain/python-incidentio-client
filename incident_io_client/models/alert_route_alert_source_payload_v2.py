@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,7 +21,7 @@ class AlertRouteAlertSourcePayloadV2:
 
     Attributes:
         alert_source_id (str): The alert source ID that will match for the route Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        condition_groups (List['ConditionGroupPayloadV2']): What conditions should alerts from this source meet to be
+        condition_groups (list['ConditionGroupPayloadV2']): What conditions should alerts from this source meet to be
             included in this alert route? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}].
@@ -50,10 +51,10 @@ class AlertRouteAlertSourcePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         alert_source_id = d.pop("alert_source_id")
 
         condition_groups = []

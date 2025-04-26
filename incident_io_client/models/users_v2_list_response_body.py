@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -24,7 +25,7 @@ class UsersV2ListResponseBody:
 
     Attributes:
         pagination_meta (PaginationMetaResult):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
-        users (List['UserWithRolesV2']):  Example: [{'base_role': {'description': 'Elevated permissions for the customer
+        users (list['UserWithRolesV2']):  Example: [{'base_role': {'description': 'Elevated permissions for the customer
             success team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'},
             'custom_roles': [{'description': 'Elevated permissions for the customer success team.', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}], 'email':
@@ -56,11 +57,11 @@ class UsersV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.pagination_meta_result import PaginationMetaResult
         from ..models.user_with_roles_v2 import UserWithRolesV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         pagination_meta = PaginationMetaResult.from_dict(d.pop("pagination_meta"))
 
         users = []

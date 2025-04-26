@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -67,22 +68,22 @@ class AlertRoutesV2CreateRequestBody:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}}
 
     Attributes:
-        alert_sources (Union[Unset, List['AlertRouteAlertSourcePayloadV2']]): Which alert sources should this alert
+        alert_sources (Union[Unset, list['AlertRouteAlertSourcePayloadV2']]): Which alert sources should this alert
             route match? Example: [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
             'incident.severity'}]}]}].
         auto_decline_enabled (Union[Unset, bool]): Should triage incidents be declined when alerts are resolved?
-        condition_groups (Union[Unset, List['ConditionGroupPayloadV2']]): What condition groups must be true for this
+        condition_groups (Union[Unset, list['ConditionGroupPayloadV2']]): What condition groups must be true for this
             alert route to fire? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value':
             [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}].
         defer_time_seconds (Union[Unset, int]): How long should the escalation defer time be? Example: 1.
         enabled (Union[Unset, bool]): Whether this alert route is enabled or not
-        escalation_bindings (Union[Unset, List['AlertRouteEscalationBindingPayloadV2']]): Which escalation paths should
+        escalation_bindings (Union[Unset, list['AlertRouteEscalationBindingPayloadV2']]): Which escalation paths should
             this alert route escalate to? Example: [{'binding': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}].
-        expressions (Union[Unset, List['ExpressionPayloadV2']]): The expressions used in this template Example:
+        expressions (Union[Unset, list['ExpressionPayloadV2']]): The expressions used in this template Example:
             [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
             [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
@@ -95,10 +96,10 @@ class AlertRoutesV2CreateRequestBody:
             'incident.severity'}]}]}, 'navigate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'},
             'operation_type': 'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference': 'incident.status'}].
-        grouping_keys (Union[Unset, List['GroupingKeyV2']]): Which attributes should this alert route use to group
+        grouping_keys (Union[Unset, list['GroupingKeyV2']]): Which attributes should this alert route use to group
             alerts? Example: [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}].
         grouping_window_seconds (Union[Unset, int]): How large should the grouping window be? Example: 1.
-        incident_condition_groups (Union[Unset, List['ConditionGroupPayloadV2']]): What condition groups must be true
+        incident_condition_groups (Union[Unset, list['ConditionGroupPayloadV2']]): What condition groups must be true
             for this alert route to create an incident? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}].
@@ -228,7 +229,7 @@ class AlertRoutesV2CreateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.alert_route_alert_source_payload_v2 import (
             AlertRouteAlertSourcePayloadV2,
         )
@@ -242,7 +243,7 @@ class AlertRoutesV2CreateRequestBody:
         from ..models.expression_payload_v2 import ExpressionPayloadV2
         from ..models.grouping_key_v2 import GroupingKeyV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         alert_sources = []
         _alert_sources = d.pop("alert_sources", UNSET)
         for alert_sources_item_data in _alert_sources or []:

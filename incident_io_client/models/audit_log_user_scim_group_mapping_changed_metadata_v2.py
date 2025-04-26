@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -56,8 +57,8 @@ class AuditLogUserSCIMGroupMappingChangedMetadataV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         after_base_role_slug = d.pop("after_base_role_slug", UNSET)
 
         after_custom_role_slugs = d.pop("after_custom_role_slugs", UNSET)

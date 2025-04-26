@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -76,13 +77,13 @@ class SchedulesV2ListScheduleEntriesResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.after_pagination_meta_result_v2 import AfterPaginationMetaResultV2
         from ..models.schedule_entries_list_payload_v2 import (
             ScheduleEntriesListPayloadV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         schedule_entries = ScheduleEntriesListPayloadV2.from_dict(d.pop("schedule_entries"))
 
         _pagination_meta = d.pop("pagination_meta", UNSET)

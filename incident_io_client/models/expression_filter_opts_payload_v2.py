@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,7 +20,7 @@ class ExpressionFilterOptsPayloadV2:
             'incident.severity'}}], 'subject': 'incident.severity'}]}]}
 
     Attributes:
-        condition_groups (List['ConditionGroupPayloadV2']): The condition groups to apply in this filter. Only one group
+        condition_groups (list['ConditionGroupPayloadV2']): The condition groups to apply in this filter. Only one group
             needs to be satisfied for the filter to pass. Example: [{'conditions': [{'operation': 'one_of',
             'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}].
@@ -45,10 +46,10 @@ class ExpressionFilterOptsPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:

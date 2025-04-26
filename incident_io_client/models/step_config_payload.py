@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -23,7 +24,7 @@ class StepConfigPayload:
     Attributes:
         id (str): Unique ID of this step in a workflow. This must be a valid ULID. Example: abc123.
         name (str): Unique name of the step in the engine Example: pagerduty.escalate.
-        param_bindings (List['EngineParamBindingPayloadV2']): List of parameter bindings Example: [{'array_value':
+        param_bindings (list['EngineParamBindingPayloadV2']): List of parameter bindings Example: [{'array_value':
             [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}].
         for_each (Union[Unset, str]): Reference to an expression that returns resources to run this step over Example:
@@ -63,10 +64,10 @@ class StepConfigPayload:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
         name = d.pop("name")

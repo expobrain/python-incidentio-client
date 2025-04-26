@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -25,7 +26,7 @@ class StepConfig:
         id (str): Unique ID of this step in a workflow Example: abc123.
         label (str): Human readable identifier for this step Example: PagerDuty Escalate.
         name (str): Unique name of the step in the engine Example: pagerduty.escalate.
-        param_bindings (List['EngineParamBindingV2']): Bindings for the step parameters Example: [{'array_value':
+        param_bindings (list['EngineParamBindingV2']): Bindings for the step parameters Example: [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}].
         for_each (Union[Unset, str]): Reference to the loop variable to run this step over Example: abc123.
@@ -68,10 +69,10 @@ class StepConfig:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
         label = d.pop("label")

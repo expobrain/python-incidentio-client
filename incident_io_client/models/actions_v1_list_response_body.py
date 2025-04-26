@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,7 +23,7 @@ class ActionsV1ListResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        actions (List['ActionV1']):  Example: [{'assignee': {'email': 'lisa@incident.io', 'id':
+        actions (list['ActionV1']):  Example: [{'assignee': {'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'},
             'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Call
             the fire brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink':
@@ -51,10 +52,10 @@ class ActionsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.action_v1 import ActionV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         actions = []
         _actions = d.pop("actions")
         for actions_item_data in _actions:

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -26,7 +27,7 @@ class CatalogV2ListTypesResponseBody:
             'Custom["BackstageGroup"]', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        catalog_types (List['CatalogTypeV2']):  Example: [{'annotations': {'incident.io/catalog-importer/id': 'id-of-
+        catalog_types (list['CatalogTypeV2']):  Example: [{'annotations': {'incident.io/catalog-importer/id': 'id-of-
             config'}, 'categories': ['issue-tracker'], 'color': 'yellow', 'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'dynamic_resource_parameter':
             'abc123', 'estimated_count': 7, 'icon': 'alert', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False,
@@ -58,10 +59,10 @@ class CatalogV2ListTypesResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_type_v2 import CatalogTypeV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         catalog_types = []
         _catalog_types = d.pop("catalog_types")
         for catalog_types_item_data in _catalog_types:

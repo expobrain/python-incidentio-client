@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -140,7 +141,7 @@ class AlertRouteIncidentTemplateV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.alert_route_incident_template_v2_custom_field_priorities import (
             AlertRouteIncidentTemplateV2CustomFieldPriorities,
         )
@@ -149,7 +150,7 @@ class AlertRouteIncidentTemplateV2:
         )
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field_priorities = AlertRouteIncidentTemplateV2CustomFieldPriorities.from_dict(
             d.pop("custom_field_priorities")
         )

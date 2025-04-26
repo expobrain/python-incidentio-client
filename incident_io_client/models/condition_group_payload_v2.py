@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,7 +20,7 @@ class ConditionGroupPayloadV2:
             'incident.severity'}]}
 
     Attributes:
-        conditions (List['ConditionPayloadV2']): All conditions in this list must be satisfied for the group to be
+        conditions (list['ConditionPayloadV2']): All conditions in this list must be satisfied for the group to be
             satisfied Example: [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
             'subject': 'incident.severity'}].
@@ -45,10 +46,10 @@ class ConditionGroupPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_payload_v2 import ConditionPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         conditions = []
         _conditions = d.pop("conditions")
         for conditions_item_data in _conditions:

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -45,12 +46,12 @@ class EscalationPathNodeIfElseV2:
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}]}
 
     Attributes:
-        conditions (List['ConditionV2']): The condition that defines which branch to take Example: [{'operation':
+        conditions (list['ConditionV2']): The condition that defines which branch to take Example: [{'operation':
             {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
             Severity', 'reference': 'incident.severity'}}].
-        else_path (List['EscalationPathNodeV2']): The nodes that form the levels if our condition is not met Example:
+        else_path (list['EscalationPathNodeV2']): The nodes that form the levels if our condition is not met Example:
             [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones',
             'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
@@ -63,7 +64,7 @@ class EscalationPathNodeIfElseV2:
             'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
             'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}].
-        then_path (List['EscalationPathNodeV2']): The nodes that form the levels if our condition is met Example:
+        then_path (list['EscalationPathNodeV2']): The nodes that form the levels if our condition is met Example:
             [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones',
             'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
@@ -112,11 +113,11 @@ class EscalationPathNodeIfElseV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_v2 import ConditionV2
         from ..models.escalation_path_node_v2 import EscalationPathNodeV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         conditions = []
         _conditions = d.pop("conditions")
         for conditions_item_data in _conditions:

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,7 +21,7 @@ class CustomFieldOptionsV1ListResponseBody:
             25}}
 
     Attributes:
-        custom_field_options (List['CustomFieldOptionV1']):  Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+        custom_field_options (list['CustomFieldOptionV1']):  Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}].
         pagination_meta (PaginationMetaResult):  Example: {'after': '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25}.
     """
@@ -49,11 +50,11 @@ class CustomFieldOptionsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
         from ..models.pagination_meta_result import PaginationMetaResult
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field_options = []
         _custom_field_options = d.pop("custom_field_options")
         for custom_field_options_item_data in _custom_field_options:

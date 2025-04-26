@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,7 +21,7 @@ class EngineParamBindingV2:
             {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}
 
     Attributes:
-        array_value (Union[Unset, List['EngineParamBindingValueV2']]): If array_value is set, this helps render the
+        array_value (Union[Unset, list['EngineParamBindingValueV2']]): If array_value is set, this helps render the
             values Example: [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}].
         value (Union[Unset, EngineParamBindingValueV2]):  Example: {'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}.
@@ -53,10 +54,10 @@ class EngineParamBindingV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.engine_param_binding_value_v2 import EngineParamBindingValueV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         array_value = []
         _array_value = d.pop("array_value", UNSET)
         for array_value_item_data in _array_value or []:

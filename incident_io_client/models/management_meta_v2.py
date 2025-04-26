@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -54,10 +55,10 @@ class ManagementMetaV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.management_meta_v2_annotations import ManagementMetaV2Annotations
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         annotations = ManagementMetaV2Annotations.from_dict(d.pop("annotations"))
 
         managed_by = ManagementMetaV2ManagedBy(d.pop("managed_by"))

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,7 +22,7 @@ class WeekdayIntervalConfigV2:
         id (str): The unique identifier for this set of working intervals Example: abc123.
         name (str): A human readable label for this set of working intervals Example: abc123.
         timezone (str): How to interpret all the intervals Example: abc123.
-        weekday_intervals (List['WeekdayIntervalV2']):  Example: [{'end_time': '17:00', 'start_time': '09:00',
+        weekday_intervals (list['WeekdayIntervalV2']):  Example: [{'end_time': '17:00', 'start_time': '09:00',
             'weekday': 'abc123'}].
     """
 
@@ -57,10 +58,10 @@ class WeekdayIntervalConfigV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.weekday_interval_v2 import WeekdayIntervalV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
         name = d.pop("name")

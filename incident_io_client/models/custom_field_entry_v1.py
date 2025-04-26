@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,7 +30,7 @@ class CustomFieldEntryV1:
             'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}]}.
-        values (List['CustomFieldValueV1']): List of custom field values set on this entry Example:
+        values (list['CustomFieldValueV1']): List of custom field values set on this entry Example:
             [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
@@ -61,11 +62,11 @@ class CustomFieldEntryV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_type_info_v1 import CustomFieldTypeInfoV1
         from ..models.custom_field_value_v1 import CustomFieldValueV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field = CustomFieldTypeInfoV1.from_dict(d.pop("custom_field"))
 
         values = []

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -45,7 +46,7 @@ class WorkflowsV2ListWorkflowsResponseBody:
             'name': 'incident.updated'}, 'version': 3}]}
 
     Attributes:
-        workflows (List['WorkflowSlim']):  Example: [{'condition_groups': [{'conditions': [{'operation': {'label':
+        workflows (list['WorkflowSlim']):  Example: [{'condition_groups': [{'conditions': [{'operation': {'label':
             'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
@@ -96,10 +97,10 @@ class WorkflowsV2ListWorkflowsResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.workflow_slim import WorkflowSlim
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         workflows = []
         _workflows = d.pop("workflows")
         for workflows_item_data in _workflows:

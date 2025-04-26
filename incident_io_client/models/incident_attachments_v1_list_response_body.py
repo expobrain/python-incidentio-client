@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,7 +20,7 @@ class IncidentAttachmentsV1ListResponseBody:
             'pager_duty_incident', 'title': 'The database has gone down'}}]}
 
     Attributes:
-        incident_attachments (List['IncidentAttachmentV1']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
+        incident_attachments (list['IncidentAttachmentV1']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource': {'external_id': '123', 'permalink':
             'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
             gone down'}}].
@@ -45,10 +46,10 @@ class IncidentAttachmentsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_attachment_v1 import IncidentAttachmentV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incident_attachments = []
         _incident_attachments = d.pop("incident_attachments")
         for incident_attachments_item_data in _incident_attachments:

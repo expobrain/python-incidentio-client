@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -53,12 +54,12 @@ class CreateWorkflowPayload:
             'trigger': 'incident.updated'}
 
     Attributes:
-        condition_groups (List['ConditionGroupPayloadV2']): List of conditions to apply to the workflow Example:
+        condition_groups (list['ConditionGroupPayloadV2']): List of conditions to apply to the workflow Example:
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
             'incident.severity'}]}].
         continue_on_step_error (bool): Whether to continue executing the workflow if a step fails Example: True.
-        expressions (List['ExpressionPayloadV2']): The expressions used in the workflow Example: [{'else_branch':
+        expressions (list['ExpressionPayloadV2']): The expressions used in the workflow Example: [{'else_branch':
             {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal':
             'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations': [{'branches':
             {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value':
@@ -73,12 +74,12 @@ class CreateWorkflowPayload:
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference': 'incident.status'}].
         include_private_incidents (bool): Whether to include private incidents Example: True.
         name (str): The human-readable name of the workflow Example: My workflow.
-        once_for (List[str]): Once For strategy to apply to this workflow Example: ['incident.url'].
-        runs_on_incident_modes (List[CreateWorkflowPayloadRunsOnIncidentModesItem]): Which modes of incident this should
+        once_for (list[str]): Once For strategy to apply to this workflow Example: ['incident.url'].
+        runs_on_incident_modes (list[CreateWorkflowPayloadRunsOnIncidentModesItem]): Which modes of incident this should
             run on (defaults to just standard incidents) Example: ['standard', 'retrospective'].
         runs_on_incidents (CreateWorkflowPayloadRunsOnIncidents): Which incidents should the workflow be applied to?
             (newly_created or newly_created_and_active) Example: newly_created.
-        steps (List['StepConfigPayload']): List of step to execute as part of the workflow Example: [{'for_each':
+        steps (list['StepConfigPayload']): List of step to execute as part of the workflow Example: [{'for_each':
             'abc123', 'id': 'abc123', 'name': 'pagerduty.escalate', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}]}].
@@ -189,7 +190,7 @@ class CreateWorkflowPayload:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
         from ..models.create_workflow_payload_annotations import (
             CreateWorkflowPayloadAnnotations,
@@ -198,7 +199,7 @@ class CreateWorkflowPayload:
         from ..models.step_config_payload import StepConfigPayload
         from ..models.workflow_delay import WorkflowDelay
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:

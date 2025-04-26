@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -39,10 +40,10 @@ class CustomFieldOptionsV1ShowResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field_option = CustomFieldOptionV1.from_dict(d.pop("custom_field_option"))
 
         custom_field_options_v1_show_response_body = cls(

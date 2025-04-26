@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,7 +20,7 @@ class CatalogV2ListResourcesResponseBody:
             ID of the repository or a string of <owner>/<repo>, e.g. incident-io/website'}]}
 
     Attributes:
-        resources (List['CatalogResourceV2']):  Example: [{'category': 'custom', 'description': 'Boolean true or false
+        resources (list['CatalogResourceV2']):  Example: [{'category': 'custom', 'description': 'Boolean true or false
             value', 'label': 'GitHub Repository', 'type': 'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]', 'value_docstring':
             'Either the GraphQL node ID of the repository or a string of <owner>/<repo>, e.g. incident-io/website'}].
     """
@@ -44,10 +45,10 @@ class CatalogV2ListResourcesResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_resource_v2 import CatalogResourceV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         resources = []
         _resources = d.pop("resources")
         for resources_item_data in _resources:

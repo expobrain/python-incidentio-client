@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -33,7 +34,7 @@ class SchedulesV2ListResponseBody:
             'name': 'Primary On-Call Schedule', 'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}]}
 
     Attributes:
-        schedules (List['ScheduleV2']):  Example: [{'annotations': {'incident.io/terraform/version': '3.0.0'}, 'config':
+        schedules (list['ScheduleV2']):  Example: [{'annotations': {'incident.io/terraform/version': '3.0.0'}, 'config':
             {'rotations': [{'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at':
             '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name':
@@ -77,13 +78,13 @@ class SchedulesV2ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.pagination_meta_result_with_total import (
             PaginationMetaResultWithTotal,
         )
         from ..models.schedule_v2 import ScheduleV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         schedules = []
         _schedules = d.pop("schedules")
         for schedules_item_data in _schedules:

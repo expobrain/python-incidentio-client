@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -52,7 +53,7 @@ class ScheduleV2:
             'name': 'Layer 1'}], 'name': 'Primary On-Call Schedule', 'users': [{'email': 'lisa@incident.io', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}],
             'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}.
-        current_shifts (Union[Unset, List['ScheduleEntryV2']]): Shifts that are on-going for this schedule, if a native
+        current_shifts (Union[Unset, list['ScheduleEntryV2']]): Shifts that are on-going for this schedule, if a native
             schedule Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id': '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at': '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io',
@@ -123,7 +124,7 @@ class ScheduleV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.schedule_config_v2 import ScheduleConfigV2
         from ..models.schedule_entry_v2 import ScheduleEntryV2
         from ..models.schedule_holidays_public_config_v2 import (
@@ -131,7 +132,7 @@ class ScheduleV2:
         )
         from ..models.schedule_v2_annotations import ScheduleV2Annotations
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         annotations = ScheduleV2Annotations.from_dict(d.pop("annotations"))
 
         created_at = isoparse(d.pop("created_at"))

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -51,11 +52,11 @@ class ActorV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.api_key_v1 import APIKeyV1
         from ..models.user_v1 import UserV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         _api_key = d.pop("api_key", UNSET)
         api_key: Union[Unset, APIKeyV1]
         if isinstance(_api_key, Unset):

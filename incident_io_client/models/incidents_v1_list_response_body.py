@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -47,7 +48,7 @@ class IncidentsV1ListResponseBody:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'page_size': 25, 'total_record_count': 238}}
 
     Attributes:
-        incidents (List['IncidentV1']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
+        incidents (list['IncidentV1']):  Example: [{'call_url': 'https://zoom.us/foo', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
             key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
             'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}, 'custom_field_entries': [{'custom_field': {'description':
@@ -105,13 +106,13 @@ class IncidentsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_v1 import IncidentV1
         from ..models.pagination_meta_result_with_total import (
             PaginationMetaResultWithTotal,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incidents = []
         _incidents = d.pop("incidents")
         for incidents_item_data in _incidents:

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,7 +30,7 @@ class CatalogEntryEngineParamBindingV2:
             'sort_key': 'abc123', 'unavailable': False, 'value': 'abc123'}}
 
     Attributes:
-        array_value (Union[Unset, List['CatalogEntryEngineParamBindingValueV2']]): If array_value is set, this helps
+        array_value (Union[Unset, list['CatalogEntryEngineParamBindingValueV2']]): If array_value is set, this helps
             render the values Example: [{'catalog_entry': {'archived_at': '2021-08-17T14:28:57.801578Z', 'catalog_entry_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'catalog_entry_name': 'Primary escalation', 'catalog_type_id':
             '01FCNDV6P870EA6S7TK1DSYDG0'}, 'helptext': 'abc123', 'image_url': 'abc123', 'is_image_slack_icon': False,
@@ -69,12 +70,12 @@ class CatalogEntryEngineParamBindingV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_entry_engine_param_binding_value_v2 import (
             CatalogEntryEngineParamBindingValueV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         array_value = []
         _array_value = d.pop("array_value", UNSET)
         for array_value_item_data in _array_value or []:

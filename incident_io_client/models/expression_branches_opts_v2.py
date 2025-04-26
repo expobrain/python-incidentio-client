@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -24,7 +25,7 @@ class ExpressionBranchesOptsV2:
             'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}
 
     Attributes:
-        branches (List['ExpressionBranchV2']): The branches to apply for this operation Example: [{'condition_groups':
+        branches (list['ExpressionBranchV2']): The branches to apply for this operation Example: [{'condition_groups':
             [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
@@ -58,11 +59,11 @@ class ExpressionBranchesOptsV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.expression_branch_v2 import ExpressionBranchV2
         from ..models.returns_meta_v2 import ReturnsMetaV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         branches = []
         _branches = d.pop("branches")
         for branches_item_data in _branches:

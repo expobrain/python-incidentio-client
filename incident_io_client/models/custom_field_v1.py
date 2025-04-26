@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -34,7 +35,7 @@ class CustomFieldV1:
         field_type (CustomFieldV1FieldType): Type of custom field Example: single_select.
         id (str): Unique identifier for the custom field Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Human readable name for the custom field Example: Affected Team.
-        options (List['CustomFieldOptionV1']): What options are available for this custom field, if this field has
+        options (list['CustomFieldOptionV1']): What options are available for this custom field, if this field has
             options Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'sort_key': 10, 'value': 'Product'}].
         show_before_closure (bool): Whether a custom field should be shown in the incident resolve modal. If this custom
@@ -134,10 +135,10 @@ class CustomFieldV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         created_at = isoparse(d.pop("created_at"))
 
         description = d.pop("description")

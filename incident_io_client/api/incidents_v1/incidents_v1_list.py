@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -76,7 +76,7 @@ def sync_detailed(
     Args:
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
-        status (Union[Unset, List[str]]):
+        status (Union[Unset, list[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -113,7 +113,7 @@ def sync(
     Args:
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
-        status (Union[Unset, List[str]]):
+        status (Union[Unset, list[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -145,7 +145,7 @@ async def asyncio_detailed(
     Args:
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
-        status (Union[Unset, List[str]]):
+        status (Union[Unset, list[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -180,7 +180,7 @@ async def asyncio(
     Args:
         page_size (Union[Unset, int]):  Default: 25.
         after (Union[Unset, str]):
-        status (Union[Unset, List[str]]):
+        status (Union[Unset, list[str]]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

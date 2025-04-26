@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -68,10 +69,10 @@ class SchedulesV2CreateOverrideRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.user_reference_payload_v2 import UserReferencePayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         end_at = isoparse(d.pop("end_at"))
 
         layer_id = d.pop("layer_id")

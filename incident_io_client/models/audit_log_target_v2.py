@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,19 +18,19 @@ class AuditLogTargetV2:
 
     Attributes:
         id (str): The ID of the target Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        type (AuditLogTargetV2Type): The type of target Example: user.
+        type_ (AuditLogTargetV2Type): The type of target Example: user.
         name (Union[Unset, str]): The name of the target Example: John Doe.
     """
 
     id: str
-    type: AuditLogTargetV2Type
+    type_: AuditLogTargetV2Type
     name: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         id = self.id
 
-        type = self.type.value
+        type_ = self.type_.value
 
         name = self.name
 
@@ -38,7 +39,7 @@ class AuditLogTargetV2:
         field_dict.update(
             {
                 "id": id,
-                "type": type,
+                "type": type_,
             }
         )
         if name is not UNSET:
@@ -47,17 +48,17 @@ class AuditLogTargetV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         id = d.pop("id")
 
-        type = AuditLogTargetV2Type(d.pop("type"))
+        type_ = AuditLogTargetV2Type(d.pop("type"))
 
         name = d.pop("name", UNSET)
 
         audit_log_target_v2 = cls(
             id=id,
-            type=type,
+            type_=type_,
             name=name,
         )
 
