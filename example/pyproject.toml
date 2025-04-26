@@ -6,13 +6,14 @@ repository = "https://github.com/expobrain/python-incidentio-client/tree/main/ex
 authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
 python-incidentio-client = { path = "..", develop = true }
 python-dotenv = "^1.0.1"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 mypy = "^1.14"
 black = "^24.8"
 autoflake = "^1.7"

@@ -422,7 +422,7 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-incidentio-client"
-version = "0.55.5"
+version = "0.56.0"
 description = "Python client for Incident.io"
 optional = false
 python-versions = "^3.9"
@@ -518,4 +518,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "3799efbe76736a837da79620e02c86e7cd6f2be75a8125312d5a07d36770b707"
+content-hash = "bf7d6bc19322dbeb0b8cafc9689922b89b46f55d0cff6addc9c50ab98cdaddf3"
