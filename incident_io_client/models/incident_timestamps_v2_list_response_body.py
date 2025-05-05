@@ -48,7 +48,9 @@ class IncidentTimestampsV2ListResponseBody:
         incident_timestamps = []
         _incident_timestamps = d.pop("incident_timestamps")
         for incident_timestamps_item_data in _incident_timestamps:
-            incident_timestamps_item = IncidentTimestampV2.from_dict(incident_timestamps_item_data)
+            incident_timestamps_item = IncidentTimestampV2.from_dict(
+                incident_timestamps_item_data
+            )
 
             incident_timestamps.append(incident_timestamps_item)
 
