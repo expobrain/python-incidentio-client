@@ -70,7 +70,9 @@ class WeekdayIntervalConfigV2:
         weekday_intervals = []
         _weekday_intervals = d.pop("weekday_intervals")
         for weekday_intervals_item_data in _weekday_intervals:
-            weekday_intervals_item = WeekdayIntervalV2.from_dict(weekday_intervals_item_data)
+            weekday_intervals_item = WeekdayIntervalV2.from_dict(
+                weekday_intervals_item_data
+            )
 
             weekday_intervals.append(weekday_intervals_item)
 
