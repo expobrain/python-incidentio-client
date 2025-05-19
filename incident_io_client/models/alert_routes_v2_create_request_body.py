@@ -126,7 +126,9 @@ class AlertRoutesV2CreateRequestBody:
     condition_groups: Union[Unset, List["ConditionGroupPayloadV2"]] = UNSET
     defer_time_seconds: Union[Unset, int] = UNSET
     enabled: Union[Unset, bool] = UNSET
-    escalation_bindings: Union[Unset, List["AlertRouteEscalationBindingPayloadV2"]] = UNSET
+    escalation_bindings: Union[
+        Unset, List["AlertRouteEscalationBindingPayloadV2"]
+    ] = UNSET
     expressions: Union[Unset, List["ExpressionPayloadV2"]] = UNSET
     grouping_keys: Union[Unset, List["GroupingKeyV2"]] = UNSET
     grouping_window_seconds: Union[Unset, int] = UNSET
@@ -184,7 +186,9 @@ class AlertRoutesV2CreateRequestBody:
         if not isinstance(self.incident_condition_groups, Unset):
             incident_condition_groups = []
             for incident_condition_groups_item_data in self.incident_condition_groups:
-                incident_condition_groups_item = incident_condition_groups_item_data.to_dict()
+                incident_condition_groups_item = (
+                    incident_condition_groups_item_data.to_dict()
+                )
                 incident_condition_groups.append(incident_condition_groups_item)
 
         incident_enabled = self.incident_enabled
@@ -246,7 +250,9 @@ class AlertRoutesV2CreateRequestBody:
         alert_sources = []
         _alert_sources = d.pop("alert_sources", UNSET)
         for alert_sources_item_data in _alert_sources or []:
-            alert_sources_item = AlertRouteAlertSourcePayloadV2.from_dict(alert_sources_item_data)
+            alert_sources_item = AlertRouteAlertSourcePayloadV2.from_dict(
+                alert_sources_item_data
+            )
 
             alert_sources.append(alert_sources_item)
 
@@ -255,7 +261,9 @@ class AlertRoutesV2CreateRequestBody:
         condition_groups = []
         _condition_groups = d.pop("condition_groups", UNSET)
         for condition_groups_item_data in _condition_groups or []:
-            condition_groups_item = ConditionGroupPayloadV2.from_dict(condition_groups_item_data)
+            condition_groups_item = ConditionGroupPayloadV2.from_dict(
+                condition_groups_item_data
+            )
 
             condition_groups.append(condition_groups_item)
 

@@ -103,7 +103,9 @@ class ExpressionPayloadV2:
         operations = []
         _operations = d.pop("operations")
         for operations_item_data in _operations:
-            operations_item = ExpressionOperationPayloadV2.from_dict(operations_item_data)
+            operations_item = ExpressionOperationPayloadV2.from_dict(
+                operations_item_data
+            )
 
             operations.append(operations_item)
 
