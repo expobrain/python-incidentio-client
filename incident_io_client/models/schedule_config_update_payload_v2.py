@@ -62,7 +62,9 @@ class ScheduleConfigUpdatePayloadV2:
         rotations = []
         _rotations = d.pop("rotations", UNSET)
         for rotations_item_data in _rotations or []:
-            rotations_item = ScheduleRotationUpdatePayloadV2.from_dict(rotations_item_data)
+            rotations_item = ScheduleRotationUpdatePayloadV2.from_dict(
+                rotations_item_data
+            )
 
             rotations.append(rotations_item)
 
