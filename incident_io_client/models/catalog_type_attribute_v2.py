@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,9 +28,9 @@ class CatalogTypeAttributeV2:
         id (str): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
         mode (CatalogTypeAttributeV2Mode): Controls how this attribute is modified Example: manual.
         name (str): Unique name of this attribute Example: tier.
-        type (str): Catalog type name for this attribute Example: Custom["Service"].
+        type_ (str): Catalog type name for this attribute Example: Custom["Service"].
         backlink_attribute (Union[Unset, str]): The attribute to use (if this is a backlink) Example: abc123.
-        path (Union[Unset, List['CatalogTypeAttributePathItemV2']]): The path to use (if this is a path attribute)
+        path (Union[Unset, list['CatalogTypeAttributePathItemV2']]): The path to use (if this is a path attribute)
             Example: [{'attribute_id': 'abc123', 'attribute_name': 'abc123'}].
     """
 
@@ -37,12 +38,12 @@ class CatalogTypeAttributeV2:
     id: str
     mode: CatalogTypeAttributeV2Mode
     name: str
-    type: str
+    type_: str
     backlink_attribute: Union[Unset, str] = UNSET
-    path: Union[Unset, List["CatalogTypeAttributePathItemV2"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    path: Union[Unset, list["CatalogTypeAttributePathItemV2"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         array = self.array
 
         id = self.id
@@ -51,18 +52,18 @@ class CatalogTypeAttributeV2:
 
         name = self.name
 
-        type = self.type
+        type_ = self.type_
 
         backlink_attribute = self.backlink_attribute
 
-        path: Union[Unset, List[Dict[str, Any]]] = UNSET
+        path: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.path, Unset):
             path = []
             for path_item_data in self.path:
                 path_item = path_item_data.to_dict()
                 path.append(path_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -70,7 +71,7 @@ class CatalogTypeAttributeV2:
                 "id": id,
                 "mode": mode,
                 "name": name,
-                "type": type,
+                "type": type_,
             }
         )
         if backlink_attribute is not UNSET:
@@ -81,12 +82,12 @@ class CatalogTypeAttributeV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_type_attribute_path_item_v2 import (
             CatalogTypeAttributePathItemV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         array = d.pop("array")
 
         id = d.pop("id")
@@ -95,7 +96,7 @@ class CatalogTypeAttributeV2:
 
         name = d.pop("name")
 
-        type = d.pop("type")
+        type_ = d.pop("type")
 
         backlink_attribute = d.pop("backlink_attribute", UNSET)
 
@@ -111,7 +112,7 @@ class CatalogTypeAttributeV2:
             id=id,
             mode=mode,
             name=name,
-            type=type,
+            type_=type_,
             backlink_attribute=backlink_attribute,
             path=path,
         )
@@ -120,7 +121,7 @@ class CatalogTypeAttributeV2:
         return catalog_type_attribute_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

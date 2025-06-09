@@ -1,7 +1,8 @@
 import dataclasses
 import textwrap
+from collections.abc import Iterable, Iterator
 from pathlib import Path
-from typing import Dict, Iterable, Iterator, List, Union
+from typing import Union
 
 import click
 from ruamel.yaml import YAML
@@ -66,17 +67,17 @@ def is_processable_item(item: Path) -> bool:
     return (not item.stem.startswith("__")) and (item.is_dir() or item.suffix == ".py")
 
 
-def sort_items_for_nav(items: Iterable[Path]) -> List[Path]:
+def sort_items_for_nav(items: Iterable[Path]) -> list[Path]:
     return sorted(items, key=lambda item: (item.parent, item.is_dir(), item.name))
 
 
-def build_nav(context: Context, current_path: Path) -> Iterator[Dict]:
+def build_nav(context: Context, current_path: Path) -> Iterator[dict]:
     items = [item for item in current_path.iterdir() if is_processable_item(item)]
     items = sort_items_for_nav(items)
 
     for item in items:
         name = item.with_suffix("").name
-        nav_item: Union[str, List[Dict]]
+        nav_item: Union[str, list[dict]]
 
         if item.is_dir():
             nav_item = list(build_nav(context, item))
@@ -86,12 +87,12 @@ def build_nav(context: Context, current_path: Path) -> Iterator[Dict]:
         yield {name: nav_item}
 
 
-def update_nav(context: Context, nav: List[Dict]) -> None:
+def update_nav(context: Context, nav: list[dict]) -> None:
     yaml = YAML()
     yaml.indent(offset=2, sequence=4)
 
-    mkdocs_config: Dict = yaml.load(context.mkdocs_path)
-    mkdocs_nav: List[Dict] = mkdocs_config.setdefault("nav", [])
+    mkdocs_config: dict = yaml.load(context.mkdocs_path)
+    mkdocs_nav: list[dict] = mkdocs_config.setdefault("nav", [])
     mkdocs_api_reference = next(
         (item for item in mkdocs_nav if NAV_API_REFERENCE_KEY in item.keys()), None
     )

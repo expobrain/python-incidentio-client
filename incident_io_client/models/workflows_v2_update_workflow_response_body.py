@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -87,14 +88,14 @@ class WorkflowsV2UpdateWorkflowResponseBody:
 
     management_meta: "ManagementMetaV2"
     workflow: "Workflow"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         management_meta = self.management_meta.to_dict()
 
         workflow = self.workflow.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -106,11 +107,11 @@ class WorkflowsV2UpdateWorkflowResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.management_meta_v2 import ManagementMetaV2
         from ..models.workflow import Workflow
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         management_meta = ManagementMetaV2.from_dict(d.pop("management_meta"))
 
         workflow = Workflow.from_dict(d.pop("workflow"))
@@ -124,7 +125,7 @@ class WorkflowsV2UpdateWorkflowResponseBody:
         return workflows_v2_update_workflow_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

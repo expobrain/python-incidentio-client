@@ -1,5 +1,6 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -45,9 +46,9 @@ class ScheduleEntryV2:
     layer_id: Union[Unset, str] = UNSET
     rotation_id: Union[Unset, str] = UNSET
     user: Union[Unset, "UserV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         end_at = self.end_at.isoformat()
 
         start_at = self.start_at.isoformat()
@@ -60,11 +61,11 @@ class ScheduleEntryV2:
 
         rotation_id = self.rotation_id
 
-        user: Union[Unset, Dict[str, Any]] = UNSET
+        user: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.user, Unset):
             user = self.user.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -86,10 +87,10 @@ class ScheduleEntryV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.user_v2 import UserV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         end_at = isoparse(d.pop("end_at"))
 
         start_at = isoparse(d.pop("start_at"))
@@ -123,7 +124,7 @@ class ScheduleEntryV2:
         return schedule_entry_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

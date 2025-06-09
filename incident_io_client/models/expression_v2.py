@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -39,7 +40,7 @@ class ExpressionV2:
 
     Attributes:
         label (str): The human readable label of the expression Example: Team Slack channel.
-        operations (List['ExpressionOperationV2']):  Example: [{'branches': {'branches': [{'condition_groups':
+        operations (list['ExpressionOperationV2']):  Example: [{'branches': {'branches': [{'condition_groups':
             [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
@@ -63,14 +64,14 @@ class ExpressionV2:
     """
 
     label: str
-    operations: List["ExpressionOperationV2"]
+    operations: list["ExpressionOperationV2"]
     reference: str
     returns: "ReturnsMetaV2"
     root_reference: str
     else_branch: Union[Unset, "ExpressionElseBranchV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         label = self.label
 
         operations = []
@@ -84,11 +85,11 @@ class ExpressionV2:
 
         root_reference = self.root_reference
 
-        else_branch: Union[Unset, Dict[str, Any]] = UNSET
+        else_branch: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.else_branch, Unset):
             else_branch = self.else_branch.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -105,12 +106,12 @@ class ExpressionV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.expression_else_branch_v2 import ExpressionElseBranchV2
         from ..models.expression_operation_v2 import ExpressionOperationV2
         from ..models.returns_meta_v2 import ReturnsMetaV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         label = d.pop("label")
 
         operations = []
@@ -146,7 +147,7 @@ class ExpressionV2:
         return expression_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

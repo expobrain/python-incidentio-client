@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -25,7 +26,7 @@ class StepConfig:
         id (str): Unique ID of this step in a workflow Example: abc123.
         label (str): Human readable identifier for this step Example: PagerDuty Escalate.
         name (str): Unique name of the step in the engine Example: pagerduty.escalate.
-        param_bindings (List['EngineParamBindingV2']): Bindings for the step parameters Example: [{'array_value':
+        param_bindings (list['EngineParamBindingV2']): Bindings for the step parameters Example: [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}].
         for_each (Union[Unset, str]): Reference to the loop variable to run this step over Example: abc123.
@@ -34,11 +35,11 @@ class StepConfig:
     id: str
     label: str
     name: str
-    param_bindings: List["EngineParamBindingV2"]
+    param_bindings: list["EngineParamBindingV2"]
     for_each: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         label = self.label
@@ -52,7 +53,7 @@ class StepConfig:
 
         for_each = self.for_each
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -68,10 +69,10 @@ class StepConfig:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
         label = d.pop("label")
@@ -99,7 +100,7 @@ class StepConfig:
         return step_config
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

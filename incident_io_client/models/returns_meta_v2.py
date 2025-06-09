@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -14,46 +15,47 @@ class ReturnsMetaV2:
 
     Attributes:
         array (bool): Whether the return value should be single or multi-value Example: True.
-        type (str): Expected return type of this expression (what to try casting the result to) Example: IncidentStatus.
+        type_ (str): Expected return type of this expression (what to try casting the result to) Example:
+            IncidentStatus.
     """
 
     array: bool
-    type: str
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    type_: str
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         array = self.array
 
-        type = self.type
+        type_ = self.type_
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "array": array,
-                "type": type,
+                "type": type_,
             }
         )
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         array = d.pop("array")
 
-        type = d.pop("type")
+        type_ = d.pop("type")
 
         returns_meta_v2 = cls(
             array=array,
-            type=type,
+            type_=type_,
         )
 
         returns_meta_v2.additional_properties = d
         return returns_meta_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

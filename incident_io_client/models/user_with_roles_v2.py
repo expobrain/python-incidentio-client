@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -26,7 +27,7 @@ class UserWithRolesV2:
     Attributes:
         base_role (RBACRoleV2):  Example: {'description': 'Elevated permissions for the customer success team.', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}.
-        custom_roles (List['RBACRoleV2']):  Example: [{'description': 'Elevated permissions for the customer success
+        custom_roles (list['RBACRoleV2']):  Example: [{'description': 'Elevated permissions for the customer success
             team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}].
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name of the user Example: Lisa Karlin Curtis.
@@ -37,15 +38,15 @@ class UserWithRolesV2:
     """
 
     base_role: "RBACRoleV2"
-    custom_roles: List["RBACRoleV2"]
+    custom_roles: list["RBACRoleV2"]
     id: str
     name: str
     role: UserWithRolesV2Role
     email: Union[Unset, str] = UNSET
     slack_user_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         base_role = self.base_role.to_dict()
 
         custom_roles = []
@@ -63,7 +64,7 @@ class UserWithRolesV2:
 
         slack_user_id = self.slack_user_id
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -82,10 +83,10 @@ class UserWithRolesV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.rbac_role_v2 import RBACRoleV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         base_role = RBACRoleV2.from_dict(d.pop("base_role"))
 
         custom_roles = []
@@ -119,7 +120,7 @@ class UserWithRolesV2:
         return user_with_roles_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

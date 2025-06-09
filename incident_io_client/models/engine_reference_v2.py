@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,60 +19,60 @@ class EngineReferenceV2:
         key (str): The key of the field this is a reference to Example:
             incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"].
         label (str): Human readable label for the field (with context) Example: Incident -> Affected Team.
-        type (str): The type of this resource in the engine Example: IncidentSeverity.
+        type_ (str): The type of this resource in the engine Example: IncidentSeverity.
     """
 
     array: bool
     key: str
     label: str
-    type: str
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    type_: str
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         array = self.array
 
         key = self.key
 
         label = self.label
 
-        type = self.type
+        type_ = self.type_
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "array": array,
                 "key": key,
                 "label": label,
-                "type": type,
+                "type": type_,
             }
         )
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         array = d.pop("array")
 
         key = d.pop("key")
 
         label = d.pop("label")
 
-        type = d.pop("type")
+        type_ = d.pop("type")
 
         engine_reference_v2 = cls(
             array=array,
             key=key,
             label=label,
-            type=type,
+            type_=type_,
         )
 
         engine_reference_v2.additional_properties = d
         return engine_reference_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

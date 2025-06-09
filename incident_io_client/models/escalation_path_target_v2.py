@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,8 +22,8 @@ class EscalationPathTargetV2:
 
     Attributes:
         id (str): Uniquely identifies an entity of this type Example: lawrencejones.
-        type (EscalationPathTargetV2Type): Controls what type of entity this target identifies, such as EscalationPolicy
-            or User Example: user.
+        type_ (EscalationPathTargetV2Type): Controls what type of entity this target identifies, such as
+            EscalationPolicy or User Example: user.
         urgency (EscalationPathTargetV2Urgency): The urgency of this escalation path target Example: high.
         schedule_mode (Union[Unset, EscalationPathTargetV2ScheduleMode]): Only set for schedule targets, and either
             currently_on_call, all_users or all_users_for_rota and specifies which users to fetch from the schedule Example:
@@ -30,15 +31,15 @@ class EscalationPathTargetV2:
     """
 
     id: str
-    type: EscalationPathTargetV2Type
+    type_: EscalationPathTargetV2Type
     urgency: EscalationPathTargetV2Urgency
     schedule_mode: Union[Unset, EscalationPathTargetV2ScheduleMode] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
-        type = self.type.value
+        type_ = self.type_.value
 
         urgency = self.urgency.value
 
@@ -46,12 +47,12 @@ class EscalationPathTargetV2:
         if not isinstance(self.schedule_mode, Unset):
             schedule_mode = self.schedule_mode.value
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "id": id,
-                "type": type,
+                "type": type_,
                 "urgency": urgency,
             }
         )
@@ -61,11 +62,11 @@ class EscalationPathTargetV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         id = d.pop("id")
 
-        type = EscalationPathTargetV2Type(d.pop("type"))
+        type_ = EscalationPathTargetV2Type(d.pop("type"))
 
         urgency = EscalationPathTargetV2Urgency(d.pop("urgency"))
 
@@ -78,7 +79,7 @@ class EscalationPathTargetV2:
 
         escalation_path_target_v2 = cls(
             id=id,
-            type=type,
+            type_=type_,
             urgency=urgency,
             schedule_mode=schedule_mode,
         )
@@ -87,7 +88,7 @@ class EscalationPathTargetV2:
         return escalation_path_target_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

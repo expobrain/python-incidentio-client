@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -67,30 +68,30 @@ class AlertRoutesV2UpdateRequestBody:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}}
 
     Attributes:
-        alert_sources (List['AlertRouteAlertSourcePayloadV2']): Which alert sources should this alert route match?
+        alert_sources (list['AlertRouteAlertSourcePayloadV2']): Which alert sources should this alert route match?
             Example: [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation':
             'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}]}].
         auto_decline_enabled (bool): Should triage incidents be declined when alerts are resolved?
-        condition_groups (List['ConditionGroupPayloadV2']): What condition groups must be true for this alert route to
+        condition_groups (list['ConditionGroupPayloadV2']): What condition groups must be true for this alert route to
             fire? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}].
         defer_time_seconds (int): How long should the escalation defer time be? Example: 1.
         enabled (bool): Whether this alert route is enabled or not
-        escalation_bindings (List['AlertRouteEscalationBindingPayloadV2']): Which escalation paths should this alert
+        escalation_bindings (list['AlertRouteEscalationBindingPayloadV2']): Which escalation paths should this alert
             route escalate to? Example: [{'binding': {'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}].
-        grouping_keys (List['GroupingKeyV2']): Which attributes should this alert route use to group alerts? Example:
+        grouping_keys (list['GroupingKeyV2']): Which attributes should this alert route use to group alerts? Example:
             [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}].
         grouping_window_seconds (int): How large should the grouping window be? Example: 1.
-        incident_condition_groups (List['ConditionGroupPayloadV2']): What condition groups must be true for this alert
+        incident_condition_groups (list['ConditionGroupPayloadV2']): What condition groups must be true for this alert
             route to create an incident? Example: [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}].
         incident_enabled (bool): Whether this alert route will create incidents or not
         name (str): The name of this alert route config, for the user's reference Example: Production incidents.
-        expressions (Union[Unset, List['ExpressionPayloadV2']]): The expressions used in this template Example:
+        expressions (Union[Unset, list['ExpressionPayloadV2']]): The expressions used in this template Example:
             [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
             [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
@@ -119,22 +120,22 @@ class AlertRoutesV2UpdateRequestBody:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}.
     """
 
-    alert_sources: List["AlertRouteAlertSourcePayloadV2"]
+    alert_sources: list["AlertRouteAlertSourcePayloadV2"]
     auto_decline_enabled: bool
-    condition_groups: List["ConditionGroupPayloadV2"]
+    condition_groups: list["ConditionGroupPayloadV2"]
     defer_time_seconds: int
     enabled: bool
-    escalation_bindings: List["AlertRouteEscalationBindingPayloadV2"]
-    grouping_keys: List["GroupingKeyV2"]
+    escalation_bindings: list["AlertRouteEscalationBindingPayloadV2"]
+    grouping_keys: list["GroupingKeyV2"]
     grouping_window_seconds: int
-    incident_condition_groups: List["ConditionGroupPayloadV2"]
+    incident_condition_groups: list["ConditionGroupPayloadV2"]
     incident_enabled: bool
     name: str
-    expressions: Union[Unset, List["ExpressionPayloadV2"]] = UNSET
+    expressions: Union[Unset, list["ExpressionPayloadV2"]] = UNSET
     template: Union[Unset, "AlertRouteIncidentTemplatePayloadV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         alert_sources = []
         for alert_sources_item_data in self.alert_sources:
             alert_sources_item = alert_sources_item_data.to_dict()
@@ -172,18 +173,18 @@ class AlertRoutesV2UpdateRequestBody:
 
         name = self.name
 
-        expressions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        expressions: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.expressions, Unset):
             expressions = []
             for expressions_item_data in self.expressions:
                 expressions_item = expressions_item_data.to_dict()
                 expressions.append(expressions_item)
 
-        template: Union[Unset, Dict[str, Any]] = UNSET
+        template: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.template, Unset):
             template = self.template.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -208,7 +209,7 @@ class AlertRoutesV2UpdateRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.alert_route_alert_source_payload_v2 import (
             AlertRouteAlertSourcePayloadV2,
         )
@@ -222,7 +223,7 @@ class AlertRoutesV2UpdateRequestBody:
         from ..models.expression_payload_v2 import ExpressionPayloadV2
         from ..models.grouping_key_v2 import GroupingKeyV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         alert_sources = []
         _alert_sources = d.pop("alert_sources")
         for alert_sources_item_data in _alert_sources:
@@ -308,7 +309,7 @@ class AlertRoutesV2UpdateRequestBody:
         return alert_routes_v2_update_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

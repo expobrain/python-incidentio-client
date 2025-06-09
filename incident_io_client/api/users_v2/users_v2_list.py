@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -15,8 +15,8 @@ def _get_kwargs(
     slack_user_id: Union[Unset, str] = UNSET,
     page_size: Union[Unset, int] = 25,
     after: Union[Unset, str] = UNSET,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     params["email"] = email
 
@@ -28,7 +28,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v2/users",
         "params": params,

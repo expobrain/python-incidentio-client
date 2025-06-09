@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,7 +23,7 @@ class AuditLogActorV2:
 
     Attributes:
         id (str): The ID of the actor Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        type (AuditLogActorV2Type): The type of actor Example: user.
+        type_ (AuditLogActorV2Type): The type of actor Example: user.
         metadata (Union[Unset, AuditLogActorMetadataV2]):  Example: {'api_key_roles': 'abc123',
             'external_resource_external_id': 'q1234', 'external_resource_type': 'pager_duty_incident',
             'user_base_role_slug': 'admin', 'user_custom_role_slugs': 'engineering,security'}.
@@ -30,28 +31,28 @@ class AuditLogActorV2:
     """
 
     id: str
-    type: AuditLogActorV2Type
+    type_: AuditLogActorV2Type
     metadata: Union[Unset, "AuditLogActorMetadataV2"] = UNSET
     name: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
-        type = self.type.value
+        type_ = self.type_.value
 
-        metadata: Union[Unset, Dict[str, Any]] = UNSET
+        metadata: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.metadata, Unset):
             metadata = self.metadata.to_dict()
 
         name = self.name
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "id": id,
-                "type": type,
+                "type": type_,
             }
         )
         if metadata is not UNSET:
@@ -62,13 +63,13 @@ class AuditLogActorV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.audit_log_actor_metadata_v2 import AuditLogActorMetadataV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id")
 
-        type = AuditLogActorV2Type(d.pop("type"))
+        type_ = AuditLogActorV2Type(d.pop("type"))
 
         _metadata = d.pop("metadata", UNSET)
         metadata: Union[Unset, AuditLogActorMetadataV2]
@@ -81,7 +82,7 @@ class AuditLogActorV2:
 
         audit_log_actor_v2 = cls(
             id=id,
-            type=type,
+            type_=type_,
             metadata=metadata,
             name=name,
         )
@@ -90,7 +91,7 @@ class AuditLogActorV2:
         return audit_log_actor_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -49,12 +50,12 @@ class EscalationsV2UpdatePathResponseBody:
     """
 
     escalation_path: "EscalationPathV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         escalation_path = self.escalation_path.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -65,10 +66,10 @@ class EscalationsV2UpdatePathResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.escalation_path_v2 import EscalationPathV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         escalation_path = EscalationPathV2.from_dict(d.pop("escalation_path"))
 
         escalations_v2_update_path_response_body = cls(
@@ -79,7 +80,7 @@ class EscalationsV2UpdatePathResponseBody:
         return escalations_v2_update_path_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

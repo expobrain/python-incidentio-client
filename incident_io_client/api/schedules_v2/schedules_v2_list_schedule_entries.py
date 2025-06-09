@@ -1,6 +1,6 @@
 import datetime
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -17,8 +17,8 @@ def _get_kwargs(
     schedule_id: str,
     entry_window_start: Union[Unset, datetime.datetime] = UNSET,
     entry_window_end: Union[Unset, datetime.datetime] = UNSET,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     params["schedule_id"] = schedule_id
 
@@ -34,7 +34,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v2/schedule_entries",
         "params": params,

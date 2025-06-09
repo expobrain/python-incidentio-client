@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,15 +18,15 @@ class IdentityV1:
     Attributes:
         dashboard_url (str): The dashboard URL for this organisation Example: https://app.incident.io/my-org.
         name (str): The name assigned to the current API Key Example: Alertmanager token.
-        roles (List[IdentityV1RolesItem]): Which roles have been enabled for this key Example: ['incident_creator'].
+        roles (list[IdentityV1RolesItem]): Which roles have been enabled for this key Example: ['incident_creator'].
     """
 
     dashboard_url: str
     name: str
-    roles: List[IdentityV1RolesItem]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    roles: list[IdentityV1RolesItem]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         dashboard_url = self.dashboard_url
 
         name = self.name
@@ -35,7 +36,7 @@ class IdentityV1:
             roles_item = roles_item_data.value
             roles.append(roles_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -48,8 +49,8 @@ class IdentityV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         dashboard_url = d.pop("dashboard_url")
 
         name = d.pop("name")
@@ -71,7 +72,7 @@ class IdentityV1:
         return identity_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

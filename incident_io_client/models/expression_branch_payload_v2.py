@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,7 +22,7 @@ class ExpressionBranchPayloadV2:
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}
 
     Attributes:
-        condition_groups (List['ConditionGroupPayloadV2']): When one of these condition groups are satisfied, this
+        condition_groups (list['ConditionGroupPayloadV2']): When one of these condition groups are satisfied, this
             branch will be evaluated Example: [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value':
             [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}].
@@ -29,11 +30,11 @@ class ExpressionBranchPayloadV2:
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}.
     """
 
-    condition_groups: List["ConditionGroupPayloadV2"]
+    condition_groups: list["ConditionGroupPayloadV2"]
     result: "EngineParamBindingPayloadV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         condition_groups = []
         for condition_groups_item_data in self.condition_groups:
             condition_groups_item = condition_groups_item_data.to_dict()
@@ -41,7 +42,7 @@ class ExpressionBranchPayloadV2:
 
         result = self.result.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -53,11 +54,11 @@ class ExpressionBranchPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_group_payload_v2 import ConditionGroupPayloadV2
         from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:
@@ -76,7 +77,7 @@ class ExpressionBranchPayloadV2:
         return expression_branch_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

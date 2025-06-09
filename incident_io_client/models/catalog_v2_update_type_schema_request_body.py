@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,17 +19,17 @@ class CatalogV2UpdateTypeSchemaRequestBody:
             'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}], 'version': 1}
 
     Attributes:
-        attributes (List['CatalogTypeAttributePayloadV2']):  Example: [{'array': False, 'backlink_attribute': 'abc123',
+        attributes (list['CatalogTypeAttributePayloadV2']):  Example: [{'array': False, 'backlink_attribute': 'abc123',
             'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123'}],
             'type': 'Custom["Service"]'}].
         version (int):  Example: 1.
     """
 
-    attributes: List["CatalogTypeAttributePayloadV2"]
+    attributes: list["CatalogTypeAttributePayloadV2"]
     version: int
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         attributes = []
         for attributes_item_data in self.attributes:
             attributes_item = attributes_item_data.to_dict()
@@ -36,7 +37,7 @@ class CatalogV2UpdateTypeSchemaRequestBody:
 
         version = self.version
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -48,12 +49,12 @@ class CatalogV2UpdateTypeSchemaRequestBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.catalog_type_attribute_payload_v2 import (
             CatalogTypeAttributePayloadV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         attributes = []
         _attributes = d.pop("attributes")
         for attributes_item_data in _attributes:
@@ -72,7 +73,7 @@ class CatalogV2UpdateTypeSchemaRequestBody:
         return catalog_v2_update_type_schema_request_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

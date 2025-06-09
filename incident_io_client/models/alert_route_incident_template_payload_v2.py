@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -73,46 +74,46 @@ class AlertRouteIncidentTemplatePayloadV2:
     start_in_triage: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     summary: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     workspace: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field_priorities = self.custom_field_priorities.to_dict()
 
         priority_severity = self.priority_severity.value
 
-        custom_fields: Union[Unset, Dict[str, Any]] = UNSET
+        custom_fields: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.custom_fields, Unset):
             custom_fields = self.custom_fields.to_dict()
 
-        incident_mode: Union[Unset, Dict[str, Any]] = UNSET
+        incident_mode: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_mode, Unset):
             incident_mode = self.incident_mode.to_dict()
 
-        incident_type: Union[Unset, Dict[str, Any]] = UNSET
+        incident_type: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
-        name: Union[Unset, Dict[str, Any]] = UNSET
+        name: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.name, Unset):
             name = self.name.to_dict()
 
-        severity: Union[Unset, Dict[str, Any]] = UNSET
+        severity: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.severity, Unset):
             severity = self.severity.to_dict()
 
-        start_in_triage: Union[Unset, Dict[str, Any]] = UNSET
+        start_in_triage: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.start_in_triage, Unset):
             start_in_triage = self.start_in_triage.to_dict()
 
-        summary: Union[Unset, Dict[str, Any]] = UNSET
+        summary: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.summary, Unset):
             summary = self.summary.to_dict()
 
-        workspace: Union[Unset, Dict[str, Any]] = UNSET
+        workspace: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.workspace, Unset):
             workspace = self.workspace.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -140,7 +141,7 @@ class AlertRouteIncidentTemplatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.alert_route_incident_template_payload_v2_custom_field_priorities import (
             AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities,
         )
@@ -149,7 +150,7 @@ class AlertRouteIncidentTemplatePayloadV2:
         )
         from ..models.engine_param_binding_payload_v2 import EngineParamBindingPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field_priorities = (
             AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities.from_dict(
                 d.pop("custom_field_priorities")
@@ -235,7 +236,7 @@ class AlertRouteIncidentTemplatePayloadV2:
         return alert_route_incident_template_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

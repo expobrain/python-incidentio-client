@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,22 +20,22 @@ class IncidentAttachmentsV1ListResponseBody:
             'pager_duty_incident', 'title': 'The database has gone down'}}]}
 
     Attributes:
-        incident_attachments (List['IncidentAttachmentV1']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
+        incident_attachments (list['IncidentAttachmentV1']):  Example: [{'id': '01FCNDV6P870EA6S7TK1DSYD5H',
             'incident_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'resource': {'external_id': '123', 'permalink':
             'https://my.pagerduty.com/incidents/ABC', 'resource_type': 'pager_duty_incident', 'title': 'The database has
             gone down'}}].
     """
 
-    incident_attachments: List["IncidentAttachmentV1"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    incident_attachments: list["IncidentAttachmentV1"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         incident_attachments = []
         for incident_attachments_item_data in self.incident_attachments:
             incident_attachments_item = incident_attachments_item_data.to_dict()
             incident_attachments.append(incident_attachments_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -45,10 +46,10 @@ class IncidentAttachmentsV1ListResponseBody:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.incident_attachment_v1 import IncidentAttachmentV1
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         incident_attachments = []
         _incident_attachments = d.pop("incident_attachments")
         for incident_attachments_item_data in _incident_attachments:
@@ -66,7 +67,7 @@ class IncidentAttachmentsV1ListResponseBody:
         return incident_attachments_v1_list_response_body
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
