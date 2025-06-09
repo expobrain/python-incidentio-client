@@ -81,7 +81,9 @@ class StepConfig:
         param_bindings = []
         _param_bindings = d.pop("param_bindings")
         for param_bindings_item_data in _param_bindings:
-            param_bindings_item = EngineParamBindingV2.from_dict(param_bindings_item_data)
+            param_bindings_item = EngineParamBindingV2.from_dict(
+                param_bindings_item_data
+            )
 
             param_bindings.append(param_bindings_item)
 
