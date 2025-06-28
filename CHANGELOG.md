@@ -1,3 +1,9 @@
+## 0.56.3 (2025-06-28)
+
+### Fix
+
+- **deps-dev**: bump requests from 2.32.2 to 2.32.4 in the pip group
+
 ## 0.56.2 (2025-06-06)
 
 ### Fix
