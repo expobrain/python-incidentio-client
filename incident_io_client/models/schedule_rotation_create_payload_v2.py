@@ -51,7 +51,9 @@ class ScheduleRotationCreatePayloadV2:
     id: Union[Unset, str] = UNSET
     layers: Union[Unset, List["ScheduleLayerCreatePayloadV2"]] = UNSET
     users: Union[Unset, List["UserReferencePayloadV2"]] = UNSET
-    working_interval: Union[Unset, List["ScheduleRotationWorkingIntervalCreatePayloadV2"]] = UNSET
+    working_interval: Union[
+        Unset, List["ScheduleRotationWorkingIntervalCreatePayloadV2"]
+    ] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -173,8 +175,10 @@ class ScheduleRotationCreatePayloadV2:
         working_interval = []
         _working_interval = d.pop("working_interval", UNSET)
         for working_interval_item_data in _working_interval or []:
-            working_interval_item = ScheduleRotationWorkingIntervalCreatePayloadV2.from_dict(
-                working_interval_item_data
+            working_interval_item = (
+                ScheduleRotationWorkingIntervalCreatePayloadV2.from_dict(
+                    working_interval_item_data
+                )
             )
 
             working_interval.append(working_interval_item)
