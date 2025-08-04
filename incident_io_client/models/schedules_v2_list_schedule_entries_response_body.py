@@ -83,7 +83,9 @@ class SchedulesV2ListScheduleEntriesResponseBody:
         )
 
         d = src_dict.copy()
-        schedule_entries = ScheduleEntriesListPayloadV2.from_dict(d.pop("schedule_entries"))
+        schedule_entries = ScheduleEntriesListPayloadV2.from_dict(
+            d.pop("schedule_entries")
+        )
 
         _pagination_meta = d.pop("pagination_meta", UNSET)
         pagination_meta: Union[Unset, AfterPaginationMetaResultV2]
