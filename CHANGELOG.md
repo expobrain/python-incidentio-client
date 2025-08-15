@@ -1,3 +1,10 @@
+## 0.56.4 (2025-08-15)
+
+### Fix
+
+- **deps-dev**: bump mkdocs-material from 9.6.14 to 9.6.16
+- **deps-dev**: bump ruamel-yaml from 0.18.12 to 0.18.14
+
 ## 0.56.3 (2025-06-28)
 
 ### Fix
