@@ -7,7 +7,7 @@ jobs:
   check-openapi-spec-up-to-date:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: make download
       - uses: tj-actions/verify-changed-files@v20
         id: verify-changed-openapi-specs
