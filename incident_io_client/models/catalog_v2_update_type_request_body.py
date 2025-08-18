@@ -125,12 +125,16 @@ class CatalogV2UpdateTypeRequestBody:
         if isinstance(_annotations, Unset):
             annotations = UNSET
         else:
-            annotations = CatalogV2UpdateTypeRequestBodyAnnotations.from_dict(_annotations)
+            annotations = CatalogV2UpdateTypeRequestBodyAnnotations.from_dict(
+                _annotations
+            )
 
         categories = []
         _categories = d.pop("categories", UNSET)
         for categories_item_data in _categories or []:
-            categories_item = CatalogV2UpdateTypeRequestBodyCategoriesItem(categories_item_data)
+            categories_item = CatalogV2UpdateTypeRequestBodyCategoriesItem(
+                categories_item_data
+            )
 
             categories.append(categories_item)
 
