@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -22,8 +22,8 @@ def _get_kwargs(
     incident_role: Union[Unset, Any] = UNSET,
     custom_field: Union[Unset, Any] = UNSET,
     mode: Union[Unset, Any] = UNSET,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     params["page_size"] = page_size
 
@@ -49,7 +49,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/v2/incidents",
         "params": params,

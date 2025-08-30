@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,7 +23,7 @@ class ScheduleConfigV2:
             '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}
 
     Attributes:
-        rotations (List['ScheduleRotationV2']): Rotas in this schedule Example: [{'effective_from':
+        rotations (list['ScheduleRotationV2']): Rotas in this schedule Example: [{'effective_from':
             '2021-08-17T13:28:57.801578Z', 'handover_start_at': '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1,
             'interval_type': 'daily'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}], 'name': 'Primary On-Call Schedule', 'users': [{'email': 'lisa@incident.io', 'id':
@@ -30,16 +31,16 @@ class ScheduleConfigV2:
             'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}].
     """
 
-    rotations: List["ScheduleRotationV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    rotations: list["ScheduleRotationV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         rotations = []
         for rotations_item_data in self.rotations:
             rotations_item = rotations_item_data.to_dict()
             rotations.append(rotations_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -50,10 +51,10 @@ class ScheduleConfigV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.schedule_rotation_v2 import ScheduleRotationV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         rotations = []
         _rotations = d.pop("rotations")
         for rotations_item_data in _rotations:
@@ -69,7 +70,7 @@ class ScheduleConfigV2:
         return schedule_config_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

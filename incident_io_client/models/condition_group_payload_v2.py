@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,22 +20,22 @@ class ConditionGroupPayloadV2:
             'incident.severity'}]}
 
     Attributes:
-        conditions (List['ConditionPayloadV2']): All conditions in this list must be satisfied for the group to be
+        conditions (list['ConditionPayloadV2']): All conditions in this list must be satisfied for the group to be
             satisfied Example: [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
             'subject': 'incident.severity'}].
     """
 
-    conditions: List["ConditionPayloadV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    conditions: list["ConditionPayloadV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         conditions = []
         for conditions_item_data in self.conditions:
             conditions_item = conditions_item_data.to_dict()
             conditions.append(conditions_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -45,10 +46,10 @@ class ConditionGroupPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.condition_payload_v2 import ConditionPayloadV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         conditions = []
         _conditions = d.pop("conditions")
         for conditions_item_data in _conditions:
@@ -64,7 +65,7 @@ class ConditionGroupPayloadV2:
         return condition_group_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,5 +1,6 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,9 +30,9 @@ class CatalogEntryReferenceV2:
     catalog_entry_name: str
     catalog_type_id: str
     archived_at: Union[Unset, datetime.datetime] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         catalog_entry_id = self.catalog_entry_id
 
         catalog_entry_name = self.catalog_entry_name
@@ -42,7 +43,7 @@ class CatalogEntryReferenceV2:
         if not isinstance(self.archived_at, Unset):
             archived_at = self.archived_at.isoformat()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -57,8 +58,8 @@ class CatalogEntryReferenceV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         catalog_entry_id = d.pop("catalog_entry_id")
 
         catalog_entry_name = d.pop("catalog_entry_name")
@@ -83,7 +84,7 @@ class CatalogEntryReferenceV2:
         return catalog_entry_reference_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

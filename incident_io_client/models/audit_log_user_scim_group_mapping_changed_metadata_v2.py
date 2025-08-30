@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -30,9 +31,9 @@ class AuditLogUserSCIMGroupMappingChangedMetadataV2:
     after_custom_role_slugs: Union[Unset, str] = UNSET
     before_base_role_slug: Union[Unset, str] = UNSET
     before_custom_role_slugs: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         after_base_role_slug = self.after_base_role_slug
 
         after_custom_role_slugs = self.after_custom_role_slugs
@@ -41,7 +42,7 @@ class AuditLogUserSCIMGroupMappingChangedMetadataV2:
 
         before_custom_role_slugs = self.before_custom_role_slugs
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if after_base_role_slug is not UNSET:
@@ -56,8 +57,8 @@ class AuditLogUserSCIMGroupMappingChangedMetadataV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         after_base_role_slug = d.pop("after_base_role_slug", UNSET)
 
         after_custom_role_slugs = d.pop("after_custom_role_slugs", UNSET)
@@ -77,7 +78,7 @@ class AuditLogUserSCIMGroupMappingChangedMetadataV2:
         return audit_log_user_scim_group_mapping_changed_metadata_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,7 +19,7 @@ class EmbeddedCatalogEntryV1:
     Attributes:
         id (str): ID of this catalog entry Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name is the human readable name of this entry Example: Primary On-call.
-        aliases (Union[Unset, List[str]]): Optional aliases that can be used to reference this entry Example:
+        aliases (Union[Unset, list[str]]): Optional aliases that can be used to reference this entry Example:
             ['lawrence@incident.io', 'lawrence'].
         external_id (Union[Unset, str]): An optional alternative ID for this entry, which is ensured to be unique for
             the type Example: 761722cd-d1d7-477b-ac7e-90f9e079dc33.
@@ -26,22 +27,22 @@ class EmbeddedCatalogEntryV1:
 
     id: str
     name: str
-    aliases: Union[Unset, List[str]] = UNSET
+    aliases: Union[Unset, list[str]] = UNSET
     external_id: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
 
-        aliases: Union[Unset, List[str]] = UNSET
+        aliases: Union[Unset, list[str]] = UNSET
         if not isinstance(self.aliases, Unset):
             aliases = self.aliases
 
         external_id = self.external_id
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -57,13 +58,13 @@ class EmbeddedCatalogEntryV1:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         id = d.pop("id")
 
         name = d.pop("name")
 
-        aliases = cast(List[str], d.pop("aliases", UNSET))
+        aliases = cast(list[str], d.pop("aliases", UNSET))
 
         external_id = d.pop("external_id", UNSET)
 
@@ -78,7 +79,7 @@ class EmbeddedCatalogEntryV1:
         return embedded_catalog_entry_v1
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

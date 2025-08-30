@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,7 +30,7 @@ class CustomFieldEntryV2:
             'field_type': 'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options':
             [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value':
             'Product'}]}.
-        values (List['CustomFieldValueV2']): List of custom field values set on this entry Example:
+        values (list['CustomFieldValueV2']): List of custom field values set on this entry Example:
             [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
@@ -38,10 +39,10 @@ class CustomFieldEntryV2:
     """
 
     custom_field: "CustomFieldTypeInfoV2"
-    values: List["CustomFieldValueV2"]
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    values: list["CustomFieldValueV2"]
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         custom_field = self.custom_field.to_dict()
 
         values = []
@@ -49,7 +50,7 @@ class CustomFieldEntryV2:
             values_item = values_item_data.to_dict()
             values.append(values_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -61,11 +62,11 @@ class CustomFieldEntryV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_type_info_v2 import CustomFieldTypeInfoV2
         from ..models.custom_field_value_v2 import CustomFieldValueV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         custom_field = CustomFieldTypeInfoV2.from_dict(d.pop("custom_field"))
 
         values = []
@@ -84,7 +85,7 @@ class CustomFieldEntryV2:
         return custom_field_entry_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

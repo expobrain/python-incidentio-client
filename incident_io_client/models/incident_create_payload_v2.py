@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -49,17 +50,17 @@ class IncidentCreatePayloadV2:
             workspace (public), or invite-only (private). For more information on Private Incidents see our [help
             centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
             Example: public.
-        custom_field_entries (Union[Unset, List['CustomFieldEntryPayloadV2']]): Set the incident's custom fields to
+        custom_field_entries (Union[Unset, list['CustomFieldEntryPayloadV2']]): Set the incident's custom fields to
             these values Example: [{'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'values': [{'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_catalog_entry_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'value_link':
             'https://google.com/', 'value_numeric': '123.456', 'value_option_id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'value_text': 'This is my text field, I hope you like it', 'value_timestamp': ''}]}].
-        incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2']]): Assign incident roles to
+        incident_role_assignments (Union[Unset, list['IncidentRoleAssignmentPayloadV2']]): Assign incident roles to
             these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
         incident_status_id (Union[Unset, str]): Incident status to assign to the incident Example:
             01G0J1EXE7AXZ2C93K61WBPYEH.
-        incident_timestamp_values (Union[Unset, List['IncidentTimestampValuePayloadV2']]): Assign the incident's
+        incident_timestamp_values (Union[Unset, list['IncidentTimestampValuePayloadV2']]): Assign the incident's
             timestamps to these values Example: [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}].
         incident_type_id (Union[Unset, str]): Incident type to create this incident as Example:
@@ -79,10 +80,10 @@ class IncidentCreatePayloadV2:
 
     idempotency_key: str
     visibility: IncidentCreatePayloadV2Visibility
-    custom_field_entries: Union[Unset, List["CustomFieldEntryPayloadV2"]] = UNSET
-    incident_role_assignments: Union[Unset, List["IncidentRoleAssignmentPayloadV2"]] = UNSET
+    custom_field_entries: Union[Unset, list["CustomFieldEntryPayloadV2"]] = UNSET
+    incident_role_assignments: Union[Unset, list["IncidentRoleAssignmentPayloadV2"]] = UNSET
     incident_status_id: Union[Unset, str] = UNSET
-    incident_timestamp_values: Union[Unset, List["IncidentTimestampValuePayloadV2"]] = UNSET
+    incident_timestamp_values: Union[Unset, list["IncidentTimestampValuePayloadV2"]] = UNSET
     incident_type_id: Union[Unset, str] = UNSET
     mode: Union[Unset, IncidentCreatePayloadV2Mode] = UNSET
     name: Union[Unset, str] = UNSET
@@ -91,21 +92,21 @@ class IncidentCreatePayloadV2:
     slack_channel_name_override: Union[Unset, str] = UNSET
     slack_team_id: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         idempotency_key = self.idempotency_key
 
         visibility = self.visibility.value
 
-        custom_field_entries: Union[Unset, List[Dict[str, Any]]] = UNSET
+        custom_field_entries: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.custom_field_entries, Unset):
             custom_field_entries = []
             for custom_field_entries_item_data in self.custom_field_entries:
                 custom_field_entries_item = custom_field_entries_item_data.to_dict()
                 custom_field_entries.append(custom_field_entries_item)
 
-        incident_role_assignments: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_role_assignments: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_role_assignments, Unset):
             incident_role_assignments = []
             for incident_role_assignments_item_data in self.incident_role_assignments:
@@ -114,7 +115,7 @@ class IncidentCreatePayloadV2:
 
         incident_status_id = self.incident_status_id
 
-        incident_timestamp_values: Union[Unset, List[Dict[str, Any]]] = UNSET
+        incident_timestamp_values: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.incident_timestamp_values, Unset):
             incident_timestamp_values = []
             for incident_timestamp_values_item_data in self.incident_timestamp_values:
@@ -129,7 +130,7 @@ class IncidentCreatePayloadV2:
 
         name = self.name
 
-        retrospective_incident_options: Union[Unset, Dict[str, Any]] = UNSET
+        retrospective_incident_options: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.retrospective_incident_options, Unset):
             retrospective_incident_options = self.retrospective_incident_options.to_dict()
 
@@ -141,7 +142,7 @@ class IncidentCreatePayloadV2:
 
         summary = self.summary
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -177,7 +178,7 @@ class IncidentCreatePayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.custom_field_entry_payload_v2 import CustomFieldEntryPayloadV2
         from ..models.incident_role_assignment_payload_v2 import (
             IncidentRoleAssignmentPayloadV2,
@@ -189,7 +190,7 @@ class IncidentCreatePayloadV2:
             RetrospectiveIncidentOptionsV2,
         )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         idempotency_key = d.pop("idempotency_key")
 
         visibility = IncidentCreatePayloadV2Visibility(d.pop("visibility"))
@@ -272,7 +273,7 @@ class IncidentCreatePayloadV2:
         return incident_create_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

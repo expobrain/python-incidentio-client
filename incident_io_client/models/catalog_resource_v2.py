@@ -1,4 +1,5 @@
-from typing import Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,7 +21,7 @@ class CatalogResourceV2:
         category (CatalogResourceV2Category): Which category of resource Example: custom.
         description (str): Human readable description for this resource Example: Boolean true or false value.
         label (str): Label for this catalog resource type Example: GitHub Repository.
-        type (str): Catalog type name for this resource Example: CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"].
+        type_ (str): Catalog type name for this resource Example: CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"].
         value_docstring (str): Documentation for the literal string value of this resource Example: Either the GraphQL
             node ID of the repository or a string of <owner>/<repo>, e.g. incident-io/website.
     """
@@ -28,29 +29,29 @@ class CatalogResourceV2:
     category: CatalogResourceV2Category
     description: str
     label: str
-    type: str
+    type_: str
     value_docstring: str
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         category = self.category.value
 
         description = self.description
 
         label = self.label
 
-        type = self.type
+        type_ = self.type_
 
         value_docstring = self.value_docstring
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "category": category,
                 "description": description,
                 "label": label,
-                "type": type,
+                "type": type_,
                 "value_docstring": value_docstring,
             }
         )
@@ -58,15 +59,15 @@ class CatalogResourceV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
         category = CatalogResourceV2Category(d.pop("category"))
 
         description = d.pop("description")
 
         label = d.pop("label")
 
-        type = d.pop("type")
+        type_ = d.pop("type")
 
         value_docstring = d.pop("value_docstring")
 
@@ -74,7 +75,7 @@ class CatalogResourceV2:
             category=category,
             description=description,
             label=label,
-            type=type,
+            type_=type_,
             value_docstring=value_docstring,
         )
 
@@ -82,7 +83,7 @@ class CatalogResourceV2:
         return catalog_resource_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

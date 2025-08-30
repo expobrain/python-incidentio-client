@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -18,18 +18,18 @@ def _get_kwargs(
     body: AlertEventsV2CreateHTTPRequestBody,
     token: Union[Unset, str] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Dict[str, Any]:
-    headers: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    headers: dict[str, Any] = {}
     if not isinstance(authorization, Unset):
         headers["authorization"] = authorization
 
-    params: Dict[str, Any] = {}
+    params: dict[str, Any] = {}
 
     params["token"] = token
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/v2/alert_events/http/{alert_source_config_id}".format(
             alert_source_config_id=alert_source_config_id,

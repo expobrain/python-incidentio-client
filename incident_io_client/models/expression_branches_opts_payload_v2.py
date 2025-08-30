@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -22,7 +23,7 @@ class ExpressionBranchesOptsPayloadV2:
             'returns': {'array': True, 'type': 'IncidentStatus'}}
 
     Attributes:
-        branches (List['ExpressionBranchPayloadV2']): The branches to apply for this operation Example:
+        branches (list['ExpressionBranchPayloadV2']): The branches to apply for this operation Example:
             [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123',
@@ -30,11 +31,11 @@ class ExpressionBranchesOptsPayloadV2:
         returns (ReturnsMetaV2):  Example: {'array': True, 'type': 'IncidentStatus'}.
     """
 
-    branches: List["ExpressionBranchPayloadV2"]
+    branches: list["ExpressionBranchPayloadV2"]
     returns: "ReturnsMetaV2"
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         branches = []
         for branches_item_data in self.branches:
             branches_item = branches_item_data.to_dict()
@@ -42,7 +43,7 @@ class ExpressionBranchesOptsPayloadV2:
 
         returns = self.returns.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -54,11 +55,11 @@ class ExpressionBranchesOptsPayloadV2:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.expression_branch_payload_v2 import ExpressionBranchPayloadV2
         from ..models.returns_meta_v2 import ReturnsMetaV2
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         branches = []
         _branches = d.pop("branches")
         for branches_item_data in _branches:
@@ -77,7 +78,7 @@ class ExpressionBranchesOptsPayloadV2:
         return expression_branches_opts_payload_v2
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
