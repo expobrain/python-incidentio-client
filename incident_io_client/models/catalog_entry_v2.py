@@ -122,7 +122,9 @@ class CatalogEntryV2:
         d = src_dict.copy()
         aliases = cast(List[str], d.pop("aliases"))
 
-        attribute_values = CatalogEntryV2AttributeValues.from_dict(d.pop("attribute_values"))
+        attribute_values = CatalogEntryV2AttributeValues.from_dict(
+            d.pop("attribute_values")
+        )
 
         catalog_type_id = d.pop("catalog_type_id")
 
