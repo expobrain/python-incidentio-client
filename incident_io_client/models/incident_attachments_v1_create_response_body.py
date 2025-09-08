@@ -46,7 +46,9 @@ class IncidentAttachmentsV1CreateResponseBody:
         from ..models.incident_attachment_v1 import IncidentAttachmentV1
 
         d = src_dict.copy()
-        incident_attachment = IncidentAttachmentV1.from_dict(d.pop("incident_attachment"))
+        incident_attachment = IncidentAttachmentV1.from_dict(
+            d.pop("incident_attachment")
+        )
 
         incident_attachments_v1_create_response_body = cls(
             incident_attachment=incident_attachment,
