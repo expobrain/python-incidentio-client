@@ -65,7 +65,9 @@ class AlertRouteIncidentTemplatePayloadV2:
 
     custom_field_priorities: "AlertRouteIncidentTemplatePayloadV2CustomFieldPriorities"
     priority_severity: AlertRouteIncidentTemplatePayloadV2PrioritySeverity
-    custom_fields: Union[Unset, "AlertRouteIncidentTemplatePayloadV2CustomFields"] = UNSET
+    custom_fields: Union[
+        Unset, "AlertRouteIncidentTemplatePayloadV2CustomFields"
+    ] = UNSET
     incident_mode: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     incident_type: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
     name: Union[Unset, "EngineParamBindingPayloadV2"] = UNSET
