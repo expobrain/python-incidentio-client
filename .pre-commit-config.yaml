@@ -47,17 +47,17 @@ repos:
           - flake8-datetime-utcnow-plugin
         exclude: ^incident_io_client/
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.20.0
+    rev: v3.21.1
     hooks:
       - id: pyupgrade
         args:
           - "--py38-plus"
   - repo: https://github.com/pycqa/isort
-    rev: 6.0.1
+    rev: 7.0.0
     hooks:
       - id: isort
   - repo: https://github.com/pycqa/bandit
-    rev: 1.8.6
+    rev: 1.9.0
     hooks:
       - id: bandit
         args:
@@ -66,7 +66,7 @@ repos:
           - "-lll"
           - "tests"
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 25.1.0
+    rev: 25.11.0
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -79,7 +79,7 @@ repos:
       - id: python-no-log-warn
       - id: python-no-eval
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.8.3
+    rev: v4.10.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
