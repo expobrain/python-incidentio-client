@@ -54,7 +54,9 @@ class ScheduleRotationWorkingIntervalCreatePayloadV2:
 
         start_time = d.pop("start_time")
 
-        weekday = ScheduleRotationWorkingIntervalCreatePayloadV2Weekday(d.pop("weekday"))
+        weekday = ScheduleRotationWorkingIntervalCreatePayloadV2Weekday(
+            d.pop("weekday")
+        )
 
         schedule_rotation_working_interval_create_payload_v2 = cls(
             end_time=end_time,
