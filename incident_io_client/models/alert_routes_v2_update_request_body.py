@@ -165,7 +165,9 @@ class AlertRoutesV2UpdateRequestBody:
 
         incident_condition_groups = []
         for incident_condition_groups_item_data in self.incident_condition_groups:
-            incident_condition_groups_item = incident_condition_groups_item_data.to_dict()
+            incident_condition_groups_item = (
+                incident_condition_groups_item_data.to_dict()
+            )
             incident_condition_groups.append(incident_condition_groups_item)
 
         incident_enabled = self.incident_enabled
@@ -226,7 +228,9 @@ class AlertRoutesV2UpdateRequestBody:
         alert_sources = []
         _alert_sources = d.pop("alert_sources")
         for alert_sources_item_data in _alert_sources:
-            alert_sources_item = AlertRouteAlertSourcePayloadV2.from_dict(alert_sources_item_data)
+            alert_sources_item = AlertRouteAlertSourcePayloadV2.from_dict(
+                alert_sources_item_data
+            )
 
             alert_sources.append(alert_sources_item)
 
@@ -235,7 +239,9 @@ class AlertRoutesV2UpdateRequestBody:
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:
-            condition_groups_item = ConditionGroupPayloadV2.from_dict(condition_groups_item_data)
+            condition_groups_item = ConditionGroupPayloadV2.from_dict(
+                condition_groups_item_data
+            )
 
             condition_groups.append(condition_groups_item)
 
