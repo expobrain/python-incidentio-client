@@ -55,7 +55,9 @@ class EscalationPathNodeNotifyChannelV2:
 
         time_to_ack_seconds = self.time_to_ack_seconds
 
-        time_to_ack_weekday_interval_config_id = self.time_to_ack_weekday_interval_config_id
+        time_to_ack_weekday_interval_config_id = (
+            self.time_to_ack_weekday_interval_config_id
+        )
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -65,13 +67,15 @@ class EscalationPathNodeNotifyChannelV2:
             }
         )
         if time_to_ack_interval_condition is not UNSET:
-            field_dict["time_to_ack_interval_condition"] = time_to_ack_interval_condition
+            field_dict[
+                "time_to_ack_interval_condition"
+            ] = time_to_ack_interval_condition
         if time_to_ack_seconds is not UNSET:
             field_dict["time_to_ack_seconds"] = time_to_ack_seconds
         if time_to_ack_weekday_interval_config_id is not UNSET:
-            field_dict["time_to_ack_weekday_interval_config_id"] = (
-                time_to_ack_weekday_interval_config_id
-            )
+            field_dict[
+                "time_to_ack_weekday_interval_config_id"
+            ] = time_to_ack_weekday_interval_config_id
 
         return field_dict
 
