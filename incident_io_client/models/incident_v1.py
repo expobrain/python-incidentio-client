@@ -146,7 +146,9 @@ class IncidentV1:
 
         incident_role_assignments = []
         for incident_role_assignments_item_data in self.incident_role_assignments:
-            incident_role_assignments_item = incident_role_assignments_item_data.to_dict()
+            incident_role_assignments_item = (
+                incident_role_assignments_item_data.to_dict()
+            )
             incident_role_assignments.append(incident_role_assignments_item)
 
         mode = self.mode.value
