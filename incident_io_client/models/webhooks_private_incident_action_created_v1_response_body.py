@@ -33,7 +33,9 @@ class WebhooksPrivateIncidentActionCreatedV1ResponseBody:
     def to_dict(self) -> Dict[str, Any]:
         event_type = self.event_type.value
 
-        private_incident_action_created_v1 = self.private_incident_action_created_v1.to_dict()
+        private_incident_action_created_v1 = (
+            self.private_incident_action_created_v1.to_dict()
+        )
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
