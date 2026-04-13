@@ -28,9 +28,7 @@ class ManagedResourcesV2CreateManagedResourceRequestBodyAnnotations:
         d = src_dict.copy()
         managed_resources_v2_create_managed_resource_request_body_annotations = cls()
 
-        managed_resources_v2_create_managed_resource_request_body_annotations.additional_properties = (
-            d
-        )
+        managed_resources_v2_create_managed_resource_request_body_annotations.additional_properties = d
         return managed_resources_v2_create_managed_resource_request_body_annotations
 
     @property

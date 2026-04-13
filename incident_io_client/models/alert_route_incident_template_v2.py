@@ -150,8 +150,10 @@ class AlertRouteIncidentTemplateV2:
         from ..models.engine_param_binding_v2 import EngineParamBindingV2
 
         d = src_dict.copy()
-        custom_field_priorities = AlertRouteIncidentTemplateV2CustomFieldPriorities.from_dict(
-            d.pop("custom_field_priorities")
+        custom_field_priorities = (
+            AlertRouteIncidentTemplateV2CustomFieldPriorities.from_dict(
+                d.pop("custom_field_priorities")
+            )
         )
 
         priority_severity = AlertRouteIncidentTemplateV2PrioritySeverity(
@@ -163,7 +165,9 @@ class AlertRouteIncidentTemplateV2:
         if isinstance(_custom_fields, Unset):
             custom_fields = UNSET
         else:
-            custom_fields = AlertRouteIncidentTemplateV2CustomFields.from_dict(_custom_fields)
+            custom_fields = AlertRouteIncidentTemplateV2CustomFields.from_dict(
+                _custom_fields
+            )
 
         _incident_mode = d.pop("incident_mode", UNSET)
         incident_mode: Union[Unset, EngineParamBindingV2]
