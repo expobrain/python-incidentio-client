@@ -59,7 +59,9 @@ class AlertRouteAlertSourcePayloadV2:
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:
-            condition_groups_item = ConditionGroupPayloadV2.from_dict(condition_groups_item_data)
+            condition_groups_item = ConditionGroupPayloadV2.from_dict(
+                condition_groups_item_data
+            )
 
             condition_groups.append(condition_groups_item)
 
