@@ -115,7 +115,9 @@ class ExpressionOperationPayloadV2:
         )
 
         d = src_dict.copy()
-        operation_type = ExpressionOperationPayloadV2OperationType(d.pop("operation_type"))
+        operation_type = ExpressionOperationPayloadV2OperationType(
+            d.pop("operation_type")
+        )
 
         _branches = d.pop("branches", UNSET)
         branches: Union[Unset, ExpressionBranchesOptsPayloadV2]
