@@ -52,7 +52,9 @@ class IncidentStatusesV1ListResponseBody:
         incident_statuses = []
         _incident_statuses = d.pop("incident_statuses")
         for incident_statuses_item_data in _incident_statuses:
-            incident_statuses_item = IncidentStatusV1.from_dict(incident_statuses_item_data)
+            incident_statuses_item = IncidentStatusV1.from_dict(
+                incident_statuses_item_data
+            )
 
             incident_statuses.append(incident_statuses_item)
 
