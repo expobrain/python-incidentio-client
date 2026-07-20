@@ -43,7 +43,9 @@ class CustomFieldOptionsV1UpdateResponseBody:
         from ..models.custom_field_option_v1 import CustomFieldOptionV1
 
         d = src_dict.copy()
-        custom_field_option = CustomFieldOptionV1.from_dict(d.pop("custom_field_option"))
+        custom_field_option = CustomFieldOptionV1.from_dict(
+            d.pop("custom_field_option")
+        )
 
         custom_field_options_v1_update_response_body = cls(
             custom_field_option=custom_field_option,
