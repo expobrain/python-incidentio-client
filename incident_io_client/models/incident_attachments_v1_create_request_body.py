@@ -54,7 +54,9 @@ class IncidentAttachmentsV1CreateRequestBody:
         d = src_dict.copy()
         incident_id = d.pop("incident_id")
 
-        resource = IncidentAttachmentsV1CreateRequestBodyResource.from_dict(d.pop("resource"))
+        resource = IncidentAttachmentsV1CreateRequestBodyResource.from_dict(
+            d.pop("resource")
+        )
 
         incident_attachments_v1_create_request_body = cls(
             incident_id=incident_id,
