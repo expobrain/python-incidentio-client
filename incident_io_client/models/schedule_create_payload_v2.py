@@ -47,7 +47,9 @@ class ScheduleCreatePayloadV2:
 
     annotations: Union[Unset, "ScheduleCreatePayloadV2Annotations"] = UNSET
     config: Union[Unset, "ScheduleConfigCreatePayloadV2"] = UNSET
-    holidays_public_config: Union[Unset, "ScheduleHolidaysPublicConfigPayloadV2"] = UNSET
+    holidays_public_config: Union[
+        Unset, "ScheduleHolidaysPublicConfigPayloadV2"
+    ] = UNSET
     name: Union[Unset, str] = UNSET
     timezone: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)

@@ -35,7 +35,11 @@ class ScheduleV2:
             '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}], 'holidays_public_config':
             {'country_codes': ['GB', 'FR']}, 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Primary On-Call Schedule',
-            'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'next_shifts': [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id': '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at': '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id':
+            'U02AYNF2XJM'}}], 'timezone': 'Europe/London', 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         annotations (ScheduleV2Annotations): Annotations that track metadata about this resource Example:
@@ -60,6 +64,12 @@ class ScheduleV2:
             'U02AYNF2XJM'}}].
         holidays_public_config (Union[Unset, ScheduleHolidaysPublicConfigV2]):  Example: {'country_codes': ['GB',
             'FR']}.
+        next_shifts (Union[Unset, List['ScheduleEntryV2']]): Shifts that are upcoming for this schedule, if a native
+            schedule Example: [{'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'fingerprint': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id': '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at': '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io',
+            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id':
+            'U02AYNF2XJM'}}].
     """
 
     annotations: "ScheduleV2Annotations"
@@ -71,6 +81,7 @@ class ScheduleV2:
     config: Union[Unset, "ScheduleConfigV2"] = UNSET
     current_shifts: Union[Unset, List["ScheduleEntryV2"]] = UNSET
     holidays_public_config: Union[Unset, "ScheduleHolidaysPublicConfigV2"] = UNSET
+    next_shifts: Union[Unset, List["ScheduleEntryV2"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -101,6 +112,13 @@ class ScheduleV2:
         if not isinstance(self.holidays_public_config, Unset):
             holidays_public_config = self.holidays_public_config.to_dict()
 
+        next_shifts: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.next_shifts, Unset):
+            next_shifts = []
+            for next_shifts_item_data in self.next_shifts:
+                next_shifts_item = next_shifts_item_data.to_dict()
+                next_shifts.append(next_shifts_item)
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -119,6 +137,8 @@ class ScheduleV2:
             field_dict["current_shifts"] = current_shifts
         if holidays_public_config is not UNSET:
             field_dict["holidays_public_config"] = holidays_public_config
+        if next_shifts is not UNSET:
+            field_dict["next_shifts"] = next_shifts
 
         return field_dict
 
@@ -167,6 +187,13 @@ class ScheduleV2:
                 _holidays_public_config
             )
 
+        next_shifts = []
+        _next_shifts = d.pop("next_shifts", UNSET)
+        for next_shifts_item_data in _next_shifts or []:
+            next_shifts_item = ScheduleEntryV2.from_dict(next_shifts_item_data)
+
+            next_shifts.append(next_shifts_item)
+
         schedule_v2 = cls(
             annotations=annotations,
             created_at=created_at,
@@ -177,6 +204,7 @@ class ScheduleV2:
             config=config,
             current_shifts=current_shifts,
             holidays_public_config=holidays_public_config,
+            next_shifts=next_shifts,
         )
 
         schedule_v2.additional_properties = d
