@@ -1,0 +1,3 @@
+# incident_io_client.models.on_call_notification_rule_phone_details_public_v2_channel
+
+::: incident_io_client.models.on_call_notification_rule_phone_details_public_v2_channel

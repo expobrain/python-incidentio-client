@@ -20,7 +20,8 @@ class IncidentRoleAssignmentPayloadV2:
             'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}
 
     Attributes:
-        incident_role_id (str): Unique ID of an incident role Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
+        incident_role_id (str): Unique ID of an incident role. Note that the 'reporter' role can only be assigned when
+            creating an incident. Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
         assignee (Union[Unset, UserReferencePayloadV2]):  Example: {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}.
     """

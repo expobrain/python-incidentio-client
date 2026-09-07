@@ -1,0 +1,3 @@
+# incident_io_client.models.webhooks_public_escalation_status_updated_v1_response_body
+
+::: incident_io_client.models.webhooks_public_escalation_status_updated_v1_response_body

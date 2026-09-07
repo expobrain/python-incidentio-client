@@ -1,0 +1,3 @@
+# incident_io_client.models.catalog_update_type_payload_v3_annotations
+
+::: incident_io_client.models.catalog_update_type_payload_v3_annotations

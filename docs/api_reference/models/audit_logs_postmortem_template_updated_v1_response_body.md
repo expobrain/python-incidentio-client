@@ -1,3 +1,0 @@
-# incident_io_client.models.audit_logs_postmortem_template_updated_v1_response_body
-
-::: incident_io_client.models.audit_logs_postmortem_template_updated_v1_response_body

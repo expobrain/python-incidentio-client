@@ -1,0 +1,3 @@
+# incident_io_client.models.webhooks_status_page_incident_update_shared_v1_response_body_event_type
+
+::: incident_io_client.models.webhooks_status_page_incident_update_shared_v1_response_body_event_type

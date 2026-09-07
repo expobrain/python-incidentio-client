@@ -1,3 +1,0 @@
-# incident_io_client.api.webhooks.webhooks_private_incident_membership_revoked_v1
-
-::: incident_io_client.api.webhooks.webhooks_private_incident_membership_revoked_v1

@@ -1,3 +1,9 @@
+## 0.57.0 (2026-09-07)
+
+### Feat
+
+- API update to the latest OpenAPI V3 spec
+
 ## 0.56.4 (2025-08-15)
 
 ### Fix

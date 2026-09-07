@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_follow_up_category_created_v1
+
+::: incident_io_client.models.audit_logs_follow_up_category_created_v1

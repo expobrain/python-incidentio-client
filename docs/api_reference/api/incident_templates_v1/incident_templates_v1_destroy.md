@@ -1,0 +1,3 @@
+# incident_io_client.api.incident_templates_v1.incident_templates_v1_destroy
+
+::: incident_io_client.api.incident_templates_v1.incident_templates_v1_destroy

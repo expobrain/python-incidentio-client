@@ -15,14 +15,14 @@ class WeekdayIntervalConfigV2:
     """
     Example:
         {'id': 'abc123', 'name': 'abc123', 'timezone': 'abc123', 'weekday_intervals': [{'end_time': '17:00',
-            'start_time': '09:00', 'weekday': 'abc123'}]}
+            'start_time': '09:00', 'weekday': 'monday'}]}
 
     Attributes:
         id (str): The unique identifier for this set of working intervals Example: abc123.
         name (str): A human readable label for this set of working intervals Example: abc123.
         timezone (str): How to interpret all the intervals Example: abc123.
         weekday_intervals (List['WeekdayIntervalV2']):  Example: [{'end_time': '17:00', 'start_time': '09:00',
-            'weekday': 'abc123'}].
+            'weekday': 'monday'}].
     """
 
     id: str

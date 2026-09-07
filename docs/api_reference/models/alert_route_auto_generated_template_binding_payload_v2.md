@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_route_auto_generated_template_binding_payload_v2
+
+::: incident_io_client.models.alert_route_auto_generated_template_binding_payload_v2

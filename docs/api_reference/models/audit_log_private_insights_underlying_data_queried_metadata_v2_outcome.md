@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_private_insights_underlying_data_queried_metadata_v2_outcome
+
+::: incident_io_client.models.audit_log_private_insights_underlying_data_queried_metadata_v2_outcome

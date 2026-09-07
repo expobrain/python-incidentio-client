@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -30,26 +30,28 @@ T = TypeVar("T", bound="IncidentV2")
 class IncidentV2:
     """
     Example:
-        {'call_url': 'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'api_key': {'id':
+        {'call_url': 'https://zoom.us/foo', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'alert': {'id':
+            '01GW2G3V0S59R238FAHPDS1R66', 'title': '*errors.withMessage: PG::Error failed to connect'}, 'api_key': {'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}},
-            'custom_field_entries': [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type':
-            'single_select', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'},
+            'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My little workflow'}}, 'custom_field_entries':
+            [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}]},
             'values': [{'value_catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'external_id':
             '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call'},
             'value_link': 'https://google.com/', 'value_numeric': '123.456', 'value_option': {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'},
             'value_text': 'This is my text field, I hope you like it'}]}], 'duration_metrics': [{'duration_metric': {'id':
-            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'value_seconds': 1}], 'external_issue_reference':
-            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'asana'}, 'has_debrief': False, 'id': '01FDAG4SAP5TYPT98WGR2N7W91',
-            'incident_role_assignments': [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
-            responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status': {'category': 'triage', 'created_at':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Lasted'}, 'status': 'success', 'value_seconds': 10800}],
+            'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-
+            io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'asana'}, 'has_debrief': False, 'id':
+            '01FDAG4SAP5TYPT98WGR2N7W91', 'incident_role_assignments': [{'assignee': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'},
+            'role': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the
+            incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are
+            clear on responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform':
+            'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_status': {'category': 'triage', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'incident_timestamp_values': [{'incident_timestamp': {'id':
@@ -57,20 +59,26 @@ class IncidentV2:
             '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'standard', 'name': 'Our database is sad', 'permalink':
-            'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
-            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
-            **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'slack_team_id': 'T02A1FSLE8J', 'summary': "Our database is really really sad, and we don't know why yet.",
+            'updated_at': '2021-08-17T13:28:57.801578Z'}, 'last_activity_at': '2021-08-17T13:28:57.801578Z', 'mode':
+            'standard', 'ms_teams_channel_url': 'https://teams.microsoft.com/l/channel/19%some-
+            hex%40thread.tacv2/inc-123-title?groupId=some-uuid&tenantId=another-uuid', 'name': 'Our database is sad',
+            'permalink': 'https://app.incident.io/incidents/123', 'postmortem_document_ids': ['01FCNDV6P870EA6S7TK1DSYD5H'],
+            'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123', 'severity':
+            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot', 'slack_channel_url':
+            'https://slack.com/app_redirect?team=T1234&channel=C5678', 'slack_team_id': 'T02A1FSLE8J', 'summary': "Our
+            database is really really sad, and we don't know why yet.", 'team_ids': ['01JPQA75EPNEES4479P16P4XAB'],
             'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public', 'workload_minutes_late': 40.7,
             'workload_minutes_sleeping': 0, 'workload_minutes_total': 60.7, 'workload_minutes_working': 20}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
-        creator (ActorV2):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
+        creator (ActorV2):  Example: {'alert': {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title': '*errors.withMessage:
+            PG::Error failed to connect'}, 'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
             'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
-            'viewer', 'slack_user_id': 'U02AYNF2XJM'}}.
+            'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My little
+            workflow'}}.
         custom_field_entries (List['CustomFieldEntryV2']): Custom field entries for this incident Example:
             [{'custom_field': {'description': 'Which team is impacted by this issue', 'field_type': 'single_select', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Affected Team', 'options': [{'custom_field_id':
@@ -83,7 +91,7 @@ class IncidentV2:
         id (str): Unique identifier for the incident Example: 01FDAG4SAP5TYPT98WGR2N7W91.
         incident_role_assignments (List['IncidentRoleAssignmentV2']): A list of who is assigned to each role for this
             incident Example: [{'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa
-            Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
+            Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'The person currently coordinating the incident', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'instructions': 'Take point on the incident; Make sure people are clear on
             responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
@@ -92,6 +100,8 @@ class IncidentV2:
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}.
+        last_activity_at (datetime.datetime): When the incident last recorded 'activity' Example:
+            2021-08-17T13:28:57.801578Z.
         mode (IncidentV2Mode): Whether the incident is real, a test, a tutorial, or importing as a retrospective
             incident Example: standard.
         name (str): Explanation of the incident Example: Our database is sad.
@@ -100,15 +110,16 @@ class IncidentV2:
             sometimes created asynchronously, so may not be present when the incident is just created. Example: C02AW36C1M5.
         slack_team_id (str): ID of the Slack team / workspace. This is only required if you are using a Slack Enterprise
             Grid with multiple teams. Example: T02A1FSLE8J.
+        team_ids (List[str]): IDs of the teams that own this incident, resolved from your team settings. Empty when no
+            teams match. Example: ['01JPQA75EPNEES4479P16P4XAB'].
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
         visibility (IncidentV2Visibility): Whether the incident should be open to anyone in your Slack workspace
-            (public), or invite-only (private). For more information on Private Incidents see our [help
-            centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
-            Example: public.
+            (public), or invite-only (private). For more information on Private Incidents see our
+            [docs](https://docs.incident.io/incidents/sensitive-incidents). Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
         duration_metrics (Union[Unset, List['IncidentDurationMetricWithValueV2']]): Incident duration metrics and their
             measurements for this incident Example: [{'duration_metric': {'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name':
-            'Lasted'}, 'value_seconds': 1}].
+            'Lasted'}, 'status': 'success', 'value_seconds': 10800}].
         external_issue_reference (Union[Unset, ExternalIssueReferenceV2]):  Example: {'issue_name': 'INC-123',
             'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-write-up', 'provider':
             'asana'}.
@@ -120,21 +131,28 @@ class IncidentV2:
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
             'updated_at': '2021-08-17T13:28:57.801578Z'}.
+        ms_teams_channel_url (Union[Unset, str]): URL to link to the Microsoft Teams channel Example:
+            https://teams.microsoft.com/l/channel/19%some-hex%40thread.tacv2/inc-123-title?groupId=some-
+            uuid&tenantId=another-uuid.
         permalink (Union[Unset, str]): A permanent link to the homepage for this incident Example:
             https://app.incident.io/incidents/123.
-        postmortem_document_url (Union[Unset, str]): Description of the incident Example:
+        postmortem_document_ids (Union[Unset, List[str]]): An array of IDs of postmortem documents for this incident
+            Example: ['01FCNDV6P870EA6S7TK1DSYD5H'].
+        postmortem_document_url (Union[Unset, str]): The URL of the incident post-mortem document Example:
             https://docs.google.com/my_doc_id.
         severity (Union[Unset, SeverityV2]):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}.
         slack_channel_name (Union[Unset, str]): Name of the slack channel Example: inc-165-green-parrot.
+        slack_channel_url (Union[Unset, str]): URL to link to the slack channel Example:
+            https://slack.com/app_redirect?team=T1234&channel=C5678.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
         workload_minutes_late (Union[Unset, float]): Amount of time spent on the incident in late hours Example: 40.7.
         workload_minutes_sleeping (Union[Unset, float]): Amount of time spent on the incident in sleeping hours
         workload_minutes_total (Union[Unset, float]): Amount of time spent on the incident in total Example: 60.7.
         workload_minutes_working (Union[Unset, float]): Amount of time spent on the incident in working hours Example:
-            20.0.
+            20.
     """
 
     created_at: datetime.datetime
@@ -143,11 +161,13 @@ class IncidentV2:
     id: str
     incident_role_assignments: List["IncidentRoleAssignmentV2"]
     incident_status: "IncidentStatusV2"
+    last_activity_at: datetime.datetime
     mode: IncidentV2Mode
     name: str
     reference: str
     slack_channel_id: str
     slack_team_id: str
+    team_ids: List[str]
     updated_at: datetime.datetime
     visibility: IncidentV2Visibility
     call_url: Union[Unset, str] = UNSET
@@ -156,10 +176,13 @@ class IncidentV2:
     has_debrief: Union[Unset, bool] = UNSET
     incident_timestamp_values: Union[Unset, List["IncidentTimestampWithValueV2"]] = UNSET
     incident_type: Union[Unset, "IncidentTypeV2"] = UNSET
+    ms_teams_channel_url: Union[Unset, str] = UNSET
     permalink: Union[Unset, str] = UNSET
+    postmortem_document_ids: Union[Unset, List[str]] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
     severity: Union[Unset, "SeverityV2"] = UNSET
     slack_channel_name: Union[Unset, str] = UNSET
+    slack_channel_url: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
     workload_minutes_late: Union[Unset, float] = UNSET
     workload_minutes_sleeping: Union[Unset, float] = UNSET
@@ -186,6 +209,8 @@ class IncidentV2:
 
         incident_status = self.incident_status.to_dict()
 
+        last_activity_at = self.last_activity_at.isoformat()
+
         mode = self.mode.value
 
         name = self.name
@@ -195,6 +220,8 @@ class IncidentV2:
         slack_channel_id = self.slack_channel_id
 
         slack_team_id = self.slack_team_id
+
+        team_ids = self.team_ids
 
         updated_at = self.updated_at.isoformat()
 
@@ -226,7 +253,13 @@ class IncidentV2:
         if not isinstance(self.incident_type, Unset):
             incident_type = self.incident_type.to_dict()
 
+        ms_teams_channel_url = self.ms_teams_channel_url
+
         permalink = self.permalink
+
+        postmortem_document_ids: Union[Unset, List[str]] = UNSET
+        if not isinstance(self.postmortem_document_ids, Unset):
+            postmortem_document_ids = self.postmortem_document_ids
 
         postmortem_document_url = self.postmortem_document_url
 
@@ -235,6 +268,8 @@ class IncidentV2:
             severity = self.severity.to_dict()
 
         slack_channel_name = self.slack_channel_name
+
+        slack_channel_url = self.slack_channel_url
 
         summary = self.summary
 
@@ -256,11 +291,13 @@ class IncidentV2:
                 "id": id,
                 "incident_role_assignments": incident_role_assignments,
                 "incident_status": incident_status,
+                "last_activity_at": last_activity_at,
                 "mode": mode,
                 "name": name,
                 "reference": reference,
                 "slack_channel_id": slack_channel_id,
                 "slack_team_id": slack_team_id,
+                "team_ids": team_ids,
                 "updated_at": updated_at,
                 "visibility": visibility,
             }
@@ -277,14 +314,20 @@ class IncidentV2:
             field_dict["incident_timestamp_values"] = incident_timestamp_values
         if incident_type is not UNSET:
             field_dict["incident_type"] = incident_type
+        if ms_teams_channel_url is not UNSET:
+            field_dict["ms_teams_channel_url"] = ms_teams_channel_url
         if permalink is not UNSET:
             field_dict["permalink"] = permalink
+        if postmortem_document_ids is not UNSET:
+            field_dict["postmortem_document_ids"] = postmortem_document_ids
         if postmortem_document_url is not UNSET:
             field_dict["postmortem_document_url"] = postmortem_document_url
         if severity is not UNSET:
             field_dict["severity"] = severity
         if slack_channel_name is not UNSET:
             field_dict["slack_channel_name"] = slack_channel_name
+        if slack_channel_url is not UNSET:
+            field_dict["slack_channel_url"] = slack_channel_url
         if summary is not UNSET:
             field_dict["summary"] = summary
         if workload_minutes_late is not UNSET:
@@ -341,6 +384,8 @@ class IncidentV2:
 
         incident_status = IncidentStatusV2.from_dict(d.pop("incident_status"))
 
+        last_activity_at = isoparse(d.pop("last_activity_at"))
+
         mode = IncidentV2Mode(d.pop("mode"))
 
         name = d.pop("name")
@@ -350,6 +395,8 @@ class IncidentV2:
         slack_channel_id = d.pop("slack_channel_id")
 
         slack_team_id = d.pop("slack_team_id")
+
+        team_ids = cast(List[str], d.pop("team_ids"))
 
         updated_at = isoparse(d.pop("updated_at"))
 
@@ -393,7 +440,11 @@ class IncidentV2:
         else:
             incident_type = IncidentTypeV2.from_dict(_incident_type)
 
+        ms_teams_channel_url = d.pop("ms_teams_channel_url", UNSET)
+
         permalink = d.pop("permalink", UNSET)
+
+        postmortem_document_ids = cast(List[str], d.pop("postmortem_document_ids", UNSET))
 
         postmortem_document_url = d.pop("postmortem_document_url", UNSET)
 
@@ -405,6 +456,8 @@ class IncidentV2:
             severity = SeverityV2.from_dict(_severity)
 
         slack_channel_name = d.pop("slack_channel_name", UNSET)
+
+        slack_channel_url = d.pop("slack_channel_url", UNSET)
 
         summary = d.pop("summary", UNSET)
 
@@ -423,11 +476,13 @@ class IncidentV2:
             id=id,
             incident_role_assignments=incident_role_assignments,
             incident_status=incident_status,
+            last_activity_at=last_activity_at,
             mode=mode,
             name=name,
             reference=reference,
             slack_channel_id=slack_channel_id,
             slack_team_id=slack_team_id,
+            team_ids=team_ids,
             updated_at=updated_at,
             visibility=visibility,
             call_url=call_url,
@@ -436,10 +491,13 @@ class IncidentV2:
             has_debrief=has_debrief,
             incident_timestamp_values=incident_timestamp_values,
             incident_type=incident_type,
+            ms_teams_channel_url=ms_teams_channel_url,
             permalink=permalink,
+            postmortem_document_ids=postmortem_document_ids,
             postmortem_document_url=postmortem_document_url,
             severity=severity,
             slack_channel_name=slack_channel_name,
+            slack_channel_url=slack_channel_url,
             summary=summary,
             workload_minutes_late=workload_minutes_late,
             workload_minutes_sleeping=workload_minutes_sleeping,

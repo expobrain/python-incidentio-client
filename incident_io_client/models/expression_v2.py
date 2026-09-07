@@ -27,15 +27,16 @@ class ExpressionV2:
             'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
             'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups':
-            [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
-            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}]},
-            'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type': 'navigate', 'parse':
-            {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source': 'metadata.annotations["github.com/repo"]'},
-            'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference': 'abc123', 'returns': {'array': True,
-            'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast': {'returns': {'array':
+            True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference': '1235', 'reference_label': 'Teams'}, 'filter':
+            {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}, 'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type':
+            'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
+            'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference':
+            'abc123', 'returns': {'array': True, 'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}
 
     Attributes:
         label (str): The human readable label of the expression Example: Team Slack channel.
@@ -46,13 +47,15 @@ class ExpressionV2:
             'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}],
             'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}], 'returns':
-            {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions': [{'operation':
-            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
-            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
-            Severity', 'reference': 'incident.severity'}}]}]}, 'navigate': {'reference': '1235', 'reference_label':
-            'Teams'}, 'operation_type': 'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'},
-            'source': 'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type': 'IncidentStatus'}}].
+            {'array': True, 'type': 'IncidentStatus'}}, 'cast': {'returns': {'array': True, 'type': 'IncidentStatus'}},
+            'concatenate': {'reference': '1235', 'reference_label': 'Teams'}, 'filter': {'condition_groups': [{'conditions':
+            [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label':
+            'Incident Severity', 'reference': 'incident.severity'}}]}]}, 'navigate': {'reference': '1235',
+            'reference_label': 'Teams'}, 'operation_type': 'navigate', 'parse': {'returns': {'array': True, 'type':
+            'IncidentStatus'}, 'source': 'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type':
+            'IncidentStatus'}}].
         reference (str): A short ID that can be used to reference the expression Example: abc123.
         returns (ReturnsMetaV2):  Example: {'array': True, 'type': 'IncidentStatus'}.
         root_reference (str): The root reference for this expression (i.e. where the expression starts) Example:

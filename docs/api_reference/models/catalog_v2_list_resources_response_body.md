@@ -1,3 +1,0 @@
-# incident_io_client.models.catalog_v2_list_resources_response_body
-
-::: incident_io_client.models.catalog_v2_list_resources_response_body

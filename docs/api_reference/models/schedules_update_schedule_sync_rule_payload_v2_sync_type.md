@@ -1,0 +1,3 @@
+# incident_io_client.models.schedules_update_schedule_sync_rule_payload_v2_sync_type
+
+::: incident_io_client.models.schedules_update_schedule_sync_rule_payload_v2_sync_type

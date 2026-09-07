@@ -21,15 +21,17 @@ class IncidentUpdateV2:
     """
     Example:
         {'created_at': '2021-08-17T13:28:57.801578Z', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'merged_into_incident_id': 'abc123', 'message': "We're working on a fix, hoping to
-            ship in the next 30 minutes", 'new_incident_status': {'category': 'triage', 'created_at':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'merged_into_incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'message': "We're working
+            on a fix, hoping to ship in the next 30 minutes", 'new_incident_status': {'category': 'triage', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}, 'new_severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'updater': {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
-            key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
-            'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}}}
+            '2021-08-17T13:28:57.801578Z'}, 'updater': {'alert': {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title':
+            '*errors.withMessage: PG::Error failed to connect'}, 'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My
+            test API key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin
+            Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'My little workflow'}}}
 
     Attributes:
         created_at (datetime.datetime): When the update was created Example: 2021-08-17T13:28:57.801578Z.
@@ -39,11 +41,13 @@ class IncidentUpdateV2:
             '2021-08-17T13:28:57.801578Z', 'description': "Impact has been **fully mitigated**, and we're ready to learn
             from this incident.", 'id': '01FCNDV6P870EA6S7TK1DSYD5H', 'name': 'Closed', 'rank': 4, 'updated_at':
             '2021-08-17T13:28:57.801578Z'}.
-        updater (ActorV2):  Example: {'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
+        updater (ActorV2):  Example: {'alert': {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title': '*errors.withMessage:
+            PG::Error failed to connect'}, 'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
             'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
-            'viewer', 'slack_user_id': 'U02AYNF2XJM'}}.
-        merged_into_incident_id (Union[Unset, str]): The ID of the incident that this incident was merged into, if it
-            was merged in to another incident Example: abc123.
+            'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My little
+            workflow'}}.
+        merged_into_incident_id (Union[Unset, str]): The ID of the incident this incident was merged into, if the to
+            state of this update is 'merged'. Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         message (Union[Unset, str]): Message that explains the context behind the update Example: We're working on a
             fix, hoping to ship in the next 30 minutes.
         new_severity (Union[Unset, SeverityV2]):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':

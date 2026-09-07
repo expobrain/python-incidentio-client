@@ -5,18 +5,19 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.incident_memberships_v1_create_request_body import (
-    IncidentMembershipsV1CreateRequestBody,
+from ...models.error_response import ErrorResponse
+from ...models.incident_memberships_create_payload_v1 import (
+    IncidentMembershipsCreatePayloadV1,
 )
-from ...models.incident_memberships_v1_create_response_body import (
-    IncidentMembershipsV1CreateResponseBody,
+from ...models.incident_memberships_create_result_v1 import (
+    IncidentMembershipsCreateResultV1,
 )
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: IncidentMembershipsV1CreateRequestBody,
+    body: IncidentMembershipsCreatePayloadV1,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -36,11 +37,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[IncidentMembershipsV1CreateResponseBody]:
+) -> Optional[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]:
     if response.status_code == 201:
-        response_201 = IncidentMembershipsV1CreateResponseBody.from_dict(response.json())
+        response_201 = IncidentMembershipsCreateResultV1.from_dict(response.json())
 
         return response_201
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -49,7 +102,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[IncidentMembershipsV1CreateResponseBody]:
+) -> Response[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -61,22 +114,22 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentMembershipsV1CreateRequestBody,
-) -> Response[IncidentMembershipsV1CreateResponseBody]:
+    body: IncidentMembershipsCreatePayloadV1,
+) -> Response[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
-            '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
+        body (IncidentMembershipsCreatePayloadV1):  Example: {'incident_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[IncidentMembershipsV1CreateResponseBody]
+        Response[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]
     """
 
     kwargs = _get_kwargs(
@@ -93,22 +146,22 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentMembershipsV1CreateRequestBody,
-) -> Optional[IncidentMembershipsV1CreateResponseBody]:
+    body: IncidentMembershipsCreatePayloadV1,
+) -> Optional[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
-            '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
+        body (IncidentMembershipsCreatePayloadV1):  Example: {'incident_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        IncidentMembershipsV1CreateResponseBody
+        Union[ErrorResponse, IncidentMembershipsCreateResultV1]
     """
 
     return sync_detailed(
@@ -120,22 +173,22 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentMembershipsV1CreateRequestBody,
-) -> Response[IncidentMembershipsV1CreateResponseBody]:
+    body: IncidentMembershipsCreatePayloadV1,
+) -> Response[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
-            '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
+        body (IncidentMembershipsCreatePayloadV1):  Example: {'incident_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[IncidentMembershipsV1CreateResponseBody]
+        Response[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]
     """
 
     kwargs = _get_kwargs(
@@ -150,22 +203,22 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: IncidentMembershipsV1CreateRequestBody,
-) -> Optional[IncidentMembershipsV1CreateResponseBody]:
+    body: IncidentMembershipsCreatePayloadV1,
+) -> Optional[Union[ErrorResponse, IncidentMembershipsCreateResultV1]]:
     """Create Incident Memberships V1
 
      Makes a user a member of a private incident
 
     Args:
-        body (IncidentMembershipsV1CreateRequestBody):  Example: {'incident_id':
-            '01ET65M7ZADYFCKD4K1AE2QNMC', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
+        body (IncidentMembershipsCreatePayloadV1):  Example: {'incident_id':
+            '01FCNDV6P870EA6S7TK1DSYD5H', 'user_id': '01FCQSP07Z74QMMYPDDGQB9FTG'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        IncidentMembershipsV1CreateResponseBody
+        Union[ErrorResponse, IncidentMembershipsCreateResultV1]
     """
 
     return (

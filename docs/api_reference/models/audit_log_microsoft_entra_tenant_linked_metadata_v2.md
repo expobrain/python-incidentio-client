@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_microsoft_entra_tenant_linked_metadata_v2
+
+::: incident_io_client.models.audit_log_microsoft_entra_tenant_linked_metadata_v2

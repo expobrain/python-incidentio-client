@@ -7,6 +7,10 @@ from ..models.escalation_path_node_v2_type import EscalationPathNodeV2Type
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.escalation_path_node_delay_v2 import EscalationPathNodeDelayV2
+    from ..models.escalation_path_node_escalation_path_v2 import (
+        EscalationPathNodeEscalationPathV2,
+    )
     from ..models.escalation_path_node_if_else_v2 import EscalationPathNodeIfElseV2
     from ..models.escalation_path_node_level_v2 import EscalationPathNodeLevelV2
     from ..models.escalation_path_node_notify_channel_v2 import (
@@ -22,18 +26,21 @@ T = TypeVar("T", bound="EscalationPathNodeV2")
 class EscalationPathNodeV2:
     """
     Example:
-        {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones',
-            'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
-            False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
-            'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
-            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
-            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
-            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
-            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
-            'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}
+        {'delay': {'delay_interval_condition': 'active', 'delay_seconds': 300, 'delay_weekday_interval_config_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'escalation_path': {'escalation_path_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'ack_mode': 'all', 'retry_config':
+            {'attempts': 3, 'interval_seconds': 300}, 'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120},
+            'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
+            'notify_channel': {'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
+            'repeat': {'repeat_times': 3, 'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}
 
     Attributes:
         id (str): An ID for this node, unique within the escalation path.
@@ -45,48 +52,66 @@ class EscalationPathNodeV2:
             configuration.
             * notify_channel: Send the escalation to a Slack channel, where it can be acked by anyone in the channel.
             * if_else: Branch the escalation based on a set of conditions.
-            * repeat: Go back to a previous node and repeat the logic from there. Example: if_else.
+            * repeat: Go back to a previous node and repeat the logic from there.
+            * delay: Pause the escalation for a configured duration before advancing to the next node.
+            * escalation_path: Reassign the escalation to another escalation path, continuing from that path's first node.
+            * voicemail: Send an inbound caller to voicemail. Only valid inside a call route's path. Example: if_else.
+        delay (Union[Unset, EscalationPathNodeDelayV2]):  Example: {'delay_interval_condition': 'active',
+            'delay_seconds': 300, 'delay_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
+        escalation_path (Union[Unset, EscalationPathNodeEscalationPathV2]):  Example: {'escalation_path_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}.
         if_else (Union[Unset, EscalationPathNodeIfElseV2]):  Example: {'conditions': [{'operation': {'label': 'Lawrence
             Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}], 'else_path': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions':
-            [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
-            [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label':
-            'Incident Severity', 'reference': 'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level':
-            {'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones',
-            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
-            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
-            'notify_channel': {'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user',
-            'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'incident.severity'}}], 'else_path': [{'delay': {'delay_interval_condition': 'active', 'delay_seconds': 300,
+            'delay_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'escalation_path': {'escalation_path_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation':
+            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
+            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
+            Severity', 'reference': 'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'ack_mode':
+            'all', 'retry_config': {'attempts': 3, 'interval_seconds': 300}, 'round_robin_config': {'enabled': False,
+            'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
+            'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}],
+            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'type':
+            'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
             'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
-            'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'then_path': [{'id':
+            'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}], 'then_path': [{'delay':
+            {'delay_interval_condition': 'active', 'delay_seconds': 300, 'delay_weekday_interval_config_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0'}, 'escalation_path': {'escalation_path_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'if_else': {'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
             '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'round_robin_config': {'enabled':
-            False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
-            'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
-            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'notify_channel': {'targets': [{'id':
-            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
-            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
-            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'repeat': {'repeat_times': 3,
-            'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}]}.
-        level (Union[Unset, EscalationPathNodeLevelV2]):  Example: {'round_robin_config': {'enabled': False,
-            'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type':
-            'user', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
-            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
+            'incident.severity'}}], 'else_path': [{}], 'then_path': [{}]}, 'level': {'ack_mode': 'all', 'retry_config':
+            {'attempts': 3, 'interval_seconds': 300}, 'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120},
+            'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
+            'notify_channel': {'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'},
+            'repeat': {'repeat_times': 3, 'to_node': '01FCNDV6P870EA6S7TK1DSYDG0'}, 'type': 'if_else'}]}.
+        level (Union[Unset, EscalationPathNodeLevelV2]):  Example: {'ack_mode': 'all', 'retry_config': {'attempts': 3,
+            'interval_seconds': 300}, 'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120}, 'targets':
+            [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'type': 'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds':
+            1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
         notify_channel (Union[Unset, EscalationPathNodeNotifyChannelV2]):  Example: {'targets': [{'id': 'lawrencejones',
-            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
-            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
+            'schedule_mode': 'currently_on_call', 'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule',
+            'urgency': 'high'}], 'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}.
         repeat (Union[Unset, EscalationPathNodeRepeatV2]):  Example: {'repeat_times': 3, 'to_node':
             '01FCNDV6P870EA6S7TK1DSYDG0'}.
     """
 
     id: str
     type: EscalationPathNodeV2Type
+    delay: Union[Unset, "EscalationPathNodeDelayV2"] = UNSET
+    escalation_path: Union[Unset, "EscalationPathNodeEscalationPathV2"] = UNSET
     if_else: Union[Unset, "EscalationPathNodeIfElseV2"] = UNSET
     level: Union[Unset, "EscalationPathNodeLevelV2"] = UNSET
     notify_channel: Union[Unset, "EscalationPathNodeNotifyChannelV2"] = UNSET
@@ -97,6 +122,14 @@ class EscalationPathNodeV2:
         id = self.id
 
         type = self.type.value
+
+        delay: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.delay, Unset):
+            delay = self.delay.to_dict()
+
+        escalation_path: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.escalation_path, Unset):
+            escalation_path = self.escalation_path.to_dict()
 
         if_else: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.if_else, Unset):
@@ -122,6 +155,10 @@ class EscalationPathNodeV2:
                 "type": type,
             }
         )
+        if delay is not UNSET:
+            field_dict["delay"] = delay
+        if escalation_path is not UNSET:
+            field_dict["escalation_path"] = escalation_path
         if if_else is not UNSET:
             field_dict["if_else"] = if_else
         if level is not UNSET:
@@ -135,6 +172,10 @@ class EscalationPathNodeV2:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.escalation_path_node_delay_v2 import EscalationPathNodeDelayV2
+        from ..models.escalation_path_node_escalation_path_v2 import (
+            EscalationPathNodeEscalationPathV2,
+        )
         from ..models.escalation_path_node_if_else_v2 import EscalationPathNodeIfElseV2
         from ..models.escalation_path_node_level_v2 import EscalationPathNodeLevelV2
         from ..models.escalation_path_node_notify_channel_v2 import (
@@ -146,6 +187,20 @@ class EscalationPathNodeV2:
         id = d.pop("id")
 
         type = EscalationPathNodeV2Type(d.pop("type"))
+
+        _delay = d.pop("delay", UNSET)
+        delay: Union[Unset, EscalationPathNodeDelayV2]
+        if isinstance(_delay, Unset):
+            delay = UNSET
+        else:
+            delay = EscalationPathNodeDelayV2.from_dict(_delay)
+
+        _escalation_path = d.pop("escalation_path", UNSET)
+        escalation_path: Union[Unset, EscalationPathNodeEscalationPathV2]
+        if isinstance(_escalation_path, Unset):
+            escalation_path = UNSET
+        else:
+            escalation_path = EscalationPathNodeEscalationPathV2.from_dict(_escalation_path)
 
         _if_else = d.pop("if_else", UNSET)
         if_else: Union[Unset, EscalationPathNodeIfElseV2]
@@ -178,6 +233,8 @@ class EscalationPathNodeV2:
         escalation_path_node_v2 = cls(
             id=id,
             type=type,
+            delay=delay,
+            escalation_path=escalation_path,
             if_else=if_else,
             level=level,
             notify_channel=notify_channel,

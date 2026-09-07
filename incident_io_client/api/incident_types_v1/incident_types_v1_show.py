@@ -5,9 +5,8 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.incident_types_v1_show_response_body import (
-    IncidentTypesV1ShowResponseBody,
-)
+from ...models.error_response import ErrorResponse
+from ...models.incident_types_show_result_v1 import IncidentTypesShowResultV1
 from ...types import Response
 
 
@@ -26,11 +25,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[IncidentTypesV1ShowResponseBody]:
+) -> Optional[Union[ErrorResponse, IncidentTypesShowResultV1]]:
     if response.status_code == 200:
-        response_200 = IncidentTypesV1ShowResponseBody.from_dict(response.json())
+        response_200 = IncidentTypesShowResultV1.from_dict(response.json())
 
         return response_200
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -39,7 +90,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[IncidentTypesV1ShowResponseBody]:
+) -> Response[Union[ErrorResponse, IncidentTypesShowResultV1]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -52,20 +103,20 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[IncidentTypesV1ShowResponseBody]:
+) -> Response[Union[ErrorResponse, IncidentTypesShowResultV1]]:
     """Show Incident Types V1
 
      Get a single incident type.
 
     Args:
-        id (str):
+        id (str): Unique identifier for this Incident Type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[IncidentTypesV1ShowResponseBody]
+        Response[Union[ErrorResponse, IncidentTypesShowResultV1]]
     """
 
     kwargs = _get_kwargs(
@@ -83,20 +134,20 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[IncidentTypesV1ShowResponseBody]:
+) -> Optional[Union[ErrorResponse, IncidentTypesShowResultV1]]:
     """Show Incident Types V1
 
      Get a single incident type.
 
     Args:
-        id (str):
+        id (str): Unique identifier for this Incident Type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        IncidentTypesV1ShowResponseBody
+        Union[ErrorResponse, IncidentTypesShowResultV1]
     """
 
     return sync_detailed(
@@ -109,20 +160,20 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[IncidentTypesV1ShowResponseBody]:
+) -> Response[Union[ErrorResponse, IncidentTypesShowResultV1]]:
     """Show Incident Types V1
 
      Get a single incident type.
 
     Args:
-        id (str):
+        id (str): Unique identifier for this Incident Type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[IncidentTypesV1ShowResponseBody]
+        Response[Union[ErrorResponse, IncidentTypesShowResultV1]]
     """
 
     kwargs = _get_kwargs(
@@ -138,20 +189,20 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[IncidentTypesV1ShowResponseBody]:
+) -> Optional[Union[ErrorResponse, IncidentTypesShowResultV1]]:
     """Show Incident Types V1
 
      Get a single incident type.
 
     Args:
-        id (str):
+        id (str): Unique identifier for this Incident Type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        IncidentTypesV1ShowResponseBody
+        Union[ErrorResponse, IncidentTypesShowResultV1]
     """
 
     return (

@@ -1,0 +1,19 @@
+from enum import Enum
+
+
+class ExpressionOperationPayloadV3OperationType(str, Enum):
+    BRANCHES = "branches"
+    CAST = "cast"
+    CONCATENATE = "concatenate"
+    COUNT = "count"
+    FILTER = "filter"
+    FIRST = "first"
+    MAX = "max"
+    MIN = "min"
+    NAVIGATE = "navigate"
+    PARSE = "parse"
+    RANDOM = "random"
+    SUM = "sum"
+
+    def __str__(self) -> str:
+        return str(self.value)

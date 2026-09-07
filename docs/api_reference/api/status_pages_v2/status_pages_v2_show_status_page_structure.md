@@ -1,0 +1,3 @@
+# incident_io_client.api.status_pages_v2.status_pages_v2_show_status_page_structure
+
+::: incident_io_client.api.status_pages_v2.status_pages_v2_show_status_page_structure

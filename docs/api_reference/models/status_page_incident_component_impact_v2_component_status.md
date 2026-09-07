@@ -1,0 +1,3 @@
+# incident_io_client.models.status_page_incident_component_impact_v2_component_status
+
+::: incident_io_client.models.status_page_incident_component_impact_v2_component_status

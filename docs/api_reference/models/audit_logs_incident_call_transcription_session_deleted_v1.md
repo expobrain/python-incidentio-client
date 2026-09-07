@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_incident_call_transcription_session_deleted_v1
+
+::: incident_io_client.models.audit_logs_incident_call_transcription_session_deleted_v1

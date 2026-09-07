@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_scim_group_seat_mappings_updated_v1
+
+::: incident_io_client.models.audit_logs_scim_group_seat_mappings_updated_v1

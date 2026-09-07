@@ -5,17 +5,16 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.catalog_v2_update_type_request_body import CatalogV2UpdateTypeRequestBody
-from ...models.catalog_v2_update_type_response_body import (
-    CatalogV2UpdateTypeResponseBody,
-)
+from ...models.catalog_update_type_payload_v2 import CatalogUpdateTypePayloadV2
+from ...models.catalog_update_type_result_v2 import CatalogUpdateTypeResultV2
+from ...models.error_response import ErrorResponse
 from ...types import Response
 
 
 def _get_kwargs(
     id: str,
     *,
-    body: CatalogV2UpdateTypeRequestBody,
+    body: CatalogUpdateTypePayloadV2,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -37,11 +36,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[CatalogV2UpdateTypeResponseBody]:
+) -> Optional[Union[CatalogUpdateTypeResultV2, ErrorResponse]]:
     if response.status_code == 200:
-        response_200 = CatalogV2UpdateTypeResponseBody.from_dict(response.json())
+        response_200 = CatalogUpdateTypeResultV2.from_dict(response.json())
 
         return response_200
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -50,7 +101,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CatalogV2UpdateTypeResponseBody]:
+) -> Response[Union[CatalogUpdateTypeResultV2, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -63,16 +114,16 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeRequestBody,
-) -> Response[CatalogV2UpdateTypeResponseBody]:
+    body: CatalogUpdateTypePayloadV2,
+) -> Response[Union[CatalogUpdateTypeResultV2, ErrorResponse]]:
     """UpdateType Catalog V2
 
      Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
-            importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color': 'yellow',
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypePayloadV2):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'categories': ['customer'], 'color': 'yellow',
             'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon':
             'alert', 'name': 'Kubernetes Cluster', 'ranked': True, 'source_repo_url':
             'https://github.com/my-company/incident-io-catalog'}.
@@ -82,7 +133,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CatalogV2UpdateTypeResponseBody]
+        Response[Union[CatalogUpdateTypeResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -101,16 +152,16 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeRequestBody,
-) -> Optional[CatalogV2UpdateTypeResponseBody]:
+    body: CatalogUpdateTypePayloadV2,
+) -> Optional[Union[CatalogUpdateTypeResultV2, ErrorResponse]]:
     """UpdateType Catalog V2
 
      Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
-            importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color': 'yellow',
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypePayloadV2):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'categories': ['customer'], 'color': 'yellow',
             'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon':
             'alert', 'name': 'Kubernetes Cluster', 'ranked': True, 'source_repo_url':
             'https://github.com/my-company/incident-io-catalog'}.
@@ -120,7 +171,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CatalogV2UpdateTypeResponseBody
+        Union[CatalogUpdateTypeResultV2, ErrorResponse]
     """
 
     return sync_detailed(
@@ -134,16 +185,16 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeRequestBody,
-) -> Response[CatalogV2UpdateTypeResponseBody]:
+    body: CatalogUpdateTypePayloadV2,
+) -> Response[Union[CatalogUpdateTypeResultV2, ErrorResponse]]:
     """UpdateType Catalog V2
 
      Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
-            importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color': 'yellow',
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypePayloadV2):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'categories': ['customer'], 'color': 'yellow',
             'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon':
             'alert', 'name': 'Kubernetes Cluster', 'ranked': True, 'source_repo_url':
             'https://github.com/my-company/incident-io-catalog'}.
@@ -153,7 +204,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CatalogV2UpdateTypeResponseBody]
+        Response[Union[CatalogUpdateTypeResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -170,16 +221,16 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeRequestBody,
-) -> Optional[CatalogV2UpdateTypeResponseBody]:
+    body: CatalogUpdateTypePayloadV2,
+) -> Optional[Union[CatalogUpdateTypeResultV2, ErrorResponse]]:
     """UpdateType Catalog V2
 
      Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeRequestBody):  Example: {'annotations': {'incident.io/catalog-
-            importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color': 'yellow',
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypePayloadV2):  Example: {'annotations': {'incident.io/catalog-
+            importer/id': 'id-of-config'}, 'categories': ['customer'], 'color': 'yellow',
             'description': 'Represents Kubernetes clusters that we run inside of GKE.', 'icon':
             'alert', 'name': 'Kubernetes Cluster', 'ranked': True, 'source_repo_url':
             'https://github.com/my-company/incident-io-catalog'}.
@@ -189,7 +240,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CatalogV2UpdateTypeResponseBody
+        Union[CatalogUpdateTypeResultV2, ErrorResponse]
     """
 
     return (

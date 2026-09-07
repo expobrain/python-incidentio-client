@@ -5,19 +5,20 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.catalog_v2_update_type_schema_request_body import (
-    CatalogV2UpdateTypeSchemaRequestBody,
+from ...models.catalog_update_type_schema_payload_v2 import (
+    CatalogUpdateTypeSchemaPayloadV2,
 )
-from ...models.catalog_v2_update_type_schema_response_body import (
-    CatalogV2UpdateTypeSchemaResponseBody,
+from ...models.catalog_update_type_schema_result_v2 import (
+    CatalogUpdateTypeSchemaResultV2,
 )
+from ...models.error_response import ErrorResponse
 from ...types import Response
 
 
 def _get_kwargs(
     id: str,
     *,
-    body: CatalogV2UpdateTypeSchemaRequestBody,
+    body: CatalogUpdateTypeSchemaPayloadV2,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -39,11 +40,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[CatalogV2UpdateTypeSchemaResponseBody]:
+) -> Optional[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]:
     if response.status_code == 200:
-        response_200 = CatalogV2UpdateTypeSchemaResponseBody.from_dict(response.json())
+        response_200 = CatalogUpdateTypeSchemaResultV2.from_dict(response.json())
 
         return response_200
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -52,7 +105,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CatalogV2UpdateTypeSchemaResponseBody]:
+) -> Response[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -65,8 +118,8 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeSchemaRequestBody,
-) -> Response[CatalogV2UpdateTypeSchemaResponseBody]:
+    body: CatalogUpdateTypeSchemaPayloadV2,
+) -> Response[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]:
     """UpdateTypeSchema Catalog V2
 
      Update an existing catalog types schema, adding or removing attributes.
@@ -79,18 +132,18 @@ def sync_detailed(
     means that you need to make a separate call to this endpoint to update the schema.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
-            'version': 1}.
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypeSchemaPayloadV2):  Example: {'attributes': [{'array': False,
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name':
+            'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}], 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CatalogV2UpdateTypeSchemaResponseBody]
+        Response[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -109,8 +162,8 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeSchemaRequestBody,
-) -> Optional[CatalogV2UpdateTypeSchemaResponseBody]:
+    body: CatalogUpdateTypeSchemaPayloadV2,
+) -> Optional[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]:
     """UpdateTypeSchema Catalog V2
 
      Update an existing catalog types schema, adding or removing attributes.
@@ -123,18 +176,18 @@ def sync(
     means that you need to make a separate call to this endpoint to update the schema.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
-            'version': 1}.
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypeSchemaPayloadV2):  Example: {'attributes': [{'array': False,
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name':
+            'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}], 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CatalogV2UpdateTypeSchemaResponseBody
+        Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]
     """
 
     return sync_detailed(
@@ -148,8 +201,8 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeSchemaRequestBody,
-) -> Response[CatalogV2UpdateTypeSchemaResponseBody]:
+    body: CatalogUpdateTypeSchemaPayloadV2,
+) -> Response[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]:
     """UpdateTypeSchema Catalog V2
 
      Update an existing catalog types schema, adding or removing attributes.
@@ -162,18 +215,18 @@ async def asyncio_detailed(
     means that you need to make a separate call to this endpoint to update the schema.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
-            'version': 1}.
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypeSchemaPayloadV2):  Example: {'attributes': [{'array': False,
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name':
+            'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}], 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CatalogV2UpdateTypeSchemaResponseBody]
+        Response[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -190,8 +243,8 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CatalogV2UpdateTypeSchemaRequestBody,
-) -> Optional[CatalogV2UpdateTypeSchemaResponseBody]:
+    body: CatalogUpdateTypeSchemaPayloadV2,
+) -> Optional[Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]]:
     """UpdateTypeSchema Catalog V2
 
      Update an existing catalog types schema, adding or removing attributes.
@@ -204,18 +257,18 @@ async def asyncio(
     means that you need to make a separate call to this endpoint to update the schema.
 
     Args:
-        id (str):
-        body (CatalogV2UpdateTypeSchemaRequestBody):  Example: {'attributes': [{'array': False,
-            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual',
-            'name': 'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}],
-            'version': 1}.
+        id (str): ID of this catalog type Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (CatalogUpdateTypeSchemaPayloadV2):  Example: {'attributes': [{'array': False,
+            'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name':
+            'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}], 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CatalogV2UpdateTypeSchemaResponseBody
+        Union[CatalogUpdateTypeSchemaResultV2, ErrorResponse]
     """
 
     return (

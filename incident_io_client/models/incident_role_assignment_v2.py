@@ -18,7 +18,7 @@ class IncidentRoleAssignmentV2:
     """
     Example:
         {'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
-            'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z',
+            'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'role': {'created_at': '2021-08-17T13:28:57.801578Z',
             'description': 'The person currently coordinating the incident', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'instructions': 'Take point on the incident; Make sure people are clear on responsibilities', 'name': 'Incident
             Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead', 'updated_at':
@@ -30,7 +30,7 @@ class IncidentRoleAssignmentV2:
             the incident; Make sure people are clear on responsibilities', 'name': 'Incident Lead', 'required': False,
             'role_type': 'lead', 'shortform': 'lead', 'updated_at': '2021-08-17T13:28:57.801578Z'}.
         assignee (Union[Unset, UserV2]):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
+            'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}.
     """
 
     role: "EmbeddedIncidentRoleV2"

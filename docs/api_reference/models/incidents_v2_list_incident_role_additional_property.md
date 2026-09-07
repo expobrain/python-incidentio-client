@@ -1,0 +1,3 @@
+# incident_io_client.models.incidents_v2_list_incident_role_additional_property
+
+::: incident_io_client.models.incidents_v2_list_incident_role_additional_property

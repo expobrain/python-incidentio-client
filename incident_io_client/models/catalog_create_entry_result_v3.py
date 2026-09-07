@@ -1,0 +1,77 @@
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
+
+if TYPE_CHECKING:
+    from ..models.catalog_entry_v3 import CatalogEntryV3
+
+
+T = TypeVar("T", bound="CatalogCreateEntryResultV3")
+
+
+@_attrs_define
+class CatalogCreateEntryResultV3:
+    """
+    Example:
+        {'catalog_entry': {'aliases': ['lawrence@incident.io', 'lawrence'], 'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'attribute_values': {'abc123': {'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123'}}}, 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank':
+            3, 'updated_at': '2021-08-17T13:28:57.801578Z'}}
+
+    Attributes:
+        catalog_entry (CatalogEntryV3):  Example: {'aliases': ['lawrence@incident.io', 'lawrence'], 'archived_at':
+            '2021-08-17T14:28:57.801578Z', 'attribute_values': {'abc123': {'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123'}}}, 'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'created_at': '2021-08-17T13:28:57.801578Z', 'external_id':
+            '761722cd-d1d7-477b-ac7e-90f9e079dc33', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Primary On-call', 'rank':
+            3, 'updated_at': '2021-08-17T13:28:57.801578Z'}.
+    """
+
+    catalog_entry: "CatalogEntryV3"
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+
+    def to_dict(self) -> Dict[str, Any]:
+        catalog_entry = self.catalog_entry.to_dict()
+
+        field_dict: Dict[str, Any] = {}
+        field_dict.update(self.additional_properties)
+        field_dict.update(
+            {
+                "catalog_entry": catalog_entry,
+            }
+        )
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.catalog_entry_v3 import CatalogEntryV3
+
+        d = src_dict.copy()
+        catalog_entry = CatalogEntryV3.from_dict(d.pop("catalog_entry"))
+
+        catalog_create_entry_result_v3 = cls(
+            catalog_entry=catalog_entry,
+        )
+
+        catalog_create_entry_result_v3.additional_properties = d
+        return catalog_create_entry_result_v3
+
+    @property
+    def additional_keys(self) -> List[str]:
+        return list(self.additional_properties.keys())
+
+    def __getitem__(self, key: str) -> Any:
+        return self.additional_properties[key]
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.additional_properties[key] = value
+
+    def __delitem__(self, key: str) -> None:
+        del self.additional_properties[key]
+
+    def __contains__(self, key: str) -> bool:
+        return key in self.additional_properties

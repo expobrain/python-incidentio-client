@@ -1,0 +1,10 @@
+from enum import Enum
+
+
+class StatusPagesCreateStatusPageMaintenanceUpdatePayloadV2MaintenanceStatus(str, Enum):
+    MAINTENANCE_COMPLETE = "maintenance_complete"
+    MAINTENANCE_IN_PROGRESS = "maintenance_in_progress"
+    MAINTENANCE_SCHEDULED = "maintenance_scheduled"
+
+    def __str__(self) -> str:
+        return str(self.value)

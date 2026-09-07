@@ -1,3 +1,0 @@
-# incident_io_client.models.audit_logs_alert_source_config_created_v1_response_body
-
-::: incident_io_client.models.audit_logs_alert_source_config_created_v1_response_body

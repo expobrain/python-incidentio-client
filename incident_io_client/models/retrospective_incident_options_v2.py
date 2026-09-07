@@ -12,20 +12,27 @@ T = TypeVar("T", bound="RetrospectiveIncidentOptionsV2")
 class RetrospectiveIncidentOptionsV2:
     """
     Example:
-        {'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id': 'abc123'}
+        {'external_id': 123, 'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'slack_channel_id':
+            'abc123'}
 
     Attributes:
-        postmortem_document_url (Union[Unset, str]): If the incident mode is 'retrospective', pass the URL of the
-            postmortem to attach it to the incident Example: https://docs.google.com/my_doc_id.
-        slack_channel_id (Union[Unset, str]): If the incident mode is 'retrospective', pass the ID of a Slack channel in
-            your workspace to attach the incident to an existing channel, rather than creating a new one Example: abc123.
+        external_id (Union[Unset, int]): The external ID (e.g. the 123 in INC-123) to assign to the incident. This can
+            be useful when importing incidents. If you want to use this field, you'll need to talk to us first. Example:
+            123.
+        postmortem_document_url (Union[Unset, str]): The URL of the postmortem, if there is one Example:
+            https://docs.google.com/my_doc_id.
+        slack_channel_id (Union[Unset, str]): Pass the ID of a Slack channel to attach the incident to an existing
+            channel. If not provided, no Slack channel will be created for this retrospective incident. Example: abc123.
     """
 
+    external_id: Union[Unset, int] = UNSET
     postmortem_document_url: Union[Unset, str] = UNSET
     slack_channel_id: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        external_id = self.external_id
+
         postmortem_document_url = self.postmortem_document_url
 
         slack_channel_id = self.slack_channel_id
@@ -33,6 +40,8 @@ class RetrospectiveIncidentOptionsV2:
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
+        if external_id is not UNSET:
+            field_dict["external_id"] = external_id
         if postmortem_document_url is not UNSET:
             field_dict["postmortem_document_url"] = postmortem_document_url
         if slack_channel_id is not UNSET:
@@ -43,11 +52,14 @@ class RetrospectiveIncidentOptionsV2:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
+        external_id = d.pop("external_id", UNSET)
+
         postmortem_document_url = d.pop("postmortem_document_url", UNSET)
 
         slack_channel_id = d.pop("slack_channel_id", UNSET)
 
         retrospective_incident_options_v2 = cls(
+            external_id=external_id,
             postmortem_document_url=postmortem_document_url,
             slack_channel_id=slack_channel_id,
         )

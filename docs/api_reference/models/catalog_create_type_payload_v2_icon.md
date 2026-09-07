@@ -1,0 +1,3 @@
+# incident_io_client.models.catalog_create_type_payload_v2_icon
+
+::: incident_io_client.models.catalog_create_type_payload_v2_icon

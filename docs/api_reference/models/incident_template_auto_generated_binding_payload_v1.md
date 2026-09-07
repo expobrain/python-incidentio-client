@@ -1,0 +1,3 @@
+# incident_io_client.models.incident_template_auto_generated_binding_payload_v1
+
+::: incident_io_client.models.incident_template_auto_generated_binding_payload_v1

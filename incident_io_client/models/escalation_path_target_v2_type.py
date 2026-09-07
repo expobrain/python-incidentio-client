@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class EscalationPathTargetV2Type(str, Enum):
+    MSTEAMS_CHANNEL = "msteams_channel"
     SCHEDULE = "schedule"
     SLACK_CHANNEL = "slack_channel"
     USER = "user"

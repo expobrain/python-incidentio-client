@@ -20,6 +20,7 @@ class CatalogTypeV2Icon(str, Enum):
     FLAG = "flag"
     FOLDER = "folder"
     GLOBE = "globe"
+    INCIDENT_TEMPLATE = "incident-template"
     MONEY = "money"
     SERVER = "server"
     SEVERITY = "severity"

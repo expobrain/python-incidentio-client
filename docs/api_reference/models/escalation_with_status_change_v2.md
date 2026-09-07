@@ -1,0 +1,3 @@
+# incident_io_client.models.escalation_with_status_change_v2
+
+::: incident_io_client.models.escalation_with_status_change_v2

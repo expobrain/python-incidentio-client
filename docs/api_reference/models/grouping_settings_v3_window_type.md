@@ -1,0 +1,3 @@
+# incident_io_client.models.grouping_settings_v3_window_type
+
+::: incident_io_client.models.grouping_settings_v3_window_type

@@ -1,3 +1,0 @@
-# incident_io_client.models.severities_v1_update_response_body
-
-::: incident_io_client.models.severities_v1_update_response_body

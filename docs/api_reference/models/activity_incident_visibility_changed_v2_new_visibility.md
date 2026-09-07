@@ -1,0 +1,3 @@
+# incident_io_client.models.activity_incident_visibility_changed_v2_new_visibility
+
+::: incident_io_client.models.activity_incident_visibility_changed_v2_new_visibility

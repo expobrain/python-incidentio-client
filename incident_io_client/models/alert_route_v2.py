@@ -1,16 +1,21 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+import datetime
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+from dateutil.parser import isoparse
 
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.alert_route_escalation_binding_v2 import AlertRouteEscalationBindingV2
+    from ..models.alert_route_alert_source_v2 import AlertRouteAlertSourceV2
+    from ..models.alert_route_channel_config_v2 import AlertRouteChannelConfigV2
+    from ..models.alert_route_escalation_config_v2 import AlertRouteEscalationConfigV2
+    from ..models.alert_route_incident_config_v2 import AlertRouteIncidentConfigV2
     from ..models.alert_route_incident_template_v2 import AlertRouteIncidentTemplateV2
     from ..models.condition_group_v2 import ConditionGroupV2
+    from ..models.engine_param_binding_v2 import EngineParamBindingV2
     from ..models.expression_v2 import ExpressionV2
-    from ..models.grouping_key_v2 import GroupingKeyV2
 
 
 T = TypeVar("T", bound="AlertRouteV2")
@@ -20,22 +25,40 @@ T = TypeVar("T", bound="AlertRouteV2")
 class AlertRouteV2:
     """
     Example:
-        {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+        {'alert_sources': [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions':
+            [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings':
+            [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label':
+            'Incident Severity', 'reference': 'incident.severity'}}]}]}], 'channel_config': [{'condition_groups':
+            [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
+            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}],
+            'ms_teams_targets': {'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'channel_visibility': 'abc123'}, 'slack_targets': {'binding': {'array_value': [{'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility': 'abc123'}}], 'condition_groups':
+            [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
+            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}],
+            'created_at': '2021-08-17T13:28:57.801578Z', 'enabled': False, 'escalation_config': {'auto_cancel_escalations':
+            False, 'escalation_targets': [{'escalation_paths': {'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'users': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}}]}, 'expressions': [{'else_branch': {'result': {'array_value': [{'label': 'Lawrence
+            Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations': [{'branches':
+            {'branches': [{'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
             '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}]}], 'defer_time_seconds': 1, 'escalation_bindings': [{'binding': {'array_value':
-            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}], 'expressions': [{'else_branch':
-            {'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team
-            Slack channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation':
-            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
-            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
-            Severity', 'reference': 'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter':
+            'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast': {'returns': {'array':
+            True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference': '1235', 'reference_label': 'Teams'}, 'filter':
             {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
             '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
@@ -43,157 +66,263 @@ class AlertRouteV2:
             'incident.severity'}}]}]}, 'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type':
             'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference':
-            'abc123', 'returns': {'array': True, 'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}],
-            'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}], 'grouping_window_seconds': 1, 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Production incidents', 'template': {'custom_field_priorities': {'abc123':
-            'first-wins'}, 'custom_fields': {'custom_field_10014': {'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'abc123', 'returns': {'array': True, 'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}], 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_config': {'auto_decline_enabled': False, 'auto_relate_grouped_alerts':
+            False, 'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'incident_mode': {'array_value': [{'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}}, 'incident_type': {'array_value': [{'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}}, 'name': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}], 'defer_time_seconds': 1, 'enabled': False, 'grouping_keys': [{'reference':
+            'alert.title'}], 'grouping_window_seconds': 1}, 'incident_template': {'custom_fields': [{'binding':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}, 'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'merge_strategy': 'first-wins'}], 'incident_mode': {'binding': {'array_value':
+            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'incident_type': {'binding':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'membership_teams':
+            {'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'name': {'autogenerated': False, 'binding': {'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}}, 'severity': {'binding': {'array_value': [{'label': 'Lawrence
+            Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}, 'merge_strategy': 'first-wins'}, 'start_in_triage': {'binding':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'summary':
+            {'autogenerated': False, 'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}, 'priority_severity': 'severity-first-wins', 'severity': {'array_value': [{'label':
+            'incident.severity'}}}, 'workspace': {'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}}}, 'is_private': False, 'message_template': {'array_value': [{'label':
             'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}}, 'summary': {'array_value': [{'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}, 'workspace': {'array_value': [{'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}}}
+            'literal': 'SEV123', 'reference': 'incident.severity'}}, 'name': 'Production incidents', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'updated_at': '2021-08-17T13:28:57.801578Z', 'version': 1}
 
     Attributes:
+        alert_sources (List['AlertRouteAlertSourceV2']): Which alert sources should this alert route match? Example:
+            [{'alert_source_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': {'label':
+            'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}].
+        channel_config (List['AlertRouteChannelConfigV2']): The channel configuration for this alert route Example:
+            [{'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}], 'ms_teams_targets': {'binding': {'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility': 'abc123'}, 'slack_targets': {'binding':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility':
+            'abc123'}}].
         condition_groups (List['ConditionGroupV2']): What condition groups must be true for this alert route to fire?
             Example: [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
             'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}].
-        defer_time_seconds (int): How long should the escalation defer time be? Example: 1.
-        escalation_bindings (List['AlertRouteEscalationBindingV2']): Which escalation paths should this alert route
-            escalate to? Example: [{'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
+        enabled (bool): Whether this alert route is enabled or not
+        escalation_config (AlertRouteEscalationConfigV2):  Example: {'auto_cancel_escalations': False,
+            'escalation_targets': [{'escalation_paths': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}}].
-        grouping_keys (List['GroupingKeyV2']): Which attributes should this alert route use to group alerts? Example:
-            [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}].
-        grouping_window_seconds (int): How large should the grouping window be? Example: 1.
-        id (str): Unique identifier for this alert route config Example: 01FCNDV6P870EA6S7TK1DSYDG0.
-        name (str): The name of this alert route config, for the user's reference Example: Production incidents.
-        expressions (Union[Unset, List['ExpressionV2']]): The expressions used in this template Example:
-            [{'else_branch': {'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'users': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}}, 'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
-            [{'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            'incident.severity'}}}]}.
+        expressions (List['ExpressionV2']): The expressions used in this template Example: [{'else_branch': {'result':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack
+            channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation':
+            {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
+            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident
+            Severity', 'reference': 'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast':
+            {'returns': {'array': True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference': '1235', 'reference_label':
+            'Teams'}, 'filter': {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
             '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
-            'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups':
-            [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
-            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
+            'incident.severity'}}]}]}, 'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type':
+            'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
+            'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference':
+            'abc123', 'returns': {'array': True, 'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}].
+        id (str): Unique identifier for this alert route config Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        incident_config (AlertRouteIncidentConfigV2):  Example: {'auto_decline_enabled': False,
+            'auto_relate_grouped_alerts': False, 'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence
+            Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}], 'defer_time_seconds': 1, 'enabled': False, 'grouping_keys': [{'reference':
+            'alert.title'}], 'grouping_window_seconds': 1}.
+        incident_template (AlertRouteIncidentTemplateV2):  Example: {'custom_fields': [{'binding': {'array_value':
+            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}, 'custom_field_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'merge_strategy': 'first-wins'}], 'incident_mode': {'binding': {'array_value':
+            [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
+            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'incident_type': {'binding':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'membership_teams':
+            {'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}]},
-            'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type': 'navigate', 'parse':
-            {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source': 'metadata.annotations["github.com/repo"]'},
-            'returns': {'array': True, 'type': 'IncidentStatus'}}], 'reference': 'abc123', 'returns': {'array': True,
-            'type': 'IncidentStatus'}, 'root_reference': 'incident.status'}].
-        template (Union[Unset, AlertRouteIncidentTemplateV2]):  Example: {'custom_field_priorities': {'abc123': 'first-
-            wins'}, 'custom_fields': {'custom_field_10014': {'array_value': [{'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'incident_mode': {'array_value': [{'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}}, 'incident_type': {'array_value': [{'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
-            'reference': 'incident.severity'}}, 'name': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'incident.severity'}}}, 'name': {'autogenerated': False, 'binding': {'array_value': [{'label': 'Lawrence Jones',
+            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}}, 'severity': {'binding': {'array_value': [{'label': 'Lawrence
+            Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}}, 'merge_strategy': 'first-wins'}, 'start_in_triage': {'binding':
+            {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'summary':
+            {'autogenerated': False, 'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}, 'priority_severity': 'severity-first-wins', 'severity': {'array_value': [{'label':
-            'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}}, 'summary': {'array_value': [{'label': 'Lawrence Jones',
+            'incident.severity'}}}, 'workspace': {'binding': {'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}}}.
+        is_private (bool): Whether this alert route is private. Private alert routes will only create private incidents
+            from alerts.
+        name (str): The name of this alert route config, for the user's reference Example: Production incidents.
+        version (int): The version of this alert route config Example: 1.
+        created_at (Union[Unset, datetime.datetime]): The time of creation of this alert route Example:
+            2021-08-17T13:28:57.801578Z.
+        message_template (Union[Unset, EngineParamBindingV2]):  Example: {'array_value': [{'label': 'Lawrence Jones',
             'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}, 'workspace': {'array_value': [{'label': 'Lawrence Jones',
-            'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
-            'SEV123', 'reference': 'incident.severity'}}}.
+            'SEV123', 'reference': 'incident.severity'}}.
+        owning_team_ids (Union[Unset, List[str]]): IDs of teams that own this alert route Example:
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'].
+        updated_at (Union[Unset, datetime.datetime]): The time of last update of this alert route Example:
+            2021-08-17T13:28:57.801578Z.
     """
 
+    alert_sources: List["AlertRouteAlertSourceV2"]
+    channel_config: List["AlertRouteChannelConfigV2"]
     condition_groups: List["ConditionGroupV2"]
-    defer_time_seconds: int
-    escalation_bindings: List["AlertRouteEscalationBindingV2"]
-    grouping_keys: List["GroupingKeyV2"]
-    grouping_window_seconds: int
+    enabled: bool
+    escalation_config: "AlertRouteEscalationConfigV2"
+    expressions: List["ExpressionV2"]
     id: str
+    incident_config: "AlertRouteIncidentConfigV2"
+    incident_template: "AlertRouteIncidentTemplateV2"
+    is_private: bool
     name: str
-    expressions: Union[Unset, List["ExpressionV2"]] = UNSET
-    template: Union[Unset, "AlertRouteIncidentTemplateV2"] = UNSET
+    version: int
+    created_at: Union[Unset, datetime.datetime] = UNSET
+    message_template: Union[Unset, "EngineParamBindingV2"] = UNSET
+    owning_team_ids: Union[Unset, List[str]] = UNSET
+    updated_at: Union[Unset, datetime.datetime] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        alert_sources = []
+        for alert_sources_item_data in self.alert_sources:
+            alert_sources_item = alert_sources_item_data.to_dict()
+            alert_sources.append(alert_sources_item)
+
+        channel_config = []
+        for channel_config_item_data in self.channel_config:
+            channel_config_item = channel_config_item_data.to_dict()
+            channel_config.append(channel_config_item)
+
         condition_groups = []
         for condition_groups_item_data in self.condition_groups:
             condition_groups_item = condition_groups_item_data.to_dict()
             condition_groups.append(condition_groups_item)
 
-        defer_time_seconds = self.defer_time_seconds
+        enabled = self.enabled
 
-        escalation_bindings = []
-        for escalation_bindings_item_data in self.escalation_bindings:
-            escalation_bindings_item = escalation_bindings_item_data.to_dict()
-            escalation_bindings.append(escalation_bindings_item)
+        escalation_config = self.escalation_config.to_dict()
 
-        grouping_keys = []
-        for grouping_keys_item_data in self.grouping_keys:
-            grouping_keys_item = grouping_keys_item_data.to_dict()
-            grouping_keys.append(grouping_keys_item)
-
-        grouping_window_seconds = self.grouping_window_seconds
+        expressions = []
+        for expressions_item_data in self.expressions:
+            expressions_item = expressions_item_data.to_dict()
+            expressions.append(expressions_item)
 
         id = self.id
 
+        incident_config = self.incident_config.to_dict()
+
+        incident_template = self.incident_template.to_dict()
+
+        is_private = self.is_private
+
         name = self.name
 
-        expressions: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.expressions, Unset):
-            expressions = []
-            for expressions_item_data in self.expressions:
-                expressions_item = expressions_item_data.to_dict()
-                expressions.append(expressions_item)
+        version = self.version
 
-        template: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.template, Unset):
-            template = self.template.to_dict()
+        created_at: Union[Unset, str] = UNSET
+        if not isinstance(self.created_at, Unset):
+            created_at = self.created_at.isoformat()
+
+        message_template: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.message_template, Unset):
+            message_template = self.message_template.to_dict()
+
+        owning_team_ids: Union[Unset, List[str]] = UNSET
+        if not isinstance(self.owning_team_ids, Unset):
+            owning_team_ids = self.owning_team_ids
+
+        updated_at: Union[Unset, str] = UNSET
+        if not isinstance(self.updated_at, Unset):
+            updated_at = self.updated_at.isoformat()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
+                "alert_sources": alert_sources,
+                "channel_config": channel_config,
                 "condition_groups": condition_groups,
-                "defer_time_seconds": defer_time_seconds,
-                "escalation_bindings": escalation_bindings,
-                "grouping_keys": grouping_keys,
-                "grouping_window_seconds": grouping_window_seconds,
+                "enabled": enabled,
+                "escalation_config": escalation_config,
+                "expressions": expressions,
                 "id": id,
+                "incident_config": incident_config,
+                "incident_template": incident_template,
+                "is_private": is_private,
                 "name": name,
+                "version": version,
             }
         )
-        if expressions is not UNSET:
-            field_dict["expressions"] = expressions
-        if template is not UNSET:
-            field_dict["template"] = template
+        if created_at is not UNSET:
+            field_dict["created_at"] = created_at
+        if message_template is not UNSET:
+            field_dict["message_template"] = message_template
+        if owning_team_ids is not UNSET:
+            field_dict["owning_team_ids"] = owning_team_ids
+        if updated_at is not UNSET:
+            field_dict["updated_at"] = updated_at
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.alert_route_escalation_binding_v2 import (
-            AlertRouteEscalationBindingV2,
+        from ..models.alert_route_alert_source_v2 import AlertRouteAlertSourceV2
+        from ..models.alert_route_channel_config_v2 import AlertRouteChannelConfigV2
+        from ..models.alert_route_escalation_config_v2 import (
+            AlertRouteEscalationConfigV2,
         )
+        from ..models.alert_route_incident_config_v2 import AlertRouteIncidentConfigV2
         from ..models.alert_route_incident_template_v2 import (
             AlertRouteIncidentTemplateV2,
         )
         from ..models.condition_group_v2 import ConditionGroupV2
+        from ..models.engine_param_binding_v2 import EngineParamBindingV2
         from ..models.expression_v2 import ExpressionV2
-        from ..models.grouping_key_v2 import GroupingKeyV2
 
         d = src_dict.copy()
+        alert_sources = []
+        _alert_sources = d.pop("alert_sources")
+        for alert_sources_item_data in _alert_sources:
+            alert_sources_item = AlertRouteAlertSourceV2.from_dict(alert_sources_item_data)
+
+            alert_sources.append(alert_sources_item)
+
+        channel_config = []
+        _channel_config = d.pop("channel_config")
+        for channel_config_item_data in _channel_config:
+            channel_config_item = AlertRouteChannelConfigV2.from_dict(channel_config_item_data)
+
+            channel_config.append(channel_config_item)
+
         condition_groups = []
         _condition_groups = d.pop("condition_groups")
         for condition_groups_item_data in _condition_groups:
@@ -201,54 +330,69 @@ class AlertRouteV2:
 
             condition_groups.append(condition_groups_item)
 
-        defer_time_seconds = d.pop("defer_time_seconds")
+        enabled = d.pop("enabled")
 
-        escalation_bindings = []
-        _escalation_bindings = d.pop("escalation_bindings")
-        for escalation_bindings_item_data in _escalation_bindings:
-            escalation_bindings_item = AlertRouteEscalationBindingV2.from_dict(
-                escalation_bindings_item_data
-            )
-
-            escalation_bindings.append(escalation_bindings_item)
-
-        grouping_keys = []
-        _grouping_keys = d.pop("grouping_keys")
-        for grouping_keys_item_data in _grouping_keys:
-            grouping_keys_item = GroupingKeyV2.from_dict(grouping_keys_item_data)
-
-            grouping_keys.append(grouping_keys_item)
-
-        grouping_window_seconds = d.pop("grouping_window_seconds")
-
-        id = d.pop("id")
-
-        name = d.pop("name")
+        escalation_config = AlertRouteEscalationConfigV2.from_dict(d.pop("escalation_config"))
 
         expressions = []
-        _expressions = d.pop("expressions", UNSET)
-        for expressions_item_data in _expressions or []:
+        _expressions = d.pop("expressions")
+        for expressions_item_data in _expressions:
             expressions_item = ExpressionV2.from_dict(expressions_item_data)
 
             expressions.append(expressions_item)
 
-        _template = d.pop("template", UNSET)
-        template: Union[Unset, AlertRouteIncidentTemplateV2]
-        if isinstance(_template, Unset):
-            template = UNSET
+        id = d.pop("id")
+
+        incident_config = AlertRouteIncidentConfigV2.from_dict(d.pop("incident_config"))
+
+        incident_template = AlertRouteIncidentTemplateV2.from_dict(d.pop("incident_template"))
+
+        is_private = d.pop("is_private")
+
+        name = d.pop("name")
+
+        version = d.pop("version")
+
+        _created_at = d.pop("created_at", UNSET)
+        created_at: Union[Unset, datetime.datetime]
+        if isinstance(_created_at, Unset):
+            created_at = UNSET
         else:
-            template = AlertRouteIncidentTemplateV2.from_dict(_template)
+            created_at = isoparse(_created_at)
+
+        _message_template = d.pop("message_template", UNSET)
+        message_template: Union[Unset, EngineParamBindingV2]
+        if isinstance(_message_template, Unset):
+            message_template = UNSET
+        else:
+            message_template = EngineParamBindingV2.from_dict(_message_template)
+
+        owning_team_ids = cast(List[str], d.pop("owning_team_ids", UNSET))
+
+        _updated_at = d.pop("updated_at", UNSET)
+        updated_at: Union[Unset, datetime.datetime]
+        if isinstance(_updated_at, Unset):
+            updated_at = UNSET
+        else:
+            updated_at = isoparse(_updated_at)
 
         alert_route_v2 = cls(
+            alert_sources=alert_sources,
+            channel_config=channel_config,
             condition_groups=condition_groups,
-            defer_time_seconds=defer_time_seconds,
-            escalation_bindings=escalation_bindings,
-            grouping_keys=grouping_keys,
-            grouping_window_seconds=grouping_window_seconds,
-            id=id,
-            name=name,
+            enabled=enabled,
+            escalation_config=escalation_config,
             expressions=expressions,
-            template=template,
+            id=id,
+            incident_config=incident_config,
+            incident_template=incident_template,
+            is_private=is_private,
+            name=name,
+            version=version,
+            created_at=created_at,
+            message_template=message_template,
+            owning_team_ids=owning_team_ids,
+            updated_at=updated_at,
         )
 
         alert_route_v2.additional_properties = d

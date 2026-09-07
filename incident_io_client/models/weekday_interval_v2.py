@@ -3,6 +3,8 @@ from typing import Any, Dict, List, Type, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.weekday_interval_v2_weekday import WeekdayIntervalV2Weekday
+
 T = TypeVar("T", bound="WeekdayIntervalV2")
 
 
@@ -10,17 +12,17 @@ T = TypeVar("T", bound="WeekdayIntervalV2")
 class WeekdayIntervalV2:
     """
     Example:
-        {'end_time': '17:00', 'start_time': '09:00', 'weekday': 'abc123'}
+        {'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}
 
     Attributes:
         end_time (str): End time of the interval, in 24hr format Example: 17:00.
         start_time (str): Start time of the interval, in 24hr format Example: 09:00.
-        weekday (str): Weekday this interval applies to Example: abc123.
+        weekday (WeekdayIntervalV2Weekday): Weekdays for use within a schedule or escalation path Example: monday.
     """
 
     end_time: str
     start_time: str
-    weekday: str
+    weekday: WeekdayIntervalV2Weekday
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -28,7 +30,7 @@ class WeekdayIntervalV2:
 
         start_time = self.start_time
 
-        weekday = self.weekday
+        weekday = self.weekday.value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -49,7 +51,7 @@ class WeekdayIntervalV2:
 
         start_time = d.pop("start_time")
 
-        weekday = d.pop("weekday")
+        weekday = WeekdayIntervalV2Weekday(d.pop("weekday"))
 
         weekday_interval_v2 = cls(
             end_time=end_time,

@@ -28,9 +28,9 @@ class IncidentEditPayloadV2:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'value_text': 'This is my text field, I hope you like it', 'value_timestamp':
             ''}]}], 'incident_role_assignments': [{'assignee': {'email': 'bob@example.com', 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}],
-            'incident_status_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'incident_timestamp_values': [{'incident_timestamp_id':
+            'incident_status_id': 'abc123', 'incident_timestamp_values': [{'incident_timestamp_id':
             '01FCNDV6P870EA6S7TK1DSYD5H', 'value': '2021-08-17T13:28:57.801578Z'}], 'name': 'Our database is sad',
-            'severity_id': '01FH5TZRWMNAFB0DZ23FD1TV96', 'slack_channel_name_override': 'inc-123-database-down', 'summary':
+            'severity_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_channel_name_override': 'inc-123-database-down', 'summary':
             "Our database is really really sad, and we don't know why yet."}
 
     Attributes:
@@ -43,14 +43,30 @@ class IncidentEditPayloadV2:
         incident_role_assignments (Union[Unset, List['IncidentRoleAssignmentPayloadV2']]): Assign incident roles to
             these people Example: [{'assignee': {'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'slack_user_id': 'USER123'}, 'incident_role_id': '01FH5TZRWMNAFB0DZ23FD1TV96'}].
-        incident_status_id (Union[Unset, str]): Incident status to change incident to (you can only change an incident
-            from one active status to another, any other lifecycle changes must be taken via the app.) Example:
-            01FH5TZRWMNAFB0DZ23FD1TV96.
+        incident_status_id (Union[Unset, str]): Incident status to move the incident to. Allowed transitions are:
+
+            - Moving between statuses within the same category (e.g. between active statuses)
+            - Resolving an incident by moving from active/triage to a post-incident or closed status
+            - Closing an incident from a post-incident status
+
+            When resolving to a post-incident status, the incident enters the post-incident flow and tasks are created. The
+            status must belong to the post-incident flow that applies to this incident based on its severity, incident type,
+            and other properties. If you specify a status from a different post-incident flow, the request will fail with a
+            validation error.
+
+            When resolving directly to closed, any configured post-incident flow is skipped entirely. This requires the
+            'Close incidents by opting out of post-incident flow' permission on the API key, if your incident lifecycle
+            normally requires you to run a post-incident flow for this incident.
+
+            Note: Once an incident is in the post-incident flow, its status is managed automatically based on task
+            completion. Moving between post-incident statuses via the API is not recommended as the system will recalculate
+            the correct status when tasks are updated. Example: abc123.
         incident_timestamp_values (Union[Unset, List['IncidentTimestampValuePayloadV2']]): Assign the incident's
             timestamps to these values Example: [{'incident_timestamp_id': '01FCNDV6P870EA6S7TK1DSYD5H', 'value':
             '2021-08-17T13:28:57.801578Z'}].
         name (Union[Unset, str]): Explanation of the incident Example: Our database is sad.
-        severity_id (Union[Unset, str]): Severity to change incident to Example: 01FH5TZRWMNAFB0DZ23FD1TV96.
+        severity_id (Union[Unset, str]): The ID of the current severity of this incident Example:
+            01G0J1EXE7AXZ2C93K61WBPYEH.
         slack_channel_name_override (Union[Unset, str]): Override the name of the incident Slack channel Example:
             inc-123-database-down.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,

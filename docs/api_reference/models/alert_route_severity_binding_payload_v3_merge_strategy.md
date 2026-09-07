@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_route_severity_binding_payload_v3_merge_strategy
+
+::: incident_io_client.models.alert_route_severity_binding_payload_v3_merge_strategy

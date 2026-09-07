@@ -5,17 +5,16 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.alert_routes_v2_update_request_body import AlertRoutesV2UpdateRequestBody
-from ...models.alert_routes_v2_update_response_body import (
-    AlertRoutesV2UpdateResponseBody,
-)
+from ...models.alert_routes_update_payload_v2 import AlertRoutesUpdatePayloadV2
+from ...models.alert_routes_update_result_v2 import AlertRoutesUpdateResultV2
+from ...models.error_response import ErrorResponse
 from ...types import Response
 
 
 def _get_kwargs(
     id: str,
     *,
-    body: AlertRoutesV2UpdateRequestBody,
+    body: AlertRoutesUpdatePayloadV2,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -37,11 +36,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[AlertRoutesV2UpdateResponseBody]:
+) -> Optional[Union[AlertRoutesUpdateResultV2, ErrorResponse]]:
     if response.status_code == 200:
-        response_200 = AlertRoutesV2UpdateResponseBody.from_dict(response.json())
+        response_200 = AlertRoutesUpdateResultV2.from_dict(response.json())
 
         return response_200
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -50,7 +101,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[AlertRoutesV2UpdateResponseBody]:
+) -> Response[Union[AlertRoutesUpdateResultV2, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -63,36 +114,46 @@ def sync_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertRoutesV2UpdateRequestBody,
-) -> Response[AlertRoutesV2UpdateResponseBody]:
+    body: AlertRoutesUpdatePayloadV2,
+) -> Response[Union[AlertRoutesUpdateResultV2, ErrorResponse]]:
     """Update Alert Routes V2
 
-     Updates an alert route.
-
-    We recommend you create alert routes in the incident.io dashboard where we allow
-    previewing filter and grouping rules.
+     Update an existing alert route in your account.
 
     Args:
-        id (str):
-        body (AlertRoutesV2UpdateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+        id (str): Unique identifier of the alert route Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (AlertRoutesUpdatePayloadV2):  Example: {'alert_sources': [{'alert_source_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': 'one_of',
             'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}], 'auto_decline_enabled': False, 'condition_groups':
+            'subject': 'incident.severity'}]}]}], 'channel_config': [{'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
-            'enabled': False, 'escalation_bindings': [{'binding': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'expressions': [{'else_branch': {'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
-            [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123',
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'ms_teams_targets':
+            {'binding': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility':
+            'abc123'}, 'slack_targets': {'binding': {'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter':
+            'incident.severity'}}, 'channel_visibility': 'abc123'}}], 'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'enabled': False, 'escalation_config':
+            {'auto_cancel_escalations': False, 'escalation_targets': [{'escalation_paths':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'users': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}]}, 'expressions': [{'else_branch': {'result':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel',
+            'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
+            'IncidentStatus'}}, 'cast': {'returns': {'array': True, 'type': 'IncidentStatus'}},
+            'concatenate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter':
             {'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
@@ -100,35 +161,44 @@ def sync_detailed(
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}],
-            'grouping_window_seconds': 1, 'incident_condition_groups': [{'conditions': [{'operation':
+            'incident.status'}], 'incident_config': {'auto_decline_enabled': False,
+            'auto_relate_grouped_alerts': False, 'condition_groups': [{'conditions': [{'operation':
             'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'incident_enabled': False, 'name': 'Production
-            incidents', 'template': {'custom_field_priorities': {'abc123': 'abc123'}, 'custom_fields':
-            {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
-            'incident_mode': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'incident_type': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
-            'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
+            'subject': 'incident.severity'}]}], 'defer_time_seconds': 1, 'enabled': False,
+            'grouping_keys': [{'reference': 'alert.title'}], 'grouping_window_seconds': 1},
+            'incident_template': {'custom_fields': [{'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'merge_strategy':
+            'first-wins'}], 'incident_mode': {'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'incident_type': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'membership_teams': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'name': {'autogenerated': False, 'binding': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'severity': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'merge_strategy': 'first-wins'}, 'start_in_triage': {'binding':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}}}.
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'summary': {'autogenerated':
+            False, 'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'workspace': {'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}}, 'is_private': False, 'message_template': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'name': 'Production incidents', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'updated_at': '2021-08-17T13:28:57.801578Z', 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AlertRoutesV2UpdateResponseBody]
+        Response[Union[AlertRoutesUpdateResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -147,36 +217,46 @@ def sync(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertRoutesV2UpdateRequestBody,
-) -> Optional[AlertRoutesV2UpdateResponseBody]:
+    body: AlertRoutesUpdatePayloadV2,
+) -> Optional[Union[AlertRoutesUpdateResultV2, ErrorResponse]]:
     """Update Alert Routes V2
 
-     Updates an alert route.
-
-    We recommend you create alert routes in the incident.io dashboard where we allow
-    previewing filter and grouping rules.
+     Update an existing alert route in your account.
 
     Args:
-        id (str):
-        body (AlertRoutesV2UpdateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+        id (str): Unique identifier of the alert route Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (AlertRoutesUpdatePayloadV2):  Example: {'alert_sources': [{'alert_source_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': 'one_of',
             'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}], 'auto_decline_enabled': False, 'condition_groups':
+            'subject': 'incident.severity'}]}]}], 'channel_config': [{'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
-            'enabled': False, 'escalation_bindings': [{'binding': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'expressions': [{'else_branch': {'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
-            [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123',
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'ms_teams_targets':
+            {'binding': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility':
+            'abc123'}, 'slack_targets': {'binding': {'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter':
+            'incident.severity'}}, 'channel_visibility': 'abc123'}}], 'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'enabled': False, 'escalation_config':
+            {'auto_cancel_escalations': False, 'escalation_targets': [{'escalation_paths':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'users': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}]}, 'expressions': [{'else_branch': {'result':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel',
+            'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
+            'IncidentStatus'}}, 'cast': {'returns': {'array': True, 'type': 'IncidentStatus'}},
+            'concatenate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter':
             {'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
@@ -184,35 +264,44 @@ def sync(
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}],
-            'grouping_window_seconds': 1, 'incident_condition_groups': [{'conditions': [{'operation':
+            'incident.status'}], 'incident_config': {'auto_decline_enabled': False,
+            'auto_relate_grouped_alerts': False, 'condition_groups': [{'conditions': [{'operation':
             'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'incident_enabled': False, 'name': 'Production
-            incidents', 'template': {'custom_field_priorities': {'abc123': 'abc123'}, 'custom_fields':
-            {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
-            'incident_mode': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'incident_type': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
-            'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
+            'subject': 'incident.severity'}]}], 'defer_time_seconds': 1, 'enabled': False,
+            'grouping_keys': [{'reference': 'alert.title'}], 'grouping_window_seconds': 1},
+            'incident_template': {'custom_fields': [{'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'merge_strategy':
+            'first-wins'}], 'incident_mode': {'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'incident_type': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'membership_teams': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'name': {'autogenerated': False, 'binding': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'severity': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'merge_strategy': 'first-wins'}, 'start_in_triage': {'binding':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}}}.
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'summary': {'autogenerated':
+            False, 'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'workspace': {'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}}, 'is_private': False, 'message_template': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'name': 'Production incidents', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'updated_at': '2021-08-17T13:28:57.801578Z', 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AlertRoutesV2UpdateResponseBody
+        Union[AlertRoutesUpdateResultV2, ErrorResponse]
     """
 
     return sync_detailed(
@@ -226,36 +315,46 @@ async def asyncio_detailed(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertRoutesV2UpdateRequestBody,
-) -> Response[AlertRoutesV2UpdateResponseBody]:
+    body: AlertRoutesUpdatePayloadV2,
+) -> Response[Union[AlertRoutesUpdateResultV2, ErrorResponse]]:
     """Update Alert Routes V2
 
-     Updates an alert route.
-
-    We recommend you create alert routes in the incident.io dashboard where we allow
-    previewing filter and grouping rules.
+     Update an existing alert route in your account.
 
     Args:
-        id (str):
-        body (AlertRoutesV2UpdateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+        id (str): Unique identifier of the alert route Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (AlertRoutesUpdatePayloadV2):  Example: {'alert_sources': [{'alert_source_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': 'one_of',
             'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}], 'auto_decline_enabled': False, 'condition_groups':
+            'subject': 'incident.severity'}]}]}], 'channel_config': [{'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
-            'enabled': False, 'escalation_bindings': [{'binding': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'expressions': [{'else_branch': {'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
-            [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123',
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'ms_teams_targets':
+            {'binding': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility':
+            'abc123'}, 'slack_targets': {'binding': {'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter':
+            'incident.severity'}}, 'channel_visibility': 'abc123'}}], 'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'enabled': False, 'escalation_config':
+            {'auto_cancel_escalations': False, 'escalation_targets': [{'escalation_paths':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'users': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}]}, 'expressions': [{'else_branch': {'result':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel',
+            'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
+            'IncidentStatus'}}, 'cast': {'returns': {'array': True, 'type': 'IncidentStatus'}},
+            'concatenate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter':
             {'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
@@ -263,35 +362,44 @@ async def asyncio_detailed(
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}],
-            'grouping_window_seconds': 1, 'incident_condition_groups': [{'conditions': [{'operation':
+            'incident.status'}], 'incident_config': {'auto_decline_enabled': False,
+            'auto_relate_grouped_alerts': False, 'condition_groups': [{'conditions': [{'operation':
             'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'incident_enabled': False, 'name': 'Production
-            incidents', 'template': {'custom_field_priorities': {'abc123': 'abc123'}, 'custom_fields':
-            {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
-            'incident_mode': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'incident_type': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
-            'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
+            'subject': 'incident.severity'}]}], 'defer_time_seconds': 1, 'enabled': False,
+            'grouping_keys': [{'reference': 'alert.title'}], 'grouping_window_seconds': 1},
+            'incident_template': {'custom_fields': [{'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'merge_strategy':
+            'first-wins'}], 'incident_mode': {'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'incident_type': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'membership_teams': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'name': {'autogenerated': False, 'binding': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'severity': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'merge_strategy': 'first-wins'}, 'start_in_triage': {'binding':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}}}.
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'summary': {'autogenerated':
+            False, 'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'workspace': {'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}}, 'is_private': False, 'message_template': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'name': 'Production incidents', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'updated_at': '2021-08-17T13:28:57.801578Z', 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AlertRoutesV2UpdateResponseBody]
+        Response[Union[AlertRoutesUpdateResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -308,36 +416,46 @@ async def asyncio(
     id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertRoutesV2UpdateRequestBody,
-) -> Optional[AlertRoutesV2UpdateResponseBody]:
+    body: AlertRoutesUpdatePayloadV2,
+) -> Optional[Union[AlertRoutesUpdateResultV2, ErrorResponse]]:
     """Update Alert Routes V2
 
-     Updates an alert route.
-
-    We recommend you create alert routes in the incident.io dashboard where we allow
-    previewing filter and grouping rules.
+     Update an existing alert route in your account.
 
     Args:
-        id (str):
-        body (AlertRoutesV2UpdateRequestBody):  Example: {'alert_sources': [{'alert_source_id':
+        id (str): Unique identifier of the alert route Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        body (AlertRoutesUpdatePayloadV2):  Example: {'alert_sources': [{'alert_source_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'condition_groups': [{'conditions': [{'operation': 'one_of',
             'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}], 'auto_decline_enabled': False, 'condition_groups':
+            'subject': 'incident.severity'}]}]}], 'channel_config': [{'condition_groups':
             [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'defer_time_seconds': 1,
-            'enabled': False, 'escalation_bindings': [{'binding': {'array_value': [{'literal':
-            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'expressions': [{'else_branch': {'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}, 'label': 'Team Slack channel', 'operations':
-            [{'branches': {'branches': [{'condition_groups': [{'conditions': [{'operation': 'one_of',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123',
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'ms_teams_targets':
+            {'binding': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
+            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'channel_visibility':
+            'abc123'}, 'slack_targets': {'binding': {'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter':
+            'incident.severity'}}, 'channel_visibility': 'abc123'}}], 'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'enabled': False, 'escalation_config':
+            {'auto_cancel_escalations': False, 'escalation_targets': [{'escalation_paths':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'users': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}]}, 'expressions': [{'else_branch': {'result':
+            {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack channel',
+            'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
+            'IncidentStatus'}}, 'cast': {'returns': {'array': True, 'type': 'IncidentStatus'}},
+            'concatenate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter':
             {'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
             {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
@@ -345,35 +463,44 @@ async def asyncio(
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'grouping_keys': [{'id': '01FCNDV6P870EA6S7TK1DSYDG0'}],
-            'grouping_window_seconds': 1, 'incident_condition_groups': [{'conditions': [{'operation':
+            'incident.status'}], 'incident_config': {'auto_decline_enabled': False,
+            'auto_relate_grouped_alerts': False, 'condition_groups': [{'conditions': [{'operation':
             'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}], 'incident_enabled': False, 'name': 'Production
-            incidents', 'template': {'custom_field_priorities': {'abc123': 'abc123'}, 'custom_fields':
-            {'custom_field_10014': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
-            'incident_mode': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'incident_type': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'name': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'priority_severity':
-            'severity-first-wins', 'severity': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'start_in_triage': {'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}},
-            'summary': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}, 'workspace':
+            'subject': 'incident.severity'}]}], 'defer_time_seconds': 1, 'enabled': False,
+            'grouping_keys': [{'reference': 'alert.title'}], 'grouping_window_seconds': 1},
+            'incident_template': {'custom_fields': [{'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'custom_field_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'merge_strategy':
+            'first-wins'}], 'incident_mode': {'binding': {'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'incident_type': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'membership_teams': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}, 'name': {'autogenerated': False, 'binding': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}}, 'severity': {'binding': {'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}, 'merge_strategy': 'first-wins'}, 'start_in_triage': {'binding':
             {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}}}.
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'summary': {'autogenerated':
+            False, 'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'workspace': {'binding': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}}, 'is_private': False, 'message_template': {'array_value':
+            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
+            'reference': 'incident.severity'}}, 'name': 'Production incidents', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'updated_at': '2021-08-17T13:28:57.801578Z', 'version':
+            1}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AlertRoutesV2UpdateResponseBody
+        Union[AlertRoutesUpdateResultV2, ErrorResponse]
     """
 
     return (

@@ -1,0 +1,3 @@
+# incident_io_client.models.incident_attachments_create_payload_v1_resource_resource_type
+
+::: incident_io_client.models.incident_attachments_create_payload_v1_resource_resource_type

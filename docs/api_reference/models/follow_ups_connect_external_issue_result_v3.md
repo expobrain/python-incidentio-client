@@ -1,0 +1,3 @@
+# incident_io_client.models.follow_ups_connect_external_issue_result_v3
+
+::: incident_io_client.models.follow_ups_connect_external_issue_result_v3

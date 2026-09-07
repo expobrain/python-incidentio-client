@@ -10,24 +10,23 @@ T = TypeVar("T", bound="GroupingKeyV2")
 class GroupingKeyV2:
     """
     Example:
-        {'id': '01FCNDV6P870EA6S7TK1DSYDG0'}
+        {'reference': 'alert.title'}
 
     Attributes:
-        id (str): Unique identifier of the alert attribute the user wishes to group on Example:
-            01FCNDV6P870EA6S7TK1DSYDG0.
+        reference (str): A reference to a property of the alert to group on Example: alert.title.
     """
 
-    id: str
+    reference: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        id = self.id
+        reference = self.reference
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "id": id,
+                "reference": reference,
             }
         )
 
@@ -36,10 +35,10 @@ class GroupingKeyV2:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        id = d.pop("id")
+        reference = d.pop("reference")
 
         grouping_key_v2 = cls(
-            id=id,
+            reference=reference,
         )
 
         grouping_key_v2.additional_properties = d

@@ -1,11 +1,12 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
 from ..models.incident_type_v1_create_in_triage import IncidentTypeV1CreateInTriage
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="IncidentTypeV1")
 
@@ -16,7 +17,8 @@ class IncidentTypeV1:
     Example:
         {'create_in_triage': 'always', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing
             production outages', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage',
-            'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'owning_team_ids': ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'private_incidents_only': False, 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         create_in_triage (IncidentTypeV1CreateInTriage): Whether incidents of this must always, or can optionally, be
@@ -28,6 +30,8 @@ class IncidentTypeV1:
         name (str): The name of this Incident Type Example: Production Outage.
         private_incidents_only (bool): Should all incidents created with this Incident Type be private?
         updated_at (datetime.datetime): When this resource was last updated Example: 2021-08-17T13:28:57.801578Z.
+        owning_team_ids (Union[Unset, List[str]]): IDs of the teams that own this incident type Example:
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'].
     """
 
     create_in_triage: IncidentTypeV1CreateInTriage
@@ -38,6 +42,7 @@ class IncidentTypeV1:
     name: str
     private_incidents_only: bool
     updated_at: datetime.datetime
+    owning_team_ids: Union[Unset, List[str]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -57,6 +62,10 @@ class IncidentTypeV1:
 
         updated_at = self.updated_at.isoformat()
 
+        owning_team_ids: Union[Unset, List[str]] = UNSET
+        if not isinstance(self.owning_team_ids, Unset):
+            owning_team_ids = self.owning_team_ids
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -71,6 +80,8 @@ class IncidentTypeV1:
                 "updated_at": updated_at,
             }
         )
+        if owning_team_ids is not UNSET:
+            field_dict["owning_team_ids"] = owning_team_ids
 
         return field_dict
 
@@ -93,6 +104,8 @@ class IncidentTypeV1:
 
         updated_at = isoparse(d.pop("updated_at"))
 
+        owning_team_ids = cast(List[str], d.pop("owning_team_ids", UNSET))
+
         incident_type_v1 = cls(
             create_in_triage=create_in_triage,
             created_at=created_at,
@@ -102,6 +115,7 @@ class IncidentTypeV1:
             name=name,
             private_incidents_only=private_incidents_only,
             updated_at=updated_at,
+            owning_team_ids=owning_team_ids,
         )
 
         incident_type_v1.additional_properties = d

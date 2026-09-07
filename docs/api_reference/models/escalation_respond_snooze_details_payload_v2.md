@@ -1,0 +1,3 @@
+# incident_io_client.models.escalation_respond_snooze_details_payload_v2
+
+::: incident_io_client.models.escalation_respond_snooze_details_payload_v2

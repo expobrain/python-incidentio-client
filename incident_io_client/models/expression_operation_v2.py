@@ -10,6 +10,8 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.expression_branches_opts_v2 import ExpressionBranchesOptsV2
+    from ..models.expression_cast_opts_v2 import ExpressionCastOptsV2
+    from ..models.expression_concatenate_opts_v2 import ExpressionConcatenateOptsV2
     from ..models.expression_filter_opts_v2 import ExpressionFilterOptsV2
     from ..models.expression_navigate_opts_v2 import ExpressionNavigateOptsV2
     from ..models.expression_parse_opts_v2 import ExpressionParseOptsV2
@@ -29,14 +31,15 @@ class ExpressionOperationV2:
             'SEV123', 'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
             'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups':
-            [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'},
-            'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference': 'incident.severity'}}]}]},
-            'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type': 'navigate', 'parse':
-            {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source': 'metadata.annotations["github.com/repo"]'},
-            'returns': {'array': True, 'type': 'IncidentStatus'}}
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast': {'returns': {'array':
+            True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference': '1235', 'reference_label': 'Teams'}, 'filter':
+            {'condition_groups': [{'conditions': [{'operation': {'label': 'Lawrence Jones', 'value':
+            '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value': [{'label': 'Lawrence Jones', 'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal': 'SEV123',
+            'reference': 'incident.severity'}}], 'subject': {'label': 'Incident Severity', 'reference':
+            'incident.severity'}}]}]}, 'navigate': {'reference': '1235', 'reference_label': 'Teams'}, 'operation_type':
+            'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
+            'metadata.annotations["github.com/repo"]'}, 'returns': {'array': True, 'type': 'IncidentStatus'}}
 
     Attributes:
         operation_type (ExpressionOperationV2OperationType): The type of the operation Example: navigate.
@@ -48,6 +51,9 @@ class ExpressionOperationV2:
             'Incident Severity', 'reference': 'incident.severity'}}]}], 'result': {'array_value': [{'label': 'Lawrence
             Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label': 'Lawrence Jones', 'literal':
             'SEV123', 'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}.
+        cast (Union[Unset, ExpressionCastOptsV2]):  Example: {'returns': {'array': True, 'type': 'IncidentStatus'}}.
+        concatenate (Union[Unset, ExpressionConcatenateOptsV2]):  Example: {'reference': '1235', 'reference_label':
+            'Teams'}.
         filter_ (Union[Unset, ExpressionFilterOptsV2]):  Example: {'condition_groups': [{'conditions': [{'operation':
             {'label': 'Lawrence Jones', 'value': '01FCQSP07Z74QMMYPDDGQB9FTG'}, 'param_bindings': [{'array_value':
             [{'label': 'Lawrence Jones', 'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'label':
@@ -61,6 +67,8 @@ class ExpressionOperationV2:
     operation_type: ExpressionOperationV2OperationType
     returns: "ReturnsMetaV2"
     branches: Union[Unset, "ExpressionBranchesOptsV2"] = UNSET
+    cast: Union[Unset, "ExpressionCastOptsV2"] = UNSET
+    concatenate: Union[Unset, "ExpressionConcatenateOptsV2"] = UNSET
     filter_: Union[Unset, "ExpressionFilterOptsV2"] = UNSET
     navigate: Union[Unset, "ExpressionNavigateOptsV2"] = UNSET
     parse: Union[Unset, "ExpressionParseOptsV2"] = UNSET
@@ -74,6 +82,14 @@ class ExpressionOperationV2:
         branches: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.branches, Unset):
             branches = self.branches.to_dict()
+
+        cast: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.cast, Unset):
+            cast = self.cast.to_dict()
+
+        concatenate: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.concatenate, Unset):
+            concatenate = self.concatenate.to_dict()
 
         filter_: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.filter_, Unset):
@@ -97,6 +113,10 @@ class ExpressionOperationV2:
         )
         if branches is not UNSET:
             field_dict["branches"] = branches
+        if cast is not UNSET:
+            field_dict["cast"] = cast
+        if concatenate is not UNSET:
+            field_dict["concatenate"] = concatenate
         if filter_ is not UNSET:
             field_dict["filter"] = filter_
         if navigate is not UNSET:
@@ -109,6 +129,8 @@ class ExpressionOperationV2:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.expression_branches_opts_v2 import ExpressionBranchesOptsV2
+        from ..models.expression_cast_opts_v2 import ExpressionCastOptsV2
+        from ..models.expression_concatenate_opts_v2 import ExpressionConcatenateOptsV2
         from ..models.expression_filter_opts_v2 import ExpressionFilterOptsV2
         from ..models.expression_navigate_opts_v2 import ExpressionNavigateOptsV2
         from ..models.expression_parse_opts_v2 import ExpressionParseOptsV2
@@ -125,6 +147,20 @@ class ExpressionOperationV2:
             branches = UNSET
         else:
             branches = ExpressionBranchesOptsV2.from_dict(_branches)
+
+        _cast = d.pop("cast", UNSET)
+        cast: Union[Unset, ExpressionCastOptsV2]
+        if isinstance(_cast, Unset):
+            cast = UNSET
+        else:
+            cast = ExpressionCastOptsV2.from_dict(_cast)
+
+        _concatenate = d.pop("concatenate", UNSET)
+        concatenate: Union[Unset, ExpressionConcatenateOptsV2]
+        if isinstance(_concatenate, Unset):
+            concatenate = UNSET
+        else:
+            concatenate = ExpressionConcatenateOptsV2.from_dict(_concatenate)
 
         _filter_ = d.pop("filter", UNSET)
         filter_: Union[Unset, ExpressionFilterOptsV2]
@@ -151,6 +187,8 @@ class ExpressionOperationV2:
             operation_type=operation_type,
             returns=returns,
             branches=branches,
+            cast=cast,
+            concatenate=concatenate,
             filter_=filter_,
             navigate=navigate,
             parse=parse,

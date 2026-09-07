@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_route_incident_config_v3
+
+::: incident_io_client.models.alert_route_incident_config_v3
