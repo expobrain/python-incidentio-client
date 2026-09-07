@@ -15,8 +15,7 @@ class EngineReferenceV2:
 
     Attributes:
         array (bool): If true, the reference can refer to 0 to many items
-        key (str): The key of the field this is a reference to Example:
-            incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"].
+        key (str): Unique identifier of field will set Example: incident.custom_field["01FCNDV6P870EA6S7TK1DSYDG0"].
         label (str): Human readable label for the field (with context) Example: Incident -> Affected Team.
         type (str): The type of this resource in the engine Example: IncidentSeverity.
     """

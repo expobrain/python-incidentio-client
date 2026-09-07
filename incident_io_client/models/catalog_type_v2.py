@@ -22,22 +22,22 @@ T = TypeVar("T", bound="CatalogTypeV2")
 class CatalogTypeV2:
     """
     Example:
-        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'categories': ['issue-tracker'], 'color':
+        {'annotations': {'incident.io/catalog-importer/id': 'id-of-config'}, 'categories': ['customer'], 'color':
             'yellow', 'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Represents Kubernetes clusters that we
             run inside of GKE.', 'dynamic_resource_parameter': 'abc123', 'estimated_count': 7, 'icon': 'alert', 'id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'is_editable': False, 'last_synced_at': '2021-08-17T13:28:57.801578Z', 'name':
             'Kubernetes Cluster', 'ranked': True, 'registry_type': 'PagerDutyService', 'required_integrations':
             ['pager_duty'], 'schema': {'attributes': [{'array': False, 'backlink_attribute': 'abc123', 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123',
-            'attribute_name': 'abc123'}], 'type': 'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom',
-            'source_repo_url': 'https://github.com/my-company/incident-io-catalog', 'type_name': 'Custom["BackstageGroup"]',
-            'updated_at': '2021-08-17T13:28:57.801578Z'}
+            '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name': 'tier', 'path': [{'attribute_id': 'abc123', 'attribute_name':
+            'abc123'}], 'type': 'Custom["Service"]'}], 'version': 1}, 'semantic_type': 'custom', 'source_repo_url':
+            'https://github.com/my-company/incident-io-catalog', 'type_name': 'Custom["BackstageGroup"]', 'updated_at':
+            '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         annotations (CatalogTypeV2Annotations): Annotations that can track metadata about this type Example:
             {'incident.io/catalog-importer/id': 'id-of-config'}.
         categories (List[CatalogTypeV2CategoriesItem]): What categories is this type considered part of Example:
-            ['issue-tracker'].
+            ['customer'].
         color (CatalogTypeV2Color): Sets the display color of this type in the dashboard Example: yellow.
         created_at (datetime.datetime): When this type was created Example: 2021-08-17T13:28:57.801578Z.
         description (str): Human readble description of this type Example: Represents Kubernetes clusters that we run
@@ -48,11 +48,11 @@ class CatalogTypeV2:
         name (str): Name is the human readable name of this type Example: Kubernetes Cluster.
         ranked (bool): If this type should be ranked Example: True.
         schema (CatalogTypeSchemaV2):  Example: {'attributes': [{'array': False, 'backlink_attribute': 'abc123', 'id':
-            '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name': 'tier', 'path': [{'attribute_id': 'abc123',
-            'attribute_name': 'abc123'}], 'type': 'Custom["Service"]'}], 'version': 1}.
-        semantic_type (str): Semantic type of this resource (unused) Example: custom.
+            '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name': 'tier', 'path': [{'attribute_id': 'abc123', 'attribute_name':
+            'abc123'}], 'type': 'Custom["Service"]'}], 'version': 1}.
+        semantic_type (str): This type has been deprecated, and will always be empty. Example: abc123.
         type_name (str): The type name of this catalog type, to be used when defining attributes. This is immutable once
-            a CatalogType has been created. For non-externally sync types, it must follow the pattern Custom["SomeName "]
+            a CatalogType has been created. For non-externally sync types, it must follow the pattern Custom["SomeName"]
             Example: Custom["BackstageGroup"].
         updated_at (datetime.datetime): When this type was last updated Example: 2021-08-17T13:28:57.801578Z.
         dynamic_resource_parameter (Union[Unset, str]): If this is a dynamic catalog type, this will be the unique

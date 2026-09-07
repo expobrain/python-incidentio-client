@@ -17,7 +17,8 @@ class CustomFieldOptionV2:
         custom_field_id (str): ID of the custom field this option belongs to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         id (str): Unique identifier for the custom field option Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         sort_key (int): Sort key used to order the custom field options correctly Default: 1000. Example: 10.
-        value (str): Human readable name for the custom field option Example: Product.
+        value (str): Human readable name for the custom field option. Values must not start or end with whitespace, or
+            contain tabs or newlines. Example: Product.
     """
 
     custom_field_id: str

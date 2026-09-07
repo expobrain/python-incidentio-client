@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_announcement_post_template_owning_teams_metadata_v2
+
+::: incident_io_client.models.audit_log_announcement_post_template_owning_teams_metadata_v2

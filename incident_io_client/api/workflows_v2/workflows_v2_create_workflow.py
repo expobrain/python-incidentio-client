@@ -5,16 +5,19 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.create_workflow_payload import CreateWorkflowPayload
-from ...models.workflows_v2_create_workflow_response_body import (
-    WorkflowsV2CreateWorkflowResponseBody,
+from ...models.error_response import ErrorResponse
+from ...models.workflows_create_workflow_payload_v2 import (
+    WorkflowsCreateWorkflowPayloadV2,
+)
+from ...models.workflows_create_workflow_result_v2 import (
+    WorkflowsCreateWorkflowResultV2,
 )
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: CreateWorkflowPayload,
+    body: WorkflowsCreateWorkflowPayloadV2,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -34,11 +37,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[WorkflowsV2CreateWorkflowResponseBody]:
+) -> Optional[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]:
     if response.status_code == 201:
-        response_201 = WorkflowsV2CreateWorkflowResponseBody.from_dict(response.json())
+        response_201 = WorkflowsCreateWorkflowResultV2.from_dict(response.json())
 
         return response_201
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -47,7 +102,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[WorkflowsV2CreateWorkflowResponseBody]:
+) -> Response[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -59,40 +114,47 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CreateWorkflowPayload,
-) -> Response[WorkflowsV2CreateWorkflowResponseBody]:
+    body: WorkflowsCreateWorkflowPayloadV2,
+) -> Response[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]:
     """CreateWorkflow Workflows V2
 
      Create a new workflow
 
     Args:
-        body (CreateWorkflowPayload):  Example: {'annotations': {'incident.io/terraform/version':
-            '3.0.0'}, 'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
-            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
-            'incident.severity'}]}], 'continue_on_step_error': True, 'delay':
-            {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions': [{'else_branch':
-            {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack
-            channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+        body (WorkflowsCreateWorkflowPayloadV2):  Example: {'annotations':
+            {'incident.io/terraform/version': '3.0.0'}, 'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
-            'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions': [{'operation':
-            'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'continue_on_step_error':
+            True, 'delay': {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions':
+            [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
+            [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
+            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
+            'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast':
+            {'returns': {'array': True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter': {'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'folder': 'My folder 01', 'include_private_incidents': True, 'name':
-            'My workflow', 'once_for': ['incident.url'], 'runs_on_incident_modes': ['standard',
-            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'abc123', 'state':
-            'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name': 'pagerduty.escalate',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.status'}], 'folder': 'My folder 01', 'form_fields': [{'array': True,
+            'description': 'The customer affected by this incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'key': 'affected_customer', 'required': True, 'title':
+            'Affected customer', 'type': 'User'}], 'include_private_escalations': True,
+            'include_private_incidents': True, 'name': 'My little workflow', 'once_for':
+            ['incident.url'], 'owning_team_ids': ['01G0J1EXE7AXZ2C93K61WBPYEH'],
+            'private_incident_scope': 'owning_teams', 'runs_on_incident_modes': ['standard', 'test',
+            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'page-the-ceo',
+            'state': 'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name':
+            'pagerduty.escalate', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}]}], 'trigger': 'incident.updated'}.
 
     Raises:
@@ -100,7 +162,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[WorkflowsV2CreateWorkflowResponseBody]
+        Response[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]
     """
 
     kwargs = _get_kwargs(
@@ -117,40 +179,47 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CreateWorkflowPayload,
-) -> Optional[WorkflowsV2CreateWorkflowResponseBody]:
+    body: WorkflowsCreateWorkflowPayloadV2,
+) -> Optional[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]:
     """CreateWorkflow Workflows V2
 
      Create a new workflow
 
     Args:
-        body (CreateWorkflowPayload):  Example: {'annotations': {'incident.io/terraform/version':
-            '3.0.0'}, 'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
-            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
-            'incident.severity'}]}], 'continue_on_step_error': True, 'delay':
-            {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions': [{'else_branch':
-            {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack
-            channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+        body (WorkflowsCreateWorkflowPayloadV2):  Example: {'annotations':
+            {'incident.io/terraform/version': '3.0.0'}, 'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
-            'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions': [{'operation':
-            'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'continue_on_step_error':
+            True, 'delay': {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions':
+            [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
+            [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
+            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
+            'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast':
+            {'returns': {'array': True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter': {'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'folder': 'My folder 01', 'include_private_incidents': True, 'name':
-            'My workflow', 'once_for': ['incident.url'], 'runs_on_incident_modes': ['standard',
-            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'abc123', 'state':
-            'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name': 'pagerduty.escalate',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.status'}], 'folder': 'My folder 01', 'form_fields': [{'array': True,
+            'description': 'The customer affected by this incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'key': 'affected_customer', 'required': True, 'title':
+            'Affected customer', 'type': 'User'}], 'include_private_escalations': True,
+            'include_private_incidents': True, 'name': 'My little workflow', 'once_for':
+            ['incident.url'], 'owning_team_ids': ['01G0J1EXE7AXZ2C93K61WBPYEH'],
+            'private_incident_scope': 'owning_teams', 'runs_on_incident_modes': ['standard', 'test',
+            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'page-the-ceo',
+            'state': 'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name':
+            'pagerduty.escalate', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}]}], 'trigger': 'incident.updated'}.
 
     Raises:
@@ -158,7 +227,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        WorkflowsV2CreateWorkflowResponseBody
+        Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]
     """
 
     return sync_detailed(
@@ -170,40 +239,47 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CreateWorkflowPayload,
-) -> Response[WorkflowsV2CreateWorkflowResponseBody]:
+    body: WorkflowsCreateWorkflowPayloadV2,
+) -> Response[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]:
     """CreateWorkflow Workflows V2
 
      Create a new workflow
 
     Args:
-        body (CreateWorkflowPayload):  Example: {'annotations': {'incident.io/terraform/version':
-            '3.0.0'}, 'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
-            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
-            'incident.severity'}]}], 'continue_on_step_error': True, 'delay':
-            {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions': [{'else_branch':
-            {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack
-            channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+        body (WorkflowsCreateWorkflowPayloadV2):  Example: {'annotations':
+            {'incident.io/terraform/version': '3.0.0'}, 'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
-            'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions': [{'operation':
-            'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'continue_on_step_error':
+            True, 'delay': {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions':
+            [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
+            [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
+            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
+            'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast':
+            {'returns': {'array': True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter': {'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'folder': 'My folder 01', 'include_private_incidents': True, 'name':
-            'My workflow', 'once_for': ['incident.url'], 'runs_on_incident_modes': ['standard',
-            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'abc123', 'state':
-            'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name': 'pagerduty.escalate',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.status'}], 'folder': 'My folder 01', 'form_fields': [{'array': True,
+            'description': 'The customer affected by this incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'key': 'affected_customer', 'required': True, 'title':
+            'Affected customer', 'type': 'User'}], 'include_private_escalations': True,
+            'include_private_incidents': True, 'name': 'My little workflow', 'once_for':
+            ['incident.url'], 'owning_team_ids': ['01G0J1EXE7AXZ2C93K61WBPYEH'],
+            'private_incident_scope': 'owning_teams', 'runs_on_incident_modes': ['standard', 'test',
+            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'page-the-ceo',
+            'state': 'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name':
+            'pagerduty.escalate', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}]}], 'trigger': 'incident.updated'}.
 
     Raises:
@@ -211,7 +287,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[WorkflowsV2CreateWorkflowResponseBody]
+        Response[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]
     """
 
     kwargs = _get_kwargs(
@@ -226,40 +302,47 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CreateWorkflowPayload,
-) -> Optional[WorkflowsV2CreateWorkflowResponseBody]:
+    body: WorkflowsCreateWorkflowPayloadV2,
+) -> Optional[Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]]:
     """CreateWorkflow Workflows V2
 
      Create a new workflow
 
     Args:
-        body (CreateWorkflowPayload):  Example: {'annotations': {'incident.io/terraform/version':
-            '3.0.0'}, 'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
-            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
-            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
-            'incident.severity'}]}], 'continue_on_step_error': True, 'delay':
-            {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions': [{'else_branch':
-            {'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
-            'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}, 'label': 'Team Slack
-            channel', 'operations': [{'branches': {'branches': [{'condition_groups': [{'conditions':
+        body (WorkflowsCreateWorkflowPayloadV2):  Example: {'annotations':
+            {'incident.io/terraform/version': '3.0.0'}, 'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
             'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value':
-            [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
-            'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
-            'IncidentStatus'}}, 'filter': {'condition_groups': [{'conditions': [{'operation':
-            'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}],
-            'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}], 'continue_on_step_error':
+            True, 'delay': {'conditions_apply_over_delay': False, 'for_seconds': 60}, 'expressions':
+            [{'else_branch': {'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}},
+            'label': 'Team Slack channel', 'operations': [{'branches': {'branches':
+            [{'condition_groups': [{'conditions': [{'operation': 'one_of', 'param_bindings':
+            [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value':
+            {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
+            'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast':
+            {'returns': {'array': True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter': {'condition_groups':
+            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal':
+            'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.severity'}}], 'subject': 'incident.severity'}]}]}, 'navigate': {'reference':
             'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'operation_type': 'navigate', 'parse':
             {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
             'metadata.annotations["github.com/repo"]'}}], 'reference': 'abc123', 'root_reference':
-            'incident.status'}], 'folder': 'My folder 01', 'include_private_incidents': True, 'name':
-            'My workflow', 'once_for': ['incident.url'], 'runs_on_incident_modes': ['standard',
-            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'abc123', 'state':
-            'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name': 'pagerduty.escalate',
-            'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
-            'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
+            'incident.status'}], 'folder': 'My folder 01', 'form_fields': [{'array': True,
+            'description': 'The customer affected by this incident', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'key': 'affected_customer', 'required': True, 'title':
+            'Affected customer', 'type': 'User'}], 'include_private_escalations': True,
+            'include_private_incidents': True, 'name': 'My little workflow', 'once_for':
+            ['incident.url'], 'owning_team_ids': ['01G0J1EXE7AXZ2C93K61WBPYEH'],
+            'private_incident_scope': 'owning_teams', 'runs_on_incident_modes': ['standard', 'test',
+            'retrospective'], 'runs_on_incidents': 'newly_created', 'shortform': 'page-the-ceo',
+            'state': 'active', 'steps': [{'for_each': 'abc123', 'id': 'abc123', 'name':
+            'pagerduty.escalate', 'param_bindings': [{'array_value': [{'literal': 'SEV123',
+            'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
             'incident.severity'}}]}], 'trigger': 'incident.updated'}.
 
     Raises:
@@ -267,7 +350,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        WorkflowsV2CreateWorkflowResponseBody
+        Union[ErrorResponse, WorkflowsCreateWorkflowResultV2]
     """
 
     return (

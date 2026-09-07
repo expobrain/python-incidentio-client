@@ -5,18 +5,19 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.custom_field_options_v1_create_request_body import (
-    CustomFieldOptionsV1CreateRequestBody,
+from ...models.custom_field_options_create_payload_v1 import (
+    CustomFieldOptionsCreatePayloadV1,
 )
-from ...models.custom_field_options_v1_create_response_body import (
-    CustomFieldOptionsV1CreateResponseBody,
+from ...models.custom_field_options_create_result_v1 import (
+    CustomFieldOptionsCreateResultV1,
 )
+from ...models.error_response import ErrorResponse
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: CustomFieldOptionsV1CreateRequestBody,
+    body: CustomFieldOptionsCreatePayloadV1,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -36,11 +37,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[CustomFieldOptionsV1CreateResponseBody]:
+) -> Optional[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]:
     if response.status_code == 201:
-        response_201 = CustomFieldOptionsV1CreateResponseBody.from_dict(response.json())
+        response_201 = CustomFieldOptionsCreateResultV1.from_dict(response.json())
 
         return response_201
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -49,7 +102,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CustomFieldOptionsV1CreateResponseBody]:
+) -> Response[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -61,15 +114,15 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldOptionsV1CreateRequestBody,
-) -> Response[CustomFieldOptionsV1CreateResponseBody]:
+    body: CustomFieldOptionsCreatePayloadV1,
+) -> Response[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]:
     """Create Custom Field Options V1
 
      Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
     appears near the end of the list.
 
     Args:
-        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsCreatePayloadV1):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -77,7 +130,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CustomFieldOptionsV1CreateResponseBody]
+        Response[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -94,15 +147,15 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldOptionsV1CreateRequestBody,
-) -> Optional[CustomFieldOptionsV1CreateResponseBody]:
+    body: CustomFieldOptionsCreatePayloadV1,
+) -> Optional[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]:
     """Create Custom Field Options V1
 
      Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
     appears near the end of the list.
 
     Args:
-        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsCreatePayloadV1):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -110,7 +163,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CustomFieldOptionsV1CreateResponseBody
+        Union[CustomFieldOptionsCreateResultV1, ErrorResponse]
     """
 
     return sync_detailed(
@@ -122,15 +175,15 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldOptionsV1CreateRequestBody,
-) -> Response[CustomFieldOptionsV1CreateResponseBody]:
+    body: CustomFieldOptionsCreatePayloadV1,
+) -> Response[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]:
     """Create Custom Field Options V1
 
      Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
     appears near the end of the list.
 
     Args:
-        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsCreatePayloadV1):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -138,7 +191,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CustomFieldOptionsV1CreateResponseBody]
+        Response[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -153,15 +206,15 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldOptionsV1CreateRequestBody,
-) -> Optional[CustomFieldOptionsV1CreateResponseBody]:
+    body: CustomFieldOptionsCreatePayloadV1,
+) -> Optional[Union[CustomFieldOptionsCreateResultV1, ErrorResponse]]:
     """Create Custom Field Options V1
 
      Create a custom field option. If the sort key is not supplied, it'll default to 1000, so the option
     appears near the end of the list.
 
     Args:
-        body (CustomFieldOptionsV1CreateRequestBody):  Example: {'custom_field_id':
+        body (CustomFieldOptionsCreatePayloadV1):  Example: {'custom_field_id':
             '01FCNDV6P870EA6S7TK1DSYDG0', 'sort_key': 10, 'value': 'Product'}.
 
     Raises:
@@ -169,7 +222,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CustomFieldOptionsV1CreateResponseBody
+        Union[CustomFieldOptionsCreateResultV1, ErrorResponse]
     """
 
     return (

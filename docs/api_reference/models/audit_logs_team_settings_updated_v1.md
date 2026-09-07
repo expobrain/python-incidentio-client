@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_team_settings_updated_v1
+
+::: incident_io_client.models.audit_logs_team_settings_updated_v1

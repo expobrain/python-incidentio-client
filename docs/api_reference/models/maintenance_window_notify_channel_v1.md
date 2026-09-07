@@ -1,0 +1,3 @@
+# incident_io_client.models.maintenance_window_notify_channel_v1
+
+::: incident_io_client.models.maintenance_window_notify_channel_v1

@@ -13,14 +13,14 @@ T = TypeVar("T", bound="UserV2")
 class UserV2:
     """
     Example:
-        {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
-            'viewer', 'slack_user_id': 'U02AYNF2XJM'}
+        {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'owner',
+            'slack_user_id': 'U02AYNF2XJM'}
 
     Attributes:
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         name (str): Name of the user Example: Lisa Karlin Curtis.
         role (UserV2Role): DEPRECATED: Role of the user as of March 9th 2023, this value is no longer updated. Example:
-            viewer.
+            owner.
         email (Union[Unset, str]): Email address of the user. Example: lisa@incident.io.
         slack_user_id (Union[Unset, str]): Slack ID of the user Example: U02AYNF2XJM.
     """

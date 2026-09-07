@@ -1,0 +1,3 @@
+# incident_io_client.models.incident_template_severity_binding_v1_merge_strategy
+
+::: incident_io_client.models.incident_template_severity_binding_v1_merge_strategy

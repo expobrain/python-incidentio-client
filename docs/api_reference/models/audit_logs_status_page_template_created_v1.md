@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_status_page_template_created_v1
+
+::: incident_io_client.models.audit_logs_status_page_template_created_v1

@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_template_attribute_binding_v2_merge_strategy
+
+::: incident_io_client.models.alert_template_attribute_binding_v2_merge_strategy

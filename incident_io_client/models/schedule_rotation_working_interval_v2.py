@@ -14,12 +14,12 @@ T = TypeVar("T", bound="ScheduleRotationWorkingIntervalV2")
 class ScheduleRotationWorkingIntervalV2:
     """
     Example:
-        {'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}
+        {'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}
 
     Attributes:
         end_time (str): End time of the interval, in 24hr format Example: 17:00.
         start_time (str): Start time of the interval, in 24hr format Example: 09:00.
-        weekday (ScheduleRotationWorkingIntervalV2Weekday): Weekday this interval applies to Example: tuesday.
+        weekday (ScheduleRotationWorkingIntervalV2Weekday): Weekdays for use with a schedule Example: monday.
     """
 
     end_time: str

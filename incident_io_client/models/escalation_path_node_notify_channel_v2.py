@@ -19,13 +19,14 @@ T = TypeVar("T", bound="EscalationPathNodeNotifyChannelV2")
 class EscalationPathNodeNotifyChannelV2:
     """
     Example:
-        {'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}],
-            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
-            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
+        {'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}], 'time_to_ack_interval_condition':
+            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
         targets (List['EscalationPathTargetV2']): The targets (Slack channels) for this level Example: [{'id':
-            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'type':
+            'schedule', 'urgency': 'high'}].
         time_to_ack_interval_condition (Union[Unset, EscalationPathNodeNotifyChannelV2TimeToAckIntervalCondition]): If
             the time to ack is relative to a time window, this defines whether we move when the window is active or inactive
             Example: active.

@@ -1,0 +1,3 @@
+# incident_io_client.api.incident_updates_v2.incident_updates_v2_create
+
+::: incident_io_client.api.incident_updates_v2.incident_updates_v2_create

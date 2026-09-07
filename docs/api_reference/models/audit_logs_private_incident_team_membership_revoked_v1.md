@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_private_incident_team_membership_revoked_v1
+
+::: incident_io_client.models.audit_logs_private_incident_team_membership_revoked_v1

@@ -1,3 +1,0 @@
-# incident_io_client.api.webhooks.webhooks_private_incident_incident_updated_v2
-
-::: incident_io_client.api.webhooks.webhooks_private_incident_incident_updated_v2

@@ -2,7 +2,7 @@
 
 download:
 	curl \
-		"https://converter.swagger.io/api/convert?url=https://api.incident.io/v1/openapi.json" \
+		"https://converter.swagger.io/api/convert?url=https://api.incident.io/v1/openapiV3.json" \
 		-H "Accept: application/json" \
 	| jq -S > incident_io_openapi.json
 

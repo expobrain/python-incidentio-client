@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,7 +6,6 @@ from attrs import field as _attrs_field
 from ..models.schedule_rotation_handover_v2_interval_type import (
     ScheduleRotationHandoverV2IntervalType,
 )
-from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="ScheduleRotationHandoverV2")
 
@@ -15,45 +14,39 @@ T = TypeVar("T", bound="ScheduleRotationHandoverV2")
 class ScheduleRotationHandoverV2:
     """
     Example:
-        {'interval': 1, 'interval_type': 'daily'}
+        {'interval': 1, 'interval_type': 'hourly'}
 
     Attributes:
-        interval (Union[Unset, int]):  Example: 1.
-        interval_type (Union[Unset, ScheduleRotationHandoverV2IntervalType]):  Example: daily.
+        interval (int):  Example: 1.
+        interval_type (ScheduleRotationHandoverV2IntervalType): How often a handover occurs Example: hourly.
     """
 
-    interval: Union[Unset, int] = UNSET
-    interval_type: Union[Unset, ScheduleRotationHandoverV2IntervalType] = UNSET
+    interval: int
+    interval_type: ScheduleRotationHandoverV2IntervalType
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         interval = self.interval
 
-        interval_type: Union[Unset, str] = UNSET
-        if not isinstance(self.interval_type, Unset):
-            interval_type = self.interval_type.value
+        interval_type = self.interval_type.value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if interval is not UNSET:
-            field_dict["interval"] = interval
-        if interval_type is not UNSET:
-            field_dict["interval_type"] = interval_type
+        field_dict.update(
+            {
+                "interval": interval,
+                "interval_type": interval_type,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        interval = d.pop("interval", UNSET)
+        interval = d.pop("interval")
 
-        _interval_type = d.pop("interval_type", UNSET)
-        interval_type: Union[Unset, ScheduleRotationHandoverV2IntervalType]
-        if isinstance(_interval_type, Unset):
-            interval_type = UNSET
-        else:
-            interval_type = ScheduleRotationHandoverV2IntervalType(_interval_type)
+        interval_type = ScheduleRotationHandoverV2IntervalType(d.pop("interval_type"))
 
         schedule_rotation_handover_v2 = cls(
             interval=interval,

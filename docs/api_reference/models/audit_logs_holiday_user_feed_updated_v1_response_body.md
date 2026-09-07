@@ -1,3 +1,0 @@
-# incident_io_client.models.audit_logs_holiday_user_feed_updated_v1_response_body
-
-::: incident_io_client.models.audit_logs_holiday_user_feed_updated_v1_response_body

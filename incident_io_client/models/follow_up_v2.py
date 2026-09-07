@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -9,8 +9,10 @@ from ..models.follow_up_v2_status import FollowUpV2Status
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.actor_v2 import ActorV2
     from ..models.external_issue_reference_v2 import ExternalIssueReferenceV2
     from ..models.follow_up_priority_v2 import FollowUpPriorityV2
+    from ..models.team_slim_v2 import TeamSlimV2
     from ..models.user_v2 import UserV2
 
 
@@ -22,24 +24,35 @@ class FollowUpV2:
     """
     Example:
         {'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
-            'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'external_issue_reference':
-            {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-io/issue/INC-1609/find-copywriter-to-
-            write-up', 'provider': 'asana'}, 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'incident_id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'priority': {'description': 'A follow-up that requires immediate attention.',
-            'id': '01GNW4BAQ7XRMFF6FHKNXDFPRW', 'name': 'Urgent', 'rank': 10}, 'status': 'outstanding', 'title': 'Cat is
-            stuck in the tree', 'updated_at': '2021-08-17T13:28:57.801578Z'}
+            'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'assignee_team': {'id': 'abc123', 'name': 'abc123'},
+            'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at': '2021-08-17T13:28:57.801578Z', 'creator': {'alert':
+            {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title': '*errors.withMessage: PG::Error failed to connect'}, 'api_key':
+            {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}, 'user': {'email': 'lisa@incident.io', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'},
+            'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My little workflow'}}, 'description': 'Call the fire
+            brigade', 'external_issue_reference': {'issue_name': 'INC-123', 'issue_permalink': 'https://linear.app/incident-
+            io/issue/INC-1609/find-copywriter-to-write-up', 'provider': 'asana'}, 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'labels': ['bug', 'urgent'], 'priority': {'description': 'A follow-
+            up that requires immediate attention.', 'id': '01GNW4BAQ7XRMFF6FHKNXDFPRW', 'name': 'Urgent', 'rank': 10},
+            'status': 'outstanding', 'title': 'Cat is stuck in the tree', 'updated_at': '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the follow-up was created Example: 2021-08-17T13:28:57.801578Z.
+        creator (ActorV2):  Example: {'alert': {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title': '*errors.withMessage:
+            PG::Error failed to connect'}, 'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
+            'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
+            'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My little
+            workflow'}}.
         id (str): Unique identifier for the follow-up Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         incident_id (str): Unique identifier of the incident the follow-up belongs to Example:
             01FCNDV6P870EA6S7TK1DSYDG0.
+        labels (List[str]): Labels associated with this follow-up Example: ['bug', 'urgent'].
         status (FollowUpV2Status): Status of the follow-up Example: outstanding.
         title (str): Title of the follow-up Example: Cat is stuck in the tree.
         updated_at (datetime.datetime): When the follow-up was last updated Example: 2021-08-17T13:28:57.801578Z.
         assignee (Union[Unset, UserV2]):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
+            'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}.
+        assignee_team (Union[Unset, TeamSlimV2]):  Example: {'id': 'abc123', 'name': 'abc123'}.
         completed_at (Union[Unset, datetime.datetime]): When the follow-up was completed Example:
             2021-08-17T13:28:57.801578Z.
         description (Union[Unset, str]): Description of the follow-up Example: Call the fire brigade.
@@ -51,12 +64,15 @@ class FollowUpV2:
     """
 
     created_at: datetime.datetime
+    creator: "ActorV2"
     id: str
     incident_id: str
+    labels: List[str]
     status: FollowUpV2Status
     title: str
     updated_at: datetime.datetime
     assignee: Union[Unset, "UserV2"] = UNSET
+    assignee_team: Union[Unset, "TeamSlimV2"] = UNSET
     completed_at: Union[Unset, datetime.datetime] = UNSET
     description: Union[Unset, str] = UNSET
     external_issue_reference: Union[Unset, "ExternalIssueReferenceV2"] = UNSET
@@ -66,9 +82,13 @@ class FollowUpV2:
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()
 
+        creator = self.creator.to_dict()
+
         id = self.id
 
         incident_id = self.incident_id
+
+        labels = self.labels
 
         status = self.status.value
 
@@ -79,6 +99,10 @@ class FollowUpV2:
         assignee: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.assignee, Unset):
             assignee = self.assignee.to_dict()
+
+        assignee_team: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.assignee_team, Unset):
+            assignee_team = self.assignee_team.to_dict()
 
         completed_at: Union[Unset, str] = UNSET
         if not isinstance(self.completed_at, Unset):
@@ -99,8 +123,10 @@ class FollowUpV2:
         field_dict.update(
             {
                 "created_at": created_at,
+                "creator": creator,
                 "id": id,
                 "incident_id": incident_id,
+                "labels": labels,
                 "status": status,
                 "title": title,
                 "updated_at": updated_at,
@@ -108,6 +134,8 @@ class FollowUpV2:
         )
         if assignee is not UNSET:
             field_dict["assignee"] = assignee
+        if assignee_team is not UNSET:
+            field_dict["assignee_team"] = assignee_team
         if completed_at is not UNSET:
             field_dict["completed_at"] = completed_at
         if description is not UNSET:
@@ -121,16 +149,22 @@ class FollowUpV2:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.actor_v2 import ActorV2
         from ..models.external_issue_reference_v2 import ExternalIssueReferenceV2
         from ..models.follow_up_priority_v2 import FollowUpPriorityV2
+        from ..models.team_slim_v2 import TeamSlimV2
         from ..models.user_v2 import UserV2
 
         d = src_dict.copy()
         created_at = isoparse(d.pop("created_at"))
 
+        creator = ActorV2.from_dict(d.pop("creator"))
+
         id = d.pop("id")
 
         incident_id = d.pop("incident_id")
+
+        labels = cast(List[str], d.pop("labels"))
 
         status = FollowUpV2Status(d.pop("status"))
 
@@ -144,6 +178,13 @@ class FollowUpV2:
             assignee = UNSET
         else:
             assignee = UserV2.from_dict(_assignee)
+
+        _assignee_team = d.pop("assignee_team", UNSET)
+        assignee_team: Union[Unset, TeamSlimV2]
+        if isinstance(_assignee_team, Unset):
+            assignee_team = UNSET
+        else:
+            assignee_team = TeamSlimV2.from_dict(_assignee_team)
 
         _completed_at = d.pop("completed_at", UNSET)
         completed_at: Union[Unset, datetime.datetime]
@@ -172,12 +213,15 @@ class FollowUpV2:
 
         follow_up_v2 = cls(
             created_at=created_at,
+            creator=creator,
             id=id,
             incident_id=incident_id,
+            labels=labels,
             status=status,
             title=title,
             updated_at=updated_at,
             assignee=assignee,
+            assignee_team=assignee_team,
             completed_at=completed_at,
             description=description,
             external_issue_reference=external_issue_reference,

@@ -6,7 +6,7 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.api_key_v1 import APIKeyV1
+    from ..models.api_key_actor_v1 import APIKeyActorV1
     from ..models.user_v1 import UserV1
 
 
@@ -22,12 +22,13 @@ class ActorV1:
             'slack_user_id': 'U02AYNF2XJM'}}
 
     Attributes:
-        api_key (Union[Unset, APIKeyV1]):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'}.
+        api_key (Union[Unset, APIKeyActorV1]):  Example: {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API
+            key'}.
         user (Union[Unset, UserV1]):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
             'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
     """
 
-    api_key: Union[Unset, "APIKeyV1"] = UNSET
+    api_key: Union[Unset, "APIKeyActorV1"] = UNSET
     user: Union[Unset, "UserV1"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -52,16 +53,16 @@ class ActorV1:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.api_key_v1 import APIKeyV1
+        from ..models.api_key_actor_v1 import APIKeyActorV1
         from ..models.user_v1 import UserV1
 
         d = src_dict.copy()
         _api_key = d.pop("api_key", UNSET)
-        api_key: Union[Unset, APIKeyV1]
+        api_key: Union[Unset, APIKeyActorV1]
         if isinstance(_api_key, Unset):
             api_key = UNSET
         else:
-            api_key = APIKeyV1.from_dict(_api_key)
+            api_key = APIKeyActorV1.from_dict(_api_key)
 
         _user = d.pop("user", UNSET)
         user: Union[Unset, UserV1]

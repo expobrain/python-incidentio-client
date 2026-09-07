@@ -1,0 +1,3 @@
+# incident_io_client.models.incident_slim_v2_status_category
+
+::: incident_io_client.models.incident_slim_v2_status_category

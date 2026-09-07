@@ -21,8 +21,8 @@ T = TypeVar("T", bound="CatalogTypeAttributePayloadV2")
 class CatalogTypeAttributePayloadV2:
     """
     Example:
-        {'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': 'manual', 'name':
-            'tier', 'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}
+        {'array': False, 'backlink_attribute': 'abc123', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'mode': '', 'name': 'tier',
+            'path': [{'attribute_id': 'abc123'}], 'type': 'Custom["Service"]'}
 
     Attributes:
         array (bool): Whether this attribute is an array
@@ -30,7 +30,7 @@ class CatalogTypeAttributePayloadV2:
         type (str): Catalog type name for this attribute Example: Custom["Service"].
         backlink_attribute (Union[Unset, str]): The attribute to use (if this is a backlink) Example: abc123.
         id (Union[Unset, str]): The ID of this attribute Example: 01GW2G3V0S59R238FAHPDS1R66.
-        mode (Union[Unset, CatalogTypeAttributePayloadV2Mode]): Controls how this attribute is modified Example: manual.
+        mode (Union[Unset, CatalogTypeAttributePayloadV2Mode]): Controls how this attribute is modified
         path (Union[Unset, List['CatalogTypeAttributePathItemPayloadV2']]): The path to use (if this is an path)
             Example: [{'attribute_id': 'abc123'}].
     """

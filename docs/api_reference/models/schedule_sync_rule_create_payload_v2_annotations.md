@@ -1,0 +1,3 @@
+# incident_io_client.models.schedule_sync_rule_create_payload_v2_annotations
+
+::: incident_io_client.models.schedule_sync_rule_create_payload_v2_annotations

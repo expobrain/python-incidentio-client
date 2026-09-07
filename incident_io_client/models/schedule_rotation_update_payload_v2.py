@@ -5,13 +5,16 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
+from ..models.schedule_rotation_update_payload_v2_scheduling_mode import (
+    ScheduleRotationUpdatePayloadV2SchedulingMode,
+)
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.schedule_layer_update_payload_v2 import ScheduleLayerUpdatePayloadV2
     from ..models.schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
-    from ..models.schedule_rotation_working_interval_update_payload_v2 import (
-        ScheduleRotationWorkingIntervalUpdatePayloadV2,
+    from ..models.schedule_rotation_working_interval_v2 import (
+        ScheduleRotationWorkingIntervalV2,
     )
     from ..models.user_reference_payload_v2 import UserReferencePayloadV2
 
@@ -24,24 +27,38 @@ class ScheduleRotationUpdatePayloadV2:
     """
     Example:
         {'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at': '2021-08-17T13:28:57.801578Z',
-            'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com',
-            'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
-            'start_time': '09:00', 'weekday': 'tuesday'}]}
+            'handovers': [{'interval': 1, 'interval_type': 'hourly'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My Rotation', 'scheduling_mode': 'fair', 'users':
+            [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}],
+            'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}], 'working_intervals':
+            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}]}
 
     Attributes:
-        effective_from (Union[Unset, datetime.datetime]):  Example: 2021-08-17T13:28:57.801578Z.
-        handover_start_at (Union[Unset, datetime.datetime]):  Example: 2021-08-17T13:28:57.801578Z.
-        handovers (Union[Unset, List['ScheduleRotationHandoverV2']]):  Example: [{'interval': 1, 'interval_type':
-            'daily'}].
+        effective_from (Union[Unset, datetime.datetime]): When this version of the rotation takes effect. A rotation can
+            appear multiple times in `rotations` with the same `id` to schedule changes ahead of time: each version applies
+            from its `effective_from` until the next version's. Leave it unset on a rotation's first or only version.
+            Example: 2021-08-17T13:28:57.801578Z.
+        handover_start_at (Union[Unset, datetime.datetime]): Determines when shifts change hands and who takes them: the
+            first user in `users` comes on shift at this time, handing over to the next user after each `handovers`
+            interval, cycling through the list — for example, weekly handovers from a Monday 09:00 give week-long shifts
+            that change hands on Mondays at 09:00. Example: 2021-08-17T13:28:57.801578Z.
+        handovers (Union[Unset, List['ScheduleRotationHandoverV2']]): The cadence shifts hand over on. With more than
+            one entry, the intervals apply in turn — for example, one day then three days produces alternating one-day and
+            three-day shifts. Example: [{'interval': 1, 'interval_type': 'hourly'}].
         id (Union[Unset, str]): Unique identifier of the rotation Example: 01G0J1EXE7AXZ2C93K61WBPYEH.
         layers (Union[Unset, List['ScheduleLayerUpdatePayloadV2']]):  Example: [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
             'name': 'Layer 1'}].
         name (Union[Unset, str]): Name of the rotation Example: My Rotation.
-        users (Union[Unset, List['UserReferencePayloadV2']]):  Example: [{'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}].
-        working_interval (Union[Unset, List['ScheduleRotationWorkingIntervalUpdatePayloadV2']]):  Example: [{'end_time':
-            '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}].
+        scheduling_mode (Union[Unset, ScheduleRotationUpdatePayloadV2SchedulingMode]): Scheduling algorithm to use for
+            this rotation. 'fair' balances workload by considering handover duration, while 'sequential' uses simple round-
+            robin rotation through users. Only applies when you have asymmetric handovers (e.g., 2 days then 5 days).
+            Example: fair.
+        users (Union[Unset, List['UserReferencePayloadV2']]): The people in the rotation, in the order they take shifts.
+            Example: [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}].
+        working_interval (Union[Unset, List['ScheduleRotationWorkingIntervalV2']]): DEPRECATED: Use working_intervals
+            instead. Example: [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}].
+        working_intervals (Union[Unset, List['ScheduleRotationWorkingIntervalV2']]):  Example: [{'end_time': '17:00',
+            'start_time': '09:00', 'weekday': 'monday'}].
     """
 
     effective_from: Union[Unset, datetime.datetime] = UNSET
@@ -50,8 +67,10 @@ class ScheduleRotationUpdatePayloadV2:
     id: Union[Unset, str] = UNSET
     layers: Union[Unset, List["ScheduleLayerUpdatePayloadV2"]] = UNSET
     name: Union[Unset, str] = UNSET
+    scheduling_mode: Union[Unset, ScheduleRotationUpdatePayloadV2SchedulingMode] = UNSET
     users: Union[Unset, List["UserReferencePayloadV2"]] = UNSET
-    working_interval: Union[Unset, List["ScheduleRotationWorkingIntervalUpdatePayloadV2"]] = UNSET
+    working_interval: Union[Unset, List["ScheduleRotationWorkingIntervalV2"]] = UNSET
+    working_intervals: Union[Unset, List["ScheduleRotationWorkingIntervalV2"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,6 +100,10 @@ class ScheduleRotationUpdatePayloadV2:
 
         name = self.name
 
+        scheduling_mode: Union[Unset, str] = UNSET
+        if not isinstance(self.scheduling_mode, Unset):
+            scheduling_mode = self.scheduling_mode.value
+
         users: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.users, Unset):
             users = []
@@ -94,6 +117,13 @@ class ScheduleRotationUpdatePayloadV2:
             for working_interval_item_data in self.working_interval:
                 working_interval_item = working_interval_item_data.to_dict()
                 working_interval.append(working_interval_item)
+
+        working_intervals: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.working_intervals, Unset):
+            working_intervals = []
+            for working_intervals_item_data in self.working_intervals:
+                working_intervals_item = working_intervals_item_data.to_dict()
+                working_intervals.append(working_intervals_item)
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -110,10 +140,14 @@ class ScheduleRotationUpdatePayloadV2:
             field_dict["layers"] = layers
         if name is not UNSET:
             field_dict["name"] = name
+        if scheduling_mode is not UNSET:
+            field_dict["scheduling_mode"] = scheduling_mode
         if users is not UNSET:
             field_dict["users"] = users
         if working_interval is not UNSET:
             field_dict["working_interval"] = working_interval
+        if working_intervals is not UNSET:
+            field_dict["working_intervals"] = working_intervals
 
         return field_dict
 
@@ -123,8 +157,8 @@ class ScheduleRotationUpdatePayloadV2:
             ScheduleLayerUpdatePayloadV2,
         )
         from ..models.schedule_rotation_handover_v2 import ScheduleRotationHandoverV2
-        from ..models.schedule_rotation_working_interval_update_payload_v2 import (
-            ScheduleRotationWorkingIntervalUpdatePayloadV2,
+        from ..models.schedule_rotation_working_interval_v2 import (
+            ScheduleRotationWorkingIntervalV2,
         )
         from ..models.user_reference_payload_v2 import UserReferencePayloadV2
 
@@ -161,6 +195,13 @@ class ScheduleRotationUpdatePayloadV2:
 
         name = d.pop("name", UNSET)
 
+        _scheduling_mode = d.pop("scheduling_mode", UNSET)
+        scheduling_mode: Union[Unset, ScheduleRotationUpdatePayloadV2SchedulingMode]
+        if isinstance(_scheduling_mode, Unset):
+            scheduling_mode = UNSET
+        else:
+            scheduling_mode = ScheduleRotationUpdatePayloadV2SchedulingMode(_scheduling_mode)
+
         users = []
         _users = d.pop("users", UNSET)
         for users_item_data in _users or []:
@@ -171,11 +212,20 @@ class ScheduleRotationUpdatePayloadV2:
         working_interval = []
         _working_interval = d.pop("working_interval", UNSET)
         for working_interval_item_data in _working_interval or []:
-            working_interval_item = ScheduleRotationWorkingIntervalUpdatePayloadV2.from_dict(
+            working_interval_item = ScheduleRotationWorkingIntervalV2.from_dict(
                 working_interval_item_data
             )
 
             working_interval.append(working_interval_item)
+
+        working_intervals = []
+        _working_intervals = d.pop("working_intervals", UNSET)
+        for working_intervals_item_data in _working_intervals or []:
+            working_intervals_item = ScheduleRotationWorkingIntervalV2.from_dict(
+                working_intervals_item_data
+            )
+
+            working_intervals.append(working_intervals_item)
 
         schedule_rotation_update_payload_v2 = cls(
             effective_from=effective_from,
@@ -184,8 +234,10 @@ class ScheduleRotationUpdatePayloadV2:
             id=id,
             layers=layers,
             name=name,
+            scheduling_mode=scheduling_mode,
             users=users,
             working_interval=working_interval,
+            working_intervals=working_intervals,
         )
 
         schedule_rotation_update_payload_v2.additional_properties = d

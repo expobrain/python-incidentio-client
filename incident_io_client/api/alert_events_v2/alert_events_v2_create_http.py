@@ -5,18 +5,19 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.alert_events_v2_create_http_request_body import (
-    AlertEventsV2CreateHTTPRequestBody,
-)
-from ...models.alert_result import AlertResult
+from ...models.alert_events_create_http_payload_v2 import AlertEventsCreateHTTPPayloadV2
+from ...models.alert_events_create_http_result_v2 import AlertEventsCreateHTTPResultV2
+from ...models.alert_events_v2_create_http_query import AlertEventsV2CreateHTTPQuery
+from ...models.error_response import ErrorResponse
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     alert_source_config_id: str,
     *,
-    body: AlertEventsV2CreateHTTPRequestBody,
+    body: AlertEventsCreateHTTPPayloadV2,
     token: Union[Unset, str] = UNSET,
+    query: Union[Unset, "AlertEventsV2CreateHTTPQuery"] = UNSET,
     authorization: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
@@ -26,6 +27,12 @@ def _get_kwargs(
     params: Dict[str, Any] = {}
 
     params["token"] = token
+
+    json_query: Union[Unset, Dict[str, Any]] = UNSET
+    if not isinstance(query, Unset):
+        json_query = query.to_dict()
+    if not isinstance(json_query, Unset):
+        params.update(json_query)
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -48,11 +55,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[AlertResult]:
+) -> Optional[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]:
     if response.status_code == 202:
-        response_202 = AlertResult.from_dict(response.json())
+        response_202 = AlertEventsCreateHTTPResultV2.from_dict(response.json())
 
         return response_202
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -61,7 +120,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[AlertResult]:
+) -> Response[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -74,19 +133,26 @@ def sync_detailed(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertEventsV2CreateHTTPRequestBody,
+    body: AlertEventsCreateHTTPPayloadV2,
     token: Union[Unset, str] = UNSET,
+    query: Union[Unset, "AlertEventsV2CreateHTTPQuery"] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Response[AlertResult]:
+) -> Response[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
 
     Args:
-        alert_source_config_id (str):
-        token (Union[Unset, str]):
-        authorization (Union[Unset, str]):
-        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+        alert_source_config_id (str): Which alert source config produced this alert Example:
+            01GW2G3V0S59R238FAHPDS1R66.
+        token (Union[Unset, str]): Token used to authenticate the request, generated when
+            configuring the alert source. Will be consumed via a URL query string parameter Example:
+            some-random-string.
+        query (Union[Unset, AlertEventsV2CreateHTTPQuery]):
+        authorization (Union[Unset, str]): Whatever is provided in the Authorization header. We
+            support either Basic or Bearer authorization with the secret provided on the alert source.
+            Example: some-random-string.
+        body (AlertEventsCreateHTTPPayloadV2):  Example: {'deduplication_key': '4293868629',
             'description': "We've detected a number of timeouts on hello.world.com, the service may be
             down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
             'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
@@ -97,13 +163,14 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AlertResult]
+        Response[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
         alert_source_config_id=alert_source_config_id,
         body=body,
         token=token,
+        query=query,
         authorization=authorization,
     )
 
@@ -118,19 +185,26 @@ def sync(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertEventsV2CreateHTTPRequestBody,
+    body: AlertEventsCreateHTTPPayloadV2,
     token: Union[Unset, str] = UNSET,
+    query: Union[Unset, "AlertEventsV2CreateHTTPQuery"] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Optional[AlertResult]:
+) -> Optional[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
 
     Args:
-        alert_source_config_id (str):
-        token (Union[Unset, str]):
-        authorization (Union[Unset, str]):
-        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+        alert_source_config_id (str): Which alert source config produced this alert Example:
+            01GW2G3V0S59R238FAHPDS1R66.
+        token (Union[Unset, str]): Token used to authenticate the request, generated when
+            configuring the alert source. Will be consumed via a URL query string parameter Example:
+            some-random-string.
+        query (Union[Unset, AlertEventsV2CreateHTTPQuery]):
+        authorization (Union[Unset, str]): Whatever is provided in the Authorization header. We
+            support either Basic or Bearer authorization with the secret provided on the alert source.
+            Example: some-random-string.
+        body (AlertEventsCreateHTTPPayloadV2):  Example: {'deduplication_key': '4293868629',
             'description': "We've detected a number of timeouts on hello.world.com, the service may be
             down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
             'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
@@ -141,7 +215,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AlertResult
+        Union[AlertEventsCreateHTTPResultV2, ErrorResponse]
     """
 
     return sync_detailed(
@@ -149,6 +223,7 @@ def sync(
         client=client,
         body=body,
         token=token,
+        query=query,
         authorization=authorization,
     ).parsed
 
@@ -157,19 +232,26 @@ async def asyncio_detailed(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertEventsV2CreateHTTPRequestBody,
+    body: AlertEventsCreateHTTPPayloadV2,
     token: Union[Unset, str] = UNSET,
+    query: Union[Unset, "AlertEventsV2CreateHTTPQuery"] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Response[AlertResult]:
+) -> Response[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
 
     Args:
-        alert_source_config_id (str):
-        token (Union[Unset, str]):
-        authorization (Union[Unset, str]):
-        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+        alert_source_config_id (str): Which alert source config produced this alert Example:
+            01GW2G3V0S59R238FAHPDS1R66.
+        token (Union[Unset, str]): Token used to authenticate the request, generated when
+            configuring the alert source. Will be consumed via a URL query string parameter Example:
+            some-random-string.
+        query (Union[Unset, AlertEventsV2CreateHTTPQuery]):
+        authorization (Union[Unset, str]): Whatever is provided in the Authorization header. We
+            support either Basic or Bearer authorization with the secret provided on the alert source.
+            Example: some-random-string.
+        body (AlertEventsCreateHTTPPayloadV2):  Example: {'deduplication_key': '4293868629',
             'description': "We've detected a number of timeouts on hello.world.com, the service may be
             down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
             'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
@@ -180,13 +262,14 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[AlertResult]
+        Response[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
         alert_source_config_id=alert_source_config_id,
         body=body,
         token=token,
+        query=query,
         authorization=authorization,
     )
 
@@ -199,19 +282,26 @@ async def asyncio(
     alert_source_config_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    body: AlertEventsV2CreateHTTPRequestBody,
+    body: AlertEventsCreateHTTPPayloadV2,
     token: Union[Unset, str] = UNSET,
+    query: Union[Unset, "AlertEventsV2CreateHTTPQuery"] = UNSET,
     authorization: Union[Unset, str] = UNSET,
-) -> Optional[AlertResult]:
+) -> Optional[Union[AlertEventsCreateHTTPResultV2, ErrorResponse]]:
     """CreateHTTP Alert Events V2
 
      Create an alert event using an HTTP source.
 
     Args:
-        alert_source_config_id (str):
-        token (Union[Unset, str]):
-        authorization (Union[Unset, str]):
-        body (AlertEventsV2CreateHTTPRequestBody):  Example: {'deduplication_key': '4293868629',
+        alert_source_config_id (str): Which alert source config produced this alert Example:
+            01GW2G3V0S59R238FAHPDS1R66.
+        token (Union[Unset, str]): Token used to authenticate the request, generated when
+            configuring the alert source. Will be consumed via a URL query string parameter Example:
+            some-random-string.
+        query (Union[Unset, AlertEventsV2CreateHTTPQuery]):
+        authorization (Union[Unset, str]): Whatever is provided in the Authorization header. We
+            support either Basic or Bearer authorization with the secret provided on the alert source.
+            Example: some-random-string.
+        body (AlertEventsCreateHTTPPayloadV2):  Example: {'deduplication_key': '4293868629',
             'description': "We've detected a number of timeouts on hello.world.com, the service may be
             down. To fix...", 'metadata': {'service': 'hello.world.com', 'team': ['my-team']},
             'source_url': 'https://www.my-alerting-platform.com/alerts/my-alert-123', 'status':
@@ -222,7 +312,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        AlertResult
+        Union[AlertEventsCreateHTTPResultV2, ErrorResponse]
     """
 
     return (
@@ -231,6 +321,7 @@ async def asyncio(
             client=client,
             body=body,
             token=token,
+            query=query,
             authorization=authorization,
         )
     ).parsed

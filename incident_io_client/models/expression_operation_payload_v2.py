@@ -12,6 +12,10 @@ if TYPE_CHECKING:
     from ..models.expression_branches_opts_payload_v2 import (
         ExpressionBranchesOptsPayloadV2,
     )
+    from ..models.expression_cast_opts_payload_v2 import ExpressionCastOptsPayloadV2
+    from ..models.expression_concatenate_opts_payload_v2 import (
+        ExpressionConcatenateOptsPayloadV2,
+    )
     from ..models.expression_filter_opts_payload_v2 import ExpressionFilterOptsPayloadV2
     from ..models.expression_navigate_opts_payload_v2 import (
         ExpressionNavigateOptsPayloadV2,
@@ -30,8 +34,10 @@ class ExpressionOperationPayloadV2:
             [{'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123',
             'reference': 'incident.severity'}}], 'subject': 'incident.severity'}]}], 'result': {'array_value': [{'literal':
             'SEV123', 'reference': 'incident.severity'}], 'value': {'literal': 'SEV123', 'reference':
-            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'filter': {'condition_groups':
-            [{'conditions': [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
+            'incident.severity'}}}], 'returns': {'array': True, 'type': 'IncidentStatus'}}, 'cast': {'returns': {'array':
+            True, 'type': 'IncidentStatus'}}, 'concatenate': {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}, 'filter': {'condition_groups': [{'conditions':
+            [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
             'incident.severity'}]}]}, 'navigate': {'reference': 'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'},
             'operation_type': 'navigate', 'parse': {'returns': {'array': True, 'type': 'IncidentStatus'}, 'source':
@@ -45,6 +51,10 @@ class ExpressionOperationPayloadV2:
             'incident.severity'}]}], 'result': {'array_value': [{'literal': 'SEV123', 'reference': 'incident.severity'}],
             'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}}], 'returns': {'array': True, 'type':
             'IncidentStatus'}}.
+        cast (Union[Unset, ExpressionCastOptsPayloadV2]):  Example: {'returns': {'array': True, 'type':
+            'IncidentStatus'}}.
+        concatenate (Union[Unset, ExpressionConcatenateOptsPayloadV2]):  Example: {'reference':
+            'catalog_attribute["01FCNDV6P870EA6S7TK1DSYD5H"]'}.
         filter_ (Union[Unset, ExpressionFilterOptsPayloadV2]):  Example: {'condition_groups': [{'conditions':
             [{'operation': 'one_of', 'param_bindings': [{'array_value': [{'literal': 'SEV123', 'reference':
             'incident.severity'}], 'value': {'literal': 'SEV123', 'reference': 'incident.severity'}}], 'subject':
@@ -57,6 +67,8 @@ class ExpressionOperationPayloadV2:
 
     operation_type: ExpressionOperationPayloadV2OperationType
     branches: Union[Unset, "ExpressionBranchesOptsPayloadV2"] = UNSET
+    cast: Union[Unset, "ExpressionCastOptsPayloadV2"] = UNSET
+    concatenate: Union[Unset, "ExpressionConcatenateOptsPayloadV2"] = UNSET
     filter_: Union[Unset, "ExpressionFilterOptsPayloadV2"] = UNSET
     navigate: Union[Unset, "ExpressionNavigateOptsPayloadV2"] = UNSET
     parse: Union[Unset, "ExpressionParseOptsPayloadV2"] = UNSET
@@ -68,6 +80,14 @@ class ExpressionOperationPayloadV2:
         branches: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.branches, Unset):
             branches = self.branches.to_dict()
+
+        cast: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.cast, Unset):
+            cast = self.cast.to_dict()
+
+        concatenate: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.concatenate, Unset):
+            concatenate = self.concatenate.to_dict()
 
         filter_: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.filter_, Unset):
@@ -90,6 +110,10 @@ class ExpressionOperationPayloadV2:
         )
         if branches is not UNSET:
             field_dict["branches"] = branches
+        if cast is not UNSET:
+            field_dict["cast"] = cast
+        if concatenate is not UNSET:
+            field_dict["concatenate"] = concatenate
         if filter_ is not UNSET:
             field_dict["filter"] = filter_
         if navigate is not UNSET:
@@ -103,6 +127,10 @@ class ExpressionOperationPayloadV2:
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.expression_branches_opts_payload_v2 import (
             ExpressionBranchesOptsPayloadV2,
+        )
+        from ..models.expression_cast_opts_payload_v2 import ExpressionCastOptsPayloadV2
+        from ..models.expression_concatenate_opts_payload_v2 import (
+            ExpressionConcatenateOptsPayloadV2,
         )
         from ..models.expression_filter_opts_payload_v2 import (
             ExpressionFilterOptsPayloadV2,
@@ -123,6 +151,20 @@ class ExpressionOperationPayloadV2:
             branches = UNSET
         else:
             branches = ExpressionBranchesOptsPayloadV2.from_dict(_branches)
+
+        _cast = d.pop("cast", UNSET)
+        cast: Union[Unset, ExpressionCastOptsPayloadV2]
+        if isinstance(_cast, Unset):
+            cast = UNSET
+        else:
+            cast = ExpressionCastOptsPayloadV2.from_dict(_cast)
+
+        _concatenate = d.pop("concatenate", UNSET)
+        concatenate: Union[Unset, ExpressionConcatenateOptsPayloadV2]
+        if isinstance(_concatenate, Unset):
+            concatenate = UNSET
+        else:
+            concatenate = ExpressionConcatenateOptsPayloadV2.from_dict(_concatenate)
 
         _filter_ = d.pop("filter", UNSET)
         filter_: Union[Unset, ExpressionFilterOptsPayloadV2]
@@ -148,6 +190,8 @@ class ExpressionOperationPayloadV2:
         expression_operation_payload_v2 = cls(
             operation_type=operation_type,
             branches=branches,
+            cast=cast,
+            concatenate=concatenate,
             filter_=filter_,
             navigate=navigate,
             parse=parse,

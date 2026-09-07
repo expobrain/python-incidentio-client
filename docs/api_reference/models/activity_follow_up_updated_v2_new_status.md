@@ -1,0 +1,3 @@
+# incident_io_client.models.activity_follow_up_updated_v2_new_status
+
+::: incident_io_client.models.activity_follow_up_updated_v2_new_status

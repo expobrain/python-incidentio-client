@@ -8,6 +8,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.rbac_role_v2 import RBACRoleV2
+    from ..models.user_seats_v2 import UserSeatsV2
 
 
 T = TypeVar("T", bound="UserWithRolesV2")
@@ -21,7 +22,8 @@ class UserWithRolesV2:
             '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}, 'custom_roles':
             [{'description': 'Elevated permissions for the customer success team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'name': 'Customer Success', 'slug': 'customer-success'}], 'email': 'lisa@incident.io', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_active': True, 'name': 'Lisa Karlin Curtis', 'role': 'owner', 'seats':
+            {'on_call': 'full_access', 'response': 'viewer_only'}, 'slack_user_id': 'U02AYNF2XJM'}
 
     Attributes:
         base_role (RBACRoleV2):  Example: {'description': 'Elevated permissions for the customer success team.', 'id':
@@ -29,9 +31,12 @@ class UserWithRolesV2:
         custom_roles (List['RBACRoleV2']):  Example: [{'description': 'Elevated permissions for the customer success
             team.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Customer Success', 'slug': 'customer-success'}].
         id (str): Unique identifier of the user Example: 01FCNDV6P870EA6S7TK1DSYDG0.
+        is_active (bool): Whether the user is active. False if the user has been deactivated (e.g. offboarded) or is not
+            yet active. Example: True.
         name (str): Name of the user Example: Lisa Karlin Curtis.
         role (UserWithRolesV2Role): DEPRECATED: Role of the user as of March 9th 2023, this value is no longer updated.
-            Example: viewer.
+            Example: owner.
+        seats (UserSeatsV2):  Example: {'on_call': 'full_access', 'response': 'viewer_only'}.
         email (Union[Unset, str]): Email address of the user. Example: lisa@incident.io.
         slack_user_id (Union[Unset, str]): Slack ID of the user Example: U02AYNF2XJM.
     """
@@ -39,8 +44,10 @@ class UserWithRolesV2:
     base_role: "RBACRoleV2"
     custom_roles: List["RBACRoleV2"]
     id: str
+    is_active: bool
     name: str
     role: UserWithRolesV2Role
+    seats: "UserSeatsV2"
     email: Union[Unset, str] = UNSET
     slack_user_id: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -55,9 +62,13 @@ class UserWithRolesV2:
 
         id = self.id
 
+        is_active = self.is_active
+
         name = self.name
 
         role = self.role.value
+
+        seats = self.seats.to_dict()
 
         email = self.email
 
@@ -70,8 +81,10 @@ class UserWithRolesV2:
                 "base_role": base_role,
                 "custom_roles": custom_roles,
                 "id": id,
+                "is_active": is_active,
                 "name": name,
                 "role": role,
+                "seats": seats,
             }
         )
         if email is not UNSET:
@@ -84,6 +97,7 @@ class UserWithRolesV2:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.rbac_role_v2 import RBACRoleV2
+        from ..models.user_seats_v2 import UserSeatsV2
 
         d = src_dict.copy()
         base_role = RBACRoleV2.from_dict(d.pop("base_role"))
@@ -97,9 +111,13 @@ class UserWithRolesV2:
 
         id = d.pop("id")
 
+        is_active = d.pop("is_active")
+
         name = d.pop("name")
 
         role = UserWithRolesV2Role(d.pop("role"))
+
+        seats = UserSeatsV2.from_dict(d.pop("seats"))
 
         email = d.pop("email", UNSET)
 
@@ -109,8 +127,10 @@ class UserWithRolesV2:
             base_role=base_role,
             custom_roles=custom_roles,
             id=id,
+            is_active=is_active,
             name=name,
             role=role,
+            seats=seats,
             email=email,
             slack_user_id=slack_user_id,
         )

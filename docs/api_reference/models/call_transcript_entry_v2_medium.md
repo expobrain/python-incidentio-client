@@ -1,0 +1,3 @@
+# incident_io_client.models.call_transcript_entry_v2_medium
+
+::: incident_io_client.models.call_transcript_entry_v2_medium

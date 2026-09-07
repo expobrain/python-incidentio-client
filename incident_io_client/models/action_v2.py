@@ -9,6 +9,7 @@ from ..models.action_v2_status import ActionV2Status
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.actor_v2 import ActorV2
     from ..models.user_v2 import UserV2
 
 
@@ -20,25 +21,35 @@ class ActionV2:
     """
     Example:
         {'assignee': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis',
-            'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
-            '2021-08-17T13:28:57.801578Z', 'description': 'Call the fire brigade', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'completed_at': '2021-08-17T13:28:57.801578Z', 'created_at':
+            '2021-08-17T13:28:57.801578Z', 'creator': {'alert': {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title':
+            '*errors.withMessage: PG::Error failed to connect'}, 'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My
+            test API key'}, 'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin
+            Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'name': 'My little workflow'}}, 'description': 'Call the fire brigade', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
             'incident_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'status': 'outstanding', 'updated_at':
             '2021-08-17T13:28:57.801578Z'}
 
     Attributes:
         created_at (datetime.datetime): When the action was created Example: 2021-08-17T13:28:57.801578Z.
+        creator (ActorV2):  Example: {'alert': {'id': '01GW2G3V0S59R238FAHPDS1R66', 'title': '*errors.withMessage:
+            PG::Error failed to connect'}, 'api_key': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My test API key'},
+            'user': {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role':
+            'owner', 'slack_user_id': 'U02AYNF2XJM'}, 'workflow': {'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'My little
+            workflow'}}.
         description (str): Description of the action Example: Call the fire brigade.
         id (str): Unique identifier for the action Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         incident_id (str): Unique identifier of the incident the action belongs to Example: 01FCNDV6P870EA6S7TK1DSYDG0.
         status (ActionV2Status): Status of the action Example: outstanding.
         updated_at (datetime.datetime): When the action was last updated Example: 2021-08-17T13:28:57.801578Z.
         assignee (Union[Unset, UserV2]):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0',
-            'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
+            'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}.
         completed_at (Union[Unset, datetime.datetime]): When the action was completed Example:
             2021-08-17T13:28:57.801578Z.
     """
 
     created_at: datetime.datetime
+    creator: "ActorV2"
     description: str
     id: str
     incident_id: str
@@ -50,6 +61,8 @@ class ActionV2:
 
     def to_dict(self) -> Dict[str, Any]:
         created_at = self.created_at.isoformat()
+
+        creator = self.creator.to_dict()
 
         description = self.description
 
@@ -74,6 +87,7 @@ class ActionV2:
         field_dict.update(
             {
                 "created_at": created_at,
+                "creator": creator,
                 "description": description,
                 "id": id,
                 "incident_id": incident_id,
@@ -90,10 +104,13 @@ class ActionV2:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.actor_v2 import ActorV2
         from ..models.user_v2 import UserV2
 
         d = src_dict.copy()
         created_at = isoparse(d.pop("created_at"))
+
+        creator = ActorV2.from_dict(d.pop("creator"))
 
         description = d.pop("description")
 
@@ -121,6 +138,7 @@ class ActionV2:
 
         action_v2 = cls(
             created_at=created_at,
+            creator=creator,
             description=description,
             id=id,
             incident_id=incident_id,

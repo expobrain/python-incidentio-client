@@ -1,0 +1,3 @@
+# incident_io_client.models.on_call_notification_rule_app_details_public_v2_push_notification_criticality
+
+::: incident_io_client.models.on_call_notification_rule_app_details_public_v2_push_notification_criticality

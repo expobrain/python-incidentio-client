@@ -1,3 +1,0 @@
-# incident_io_client.models.audit_logs_user_role_memberships_updated_v1_response_body
-
-::: incident_io_client.models.audit_logs_user_role_memberships_updated_v1_response_body

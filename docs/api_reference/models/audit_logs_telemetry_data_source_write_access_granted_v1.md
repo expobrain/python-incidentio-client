@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_telemetry_data_source_write_access_granted_v1
+
+::: incident_io_client.models.audit_logs_telemetry_data_source_write_access_granted_v1

@@ -1,0 +1,3 @@
+# incident_io_client.api.alert_attributes_v2.alert_attributes_v2_create
+
+::: incident_io_client.api.alert_attributes_v2.alert_attributes_v2_create

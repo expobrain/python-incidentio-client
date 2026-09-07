@@ -1,0 +1,3 @@
+# incident_io_client.models.incidents_create_payload_v1_mode
+
+::: incident_io_client.models.incidents_create_payload_v1_mode

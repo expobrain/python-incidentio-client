@@ -14,7 +14,7 @@ if TYPE_CHECKING:
     from ..models.actor_v1 import ActorV1
     from ..models.custom_field_entry_v1 import CustomFieldEntryV1
     from ..models.incident_role_assignment_v1 import IncidentRoleAssignmentV1
-    from ..models.incident_timestamp_v1 import IncidentTimestampV1
+    from ..models.incident_timestamp_value_v1 import IncidentTimestampValueV1
     from ..models.incident_type_v1 import IncidentTypeV1
     from ..models.severity_v1 import SeverityV1
 
@@ -44,15 +44,16 @@ class IncidentV1:
             responsibilities', 'name': 'Incident Lead', 'required': False, 'role_type': 'lead', 'shortform': 'lead',
             'updated_at': '2021-08-17T13:28:57.801578Z'}}], 'incident_type': {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}, 'mode': 'real', 'name': 'Our database is sad', 'permalink':
-            'https://app.incident.io/incidents/123', 'postmortem_document_url': 'https://docs.google.com/my_doc_id',
-            'reference': 'INC-123', 'severity': {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with
-            **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
-            '2021-08-17T13:28:57.801578Z'}, 'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot',
-            'slack_team_id': 'T02A1FSLE8J', 'status': 'triage', 'summary': "Our database is really really sad, and we don't
-            know why yet.", 'timestamps': [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}],
-            'updated_at': '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'mode': 'real', 'name': 'Our database is sad', 'permalink': 'https://app.incident.io/incidents/123',
+            'postmortem_document_url': 'https://docs.google.com/my_doc_id', 'reference': 'INC-123', 'severity':
+            {'created_at': '2021-08-17T13:28:57.801578Z', 'description': 'Issues with **low impact**.', 'id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at': '2021-08-17T13:28:57.801578Z'},
+            'slack_channel_id': 'C02AW36C1M5', 'slack_channel_name': 'inc-165-green-parrot', 'slack_team_id': 'T02A1FSLE8J',
+            'status': 'triage', 'summary': "Our database is really really sad, and we don't know why yet.", 'timestamps':
+            [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}], 'updated_at':
+            '2021-08-17T13:28:57.801578Z', 'visibility': 'public'}
 
     Attributes:
         created_at (datetime.datetime): When the incident was created Example: 2021-08-17T13:28:57.801578Z.
@@ -87,17 +88,16 @@ class IncidentV1:
         status (IncidentV1Status): Current status of the incident Example: triage.
         updated_at (datetime.datetime): When the incident was last updated Example: 2021-08-17T13:28:57.801578Z.
         visibility (IncidentV1Visibility): Whether the incident should be open to anyone in your Slack workspace
-            (public), or invite-only (private). For more information on Private Incidents see our [help
-            centre](https://help.incident.io/articles/5905558102-can-we-mark-incidents-as-sensitive-and-restrict-access).
-            Example: public.
+            (public), or invite-only (private). For more information on Private Incidents see our
+            [docs](https://docs.incident.io/incidents/sensitive-incidents). Example: public.
         call_url (Union[Unset, str]): The call URL attached to this incident Example: https://zoom.us/foo.
         incident_type (Union[Unset, IncidentTypeV1]):  Example: {'create_in_triage': 'always', 'created_at':
             '2021-08-17T13:28:57.801578Z', 'description': 'Customer facing production outages', 'id':
-            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'private_incidents_only': False,
-            'updated_at': '2021-08-17T13:28:57.801578Z'}.
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'is_default': False, 'name': 'Production Outage', 'owning_team_ids':
+            ['01G0J1EXE7AXZ2C93K61WBPYEH'], 'private_incidents_only': False, 'updated_at': '2021-08-17T13:28:57.801578Z'}.
         permalink (Union[Unset, str]): A permanent link to the homepage for this incident Example:
             https://app.incident.io/incidents/123.
-        postmortem_document_url (Union[Unset, str]): Description of the incident Example:
+        postmortem_document_url (Union[Unset, str]): The URL of the incident post-mortem document Example:
             https://docs.google.com/my_doc_id.
         severity (Union[Unset, SeverityV1]):  Example: {'created_at': '2021-08-17T13:28:57.801578Z', 'description':
             'Issues with **low impact**.', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Minor', 'rank': 1, 'updated_at':
@@ -105,8 +105,8 @@ class IncidentV1:
         slack_channel_name (Union[Unset, str]): Name of the slack channel Example: inc-165-green-parrot.
         summary (Union[Unset, str]): Detailed description of the incident Example: Our database is really really sad,
             and we don't know why yet..
-        timestamps (Union[Unset, List['IncidentTimestampV1']]): Incident lifecycle events and when they last occurred
-            Example: [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}].
+        timestamps (Union[Unset, List['IncidentTimestampValueV1']]): Incident lifecycle events and when they last
+            occurred Example: [{'last_occurred_at': '2021-08-17T13:28:57.801578Z', 'name': 'last_activity'}].
     """
 
     created_at: datetime.datetime
@@ -129,7 +129,7 @@ class IncidentV1:
     severity: Union[Unset, "SeverityV1"] = UNSET
     slack_channel_name: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
-    timestamps: Union[Unset, List["IncidentTimestampV1"]] = UNSET
+    timestamps: Union[Unset, List["IncidentTimestampValueV1"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -233,7 +233,7 @@ class IncidentV1:
         from ..models.actor_v1 import ActorV1
         from ..models.custom_field_entry_v1 import CustomFieldEntryV1
         from ..models.incident_role_assignment_v1 import IncidentRoleAssignmentV1
-        from ..models.incident_timestamp_v1 import IncidentTimestampV1
+        from ..models.incident_timestamp_value_v1 import IncidentTimestampValueV1
         from ..models.incident_type_v1 import IncidentTypeV1
         from ..models.severity_v1 import SeverityV1
 
@@ -305,7 +305,7 @@ class IncidentV1:
         timestamps = []
         _timestamps = d.pop("timestamps", UNSET)
         for timestamps_item_data in _timestamps or []:
-            timestamps_item = IncidentTimestampV1.from_dict(timestamps_item_data)
+            timestamps_item = IncidentTimestampValueV1.from_dict(timestamps_item_data)
 
             timestamps.append(timestamps_item)
 

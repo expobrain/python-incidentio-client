@@ -1,0 +1,3 @@
+# incident_io_client.models.new_slack_user_group_payload_v2
+
+::: incident_io_client.models.new_slack_user_group_payload_v2

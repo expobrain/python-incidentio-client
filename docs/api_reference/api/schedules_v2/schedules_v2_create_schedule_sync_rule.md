@@ -1,0 +1,3 @@
+# incident_io_client.api.schedules_v2.schedules_v2_create_schedule_sync_rule
+
+::: incident_io_client.api.schedules_v2.schedules_v2_create_schedule_sync_rule

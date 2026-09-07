@@ -16,26 +16,45 @@ T = TypeVar("T", bound="ScheduleEntryV2")
 
 @_attrs_define
 class ScheduleEntryV2:
-    """
-    Example:
-        {'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'fingerprint':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id': '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at': '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io',
-            'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id':
-            'U02AYNF2XJM'}}
+    """A single shift on a schedule, representing who is on-call between a start
+    and end time. When present, `rotation_id` and `layer_id` tell you which
+    rotation and which layer within that rotation the entry belongs to. A
+    schedule may have multiple rotations (for example, a primary and a secondary
+    rotation) and each rotation can be made up of several layers — entries are
+    returned for every rotation and layer on the schedule.
 
-    Attributes:
-        end_at (datetime.datetime):  Example: 2021-08-17T13:28:57.801578Z.
-        start_at (datetime.datetime):  Example: 2021-08-17T13:28:57.801578Z.
-        entry_id (Union[Unset, str]): Unique identifier of the schedule entry Example: 01G0J1EXE7AXZ2C93K61WBPYEH.
-        fingerprint (Union[Unset, str]): A unique identifier for this entry, used to determine a unique shift Example:
-            01G0J1EXE7AXZ2C93K61WBPYEH.
-        layer_id (Union[Unset, str]): If present, the layer this entry applies to on the rota Example:
-            01G0J1EXE7AXZ2C93K61WBPYNH.
-        rotation_id (Union[Unset, str]): If present, the rotation this entry applies to on the schedule Example:
-            01G0J1EXE7AXZ2C93K61WBPYEH.
-        user (Union[Unset, UserV2]):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
-            'Lisa Karlin Curtis', 'role': 'viewer', 'slack_user_id': 'U02AYNF2XJM'}.
+    Entries come from two places: they are either generated from a schedule's
+    rotation configuration (the regular pattern of who is on-call) or created by
+    an override (a one-off change that replaces the normal rotation for a period
+    of time). When you call the List schedule entries endpoint we return both
+    kinds separately, along with the merged `final` schedule that reflects what
+    will actually happen.
+
+    `entry_id` is only populated for entries that correspond to a stored
+    record. Scheduled entries are projections computed from the rotation rules
+    on the fly and don't have a persisted ID, so `entry_id` will be absent for
+    those. Use `fingerprint` if you need a stable identifier to deduplicate or
+    diff a shift across requests.
+
+        Example:
+            {'end_at': '2021-08-17T13:28:57.801578Z', 'entry_id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'fingerprint':
+                '01G0J1EXE7AXZ2C93K61WBPYEH', 'layer_id': '01G0J1EXE7AXZ2C93K61WBPYNH', 'rotation_id':
+                '01G0J1EXE7AXZ2C93K61WBPYEH', 'start_at': '2021-08-17T13:28:57.801578Z', 'user': {'email': 'lisa@incident.io',
+                'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name': 'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id':
+                'U02AYNF2XJM'}}
+
+        Attributes:
+            end_at (datetime.datetime):  Example: 2021-08-17T13:28:57.801578Z.
+            start_at (datetime.datetime):  Example: 2021-08-17T13:28:57.801578Z.
+            entry_id (Union[Unset, str]): Unique identifier of the schedule entry Example: 01G0J1EXE7AXZ2C93K61WBPYEH.
+            fingerprint (Union[Unset, str]): A unique identifier for this entry, used to determine a unique shift Example:
+                01G0J1EXE7AXZ2C93K61WBPYEH.
+            layer_id (Union[Unset, str]): If present, the layer this entry applies to on the rotation Example:
+                01G0J1EXE7AXZ2C93K61WBPYNH.
+            rotation_id (Union[Unset, str]): If present, the rotation this entry applies to on the schedule Example:
+                01G0J1EXE7AXZ2C93K61WBPYEH.
+            user (Union[Unset, UserV2]):  Example: {'email': 'lisa@incident.io', 'id': '01FCNDV6P870EA6S7TK1DSYDG0', 'name':
+                'Lisa Karlin Curtis', 'role': 'owner', 'slack_user_id': 'U02AYNF2XJM'}.
     """
 
     end_at: datetime.datetime

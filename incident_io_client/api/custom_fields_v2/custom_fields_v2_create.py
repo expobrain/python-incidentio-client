@@ -5,18 +5,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.custom_fields_v2_create_request_body import (
-    CustomFieldsV2CreateRequestBody,
-)
-from ...models.custom_fields_v2_create_response_body import (
-    CustomFieldsV2CreateResponseBody,
-)
+from ...models.custom_fields_create_payload_v2 import CustomFieldsCreatePayloadV2
+from ...models.custom_fields_create_result_v2 import CustomFieldsCreateResultV2
+from ...models.error_response import ErrorResponse
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: CustomFieldsV2CreateRequestBody,
+    body: CustomFieldsCreatePayloadV2,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
 
@@ -36,11 +33,63 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[CustomFieldsV2CreateResponseBody]:
+) -> Optional[Union[CustomFieldsCreateResultV2, ErrorResponse]]:
     if response.status_code == 201:
-        response_201 = CustomFieldsV2CreateResponseBody.from_dict(response.json())
+        response_201 = CustomFieldsCreateResultV2.from_dict(response.json())
 
         return response_201
+    if response.status_code == 400:
+        response_400 = ErrorResponse.from_dict(response.json())
+
+        return response_400
+    if response.status_code == 401:
+        response_401 = ErrorResponse.from_dict(response.json())
+
+        return response_401
+    if response.status_code == 403:
+        response_403 = ErrorResponse.from_dict(response.json())
+
+        return response_403
+    if response.status_code == 404:
+        response_404 = ErrorResponse.from_dict(response.json())
+
+        return response_404
+    if response.status_code == 405:
+        response_405 = ErrorResponse.from_dict(response.json())
+
+        return response_405
+    if response.status_code == 406:
+        response_406 = ErrorResponse.from_dict(response.json())
+
+        return response_406
+    if response.status_code == 408:
+        response_408 = ErrorResponse.from_dict(response.json())
+
+        return response_408
+    if response.status_code == 409:
+        response_409 = ErrorResponse.from_dict(response.json())
+
+        return response_409
+    if response.status_code == 412:
+        response_412 = ErrorResponse.from_dict(response.json())
+
+        return response_412
+    if response.status_code == 413:
+        response_413 = ErrorResponse.from_dict(response.json())
+
+        return response_413
+    if response.status_code == 422:
+        response_422 = ErrorResponse.from_dict(response.json())
+
+        return response_422
+    if response.status_code == 429:
+        response_429 = ErrorResponse.from_dict(response.json())
+
+        return response_429
+    if response.status_code == 500:
+        response_500 = ErrorResponse.from_dict(response.json())
+
+        return response_500
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:
@@ -49,7 +98,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[CustomFieldsV2CreateResponseBody]:
+) -> Response[Union[CustomFieldsCreateResultV2, ErrorResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -61,22 +110,28 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldsV2CreateRequestBody,
-) -> Response[CustomFieldsV2CreateResponseBody]:
+    body: CustomFieldsCreatePayloadV2,
+) -> Response[Union[CustomFieldsCreateResultV2, ErrorResponse]]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
-            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsCreatePayloadV2):  Example: {'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'description': 'Which team is impacted by this issue',
+            'field_type': 'single_select', 'filter_by': {'catalog_attribute_id':
+            '01H2FW182TAH0NHEVBY34SCAK0', 'custom_field_id': '01H2FW182TAH0NHEVBY34SCAK0'},
+            'fixed_filter': {'catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'values':
+            ['01H2FW182TAH0NHEVBY34SCAK0', '01H2FW182TAH0NHEVBY34SCAK1']},
+            'group_by_catalog_attribute_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'helptext_catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CustomFieldsV2CreateResponseBody]
+        Response[Union[CustomFieldsCreateResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -93,22 +148,28 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldsV2CreateRequestBody,
-) -> Optional[CustomFieldsV2CreateResponseBody]:
+    body: CustomFieldsCreatePayloadV2,
+) -> Optional[Union[CustomFieldsCreateResultV2, ErrorResponse]]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
-            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsCreatePayloadV2):  Example: {'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'description': 'Which team is impacted by this issue',
+            'field_type': 'single_select', 'filter_by': {'catalog_attribute_id':
+            '01H2FW182TAH0NHEVBY34SCAK0', 'custom_field_id': '01H2FW182TAH0NHEVBY34SCAK0'},
+            'fixed_filter': {'catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'values':
+            ['01H2FW182TAH0NHEVBY34SCAK0', '01H2FW182TAH0NHEVBY34SCAK1']},
+            'group_by_catalog_attribute_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'helptext_catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CustomFieldsV2CreateResponseBody
+        Union[CustomFieldsCreateResultV2, ErrorResponse]
     """
 
     return sync_detailed(
@@ -120,22 +181,28 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldsV2CreateRequestBody,
-) -> Response[CustomFieldsV2CreateResponseBody]:
+    body: CustomFieldsCreatePayloadV2,
+) -> Response[Union[CustomFieldsCreateResultV2, ErrorResponse]]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
-            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsCreatePayloadV2):  Example: {'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'description': 'Which team is impacted by this issue',
+            'field_type': 'single_select', 'filter_by': {'catalog_attribute_id':
+            '01H2FW182TAH0NHEVBY34SCAK0', 'custom_field_id': '01H2FW182TAH0NHEVBY34SCAK0'},
+            'fixed_filter': {'catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'values':
+            ['01H2FW182TAH0NHEVBY34SCAK0', '01H2FW182TAH0NHEVBY34SCAK1']},
+            'group_by_catalog_attribute_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'helptext_catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[CustomFieldsV2CreateResponseBody]
+        Response[Union[CustomFieldsCreateResultV2, ErrorResponse]]
     """
 
     kwargs = _get_kwargs(
@@ -150,22 +217,28 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    body: CustomFieldsV2CreateRequestBody,
-) -> Optional[CustomFieldsV2CreateResponseBody]:
+    body: CustomFieldsCreatePayloadV2,
+) -> Optional[Union[CustomFieldsCreateResultV2, ErrorResponse]]:
     """Create Custom Fields V2
 
      Create a new custom field
 
     Args:
-        body (CustomFieldsV2CreateRequestBody):  Example: {'description': 'Which team is impacted
-            by this issue', 'field_type': 'single_select', 'name': 'Affected Team'}.
+        body (CustomFieldsCreatePayloadV2):  Example: {'catalog_type_id':
+            '01FCNDV6P870EA6S7TK1DSYDG0', 'description': 'Which team is impacted by this issue',
+            'field_type': 'single_select', 'filter_by': {'catalog_attribute_id':
+            '01H2FW182TAH0NHEVBY34SCAK0', 'custom_field_id': '01H2FW182TAH0NHEVBY34SCAK0'},
+            'fixed_filter': {'catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'values':
+            ['01H2FW182TAH0NHEVBY34SCAK0', '01H2FW182TAH0NHEVBY34SCAK1']},
+            'group_by_catalog_attribute_id': '01FCNDV6P870EA6S7TK1DSYDG0',
+            'helptext_catalog_attribute_id': '01H2FW182TAH0NHEVBY34SCAK0', 'name': 'Affected Team'}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        CustomFieldsV2CreateResponseBody
+        Union[CustomFieldsCreateResultV2, ErrorResponse]
     """
 
     return (

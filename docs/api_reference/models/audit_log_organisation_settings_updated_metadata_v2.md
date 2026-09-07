@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_organisation_settings_updated_metadata_v2
+
+::: incident_io_client.models.audit_log_organisation_settings_updated_metadata_v2

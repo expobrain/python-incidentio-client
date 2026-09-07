@@ -1,0 +1,3 @@
+# incident_io_client.models.postmortem_document_with_status_change_v1_previous_status
+
+::: incident_io_client.models.postmortem_document_with_status_change_v1_previous_status

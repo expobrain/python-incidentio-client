@@ -1,0 +1,3 @@
+# incident_io_client.models.users_update_paging_provider_payload_v2_preferred_escalation_provider
+
+::: incident_io_client.models.users_update_paging_provider_payload_v2_preferred_escalation_provider

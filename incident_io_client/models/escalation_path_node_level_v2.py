@@ -3,12 +3,16 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.escalation_path_node_level_v2_ack_mode import (
+    EscalationPathNodeLevelV2AckMode,
+)
 from ..models.escalation_path_node_level_v2_time_to_ack_interval_condition import (
     EscalationPathNodeLevelV2TimeToAckIntervalCondition,
 )
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.escalation_path_retry_config_v2 import EscalationPathRetryConfigV2
     from ..models.escalation_path_round_robin_config_v2 import (
         EscalationPathRoundRobinConfigV2,
     )
@@ -22,13 +26,19 @@ T = TypeVar("T", bound="EscalationPathNodeLevelV2")
 class EscalationPathNodeLevelV2:
     """
     Example:
-        {'round_robin_config': {'enabled': False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones',
-            'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}], 'time_to_ack_interval_condition':
-            'active', 'time_to_ack_seconds': 1800, 'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
+        {'ack_mode': 'all', 'retry_config': {'attempts': 3, 'interval_seconds': 300}, 'round_robin_config': {'enabled':
+            False, 'rotate_after_seconds': 120}, 'targets': [{'id': 'lawrencejones', 'schedule_mode': 'currently_on_call',
+            'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'type': 'schedule', 'urgency': 'high'}],
+            'time_to_ack_interval_condition': 'active', 'time_to_ack_seconds': 1800,
+            'time_to_ack_weekday_interval_config_id': '01FCNDV6P870EA6S7TK1DSYDG0'}
 
     Attributes:
         targets (List['EscalationPathTargetV2']): The targets (users or schedules) for this level Example: [{'id':
-            'lawrencejones', 'schedule_mode': 'currently_on_call', 'type': 'user', 'urgency': 'high'}].
+            'lawrencejones', 'schedule_mode': 'currently_on_call', 'selected_rota_id': '01FCNDV6P870EA6S7TK1DSYDG0', 'type':
+            'schedule', 'urgency': 'high'}].
+        ack_mode (Union[Unset, EscalationPathNodeLevelV2AckMode]): Controls the behaviour of acknowledgements for this
+            level, with 'first' cancelling all other escalations on the same level when someone acks Example: all.
+        retry_config (Union[Unset, EscalationPathRetryConfigV2]):  Example: {'attempts': 3, 'interval_seconds': 300}.
         round_robin_config (Union[Unset, EscalationPathRoundRobinConfigV2]):  Example: {'enabled': False,
             'rotate_after_seconds': 120}.
         time_to_ack_interval_condition (Union[Unset, EscalationPathNodeLevelV2TimeToAckIntervalCondition]): If the time
@@ -41,6 +51,8 @@ class EscalationPathNodeLevelV2:
     """
 
     targets: List["EscalationPathTargetV2"]
+    ack_mode: Union[Unset, EscalationPathNodeLevelV2AckMode] = UNSET
+    retry_config: Union[Unset, "EscalationPathRetryConfigV2"] = UNSET
     round_robin_config: Union[Unset, "EscalationPathRoundRobinConfigV2"] = UNSET
     time_to_ack_interval_condition: Union[
         Unset, EscalationPathNodeLevelV2TimeToAckIntervalCondition
@@ -54,6 +66,14 @@ class EscalationPathNodeLevelV2:
         for targets_item_data in self.targets:
             targets_item = targets_item_data.to_dict()
             targets.append(targets_item)
+
+        ack_mode: Union[Unset, str] = UNSET
+        if not isinstance(self.ack_mode, Unset):
+            ack_mode = self.ack_mode.value
+
+        retry_config: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.retry_config, Unset):
+            retry_config = self.retry_config.to_dict()
 
         round_robin_config: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.round_robin_config, Unset):
@@ -74,6 +94,10 @@ class EscalationPathNodeLevelV2:
                 "targets": targets,
             }
         )
+        if ack_mode is not UNSET:
+            field_dict["ack_mode"] = ack_mode
+        if retry_config is not UNSET:
+            field_dict["retry_config"] = retry_config
         if round_robin_config is not UNSET:
             field_dict["round_robin_config"] = round_robin_config
         if time_to_ack_interval_condition is not UNSET:
@@ -89,6 +113,7 @@ class EscalationPathNodeLevelV2:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.escalation_path_retry_config_v2 import EscalationPathRetryConfigV2
         from ..models.escalation_path_round_robin_config_v2 import (
             EscalationPathRoundRobinConfigV2,
         )
@@ -101,6 +126,20 @@ class EscalationPathNodeLevelV2:
             targets_item = EscalationPathTargetV2.from_dict(targets_item_data)
 
             targets.append(targets_item)
+
+        _ack_mode = d.pop("ack_mode", UNSET)
+        ack_mode: Union[Unset, EscalationPathNodeLevelV2AckMode]
+        if isinstance(_ack_mode, Unset):
+            ack_mode = UNSET
+        else:
+            ack_mode = EscalationPathNodeLevelV2AckMode(_ack_mode)
+
+        _retry_config = d.pop("retry_config", UNSET)
+        retry_config: Union[Unset, EscalationPathRetryConfigV2]
+        if isinstance(_retry_config, Unset):
+            retry_config = UNSET
+        else:
+            retry_config = EscalationPathRetryConfigV2.from_dict(_retry_config)
 
         _round_robin_config = d.pop("round_robin_config", UNSET)
         round_robin_config: Union[Unset, EscalationPathRoundRobinConfigV2]
@@ -128,6 +167,8 @@ class EscalationPathNodeLevelV2:
 
         escalation_path_node_level_v2 = cls(
             targets=targets,
+            ack_mode=ack_mode,
+            retry_config=retry_config,
             round_robin_config=round_robin_config,
             time_to_ack_interval_condition=time_to_ack_interval_condition,
             time_to_ack_seconds=time_to_ack_seconds,

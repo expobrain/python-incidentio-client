@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -24,24 +24,28 @@ class ScheduleUpdatePayloadV2:
     Example:
         {'annotations': {'incident.io/terraform/version': 'version-of-terraform'}, 'config': {'rotations':
             [{'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at': '2021-08-17T13:28:57.801578Z',
-            'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com',
-            'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
-            'start_time': '09:00', 'weekday': 'tuesday'}]}]}, 'holidays_public_config': {'country_codes': ['abc123']},
-            'name': 'My Schedule', 'timezone': 'America/Los_Angeles'}
+            'handovers': [{'interval': 1, 'interval_type': 'hourly'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id':
+            '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My Rotation', 'scheduling_mode': 'fair', 'users':
+            [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}],
+            'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}], 'working_intervals':
+            [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}]}]}, 'holidays_public_config':
+            {'country_codes': ['abc123']}, 'name': 'Primary On-call Schedule', 'team_ids': ['01JPQA75EPNEES4479P16P4XAB'],
+            'timezone': 'America/Los_Angeles'}
 
     Attributes:
         annotations (Union[Unset, ScheduleUpdatePayloadV2Annotations]): Annotations that can track metadata about the
             schedule Example: {'incident.io/terraform/version': 'version-of-terraform'}.
         config (Union[Unset, ScheduleConfigUpdatePayloadV2]):  Example: {'rotations': [{'effective_from':
             '2021-08-17T13:28:57.801578Z', 'handover_start_at': '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1,
-            'interval_type': 'daily'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
-            'start_time': '09:00', 'weekday': 'tuesday'}]}]}.
+            'interval_type': 'hourly'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'name': 'Layer 1'}], 'name': 'My Rotation', 'scheduling_mode': 'fair', 'users': [{'email': 'bob@example.com',
+            'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
+            'start_time': '09:00', 'weekday': 'monday'}], 'working_intervals': [{'end_time': '17:00', 'start_time': '09:00',
+            'weekday': 'monday'}]}]}.
         holidays_public_config (Union[Unset, ScheduleHolidaysPublicConfigPayloadV2]):  Example: {'country_codes':
             ['abc123']}.
-        name (Union[Unset, str]): Name of the schedule Example: My Schedule.
+        name (Union[Unset, str]): Name of the schedule Example: Primary On-call Schedule.
+        team_ids (Union[Unset, List[str]]): IDs of teams that own this schedule Example: ['01JPQA75EPNEES4479P16P4XAB'].
         timezone (Union[Unset, str]): Timezone of the schedule Example: America/Los_Angeles.
     """
 
@@ -49,6 +53,7 @@ class ScheduleUpdatePayloadV2:
     config: Union[Unset, "ScheduleConfigUpdatePayloadV2"] = UNSET
     holidays_public_config: Union[Unset, "ScheduleHolidaysPublicConfigPayloadV2"] = UNSET
     name: Union[Unset, str] = UNSET
+    team_ids: Union[Unset, List[str]] = UNSET
     timezone: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -67,6 +72,10 @@ class ScheduleUpdatePayloadV2:
 
         name = self.name
 
+        team_ids: Union[Unset, List[str]] = UNSET
+        if not isinstance(self.team_ids, Unset):
+            team_ids = self.team_ids
+
         timezone = self.timezone
 
         field_dict: Dict[str, Any] = {}
@@ -80,6 +89,8 @@ class ScheduleUpdatePayloadV2:
             field_dict["holidays_public_config"] = holidays_public_config
         if name is not UNSET:
             field_dict["name"] = name
+        if team_ids is not UNSET:
+            field_dict["team_ids"] = team_ids
         if timezone is not UNSET:
             field_dict["timezone"] = timezone
 
@@ -123,6 +134,8 @@ class ScheduleUpdatePayloadV2:
 
         name = d.pop("name", UNSET)
 
+        team_ids = cast(List[str], d.pop("team_ids", UNSET))
+
         timezone = d.pop("timezone", UNSET)
 
         schedule_update_payload_v2 = cls(
@@ -130,6 +143,7 @@ class ScheduleUpdatePayloadV2:
             config=config,
             holidays_public_config=holidays_public_config,
             name=name,
+            team_ids=team_ids,
             timezone=timezone,
         )
 

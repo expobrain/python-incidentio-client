@@ -1,0 +1,3 @@
+# incident_io_client.models.on_call_notification_rule_public_v2_rule_type
+
+::: incident_io_client.models.on_call_notification_rule_public_v2_rule_type

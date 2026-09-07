@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_alert_route_updated_v1
+
+::: incident_io_client.models.audit_logs_alert_route_updated_v1

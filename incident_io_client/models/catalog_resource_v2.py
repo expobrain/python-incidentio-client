@@ -13,14 +13,15 @@ class CatalogResourceV2:
     """
     Example:
         {'category': 'custom', 'description': 'Boolean true or false value', 'label': 'GitHub Repository', 'type':
-            'CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"]', 'value_docstring': 'Either the GraphQL node ID of the repository
-            or a string of <owner>/<repo>, e.g. incident-io/website'}
+            'Custom["Team"]', 'value_docstring': 'Either the GraphQL node ID of the repository or a string of
+            <owner>/<repo>, e.g. incident-io/website'}
 
     Attributes:
         category (CatalogResourceV2Category): Which category of resource Example: custom.
         description (str): Human readable description for this resource Example: Boolean true or false value.
         label (str): Label for this catalog resource type Example: GitHub Repository.
-        type (str): Catalog type name for this resource Example: CatalogEntry["01GVGYJSD39FRKVDWACK9NDS4E"].
+        type (str): Catalog type name for this resource, as used when setting the type of a catalog type attribute
+            Example: Custom["Team"].
         value_docstring (str): Documentation for the literal string value of this resource Example: Either the GraphQL
             node ID of the repository or a string of <owner>/<repo>, e.g. incident-io/website.
     """

@@ -1,0 +1,3 @@
+# incident_io_client.models.activity_incident_type_changed_v2
+
+::: incident_io_client.models.activity_incident_type_changed_v2

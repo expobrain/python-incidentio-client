@@ -1,3 +1,0 @@
-# incident_io_client.api.audit_logs.audit_logs_follow_up_priority_updated_v1
-
-::: incident_io_client.api.audit_logs.audit_logs_follow_up_priority_updated_v1

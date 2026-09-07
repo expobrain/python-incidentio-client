@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_announcement_post_template_set_as_default_v1
+
+::: incident_io_client.models.audit_logs_announcement_post_template_set_as_default_v1

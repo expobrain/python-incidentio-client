@@ -1,0 +1,3 @@
+# incident_io_client.models.on_call_notification_rule_method_target_all_public_v2
+
+::: incident_io_client.models.on_call_notification_rule_method_target_all_public_v2

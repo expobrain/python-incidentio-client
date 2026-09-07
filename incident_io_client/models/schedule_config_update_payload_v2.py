@@ -19,18 +19,20 @@ class ScheduleConfigUpdatePayloadV2:
     """
     Example:
         {'rotations': [{'effective_from': '2021-08-17T13:28:57.801578Z', 'handover_start_at':
-            '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1, 'interval_type': 'daily'}], 'id':
+            '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1, 'interval_type': 'hourly'}], 'id':
             '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'name': 'Layer 1'}], 'name': 'My
-            Rotation', 'users': [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id':
-            'USER123'}], 'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'tuesday'}]}]}
+            Rotation', 'scheduling_mode': 'fair', 'users': [{'email': 'bob@example.com', 'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00', 'start_time': '09:00', 'weekday':
+            'monday'}], 'working_intervals': [{'end_time': '17:00', 'start_time': '09:00', 'weekday': 'monday'}]}]}
 
     Attributes:
         rotations (Union[Unset, List['ScheduleRotationUpdatePayloadV2']]):  Example: [{'effective_from':
             '2021-08-17T13:28:57.801578Z', 'handover_start_at': '2021-08-17T13:28:57.801578Z', 'handovers': [{'interval': 1,
-            'interval_type': 'daily'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
-            'name': 'Layer 1'}], 'name': 'My Rotation', 'users': [{'email': 'bob@example.com', 'id':
-            '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
-            'start_time': '09:00', 'weekday': 'tuesday'}]}].
+            'interval_type': 'hourly'}], 'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'layers': [{'id': '01G0J1EXE7AXZ2C93K61WBPYEH',
+            'name': 'Layer 1'}], 'name': 'My Rotation', 'scheduling_mode': 'fair', 'users': [{'email': 'bob@example.com',
+            'id': '01G0J1EXE7AXZ2C93K61WBPYEH', 'slack_user_id': 'USER123'}], 'working_interval': [{'end_time': '17:00',
+            'start_time': '09:00', 'weekday': 'monday'}], 'working_intervals': [{'end_time': '17:00', 'start_time': '09:00',
+            'weekday': 'monday'}]}].
     """
 
     rotations: Union[Unset, List["ScheduleRotationUpdatePayloadV2"]] = UNSET

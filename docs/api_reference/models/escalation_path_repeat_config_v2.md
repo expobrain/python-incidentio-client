@@ -1,0 +1,3 @@
+# incident_io_client.models.escalation_path_repeat_config_v2
+
+::: incident_io_client.models.escalation_path_repeat_config_v2

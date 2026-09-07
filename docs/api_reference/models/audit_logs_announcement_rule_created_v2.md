@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_logs_announcement_rule_created_v2
+
+::: incident_io_client.models.audit_logs_announcement_rule_created_v2

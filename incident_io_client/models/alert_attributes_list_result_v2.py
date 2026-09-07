@@ -1,0 +1,80 @@
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
+
+if TYPE_CHECKING:
+    from ..models.alert_attribute_v2 import AlertAttributeV2
+
+
+T = TypeVar("T", bound="AlertAttributesListResultV2")
+
+
+@_attrs_define
+class AlertAttributesListResultV2:
+    """
+    Example:
+        {'alert_attributes': [{'array': False, 'emoji': 'fire', 'id': '01GW2G3V0S59R238FAHPDS1R66', 'name': 'service',
+            'required': False, 'type': 'CatalogEntry["01GW2G3V0S59R238FAHPDS1R67"]'}]}
+
+    Attributes:
+        alert_attributes (List['AlertAttributeV2']):  Example: [{'array': False, 'emoji': 'fire', 'id':
+            '01GW2G3V0S59R238FAHPDS1R66', 'name': 'service', 'required': False, 'type':
+            'CatalogEntry["01GW2G3V0S59R238FAHPDS1R67"]'}].
+    """
+
+    alert_attributes: List["AlertAttributeV2"]
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+
+    def to_dict(self) -> Dict[str, Any]:
+        alert_attributes = []
+        for alert_attributes_item_data in self.alert_attributes:
+            alert_attributes_item = alert_attributes_item_data.to_dict()
+            alert_attributes.append(alert_attributes_item)
+
+        field_dict: Dict[str, Any] = {}
+        field_dict.update(self.additional_properties)
+        field_dict.update(
+            {
+                "alert_attributes": alert_attributes,
+            }
+        )
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.alert_attribute_v2 import AlertAttributeV2
+
+        d = src_dict.copy()
+        alert_attributes = []
+        _alert_attributes = d.pop("alert_attributes")
+        for alert_attributes_item_data in _alert_attributes:
+            alert_attributes_item = AlertAttributeV2.from_dict(
+                alert_attributes_item_data
+            )
+
+            alert_attributes.append(alert_attributes_item)
+
+        alert_attributes_list_result_v2 = cls(
+            alert_attributes=alert_attributes,
+        )
+
+        alert_attributes_list_result_v2.additional_properties = d
+        return alert_attributes_list_result_v2
+
+    @property
+    def additional_keys(self) -> List[str]:
+        return list(self.additional_properties.keys())
+
+    def __getitem__(self, key: str) -> Any:
+        return self.additional_properties[key]
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.additional_properties[key] = value
+
+    def __delitem__(self, key: str) -> None:
+        del self.additional_properties[key]
+
+    def __contains__(self, key: str) -> bool:
+        return key in self.additional_properties

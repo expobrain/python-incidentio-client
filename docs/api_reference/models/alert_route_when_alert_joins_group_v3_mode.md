@@ -1,0 +1,3 @@
+# incident_io_client.models.alert_route_when_alert_joins_group_v3_mode
+
+::: incident_io_client.models.alert_route_when_alert_joins_group_v3_mode

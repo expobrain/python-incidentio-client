@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_catalog_attribute_updated_metadata_v2
+
+::: incident_io_client.models.audit_log_catalog_attribute_updated_metadata_v2

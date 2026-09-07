@@ -1,0 +1,3 @@
+# incident_io_client.models.audit_log_user_logged_in_metadata_v2
+
+::: incident_io_client.models.audit_log_user_logged_in_metadata_v2

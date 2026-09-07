@@ -3,6 +3,8 @@ from enum import Enum
 
 class ExpressionOperationV2OperationType(str, Enum):
     BRANCHES = "branches"
+    CAST = "cast"
+    CONCATENATE = "concatenate"
     COUNT = "count"
     FILTER = "filter"
     FIRST = "first"

@@ -1,0 +1,3 @@
+# incident_io_client.models.activity_escalation_created_v2
+
+::: incident_io_client.models.activity_escalation_created_v2

@@ -1,0 +1,3 @@
+# incident_io_client.models.status_page_linked_response_incident_v1
+
+::: incident_io_client.models.status_page_linked_response_incident_v1

@@ -1,0 +1,3 @@
+# incident_io_client.models.schedule_rotation_v2_scheduling_mode
+
+::: incident_io_client.models.schedule_rotation_v2_scheduling_mode
